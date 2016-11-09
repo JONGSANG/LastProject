@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+      "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+      "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<!-- 
+tiles의 개념
+컨트롤러의 메소드 리턴값과 definition name는 일치해야 한다(redirect는  어떻게 처리해야하는지 아직 테스트 못함)
+
+1. 화면 영역을 구성
+header - 상단바
+footer - 하단바
+menu - 계속 바뀌면서 출력하는 left bar영역
+body - 계속 바뀌면서 출력하는 content영역
+
+2. 프로젝트의 타일즈 레이아웃이 몇개 필요한지 고려
+도서관 사용자 메인 - header, body, footer
+도서관 사용자 페이지(메인을 제외한 전부) - header, body, menu, footer
+관리자 메인 - header, body, footer
+관리자 페이지(관리자 메인을 제외한 전부) - header, body, menu, footer
+열람실 페이지(사용자, 관리자) - 미정
+
+-->
+
+<tiles-definitions>
+	<!-- 메인 템플릿(주소 : localhost:8080/*), 단 도서관 메인은 주소가 localhost:8080 기본값 -->
+	<!-- 도서관 사용자 메인페이지, 도서관 관리자 메인페이지, 열람실 사용자 메인페이지, 열람실 관리자 메인페이지 전부 작동 -->
+	<definition name="*" template="/WEB-INF/views/tiles/{1}/mainLayout.jsp">
+		<put-attribute name="header" value="/WEB-INF/views/tiles/{1}/header.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/main/{1}.jsp"></put-attribute>
+		<put-attribute name="footer" value="/WEB-INF/views/tiles/{1}/footer.jsp"></put-attribute>
+	</definition>
+	
+	<!-- 
+	각 페이지별 설정(주소: localhost:8080/임의의주소/임의의주소/임의의 주소)
+	문제점 - 좌측단(menu)는 매번 값이 바뀌는데 이걸 어떤식으로 처리하는가?
+	임시해결 - 내부 내용만 바뀌는 동적인 좌측단(menu)을 만들기 힘들어서, 템플릿을 여러개 만드는 방법으로 해결
+	-->
+	<definition name="*/*/*" template="/WEB-INF/views/tiles/{1}/menuLayout.jsp">
+		<put-attribute name="header" value="/WEB-INF/views/tiles/{1}/header.jsp"></put-attribute>
+		<put-attribute name="menu" value="/WEB-INF/views/tiles/{1}/menu/{2}.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/{1}/{2}/{3}.jsp"></put-attribute>
+		<put-attribute name="footer" value="/WEB-INF/views/tiles/{1}/footer.jsp"></put-attribute>
+	</definition>
+	
+	<!-- 페이지별 설정(주소: localhost:8080/임의의주소/임의의주소/임의의주소/임의의주소)
+	3단구조 템플릿에서 해결 안되는것들을 처리하기 위한 템플릿. EX> userLibrary/libNews/notice/write(글쓰기) 
+	extends="*/*/*"로 상속이 인식을 못해서 그냥 영역을 새로 작성함(body를 제외하면 3단 구조와 경로는 같음)-->
+	<definition name="*/*/*/*" template="/WEB-INF/views/tiles/{1}/menuLayout.jsp">
+		<put-attribute name="header" value="/WEB-INF/views/tiles/{1}/header.jsp"></put-attribute>
+		<put-attribute name="menu" value="/WEB-INF/views/tiles/{1}/menu/{2}.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/{1}/{2}/{3}/{4}.jsp"></put-attribute>
+		<put-attribute name="footer" value="/WEB-INF/views/tiles/{1}/footer.jsp"></put-attribute>
+	</definition>
+</tiles-definitions>
