@@ -34,5 +34,8 @@ VIEWCNT integer default 0,
 
 constraint pk_f_board primary key(NUM)
 );
-
-
+-------------------------------------------------------------
+-- test DATA
+-------------------------------------------------------------
+insert into f_board(ID,title,content,write_date) values('kosta2', 'DB 넣어줬으니까 열심히해', '아오 아오 귀찮긴 하다..',now())
+insert into f_board(ID,title,content,write_date) values('kosta3', '근데 진짜 귀찮긴 하다..', '아오 아오 귀찮긴 하다..',now())

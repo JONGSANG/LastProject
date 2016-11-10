@@ -16,3 +16,13 @@ ROLL varchar(100),
 
 constraint fk_ROLL foreign key(ID) references member(ID)
 );
+-------------------------------------------------------------
+-- test DATA
+-------------------------------------------------------------
+
+insert into ROLL values('kosta', 'ROLL_ADMIN');
+insert into ROLL values('kosta', 'ROLL_USER');
+insert into ROLL values('kosta1', 'ROLL_SEMIUSER');
+insert into ROLL values('kosta2', 'ROLL_USER');
+insert into ROLL values('kosta3', 'ROLL_USER');
+insert into ROLL values('kosta4', 'ROLL_BLACK');

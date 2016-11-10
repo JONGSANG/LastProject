@@ -38,6 +38,11 @@ rep_DATE DATETIME,
 
 constraint pk_f_board_rep primary key(NUM),
 constraint fk_f_board_rep foreign key(Fnum) REFERENCES f_board(num) on delete cascade on update cascade
-
-
 );
+-------------------------------------------------------------
+-- test DATA
+-------------------------------------------------------------
+insert into f_board_rep(ID,FNUM,title,content,rep_date) values('kosta2', 1, '1번글 리플', '1번글 첫번째 리플임..',now())
+insert into f_board_rep(ID,FNUM,title,content,rep_date) values('kosta2', 1, '1번글 리플2', '1번글 두번째 리플임..',now())
+insert into f_board_rep(ID,FNUM,title,content,rep_date) values('kosta2', 2, '2번글 리플', '2번글 첫번째 리플임..',now())
+
