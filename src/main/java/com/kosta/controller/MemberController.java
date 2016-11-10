@@ -22,7 +22,7 @@ public class MemberController {
 	public String logoutGET(RedirectAttributes rttr) {
 		logger.info("로그아웃(메인으로 이동)");
 		
-		//로그아웃시 main페이지에 logout완료 JS처리를 위한 리다이렉트 객체
+		//로그아웃시 main페이지에 로그아웃완료 JS처리를 위한
 		rttr.addFlashAttribute("logout", "logout");
 		return "redirect:/";
 	}

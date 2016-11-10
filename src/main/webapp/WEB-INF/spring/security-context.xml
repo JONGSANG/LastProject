@@ -11,7 +11,8 @@
 		<security:form-login login-page="/member/login"/>
 		<security:logout logout-success-url="/"/>
 		
-		<!-- <security:intercept-url pattern="" access="ROLE_ADMIN" /> -->
+		<!-- <security:intercept-url pattern="/**" access="ROLE_ADMIN" /> -->
+		
 	</security:http>
 	
 	

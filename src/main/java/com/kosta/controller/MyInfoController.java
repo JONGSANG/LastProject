@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.kosta.vo.MemberVO;
 
@@ -37,8 +38,10 @@ public class MyInfoController {
 	}
 	
 	@RequestMapping(value="userLibrary/myInfo/leave")
-	public String leavePOST(MemberVO vo, Model model){
-		logger.info("회원탈퇴 페이지");
-		return "/";
+	public String leavePOST(MemberVO vo, RedirectAttributes rttr){
+		logger.info("회원탈퇴(메인으로 이동)");
+		//로그아웃시 main페이지에 탈퇴완료 JS처리를 위한
+		rttr.addFlashAttribute("leave", "leave");
+		return "redirect:/";
 	}
 }

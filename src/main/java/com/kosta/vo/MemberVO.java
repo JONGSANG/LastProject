@@ -1,9 +1,11 @@
 package com.kosta.vo;
 
 public class MemberVO {
+	
 	private String id;
 	private String name;
 	private String pwd;
+	
 	public String getId() {
 		return id;
 	}
