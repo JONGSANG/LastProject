@@ -35,3 +35,8 @@ VIEWCNT integer default 0,
 constraint pk_n_board primary key(NUM)
 );
 
+-------------------------------------------------------------
+-- test DATA
+-------------------------------------------------------------
+insert into n_board(ID,title,content,write_DATE) values('kosta', 'kosta도서관 휴관안내', '불편을 드려서 죄송합니다. 빠른 조치를 취하도록 하겠습니다.',now());
+
