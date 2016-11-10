@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insert title here</title>
+<title>도서 대출 안내</title>
 </head>
 <body>
 <table>
