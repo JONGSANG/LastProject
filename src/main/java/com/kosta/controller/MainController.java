@@ -20,7 +20,7 @@ public class MainController {
 	
 	@RequestMapping(value = "/adminLibrary", method = RequestMethod.GET)
 	public String adminMain(Model model) {
-		logger.info("관리자 페이지");
+		logger.info("관리자 메인 페이지");
 		return "adminLibrary";
 	}
 }

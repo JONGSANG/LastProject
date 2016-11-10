@@ -7,5 +7,13 @@
 </head>
 <body>
 	userLibrary의 main영역
+	<script type="text/javascript">
+	
+	var logout = '${logout}';
+    
+    if(logout == 'logout'){
+    	alert("로그아웃 완료");
+    }
+	</script>
 </body>
 </html>

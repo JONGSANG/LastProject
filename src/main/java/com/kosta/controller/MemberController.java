@@ -12,13 +12,13 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class MemberController {
 	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 	
-	@RequestMapping(value="UserLibrary/member/login", method=RequestMethod.GET)
+	@RequestMapping(value="userLibrary/member/login", method=RequestMethod.GET)
 	public String loginGET(Model model) {
 		logger.info("로그인 페이지");
-		return "UserLibrary/member/login";
+		return "userLibrary/member/login";
 	}
 	
-	@RequestMapping(value="UserLibrary/member/logout", method=RequestMethod.GET)
+	@RequestMapping(value="userLibrary/member/logout", method=RequestMethod.GET)
 	public String logoutGET(RedirectAttributes rttr) {
 		logger.info("로그아웃(메인으로 이동)");
 		
@@ -27,21 +27,21 @@ public class MemberController {
 		return "redirect:/";
 	}
 	
-	@RequestMapping(value="UserLibrary/member/join", method=RequestMethod.GET)
+	@RequestMapping(value="userLibrary/member/join", method=RequestMethod.GET)
 	public String joinGET(Model model) {
 		logger.info("회원가입 페이지");
-		return "UserLibrary/member/join";
+		return "userLibrary/member/join";
 	}
 	
-	@RequestMapping(value="UserLibrary/member/findPassword", method=RequestMethod.GET)
+	@RequestMapping(value="userLibrary/member/findPassword", method=RequestMethod.GET)
 	public String findPasswordGET(Model model) {
 		logger.info("비밀번호 찾기 페이지");
-		return "UserLibrary/member/findPassword";
+		return "userLibrary/member/findPassword";
 	}
 	
-	@RequestMapping(value="UserLibrary/member/findID", method=RequestMethod.GET)
+	@RequestMapping(value="userLibrary/member/findID", method=RequestMethod.GET)
 	public String findIDGET(Model model) {
 		logger.info("아이디 찾기 페이지");
-		return "UserLibrary/member/findID";
+		return "userLibrary/member/findID";
 	}
 }
