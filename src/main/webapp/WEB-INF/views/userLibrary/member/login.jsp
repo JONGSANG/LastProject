@@ -11,9 +11,11 @@
 <c:url value="/j_spring_security_check" var="login"></c:url>
 	<form action="${login}" method="post">
 		<input type="text" name="j_username" placeholder="최대 12자 영문/숫자" maxlength="12" required autofocus><br>
-		<input type="text" name="j_password" placeholder="최대 12자 영문/숫자" maxlength="12" required><br>
+		<input type="password" name="j_password" placeholder="최대 12자 영문/숫자" maxlength="12" required><br>
 		<input type="submit" value="로그인">
-		<input type="button" value="회원가입" onclick="document.location.href='userLibrary/member/join'">
 	</form>
+		<input type="button" value="회원가입" onclick="document.location.href='/userLibrary/member/join'"><br>
+		<input type="button" value="아이디 찾기" onclick="document.location.href='/userLibrary/member/findID'">
+		<input type="button" value="비밀번호 찾기" onclick="document.location.href='/userLibrary/member/findPassword'">
 </body>
 </html>
