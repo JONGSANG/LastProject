@@ -20,7 +20,7 @@ public class MyInfoController {
 	private static final Logger logger = LoggerFactory.getLogger(MyInfoController.class);
 	
 	@Autowired
-	MyInfoService myInfoService;
+	private MyInfoService myInfoService;
 	
 	@RequestMapping(value="/userLibrary/myInfo/myInfo", method=RequestMethod.GET)
 	public String myInfoGET(Model model) throws Exception{

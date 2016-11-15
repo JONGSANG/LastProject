@@ -39,6 +39,7 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
+	<p>회원가입시 정보는 정확하게 입력해주세요
 	<form role="form" method="post">
 		<label for="id">ID</label>
 		<input type="text" id="id" name="id" placeholder="최대 12자 영문/숫자" maxlength="12" autofocus required>

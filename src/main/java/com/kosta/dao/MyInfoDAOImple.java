@@ -42,4 +42,5 @@ public class MyInfoDAOImple implements MyInfoDAO {
 		sqlSession.delete("MyInfoMapper.deleteRole", id);
 		sqlSession.delete("MyInfoMapper.deleteMember", id);
 	}
+
 }

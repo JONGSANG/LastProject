@@ -1,7 +1,5 @@
 package com.kosta.vo;
 
-import java.util.Date;
-
 public class MemberVO {
 	
 	private String id;

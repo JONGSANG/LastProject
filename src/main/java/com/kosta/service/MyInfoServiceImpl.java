@@ -15,7 +15,7 @@ import com.kosta.vo.MemberVO;
 public class MyInfoServiceImpl implements MyInfoService {
 	
 	@Autowired
-	MyInfoDAO myInfodao;
+	private MyInfoDAO myInfodao;
 	
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
