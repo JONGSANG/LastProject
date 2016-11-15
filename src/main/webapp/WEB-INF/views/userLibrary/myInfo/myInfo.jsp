@@ -5,6 +5,14 @@
 <html>
 <head>
 <title>Insert title here</title>
+<script type="text/javascript">
+
+	var modify='${modify}';
+    
+    if(modify=='modify'){
+    	alert("회원정보 수정 완료")
+    }
+</script>
 </head>
 <body>
 	<table>
@@ -42,5 +50,8 @@
 			</c:if>
 		</tr>
 	</table>
+	<br>
+	<input type="button" value="회원정보수정" onclick="document.location.href='/userLibrary/myInfo/modifyCheck'">
+	<input type="button" value="회원탈퇴" onclick="document.location.href='/userLibrary/myInfo/leave'">
 </body>
 </html>

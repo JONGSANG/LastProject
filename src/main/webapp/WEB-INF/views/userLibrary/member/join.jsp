@@ -54,7 +54,7 @@ $(document).ready(function(){
 		<label for="gender">성별</label>
 		남성 <input type="radio" name="gender" value="남" checked="checked">
 		여성 <input type="radio" name="gender" value="여" ><br>
-		<label for="name">직업</label>
+		<label for="job">직업</label>
 		<select name="job">
 			<option>학생</option>
 			<option>직장인</option>

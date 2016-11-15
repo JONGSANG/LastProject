@@ -13,4 +13,25 @@ INNER JOIN ROLE R ON M.ID=R.ID
 WHERE M.ID=#{id}
 </select>
 
+<select id="passwordCheck" resultType="String">
+SELECT PWD FROM MEMBER WHERE ID=#{id}
+</select>
+
+<select id="modify" resultType="MemberVO">
+SELECT M.ID, U.NAME, U.BIRTH, U.GENDER, U.PHONE, U.EMAIL, U.ADDRESS, R.ROLE
+FROM MEMBER M
+INNER JOIN USER_INFO U ON M.ID=U.ID
+INNER JOIN ROLE R ON M.ID=R.ID
+WHERE M.ID=#{id}
+</select>
+
+<update id="member">
+UPDATE MEMBER SET PWD=#{pwd} WHERE ID=#{id}
+</update>
+
+<update id="user_info">
+UPDATE USER_INFO SET NAME=#{name}, JOB=#{job}, PHONE=#{phone}, EMAIL=#{email}, ADDRESS=#{address}, HANDICAP=#{handicap} WHERE ID=#{id}
+</update>
+
+
 </mapper>
