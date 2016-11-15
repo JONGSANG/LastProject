@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MyInfoMapper">
+
+<select id="myInfo" resultType="MemberVO">
+SELECT M.ID, U.NAME, U.BIRTH, U.EMAIL, U.PHONE, U.JOB, R.ROLE
+FROM MEMBER M
+INNER JOIN USER_INFO U ON M.ID=U.ID
+INNER JOIN ROLE R ON M.ID=R.ID
+WHERE M.ID=#{id}
+</select>
+
+</mapper>

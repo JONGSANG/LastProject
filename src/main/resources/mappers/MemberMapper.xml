@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MemberMapper">
+
+<insert id="member">
+	INSERT INTO MEMBER(ID, PWD) VALUES(#{id}, #{pwd})
+</insert>
+
+<insert id="user_info">
+	INSERT INTO USER_INFO(ID, NAME, BIRTH, GENDER, JOB, PHONE, EMAIL, ADDRESS, HANDICAP) VALUES(#{id}, #{name}, #{birth}, #{gender}, #{job}, #{phone}, #{email}, #{address}, #{handicap})
+</insert>
+
+<insert id="role">
+	INSERT INTO ROLE(ID) VALUES(#{id})
+</insert>
+</mapper>

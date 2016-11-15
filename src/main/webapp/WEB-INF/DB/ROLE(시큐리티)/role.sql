@@ -7,12 +7,11 @@ drop table ROLE;
 -- ROLE_ADMIN		-- 관리자
 -- ROLE_USER		-- 정회원
 -- ROLE_SEMIUSER	-- 준회원
--- ROLE_BLACK		-- 이용 정지 회원
 --------------------------------------------------------------
 
 CREATE TABLE ROLE(
-ID varchar(50) ,
-ROLE varchar(100),
+ID varchar(50) not null,
+ROLE varchar(100) DEFAULT 'ROLE_SEMIUSER' not null,
 
 constraint fk_ROLE foreign key(ID) references member(ID)
 );
@@ -25,4 +24,4 @@ insert into ROLE values('kosta', 'ROLE_USER');
 insert into ROLE values('kosta1', 'ROLE_SEMIUSER');
 insert into ROLE values('kosta2', 'ROLE_USER');
 insert into ROLE values('kosta3', 'ROLE_USER');
-insert into ROLE values('kosta4', 'ROLE_BLACK');
+insert into ROLE values('kosta4', 'ROLE_USER');

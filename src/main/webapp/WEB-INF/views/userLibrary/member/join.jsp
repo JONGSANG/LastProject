@@ -7,6 +7,7 @@
 <script src="//code.jquery.com/jquery-3.1.0.min.js"></script>
 <script>
 $(document).ready(function(){
+	/* 메세지로만 암호일치여부확인 */
 	$('#pwd').keyup(function(){
 		$('#check').text('');
 	});
@@ -19,11 +20,25 @@ $(document).ready(function(){
 		    $('#check').html("암호가 다릅니다. 다시 입력해주세요");
 		}
 	});
+	
+	/* 가입하기 클릭시 */
+	var form = $("form[role='form']");
+	$('#submit').click(function(){
+		if($('#pwd').val()==$('#repwd').val()){
+			form.submit();
+		} else {
+		    alert("입력하신 두개의 암호가 다릅니다. 다시 입력해주세요")
+		    $('#pwd').focus();
+		    $('#pwd').val('');
+		    $('#pwd').val('');
+		}
+	})
+	
 });
 </script>
 </head>
 <body>
-	<form method="post">
+	<form role="form" method="post">
 		<label for="id">ID</label>
 		<input type="text" id="id" name="id" placeholder="최대 12자 영문/숫자" maxlength="12" autofocus required>
 		<input type="button" id="result" value="ID중복확인"><br>
@@ -33,12 +48,12 @@ $(document).ready(function(){
 		<input type="password" id="repwd" name="repwd" placeholder="비밀번호 확인" maxlength="12" required>
 		<font id="check" color="red"></font><br>
 		<label for="name">이름</label>
-		<input type="text" id="name" name="name" placeholder="김세호" required><br>
+		<input type="text" id="name" name="name" placeholder="이름" required><br>
 		<label for="birth">생년월일</label>
-		<input type="text" id="birth" name="birth" maxlength="6" placeholder="주민등록번호 앞 6자리" required><br>
+		<input type="date" id="birth" name="birth" required><br>
 		<label for="gender">성별</label>
-		남성 <input type="radio" name="gender" value="1">
-		여성 <input type="radio" name="gender" value="-1" ><br>
+		남성 <input type="radio" name="gender" value="남" checked="checked">
+		여성 <input type="radio" name="gender" value="여" ><br>
 		<label for="name">직업</label>
 		<select name="job">
 			<option>학생</option>
@@ -57,8 +72,8 @@ $(document).ready(function(){
 		정상 <input type="radio" name="handicap" checked="checked" value="1">
 		장애인 <input type="radio" name="handicap" value="-1">
 		<br>
-		<input type="submit" value="가입하기">
 		<input type="reset" value="다시쓰기">
 	</form>
+		<button type="submit" id="submit" value="가입하기">가입하기</button>
 </body>
 </html>
