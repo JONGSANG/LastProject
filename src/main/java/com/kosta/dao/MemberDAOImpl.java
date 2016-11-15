@@ -13,13 +13,10 @@ public class MemberDAOImpl implements MemberDAO {
 	
 	@Autowired
 	private SqlSession sqlsession;
-	@Autowired
-	private BCryptPasswordEncoder passwordEncoder;
 	
 	@Override
 	@Transactional
 	public void memberJoin(MemberVO vo) throws Exception {
-		vo.setPwd(passwordEncoder.encode(vo.getPwd()));
 		sqlsession.insert("MemberMapper.member" , vo);
 		sqlsession.insert("MemberMapper.user_info" , vo);
 		sqlsession.insert("MemberMapper.role", vo.getId());
