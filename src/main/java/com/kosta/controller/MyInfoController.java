@@ -1,5 +1,7 @@
 package com.kosta.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -74,7 +76,7 @@ public class MyInfoController {
 	}
 	
 	@RequestMapping(value="userLibrary/myInfo/leave", method=RequestMethod.POST)
-	public String leavePOST(String rawPassword, RedirectAttributes rttr) throws Exception{
+	public String leavePOST(@RequestParam("password") String rawPassword, HttpSession session, RedirectAttributes rttr) throws Exception{
 		logger.info("회원탈퇴 페이지");
 		
 		boolean result=myInfoService.passwordCheck(rawPassword);
@@ -85,6 +87,8 @@ public class MyInfoController {
 			return "redirect:/userLibrary/myInfo/leave";
 		}
 		
+		myInfoService.delete();
+		session.invalidate();
 		rttr.addAttribute("leave", "leave");
 		
 		return "redirect:/";

@@ -34,6 +34,7 @@ $(document).ready(function(){
 		}
 	})
 	
+	
 });
 </script>
 </head>
@@ -50,7 +51,7 @@ $(document).ready(function(){
 		<label for="name">이름</label>
 		<input type="text" id="name" name="name" placeholder="이름" required><br>
 		<label for="birth">생년월일</label>
-		<input type="date" id="birth" name="birth" required><br>
+		<input type="date" id="birth" name="birth" required="required"><br>
 		<label for="gender">성별</label>
 		남성 <input type="radio" name="gender" value="남" checked="checked">
 		여성 <input type="radio" name="gender" value="여" ><br>
@@ -72,8 +73,8 @@ $(document).ready(function(){
 		정상 <input type="radio" name="handicap" checked="checked" value="1">
 		장애인 <input type="radio" name="handicap" value="-1">
 		<br>
+		<button type="submit" id="submit" value="가입하기">가입하기</button>
 		<input type="reset" value="다시쓰기">
 	</form>
-		<button type="submit" id="submit" value="가입하기">가입하기</button>
 </body>
 </html>

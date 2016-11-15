@@ -25,13 +25,24 @@ INNER JOIN ROLE R ON M.ID=R.ID
 WHERE M.ID=#{id}
 </select>
 
-<update id="member">
+<update id="updateMember">
 UPDATE MEMBER SET PWD=#{pwd} WHERE ID=#{id}
 </update>
 
-<update id="user_info">
+<update id="updateUser_info">
 UPDATE USER_INFO SET NAME=#{name}, JOB=#{job}, PHONE=#{phone}, EMAIL=#{email}, ADDRESS=#{address}, HANDICAP=#{handicap} WHERE ID=#{id}
 </update>
 
+<delete id="deleteMember">
+DELETE FROM MEMBER WHERE ID=#{id}
+</delete>
+
+<delete id="deleteUser_info">
+DELETE FROM USER_INFO WHERE ID=#{id}
+</delete>
+
+<delete id="deleteRole">
+DELETE FROM ROLE WHERE ID=#{id}
+</delete>
 
 </mapper>

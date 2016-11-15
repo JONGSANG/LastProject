@@ -1,5 +1,7 @@
 package com.kosta.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +22,9 @@ public class MemberController {
 	@Autowired
 	MemberService memberService;
 	
+	//로그인 페이지에 접속시 세션이 있으면 다른곳으로 튕기는 기능 미구현
 	@RequestMapping(value="userLibrary/member/login", method=RequestMethod.GET)
-	public String loginGET(Model model) {
+	public String loginGET(Model model, HttpSession session) {
 		logger.info("로그인 페이지");
 		return "userLibrary/member/login";
 	}

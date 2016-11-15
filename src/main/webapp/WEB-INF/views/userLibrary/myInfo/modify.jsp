@@ -51,13 +51,13 @@ $(document).ready(function(){
 		<input type="text" id="name" name="name" value="${MemberVO.name}" readonly="readonly"><br>
 		<label for="birth"><font color="blue">생년월일</font></label>
 		<input type="date" id="birth" name="birth" value="${MemberVO.birth}" readonly="readonly"><br>
-		<label for="gender">성별</label>
-		<c:if test="${gender=='남'}">
-			<p>남성
+		<label for="gender"><font color="blue">성별</font></label>
+		<c:if test="${MemberVO.gender=='남'}">
+			남성
 		</c:if>
-		<c:if test="${gender=='여'}">
-			<p>여성
-		</c:if>
+		<c:if test="${MemberVO.gender=='여'}">
+			여성
+		</c:if><br>
 		<label for="job">직업</label>
 		<select name="job">
 			<option>학생</option>
@@ -67,11 +67,11 @@ $(document).ready(function(){
 			<option>기타</option>
 		</select><br>
 		<label for="phone">전화번호</label>
-		<input type="tel" id="phone" name="phone" placeholder="-없이 작성하세요" value="${MemberVO.phone}"><br>
+		<input type="tel" id="phone" name="phone" placeholder="-없이 작성하세요" value="${MemberVO.phone}" required><br>
 		<label for="email">이메일</label>
-		<input type="email" id="email" name="email" value="${MemberVO.email}"><br>
+		<input type="email" id="email" name="email" value="${MemberVO.email}" required><br>
 		<label for="address">주소</label>
-		<input type="text" id="address" name="address" placeholder="서울" value="${MemberVO.address}"><br>
+		<input type="text" id="address" name="address" placeholder="서울" value="${MemberVO.address}" required><br>
 		<label for="handicap">장애여부</label>
 		정상 <input type="radio" name="handicap" checked="checked" value="1">
 		장애인 <input type="radio" name="handicap" value="-1"><br>
@@ -82,8 +82,8 @@ $(document).ready(function(){
 		<c:if test="${MemberVO.role=='ROLE_USER'}">
 			정회원
 		</c:if><br>
-		<input type="reset" value="다시쓰기">
+		<button type="submit" id="submit" value="수정하기">수정하기</button>	
 	</form>
-		<button type="submit" id="submit" value="수정하기">수정하기</button>
+		
 </body>
 </html>

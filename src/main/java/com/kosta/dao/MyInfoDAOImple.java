@@ -31,12 +31,15 @@ public class MyInfoDAOImple implements MyInfoDAO {
 	@Override
 	@Transactional
 	public void update(MemberVO vo) throws Exception {
-		sqlSession.update("MyInfoMapper.member", vo);
-		sqlSession.update("MyInfoMapper.user_info", vo);
+		sqlSession.update("MyInfoMapper.updateMember", vo);
+		sqlSession.update("MyInfoMapper.updateUser_info", vo);
 	}
 
 	@Override
+	@Transactional
 	public void delete(String id) throws Exception {
-		sqlSession.delete("MyInfoMapper.delete", id);
+		sqlSession.delete("MyInfoMapper.deleteUser_info", id);
+		sqlSession.delete("MyInfoMapper.deleteRole", id);
+		sqlSession.delete("MyInfoMapper.deleteMember", id);
 	}
 }
