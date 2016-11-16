@@ -14,7 +14,7 @@
 						<li class="th"><a href="/userLibrary/member/join">회원가입</a></li>
 						</security:authorize>
 						<security:authorize access="isAuthenticated()">
-						<li class="fi"><a href="/">홈으로</a></li>
+						<li class="fii"><a href="/">홈으로</a></li>
 						<li class="se"><a href="/userLibrary/myInfo/myInfo">마이페이지</a></li>
 						<li class="th"><a href="${logout}">로그아웃</a></li>
 						</security:authorize>

@@ -17,6 +17,7 @@
       <div id="mainleft">
       <!-- 슬라이드 시작 -->
          <div id="wrap">
+         <img src="/resources/images/popup.png" / width="150">
             <div id="main_bn">
                <li class="li-img"><a href="/"><img src="/resources/images/image_1.jpg" alt="" /></a></li>
                <li class="li-img"><a href="/"><img src="/resources/images/image_2.jpg" alt="" /></a></li>

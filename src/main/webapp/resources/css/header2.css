@@ -9,6 +9,7 @@ html, body {width:100%; padding:0; margin:0;}
  #header2 {width:1024px; margin:0 auto; z-index:1000; position:relative; display: flex; padding-top: 50px}
 #leftmenu {flex: 1; background-color: white;}
 #rightcontent {flex: 4; background-color: #ffffff; float: left;}
+#logincontent {width:1024px; height:450px; margin:0 auto; z-index:1000; position:relative; padding-top: 50px; }
 .slider { width:1024px; height:100px; margin:0 auto; position:relative; z-index:1001;  }
 
 /*********************************header*************************************/
@@ -40,9 +41,10 @@ h1 {display:inline-block; z-index:100; position:absolute; top:6px; left:465px; z
 a {text-decoration:none; cursor:pointer;text-decoration:none; }
 
 .wrapper{width:100%; position:relative; overflow:hidden;  padding:7px 0 10px 0; }
-#top_nav li {float:left;padding-right:8px;margin-right:6px;z-index: 1000;}
+#top_nav li {float:right;padding-right:8px;margin-right:6px;z-index: 1000;}
 #top_nav li a {color:#000;text-decoration:none;font-size:12px; font-family: 'Noto Sans KR', sans-serif;}
 #top_nav .fi {padding-right:0;margin-right:0;background:none; position: absolute; right: 105px;}
+#top_nav .fii {padding-right:0;margin-right:0;background:none; position: absolute; right: 130px;}
 #top_nav .se {padding-right:0;margin-right:0;background:none; position: absolute; right: 60px;}
 #top_nav .th {padding-right:0;margin-right:0;background:none; position: absolute; right: 1px;}
 

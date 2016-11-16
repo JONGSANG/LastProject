@@ -3,7 +3,7 @@
 @import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
 
 #userLibrary {width:1024px; margin:0 auto; z-index:1000; position:relative; display: flex;}
-#mainleft {flex: 1; background-color: aqua;}
+#mainleft {flex: 1; background-color: white;}
 #maincenter {flex: 2; background-color: #ffffff;}
 #mainright {flex: 1; background-color: white;}
 
@@ -15,10 +15,10 @@
  .loginForm .box p{margin-top:5px}
  .loginForm .box p span,
  .loginForm .box p input{height:18px;font-size:11px;color:#737373;line-height:18px;vertical-align:middle}
- .loginForm .loginBtn{display:block;position:absolute;top:11px;right:0;width:80px;height:60px;padding:10px;border-radius:5px;
+ .loginForm .loginBtn{display:block;position:absolute;top:11px;right:0;width:100px;height:80px;padding:10px;border-radius:5px;
  font-size:14px;font-weight:700;color:#fff;line-height:60px;text-align:center;text-shadow:1px 1px 1px #004773;background:#333}
-.llogbottom{float: left; padding-left: 5px;} 
-.rlogbottom{float: right;}
+.llogbottom{float: left; padding-left: 5px; text-decoration: none; size: 10px  } 
+.rlogbottom{float: right; text-decoration: none;}
 
 /*------search------------------------*/
 .mainsearch {background-image: url("../images/mainsearch.png"); width: 512px; height: 303px; padding-top: 5px;}
@@ -123,5 +123,6 @@ ul.tabs li.active {
             #main_bn_btn li {
                 float: left; padding:0px 2px; margin-right:5px; 
             }
-			a, a:hover, a:visited { text-decoration:none; }
+			a, a:hover, a:visited { text-decoration:none; color: gray; }
 			ul li { list-style : none; }
+
