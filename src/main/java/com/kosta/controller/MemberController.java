@@ -39,6 +39,7 @@ public class MemberController {
 	public String joinPOST(MemberVO vo, RedirectAttributes rttr) throws Exception {
 		logger.info("회원가입 페이지");
 		
+		//회원등록(PWD암호화)
 		memberService.memberJoin(vo);
 		
 		rttr.addFlashAttribute("join", "join");
