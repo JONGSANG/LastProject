@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import com.kosta.dao.F_BoardDAO;
@@ -19,6 +21,8 @@ public class F_BoardServiceImpl implements F_BoardService {
 	// 게시물을 담을 vo가 필요하다.
 	@Override
 	public void regist(F_BoardVO f_board) throws Exception {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		f_board.setId(auth.getName());
 		f_boardDao.create(f_board);
 	}
 

@@ -19,7 +19,7 @@
 		</tr>
 		<tr>
 			<th>ID</th>
-			<th><input type="text" name="id" placeholder="Enter id"></th>
+			<th><input type="text" name="id" value="${ id }" placeholder="Enter id"></th>
 		</tr>
 		<tr>
 			<th colspan="2"><button type="submit">확인</button>

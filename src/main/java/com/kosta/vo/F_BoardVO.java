@@ -9,10 +9,11 @@ public class F_BoardVO {
 	private String id;
 	private Date write_date;
 	private int viewcnt;
-	public int getnum() {
+	
+	public int getNum() {
 		return num;
 	}
-	public void setnum(int num) {
+	public void setNum(int num) {
 		this.num = num;
 	}
 	public String getTitle() {
@@ -27,16 +28,16 @@ public class F_BoardVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public String getid() {
+	public String getId() {
 		return id;
 	}
-	public void setid(String id) {
+	public void setId(String id) {
 		this.id = id;
 	}
-	public Date getwrite_date() {
+	public Date getWrite_date() {
 		return write_date;
 	}
-	public void setwrite_date(Date write_date) {
+	public void setWrite_date(Date write_date) {
 		this.write_date = write_date;
 	}
 	public int getViewcnt() {
@@ -45,10 +46,7 @@ public class F_BoardVO {
 	public void setViewcnt(int viewcnt) {
 		this.viewcnt = viewcnt;
 	}
-	@Override
-	public String toString() {
-		return "F_BoardVO [num=" + num + ", title=" + title + ", content=" + content + ", id=" + id + ", write_date="
-				+ write_date + ", viewcnt=" + viewcnt + "]";
-	}
+	
+	
 	
 }
