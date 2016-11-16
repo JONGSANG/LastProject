@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kosta.mappers.SearchMapper">
+
+
+
+
+<!-- 
+<select id="readInfo" resultType="BookVO">
+	select bNo, bTitle, bWriter, bCompany, bIntro, buy_date, bLocation, bYear
+	from book
+	where bNo = #{bNo}
+</select> -->
+
+<!-- <select id="search" resultType="BookVO">
+	select * from book where #{select} = #{value}
+</select> -->
+<!-- 
+<select id="search" resultType="BookVO">
+	<![CDATA[
+	select * from book where bTitle like concat('%',#{value},'%')
+	]]>
+</select>
+ -->
+ 
+ 
+ 
+ <sql id="search">
+ <if test="searchType != null" > 
+     and ${searchType} like CONCAT('%', #{keyword}, '%')
+ </if>  
+</sql>
+
+<select id="b_searchResult" resultType="SearchVO">
+<![CDATA[  
+select a.bNO,  b.brent , btitle, bWriter, bCompany, bIntro, buy_date, bLocation, bYear
+from book a 
+inner join room_b b on a.bno = b.bno 
+where  bLocation > 0 
+]]> 
+  <include refid="search"></include>
+</select>
+
+<select id="n_searchResult" resultType="SearchVO">
+<![CDATA[  
+select a.bNO,  b.brent , btitle, bWriter, bCompany, bIntro, buy_date, bLocation, bYear
+from book a 
+inner join room_b b on a.bno = b.bno 
+where  bLocation > 0 
+and buy_date between #{start_date} and #{end_date}
+]]> 
+</select>
+ 
+ <select id="readInfo" resultType="SearchVO">
+select a.bNO,  b.brent , btitle, bWriter, bCompany, bIntro, buy_date, bLocation, bYear
+from book a 
+inner join room_b b on a.bno = b.bno 
+where a.bNo = #{bNo}
+ </select>
+ 
+</mapper>
