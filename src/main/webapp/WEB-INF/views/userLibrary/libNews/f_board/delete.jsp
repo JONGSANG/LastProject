@@ -6,6 +6,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+<form role="form" method="post">
 
+	<input type='hidden' name='num' value="${boardVO.num}">
+
+</form>
 </body>
 </html>
