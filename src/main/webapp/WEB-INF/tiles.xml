@@ -37,7 +37,7 @@ body - 계속 바뀌면서 출력하는 content영역
 	임시해결 - 내부 내용만 바뀌는 동적인 좌측단(menu)을 만들기 힘들어서, 템플릿을 여러개 만드는 방법으로 해결
 	-->
 	<definition name="*/*/*" template="/WEB-INF/views/tiles/{1}/menuLayout.jsp">
-		<put-attribute name="header" value="/WEB-INF/views/tiles/{1}/header.jsp"></put-attribute>
+		<put-attribute name="header2" value="/WEB-INF/views/tiles/{1}/header2.jsp"></put-attribute>
 		<put-attribute name="menu" value="/WEB-INF/views/tiles/{1}/menu/{2}.jsp"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/{1}/{2}/{3}.jsp"></put-attribute>
 		<put-attribute name="footer" value="/WEB-INF/views/tiles/{1}/footer.jsp"></put-attribute>
@@ -47,7 +47,7 @@ body - 계속 바뀌면서 출력하는 content영역
 	3단구조 템플릿에서 해결 안되는것들을 처리하기 위한 템플릿. EX> userLibrary/libNews/notice/write(글쓰기) 
 	extends="*/*/*"로 상속이 인식을 못해서 그냥 영역을 새로 작성함(body를 제외하면 3단 구조와 경로는 같음)-->
 	<definition name="*/*/*/*" template="/WEB-INF/views/tiles/{1}/menuLayout.jsp">
-		<put-attribute name="header" value="/WEB-INF/views/tiles/{1}/header.jsp"></put-attribute>
+		<put-attribute name="header2" value="/WEB-INF/views/tiles/{1}/header2.jsp"></put-attribute>
 		<put-attribute name="menu" value="/WEB-INF/views/tiles/{1}/menu/{2}.jsp"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/{1}/{2}/{3}/{4}.jsp"></put-attribute>
 		<put-attribute name="footer" value="/WEB-INF/views/tiles/{1}/footer.jsp"></put-attribute>

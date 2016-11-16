@@ -8,7 +8,7 @@
 <body>
 <table>
 	<tr>
-		<th width="400">
+		<th>
 		<h2>인사말</h2>
 		<h5>
 			<font color="gray">도서관에 오신것을 환영합니다.</font>

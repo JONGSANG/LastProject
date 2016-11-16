@@ -1,0 +1,55 @@
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+/* Global properties ======================================================== */
+html, body {width:100%; padding:0; margin:0;}
+
+ #header2 {width:1024px; margin:0 auto; z-index:1000; position:relative; display: flex; padding-top: 50px}
+#leftmenu {flex: 1; background-color: white;}
+#rightcontent {flex: 4; background-color: #ffffff; float: left;}
+.slider { width:1024px; height:100px; margin:0 auto; position:relative; z-index:1001;  }
+
+/*********************************header*************************************/
+ 
+.header {position:relative; width:100%;}
+.header>div { position:relative; width:100%;}
+header {width:1024px; margin:0 auto; z-index:1000; position:relative;}
+.header .nav {position:absolute; width:100%; z-index:999;padding-bottom:1px; background-color: rgba(22,22,22,0.1); height: 110px; border-radius: 20px }
+.topnavnav {width:1024px; margin:3px auto 0 auto; position:relative;  }
+.subpages-nav {position:relative; width:100%; z-index:999; height:174px; }
+.subpages-nav nav {background:transparent !important; padding-top:59px; margin-top:0 !important;  }
+h1 {display:inline-block; z-index:100; position:absolute; top:6px; left:465px; z-index:1000;}
+
+#topmenu{list-style-type: none; padding:46px 0px 0px 40px;}
+.nav ul {display:inline-block;display:block;  }
+.nav ul #menu {float:left; display:inline-block; line-height:24px; background:url(../images/li.png) 0 0 no-repeat; padding:0 20px 0 38px; }
+.nav ul #menu.li-none {background:transparent;}
+.nav ul #menu.li-left {margin-left:150px;} 
+.nav ul #menu a {font-size:18px; line-height:24px; color:#55668E; display:inline-block; font-family: 'Jeju Gothic', serif;}
+.nav ul #menu a:hover { color:#0000a0;}
+.nav ul #menu .sub{position: absolute; height: 0px; overflow: hidden; transition: height .2s; -webkit-transition: height .2s; }
+.nav ul #menu:hover .sub{height: 300px;} 
+.sub {padding-top: 38px; margin-left: -25px}
+.submenu{width:140px; height:30px; line-height : 24px;  background-color: rgba(231,231,231,0.9);  text-align: center; padding-top: 10px;}
+.submenu:hover {color:#0000a0;}
+.sub .end{border-radius: 0 0 10px 10px}
+
+
+a {text-decoration:none; cursor:pointer;text-decoration:none; }
+
+.wrapper{width:100%; position:relative; overflow:hidden;  padding:7px 0 10px 0; }
+#top_nav li {float:left;padding-right:8px;margin-right:6px;z-index: 1000;}
+#top_nav li a {color:#000;text-decoration:none;font-size:12px; font-family: 'Noto Sans KR', sans-serif;}
+#top_nav .fi {padding-right:0;margin-right:0;background:none; position: absolute; right: 105px;}
+#top_nav .se {padding-right:0;margin-right:0;background:none; position: absolute; right: 60px;}
+#top_nav .th {padding-right:0;margin-right:0;background:none; position: absolute; right: 1px;}
+
+
+.dat{width:1024px; margin:0 auto;  position:relative; font-family: 'Jeju Hallasan', cursive; color: navy;  }
+
+/****************************footer************************/
+footer {width:1024px; margin:0 auto; z-index:1000; position:relative; padding-top: 5px}
+footer a {color: blue; font-size: 14px; font-family: 'Noto Sans KR', serif; font-weight: 500;}
+#bottom-text {float: right; padding-right: 260px; font-size: 14px; font-family: 'Noto Sans KR', serif; color: #8C8C8C}

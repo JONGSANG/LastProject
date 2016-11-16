@@ -1,6 +1,105 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<div>
-	userLibrary
-	header(여기에 상단 템플릿을 작성해야함)
-</div>
+<!--==============================header=================================-->
+  <div class="header">
+  <div class="wrapper">
+				<nav>
+					<ul id="top_nav">
+						<li class="fi"><a href="/">홈으로</a></li>
+						<li class="se"><a href="#">로그인</a></li>
+						<li class="th"><a href="#">회원가입</a></li>
+					</ul>
+				</nav>
+				<div class="dat">
+				<span class="date">월요일 10월 9일 2016년 17시 51분</span>
+				</div>
+			</div>
+  	<div>
+        <div class="nav">
+            <nav id="topmenu">  
+                <ul >
+                     <li id="menu" class="current li-none"><a href="#">도서관소개</a>
+                     <ul class="sub">
+                     	<li><a class="submenu" href="userLibrary/libInfo/org">조직도</a></li>
+                     	<li><a class="submenu" href="userLibrary/libInfo/map">찾아오는 길</a></li>
+                     	<li><a class="submenu" href="userLibrary/libInfo/s_status">시설현황</a></li>
+                     	<li><a class="submenu" href="userLibrary/libInfo/intro">인사말</a></li>
+                     	<li><a class="submenu end" href="userLibrary/libInfo/b_status">자료현황</a></li>
+                     </ul>
+                     </li>
+                    <li id="menu"><a href="#">&nbsp;이용안내&nbsp;</a>
+                    <ul class="sub">
+                    	<li><a class="submenu" href="userLibrary/using/time">이용시간</a></li>
+                    	<li><a class="submenu" href="userLibrary/using/s_room">열람실</a></li>
+                    	<li><a class="submenu" href="userLibrary/using/b_rent">책대출안내</a></li>
+                    	<li><a class="submenu" href="userLibrary/using/m_info">회원안내</a></li>
+                    	<li><a class="submenu" href="userLibrary/using/p_info">주차장안내</a></li>
+                    	<li><a class="submenu end" href="userLibrary/using/b_room">문헌정보실</a></li>
+                    </ul>
+                    </li>
+                    <li id="menu"><a href="#">&nbsp;&nbsp;&nbsp;검색&nbsp;&nbsp;&nbsp;</a>
+                    <ul class="sub">
+                    	<li><a class="submenu" href="userLibrary/search/b_search">도서검색</a></li>
+                    	<li><a class="submenu" href="userLibrary/search/n_search">신착도서</a></li>
+                    	<li><a class="submenu" href="userLibrary/search/p_search">간행물 검색</a></li>
+                    	<li><a class="submenu end" href="userLibrary/search/b_request">희망도서신청</a></li>
+                    </ul>
+                    </li>
+                    <li id="menu" class="li-left li-none"><a href="#">도서관소식</a>
+                    <ul class="sub">
+                    	<li><a class="submenu" href="userLibrary/libNews/notice">공지사항</a></li>
+                    	<li><a class="submenu" href="userLibrary/libNews/schedule">도서관 일정</a></li>
+                    	<li><a class="submenu" href="userLibrary/libNews/recommand">추천도서</a></li>
+                    	<li><a class="submenu" href="userLibrary/libNews/best">대출도서 베스트</a></li>
+                    	<li><a class="submenu" href="userLibrary/libNews/f_board">자유게시판</a></li>
+                    	<li><a class="submenu end" href="userLibrary/libNews/openSource">공개자료실</a></li>
+                    </ul>
+                    </li>
+                    <li id="menu"><a href="#">&nbsp;&nbsp;서비스&nbsp;&nbsp;</a>
+                    <ul class="sub">
+                    	<li><a class="submenu" href="userLibrary/service/after">방과후 학교</a></li>
+                    	<li><a class="submenu" href="userLibrary/service/culture">문화 행사</a></li>
+                    	<li><a class="submenu" href="userLibrary/service/food">구내 식단표</a></li>
+                    	<li><a class="submenu" href="userLibrary/service/delivery">도서배달서비스</a></li>
+                    	<li><a class="submenu end" href="userLibrary/service/min_board">민원게시판</a></li>
+                    </ul>
+                    </li>
+                    <li id="menu"><a href="#">&nbsp;&nbsp;내정보&nbsp;&nbsp;</a>
+                    <ul class="sub">
+                    	<li><a class="submenu" href="userLibrary/myInfo/modify">개인정보 수정</a></li>
+                    	<li><a class="submenu" href="userLibrary/myInfo/modifyd_status">대출현황</a></li>
+                    	<li><a class="submenu" href="userLibrary/myInfo/modifyr_status">예약현황</a></li>
+                    	<li><a class="submenu" href="userLibrary/myInfo/modifyd_history">대출내역</a></li>
+                    	<li><a class="submenu" href="userLibrary/myInfo/modifyleave">회원탈퇴</a></li>
+                    	<li><a class="submenu" href="userLibrary/myInfo/modifyr_history">신청내역</a></li>
+                    	<li><a class="submenu end" href="userLibrary/myInfo/modifys_history">행사신청내역</a></li>
+                    </ul>
+                    </li>
+                </ul>
+            </nav>
+      </div>
+        <header>
+            <h1><a href="/"><img src="/resources/images/HomeIcon.png" alt="HomeIcon" width="100px"></a></h1>
+        </header>
+        <div id="slide">		
+            <div class="slider">
+                <ul class="items">
+                    <li><img src="/resources/images/header1.png" alt="header1" /></li>
+                    <li><img src="/resources/images/header2.png" alt="header2" /></li>
+                    <li><img src="/resources/images/header3.png" alt="header2" /></li>
+                    <li><img src="/resources/images/header4.png" alt="header2" /></li>
+                    <li><img src="/resources/images/header5.png" alt="header2" /></li>
+                    <li><img src="/resources/images/header6.png" alt="header2" /></li>
+                </ul>
+            </div>
+            <ul class="pags">
+                <li><a href="#"><strong>0</strong>1</a></li>
+                <li><a href="#"><strong>0</strong>2</a></li>
+                <li><a href="#"><strong>0</strong>3</a></li>
+                <li><a href="#"><strong>0</strong>4</a></li>
+                <li><a href="#"><strong>0</strong>5</a></li>
+                <li><a href="#"><strong>0</strong>6</a></li>
+            </ul>	
+        </div>
+    </div>
+  </div>    
