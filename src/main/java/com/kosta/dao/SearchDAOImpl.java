@@ -6,7 +6,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.kosta.vo.BookVO;
 import com.kosta.vo.SearchVO;
 
 @Repository
@@ -30,10 +29,14 @@ public class SearchDAOImpl implements SearchDAO{
 		return sqlSession.selectOne("com.kosta.mappers.SearchMapper.readInfo", bNo);
 	}
 
-	/*
 	@Override
-	public List<BookVO> listAll() throws Exception {
-		return sqlSession.selectList("com.kosta.mappers.SearchMapper.search");
+	public int listNSearchCount(SearchVO vo) throws Exception {
+		return sqlSession.selectOne("com.kosta.mappers.SearchMapper.listNSearchCount", vo);
 	}
-*/
+
+	@Override
+	public int listBSearchCount(SearchVO vo) throws Exception {
+		return sqlSession.selectOne("com.kosta.mappers.SearchMapper.listBSearchCount", vo);
+	}
+
 }

@@ -1,17 +1,17 @@
 package com.kosta.controller;
 
-import java.util.Date;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.kosta.service.SearchService;
+import com.kosta.vo.PageMaker;
 import com.kosta.vo.SearchVO;
 
 @Controller
@@ -28,13 +28,15 @@ public class SearchController {
 	}
 
 	@RequestMapping(value = "userLibrary/search/b_search/result", method = RequestMethod.GET)
-	public String b_searchListGET(Model model, @RequestParam("searchType") String searchType,
-			@RequestParam("keyword") String keyword) throws Exception {
-		SearchVO vo = new SearchVO();
-		vo.setSearchType(searchType);
-		vo.setKeyword(keyword);
-
+	public String b_searchListGET(Model model,@ModelAttribute("pageInfo") SearchVO vo) throws Exception {
 		model.addAttribute("list", service.b_searchResult(vo));
+		
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setPageInfo(vo);
+		
+		pageMaker.setTotalCount(service.listBSearchCount(vo));
+		model.addAttribute("pageMaker", pageMaker);
 		return "userLibrary/search/b_search/index_result";
 	}
 
@@ -49,13 +51,15 @@ public class SearchController {
 	}
 
 	@RequestMapping(value = "userLibrary/search/n_search/result", method = RequestMethod.GET)
-	public String n_searchListGET(Model model, @RequestParam("start_date") String start_date,
-			@RequestParam("end_date") String end_date) throws Exception {
-		SearchVO vo = new SearchVO();
-		vo.setStart_date(start_date);
-		vo.setEnd_date(end_date);
+	public String n_searchListGET(Model model,@ModelAttribute("pageInfo") SearchVO vo) throws Exception {
 		
 		model.addAttribute("list", service.n_searchResult(vo));
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setPageInfo(vo);
+		
+		pageMaker.setTotalCount(service.listNSearchCount(vo));
+		model.addAttribute("pageMaker", pageMaker);
 		return "userLibrary/search/n_search/index_result";
 	}
 

@@ -2,7 +2,7 @@ package com.kosta.vo;
 
 import java.util.Date;
 
-public class SearchVO {
+public class SearchVO extends PageInfo{
 
 	private String searchType, keyword, bNo, bTitle, bWriter, bCompany, bIntro;
 	private Date buy_date; 

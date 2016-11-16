@@ -43,7 +43,24 @@ inner join room_b b on a.bno = b.bno
 where  bLocation > 0 
 ]]> 
   <include refid="search"></include>
+<![CDATA[    
+  order by bno desc
+  limit #{pageStart}, #{perPageNum}
+]]>  
 </select>
+
+  
+<select id="listBSearchCount" resultType="int">
+<![CDATA[  
+select count(a.bNO)
+from book a 
+inner join room_b b on a.bno = b.bno 
+where  bLocation > 0 
+]]>
+  <include refid="search"></include>
+
+</select>  
+
 
 <select id="n_searchResult" resultType="SearchVO">
 <![CDATA[  
@@ -53,7 +70,25 @@ inner join room_b b on a.bno = b.bno
 where  bLocation > 0 
 and buy_date between #{start_date} and #{end_date}
 ]]> 
+<![CDATA[    
+  order by bno desc
+  limit #{pageStart}, #{perPageNum}
+]]>  
+
 </select>
+
+  
+<select id="listNSearchCount" resultType="int">
+<![CDATA[  
+select count(a.bNO)
+from book a 
+inner join room_b b on a.bno = b.bno 
+where  bLocation > 0 
+and buy_date between #{start_date} and #{end_date}
+]]>
+ 
+</select>  
+
  
  <select id="readInfo" resultType="SearchVO">
 select a.bNO,  b.brent , btitle, bWriter, bCompany, bIntro, buy_date, bLocation, bYear
