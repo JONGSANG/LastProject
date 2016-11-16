@@ -35,7 +35,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <!-- 전체 목록 띄우기 -->
 <select id="listAll" resultType="F_BoardVO">
-	select * from f_board
+	select num ,title, content, id, write_date , viewcnt, (select count(num) 
+                                             from f_board_rep a 
+                                             where a.fnum = b.num ) as re_cnt
+   from f_board b
 </select>
 
 <!-- 커맨드 입력 -->
@@ -49,6 +52,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <update id="update_re">
 	update f_board_rep set title=#{title}, content=#{content}, id=#{id} where fnum=#{fnum} and num=#{num}
+</update>
+
+<update id="updateViewCnt">
+ UPDATE f_board 
+	SET
+		VIEWCNT = VIEWCNT + 1
+	WHERE
+		num = #{num} 	
 </update>
 
 </mapper>

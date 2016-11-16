@@ -36,4 +36,7 @@ public interface F_BoardDAO {
 	
 	// 댓글 수정
 	public void update_re(F_Board_ReVO vo2)throws Exception;
+
+	// 게시글 조회수 증가
+	public void updateViewCnt(int num) throws Exception;
 }

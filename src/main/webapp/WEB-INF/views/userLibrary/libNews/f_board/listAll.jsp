@@ -22,7 +22,8 @@
 	<c:forEach items="${list}" var="list" varStatus="var">
 	<tr>
 		<td align="center">${var.index+1}</td>
-		<td align="center"><a href='read?num=${list.num}'>${list.title}</a></td>
+		<td align="center"><a href='read?num=${list.num}'>${list.title} 
+      	<c:if test="${list.re_cnt != 0}">[ ${list.re_cnt} ]</c:if></a></td>
 		<td align="center">${list.id}</td>
 		<td align="center"><fmt:formatDate value="${list.write_date}" pattern="yyyy-MM-dd"/>
 		

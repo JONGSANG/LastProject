@@ -9,6 +9,7 @@ public class F_BoardVO {
 	private String id;
 	private Date write_date;
 	private int viewcnt;
+	private int re_cnt;
 	
 	public int getNum() {
 		return num;
@@ -46,7 +47,11 @@ public class F_BoardVO {
 	public void setViewcnt(int viewcnt) {
 		this.viewcnt = viewcnt;
 	}
-	
-	
+	public int getRe_cnt() {
+		return re_cnt;
+	}
+	public void setRe_cnt(int re_cnt) {
+		this.re_cnt = re_cnt;
+	}
 	
 }

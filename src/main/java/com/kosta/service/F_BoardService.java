@@ -36,4 +36,7 @@ public interface F_BoardService {
 	
 	// 게시물 내용의 댓글 삭제
 	public void remove_re(int num) throws Exception;
+	
+	// 조회수 업데이트
+	public void updateViewCnt(int num) throws Exception;
 }

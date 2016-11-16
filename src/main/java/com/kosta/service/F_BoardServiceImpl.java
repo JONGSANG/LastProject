@@ -77,6 +77,11 @@ public class F_BoardServiceImpl implements F_BoardService {
 		f_boardDao.update_re(board);
 		
 	}
-	
 
+	// 조회수 업데이트
+	@Override
+	public void updateViewCnt(int num) throws Exception {
+		f_boardDao.updateViewCnt(num);
+	}
+	
 }

@@ -51,7 +51,7 @@
 		<table border="1">
 			<tr>
 				<th>ID</th>
-				<th><input type="text" name="id" placeholder="Enter id"></th>
+				<th><input type="text" name="id" placeholder="Enter id" value="${ id }"></th>
 			</tr>
 			<tr>
 				<th>제목</th>
@@ -90,7 +90,6 @@
 				<th>
 					<button type="button"
 						onclick="location.href='remove_re?num=${clist.num}&fnum=${clist.fnum }'">삭제</button>
-					</a>
 				</th>
 			</tr>
 		</c:forEach>
