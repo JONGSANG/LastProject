@@ -8,12 +8,13 @@
 				<nav>
 				<ul id="top_nav">
 						<c:url value="/j_spring_security_logout" var="logout"></c:url>
-						<li class="fi"><a href="/">홈으로</a></li>
 						<security:authorize access="isAnonymous()">
+						<li class="fi"><a href="/">홈으로</a></li>
 						<li class="se"><a href="/userLibrary/member/login">로그인</a></li>
 						<li class="th"><a href="/userLibrary/member/join">회원가입</a></li>
 						</security:authorize>
 						<security:authorize access="isAuthenticated()">
+						<li class="fi"><a href="/">홈으로</a></li>
 						<li class="se"><a href="/userLibrary/myInfo/myInfo">마이페이지</a></li>
 						<li class="th"><a href="${logout}">로그아웃</a></li>
 						</security:authorize>
