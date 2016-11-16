@@ -10,6 +10,7 @@ ID varchar(50) not null,
 PWD varchar(100) not null,
 ENABLED boolean DEFAULT TRUE,
 
+
 constraint pk_member primary key(ID)
 );
 -------------------------------------------------------------

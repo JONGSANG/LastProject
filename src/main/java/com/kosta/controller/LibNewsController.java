@@ -31,6 +31,8 @@ public class LibNewsController {
 		logger.info("register get 페이지 입니다.");
 		logger.info(vo.toString());		// Console 창에 띄어줌
 		
+		
+		
 		return "userLibrary/libNews/f_board/register";	// register.jsp(글쓰기)페이지로 이동
 	}
 

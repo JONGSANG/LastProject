@@ -7,7 +7,7 @@
 	
 	<bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
 	 <!-- login-page="/userLibrary/member/login" -->
-	<security:http>
+	<security:http use-expressions="true">
 		<security:form-login login-page="/userLibrary/member/login"/>
 		<security:logout logout-success-url="/"/>
 		<security:intercept-url pattern="/userLibrary/myInfo/myInfo" access="ROLE_SEMIUSER" />

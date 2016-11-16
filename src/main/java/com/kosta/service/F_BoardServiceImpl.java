@@ -77,5 +77,6 @@ public class F_BoardServiceImpl implements F_BoardService {
 		f_boardDao.update_re(board);
 		
 	}
+	
 
 }
