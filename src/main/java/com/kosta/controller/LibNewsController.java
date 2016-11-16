@@ -4,6 +4,8 @@ import javax.inject.Inject;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,6 +32,11 @@ public class LibNewsController {
 		
 		logger.info("register get 페이지 입니다.");
 		logger.info(vo.toString());		// Console 창에 띄어줌
+		
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication(); auth = SecurityContextHolder.getContext().getAuthentication();
+				// AuthenticationManager에 인증을 요청할 때 필요한 정보를 담는 목적
+		
+	    model.addAttribute("id", auth.getName());	// id의 정보를 담아 넘김
 		
 		return "userLibrary/libNews/f_board/register";	// register.jsp(글쓰기)페이지로 이동
 	}
@@ -63,15 +70,21 @@ public class LibNewsController {
 		
 		logger.info("read get 페이지");		// Console 창에 알림띄어줌
 		
+		service.updateViewCnt(num);
+		
 		model.addAttribute("boardVO", service.read(num));	// boardVO라는 별칭으로 service.read(num)을 담음 , 그 num에 해당하는 content를 띄우기 위해서
 		model.addAttribute("num", num);	// num 값을 보냄
 		model.addAttribute("clist", service.commentList(num));	// 답변 목록 띄우기 위해서
+		
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+	    model.addAttribute("id", auth.getName());
+		
 		return "userLibrary/libNews/f_board/read";	// read.jsp로 페이지 이동
 	}
 
 	// 댓글 작성시 값보내서 띄우기
 	@RequestMapping(value = "userLibrary/libNews/f_board/read", method = RequestMethod.POST)	// 기입한 주소값으로 POST방식으로 보냄
-	public ModelAndView register_rePOST(@RequestParam("num") String num, F_Board_ReVO vo2, RedirectAttributes rttr)
+	public ModelAndView register_rePOST(@RequestParam("num") String num, F_Board_ReVO vo2, RedirectAttributes rttr, Model model)
 			throws Exception {
 		
 		logger.info("comment post");

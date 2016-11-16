@@ -68,4 +68,11 @@ public class F_BoardDAOImpl implements F_BoardDAO {
 	public void update_re(F_Board_ReVO vo2) throws Exception {
 		sqlSession.update("com.kosta.mappers.F_BoardMapper.update_re", vo2);
 	}
+
+	// 조회수 업데이트
+	@Override
+	public void updateViewCnt(int num) throws Exception {
+		sqlSession.update("com.kosta.mappers.F_BoardMapper.updateViewCnt", num);
+		
+	}
 }
