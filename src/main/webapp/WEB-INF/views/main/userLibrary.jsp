@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="security"
-	uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,14 +59,14 @@
 		<div id="maincenter">
 			<div class="mainsearch">
 				<img src="/resources/images/searchIcon.png" width="100">
-				<form class="searchform cf" action="/userLibrary/search/b_search/result">
-				<select id="selectbox" name="searchType">
+				<form class="searchform cf"
+					action="/userLibrary/search/b_search/result">
+					<select id="selectbox" name="searchType">
 						<option value="bTitle">제목명</option>
 						<option value="bWriter">저자명</option>
 						<option value="bCompany">출판사</option>
-				</select>
-					<input type="text" name='keyword' id="keywordInput">
-					<button id="searchBtn" >검색</button>
+					</select> <input type="text" name='keyword' id="keywordInput">
+					<button id="searchBtn">검색</button>
 				</form>
 			</div>
 			<!-- 검색 end -->
@@ -74,16 +74,57 @@
 			<div id="container">
 				<ul class="tabs">
 					<li class="active" rel="tab1">공지사항</li>
-					<li rel="tab2">구매랭킹</li>
-					<li rel="tab3">추후 결정될 메뉴</li>
+					<li rel="tab2">자유게시판</li>
+					<li rel="tab3">민원게시판</li>
 				</ul>
 				<div class="tab_container">
-					<div id="tab1" class="tab_content">공지사항이 들어갈 공간입니다.</div>
-					<!-- #tab1 -->
-					<div id="tab2" class="tab_content">자유게시판이 들어갈 공간이지 말입니다.</div>
-					<!-- #tab2 -->
-					<div id="tab3" class="tab_content">추후들어갈 내용이 뭐가 올지 모릅니다. ㅋㅋㅋㅋ</div>
-					<!-- #tab3 -->
+					<!-- 공지사항 내용이 들어가는 공간 -->
+					<div id="tab1" class="tab_content">
+					<table>
+						<c:forEach items="${notice}" var="list" varStatus="var" end="4">
+							<tr>
+								<td id="#title" width="300px" ><img src="/resources/images/fronticon.png" width="10px" style="padding-top: 8px">
+								<a href='/userLibrary/libNews/notice/read?num=${list.num}'>${list.title}</a>
+								</td>
+								<td id="#title2" align="center" width="100px" height="25px">${list.id}</td>
+								<td id="#title3" align="center" width="100px" style="float: right;" height="25px"><fmt:formatDate value="${list.write_date}" pattern="yyyy-MM-dd" /></td>
+							</tr>
+						</c:forEach>
+						</table>
+					</div>
+					<!--1 탭끝 -->
+
+					<!-- 자유게시판 내용이 들어가는 공간 -->
+					<div id="tab2" class="tab_content">
+					<table>
+						<c:forEach items="${f_board}" var="list" varStatus="var" end="4">
+							<tr>
+								<td id="#title" width="300px"><img src="/resources/images/fronticon.png" width="10px" style="padding-top: 8px">
+								<a href='/userLibrary/libNews/f_board/read?num=${list.num}'>${list.title}</a>
+								</td>
+								<td align="center" width="100px" height="25px">${list.id}</td>
+								<td align="center" width="100px" style="float: right;" height="25px"><fmt:formatDate value="${list.write_date}" pattern="yyyy-MM-dd" /></td>
+							</tr>
+						</c:forEach>
+						</table>
+					</div>
+					<!--2 탭끝 -->
+
+					<!-- 민원게시판 내용이 들어가는 공간 -->
+					<div id="tab3" class="tab_content">
+					<table>
+						<c:forEach items="${m_board}" var="list" varStatus="var" end="4">
+							<tr>
+								<td id="#title" width="300px"><img src="/resources/images/fronticon.png" width="10px" style="padding-top: 8px">
+								<a href='/userLibrary/service/min_board/read?num=${list.num}'>${list.title}</a>
+								</td>
+								<td align="center" width="100px" height="25px">${list.id}</td>
+								<td align="center" width="100px" style="float: right;" height="25px"><fmt:formatDate value="${list.min_date}" pattern="yyyy-MM-dd" /></td>
+							</tr>
+						</c:forEach>
+						</table>
+					</div>
+					<!--3 탭끝 -->
 				</div>
 				<!-- .tab_container -->
 			</div>
@@ -140,7 +181,7 @@
 			<!-- 캘린더 -->
 			<img src="/resources/images/libraryschadule.png" / width="120"><br>
 			<div style="display: inline-block; width: 250px; height: 230px;">
-			
+
 				<div id="calTitle">
 
 					<button id="prevYear" type="button" title="이전 해">◀</button>
@@ -302,12 +343,11 @@
 				/* ──────────────────────────────── */
 				/*        배열 "arrWeeks"에 있는, 각각의 값을, 첫번째 "tr"에 삽입하기        */
 				/* ──────────────────────────────── */
-				
-				if (y < 7){
+
+				if (y < 7) {
 					newTd.innerHTML = arrWeeks[y];
 					newTd.style.backgroundColor = "#B2CCFF";
 				}
-					
 
 				/* ──────────────────────────────── */
 				/*        일요일을 빨간색으로 표시하기                                                 */

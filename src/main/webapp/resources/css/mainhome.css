@@ -46,63 +46,20 @@
 .searchform button::-moz-focus-inner {border:0;padding:0}
 
 /* 공지사항 및 게시판 css */
-ul.tabs {
-    margin: 0;
-    padding: 0;
-    float: left;
-    list-style: none;
-    height: 32px;
-    border-bottom: 1px solid #eee;
-    border-left: 1px solid #eee;
-    width: 100%;
-    font-family:"dotum";
-    font-size:12px;
-}
-ul.tabs li {
-    float: left;
-    text-align:center;
-    cursor: pointer;
-    width:82px;
-    height: 31px;
-    line-height: 31px;
-    border: 1px solid #eee;
-    border-left: none;
-    font-weight: bold;
-    background: #fafafa;
-    overflow: hidden;
-    position: relative;
-}
-ul.tabs li.active {
-    background: #FFFFFF;
-    border-bottom: 1px solid #FFFFFF;
-}
-.tab_container {
-    border: 1px solid #eee;
-    border-top: none;
-    clear: both;
-    float: left;
-    width: 512px;
-    background: #FFFFFF;
-}
-.tab_content {
-    padding: 5px;
-    font-size: 12px;
-    display: none;
-}
-.tab_container .tab_content ul {
-    width:100%;
-    margin:0px;
-    padding:0px;
-}
-.tab_container .tab_content ul li {
-    padding:5px;
-    list-style:none
-}
-;
- #container {
-    width: 249px;
-    margin: 0 auto;
-}
+ul.tabs {  margin: 0;  padding: 0;  float: left;  list-style: none;  height: 32px;  border-bottom: 1px solid #eee;
+    border-left: 1px solid #eee;  width: 100%;  font-family:"dotum";  font-size:12px;}
+ul.tabs li {  float: left;  text-align:center;  cursor: pointer;  width:82px;  height: 31px;  line-height: 31px;  border: 1px solid #eee;
+    border-left: none;  font-weight: bold;  background: #fafafa;  overflow: hidden;  position: relative;}
+ul.tabs li.active {  background: #FFFFFF;  border-bottom: 1px solid #FFFFFF; }
+.tab_container {  border: 1px solid #eee;  border-top: none;  clear: both;  float: left;  width: 512px;  background: #FFFFFF; }
+.tab_content {  padding: 5px;  font-size: 16px;  display: none; table-layout: fixed;}
+.tab_container .tab_content ul {  width:100%;  margin:0px;  padding:0px; }
+.tab_container .tab_content ul li {  padding:5px;  list-style:none };
+#container {  width: 249px;  margin: 0 auto; }
+.tab_container table tr{border-bottom: 1px solid gray; padding-top: 2px; }
+.tab_container table td{display: inline-block; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.tab_container tr #title{float: left; width: 300px; height: 25px;}
+.tab_container tr #title2, #title3{ width: 100px; height: 25px;}
 
 /* 슬라이드배너 */
 #wrap{position:relative; width:100%;}
