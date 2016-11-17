@@ -12,11 +12,10 @@
 <table>
 	<tr>
 		<th>
-		<h2>인사말</h2>
 		<h5>
 			<font color="gray">도서관에 오신것을 환영합니다.</font>
 		</h5>
-		<h1>KOSTA도서관</h1>
+		<h2>KOSTA도서관</h2>
 		<h4>
 			<font color="#FFBB00">정보화 지식을 선도하는 열림도서관!<br>생활속의 열린
 				문화공간!
