@@ -9,7 +9,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<div style = "float:right; font-size:13px; ">
+	<a href = "/" style="text-decoration:none; color:gray;">home ></a><a href = "#" style="text-decoration:none; color:gray;">도서관소식 >&nbsp;</a><b style="color: navy;">공지사항</b>
+	</div><br><br>
 	<form role="form" method="post">
 
 		<input type='hidden' name='num' value="${noticeVO.num}">

@@ -6,11 +6,10 @@
 <title>시설현황</title>
 </head>
 <body>
+	<div style = "float:right; font-size:13px; ">
+	<a href = "/" style="text-decoration:none; color:gray;">home ></a><a href = "#" style="text-decoration:none; color:gray;">도서관소개 >&nbsp;</a><b style="color: navy;">시설현황</b>
+	</div><br><br>
 <div>
-	<h2>시설현황</h2><br>
-	<div style = "float:right; font-size:13px;">
-	<a href = "홈 경로" style="text-decoration:none; color:gray;">home > <a href = "도서관소개 링크경로" style="text-decoration:none; color:gray;">도서관소개 > <a href = "/edu/s_Status" style="text-decoration:none; color:gray;">시설현황</a>
-	</div><br>
 	> 시설현황<br>
 		- 위치 : 경기도 성남시 분당구 삼평동 대왕판교로 670길(구 682번지) 유스페이스2 B동<br>
 		- 구조 : 지하1층, 지하3층<br>

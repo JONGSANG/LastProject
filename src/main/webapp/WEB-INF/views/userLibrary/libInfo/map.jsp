@@ -6,12 +6,10 @@
 <title>찾아오는 길</title>
 </head>
 <body>
-<div >
-	<h2>코스타 도서관</h2><br>
 	<div style = "float:right; font-size:13px; ">
-	<a href = "/" style="text-decoration:none; color:gray;">home > <a href = "#" style="text-decoration:none; color:gray;">도서관소개 >&nbsp;</a><b style="color: navy;">찾아오는 길</b></font>
-	</div><br>
-	<br>
+	<a href = "/" style="text-decoration:none; color:gray;">home ></a><a href = "#" style="text-decoration:none; color:gray;">도서관소개 >&nbsp;</a><b style="color: navy;">찾아오는 길</b>
+	</div><br><br>
+<div>
 	<div id="map" style="width:600px;height:400px; align:center;"></div>
 	<br>
 	> 주변 교통안내 <br>

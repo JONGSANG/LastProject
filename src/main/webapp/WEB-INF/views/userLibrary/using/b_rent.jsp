@@ -6,6 +6,9 @@
 <title>도서 대출 안내</title>
 </head>
 <body>
+	<div style = "float:right; font-size:13px; ">
+	<a href = "/" style="text-decoration:none; color:gray;">home ></a><a href = "#" style="text-decoration:none; color:gray;">이용안내 >&nbsp;</a><b style="color: navy;">책대출안내</b>
+	</div><br><br>
 <table>
 	<tr> 
 		<th width="750">

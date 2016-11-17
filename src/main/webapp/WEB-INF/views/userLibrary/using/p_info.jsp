@@ -6,15 +6,14 @@
 <title>주차장 안내</title>
 </head>
 <body>
+	<div style = "float:right; font-size:13px; ">
+	<a href = "/" style="text-decoration:none; color:gray;">home ></a><a href = "#" style="text-decoration:none; color:gray;">이용안내 >&nbsp;</a><b style="color: navy;">주차장안내</b>
+	</div><br><br>
 	주차장시간
 	주차장 지하 2~3층
 	주차장 요금
 	주차장 B2,3 자리수
 <div >
-	<h2>주차장 안내</h2>
-	<div style = "float:right; font-size:13px;">
-	<a href = "/" style="text-decoration:none; color:gray;">home > <a href = "#" style="text-decoration:none; color:gray;">도서관소개 > <a href = "/userLibrary/using/p_info" style="text-decoration:none; color:gray;">주차장안내</a>
-	</div><br>
 	> 주차장 안내<br>
 	<br>
 	<div id="map" style="width:600px;height:400px; align:center;"></div>

@@ -6,6 +6,9 @@
 <title>열람실 안내</title>
 </head>
 <body>
+<div style = "float:right; font-size:13px; ">
+	<a href = "/" style="text-decoration:none; color:gray;">home ></a><a href = "#" style="text-decoration:none; color:gray;">이용안내 >&nbsp;</a><b style="color: navy;">열람실</b>
+	</div><br><br>
 	<h3 align="center" >- 이용안내 -</h3>
 <table border="1" style="solid" align="center" >
 

@@ -6,8 +6,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	<h2>수정 페이지</h2>
+<div style = "float:right; font-size:13px; ">
+	<a href = "/" style="text-decoration:none; color:gray;">home ></a><a href = "#" style="text-decoration:none; color:gray;">도서관소식 >&nbsp;</a><b style="color: navy;">자유게시판</b>
+	</div><br><br>
 	<form action="modify_re" method="post">
 		<input type="hidden" name="num" value="${boardVO2.num}"> <input
 			type="hidden" name="fnum" value="${boardVO2.fnum}">

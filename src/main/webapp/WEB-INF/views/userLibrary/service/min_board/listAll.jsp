@@ -8,7 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<div style = "float:right; font-size:13px; ">
+	<a href = "/" style="text-decoration:none; color:gray;">home ></a><a href = "#" style="text-decoration:none; color:gray;">서비스 >&nbsp;</a><b style="color: navy;">민원게시판</b>
+	</div><br><br>
 <table border="1">
 	<tr>
 		<th style="width: 40px" align="center">번호</th>

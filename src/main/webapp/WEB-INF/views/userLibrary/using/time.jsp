@@ -7,12 +7,9 @@
 </head>
 <body>
 <div>
-	<h2>이용시간</h2><br>
-	<div style = "float:right; font-size:13px;">
-	<a href = "/" style="text-decoration:none; color:gray;">home > <a href = "#" style="text-decoration:none; color:gray;">도서관소개 > <a href = "/userLibrary/using/time" style="text-decoration:none; color:gray;">이용시간</a>
-	</div><br>
-	> 실별 운영안내<br>
-	<br>
+	<div style = "float:right; font-size:13px; ">
+	<a href = "/" style="text-decoration:none; color:gray;">home ></a><a href = "#" style="text-decoration:none; color:gray;">이용안내 >&nbsp;</a><b style="color: navy;">이용시간</b>
+	</div><br><br>
 	<table width = "600" cellpadding="5" cellspacing="0" border="1" style="border-collapse:collapse; border:1px gray solid;">
 		<tr align = "center">
 			<td width = "250px">실별</td>
