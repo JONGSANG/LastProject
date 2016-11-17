@@ -145,7 +145,7 @@ ul.tabs li.active {
 #calTitle span { width: auto; } 
 
 #myCalender td { 
-	 border: 1px solid #ccc; padding: 4px 5px 3px 5px; width: 30px; height: 30px; 
+	 border: 1px solid #d6e0fe; padding: 4px 5px 3px 5px; width: 30px; height: 30px; 
 	 font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; vertical-align: middle;
 } 
 #myCalender .blankLine td { border-width: 0; } 
