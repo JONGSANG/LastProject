@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.kosta.service.MainService;
 import com.kosta.vo.MemberVO;
+import com.kosta.vo.NoticeVO;
 
 @Controller
 public class MainController {
@@ -22,7 +23,18 @@ public class MainController {
 	public String userMain(Model model) throws Exception {
 		logger.info("도서관 메인 페이지");
 		
+		
+		//로그인 후 세션 
 		model.addAttribute("vo", mainService.getName());
+		
+		//탭메뉴 공지사항
+		model.addAttribute("notice", mainService.noticeList());
+		
+		//탭메뉴 자유게시판
+		model.addAttribute("f_board", mainService.f_boardList());
+		
+		//탭메뉴 민원게시판
+		model.addAttribute("m_board", mainService.m_boardList());
 		
 		return "userLibrary";
 	}
