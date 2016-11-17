@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kosta.mappers.ServiceMapper">
+
+<!-- 글목록에 id, title, content, write_date를 입력/now()는 현재 시각을 알려줌 -->
+<insert id="m_create">
+	insert into minwon(id, mselect, title, content, min_date) values( #{id}, #{mselect}, #{title}, #{content}, now())
+</insert>
+
+<!-- 해당 num의 내용을 볼 수 있다. -->
+<select id="m_read" resultType="M_BoardVO">
+	select * from minwon where num=#{num}
+</select>
+
+<!-- 해당 num의 게시물을 수정한다. -->
+<update id="m_update">
+	update minwon set mselect=#{mselect}, title=#{title}, content=#{content}, id=#{id} where num=#{num}
+</update>
+
+<!-- 해당 num의 게시물을 삭제한다. -->
+<delete id="m_delete">
+	delete from minwon where num=#{num}
+</delete>
+
+<!-- 전체 목록 띄우기 -->
+<select id="m_listAll" resultType="M_BoardVO">
+	select num, mselect, title, content, id, min_date, viewcnt, (select count(num) 
+                                             from minwon_rep a 
+                                             where a.mnum = b.num ) as re_cnt
+   from minwon b
+</select>
+
+<update id="m_updateViewCnt">
+ UPDATE minwon 
+	SET
+		VIEWCNT = VIEWCNT + 1
+	WHERE
+		num = #{num} 	
+</update>
+
+<insert id="m_insertComment">
+	insert into minwon_rep(id, mnum, title, content, min_date) values( #{id}, #{num}, #{title}, #{content}, now())
+</insert>
+
+<delete id="m_delete_re" >
+	delete from minwon_rep where num=#{num}
+</delete>
+
+<select id="m_read2" resultType="M_Board_ReVO">
+	select * from minwon_rep where num=#{num}
+</select>
+
+<select id="m_commentList" resultType="M_Board_ReVO">
+	select * from minwon_rep where mnum=#{num}
+</select>
+
+<update id="m_update_re">
+	update minwon_rep set title=#{title}, content=#{content}, id=#{id} where mnum=#{mnum} and num=#{num}
+</update>
+
+</mapper>
