@@ -89,6 +89,18 @@ public class PageMaker_rep {
 
 		return uriComponents.toUriString();
 	}
+	
+
+	public String makeMRepQuery(int page) {
+
+		UriComponents uriComponents = UriComponentsBuilder.newInstance()
+				.queryParam("num", ((M_Board_ReVO)pageInfo).getNum())
+				.queryParam("page", page)
+				.queryParam("perPageNum", pageInfo.getPerPageNum())
+				.build();
+
+		return uriComponents.toUriString();
+	}
 
 	// public String makeNSearch(int page){
 	//

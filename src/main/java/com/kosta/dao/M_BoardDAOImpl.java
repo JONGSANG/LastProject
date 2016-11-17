@@ -36,8 +36,8 @@ public class M_BoardDAOImpl implements M_BoardDAO {
 	}
 
 	@Override
-	public List<M_BoardVO> listAll() throws Exception {
-		return sqlSession.selectList("com.kosta.mappers.ServiceMapper.m_listAll");
+	public List<M_BoardVO> listAll(M_BoardVO vo) throws Exception {
+		return sqlSession.selectList("com.kosta.mappers.ServiceMapper.m_listAll",vo);
 	}
 
 	
@@ -59,9 +59,9 @@ public class M_BoardDAOImpl implements M_BoardDAO {
 	}
 
 	@Override
-	public List<M_Board_ReVO> commentList(int num) throws Exception {
+	public List<M_Board_ReVO> commentList(M_Board_ReVO vo) throws Exception {
 		
-		return sqlSession.selectList("com.kosta.mappers.ServiceMapper.m_commentList", num);
+		return sqlSession.selectList("com.kosta.mappers.ServiceMapper.m_commentList", vo);
 	}
 
 	@Override
@@ -74,5 +74,15 @@ public class M_BoardDAOImpl implements M_BoardDAO {
 	public void updateViewCnt(int num) throws Exception {
 		sqlSession.update("com.kosta.mappers.ServiceMapper.m_updateViewCnt", num);
 		
+	}
+
+	@Override
+	public int m_listCount(M_BoardVO vo) throws Exception {
+		return sqlSession.selectOne("com.kosta.mappers.ServiceMapper.m_listCount", vo);
+	}
+
+	@Override
+	public int m_repAllCount(M_Board_ReVO vo) throws Exception {
+		return sqlSession.selectOne("com.kosta.mappers.ServiceMapper.m_repAllCount", vo);
 	}
 }

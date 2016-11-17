@@ -8,6 +8,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,10 +19,13 @@ import com.kosta.service.M_BoardService;
 import com.kosta.service.ServiceService;
 import com.kosta.vo.AfterVO;
 import com.kosta.vo.CultureVO;
+import com.kosta.vo.F_Board_ReVO;
 import com.kosta.vo.L_AfterVO;
 import com.kosta.vo.L_CultureVO;
 import com.kosta.vo.M_BoardVO;
 import com.kosta.vo.M_Board_ReVO;
+import com.kosta.vo.PageMaker;
+import com.kosta.vo.PageMaker_rep;
 
 @Controller
 public class ServiceController {
@@ -64,17 +68,21 @@ public class ServiceController {
 
 	// 전체 목록 띄우기
 	@RequestMapping(value = "userLibrary/service/min_board/listAll", method = RequestMethod.GET)	// 기입한 주소값으로 GET방식으로 보냄
-	public String listALL(Model model) throws Exception {
-		
+	public String listALL(Model model,@ModelAttribute("pageInfo") M_BoardVO vo) throws Exception {
 		logger.info("listAll 페이지");		// Console 창에 알림띄어줌
+		model.addAttribute("list", service.listAll(vo));	// 다음 페이지로 값을 넘겨줌, list라는 별칭으로 service.listAll()을 담음
 		
-		model.addAttribute("list", service.listAll());	// 다음 페이지로 값을 넘겨줌, list라는 별칭으로 service.listAll()을 담음
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setPageInfo(vo);
+		pageMaker.setTotalCount(service.m_listCount(vo));
+		model.addAttribute("pageMaker", pageMaker);
+		
 		return "userLibrary/service/min_board/listAll";	// listAll.jsp 페이지로 이동
 	}
 
 	// 상세 내용으로 띄우기
 	@RequestMapping(value = "userLibrary/service/min_board/read", method = RequestMethod.GET)	// 기입한 주소값으로 GET방식으로 보냄
-	public String read(@RequestParam("num") int num, Model model, M_Board_ReVO vo2) throws Exception {	// RequestParam으로 num 값을 가져옴
+	public String read(@RequestParam("num") int num, Model model,@ModelAttribute("pageInfo_rep") M_Board_ReVO vo2) throws Exception {	// RequestParam으로 num 값을 가져옴
 		
 		logger.info("read get 페이지");		// Console 창에 알림띄어줌
 		
@@ -82,31 +90,38 @@ public class ServiceController {
 		
 		model.addAttribute("boardVO", service.read(num));	// boardVO라는 별칭으로 service.read(num)을 담음 , 그 num에 해당하는 content를 띄우기 위해서
 		model.addAttribute("num", num);	// num 값을 보냄
-		model.addAttribute("clist", service.commentList(num));// 답변 목록 띄우기 위해서
+		model.addAttribute("clist", service.commentList(vo2));// 답변 목록 띄우기 위해서
 		
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 	    model.addAttribute("id", auth.getName());
-		
+	    
+		PageMaker_rep pageMaker = new PageMaker_rep();
+		pageMaker.setPageInfo(vo2);
+
+	    pageMaker.setTotalCount(service.m_repAllCount(vo2));
+	    model.addAttribute("pageMaker", pageMaker);
+	    
 		return "userLibrary/service/min_board/read";	// read.jsp로 페이지 이동
 	}
 
 	// 댓글 작성시 값보내서 띄우기
 	@RequestMapping(value = "userLibrary/service/min_board/read", method = RequestMethod.POST)	// 기입한 주소값으로 POST방식으로 보냄
-	public ModelAndView register_rePOST(@RequestParam("num") String num, M_Board_ReVO vo2, RedirectAttributes rttr)
+	public ModelAndView register_rePOST(@RequestParam("num") int num, M_Board_ReVO vo2, RedirectAttributes rttr)
 			throws Exception {
 		
 		logger.info("comment post");
 		logger.info(vo2.toString());	// Console 창에 알림띄어줌
 		
 		ModelAndView mav = new ModelAndView();	// model과 view의 역할을 해줌
-		num = num.substring(0, num.lastIndexOf(","));	// 주소창에 뜨는 num값을 자르기 위해서
 		mav.addObject("num", num);	// num 값을 보내줌
 		service.insertComment(vo2);	// 댓글에 담은 값들 (vo2)를 F_BoardService로 보냄
-		mav.setViewName("redirect:read");	// read를 업데이트해서 띄어줌	
+		mav.setViewName("redirect:/userLibrary/service/min_board/read");	// read를 업데이트해서 띄어줌	
 		rttr.addFlashAttribute("result", "SUCCESS");	// 알림창을 띄어주는 부분
-		
+	
 		return mav;
 	}
+	
+	
 
 	// 본 게시물 수정 페이지 띄우기
 	@RequestMapping(value = "userLibrary/service/min_board/modify", method = RequestMethod.GET)	// 기입한 주소값으로 GET방식으로 보냄

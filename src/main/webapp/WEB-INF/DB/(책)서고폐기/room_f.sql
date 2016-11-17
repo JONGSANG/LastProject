@@ -1,6 +1,10 @@
 select * from room_f;
 drop table room_f;
 
+select * from minwon_rep where mnum=15
+	order by num desc
+	limit #{pageStart}, #{perPageNum}
+
 --------------------------------------------------------------
 -- room_f : room_f 정보 Table
 
