@@ -59,9 +59,14 @@
 		<div id="maincenter">
 			<div class="mainsearch">
 				<img src="/resources/images/searchIcon.png" width="100">
-				<form class="searchform cf">
-					<input type="text" name="" value="" onkeypress="" />
-					<button onclick="">검색</button>
+				<form class="searchform cf" action="/userLibrary/search/b_search/result">
+				<select id="selectbox" name="searchType">
+						<option value="bTitle">제목명</option>
+						<option value="bWriter">저자명</option>
+						<option value="bCompany">출판사</option>
+				</select>
+					<input type="text" name='keyword' id="keywordInput">
+					<button id="searchBtn" >검색</button>
 				</form>
 			</div>
 			<!-- 검색 end -->
