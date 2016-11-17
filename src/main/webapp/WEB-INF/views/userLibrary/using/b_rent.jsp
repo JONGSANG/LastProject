@@ -11,7 +11,7 @@
 		<th width="750">
 		<h2>도서대출</h2>
 		<h5>도서대출 관련 서비스를 확인하여 편리한 이용 바랍니다.</h5>
-		<img src="image/b_rent1.jpg" align="left"><br>
+		<img src="/resources/viewimages/b_rent1.JPG" align="left"><br>
 		<h5 align="left">
 		<b>대상 : </b>1인 7권 각 14일간 대출 가능<br>
 		<b>대출기간 : </b>14일<br>
@@ -35,7 +35,7 @@
 		</h5>
 		</th>
 		<th width="200">
-		<img src="image/m_info3.jpg">
+		<img src="/resources/viewimages/m_info3.JPG">
 		</th>
 	</tr>
 </table>

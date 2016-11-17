@@ -2,6 +2,7 @@
 @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 @import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
 
+
 #userLibrary {width:1024px; margin:0 auto; z-index:1000; position:relative; display: flex;}
 #mainleft {flex: 1; background-color: white;}
 #maincenter {flex: 2; background-color: #ffffff;}
@@ -9,7 +10,7 @@
 
 
 /*-------Login form-------------------*/
-.loginForm{position:relative;width:256px;padding-top: 10px;}
+.loginForm{position:relative;width:256px; height : 110px; padding-top: 10px;}
  .loginForm .box{width:256px}
  .loginForm .box .iText{width:120px;margin:3px 0 0 5px;padding:10px 12px;border:1px solid #e1e1e1}
  .loginForm .box p{margin-top:5px}
@@ -20,6 +21,8 @@
 .llogbottom{float: left; padding-left: 5px; text-decoration: none; size: 10px  } 
 .rlogbottom{float: right; text-decoration: none;}
 
+.logMember{position:relative;width:253px; height : 110px; margin-top : 10px;border: 1px solid white; border-bottom-color: gray; border-top-color: gray;}
+.logMember table {width : 250px; height : 110px; vertical-align: middle; font-family: 'Noto Sans KR'; color: gray;}
 /*------search------------------------*/
 .mainsearch {background-image: url("../images/mainsearch.png"); width: 512px; height: 303px; padding-top: 5px;}
 
@@ -113,6 +116,7 @@ ul.tabs li.active {
 			#main_bn img {
 				width:100%;
 				height:auto;
+				
 			}
             #main_bn_btn {
                 list-style-type:none;
@@ -125,3 +129,23 @@ ul.tabs li.active {
 			a, a:hover, a:visited { text-decoration:none; color: gray; }
 			ul li { list-style : none; }
 
+/*----자주 찾는 서비스------*/
+#gobtn {padding-top: 5px}
+
+/*--------캘린더-----------*/
+#calTitle *, #myCalender * { margin: 0px; padding: 0px; text-align: center; vertical-align: middle; } 
+#calTitle, #myCalender { 
+	 margin: 0px; padding: 0px; text-align: center; 
+	 font-family: '돋움', Dotum, AppleGothic, sans-serif; font-size: 12px;
+} 
+#themore {color: white; font-size: 12px; float: right; padding-top: 3px; border: 1px solid black; border-radius: 4px; background-color: gray;}
+
+#calTitle { margin-bottom: 5px; } 
+#calTitle button { width: 26px; height: 16px; font-size: 9px; line-height: normal; } 
+#calTitle span { width: auto; } 
+
+#myCalender td { 
+	 border: 1px solid #ccc; padding: 4px 5px 3px 5px; width: 30px; height: 30px; 
+	 font-family: 돋움, Dotum, AppleGothic, sans-serif; font-size: 12px; vertical-align: middle;
+} 
+#myCalender .blankLine td { border-width: 0; } 

@@ -14,7 +14,7 @@
 						<li class="th"><a href="/userLibrary/member/join">회원가입</a></li>
 						</security:authorize>
 						<security:authorize access="isAuthenticated()">
-						<li class="fi"><a href="/">홈으로</a></li>
+						<li class="fii"><a href="/">홈으로</a></li>
 						<li class="se"><a href="/userLibrary/myInfo/myInfo">마이페이지</a></li>
 						<li class="th"><a href="${logout}">로그아웃</a></li>
 						</security:authorize>
@@ -57,11 +57,11 @@
                     </li>
                     <li id="menu" class="li-left li-none"><a href="#">도서관소식</a>
                     <ul class="sub">
-                    	<li><a class="submenu" href="/userLibrary/libNews/notice">공지사항</a></li>
+                    	<li><a class="submenu" href="/userLibrary/libNews/notice/listAll">공지사항</a></li>
                     	<li><a class="submenu" href="/userLibrary/libNews/schedule">도서관 일정</a></li>
                     	<li><a class="submenu" href="/userLibrary/libNews/recommand">추천도서</a></li>
                     	<li><a class="submenu" href="/userLibrary/libNews/best">대출도서 베스트</a></li>
-                    	<li><a class="submenu" href="/userLibrary/libNews/f_board">자유게시판</a></li>
+                    	<li><a class="submenu" href="/userLibrary/libNews/f_board/listAll">자유게시판</a></li>
                     	<li><a class="submenu end" href="/userLibrary/libNews/openSource">공개자료실</a></li>
                     </ul>
                     </li>

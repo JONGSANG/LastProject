@@ -18,13 +18,23 @@ public class UsingController {
 		return "userLibrary/using/s_room";
 	}
 	
-	@RequestMapping(value="userLibrary/libNews/f_board/list", method=RequestMethod.GET)
-	public String f_boardlistGET(Model model) {
-		return "userLibrary/libNews/f_board/list";
+	@RequestMapping(value="userLibrary/using/b_rent", method=RequestMethod.GET)
+	public String b_rentGET(Model model) {
+		return "userLibrary/using/b_rent";
 	}
 	
-	@RequestMapping(value="userLibrary/libNews/recommand", method=RequestMethod.GET)
+	@RequestMapping(value="userLibrary/using/m_info", method=RequestMethod.GET)
+	public String m_infoGET(Model model) {
+		return "userLibrary/using/m_info";
+	}
+	
+	
+	@RequestMapping(value="userLibrary/using/p_info", method=RequestMethod.GET)
+	public String p_infoGET(Model model) {
+		return "userLibrary/using/p_info";
+	}
+	@RequestMapping(value="userLibrary/using/b_room", method=RequestMethod.GET)
 	public String recommandGET(Model model) {
-		return "userLibrary/libNews/recommand";
+		return "userLibrary/using/b_room";
 	}
 }

@@ -32,7 +32,7 @@
 		</h6>
 		</th>
 	<th width="350">
-	<img src="intro.png" width="330" height="200" align="right">
+	<img src="/resources/viewimages/intro.jpg" width="330" height="200" align="right">
 	</th>
 	</tr>
 </table>

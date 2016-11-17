@@ -20,7 +20,7 @@
 		- 초등학생 이하는 부모 동반 입장 가능 <br>
 		<b>이용시간 : </b>평일 09:00~22:00, 주말 09:00~17:00<br><br>
 	</h5>
-	<img src="image/b_room1.jpg">
+	<img src="/resources/viewimages/b_room1.JPG">
 	<h5>
 	<b>대상 : </b>용인시도서관 정회원(회원증 발급자)
 	<b>규정 : </b><br>
@@ -35,12 +35,12 @@
 	</h5>
 	</th>
 	<th width="200">
-	<img src="image/m_info3.jpg">
+	<img src="/resources/viewimages/m_info3.JPG">
 	</th>
 </tr>
 </table>
 	<h5>
-	<img src="image/b_room2.jpg"><br>
+	<img src="/resources/viewimages/b_room2.JPG"><br>
 	<b>* 정회원 : 경기도에 거주 또는 용인시에 재직하며, 회원증을 발급받은 자 </b><br>
 	[step1] 도서관 홈페이지 가입<br>
 	[step2] 구비서류를 지참하고 도서관 자료실을 방문하여 회원증 발급<br>
@@ -79,13 +79,13 @@
 	 &nbsp;tip. 회원증 재발급은 필요서류를 지참하여 도서관을 방문하시면 됩니다.<br>
      &nbsp;&nbsp;(발급서류는 위의 [step2]참조.)<br>
 	</h5>
-	<img src="image/b_room3.jpg"><br>
+	<img src="/resources/viewimages/b_room3.JPG"><br>
 	<h5>
 	1. 음료 및 음식물을 가지고 들어갈 수 없습니다.<br>
 	2. 다른 이용자에게 방해가 되지 않도록 유의하시고 휴대전화 사용을 삼가바랍니다.<br>
 	3. 귀중품 분실 시 책임지지 않으니 보관에 유의하여 주십시오.<br>
 	</h5><br><br>
-	<img src="image/b_room4.jpg"><br>
+	<img src="/resources/viewimages/b_room4.JPG"><br>
 	<table>
 		<tr>
 			<th width="250">설치시설</th>

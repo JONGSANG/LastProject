@@ -26,6 +26,8 @@ $(function() {
         axis: 'x', 	
         navigator: '#main_bn_btn a',
         duration: 400, 
-		autoslide: 3000 
+		autoslide: 3000,
     });
 });
+
+//캘린더

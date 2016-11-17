@@ -10,10 +10,10 @@
 	주차장 지하 2~3층
 	주차장 요금
 	주차장 B2,3 자리수
-<div style = "width:650px;">
+<div >
 	<h2>주차장 안내</h2>
 	<div style = "float:right; font-size:13px;">
-	<a href = "홈 경로" style="text-decoration:none; color:gray;">home > <a href = "도서관소개 링크경로" style="text-decoration:none; color:gray;">도서관소개 > <a href = "/edu/p_Info" style="text-decoration:none; color:gray;">주차장안내</a>
+	<a href = "/" style="text-decoration:none; color:gray;">home > <a href = "#" style="text-decoration:none; color:gray;">도서관소개 > <a href = "/userLibrary/using/p_info" style="text-decoration:none; color:gray;">주차장안내</a>
 	</div><br>
 	> 주차장 안내<br>
 	<br>

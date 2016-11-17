@@ -57,11 +57,11 @@
                     </li>
                     <li id="menu" class="li-left li-none"><a href="#">도서관소식</a>
                     <ul class="sub">
-                    	<li><a class="submenu" href="userLibrary/libNews/notice">공지사항</a></li>
+                    	<li><a class="submenu" href="userLibrary/libNews/notice/listAll">공지사항</a></li>
                     	<li><a class="submenu" href="userLibrary/libNews/schedule">도서관 일정</a></li>
                     	<li><a class="submenu" href="userLibrary/libNews/recommand">추천도서</a></li>
                     	<li><a class="submenu" href="userLibrary/libNews/best">대출도서 베스트</a></li>
-                    	<li><a class="submenu" href="userLibrary/libNews/f_board">자유게시판</a></li>
+                    	<li><a class="submenu" href="userLibrary/libNews/f_board/listAll">자유게시판</a></li>
                     	<li><a class="submenu end" href="userLibrary/libNews/openSource">공개자료실</a></li>
                     </ul>
                     </li>
@@ -77,12 +77,12 @@
                     <li id="menu"><a href="#">&nbsp;&nbsp;내정보&nbsp;&nbsp;</a>
                     <ul class="sub">
                     	<li><a class="submenu" href="userLibrary/myInfo/modify">개인정보 수정</a></li>
-                    	<li><a class="submenu" href="userLibrary/myInfo/modifyd_status">대출현황</a></li>
-                    	<li><a class="submenu" href="userLibrary/myInfo/modifyr_status">예약현황</a></li>
-                    	<li><a class="submenu" href="userLibrary/myInfo/modifyd_history">대출내역</a></li>
-                    	<li><a class="submenu" href="userLibrary/myInfo/modifyleave">회원탈퇴</a></li>
-                    	<li><a class="submenu" href="userLibrary/myInfo/modifyr_history">신청내역</a></li>
-                    	<li><a class="submenu end" href="userLibrary/myInfo/modifys_history">행사신청내역</a></li>
+                    	<li><a class="submenu" href="userLibrary/myInfo/d_status">대출현황</a></li>
+                    	<li><a class="submenu" href="userLibrary/myInfo/r_status">예약현황</a></li>
+                    	<li><a class="submenu" href="userLibrary/myInfo/d_history">대출내역</a></li>
+                    	<li><a class="submenu" href="userLibrary/myInfo/leave">회원탈퇴</a></li>
+                    	<li><a class="submenu" href="userLibrary/myInfo/r_history">신청내역</a></li>
+                    	<li><a class="submenu end" href="userLibrary/myInfo/s_history">행사신청내역</a></li>
                     </ul>
                     </li>
                 </ul>
