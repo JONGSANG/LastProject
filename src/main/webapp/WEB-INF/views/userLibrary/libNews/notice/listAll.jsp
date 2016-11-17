@@ -18,8 +18,8 @@
 	<table border="1">
 		<tr>
 			<th style="width: 40px" align="center">번호</th>
-			<th align="center" width="130">ID</th>
 			<th align="center" width="300">제목</th>
+			<th align="center" width="130">ID</th>
 			<th align="center">작성 일자</th>
 			<th style="width: 60px" align="center">조회수</th>
 		</tr>
