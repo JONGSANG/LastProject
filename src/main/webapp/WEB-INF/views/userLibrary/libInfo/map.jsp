@@ -8,8 +8,8 @@
 <body>
 <div >
 	<h2>코스타 도서관</h2><br>
-	<div style = "float:right; font-size:13px;">
-	<a href = "홈 경로" style="text-decoration:none; color:gray;">home > <a href = "도서관소개 링크경로" style="text-decoration:none; color:gray;">도서관소개 > <a href = "/edu/map" style="text-decoration:none; color:gray;">찾아오는 길</a>
+	<div style = "float:right; font-size:13px; ">
+	<a href = "/" style="text-decoration:none; color:gray;">home > <a href = "#" style="text-decoration:none; color:gray;">도서관소개 >&nbsp;</a><b style="color: navy;">찾아오는 길</b></font>
 	</div><br>
 	<br>
 	<div id="map" style="width:600px;height:400px; align:center;"></div>
