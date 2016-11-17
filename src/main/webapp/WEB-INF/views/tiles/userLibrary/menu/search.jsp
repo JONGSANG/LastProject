@@ -5,10 +5,10 @@
 				<img alt="" src="/resources/images/line.png" width="180px" height="30px">
 				<ul >
 					<li>
-						<a class="menubtn" href="/userLibrary/search/b_search">도서검색</a>
+						<a class="menubtn" href="/userLibrary/search/b_search/index">도서검색</a>
 					</li>
 					<li>
-						<a class="menubtn" href="/userLibrary/search/n_search">신착도서</a>
+						<a class="menubtn" href="/userLibrary/search/n_search/index">신착도서</a>
 					</li>
 					<li>
 						<a class="menubtn" href="/userLibrary/search/p_search">간행물 검색</a>
