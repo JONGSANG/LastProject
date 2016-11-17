@@ -37,7 +37,7 @@ ID varchar(50),
 CSELECT varchar(50),
 TITLE varchar(100),
 CONTENT text,
-WRITE_DATE DATETIME,
+WRITE_DATE DATETIME default now(),
 START_DATE DATE,
 END_DATE DATE, 
 

@@ -238,7 +238,7 @@ public class ServiceController {
 		public String after_delete(@RequestParam("num") int num, RedirectAttributes rttr) throws Exception {
 			logger.info("이벤트 글삭제 페이지");
 			
-			// 해당되는 글의 번호에 대한게시글을 삭제
+			// 해당되는 글의 번호에 대한게시글을 삭제 하고 완료 메세지 띄움
 			service2.after_delete(num);
 			rttr.addFlashAttribute("msg", "SUCCESS");
 			return "redirect:/userLibrary/service/after/list";
@@ -343,7 +343,7 @@ public class ServiceController {
 		public String culture_delete(@RequestParam("num") int num, RedirectAttributes rttr) throws Exception {
 			logger.info("이벤트 글삭제 페이지");
 			
-			// 해당되는 글의 번호에 대한게시글을 삭제
+			// 해당되는 글의 번호에 대한게시글을 삭제 하고 완료 메세지 띄움
 			service2.culture_delete(num);
 			rttr.addFlashAttribute("msg", "SUCCESS");
 			return "redirect:/userLibrary/service/culture/list";
