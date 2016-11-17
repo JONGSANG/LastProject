@@ -15,8 +15,10 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.kosta.service.F_BoardService;
+import com.kosta.service.NoticeService;
 import com.kosta.vo.F_BoardVO;
 import com.kosta.vo.F_Board_ReVO;
+import com.kosta.vo.NoticeVO;
 
 @Controller	// 이 페이지가 Controller이라는 것을 알려줌
 public class LibNewsController {
@@ -174,5 +176,102 @@ public class LibNewsController {
 		rttr.addFlashAttribute("msg", "SUCCESS");
 
 		return "redirect:read?num="+fnum;	// 댓글이 달려있는 본게시물을 띄어줌
+	}
+	////////////////////////////////////////////////
+	
+	@Inject
+	private NoticeService noticeservice;
+
+	// 본 게시물 작성페이지 띄우기
+	@RequestMapping(value = "userLibrary/libNews/notice/register", method = RequestMethod.GET)	// 주소값을 정해주고 GET 방식으로 보냄
+	public String no_registerGET(NoticeVO noticeVO, Model model) throws Exception {	// noticeVO:본 게시물 속성 값	
+		
+		logger.info("register get 페이지 입니다.");	// Console 창에 띄어줌
+		
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication(); auth = SecurityContextHolder.getContext().getAuthentication();
+		// AuthenticationManager에 인증을 요청할 때 필요한 정보를 담는 목적
+
+		model.addAttribute("id", auth.getName());	// id의 정보를 담아 넘김
+		
+		return "userLibrary/libNews/notice/register";	// register.jsp(글쓰기)페이지로 이동
+	}
+
+	// 작성페이지의 작성값을 보내기
+	@RequestMapping(value = "userLibrary/libNews/notice/register", method = RequestMethod.POST)	// POST방식으로 보냄
+	public String no_registerPost(Model model, NoticeVO noticeVO, RedirectAttributes rttr) throws Exception {
+					// noticeVO에 담아서 보냄, RedirectAttributes로 알림창 띄움
+		//id title content
+		logger.info("register post");
+		logger.info(noticeVO.toString());	// Console 창에 띄어줌
+
+		noticeservice.regist(noticeVO);		// noticeVOService로 담은 vo를 보냄
+
+		return "redirect:listAll";	// 업데이트된 listAll을 띄어줌
+	}
+
+	// 전체 목록 띄우기
+	@RequestMapping(value = "userLibrary/libNews/notice/listAll", method = RequestMethod.GET)	// 기입한 주소값으로 GET방식으로 보냄
+	public String no_listALL(Model model) throws Exception {
+		
+		logger.info("listAll 페이지");		// Console 창에 알림띄어줌
+		
+		model.addAttribute("list", noticeservice.listAll());	// 다음 페이지로 값을 넘겨줌, list라는 별칭으로 service.listAll()을 담음
+		return "userLibrary/libNews/notice/listAll";	// listAll.jsp 페이지로 이동
+	}
+
+	// 상세 내용으로 띄우기
+	@RequestMapping(value = "userLibrary/libNews/notice/read", method = RequestMethod.GET)	// 기입한 주소값으로 GET방식으로 보냄
+	public String no_read(@RequestParam("num") int num, Model model) throws Exception {	// RequestParam으로 num 값을 가져옴
+		
+		logger.info("read get 페이지");		// Console 창에 알림띄어줌
+		
+		noticeservice.updateViewCnt(num);
+		
+		model.addAttribute("noticeVO", noticeservice.read(num));	// boardVO라는 별칭으로 service.read(num)을 담음 , 그 num에 해당하는 content를 띄우기 위해서
+		model.addAttribute("num", num);	// num 값을 보냄
+		
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+	    model.addAttribute("id", auth.getName());
+		
+		return "userLibrary/libNews/notice/read";	// read.jsp로 페이지 이동
+	}
+
+	// 본 게시물 수정 페이지 띄우기
+	@RequestMapping(value = "userLibrary/libNews/notice/modify", method = RequestMethod.GET)	// 기입한 주소값으로 GET방식으로 보냄
+	public void no_modifyGET(@RequestParam("num") int num, Model model) throws Exception {
+			// num은 어떤 Content인지 알아야 하므로 값을 가져옴
+		
+		logger.info("modify GET 페이지");		// Console창에 띄움
+		
+		model.addAttribute("noticeVO", noticeservice.read(num));	// service.read(num)을 boardVO로 기재하여 사용
+	}
+
+	// 본 게시물에서 수정한 내용을 보내기
+	@RequestMapping(value = "userLibrary/libNews/notice/modify", method = RequestMethod.POST)	// 기입한 주소값으로 POST방식으로 보냄
+	public ModelAndView no_modifyPOST(@RequestParam("num") String num, NoticeVO noticeVO, RedirectAttributes rttr)
+			throws Exception {
+
+		logger.info("modify GET 페이지");		// Console창에 띄움
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("num", num);
+
+		noticeservice.modify(noticeVO);
+		mav.setViewName("redirect:read");	// 수정한 후의 read페이지를 띄어줌
+		rttr.addFlashAttribute("msg", "SUCCESS");	// 알림창
+
+		return mav;
+	}
+
+	// 삭제하기
+	@RequestMapping(value = "userLibrary/libNews/notice/remove", method = RequestMethod.GET)	// 기입한 주소값으로 GET방식으로 보냄
+	public String no_removeGET(@RequestParam("num") int num, RedirectAttributes rttr) throws Exception {
+		
+		logger.info("remove GET 페이지");		// Console창에 띄움
+		
+		noticeservice.remove(num);
+
+		rttr.addFlashAttribute("msg", "SUCCESS");
+
+		return "redirect:listAll";	// 삭제 후의 listAll 띄어주기
 	}
 }

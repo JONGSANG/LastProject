@@ -3,38 +3,38 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.kosta.mappers.F_BoardMapper">
+<mapper namespace="com.kosta.mappers.libNewsMapper">
 
 <!-- 글목록에 id, title, content, write_date를 입력/now()는 현재 시각을 알려줌 -->
-<insert id="create">
+<insert id="f_create">
 	insert into f_board(id, title, content, write_date) values( #{id}, #{title}, #{content}, now())
 </insert>
 
 <!-- 해당 num의 내용을 볼 수 있다. -->
-<select id="read" resultType="F_BoardVO">
+<select id="f_read" resultType="F_BoardVO">
 	select * from f_board where num=#{num}
 </select>
 
-<select id="read2" resultType="F_Board_ReVO">
+<select id="f_read2" resultType="F_Board_ReVO">
 	select * from f_board_rep where num=#{num}
 </select>
 
 <!-- 해당 num의 게시물을 수정한다. -->
-<update id="update">
+<update id="f_update">
 	update f_board set title=#{title}, content=#{content}, id=#{id} where num=#{num}
 </update>
 
 <!-- 해당 num의 게시물을 삭제한다. -->
-<delete id="delete">
+<delete id="f_delete">
 	delete from f_board where num=#{num}
 </delete>
 
-<delete id="delete_re" >
+<delete id="f_delete_re" >
 	delete from f_board_rep where num=#{num}
 </delete>
 
 <!-- 전체 목록 띄우기 -->
-<select id="listAll" resultType="F_BoardVO">
+<select id="f_listAll" resultType="F_BoardVO">
 	select num ,title, content, id, write_date , viewcnt, (select count(num) 
                                              from f_board_rep a 
                                              where a.fnum = b.num ) as re_cnt
@@ -42,24 +42,60 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </select>
 
 <!-- 커맨드 입력 -->
-<insert id="insertComment">
+<insert id="f_insertComment">
 	insert into f_board_rep(id, fnum, title, content, rep_date) values( #{id}, #{num}, #{title}, #{content}, now())
 </insert>
 
-<select id="commentList" resultType="F_Board_ReVO">
+<select id="f_commentList" resultType="F_Board_ReVO">
 	select * from f_board_rep where fnum=#{num}
 </select>
 
-<update id="update_re">
+<update id="f_update_re">
 	update f_board_rep set title=#{title}, content=#{content}, id=#{id} where fnum=#{fnum} and num=#{num}
 </update>
 
-<update id="updateViewCnt">
+<update id="f_updateViewCnt">
  UPDATE f_board 
 	SET
 		VIEWCNT = VIEWCNT + 1
 	WHERE
 		num = #{num} 	
 </update>
+
+
+
+	<!-- 글목록에 id, title, content, write_date를 입력/now()는 현재 시각을 알려줌 -->
+	<insert id="n_create">
+		insert into n_board(id, title, content, write_date) values( #{id}, #{title}, #{content}, now())
+	</insert>
+
+	<!-- 해당 num의 내용을 볼 수 있다. -->
+	<select id="n_read" resultType="NoticeVO">
+		select * from n_board where num=#{num}
+	</select>
+
+	<!-- 해당 num의 게시물을 수정한다. -->
+	<update id="n_update">
+		update n_board set title=#{title}, content=#{content}, id=#{id} where
+		num=#{num}
+	</update>
+
+	<!-- 해당 num의 게시물을 삭제한다. -->
+	<delete id="n_delete">
+		delete from n_board where num=#{num}
+	</delete>
+
+	<!-- 전체 목록 띄우기 -->
+	<select id="n_listAll" resultType="NoticeVO">
+		select * from n_board
+	</select>
+
+	<update id="n_updateViewCnt">
+		UPDATE n_board
+		SET
+		VIEWCNT = VIEWCNT + 1
+		WHERE
+		num = #{num}
+	</update>
 
 </mapper>

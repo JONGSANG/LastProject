@@ -27,7 +27,7 @@
 				<th><textarea class="form-control" name="content" rows="3">${boardVO2.content}</textarea></th>
 			</tr>
 			<tr>
-				<th colspan="2"><input type="submit" value="수정">
+				<th colspan="2"><button type="submit" value="수정" >수정</button>
 					<button type="reset">취소</button></th>
 			</tr>
 		</table>
