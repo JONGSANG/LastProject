@@ -51,8 +51,8 @@
                     <ul class="sub">
                     	<li><a class="submenu" href="userLibrary/search/b_search/index">도서검색</a></li>
                     	<li><a class="submenu" href="userLibrary/search/n_search/index">신착도서</a></li>
-                    	<li><a class="submenu" href="userLibrary/search/p_search">간행물 검색</a></li>
-                    	<li><a class="submenu end" href="userLibrary/search/b_request">희망도서신청</a></li>
+                    	<li><a class="submenu" href="userLibrary/search/p_search/index">간행물 검색</a></li>
+                    	<li><a class="submenu end" href="userLibrary/search/b_request/index">희망도서신청</a></li>
                     </ul>
                     </li>
                     <li id="menu" class="li-left li-none"><a href="#">도서관소식</a>

@@ -6,9 +6,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.kosta.mappers.SearchMapper">
 
-
-
-
 <!-- 
 <select id="readInfo" resultType="BookVO">
 	select bNo, bTitle, bWriter, bCompany, bIntro, buy_date, bLocation, bYear
@@ -96,5 +93,71 @@ from book a
 inner join room_b b on a.bno = b.bno 
 where a.bNo = #{bNo}
  </select>
+ 
+ <!-- 연속 간행물 sql  -->
+ 
+ <!-- 전체 목록 띄우기 -->
+<select id="p_listAll" resultType="SearchVO">
+select distinct substring(bNo, 1, 4) p_bNo , bCompany, bWriter, bYear  
+from book
+where bLocation > 0 
+and bNo like '99%'
+order by p_bNo desc
+limit #{pageStart}, #{perPageNum}
+
+</select> 
+
+<!-- 페이징 -->
+ <select id="listCount" resultType="int">
+ <![CDATA[
+ select 
+   count(distinct substring(bNo, 1, 4)) 
+ from 
+   book 
+ where 
+   bno > 0 
+   and bNo like '99%'
+  ]]>
+ </select>
+
+
+<!-- 제목 선택 후 월별 목록 띄우기 -->
+<select id="p_listOneAll" resultType="SearchVO">
+select distinct substring(bNo, 7, 2) p_bMonth , bNo, bCompany, bWriter, bYear, bTitle, bIntro  
+from book
+where bLocation > 0 
+and bNo like CONCAT('%', #{p_bNo}, '%')
+order by p_bMonth desc
+limit #{pageStart}, #{perPageNum}
+</select>
+
+<!-- 페이징 -->
+ <select id="resultCount" resultType="int">
+ <![CDATA[
+ select 
+   count(bNo) 
+ from 
+   book 
+ where 
+   bno > 0 
+   and bNo like CONCAT('%', #{p_bNo}, '%')
+  ]]>
+ </select>
+
+
+<!-- 페이징. ex 게시판 -->
+<!-- <select id="listCriteria" resultType="BoardVO">
+<![CDATA[
+select 
+   bno, title, content, writer, regdate, viewcnt 
+ from 
+   tbl_board 
+ where bno > 0 
+ order by bno desc, regdate desc
+ limit #{pageStart}, #{perPageNum}
+ ]]>  
+ </select>
+
+ -->
  
 </mapper>

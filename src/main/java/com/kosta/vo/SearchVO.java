@@ -4,11 +4,27 @@ import java.util.Date;
 
 public class SearchVO extends PageInfo{
 
-	private String searchType, keyword, bNo, bTitle, bWriter, bCompany, bIntro;
+	private String searchType, keyword, bNo, p_bNo, p_bMonth, bTitle, bWriter, bCompany, bIntro;
 	private Date buy_date; 
 	private String start_date, end_date;
 	private int bLocation, bYear, bRent;
 	
+	public String getP_bMonth() {
+		return p_bMonth;
+	}
+
+	public void setP_bMonth(String p_bMonth) {
+		this.p_bMonth = p_bMonth;
+	}
+
+	public String getP_bNo() {
+		return p_bNo;
+	}
+
+	public void setP_bNo(String p_bNo) {
+		this.p_bNo = p_bNo;
+	}
+
 	public String getStart_date() {
 		return start_date;
 	}

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kosta.dao.SearchDAO;
+import com.kosta.vo.PageInfo;
 import com.kosta.vo.SearchVO;
 
 @Service
@@ -37,6 +38,26 @@ public class SearchServiceImpl implements SearchService{
 	@Override
 	public int listBSearchCount(SearchVO vo) throws Exception {
 		return SearchDAO.listBSearchCount(vo);
+	}
+
+	@Override
+	public List<SearchVO> p_listAll(SearchVO vo) throws Exception {
+		return SearchDAO.p_listAll(vo);
+	}
+
+	@Override
+	public List<SearchVO> p_listOneAll(SearchVO vo) throws Exception {
+		return SearchDAO.p_listOneAll(vo);
+	}
+
+	@Override
+	public int listCount(PageInfo pageInfo) throws Exception {
+		return SearchDAO.listCount(pageInfo);
+	}
+
+	@Override
+	public int resultCount(PageInfo pageInfo) throws Exception {
+		return SearchDAO.resultCount(pageInfo);
 	}
 	
 	

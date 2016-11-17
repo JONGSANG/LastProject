@@ -6,6 +6,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.kosta.vo.F_BoardVO;
+import com.kosta.vo.PageInfo;
 import com.kosta.vo.SearchVO;
 
 @Repository
@@ -38,5 +40,28 @@ public class SearchDAOImpl implements SearchDAO{
 	public int listBSearchCount(SearchVO vo) throws Exception {
 		return sqlSession.selectOne("com.kosta.mappers.SearchMapper.listBSearchCount", vo);
 	}
+
+	@Override
+	public List<SearchVO> p_listAll(SearchVO vo) throws Exception {
+		return sqlSession.selectList("com.kosta.mappers.SearchMapper.p_listAll", vo);
+	}
+
+	@Override
+	public List<SearchVO> p_listOneAll(SearchVO vo) throws Exception {
+		return sqlSession.selectList("com.kosta.mappers.SearchMapper.p_listOneAll", vo);
+	}
+
+	@Override
+	public int listCount(PageInfo pageInfo) throws Exception {
+		return sqlSession.selectOne("com.kosta.mappers.SearchMapper.listCount", pageInfo);
+	}
+
+	@Override
+	public int resultCount(PageInfo pageInfo) throws Exception {
+		return sqlSession.selectOne("com.kosta.mappers.SearchMapper.resultCount", pageInfo);
+	}
+	
+
+
 
 }

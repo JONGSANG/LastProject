@@ -46,7 +46,6 @@ public class SearchController {
 	@RequestMapping(value = "userLibrary/search/n_search/index", method = RequestMethod.GET)
 	public String n_searchGET(Model model) {
 		logger.info("search index(main) page !");
-		model.addAttribute("content", "result.jsp");
 		return "userLibrary/search/n_search/index";
 	}
 
@@ -61,6 +60,33 @@ public class SearchController {
 		pageMaker.setTotalCount(service.listNSearchCount(vo));
 		model.addAttribute("pageMaker", pageMaker);
 		return "userLibrary/search/n_search/index_result";
+	}	
+	
+	//////////////////////////////  연속간행물
+	
+
+	@RequestMapping(value = "userLibrary/search/p_search/index", method = RequestMethod.GET)
+	public String p_indexGET(Model model,@ModelAttribute("pageInfo") SearchVO vo) throws Exception {
+
+		model.addAttribute("list", service.p_listAll(vo));
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setPageInfo(vo);
+
+	    pageMaker.setTotalCount(service.listCount(vo));
+	    model.addAttribute("pageMaker", pageMaker);
+		return "userLibrary/search/p_search/index";
+	}
+
+	@RequestMapping(value = "userLibrary/search/p_search/result", method = RequestMethod.GET)
+	public String p_resultGET(Model model,@ModelAttribute("pageInfo") SearchVO vo) throws Exception {
+		
+		model.addAttribute("list", service.p_listOneAll(vo));
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setPageInfo(vo);
+
+	    pageMaker.setTotalCount(service.resultCount(vo));
+	    model.addAttribute("pageMaker", pageMaker);
+		return "userLibrary/search/p_search/index_result";
 	}
 
 	@RequestMapping(value = "userLibrary/search/**/readInfo", method = RequestMethod.GET)

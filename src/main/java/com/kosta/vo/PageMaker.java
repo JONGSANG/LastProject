@@ -78,6 +78,17 @@ public class PageMaker {
 
     return uriComponents.toUriString();
   }
+ 
+
+  public String makeResult(int page) {
+
+	    UriComponents uriComponents = UriComponentsBuilder.newInstance().queryParam("page", page)
+	        .queryParam("perPageNum", pageInfo.getPerPageNum())
+	        .queryParam("p_bNo", ((SearchVO)pageInfo).getP_bNo())
+	        .build();
+
+	    return uriComponents.toUriString();
+	  }
   
   
   public String makeBSearch(int page){
@@ -93,7 +104,7 @@ public class PageMaker {
     return uriComponents.toUriString();
   } 
   
-  
+		  
   public String makeNSearch(int page){
     
     UriComponents uriComponents =
