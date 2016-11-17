@@ -2,7 +2,7 @@ package com.kosta.vo;
 
 import java.util.Date;
 
-public class NoticeVO {
+public class NoticeVO extends PageInfo {
 	private int num;
 	private String id;
 	private String title;

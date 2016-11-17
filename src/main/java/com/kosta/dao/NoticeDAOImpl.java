@@ -34,8 +34,8 @@ public class NoticeDAOImpl implements NoticeDAO {
 	}
 
 	@Override
-	public List<NoticeVO> listAll() throws Exception {
-		return sqlSession.selectList("com.kosta.mappers.libNewsMapper.n_listAll");
+	public List<NoticeVO> listAll(NoticeVO vo) throws Exception {
+		return sqlSession.selectList("com.kosta.mappers.libNewsMapper.n_listAll",vo);
 	}
 
 	// 조회수 업데이트
@@ -43,5 +43,10 @@ public class NoticeDAOImpl implements NoticeDAO {
 	public void updateViewCnt(int num) throws Exception {
 		sqlSession.update("com.kosta.mappers.libNewsMapper.n_updateViewCnt", num);
 		
+	}
+
+	@Override
+	public int n_listAllCount(NoticeVO vo) throws Exception {
+		return sqlSession.selectOne("com.kosta.mappers.libNewsMapper.n_listAllCount", vo);
 	}
 }

@@ -232,15 +232,20 @@ public class LibNewsController {
 	}
 
 	// 전체 목록 띄우기
+	// 페이징 추가
 	@RequestMapping(value = "userLibrary/libNews/notice/listAll", method = RequestMethod.GET)	// 기입한 주소값으로 GET방식으로 보냄
-	public String no_listALL(Model model) throws Exception {
-		
+	public String no_listALL(Model model, @ModelAttribute("pageInfo") NoticeVO vo) throws Exception {
 		logger.info("listAll 페이지");		// Console 창에 알림띄어줌
+		model.addAttribute("list", noticeservice.listAll(vo));	// 다음 페이지로 값을 넘겨줌, list라는 별칭으로 service.listAll()을 담음
 		
-		model.addAttribute("list", noticeservice.listAll());	// 다음 페이지로 값을 넘겨줌, list라는 별칭으로 service.listAll()을 담음
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setPageInfo(vo);
+	    pageMaker.setTotalCount(noticeservice.n_listAllCount(vo));
+	    model.addAttribute("pageMaker", pageMaker);
 		return "userLibrary/libNews/notice/listAll";	// listAll.jsp 페이지로 이동
 	}
 
+	
 	// 상세 내용으로 띄우기
 	@RequestMapping(value = "userLibrary/libNews/notice/read", method = RequestMethod.GET)	// 기입한 주소값으로 GET방식으로 보냄
 	public String no_read(@RequestParam("num") int num, Model model) throws Exception {	// RequestParam으로 num 값을 가져옴

@@ -45,14 +45,20 @@ public class NoticeServiceImpl implements NoticeService {
 
 	// list 형태로 모든 list 출력
 	@Override
-	public List<NoticeVO> listAll() throws Exception {
-		return noticeDao.listAll();
+	public List<NoticeVO> listAll(NoticeVO vo) throws Exception {
+		return noticeDao.listAll(vo);
 	}
 
 	// 조회수 업데이트
 	@Override
 	public void updateViewCnt(int num) throws Exception {
 		noticeDao.updateViewCnt(num);
+	}
+
+	@Override
+	public int n_listAllCount(NoticeVO vo) throws Exception {
+		return 	noticeDao.n_listAllCount(vo);
+
 	}
 	
 }

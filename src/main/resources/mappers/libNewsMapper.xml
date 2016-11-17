@@ -115,8 +115,19 @@ limit #{pageStart}, #{perPageNum}
 	<!-- 전체 목록 띄우기 -->
 	<select id="n_listAll" resultType="NoticeVO">
 		select * from n_board
+		order by num desc
+		limit #{pageStart}, #{perPageNum}
 	</select>
 
+	<!-- 페이징 -->
+ 	<select id="n_listAllCount" resultType="int">
+ 	<![CDATA[
+ 	select 
+ 	  count(num) 
+	 from 
+	   n_board
+	  ]]>
+	 </select>
 	<update id="n_updateViewCnt">
 		UPDATE n_board
 		SET

@@ -6,7 +6,10 @@ import com.kosta.vo.NoticeVO;
 public interface NoticeDAO {
 	
 	// 본 게시물의 모든 목록 보기
-	public List<NoticeVO> listAll() throws Exception;
+	public List<NoticeVO> listAll(NoticeVO vo) throws Exception;
+	
+	// 게시물 페이징 처리
+	public int n_listAllCount(NoticeVO vo) throws Exception;
 	
 	// 본 게시물 작성
 	public void create(NoticeVO vo) throws Exception;
