@@ -15,16 +15,24 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.kosta.service.M_BoardService;
+import com.kosta.service.ServiceService;
+import com.kosta.vo.AfterVO;
+import com.kosta.vo.CultureVO;
+import com.kosta.vo.L_AfterVO;
+import com.kosta.vo.L_CultureVO;
 import com.kosta.vo.M_BoardVO;
 import com.kosta.vo.M_Board_ReVO;
 
 @Controller
 public class ServiceController {
-
+ 
 	private static final Logger logger = LoggerFactory.getLogger(ServiceController.class);
 
 	@Inject
 	private M_BoardService service;
+	@Inject
+	private ServiceService service2;
+	
 
 	// 본 게시물 작성페이지 띄우기
 	@RequestMapping(value = "userLibrary/service/min_board/register", method = RequestMethod.GET)	// 주소값을 정해주고 GET 방식으로 보냄
@@ -175,4 +183,214 @@ public class ServiceController {
 
 		return "redirect:read?num="+mnum;	// 댓글이 달려있는 본게시물을 띄어줌
 	}
+	
+	//--------------------------------------- 방과후 --------------------------------------- 
+		// 방과후 글 작성 폼 메소드
+		@RequestMapping(value = "userLibrary/service/after/write", method = RequestMethod.GET)
+		public String after_writer(AfterVO vo) {
+			logger.info("이벤트 글쓰기 페이지");
+			
+			// 세션아이디 호출해서 vo.id에 넣음
+			Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+			vo.setId(auth.getName());
+			
+			
+			return "userLibrary/service/after/write";
+		}
+		
+		// 방과후 글 작성 메소드
+		@RequestMapping(value = "userLibrary/service/after/write", method = RequestMethod.POST)
+		public String after_write(AfterVO vo, RedirectAttributes rttr) throws Exception {
+			logger.info("이벤트 글쓰기 페이지");
+			
+			// input 으로 전송받은 것들을 db에 입력 하고 완료 메세지 띄움
+			service2.after_write(vo);
+			rttr.addFlashAttribute("msg", "SUCCESS");
+			
+			return "redirect:/userLibrary/service/after/list";
+		}
+		
+		// 방과후 게시판 리스트 폼 메소드
+		@RequestMapping(value = "userLibrary/service/after/list", method = RequestMethod.GET)
+		public String after_ListAll(Model model) throws Exception {
+			logger.info("이벤트 글게시판 페이지");
+			
+			// after 테이블에 모든정보를 담고 list라고 선언
+			model.addAttribute("list", service2.after_list());
+			
+			return "userLibrary/service/after/list";
+		}
+		
+		// 방과후 게시판 상세글 메소드
+		@RequestMapping(value = "userLibrary/service/after/read", method = RequestMethod.GET)
+		public String after_read(@RequestParam("num") int num, Model model) throws Exception {
+			logger.info("이벤트 글읽기 페이지");
+			
+			// 해당되는 글의 번호에 대한정보를 가져와서 출력
+			model.addAttribute(service2.after_read(num));
+			service2.after_viewcnt(num);
+			
+			return "userLibrary/service/after/read";
+		}
+		
+		// 방과후 게시판 글 삭제 메소드
+		@RequestMapping(value = "userLibrary/service/after/delete", method = RequestMethod.POST)
+		public String after_delete(@RequestParam("num") int num, RedirectAttributes rttr) throws Exception {
+			logger.info("이벤트 글삭제 페이지");
+			
+			// 해당되는 글의 번호에 대한게시글을 삭제
+			service2.after_delete(num);
+			rttr.addFlashAttribute("msg", "SUCCESS");
+			return "redirect:/userLibrary/service/after/list";
+		}
+		
+		// 방과후 게시판 글 수정 폼 메소드
+		@RequestMapping(value = "userLibrary/service/after/modify", method = RequestMethod.GET)
+		public String after_modify(@RequestParam("num") int num, Model model) throws Exception {
+			logger.info("이벤트 글수정 페이지");
+			
+			// 해당되는 글의 번호의 정보를 가져와 출력
+			model.addAttribute(service2.after_read(num));
+			
+			return "userLibrary/service/after/modify";
+		}
+		
+		// 방과후 게시판 글 수정 메소드
+		@RequestMapping(value = "userLibrary/service/after/modify", method = RequestMethod.POST)
+		public String after_modify(AfterVO vo, RedirectAttributes rttr) throws Exception {
+			logger.info("이벤트 글수정 페이지");
+			
+			// 해당되는 글의 번호에 대한게시글을 수정 하고 완료 메세지 띄움
+			service2.after_modify(vo);
+			rttr.addFlashAttribute("msg", "SUCCESS");
+			
+			return "redirect:/userLibrary/service/after/list";
+		}
+		
+		// 방과후 이벤트 신청 폼 메소드
+		@RequestMapping(value = "userLibrary/service/after/join", method = RequestMethod.GET)
+		public String after_joiner(AfterVO vo, Model model) throws Exception {
+			logger.info("이벤트 신청 페이지");
+			
+			// read에서 보낸 num값을 받아서 해당되는 id, aselect, num 출력
+			model.addAttribute(service2.after_joiner(vo));
+			
+			return "userLibrary/service/after/join";
+		}
+		
+		// 방과후 이벤트 신청 메소드
+		@RequestMapping(value = "userLibrary/service/after/join", method = RequestMethod.POST)
+		public String after_join(L_AfterVO vo, Model model) throws Exception {
+			logger.info("이벤트 신청 페이지");
+			
+			// mapper에서 afterlist에 해당 신청자를 넣고 바로 그 글에대한 현제 인원수를 +1 해줌
+			service2.after_join(vo);
+			
+			return "redirect:/userLibrary/service/after/list";
+		}
+		
+		//--------------------------------------- 문화행사 --------------------------------------- 
+		// 문화행사 글 작성 폼 메소드
+		@RequestMapping(value = "userLibrary/service/culture/write", method = RequestMethod.GET)
+		public String culture_writer(CultureVO vo) {
+			logger.info("이벤트 글쓰기 페이지");
+			
+			// 세션아이디 호출해서 vo.id에 넣음
+			Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+			vo.setId(auth.getName());
+			
+			
+			return "userLibrary/service/culture/write";
+		}
+		
+		// 문화행사 글 작성 메소드
+		@RequestMapping(value = "userLibrary/service/culture/write", method = RequestMethod.POST)
+		public String culture_write(CultureVO vo, RedirectAttributes rttr) throws Exception {
+			logger.info("이벤트 글쓰기 페이지");
+			
+			// input 으로 전송받은 것들을 db에 입력 하고 완료 메세지 띄움
+			service2.culture_write(vo);
+			rttr.addFlashAttribute("msg", "SUCCESS");
+			
+			return "redirect:/userLibrary/service/culture/list";
+		}
+		
+		// 문화행사 게시판 리스트 폼 메소드
+		@RequestMapping(value = "userLibrary/service/culture/list", method = RequestMethod.GET)
+		public String culture_ListAll(Model model) throws Exception {
+			logger.info("이벤트 글게시판 페이지");
+			
+			// after 테이블에 모든정보를 담고 list라고 선언
+			model.addAttribute("list", service2.culture_list());
+			
+			return "userLibrary/service/culture/list";
+		}
+		
+		// 문화행사 게시판 상세글 메소드
+		@RequestMapping(value = "userLibrary/service/culture/read", method = RequestMethod.GET)
+		public String culture_read(@RequestParam("num") int num, Model model) throws Exception {
+			logger.info("이벤트 글읽기 페이지");
+			
+			// 해당되는 글의 번호에 대한정보를 가져와서 출력
+			model.addAttribute(service2.culture_read(num));
+			service2.culture_viewcnt(num);
+			
+			return "userLibrary/service/culture/read";
+		}
+		
+		// 문화행사 게시판 글 삭제 메소드
+		@RequestMapping(value = "userLibrary/service/culture/delete", method = RequestMethod.POST)
+		public String culture_delete(@RequestParam("num") int num, RedirectAttributes rttr) throws Exception {
+			logger.info("이벤트 글삭제 페이지");
+			
+			// 해당되는 글의 번호에 대한게시글을 삭제
+			service2.culture_delete(num);
+			rttr.addFlashAttribute("msg", "SUCCESS");
+			return "redirect:/userLibrary/service/culture/list";
+		}
+		
+		// 문화행사 게시판 글 수정 폼 메소드
+		@RequestMapping(value = "userLibrary/service/culture/modify", method = RequestMethod.GET)
+		public String culture_modify(@RequestParam("num") int num, Model model) throws Exception {
+			logger.info("이벤트 글수정 페이지");
+			
+			// 해당되는 글의 번호의 정보를 가져와 출력
+			model.addAttribute(service2.culture_read(num));
+			
+			return "userLibrary/service/culture/modify";
+		}
+		
+		// 문화행사 게시판 글 수정 메소드
+		@RequestMapping(value = "userLibrary/service/culture/modify", method = RequestMethod.POST)
+		public String culture_modify(CultureVO vo, RedirectAttributes rttr) throws Exception {
+			logger.info("이벤트 글수정 페이지");
+			
+			// 해당되는 글의 번호에 대한게시글을 수정 하고 완료 메세지 띄움
+			service2.culture_modify(vo);
+			rttr.addFlashAttribute("msg", "SUCCESS");
+			
+			return "redirect:/userLibrary/service/culture/list";
+		}
+		
+		// 문화행사 이벤트 신청 폼 메소드
+		@RequestMapping(value = "userLibrary/service/culture/join", method = RequestMethod.GET)
+		public String culture_joiner(CultureVO vo, Model model) throws Exception {
+			logger.info("이벤트 신청 페이지");
+			
+			// read에서 보낸 num값을 받아서 해당되는 id, aselect, num 출력
+			model.addAttribute(service2.culture_joiner(vo));
+			
+			return "userLibrary/service/culture/join";
+		}
+		
+		// 문화행사 이벤트 신청 메소드
+		@RequestMapping(value = "userLibrary/service/culture/join", method = RequestMethod.POST)
+		public String culture_join(L_CultureVO vo, Model model) throws Exception {
+			logger.info("이벤트 신청 페이지");
+			
+			// mapper에서 afterlist에 해당 신청자를 넣고 바로 그 글에대한 현제 인원수를 +1 해줌
+			service2.culture_join(vo);
+			
+			return "redirect:/userLibrary/service/culture/list";
+		}
 }

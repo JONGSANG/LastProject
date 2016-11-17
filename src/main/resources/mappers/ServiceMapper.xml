@@ -61,4 +61,83 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	update minwon_rep set title=#{title}, content=#{content}, id=#{id} where mnum=#{mnum} and num=#{num}
 </update>
 
+
+
+<insert id="after_write">
+	insert into after(id, title, content, start_date, end_date, aselect,max_cnt) 
+	values(#{id},#{title},#{content},#{start_date},#{end_date},#{aselect}, #{max_cnt})
+</insert>
+
+<select id="after_list" resultType="AfterVO">
+	select num, title, id, write_date, aselect, max_cnt, tocnt, viewcnt from after
+</select>
+
+<select id="after_read" resultType="AfterVO">
+	select * from after where num = #{num}
+</select>
+
+<update id="after_viewcnt">
+	update after set viewcnt = viewcnt+1 where num=#{num} 
+</update>
+
+<delete id="after_delete">
+	delete from after where num = #{num}
+</delete>
+
+<update id="after_modify">
+	update after set title = #{title}, content = #{content}, start_date = #{start_date}, end_date = #{end_date}, aselect = #{aselect}, max_cnt = #{max_cnt} where num = #{num}
+</update>
+
+<select id="after_joiner" resultType="AfterVO">
+	select * from after where num = #{num}
+</select>
+
+<insert id="after_join">
+	insert into after_list (id, anum, after_date) values (#{id}, #{anum}, now())
+</insert>
+
+<update id="after_joinup">
+	update after set tocnt = tocnt+1 where num=#{anum}
+</update>
+
+
+
+
+<insert id="culture_write">
+	insert into culture(id, title, content, start_date, end_date, cselect,max_cnt) 
+	values(#{id},#{title},#{content},#{start_date},#{end_date},#{cselect}, #{max_cnt})
+</insert>
+
+<select id="culture_list" resultType="CultureVO">
+	select num, title, id, write_date, cselect, max_cnt, tocnt, viewcnt from culture
+</select>
+
+<select id="culture_read" resultType="CultureVO">
+	select * from culture where num = #{num}
+</select>
+
+<update id="culture_viewcnt">
+	update culture set viewcnt = viewcnt+1 where num=#{num} 
+</update>
+
+<delete id="culture_delete">
+	delete from culture where num = #{num}
+</delete>
+
+<update id="culture_modify">
+	update culture set title = #{title}, content = #{content}, start_date = #{start_date}, end_date = #{end_date}, cselect = #{cselect}, max_cnt = #{max_cnt} where num = #{num}
+</update>
+
+<select id="culture_joiner" resultType="CultureVO">
+	select * from culture where num = #{num}
+</select>
+
+<insert id="culture_join">
+	insert into culture_list (id, anum, culture_date) values (#{id}, #{anum}, now())
+</insert>
+
+<update id="culture_joinup">
+	update culture set tocnt = tocnt+1 where num=#{anum}
+</update>
+
 </mapper>

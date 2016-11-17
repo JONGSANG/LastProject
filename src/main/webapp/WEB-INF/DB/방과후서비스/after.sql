@@ -21,13 +21,13 @@ ID varchar(50),
 ASELECT varchar(50),
 TITLE varchar(100), 
 CONTENT varchar(2000),
-WRITE_DATE DATETIME,
+WRITE_DATE DATETIME default now(),
 START_DATE DATE,
-END_DATE DATE, 
+END_DATE DATE,
 
 VIEWCNT INTEGER default 0,
+max_cnt INTEGER,
 TOCNT INTEGER default 0,
-
 constraint pk_after primary key(NUM)
 );
 

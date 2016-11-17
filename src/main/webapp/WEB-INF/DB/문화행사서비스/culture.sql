@@ -42,6 +42,7 @@ START_DATE DATE,
 END_DATE DATE, 
 
 VIEWCNT integer default 0,
+MAX_CNT INTEGER,
 TOCNT integer default 0,
 constraint pk_culture primary key(NUM)
 );
