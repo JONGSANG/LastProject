@@ -1,6 +1,9 @@
 select * from f_board_rep;
 drop table f_board_rep;
 
+select * from f_board_rep where fnum=3
+	   order by num desc
+
 --------------------------------------------------------------
 -- f_board_rep : f_board_rep 게시판 정보 Table
 -- 

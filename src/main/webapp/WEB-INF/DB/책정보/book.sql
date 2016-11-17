@@ -3,6 +3,7 @@ drop table BOOK;
 
 
 
+
  select 
    count(distinct substring(bNo, 1, 4)) 
  from 

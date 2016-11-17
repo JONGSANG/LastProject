@@ -2,7 +2,7 @@ package com.kosta.vo;
 
 import java.util.Date;
 
-public class F_BoardVO {
+public class F_BoardVO extends PageInfo{
 	private int num;
 	private String title;
 	private String content;

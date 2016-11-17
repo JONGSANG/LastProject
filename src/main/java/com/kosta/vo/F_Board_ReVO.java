@@ -2,7 +2,7 @@ package com.kosta.vo;
 
 import java.util.Date;
 
-public class F_Board_ReVO {
+public class F_Board_ReVO extends PageInfo_rep{
 	
 	private int num;
 	private String title;

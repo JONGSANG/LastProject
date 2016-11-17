@@ -70,7 +70,7 @@
 
 	<table border="1">
 		<tr>
-			<th style="width: 40px" align="center">번호</th>
+			<th style="width: 40px" align="center">구분</th>
 			<th align="center" width="80">ID</th>
 			<th align="center" width="150">제목</th>
 			<th align="center" width="300">내용</th>
@@ -80,7 +80,8 @@
 
 		<c:forEach items="${ clist }" var="clist" varStatus="var">
 			<tr>
-				<td align="center">${ var.index+1 }</td>
+				<%-- <td align="center">${ pageMaker.totalCount - (page-1) * perPageNum)-var.count}</td> --%>
+				<td align="center"> - </td>
 				<td align="center">${ clist.id }</td>
 				<td align="center">${ clist.title }</td>
 				<td align="center">${ clist.content }</td>
@@ -95,5 +96,32 @@
 			</tr>
 		</c:forEach>
 	</table>
+	    
+	    
+	    
+	    
+    <div class="text-center">
+		<ul class="pagination">
+
+			<c:if test="${pageMaker.prev}">
+				<li><a
+					href="read${pageMaker.makeRepQuery(pageMaker.startPage - 1) }">&laquo;</a></li>
+			</c:if>
+
+			<c:forEach begin="${pageMaker.startPage }"
+				end="${pageMaker.endPage }" var="idx">
+				<li <c:out value="${pageMaker.pageInfo.page == idx?'class =active':''}"/>>
+					<a href="read${pageMaker.makeRepQuery(idx)}">${idx}</a>
+				</li>
+			</c:forEach>
+
+			<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+				<li><a
+					href="read${pageMaker.makeRepQuery(pageMaker.endPage +1) }">&raquo;</a></li>
+			</c:if>
+
+		</ul>
+	</div>
+	
 </body>
 </html>

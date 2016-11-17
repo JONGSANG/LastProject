@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.kosta.vo.F_BoardVO;
 import com.kosta.vo.F_Board_ReVO;
+import com.kosta.vo.PageInfo;
 
 @Repository
 public class F_BoardDAOImpl implements F_BoardDAO {
@@ -47,8 +48,8 @@ public class F_BoardDAOImpl implements F_BoardDAO {
 	}
 
 	@Override
-	public List<F_BoardVO> listAll() throws Exception {
-		return sqlSession.selectList("com.kosta.mappers.libNewsMapper.f_listAll");
+	public List<F_BoardVO> listAll(F_BoardVO vo) throws Exception {
+		return sqlSession.selectList("com.kosta.mappers.libNewsMapper.f_listAll",vo);
 	}
 
 	// 댓글달기
@@ -59,9 +60,9 @@ public class F_BoardDAOImpl implements F_BoardDAO {
 	}
 
 	@Override
-	public List<F_Board_ReVO> commentList(int num) throws Exception {
+	public List<F_Board_ReVO> commentList(F_Board_ReVO vo) throws Exception {
 		
-		return sqlSession.selectList("com.kosta.mappers.libNewsMapper.f_commentList", num);
+		return sqlSession.selectList("com.kosta.mappers.libNewsMapper.f_commentList", vo);
 	}
 
 	@Override
@@ -74,5 +75,15 @@ public class F_BoardDAOImpl implements F_BoardDAO {
 	public void updateViewCnt(int num) throws Exception {
 		sqlSession.update("com.kosta.mappers.libNewsMapper.f_updateViewCnt", num);
 		
+	}
+
+	@Override
+	public int f_listAllCount(F_BoardVO vo) throws Exception {
+		return sqlSession.selectOne("com.kosta.mappers.libNewsMapper.f_listAllCount", vo);
+	}
+
+	@Override
+	public int f_repAllCount(F_Board_ReVO vo) throws Exception {
+		return sqlSession.selectOne("com.kosta.mappers.libNewsMapper.f_repAllCount", vo);
 	}
 }

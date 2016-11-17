@@ -4,11 +4,15 @@ import java.util.List;
 
 import com.kosta.vo.F_BoardVO;
 import com.kosta.vo.F_Board_ReVO;
+import com.kosta.vo.PageInfo;
 
 public interface F_BoardService {
 
 	// 게시물의 전체 목록
-	public List<F_BoardVO> listAll() throws Exception;
+	public List<F_BoardVO> listAll(F_BoardVO vo) throws Exception;
+	
+	// 게시물의 전체 목록 페이징
+	public int f_listAllCount(F_BoardVO vo) throws Exception;
 	
 	// 본 게시물 작성
 	public void regist(F_BoardVO board) throws Exception;
@@ -23,7 +27,10 @@ public interface F_BoardService {
 	public void remove(int num) throws Exception;
 
 	// 게시물 내용의 댓글 목록
-	public List<F_Board_ReVO> commentList(int num) throws Exception;
+	public List<F_Board_ReVO> commentList(F_Board_ReVO vo) throws Exception;
+
+	// 게시물 댓글을 페이징
+	public int f_repAllCount(F_Board_ReVO vo) throws Exception;
 
 	//  게시물 내용의 댓글 등록
 	public void insertComment(F_Board_ReVO vo2) throws Exception;

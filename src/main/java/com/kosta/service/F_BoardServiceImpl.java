@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.kosta.dao.F_BoardDAO;
 import com.kosta.vo.F_BoardVO;
 import com.kosta.vo.F_Board_ReVO;
+import com.kosta.vo.PageInfo;
 
 @Service	// 이 페이지가 Service라는 것을 알려줌
 public class F_BoardServiceImpl implements F_BoardService {
@@ -57,8 +58,8 @@ public class F_BoardServiceImpl implements F_BoardService {
 
 	// list 형태로 모든 list 출력
 	@Override
-	public List<F_BoardVO> listAll() throws Exception {
-		return f_boardDao.listAll();
+	public List<F_BoardVO> listAll(F_BoardVO vo) throws Exception {
+		return f_boardDao.listAll(vo);
 	}
 
 	// 댓글을 담을 vo2가 필요하다.
@@ -68,8 +69,8 @@ public class F_BoardServiceImpl implements F_BoardService {
 	}
 
 	@Override
-	public List<F_Board_ReVO> commentList(int num) throws Exception {
-		return f_boardDao.commentList(num);
+	public List<F_Board_ReVO> commentList(F_Board_ReVO vo) throws Exception {
+		return f_boardDao.commentList(vo);
 	}
 
 	@Override
@@ -83,5 +84,17 @@ public class F_BoardServiceImpl implements F_BoardService {
 	public void updateViewCnt(int num) throws Exception {
 		f_boardDao.updateViewCnt(num);
 	}
+
+	// 글 페이징
+	@Override
+	public int f_listAllCount(F_BoardVO vo) throws Exception {
+		return f_boardDao.f_listAllCount(vo);
+	}
+	// 댓글 페이징
+	@Override
+	public int f_repAllCount(F_Board_ReVO vo) throws Exception {
+		return f_boardDao.f_repAllCount(vo);
+	}
+
 	
 }

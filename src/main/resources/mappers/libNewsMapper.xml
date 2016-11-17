@@ -39,7 +39,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
                                              from f_board_rep a 
                                              where a.fnum = b.num ) as re_cnt
    from f_board b
+   order by num desc
+limit #{pageStart}, #{perPageNum}
+   
 </select>
+
+<!-- 페이징 -->
+ <select id="f_listAllCount" resultType="int">
+ <![CDATA[
+ select 
+   count(num) 
+ from 
+   f_board
+  ]]>
+ </select>
 
 <!-- 커맨드 입력 -->
 <insert id="f_insertComment">
@@ -48,7 +61,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <select id="f_commentList" resultType="F_Board_ReVO">
 	select * from f_board_rep where fnum=#{num}
+	   order by num desc
+limit #{pageStart}, #{perPageNum}
+	
 </select>
+
+<!-- 페이징 -->
+ <select id="f_repAllCount" resultType="int">
+ <![CDATA[
+ select 
+   count(num) 
+ from 
+   f_board_rep
+   where fnum=#{num}
+  ]]>
+ </select>
 
 <update id="f_update_re">
 	update f_board_rep set title=#{title}, content=#{content}, id=#{id} where fnum=#{fnum} and num=#{num}
