@@ -4,10 +4,10 @@ $(document).ready(function() {
    SetData();
    function SetData() {
 	   var now = new Date();
-	   $('.date').html(day[now.getDay()]+'  ');
+	   $('.date').html(now.getFullYear()+'년 ')
 	   $('.date').append(' '+month[now.getMonth()]+' ');
 	   $('.date').append(now.getDate()+'일  ');
-	   $('.date').append(now.getFullYear()+'년 ');
+	   $('.date').append(day[now.getDay()]+'  ');
 	   
 	   hour=now.getHours();
 	   minutes=now.getMinutes();

@@ -46,7 +46,7 @@ a {text-decoration:none; cursor:pointer;text-decoration:none; }
 #top_nav .th {padding-right:0;margin-right:0;background:none; position: absolute; right: 1px;}
 
 
-.dat{width:1024px; margin:0 auto;  position:relative; font-family: 'Jeju Hallasan', cursive; color: navy;  }
+.dat{width:1024px; margin:0 auto;  position:relative; font-family: 'Jeju Gothic', cursive; color: #5D5D5D; font-size: 13px }
 
 /****************************footer************************/
 footer {width:1024px; margin:0 auto; z-index:1000; position:relative; padding-top: 5px}
