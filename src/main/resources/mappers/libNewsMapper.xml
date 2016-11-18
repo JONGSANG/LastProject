@@ -91,6 +91,8 @@ limit #{pageStart}, #{perPageNum}
 
 
 
+
+
 	<!-- 글목록에 id, title, content, write_date를 입력/now()는 현재 시각을 알려줌 -->
 	<insert id="n_create">
 		insert into n_board(id, title, content, write_date) values( #{id}, #{title}, #{content}, now())

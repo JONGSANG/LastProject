@@ -89,6 +89,17 @@ public class PageMaker_rep {
 
 		return uriComponents.toUriString();
 	}
+
+	public String makeHopeQuery(int page) {
+
+		UriComponents uriComponents = UriComponentsBuilder.newInstance()
+				.queryParam("num", ((Hope_repVO)pageInfo).getNum())
+				.queryParam("page", page)
+				.queryParam("perPageNum", pageInfo.getPerPageNum())
+				.build();
+
+		return uriComponents.toUriString();
+	}
 	
 
 	public String makeMRepQuery(int page) {

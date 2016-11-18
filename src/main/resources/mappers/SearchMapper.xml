@@ -6,6 +6,96 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.kosta.mappers.SearchMapper">
 
+<!-- 글목록에 id, title, content, write_date를 입력/now()는 현재 시각을 알려줌 -->
+<insert id="f_create">
+	insert into HOPE_BOOK(id, bName, bIntro, hope_Date,bWriter, bYear,bCompany ) 
+	values( #{id}, #{bName}, #{bIntro}, now(),#{bWriter},#{bYear},#{bCompany} )
+</insert>
+
+<!-- 해당 num의 내용을 볼 수 있다. -->
+<select id="f_read" resultType="HopeVO">
+	select * from HOPE_BOOK where num=#{num}
+</select>
+
+<select id="f_read2" resultType="Hope_repVO">
+	select * from HOPE_BOOK_rep where num=#{num}
+</select>
+
+<!-- 해당 num의 게시물을 수정한다. -->
+<update id="f_update">
+	update HOPE_BOOK set bName=#{bName}, bIntro=#{bIntro}, bWriter=#{bWriter}, bYear=#{bYear}, bCompany=#{bCompany}, 
+	where num=#{num}
+</update>
+
+<!-- 해당 num의 게시물을 삭제한다. -->
+<delete id="f_delete">
+	delete from HOPE_BOOK where num=#{num}
+</delete>
+
+<delete id="f_delete_re" >
+	delete from HOPE_BOOK_rep where num=#{num}
+</delete>
+
+<!-- 전체 목록 띄우기 -->
+<select id="f_listAll" resultType="HopeVO">
+	select num, id, bName, bIntro, id, hope_Date, viewcnt, bWriter, bYear, bCompany, (select count(num) 
+                                             from HOPE_BOOK_rep a 
+                                             where a.hnum = b.num ) as re_cnt
+   from HOPE_BOOK b
+   order by num desc
+limit #{pageStart}, #{perPageNum}
+   
+</select>
+
+<!-- 페이징 -->
+ <select id="f_listAllCount" resultType="int">
+ <![CDATA[
+ select 
+   count(num) 
+ from 
+   HOPE_BOOK
+  ]]>
+ </select>
+
+<!-- 커맨드 입력 -->
+<insert id="f_insertComment">
+	insert into HOPE_BOOK_rep(id, hnum, title, content, rep_date) values( #{id}, #{num}, #{title}, #{content}, now())
+</insert>
+
+<select id="f_commentList" resultType="Hope_repVO">
+	select * from HOPE_BOOK_rep where hnum=#{num}
+	   order by num desc
+limit #{pageStart}, #{perPageNum}
+	
+</select>
+
+<!-- 페이징 -->
+ <select id="f_repAllCount" resultType="int">
+ <![CDATA[
+ select 
+   count(num) 
+ from 
+   HOPE_BOOK_rep
+   where hnum=#{num}
+  ]]>
+ </select>
+
+<update id="f_update_re">
+	update HOPE_BOOK_rep set title=#{title}, content=#{content}, id=#{id} where hnum=#{hNum} and num=#{num}
+</update>
+
+<update id="f_updateViewCnt">
+ UPDATE HOPE_BOOK 
+	SET
+		VIEWCNT = VIEWCNT + 1
+	WHERE
+		num = #{num} 	
+</update>
+
+
+
+
+
 <!-- 
 <select id="readInfo" resultType="BookVO">
 	select bNo, bTitle, bWriter, bCompany, bIntro, buy_date, bLocation, bYear

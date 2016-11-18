@@ -40,7 +40,14 @@ BYEAR year(4),
 HOPE_DATE DATETIME,
 VIEWCNT integer default 0,
 
-constraint pk_HOPE_BOOK primary key(NUM),
-constraint fk_HOPE_BOOK foreign key(ID) REFERENCES member(ID) on delete cascade on update cascade
+constraint pk_HOPE_BOOK primary key(NUM)
 );
+--constraint fk_HOPE_BOOK foreign key(ID) REFERENCES member(ID) on delete cascade on update cascade
+
+
+select id, bName, bIntro, id, hope_Date, viewcnt, bWriter, bYear, bCompany, (select count(num) 
+                                             from HOPE_BOOK_rep a 
+                                             where a.hnum = b.num ) as re_cnt
+   from HOPE_BOOK b
+   order by num desc
 

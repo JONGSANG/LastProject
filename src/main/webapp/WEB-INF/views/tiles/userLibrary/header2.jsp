@@ -52,7 +52,7 @@
                     	<li><a class="submenu" href="/userLibrary/search/b_search/index">도서검색</a></li>
                     	<li><a class="submenu" href="/userLibrary/search/n_search/index">신착도서</a></li>
                     	<li><a class="submenu" href="/userLibrary/search/p_search/index">간행물 검색</a></li>
-                    	<li><a class="submenu end" href="/userLibrary/search/b_request/index">희망도서신청</a></li>
+                    	<li><a class="submenu end" href="/userLibrary/search/b_request/listAll">희망도서신청</a></li>
                     </ul>
                     </li>
                     <li id="menu" class="li-left li-none"><a href="#">도서관소식</a>
@@ -67,8 +67,8 @@
                     </li>
                     <li id="menu"><a href="#">&nbsp;&nbsp;서비스&nbsp;&nbsp;</a>
                     <ul class="sub">
-                    	<li><a class="submenu" href="/userLibrary/service/after">방과후 학교</a></li>
-                    	<li><a class="submenu" href="/userLibrary/service/culture">문화 행사</a></li>
+                    	<li><a class="submenu" href="/userLibrary/service/after/list">방과후 학교</a></li>
+                    	<li><a class="submenu" href="/userLibrary/service/culture/list">문화 행사</a></li>
                     	<li><a class="submenu" href="/userLibrary/service/food">구내 식단표</a></li>
                     	<li><a class="submenu" href="/userLibrary/service/delivery">도서배달서비스</a></li>
                     	<li><a class="submenu end" href="/userLibrary/service/min_board/listAll">민원게시판</a></li>
