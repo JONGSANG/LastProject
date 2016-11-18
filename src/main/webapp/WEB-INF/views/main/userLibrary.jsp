@@ -34,9 +34,9 @@
 		<div id="gobtn">
 			<img src="/resources/images/everymenu.PNG" / width="120"><br>
 			<a href="#"><img alt="" src="/resources/images/btnstudy.PNG"
-				width="80px"></a> <a href="/userLibrary/service/after"><img
+				width="80px"></a> <a href="/userLibrary/service/after/list"><img
 				alt="" src="/resources/images/btnafter.PNG" width="80px"></a> <a
-				href="/userLibrary/service/culture"><img alt=""
+				href="/userLibrary/service/culture/list"><img alt=""
 				src="/resources/images/btnculture.PNG" width="80px"></a><br>
 			<a href="/userLibrary/using/time"><img alt=""
 				src="/resources/images/btntime.PNG" width="80px"></a> <a
