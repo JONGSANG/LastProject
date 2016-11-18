@@ -21,7 +21,7 @@ BNO varchar(50) ,
 ID varchar(50),
 RENT_DATE DATE,
 SUBMIT_DATE DATE,
-
+submit boolean default false,
 constraint pk_RENT_BOOK primary key(BNO)
 
 );
