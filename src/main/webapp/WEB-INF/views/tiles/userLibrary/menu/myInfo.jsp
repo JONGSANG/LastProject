@@ -5,7 +5,7 @@
 				<img alt="" src="/resources/images/line.png" width="180px" height="30px">
 				<ul >
 					<li>
-						<a class="menubtn" href="userLibrary/myInfo/modifyCheck">개인정보 수정</a>
+						<a class="menubtn" href="/userLibrary/myInfo/modifyCheck">개인정보 수정</a>
 					</li>
 					<li>
 						<a class="menubtn" href="/userLibrary/myInfo/d_status">대출 현황</a>

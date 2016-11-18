@@ -76,7 +76,7 @@
                     </li>
                     <li id="menu"><a href="#">&nbsp;&nbsp;내정보&nbsp;&nbsp;</a>
                     <ul class="sub">
-                    	<li><a class="submenu" href="/userLibrary/myInfo/modify">개인정보 수정</a></li>
+                    	<li><a class="submenu" href="/userLibrary/myInfo/modifyCheck">개인정보 수정</a></li>
                     	<li><a class="submenu" href="/userLibrary/myInfo/d_status">대출현황</a></li>
                     	<li><a class="submenu" href="/userLibrary/myInfo/r_status">예약현황</a></li>
                     	<li><a class="submenu" href="/userLibrary/myInfo/d_history">대출내역</a></li>
