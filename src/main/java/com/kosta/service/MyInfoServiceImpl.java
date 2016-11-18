@@ -1,5 +1,7 @@
 package com.kosta.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.kosta.dao.MyInfoDAO;
 import com.kosta.vo.MemberVO;
+import com.kosta.vo.MyInfoVO;
 
 //권한 끌어오는 Authentication같은 반복영역을 줄이고싶은데 필드에 선언하면 에러남
 
@@ -54,5 +57,17 @@ public class MyInfoServiceImpl implements MyInfoService {
 	public void delete() throws Exception {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		myInfodao.delete(auth.getName());
+	}
+
+	@Override
+	public List<MyInfoVO> currentRent() throws Exception {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		return myInfodao.currentRent(auth.getName());
+	}
+
+	@Override
+	public List<MyInfoVO> reserveBook() throws Exception {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		return myInfodao.reserveBook(auth.getName());
 	}
 }

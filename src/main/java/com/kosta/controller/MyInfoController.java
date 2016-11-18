@@ -93,4 +93,22 @@ public class MyInfoController {
 		
 		return "redirect:/";
 	}
+	
+	@RequestMapping(value="userLibrary/myInfo/d_status", method=RequestMethod.GET)
+	public String currentRentGET(Model model) throws Exception {
+		logger.info("내출내역 페이지");
+		
+		model.addAttribute("rent", myInfoService.currentRent());
+		
+		return "userLibrary/myInfo/d_status";
+	}
+	
+	@RequestMapping(value="userLibrary/myInfo/r_status", method=RequestMethod.GET)
+	public String reserveBookGET(Model model) throws Exception {
+		logger.info("예약내역 페이지");
+		
+		model.addAttribute("reserve", myInfoService.reserveBook());
+		
+		return "userLibrary/myInfo/r_status";
+	}
 }
