@@ -24,14 +24,13 @@ BRENT tinyint default 1,
 BRENT_CNT integer default 0,
 constraint pk_room_b primary key(BNO),
 constraint fk_room_b foreign key(BNO) references book(bno) on delete cascade on update cascade
-
 );
-
-
 
 -- book 테이블의 bno만 빼와서 넣는 쿼리.
 INSERT INTO room_b(bno)
 SELECT bno
 FROM book;
 
-
+insert into room_b(bno, brent, brent_cnt) values('01010011', 1, 0);
+insert into room_b(bno, brent, brent_cnt) values('01010012', 1, 0);
+insert into room_b(bno, brent, brent_cnt) values('99011503', 1, 0);
