@@ -1,6 +1,9 @@
-@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
-@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
-@import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css); /* 제주 고딕 	font-family: 'Jeju Gothic', serif;  */
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css); /* notosans font-family: 'Noto Sans KR', sans-serif; */
+@import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css); /* 제주 한라산 font-family: 'Jeju Hallasan', serif; */
+@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css); /* 나눔 손글씨 붓 font-family: 'Nanum Brush Script', serif; */
+@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css); /* 나눔 손글씨 펜  font-family: 'Nanum Pen Script', serif;  */
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css); /* 한나체 font-family: 'Hanna', serif; */
 
 
 #userLibrary {width:1024px; margin:0 auto; z-index:1000; position:relative; display: flex; border-top: 3px solid #e8e8e8; margin-top: 5px}
@@ -52,19 +55,20 @@ ul.tabs li {  float: left;  text-align:center;  cursor: pointer;  width:82px;  h
     border-left: none;  font-weight: bold;  background: #fafafa;  overflow: hidden;  position: relative;}
 ul.tabs li.active {  background: #FFFFFF;  border-bottom: 1px solid #FFFFFF; }
 .tab_container {  border: 1px solid #eee;  border-top: none;  clear: both;  float: left;  width: 512px;  background: #FFFFFF; }
-.tab_content {  padding: 5px;  font-size: 14px;  display: none; table-layout: fixed;}
+.tab_content {  padding: 5px;  font-size: 14px;  display: none; table-layout: fixed; };
 .tab_container .tab_content ul {  width:100%;  margin:0px;  padding:0px; }
 .tab_container .tab_content ul li {  padding:5px;  list-style:none };
 #container {  width: 249px;  margin: 0 auto; }
 .tab_container table tr{border-bottom: 1px solid #e3e3e3; }
 .tab_container table td{display: inline-block; overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.more {float: right; background-color: #ff7373; border-radius: 10px; width: 40px; padding-left: 12px; font-family: 'Nanum Pen Script', serif; font-size: 18px }
 
 /* 슬라이드배너 */
 #wrap{position:relative; width:100%;}
 .li-img {width: 254px;}
 #main_bn {margin:0 auto; width:255px; height:338px;	}
 #main_bn img {width:100%; height:auto; }
-#main_bn_btn {list-style-type:none;	position:absolute; bottom:5px; left:5px; opacity: 0.7;}
+#main_bn_btn {position:absolute; bottom:5px; left:5px; opacity: 0.7;}
 #main_bn_btn li {float: left; padding:0px 2px; margin-right:5px; }
 a, a:hover, a:visited { text-decoration:none; color: gray; }
 ul li { list-style : none; }
@@ -73,10 +77,10 @@ ul li { list-style : none; }
 #gobtn {padding-top: 20px}
 
 /*--------캘린더-----------*/
-#calTitle *, #myCalender * { margin: 0px; padding: 0px; text-align: center; vertical-align: middle; } 
+#calTitle *, #myCalender * { position:relative; margin: 0px; padding: 0px; text-align: center; vertical-align: middle; } 
 #calTitle, #myCalender { margin: 0px; padding: 0px; text-align: center;  font-family: '돋움', Dotum, AppleGothic, sans-serif; font-size: 12px; } 
-#themore {color: white; font-size: 12px; float: right; padding-top: 3px; border: 1px solid #a6a6a6; border-radius: 4px; background-color: #a6a6a6;}
-#myCalender{margin-left: 10px}
+#themore {color: white; height:15px; margin-top:2px; float: right; border-radius: 8px; font-family: 'Nanum Pen Script', serif; font-size: 14px; background-color: #004b97;}
+#myCalender{margin-left: 15px}
 #calTitle { margin-bottom: 5px; } 
 #calTitle button { width: 26px; height: 16px; font-size: 9px; line-height: normal; } 
 #calTitle span { width: auto; } 
@@ -148,8 +152,7 @@ ul li { list-style : none; }
 
 .bx-wrapper .bx-caption {position: absolute;bottom: 0;	left: 0;background: #666\9;	background: rgba(80, 80, 80, 0.75);width: 100%;}
 .bx-wrapper .bx-caption span {color: #fff;font-family: Arial;display: block;font-size: .85em;	padding: 10px;}
-
-#s_banner_wrap {width:256px; height:100px; position: relative; margin:10px 10px}
+#s_banner_wrap {position:relative;z-index:1; width:256px; height:100px; position: relative; margin:10px 10px}
 
 /* 사용자 페이징 위치와 모양을 자유롭게 변형 */
 #bx-pager1 {position: absolute; bottom:10px;}
