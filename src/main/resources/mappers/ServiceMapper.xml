@@ -31,7 +31,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
                                              from minwon_rep a 
                                              where a.mnum = b.num ) as re_cnt
    from minwon b
+      order by num desc
+limit #{pageStart}, #{perPageNum}
 </select>
+
+
+<!-- 페이징 -->
+ <select id="m_listCount" resultType="int">
+ <![CDATA[
+ select 
+   count(num) 
+ from 
+   minwon
+  ]]>
+ </select>
+
 
 <update id="m_updateViewCnt">
  UPDATE minwon 
@@ -55,8 +69,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <select id="m_commentList" resultType="M_Board_ReVO">
 	select * from minwon_rep where mnum=#{num}
+	order by num desc
+	limit #{pageStart}, #{perPageNum}
 </select>
 
+
+<!-- 페이징 -->
+ <select id="m_repAllCount" resultType="int">
+ <![CDATA[
+ select 
+   count(num) 
+ from 
+   minwon_rep
+   where mnum=#{num}
+  ]]>
+ </select>
+ 
 <update id="m_update_re">
 	update minwon_rep set title=#{title}, content=#{content}, id=#{id} where mnum=#{mnum} and num=#{num}
 </update>

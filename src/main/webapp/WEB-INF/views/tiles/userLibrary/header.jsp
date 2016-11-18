@@ -71,7 +71,7 @@
                     	<li><a class="submenu" href="userLibrary/service/culture">문화 행사</a></li>
                     	<li><a class="submenu" href="userLibrary/service/food">구내 식단표</a></li>
                     	<li><a class="submenu" href="userLibrary/service/delivery">도서배달서비스</a></li>
-                    	<li><a class="submenu end" href="userLibrary/service/min_board">민원게시판</a></li>
+                    	<li><a class="submenu end" href="userLibrary/service/min_board/listAll">민원게시판</a></li>
                     </ul>
                     </li>
                     <li id="menu"><a href="#">&nbsp;&nbsp;내정보&nbsp;&nbsp;</a>

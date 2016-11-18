@@ -52,7 +52,7 @@
 		<table border="1">
 			<tr>
 				<th>ID</th>
-				<th><input type="text" name="id" placeholder="Enter id" value="${ id }"></th>
+				<th><input type="text" name="id" placeholder="Enter id" value="${ id }" readonly="readonly"></th>
 			</tr>
 			<tr>
 				<th>제목</th>
@@ -80,7 +80,6 @@
 
 		<c:forEach items="${ clist }" var="clist" varStatus="var">
 			<tr>
-				<%-- <td align="center">${ pageMaker.totalCount - (page-1) * perPageNum)-var.count}</td> --%>
 				<td align="center"> - </td>
 				<td align="center">${ clist.id }</td>
 				<td align="center">${ clist.title }</td>

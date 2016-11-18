@@ -100,26 +100,19 @@ public class LibNewsController {
 
 	// 댓글 작성시 값보내서 띄우기
 	@RequestMapping(value = "userLibrary/libNews/f_board/read", method = RequestMethod.POST)	// 기입한 주소값으로 POST방식으로 보냄
-	public ModelAndView register_rePOST(@RequestParam("num") String num, @ModelAttribute("pageInfo_rep") F_Board_ReVO vo2, RedirectAttributes rttr)
+	public ModelAndView register_rePOST(@RequestParam("num") int num, @ModelAttribute("pageInfo_rep") F_Board_ReVO vo2, RedirectAttributes rttr)
 			throws Exception {
 		
 		logger.info("comment post");
 		logger.info(vo2.toString());	// Console 창에 알림띄어줌
 		
 		ModelAndView mav = new ModelAndView();	// model과 view의 역할을 해줌
-		num = num.substring(0, num.lastIndexOf(","));	// 주소창에 뜨는 num값을 자르기 위해서
 		mav.addObject("num", num);	// num 값을 보내줌
 		service.insertComment(vo2);	// 댓글에 담은 값들 (vo2)를 F_BoardService로 보냄
-		mav.setViewName("redirect:read");	// read를 업데이트해서 띄어줌	
+		mav.setViewName("redirect:/userLibrary/libNews/f_board/read");	// read를 업데이트해서 띄어줌	
 		rttr.addFlashAttribute("result", "SUCCESS");	// 알림창을 띄어주는 부분
 		
 		
-		PageMaker_rep pageMaker = new PageMaker_rep();
-		pageMaker.setPageInfo(vo2);
-
-	    pageMaker.setTotalCount(service.f_repAllCount(vo2));
-	    mav.addObject("pageMaker", pageMaker);
-	    
 
 		return mav;
 	}

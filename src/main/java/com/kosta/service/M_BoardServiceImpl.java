@@ -46,8 +46,8 @@ public class M_BoardServiceImpl implements M_BoardService {
 
 	// list 형태로 모든 list 출력
 	@Override
-	public List<M_BoardVO> listAll() throws Exception {
-		return m_boardDao.listAll();
+	public List<M_BoardVO> listAll(M_BoardVO vo) throws Exception {
+		return m_boardDao.listAll(vo);
 	}
 
 	// 댓글을 담을 vo2가 필요하다.
@@ -70,8 +70,8 @@ public class M_BoardServiceImpl implements M_BoardService {
 	}
 
 	@Override
-	public List<M_Board_ReVO> commentList(int num) throws Exception {
-		return m_boardDao.commentList(num);
+	public List<M_Board_ReVO> commentList(M_Board_ReVO vo) throws Exception {
+		return m_boardDao.commentList(vo);
 	}
 
 	@Override
@@ -84,6 +84,17 @@ public class M_BoardServiceImpl implements M_BoardService {
 	@Override
 	public void updateViewCnt(int num) throws Exception {
 		m_boardDao.updateViewCnt(num);
+	}
+
+
+	@Override
+	public int m_listCount(M_BoardVO vo) throws Exception {
+		return m_boardDao.m_listCount(vo);
+	}
+
+	@Override
+	public int m_repAllCount(M_Board_ReVO vo) throws Exception {
+		return m_boardDao.m_repAllCount(vo);
 	}
 
 }
