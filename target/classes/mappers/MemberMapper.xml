@@ -22,7 +22,7 @@ SELECT ID, NAME, EMAIL FROM USER_INFO WHERE NAME=#{name} AND EMAIL=#{email} AND 
 </select>
 
 <select id="findPassword" resultType="MemberVO">
-SELECT ID, NAME, EMAIL FROM USER_INFO WHERE ID=#{id} AND NAME=#{name} AND EMAIL=#{email} AND BIRTH=#{birth}
+SELECT ID, NAME, EMAIL FROM USER_INFO WHERE ID=#{id} AND NAME=#{name} AND EMAIL=#{email } AND BIRTH=#{birth}
 </select>
 
 <update id="passwordEmail">
