@@ -188,7 +188,7 @@
 		<!-- 캘린더 -->
 		<img src="/resources/images/libraryschadule.png" / width="120"><br>
 		<div style="display: inline-block; width: 250px; height: 230px;">
-
+		
 			<div id="calTitle">
 
 				<button id="prevYear" type="button" title="이전 해">◀</button>
@@ -207,7 +207,7 @@
 			</div>
 
 			<div id="myCalender"></div>
-
+		
 		</div>
 		<!-- 캘린더 end -->
 		<!-- 작은 배너 시작  -->
