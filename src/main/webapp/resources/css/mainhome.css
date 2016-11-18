@@ -27,19 +27,17 @@
 .logMember{position:relative;width:252px; height : 110px; margin-right:1px; margin-top : 0px;border: 1px solid #e8e8e8;border-bottom-color: #c3c3c3; border-top-color: white;}
 .logMember table {width : 250px; height : 110px; vertical-align: middle; font-family: 'Noto Sans KR'; color: gray;}
 /*------search------------------------*/
-.mainsearch {background-image: url("../images/mainsearch.png"); width: 512px; height: 303px; padding-top: 5px;}
-
+.mainsearch {background-image: url("../images/mainsearch.png"); width: 512px; height: 303px; }
 #searchBox{height:50px}
+#select_box{height: 28px; background-color: #e1e1e1; color: #5b5b5b; border-radius: 8px; border-color: white; box-shadow: 1px 1px 2px 1px #c3c3c3; font-family: 'Hanna', serif; }
 .cf:before, .cf:after{content:"";display:table;}
 .cf:after{clear:both}
 .cf{zoom:1} 
 .searchform{width:490px;padding:10px; border-radius: 3px 0 0 3px; }
-.searchform input {width:420px;height:10px;padding:10px;float:left;background:#dfdfdf; border-radius: 3px 0 0 3px; }
+.searchform input {width:356px;height:10px;padding:10px; background:#dfdfdf; border-radius: 3px 0 0 3px; }
 .searchform input:focus {outline:0;background:#fff;box-shadow:0 0 2px rgba(0,0,0,.8) inset}
 .searchform button {overflow:visible;position:relative;float:right;border:0;padding:0;cursor:pointer;height:30px;width:50px;
-    font: bold 12px/35px 'Jeju Gothic';line-height:30px;color: #fff;background:#d83c3c;border-radius: 0 3px 3px 0;text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
-}   
-   
+    font: bold 12px/35px 'Jeju Gothic';line-height:30px;color: #fff;background:#d83c3c;border-radius: 0 3px 3px 0;text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);}   
 .searchform button:hover{ackground: #e54040}   
 .searchform button:active,.searchform button:focus{background:#c42f2f;outline:0}
 .searchform button:before {content:'';position:absolute;border-width: 8px 8px 8px 0;border-style: solid solid solid none;border-color: transparent #d83c3c transparent;
@@ -126,11 +124,11 @@ ul li { list-style : none; }
 
 /* DIRECTION CONTROLS (NEXT / PREV) */
 
-.bx-wrapper .bx-prev {left: 10px;	background: url(../images/controls.png) no-repeat 0 -32px;}
-.bx-wrapper .bx-next {right: 10px;	background: url(../images/controls.png) no-repeat -43px -32px;}
-.bx-wrapper .bx-prev:hover {background-position: 0 0;}
-.bx-wrapper .bx-next:hover {background-position: -43p 0;}
-.bx-wrapper .bx-controls-direction a {position: absolute;top: 50%;	margin-top: -16px;outline: 0;width: 32px;height: 32px;text-indent: -9999px;z-index: 9999;}
+.bx-wrapper .bx-prev {left: 10px;	background: url(../images/controls.png) no-repeat -75px 0px;}
+.bx-wrapper .bx-next {right: 10px;	background: url(../images/controls.png) no-repeat -85px -13px;}
+.bx-wrapper .bx-prev:hover {background-position: -75px -13px;}
+.bx-wrapper .bx-next:hover {background-position: -85px 0;}
+.bx-wrapper .bx-controls-direction a {position: absolute;top: 50%; margin-left:-6px; margin-top: -5px;outline: 0;width: 11px;height: 11px;text-indent: -9999px;z-index: 9999;}
 .bx-wrapper .bx-controls-direction a.disabled {	display: none;}
 
 /* AUTO CONTROLS (START / STOP) */

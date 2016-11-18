@@ -55,7 +55,7 @@
 			<img src="/resources/images/searchIcon.png" width="100">
 			<form class="searchform cf"
 				action="/userLibrary/search/b_search/result">
-				<select id="selectbox" name="searchType">
+				<select id="select_box" name="searchType">
 					<option value="bTitle">제목명</option>
 					<option value="bWriter">저자명</option>
 					<option value="bCompany">출판사</option>
