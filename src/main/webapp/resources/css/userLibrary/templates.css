@@ -22,7 +22,7 @@ h1 {display:inline-block; z-index:100; position:absolute; top:6px; left:460px; z
 
 #topmenu{list-style-type: none; padding:46px 0px 0px 40px;}
 .nav ul {display:inline-block;display:block;  }
-.nav ul #menu {float:left; display:inline-block; line-height:24px; background:url(../images/li.png) 0 0 no-repeat; padding:0 20px 0 43px; }
+.nav ul #menu {float:left; display:inline-block; line-height:24px; background:url(../../images/li.png) 0 0 no-repeat; padding:0 20px 0 43px; }
 .nav ul #menu.li-none {background:transparent;}
 .nav ul #menu.li-left {margin-left:150px;} 
 .nav ul #menu a {font-size:18px; line-height:24px; color:#fff; display:inline-block; font-family: 'Jeju Gothic', serif;}

@@ -29,7 +29,9 @@ body - 계속 바뀌면서 출력하는 content영역
 		<put-attribute name="header" value="/WEB-INF/views/tiles/{1}/header.jsp"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/main/{1}.jsp"></put-attribute>
 		<put-attribute name="footer" value="/WEB-INF/views/tiles/{1}/footer.jsp"></put-attribute>
+		<put-attribute name="menu" value="/WEB-INF/views/tiles/{1}/menu.jsp"></put-attribute>
 	</definition>
+	
 	
 	<!-- 
 	각 페이지별 설정(주소: localhost:8080/임의의주소/임의의주소/임의의 주소)
@@ -43,8 +45,10 @@ body - 계속 바뀌면서 출력하는 content영역
 	</definition>
 	
 	<definition name="*/*/*" template="/WEB-INF/views/tiles/{1}/menuLayout.jsp">
+		<put-attribute name="header" value="/WEB-INF/views/tiles/{1}/header.jsp"></put-attribute>
 		<put-attribute name="header2" value="/WEB-INF/views/tiles/{1}/header2.jsp"></put-attribute>
 		<put-attribute name="menu" value="/WEB-INF/views/tiles/{1}/menu/{2}.jsp"></put-attribute>
+		<put-attribute name="menu2" value="/WEB-INF/views/tiles/{1}/menu.jsp"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/{1}/{2}/{3}.jsp"></put-attribute>
 		<put-attribute name="footer" value="/WEB-INF/views/tiles/{1}/footer.jsp"></put-attribute>
 	</definition>
@@ -55,8 +59,10 @@ body - 계속 바뀌면서 출력하는 content영역
 	3단구조 템플릿에서 해결 안되는것들을 처리하기 위한 템플릿. EX> userLibrary/libNews/notice/write(글쓰기) 
 	extends="*/*/*"로 상속이 인식을 못해서 그냥 영역을 새로 작성함(body를 제외하면 3단 구조와 경로는 같음)-->
 	<definition name="*/*/*/*" template="/WEB-INF/views/tiles/{1}/menuLayout.jsp">
+		<put-attribute name="header" value="/WEB-INF/views/tiles/{1}/header.jsp"></put-attribute>
 		<put-attribute name="header2" value="/WEB-INF/views/tiles/{1}/header2.jsp"></put-attribute>
 		<put-attribute name="menu" value="/WEB-INF/views/tiles/{1}/menu/{2}.jsp"></put-attribute>
+		<put-attribute name="menu2" value="/WEB-INF/views/tiles/{1}/menu.jsp"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/{1}/{2}/{3}/{4}.jsp"></put-attribute>
 		<put-attribute name="footer" value="/WEB-INF/views/tiles/{1}/footer.jsp"></put-attribute>
 	</definition>

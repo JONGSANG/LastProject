@@ -6,11 +6,11 @@
 <head>
 <title>Kosta Library</title>
 <link rel="stylesheet" type="text/css" media="screen"
-	href="/resources/css/reset.css">
+	href="/resources/css/userLibrary/reset.css">
 <link rel="stylesheet" type="text/css" media="screen"
-	href="/resources/css/header2.css">
+	href="/resources/css/userLibrary/header2.css">
 <link rel="stylesheet" type="text/css" media="screen"
-	href="/resources/css/menu.css">
+	href="/resources/css/userLibrary/menu.css">
 <script src="/resources/js/jquery-1.8.3.min.js"></script>
 <script src="/resources/js/tms-0.4.1.js"></script>
 <script src="/resources/js/menu.js"></script>

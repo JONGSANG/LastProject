@@ -5,10 +5,10 @@
 <html>
 <head>
 	<title>Kosta Library</title>
-		<link rel="stylesheet" type="text/css" media="screen" href="/resources/css/reset.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="/resources/css/slider.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="/resources/css/templates.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="/resources/css/mainhome.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="/resources/css/userLibrary/reset.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="/resources/css/userLibrary/slider.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="/resources/css/userLibrary/templates.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="/resources/css/userLibrary/mainhome.css">
 		<script src="/resources/js/jquery-1.8.3.min.js"></script> 
 		<script src="/resources/js/jquery.jcarousel.min.js"></script> 
 		<script src="/resources/js/jquery.ulslide.js"></script> 

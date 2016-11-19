@@ -1,6 +1,5 @@
 select * from ROLE;
 drop table ROLE;
-
 --------------------------------------------------------------
 -- ROLE : ROLE 정보 Table
 --
