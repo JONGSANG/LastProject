@@ -30,4 +30,16 @@ WHERE email=#{email}
 ORDER BY JOINDATE DESC
 </select>
 
+<insert id="member">
+INSERT INTO MEMBER(ID, PWD) VALUES(#{id}, #{pwd})
+</insert>
+
+<insert id="admin_info">
+INSERT INTO ADMIN_INFO(ID, NAME, BIRTH, GENDER, PHONE, EMAIL, ADDRESS, J_PART, J_LEVEL) VALUES(#{id}, #{name}, #{birth}, #{gender}, #{phone}, #{email}, #{address}, #{j_part}, #{j_level})
+</insert>
+
+<insert id="role">
+INSERT INTO ROLE(ID, ROLE) VALUES(#{id}, 'ROLE_ADMIN')
+</insert>
+
 </mapper>

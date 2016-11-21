@@ -17,7 +17,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="treeview">
-          <a href="/adminLibrary/adminInfo/m_list">
+          <a href='#'>
             <i class="fa fa-files-o"></i>
             <span>정보관리</span>
             <span class="pull-right-container">
@@ -25,9 +25,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> 회원정보관리</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> 관리자정보관리</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> 관리자계정추가</a></li>
+            <li><a href="/adminLibrary/adminInfo/m_list"><i class="fa fa-circle-o"></i> 회원정보관리</a></li>
+            <li><a href="/adminLibrary/adminInfo/a_list"><i class="fa fa-circle-o"></i> 관리자정보관리</a></li>
+            <li><a href="/adminLibrary/adminInfo/addAdmin"><i class="fa fa-circle-o"></i> 관리자계정추가</a></li>
           </ul>
         </li>
         <li class="treeview">
