@@ -2,6 +2,9 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="security"
+	uri="http://www.springframework.org/security/tags"%>
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,8 +38,10 @@
 	</c:forEach>
 </table>
 
+<security:authorize access="hasRole('ROLE_USER')">
 <a href='/userLibrary/service/min_board/register'><button type="submit" class="btn btn-primary">글쓰기</button></a>
-    
+</security:authorize>
+
     <div class="text-center">
 		<ul class="pagination">
 

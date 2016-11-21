@@ -29,8 +29,8 @@ public class F_BoardServiceImpl implements F_BoardService {
 
 	// 어떤 게시물을 상세보기 하기 위해선 num
 	@Override
-	public F_BoardVO read(int num) throws Exception {
-		return f_boardDao.read(num);
+	public F_BoardVO read(F_BoardVO vo) throws Exception {
+		return f_boardDao.read(vo);
 	}
 
 	// 등록한 댓글을 보기 위해서
@@ -81,8 +81,8 @@ public class F_BoardServiceImpl implements F_BoardService {
 
 	// 조회수 업데이트
 	@Override
-	public void updateViewCnt(int num) throws Exception {
-		f_boardDao.updateViewCnt(num);
+	public void updateViewCnt(F_BoardVO vo) throws Exception {
+		f_boardDao.updateViewCnt(vo);
 	}
 
 	// 글 페이징

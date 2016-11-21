@@ -22,8 +22,8 @@ public class F_BoardDAOImpl implements F_BoardDAO {
 	}
 
 	@Override
-	public F_BoardVO read(int num) throws Exception {
-		return sqlSession.selectOne("com.kosta.mappers.libNewsMapper.f_read", num);
+	public F_BoardVO read(F_BoardVO vo) throws Exception {
+		return sqlSession.selectOne("com.kosta.mappers.libNewsMapper.f_read", vo);
 	}
 
 	@Override
@@ -72,8 +72,8 @@ public class F_BoardDAOImpl implements F_BoardDAO {
 
 	// 조회수 업데이트
 	@Override
-	public void updateViewCnt(int num) throws Exception {
-		sqlSession.update("com.kosta.mappers.libNewsMapper.f_updateViewCnt", num);
+	public void updateViewCnt(F_BoardVO vo) throws Exception {
+		sqlSession.update("com.kosta.mappers.libNewsMapper.f_updateViewCnt", vo);
 		
 	}
 

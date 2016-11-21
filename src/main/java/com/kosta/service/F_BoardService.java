@@ -18,7 +18,7 @@ public interface F_BoardService {
 	public void regist(F_BoardVO board) throws Exception;
 
 	// 본 게시물을 상세 내용
-	public F_BoardVO read(int num) throws Exception;
+	public F_BoardVO read(F_BoardVO vo) throws Exception;
 
 	// 본 게시물의 수정
 	public void modify(F_BoardVO f_board) throws Exception;
@@ -45,5 +45,5 @@ public interface F_BoardService {
 	public void remove_re(int num) throws Exception;
 	
 	// 조회수 업데이트
-	public void updateViewCnt(int num) throws Exception;
+	public void updateViewCnt(F_BoardVO vo) throws Exception;
 }

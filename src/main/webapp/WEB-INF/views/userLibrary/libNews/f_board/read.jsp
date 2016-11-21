@@ -37,11 +37,15 @@
 		</tr>
 		<tr>
 			<th colspan="2">
+			<c:if test="${boardVO.id==id}">
 				<button type="button"
 					onclick="location.href='modify?num=${boardVO.num}'">수정</button>
+			
 				<button type="button"
-					onclick="location.href='remove?num=${boardVO.num}'">삭제</button> <a
-				href='listAll'><button type="submit">목록보기</button></a>
+					onclick="location.href='remove?num=${boardVO.num}'">삭제</button>
+			</c:if> 
+					<a href='listAll'><button type="submit">목록보기</button></a>
+			
 			</th>
 		</tr>
 
@@ -86,11 +90,16 @@
 				<td align="center">${ clist.content }</td>
 				<td width="100" align="center"><fmt:formatDate
 						value="${clist.rep_date}" pattern="yyyy-MM-dd" /></td>
-				<th><button type="button"
-						onclick="location.href='modify_re?num=${clist.num }&fnum=${clist.fnum }'">수정</button></th>
+						
+				
 				<th>
+				<c:if test="${clist.id==id}">
+				<button type="button"
+						onclick="location.href='modify_re?num=${clist.num }&fnum=${clist.fnum }'">수정</button>
+				
 					<button type="button"
 						onclick="location.href='remove_re?num=${clist.num}&fnum=${clist.fnum }'">삭제</button>
+				</c:if>
 				</th>
 			</tr>
 		</c:forEach>

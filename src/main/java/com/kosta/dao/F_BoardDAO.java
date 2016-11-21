@@ -18,7 +18,7 @@ public interface F_BoardDAO {
 	public void create(F_BoardVO vo) throws Exception;
 	
 	// 본 게시물의 내용 상세보기
-	public F_BoardVO read(int num) throws Exception;
+	public F_BoardVO read(F_BoardVO vo) throws Exception;
 	
 	// 본 게시물 수정
 	public void update(F_BoardVO vo) throws Exception;
@@ -45,5 +45,5 @@ public interface F_BoardDAO {
 	public void update_re(F_Board_ReVO vo2)throws Exception;
 
 	// 게시글 조회수 증가
-	public void updateViewCnt(int num) throws Exception;
+	public void updateViewCnt(F_BoardVO vo) throws Exception;
 }

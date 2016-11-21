@@ -1,9 +1,8 @@
 package com.kosta.controller;
 
-import javax.inject.Inject;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -12,14 +11,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.kosta.service.M_BoardService;
 import com.kosta.service.ServiceService;
 import com.kosta.vo.AfterVO;
 import com.kosta.vo.CultureVO;
-import com.kosta.vo.F_Board_ReVO;
 import com.kosta.vo.L_AfterVO;
 import com.kosta.vo.L_CultureVO;
 import com.kosta.vo.M_BoardVO;
@@ -32,65 +29,94 @@ public class ServiceController {
  
 	private static final Logger logger = LoggerFactory.getLogger(ServiceController.class);
 
-	@Inject
+	@Autowired
 	private M_BoardService service;
-	@Inject
+	@Autowired
 	private ServiceService service2;
 	
 
-	// 본 게시물 작성페이지 띄우기
-	@RequestMapping(value = "userLibrary/service/min_board/register", method = RequestMethod.GET)	// 주소값을 정해주고 GET 방식으로 보냄
-	public String registerGET(M_BoardVO vo, Model model) throws Exception {	// F_BoardVO:본 게시물 속성 값	
+	/*본 게시물 작성페이지 띄우기*/
+	
+	// 주소값을 정해주고 GET 방식으로 보냄
+	@RequestMapping(value = "userLibrary/service/min_board/register", method = RequestMethod.GET)	
+	
+	// F_BoardVO:본 게시물 속성 값	
+	public String registerGET(M_BoardVO vo, Model model) throws Exception {	
 		
+		// Console 창에 띄어줌
 		logger.info("register get 페이지 입니다.");
-		logger.info(vo.toString());		// Console 창에 띄어줌
+		logger.info(vo.toString());		
 		
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication(); auth = SecurityContextHolder.getContext().getAuthentication();
 		// AuthenticationManager에 인증을 요청할 때 필요한 정보를 담는 목적
-
-		model.addAttribute("id", auth.getName());	// id의 정보를 담아 넘김
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		
-		return "userLibrary/service/min_board/register";	// register.jsp(글쓰기)페이지로 이동
+		// id의 정보를 담아 넘김
+		model.addAttribute("id", auth.getName());	
+		
+		// register.jsp(글쓰기)페이지로 이동
+		return "userLibrary/service/min_board/register";	
 	}
 
-	// 작성페이지의 작성값을 보내기
-	@RequestMapping(value = "userLibrary/service/min_board/register", method = RequestMethod.POST)	// POST방식으로 보냄
-	public String registerPost(Model model, M_BoardVO vo, RedirectAttributes rttr) throws Exception {
-					// vo에 담아서 보냄, RedirectAttributes로 알림창 띄움
+	/*작성페이지의 작성값을 보내기*/
+	
+	// POST방식으로 보냄
+	@RequestMapping(value = "userLibrary/service/min_board/register", method = RequestMethod.POST)
+	
+	// vo에 담아서 보냄, RedirectAttributes로 알림창 띄움
+	public String registerPost(Model model, M_BoardVO vo) throws Exception {
+					
 		//id title content
+		// Console 창에 띄어줌
 		logger.info("register post");
-		logger.info(vo.toString());	// Console 창에 띄어줌
+		logger.info(vo.toString());	
 
-		service.regist(vo);		// F_BoardService로 담은 vo를 보냄
+		// F_BoardService로 담은 vo를 보냄
+		service.regist(vo);		
 
-		return "redirect:listAll";	// 업데이트된 listAll을 띄어줌
+		// 업데이트된 listAll을 띄어줌
+		return "redirect:listAll";	
 	}
 
-	// 전체 목록 띄우기
-	@RequestMapping(value = "userLibrary/service/min_board/listAll", method = RequestMethod.GET)	// 기입한 주소값으로 GET방식으로 보냄
+	/*전체 목록 띄우기*/
+	
+	// 기입한 주소값으로 GET방식으로 보냄
+	@RequestMapping(value = "userLibrary/service/min_board/listAll", method = RequestMethod.GET)	
 	public String listALL(Model model,@ModelAttribute("pageInfo") M_BoardVO vo) throws Exception {
-		logger.info("listAll 페이지");		// Console 창에 알림띄어줌
-		model.addAttribute("list", service.listAll(vo));	// 다음 페이지로 값을 넘겨줌, list라는 별칭으로 service.listAll()을 담음
 		
+		// Console 창에 알림띄어줌
+		logger.info("listAll 페이지");		
+		
+		// 다음 페이지로 값을 넘겨줌, list라는 별칭으로 service.listAll()을 담음
+		model.addAttribute("list", service.listAll(vo));	
+		
+		// 페이징 처리
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setPageInfo(vo);
 		pageMaker.setTotalCount(service.m_listCount(vo));
 		model.addAttribute("pageMaker", pageMaker);
 		
-		return "userLibrary/service/min_board/listAll";	// listAll.jsp 페이지로 이동
+		// listAll.jsp 페이지로 이동
+		return "userLibrary/service/min_board/listAll";	
 	}
 
-	// 상세 내용으로 띄우기
-	@RequestMapping(value = "userLibrary/service/min_board/read", method = RequestMethod.GET)	// 기입한 주소값으로 GET방식으로 보냄
-	public String read(@RequestParam("num") int num, Model model,@ModelAttribute("pageInfo_rep") M_Board_ReVO vo2) throws Exception {	// RequestParam으로 num 값을 가져옴
+	/*상세 내용으로 띄우기*/
+	// 기입한 주소값으로 GET방식으로 보냄
+	@RequestMapping(value = "userLibrary/service/min_board/read", method = RequestMethod.GET)	
+	
+	// RequestParam으로 num 값을 가져옴
+	public String read(@RequestParam("num") int num, Model model,@ModelAttribute("pageInfo_rep") M_Board_ReVO vo2) throws Exception {	
 		
-		logger.info("read get 페이지");		// Console 창에 알림띄어줌
+		// Console 창에 알림띄어줌
+		logger.info("read get 페이지");		
 		
 		service.updateViewCnt(num);
 		
-		model.addAttribute("boardVO", service.read(num));	// boardVO라는 별칭으로 service.read(num)을 담음 , 그 num에 해당하는 content를 띄우기 위해서
-		model.addAttribute("num", num);	// num 값을 보냄
-		model.addAttribute("clist", service.commentList(vo2));// 답변 목록 띄우기 위해서
+		// boardVO라는 별칭으로 service.read(num)을 담음 , 그 num에 해당하는 content를 띄우기 위해서
+		model.addAttribute("boardVO", service.read(num));
+		// num 값을 보냄
+		model.addAttribute("num", num);	
+		// 답변 목록 띄우기 위해서
+		model.addAttribute("clist", service.commentList(vo2));
 		
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 	    model.addAttribute("id", auth.getName());
@@ -101,102 +127,125 @@ public class ServiceController {
 	    pageMaker.setTotalCount(service.m_repAllCount(vo2));
 	    model.addAttribute("pageMaker", pageMaker);
 	    
-		return "userLibrary/service/min_board/read";	// read.jsp로 페이지 이동
+	 // read.jsp로 페이지 이동
+		return "userLibrary/service/min_board/read";	
 	}
 
-	// 댓글 작성시 값보내서 띄우기
-	@RequestMapping(value = "userLibrary/service/min_board/read", method = RequestMethod.POST)	// 기입한 주소값으로 POST방식으로 보냄
-	public ModelAndView register_rePOST(@RequestParam("num") int num, M_Board_ReVO vo2, RedirectAttributes rttr)
+	/*댓글 작성시 값보내서 띄우기*/
+	
+	// 기입한 주소값으로 POST방식으로 보냄
+	@RequestMapping(value = "userLibrary/service/min_board/read", method = RequestMethod.POST)	
+	public String register_rePOST(Model model, @RequestParam("num") int num, M_Board_ReVO vo2)
 			throws Exception {
 		
+		// Console 창에 알림띄어줌
 		logger.info("comment post");
-		logger.info(vo2.toString());	// Console 창에 알림띄어줌
+		logger.info(vo2.toString());	
 		
-		ModelAndView mav = new ModelAndView();	// model과 view의 역할을 해줌
-		mav.addObject("num", num);	// num 값을 보내줌
-		service.insertComment(vo2);	// 댓글에 담은 값들 (vo2)를 F_BoardService로 보냄
-		mav.setViewName("redirect:/userLibrary/service/min_board/read");	// read를 업데이트해서 띄어줌	
-		rttr.addFlashAttribute("result", "SUCCESS");	// 알림창을 띄어주는 부분
+		// num 값을 보내줌
+		model.addAttribute("num", num);	
+		// 댓글에 담은 값들 (vo2)를 F_BoardService로 보냄
+		service.insertComment(vo2);	
 	
-		return mav;
+		return "redirect:/userLibrary/service/min_board/read?num="+num;
 	}
 	
 	
 
-	// 본 게시물 수정 페이지 띄우기
-	@RequestMapping(value = "userLibrary/service/min_board/modify", method = RequestMethod.GET)	// 기입한 주소값으로 GET방식으로 보냄
+	/*본 게시물 수정 페이지 띄우기*/
+	
+	// 기입한 주소값으로 GET방식으로 보냄
+	@RequestMapping(value = "userLibrary/service/min_board/modify", method = RequestMethod.GET)	
+	
+	// num은 어떤 Content인지 알아야 하므로 값을 가져옴
 	public void modifyGET(@RequestParam("num") int num, Model model) throws Exception {
-			// num은 어떤 Content인지 알아야 하므로 값을 가져옴
+			
+		// Console창에 띄움
+		logger.info("modify GET 페이지");		
 		
-		logger.info("modify GET 페이지");		// Console창에 띄움
-		
-		model.addAttribute("boardVO", service.read(num));	// service.read(num)을 boardVO로 기재하여 사용
+		// service.read(num)을 boardVO로 기재하여 사용
+		model.addAttribute("boardVO", service.read(num));	
 	}
 
-	// 본 게시물에서 수정한 내용을 보내기
-	@RequestMapping(value = "userLibrary/service/min_board/modify", method = RequestMethod.POST)	// 기입한 주소값으로 POST방식으로 보냄
-	public ModelAndView modifyPOST(@RequestParam("num") String num, M_BoardVO board, RedirectAttributes rttr)
+	/* 본 게시물에서 수정한 내용을 보내기*/
+	
+	// 기입한 주소값으로 POST방식으로 보냄
+	@RequestMapping(value = "userLibrary/service/min_board/modify", method = RequestMethod.POST)	
+	public String modifyPOST(Model model, @RequestParam("num") String num, M_BoardVO board)
 			throws Exception {
 
-		logger.info("modify GET 페이지");		// Console창에 띄움
-		ModelAndView mav = new ModelAndView();
-		mav.addObject("num", num);
+		// Console창에 띄움
+		logger.info("modify GET 페이지");		
+		model.addAttribute("num", num);
 
 		service.modify(board);
-		mav.setViewName("redirect:read");	// 수정한 후의 read페이지를 띄어줌
-		rttr.addFlashAttribute("msg", "SUCCESS");	// 알림창
-
-		return mav;
+		
+		return "redirect:read?num="+num;
 	}
 
-	// 댓글 수정하기
-	@RequestMapping(value = "userLibrary/service/min_board/modify_re", method = RequestMethod.GET)	// 기입한 주소값으로 GET방식으로 보냄
+	/*댓글 수정하기*/
+	
+	// 기입한 주소값으로 GET방식으로 보냄
+	@RequestMapping(value = "userLibrary/service/min_board/modify_re", method = RequestMethod.GET)	
+	
+	// 본게시물 num의 외래키인 fnum과 댓글의 num을 가져와서 댓글을 구별
 	public void modify_reGET(@RequestParam("num") String num,@RequestParam("mnum") String mnum, Model model) throws Exception {
-			// 본게시물 num의 외래키인 fnum과 댓글의 num을 가져와서 댓글을 구별
+			
+		// Console창에 띄움
+		logger.info("modify_re GET 페이지");		
 		
-		logger.info("modify_re GET 페이지");		// Console창에 띄움
-		
-		model.addAttribute("boardVO2",service.read2(Integer.parseInt(num)));	// 댓글의 내용을 보여줌
+		// 댓글의 내용을 보여줌
+		model.addAttribute("boardVO2",service.read2(Integer.parseInt(num)));	
 	}
 
-	// 댓글 수정내용 값 보내기
-	@RequestMapping(value = "userLibrary/service/min_board/modify_re", method = RequestMethod.POST)	// 기입한 주소값으로 GET방식으로 보냄
-	public String modify_RePOST(@RequestParam("num") String num,@RequestParam("mnum") String mnum, M_Board_ReVO board, RedirectAttributes rttr)
+	/*댓글 수정내용 값 보내기*/
+	
+	// 기입한 주소값으로 GET방식으로 보냄
+	@RequestMapping(value = "userLibrary/service/min_board/modify_re", method = RequestMethod.POST)	
+	public String modify_RePOST(@RequestParam("num") String num,@RequestParam("mnum") String mnum, M_Board_ReVO board)
 			throws Exception {
 		
-		logger.info("modify_re POST 페이지");		// Console창에 띄움
+		// Console창에 띄움
+		logger.info("modify_re POST 페이지");		
 
 		service.update_re(board);
 
-		return "redirect:read?num="+mnum;	// 글쓰기 num의 외래키인 댓글의 fnum을 불러옴
+		// 글쓰기 num의 외래키인 댓글의 fnum을 불러옴
+		return "redirect:read?num="+mnum;	
 	}
 
-	// 삭제하기
-	@RequestMapping(value = "userLibrary/service/min_board/remove", method = RequestMethod.GET)	// 기입한 주소값으로 GET방식으로 보냄
-	public String removeGET(@RequestParam("num") int num, RedirectAttributes rttr) throws Exception {
+	/*삭제하기*/
+	
+	// 기입한 주소값으로 GET방식으로 보냄
+	@RequestMapping(value = "userLibrary/service/min_board/remove", method = RequestMethod.GET)	
+	public String removeGET(@RequestParam("num") int num) throws Exception {
 		
-		logger.info("remove GET 페이지");		// Console창에 띄움
+		// Console창에 띄움
+		logger.info("remove GET 페이지");		
 		
 		service.remove(num);
 
-		rttr.addFlashAttribute("msg", "SUCCESS");
-
-		return "redirect:listAll";	// 삭제 후의 listAll 띄어주기
+		// 삭제 후의 listAll 띄어주기
+		return "redirect:listAll";	
 	}
 
-	// 삭제하기
-	@RequestMapping(value = "userLibrary/service/min_board/remove_re", method = RequestMethod.GET)	// 기입한 주소값으로 GET방식으로 보냄
-	public String remove_reGET(@RequestParam("num") String num,@RequestParam("mnum") String mnum, RedirectAttributes rttr) throws Exception {
+	/*삭제하기*/
+	
+	// 기입한 주소값으로 GET방식으로 보냄
+	@RequestMapping(value = "userLibrary/service/min_board/remove_re", method = RequestMethod.GET)	
+	public String remove_reGET(@RequestParam("num") String num,@RequestParam("mnum") String mnum) throws Exception {
 		
-		logger.info("remove_re POST 페이지");		// Console창에 띄움
+		// Console창에 띄움
+		logger.info("remove_re POST 페이지");		
 		
-		int n = Integer.parseInt(num);	// string 형태의 num을 int로 바꿔줌
+		// string 형태의 num을 int로 바꿔줌
+		int n = Integer.parseInt(num);	
 		
-		service.remove_re(n);	// int 형태의 num을 보내줌
+		// int 형태의 num을 보내줌
+		service.remove_re(n);	
 
-		rttr.addFlashAttribute("msg", "SUCCESS");
-
-		return "redirect:read?num="+mnum;	// 댓글이 달려있는 본게시물을 띄어줌
+		// 댓글이 달려있는 본게시물을 띄어줌
+		return "redirect:read?num="+mnum;	
 	}
 	
 	//--------------------------------------- 방과후 --------------------------------------- 
