@@ -1,5 +1,7 @@
 package com.kosta.vo;
 
+import java.util.Date;
+
 public class MyInfoVO {
 	private String btitle;
 	private String bno;
@@ -8,6 +10,72 @@ public class MyInfoVO {
 	private String reserve_date;
 	private int brent;
 	
+	private String id;
+	private String cselect;
+	private String aselect;
+	private String title;
+	private int max_cnt;
+	private int tocnt;
+	private Date after_date;
+	private Date culture_date;
+	
+	public Date getCulture_date() {
+		return culture_date;
+	}
+	public void setCulture_date(Date culture_date) {
+		this.culture_date = culture_date;
+	}
+	private int state;
+	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getCselect() {
+		return cselect;
+	}
+	public void setCselect(String cselect) {
+		this.cselect = cselect;
+	}
+	public String getAselect() {
+		return aselect;
+	}
+	public void setAselect(String aselect) {
+		this.aselect = aselect;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	
+	public int getMax_cnt() {
+		return max_cnt;
+	}
+	public void setMax_cnt(int max_cnt) {
+		this.max_cnt = max_cnt;
+	}
+	public int getTocnt() {
+		return tocnt;
+	}
+	public void setTocnt(int tocnt) {
+		this.tocnt = tocnt;
+	}
+	public Date getAfter_date() {
+		return after_date;
+	}
+	public void setAfter_date(Date after_date) {
+		this.after_date = after_date;
+	}
+	public int getState() {
+		return state;
+	}
+	public void setState(int state) {
+		this.state = state;
+	}
 	public int getBrent() {
 		return brent;
 	}

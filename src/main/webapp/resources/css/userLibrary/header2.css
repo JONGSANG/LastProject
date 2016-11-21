@@ -1,44 +1,58 @@
-@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
-@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
-@import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
-@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css); /* 제주 고딕 	font-family: 'Jeju Gothic', serif;  */
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css); /* notosans font-family: 'Noto Sans KR', sans-serif; */
+@import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css); /* 제주 한라산 font-family: 'Jeju Hallasan', serif; */
+@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css); /* 나눔 손글씨 붓 font-family: 'Nanum Brush Script', serif; */
+@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css); /* 나눔 손글씨 펜  font-family: 'Nanum Pen Script', serif;  */
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css); /* 한나체 font-family: 'Hanna', serif; */
 
 /* Global properties ======================================================== */
 html, body {width:100%; padding:0; margin:0;}
+#menu{padding-top: 30px; padding-left: 10px}
+#menu img{width: 180px}
+#menu ul{padding-top: 10px}
+
 
  #header2 {width:1024px; margin:0 auto; z-index:1000; position:relative; display: flex; padding-top: 50px}
-#leftmenu {flex: 1; background-color: white;}
-#rightcontent {flex: 4; background-color: #ffffff; float: left;}
+#leftmenu {flex: 1; height: 405px }
+#rightcontent {flex: 4; background-color: #ffffff; float: left; min-height: 500px}
 #logincontent {width:1024px; height:450px; margin:0 auto; z-index:1000; position:relative; padding-top: 50px; }
 .slider { width:1024px; height:100px; margin:0 auto; position:relative; z-index:1001;  }
+
+/* --------------------------section---------------------------------------- */
+section{ font-size: 13px; width: 819px; background-image: url("../../images/body.png"); background-size: cover; height: 112px}
+section #link{float: right; }
+#linka {margin-right: 40px; margin-top: 5px}
+#link a {text-decoration: none; color: gray; font-size: 10px; margin-top: 5px}
+#link b {text-decoration: none; color: navy; float: right; margin-top: -21px}
 
 /*********************************header*************************************/
  
 .header {position:relative; width:100%;}
 .header>div { position:relative; width:100%;}
 header {width:1024px; margin:0 auto; z-index:1000; position:relative;}
-.header .nav {position:absolute; width:100%; z-index:999;padding-bottom:1px; background-color: rgba(22,22,22,0.1); height: 110px; border-radius: 20px }
+.header .nav {position:absolute; width:100%; z-index:999;padding-bottom:1px; background-image:url("../../images/test.png"); height: 110px; border-radius: 20px }
 .topnavnav {width:1024px; margin:3px auto 0 auto; position:relative;  }
 .subpages-nav {position:relative; width:100%; z-index:999; height:174px; }
 .subpages-nav nav {background:transparent !important; padding-top:59px; margin-top:0 !important;  }
-h1 {display:inline-block; z-index:100; position:absolute; top:6px; left:465px; z-index:1000;}
+h1 {display:inline-block; z-index:100; position:absolute; top:6px; left:465px; z-index:1000; }
 
 #topmenu{list-style-type: none; padding:46px 0px 0px 40px;}
 .nav ul {display:inline-block;display:block;  }
 .nav ul #menu {float:left; display:inline-block; line-height:24px; background:url(../../images/li.png) 0 0 no-repeat; padding:0 20px 0 38px; }
 .nav ul #menu.li-none {background:transparent;}
 .nav ul #menu.li-left {margin-left:150px;} 
-.nav ul #menu a {font-size:18px; line-height:24px; color:#55668E; display:inline-block; font-family: 'Jeju Gothic', serif;}
-.nav ul #menu a:hover { color:#0000a0;}
+.nav ul #menu a {font-size:20px; line-height:24px; color:white; display:inline-block; font-family: 'Hanna', serif; text-shadow: 2px 2px #000000}
+.nav ul #menu a:hover { color:black; text-shadow: 0px 0px #000000; }
 .nav ul #menu .sub{position: absolute; height: 0px; overflow: hidden; transition: height .2s; -webkit-transition: height .2s; }
 .nav ul #menu:hover .sub{height: 300px;} 
 .sub {padding-top: 38px; margin-left: -25px}
-.submenu{width:140px; height:30px; line-height : 24px;  background-color: rgba(231,231,231,0.9);  text-align: center; padding-top: 10px;}
+.submenu{width:140px; height:30px; line-height : 24px;  background-color: rgba(231,231,231,0.7);  text-align: center; padding-top: 10px; text-shadow: 2px 2px #000000, 2px 2px #000000}
 .submenu:hover {color:#0000a0;}
 .sub .end{border-radius: 0 0 10px 10px}
+.sub .start{border-radius: 10px 10px 0px 0px}
 
 
-a {text-decoration:none; cursor:pointer;text-decoration:none; }
+a {text-decoration:none; cursor:pointer; }
 
 .wrapper{width:100%; position:relative; overflow:hidden;  padding:7px 0 10px 0; }
 #top_nav li {float:right;padding-right:8px;margin-right:6px;z-index: 1000;}

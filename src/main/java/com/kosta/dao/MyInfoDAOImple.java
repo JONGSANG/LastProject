@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.kosta.vo.HopeVO;
 import com.kosta.vo.MemberVO;
 import com.kosta.vo.MyInfoVO;
+import com.kosta.vo.Rent_BookVO;
 
 @Repository
 public class MyInfoDAOImple implements MyInfoDAO {
@@ -54,6 +56,26 @@ public class MyInfoDAOImple implements MyInfoDAO {
 	@Override
 	public List<MyInfoVO> reserveBook(String id) throws Exception {
 		return sqlSession.selectList("MyInfoMapper.reserveBook", id);
+	}
+
+	@Override
+	public List<Rent_BookVO> rent(String id) throws Exception {
+		return sqlSession.selectList("MyInfoMapper.rent", id);
+	}
+
+	@Override
+	public List<HopeVO> hope(String id) throws Exception {
+		return sqlSession.selectList("MyInfoMapper.hope", id);
+	}
+
+	@Override
+	public List<MyInfoVO> cultureApply(String id) throws Exception {
+		return sqlSession.selectList("MyInfoMapper.culture", id);
+	}
+
+	@Override
+	public List<MyInfoVO> afterApply(String id) throws Exception {
+		return sqlSession.selectList("MyInfoMapper.after", id);
 	}
 
 }

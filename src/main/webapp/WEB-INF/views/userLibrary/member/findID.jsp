@@ -18,4 +18,11 @@
 		<input type="reset" value="다시쓰기">
 	</form>
 </body>
+<script>
+	var a='${false}';
+	
+    if(a=='false'){
+    	alert("일치하는 정보가 없습니다. 다시 입력해주세요");
+    }
+	</script>
 </html>

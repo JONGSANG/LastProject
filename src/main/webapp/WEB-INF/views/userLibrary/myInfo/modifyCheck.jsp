@@ -12,7 +12,7 @@
 		<input type="submit" value="수정하기">
 	</form>
 	
-	<script type="text/javascript">
+	<script>
 	var false='${false}';
 	
     if(false=='false'){

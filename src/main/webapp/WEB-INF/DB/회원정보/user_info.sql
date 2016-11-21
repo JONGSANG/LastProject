@@ -29,6 +29,7 @@ PHONE varchar(100) not null,
 EMAIL varchar(200) not null,
 ADDRESS varchar(500) not null,
 handicap tinyint not null,
+joindate DATE not null,
 
 constraint pk_user_info primary key(ID),
 constraint fk_user_info foreign key(ID) references member(ID) on delete cascade on update cascade

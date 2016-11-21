@@ -96,7 +96,7 @@ public class MyInfoController {
 	
 	@RequestMapping(value="userLibrary/myInfo/d_status", method=RequestMethod.GET)
 	public String currentRentGET(Model model) throws Exception {
-		logger.info("내출내역 페이지");
+		logger.info("대출현황 페이지");
 		
 		model.addAttribute("rent", myInfoService.currentRent());
 		
@@ -110,5 +110,33 @@ public class MyInfoController {
 		model.addAttribute("reserve", myInfoService.reserveBook());
 		
 		return "userLibrary/myInfo/r_status";
+	}
+	
+	@RequestMapping(value="userLibrary/myInfo/d_history", method=RequestMethod.GET)
+	public String rentGET(Model model) throws Exception {
+		logger.info("대출내역 페이지");
+		
+		model.addAttribute("rent", myInfoService.rent());
+		
+		return "userLibrary/myInfo/d_history";
+	}
+	
+	@RequestMapping(value="userLibrary/myInfo/r_history", method=RequestMethod.GET)
+	public String hopeGET(Model model) throws Exception {
+		logger.info("희망도서신청내역 페이지");
+		
+		model.addAttribute("hope", myInfoService.hope());
+		
+		return "userLibrary/myInfo/r_history";
+	}
+	
+	@RequestMapping(value="userLibrary/myInfo/s_history", method=RequestMethod.GET)
+	public String serviceApplyGET(Model model) throws Exception {
+		logger.info("행사신청내역 페이지");
+		
+		model.addAttribute("culture", myInfoService.cultureApply());
+		model.addAttribute("after", myInfoService.afterApply());
+		
+		return "userLibrary/myInfo/s_history";
 	}
 }

@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 			<div id="menu">
-				<a href="/" id="logo"><img src="/resources/images/searchmenu.PNG" alt="logo"></a>
-				<img alt="" src="/resources/images/line.png" width="180px" height="30px">
+				<a href="/" id="logo"><img src="/resources/images/manusearch.png" alt="logo"></a>
+				<img alt="" src="/resources/images/line.png" width="180px" height="20px">
 				<ul >
 					<li>
 						<a class="menubtn" href="/userLibrary/search/b_search/index">도서검색</a>

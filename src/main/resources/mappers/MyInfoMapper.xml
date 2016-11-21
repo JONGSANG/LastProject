@@ -62,4 +62,31 @@ INNER JOIN ROOM_B RM ON RE.BNO=RM.BNO
 WHERE RE.ID=#{id}
 </select>
 
+<select id="rent" resultType="Rent_BookVO">
+SELECT R.BNO, R.RENT_DATE, R.SUBMIT_DATE, B.BTITLE
+FROM RENT_BOOK R
+INNER JOIN BOOK B ON R.BNO=B.BNO
+WHERE R.ID=#{id}
+</select>
+
+<select id="hope" resultType="HopeVO">
+SELECT BNAME, BWRITER, BCOMPANY, BYEAR, HOPE_DATE, RESULT
+FROM HOPE_BOOK
+WHERE ID=#{id}
+</select>
+
+<select id="culture" resultType="MyInfoVO">
+SELECT C.CSELECT, C.TITLE, C.MAX_CNT, C.TOCNT, L.CULTURE_DATE, L.STATE
+FROM CULTURE C
+INNER JOIN CULTURE_LIST L ON C.NUM=L.ANUM
+WHERE L.ID=#{id}
+</select>
+
+<select id="after" resultType="MyInfoVO">
+SELECT A.ASELECT, A.TITLE, A.MAX_CNT, A.TOCNT, L.AFTER_DATE, L.STATE
+FROM AFTER A
+INNER JOIN AFTER_LIST L ON A.NUM=L.ANUM
+WHERE L.ID=#{id}
+</select>
+
 </mapper>

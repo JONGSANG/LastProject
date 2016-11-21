@@ -24,3 +24,4 @@ insert into ROLE values('kosta1', 'ROLE_SEMIUSER');
 insert into ROLE values('kosta2', 'ROLE_USER');
 insert into ROLE values('kosta3', 'ROLE_USER');
 insert into ROLE values('kosta4', 'ROLE_USER');
+insert into ROLE values('ksh', 'ROLE_USER');

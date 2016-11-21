@@ -30,10 +30,10 @@
                 <ul >
                      <li id="menu" class="current li-none"><a href="#">도서관소개</a>
                      <ul class="sub">
+                     <li><a class="submenu" href="userLibrary/libInfo/intro">인사말</a></li>
                      	<li><a class="submenu" href="userLibrary/libInfo/org">조직도</a></li>
                      	<li><a class="submenu" href="userLibrary/libInfo/map">찾아오는 길</a></li>
                      	<li><a class="submenu" href="userLibrary/libInfo/s_status">시설현황</a></li>
-                     	<li><a class="submenu" href="userLibrary/libInfo/intro">인사말</a></li>
                      	<li><a class="submenu end" href="userLibrary/libInfo/b_status">자료현황</a></li>
                      </ul>
                      </li>

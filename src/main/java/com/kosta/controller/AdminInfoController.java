@@ -18,6 +18,7 @@ public class AdminInfoController {
 		logger.info("회원정보관리 페이지");
 		
 		
+		
 		return "adminLibrary/adminInfo/m_list";
 	}
 }

@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 	<div id="menu">
-				<a href="/" id="logo"><img src="/resources/images/usingmenu.png" alt="logo"></a>
-				<img alt="" src="/resources/images/line.png" width="180px" height="30px">
+				<a href="/" id="logo"><img src="/resources/images/manuinformation.png" alt="logo" ></a>
+				<img alt="" src="/resources/images/line.png" width="180px" height="20px">
 				<ul >
 					<li>
 						<a class="menubtn" href="/userLibrary/using/time">이용시간</a>
