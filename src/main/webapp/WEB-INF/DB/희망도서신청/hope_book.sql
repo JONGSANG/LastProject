@@ -23,7 +23,8 @@ drop table HOPE_BOOK;
 --BYEAR varchar2(50), -- 출판년도
 --HOPE_DATE DATE,	--신청 날짜
 --VIEWCNT number default 0, -- 이쯤되면 알아보겟지 이건 
---
+--RESULT integer default 0, -- 0이면.....대기중, 1이면 구매완료, -1 거절나가리
+
 --constraint pk_HOPE_BOOK primary key(NUM),
 --constraint fk_HOPE_BOOK foreign key(ID) REFERENCES member(ID)
 --);
@@ -39,6 +40,7 @@ BINTRO text,
 BYEAR year(4),
 HOPE_DATE DATETIME,
 VIEWCNT integer default 0,
+RESULT integer default 0,
 
 constraint pk_HOPE_BOOK primary key(NUM)
 );

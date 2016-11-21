@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kosta.mappers.AdminBookMapper">
+
+<select id="selectMember" resultType="int">
+SELECT COUNT(ID) FROM MEMBER WHERE ID=#{id}
+</select>
+
+<select id="selectBook" resultType="int">
+SELECT COUNT(BNO) FROM room_b WHERE BNO=#{bno} and BRENT=1
+</select>
+
+<select id="userInfo" resultType="User_InfoVO">
+SELECT * FROM USER_INFO WHERE ID=#{id}
+</select>
+
+<select id="rentCnt" parameterType="String" resultType="int">
+SELECT COUNT(B.BNO) RCNT
+FROM RENT_BOOK R
+INNER JOIN BOOK B ON R.BNO=B.BNO 
+INNER JOIN ROOM_B RB ON R.BNO=RB.BNO
+WHERE RB.BRENT=-1 
+AND R.ID=#{id}
+</select>
+
+<select id="currentRent" resultType="Rent_BookVO">
+SELECT R.RENT_DATE , R.SUBMIT_DATE, B.BTITLE, B.BNO
+FROM RENT_BOOK R
+INNER JOIN BOOK B ON R.BNO=B.BNO 
+INNER JOIN ROOM_B RB ON R.BNO=RB.BNO
+WHERE RB.BRENT=-1 
+AND R.ID=#{id}
+</select>
+
+
+<insert id="insertRent">
+INSERT INTO RENT_BOOK 
+VALUES(#{bno},#{id},now(),date_add(now(), interval +15 day ))
+</insert>
+
+<update id="updateRent">
+UPDATE ROOM_B SET BRENT=-1 , BRENT_CNT=+1 
+WHERE BNO=#{bno}
+</update>
+
+</mapper>

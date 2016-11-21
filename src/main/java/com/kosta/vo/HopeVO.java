@@ -7,9 +7,15 @@ public class HopeVO extends PageInfo {
 	private int num ,bYear, viewCnt; 
 	private String id ,bName ,bWriter, bCompany , bIntro ;
 	private Date hope_Date;
-	private int re_cnt;
+	private int re_cnt, result;
 
 	
+	public int getResult() {
+		return result;
+	}
+	public void setResult(int result) {
+		this.result = result;
+	}
 	public int getRe_cnt() {
 		return re_cnt;
 	}
