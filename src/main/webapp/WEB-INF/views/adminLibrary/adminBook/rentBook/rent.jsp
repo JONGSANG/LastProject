@@ -8,6 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+<a href="rent"><h1>[ 대출 ]</h1></a>
+<a href="submit"><h1>[ 반납 ]</h1></a>
+
 
 	<br>
 	<form method="post">

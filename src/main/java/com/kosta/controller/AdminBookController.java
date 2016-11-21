@@ -21,24 +21,24 @@ public class AdminBookController {
 	@Autowired
 	private AdminBookService service;
 
-	@RequestMapping(value = "adminLibrary/adminBook/rentBook/index", method = RequestMethod.GET)
-	public String indexGet() {
+	@RequestMapping(value = "adminLibrary/adminBook/rentBook/rent", method = RequestMethod.GET)
+	public String rentGet() {
 		logger.info("RentBook page");
-		return "adminLibrary/adminBook/rentBook/index";
+		return "adminLibrary/adminBook/rentBook/rent";
 	}
 
-	@RequestMapping(value = "adminLibrary/adminBook/rentBook/index", method = RequestMethod.POST)
-	public String indexPost(Model model, Rent_BookVO vo, RedirectAttributes rttr) {
+	@RequestMapping(value = "adminLibrary/adminBook/rentBook/rent", method = RequestMethod.POST)
+	public String rentPost(Model model, Rent_BookVO vo, RedirectAttributes rttr) {
 		logger.info("RentBook userInfo search");
 		if (vo.getBno() == null) {
 			if (service.selectMember(vo) == 0) { // 입력한 ID가 없거나 잘못입력을 눌렀을때 0
 				rttr.addFlashAttribute("msg", "NOID");
-				return "redirect:/adminLibrary/adminBook/rentBook/index";
+				return "redirect:/adminLibrary/adminBook/rentBook/rent";
 			} else {
 				model.addAttribute("userInfo", service.userInfo(vo));
 				model.addAttribute("rent", service.currentRent(vo));
 				model.addAttribute("rcnt", service.rentCnt(vo));
-				return "adminLibrary/adminBook/rentBook/index";
+				return "adminLibrary/adminBook/rentBook/rent";
 			}
 		} else {
 			model.addAttribute("userInfo", service.userInfo(vo));
@@ -50,18 +50,23 @@ public class AdminBookController {
 				System.out.println(vo.getBno());
 				System.out.println(vo.getBno());
 				model.addAttribute("msg", "NOBOOK");
-				return "adminLibrary/adminBook/rentBook/index";
+				return "adminLibrary/adminBook/rentBook/rent";
 			} else {
 				service.rentBook(vo);
 				model.addAttribute("userInfo", service.userInfo(vo));
 				model.addAttribute("rent", service.currentRent(vo));
 				model.addAttribute("rcnt", service.rentCnt(vo));
-				return "adminLibrary/adminBook/rentBook/index";
+				return "adminLibrary/adminBook/rentBook/rent";
 			}
 		}
 	}
 	
-	
+	@RequestMapping(value = "adminLibrary/adminBook/rentBook/submit", method = RequestMethod.GET)
+	public String submitGet() {
+		logger.info("SubmitBook page");
+		return "adminLibrary/adminBook/rentBook/submit";
+	}
+
 	
 	
 	
