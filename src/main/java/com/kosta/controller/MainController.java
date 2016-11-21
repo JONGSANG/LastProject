@@ -36,12 +36,21 @@ public class MainController {
 		//탭메뉴 민원게시판
 		model.addAttribute("m_board", mainService.m_boardList());
 		
+		//연체료 정보 삽입
+		mainService.insertLate();
+		//연체료 계산
+		mainService.updateLate();
 		return "userLibrary";
 	}
 	
 	@RequestMapping(value = "/adminLibrary", method = RequestMethod.GET)
-	public String adminMain(Model model) {
+	public String adminMain(Model model) throws Exception {
 		logger.info("관리자 메인 페이지");
+		
+		//연체료 정보 삽입
+		mainService.insertLate();
+		//연체료 계산
+		mainService.updateLate();
 		return "adminLibrary";
 	}
 }

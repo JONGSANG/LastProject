@@ -43,4 +43,14 @@ public class MainServiceImpl implements MainService {
 		return maindao.m_boardList();
 	}
 
+	@Override
+	public void updateLate() throws Exception {
+		maindao.updateLate();
+	}
+
+	@Override
+	public void insertLate() throws Exception {
+		maindao.insertLate();
+	}
+
 }

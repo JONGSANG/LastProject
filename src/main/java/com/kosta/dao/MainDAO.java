@@ -17,4 +17,10 @@ public interface MainDAO {
 	
 	public List<M_BoardVO> m_boardList() throws Exception;
 	
+	// 연체료 삽입 메소드
+	public void insertLate() throws Exception;
+	
+	// 연체료 업데이트 메소드
+	public void updateLate() throws Exception;
+
 }

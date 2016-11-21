@@ -38,5 +38,15 @@ public class MainDAOImpl implements MainDAO{
 	public List<M_BoardVO> m_boardList() throws Exception {
 		return sqlSession.selectList("MainMapper.m_listAll");
 	}
+
+	@Override
+	public void updateLate() throws Exception {
+		sqlSession.update("MainMapper.updateLate");
+	}
+
+	@Override
+	public void insertLate() throws Exception {
+		sqlSession.insert("MainMapper.insertLate");
+	}
 	
 }

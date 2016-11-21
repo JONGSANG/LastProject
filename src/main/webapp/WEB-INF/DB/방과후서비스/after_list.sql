@@ -2,6 +2,12 @@
 select * from after_list;
 drop table after_list;
 
+		select count(num) 
+		from after_list list 
+		inner join after on list.anum = after.num
+		where state = 1 and 
+
+
 --------------------------------------------------------------
 -- after_list : after_list 신청자 stack 정보 Table
 -- 

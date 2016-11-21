@@ -30,7 +30,3 @@ constraint fk_room_b foreign key(BNO) references book(bno) on delete cascade on 
 INSERT INTO room_b(bno)
 SELECT bno
 FROM book;
-
-insert into room_b(bno, brent, brent_cnt) values('01010011', 1, 0);
-insert into room_b(bno, brent, brent_cnt) values('01010012', 1, 0);
-insert into room_b(bno, brent, brent_cnt) values('99011503', 1, 0);
