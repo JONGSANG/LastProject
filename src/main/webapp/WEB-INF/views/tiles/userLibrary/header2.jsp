@@ -30,16 +30,16 @@
                 <ul >
                      <li id="menu" class="current li-none"><a href="#">도서관소개</a>
                      <ul class="sub">
+                     <li><a class="submenu start" href="/userLibrary/libInfo/intro">인사말</a></li>
                      	<li><a class="submenu" href="/userLibrary/libInfo/org">조직도</a></li>
                      	<li><a class="submenu" href="/userLibrary/libInfo/map">찾아오는 길</a></li>
                      	<li><a class="submenu" href="/userLibrary/libInfo/s_status">시설현황</a></li>
-                     	<li><a class="submenu" href="/userLibrary/libInfo/intro">인사말</a></li>
                      	<li><a class="submenu end" href="/userLibrary/libInfo/b_status">자료현황</a></li>
                      </ul>
                      </li>
                     <li id="menu"><a href="#">&nbsp;이용안내&nbsp;</a>
                     <ul class="sub">
-                    	<li><a class="submenu" href="/userLibrary/using/time">이용시간</a></li>
+                    	<li><a class="submenu start" href="/userLibrary/using/time">이용시간</a></li>
                     	<li><a class="submenu" href="/userLibrary/using/s_room">열람실</a></li>
                     	<li><a class="submenu" href="/userLibrary/using/b_rent">책대출안내</a></li>
                     	<li><a class="submenu" href="/userLibrary/using/m_info">회원안내</a></li>
@@ -81,7 +81,7 @@
                     	<li><a class="submenu" href="/userLibrary/myInfo/r_status">예약현황</a></li>
                     	<li><a class="submenu" href="/userLibrary/myInfo/d_history">대출내역</a></li>
                     	<li><a class="submenu" href="/userLibrary/myInfo/leave">회원탈퇴</a></li>
-                    	<li><a class="submenu" href="/userLibrary/myInfo/r_history">신청내역</a></li>
+                    	<li><a class="submenu" href="/userLibrary/myInfo/r_history">도서신청내역</a></li>
                     	<li><a class="submenu end" href="/userLibrary/myInfo/s_history">행사신청내역</a></li>
                     </ul>
                     </li>

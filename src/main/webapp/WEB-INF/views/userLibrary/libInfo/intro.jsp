@@ -6,9 +6,12 @@
 <title>인사말</title>
 </head>
 <body>
-	<div style = "float:right; font-size:13px; ">
-	<a href = "/" style="text-decoration:none; color:gray;">home ></a><a href = "#" style="text-decoration:none; color:gray;">도서관소개 >&nbsp;</a><b style="color: navy;">인사말</b>
-	</div><br><br>
+	
+	<section>
+	<font style="font-size: 40px">인사말</font>
+	<div id="link"><div id="linka"><a href = "/" >home ></a><a href = "#" >도서관소개 >&nbsp;</a></div><b>인사말</b></div>
+	</section>
+	<br>
 <table>
 	<tr>
 		<th>
