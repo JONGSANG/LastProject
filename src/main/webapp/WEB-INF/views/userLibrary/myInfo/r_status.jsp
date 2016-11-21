@@ -13,7 +13,6 @@
 			<th>예약일
 			<th>반납예정일
 			<th>예약만료일
-			<th>예약순위
 			<th>상태
 			<th>취소
 		</tr>
@@ -22,7 +21,6 @@
 			<td>${reserve.btitle}
 			<td>${reserve.reserve_date}
 			<td>${reserve.submit_date}
-			<td>구현예정
 			<td>구현예정
 			<c:if test="${reserve.brent==1}">
 			<td>대출중

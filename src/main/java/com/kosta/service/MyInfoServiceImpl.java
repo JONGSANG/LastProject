@@ -9,8 +9,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.kosta.dao.MyInfoDAO;
+import com.kosta.vo.HopeVO;
 import com.kosta.vo.MemberVO;
 import com.kosta.vo.MyInfoVO;
+import com.kosta.vo.Rent_BookVO;
 
 //권한 끌어오는 Authentication같은 반복영역을 줄이고싶은데 필드에 선언하면 에러남
 
@@ -70,4 +72,29 @@ public class MyInfoServiceImpl implements MyInfoService {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		return myInfodao.reserveBook(auth.getName());
 	}
+
+	@Override
+	public List<Rent_BookVO> rent() throws Exception {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		return myInfodao.rent(auth.getName());
+	}
+
+	@Override
+	public List<HopeVO> hope() throws Exception {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		return myInfodao.hope(auth.getName());
+	}
+
+	@Override
+	public List<MyInfoVO> cultureApply() throws Exception {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		return myInfodao.cultureApply(auth.getName());
+	}
+
+	@Override
+	public List<MyInfoVO> afterApply() throws Exception {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		return myInfodao.afterApply(auth.getName());
+	}
+	
 }

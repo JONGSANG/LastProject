@@ -29,7 +29,7 @@ drop table after_list;
 
 CREATE TABLE after_list(
 NUM integer auto_increment, 
-ID varchar(50), 
+ID varchar(50),
 ANUM integer, 
 after_DATE DATETIME, 
 state tinyint default 0, 
