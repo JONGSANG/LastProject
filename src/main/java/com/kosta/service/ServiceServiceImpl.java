@@ -33,25 +33,37 @@ public class ServiceServiceImpl implements ServiceService {
 	
 	// 방과후 게시판 상세글 메소드
 	@Override
-	public AfterVO after_read(int num) throws Exception {
-		return dao.after_read(num);
+	public AfterVO after_read(AfterVO vo) throws Exception {
+		return dao.after_read(vo);
 		
+	}
+	
+	// 방과후 게시판 상세글 현재카운터 메소드
+	@Override
+	public int after_tocnt(AfterVO vo) throws Exception {
+		return dao.after_tocnt(vo);
+	}
+	
+	// 방과후 게시판 상세글 세션아이디 비교
+	@Override
+	public int after_sessionid(AfterVO vo) throws Exception {
+		return dao.after_sessionid(vo);
 	}
 	
 	// 방과후 게시판 상세글 조회수 메소드
 	@Override
-	public void after_viewcnt(int num) throws Exception {
-		dao.after_viewcnt(num);
+	public void after_viewcnt(AfterVO vo) throws Exception {
+		dao.after_viewcnt(vo);
 		
 	}
 	
 	// 방과후 게시판 글 삭제 메소드
 	@Override
-	public void after_delete(int num) throws Exception {
-		dao.after_delete(num);
+	public void after_delete(AfterVO vo) throws Exception {
+		dao.after_delete(vo);
 	
 	}
-	
+	 
 	// 방과후 게시판 글 수정 메소드
 	@Override
 	public void after_modify(AfterVO vo) throws Exception {
@@ -79,6 +91,11 @@ public class ServiceServiceImpl implements ServiceService {
 		
 	}
 	
+	// 방과후 이벤트 신청 취소 메소드
+	@Override
+	public void after_joindel(L_AfterVO vo) throws Exception {
+		dao.after_joindel(vo);
+	}
 	//--------------------------------------- 문화행사 ---------------------------------------
 	// 문화행사 글 작성 메소드
 	@Override
@@ -94,22 +111,33 @@ public class ServiceServiceImpl implements ServiceService {
 	
 	// 문화행사 게시판 상세글 메소드
 	@Override
-	public CultureVO culture_read(int num) throws Exception {
-		return dao.culture_read(num);
-		
+	public CultureVO culture_read(CultureVO vo) throws Exception {
+		return dao.culture_read(vo);
+	}
+	
+	// 문화행사 게시판 상세글 현재카운터 메소드
+	@Override
+	public int culture_tocnt(CultureVO vo) throws Exception {
+		return dao.culture_tocnt(vo);
+	}
+	
+	// 문화행사 게시판 상세글 세션아이디 비교
+	@Override
+	public int culture_sessionid(CultureVO vo) throws Exception {
+		return dao.culture_sessionid(vo);
 	}
 	
 	// 방과후 게시판 상세글 조회수 메소드
 	@Override
-	public void culture_viewcnt(int num) throws Exception {
-		dao.culture_viewcnt(num);
+	public void culture_viewcnt(CultureVO vo) throws Exception {
+		dao.culture_viewcnt(vo);
 		
 	}
 	
 	// 문화행사 게시판 글 삭제 메소드
 	@Override
-	public void culture_delete(int num) throws Exception {
-		dao.after_delete(num);
+	public void culture_delete(CultureVO vo) throws Exception {
+		dao.culture_delete(vo);
 	
 	}
 	
@@ -138,5 +166,11 @@ public class ServiceServiceImpl implements ServiceService {
 	public void culture_join(L_CultureVO vo) throws Exception{
 		dao.culture_join(vo);
 		
+	}
+	
+	// 방과후 이벤트 신청 취소 메소드
+	@Override
+	public void culture_joindel(L_CultureVO vo) throws Exception {
+		dao.culture_joindel(vo);
 	}
 }

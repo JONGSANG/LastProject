@@ -276,8 +276,8 @@ public class ServiceController {
 		
 		// 방과후 게시판 리스트 폼 메소드
 		@RequestMapping(value = "userLibrary/service/after/list", method = RequestMethod.GET)
-		public String after_ListAll(Model model) throws Exception {
-			logger.info("이벤트 글게시판 페이지");
+		public String after_ListAll(AfterVO vo,Model model) throws Exception {
+			logger.info("이벤트 글게시판 페이지"); 
 			
 			// after 테이블에 모든정보를 담고 list라고 선언
 			model.addAttribute("list", service2.after_list());
@@ -287,34 +287,41 @@ public class ServiceController {
 		
 		// 방과후 게시판 상세글 메소드
 		@RequestMapping(value = "userLibrary/service/after/read", method = RequestMethod.GET)
-		public String after_read(@RequestParam("num") int num, Model model) throws Exception {
+		public String after_read(AfterVO vo, Model model) throws Exception {
 			logger.info("이벤트 글읽기 페이지");
 			
+			Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+			// 현재 카운터값 가져옴
+			model.addAttribute("after_tocnt", service2.after_tocnt(vo));
+			// Id를 세션id로 변경
+			vo.setId(auth.getName());
+			// isID 라고 변수명을 지정하고 보냄
+			model.addAttribute("isID", service2.after_sessionid(vo)); 
 			// 해당되는 글의 번호에 대한정보를 가져와서 출력
-			model.addAttribute(service2.after_read(num));
-			service2.after_viewcnt(num);
+			model.addAttribute(service2.after_read(vo));
+			service2.after_viewcnt(vo);
 			
 			return "userLibrary/service/after/read";
 		}
 		
 		// 방과후 게시판 글 삭제 메소드
 		@RequestMapping(value = "userLibrary/service/after/delete", method = RequestMethod.POST)
-		public String after_delete(@RequestParam("num") int num, RedirectAttributes rttr) throws Exception {
+		public String after_delete(AfterVO vo, RedirectAttributes rttr) throws Exception {
 			logger.info("이벤트 글삭제 페이지");
 			
 			// 해당되는 글의 번호에 대한게시글을 삭제 하고 완료 메세지 띄움
-			service2.after_delete(num);
+			service2.after_delete(vo);
 			rttr.addFlashAttribute("msg", "SUCCESS");
 			return "redirect:/userLibrary/service/after/list";
 		}
 		
 		// 방과후 게시판 글 수정 폼 메소드
 		@RequestMapping(value = "userLibrary/service/after/modify", method = RequestMethod.GET)
-		public String after_modify(@RequestParam("num") int num, Model model) throws Exception {
+		public String after_modify(AfterVO vo, Model model) throws Exception {
 			logger.info("이벤트 글수정 페이지");
 			
 			// 해당되는 글의 번호의 정보를 가져와 출력
-			model.addAttribute(service2.after_read(num));
+			model.addAttribute(service2.after_read(vo));
 			
 			return "userLibrary/service/after/modify";
 		}
@@ -344,12 +351,26 @@ public class ServiceController {
 		
 		// 방과후 이벤트 신청 메소드
 		@RequestMapping(value = "userLibrary/service/after/join", method = RequestMethod.POST)
-		public String after_join(L_AfterVO vo, Model model) throws Exception {
+		public String after_join(L_AfterVO vo) throws Exception {
 			logger.info("이벤트 신청 페이지");
 			
 			// mapper에서 afterlist에 해당 신청자를 넣고 바로 그 글에대한 현제 인원수를 +1 해줌
 			service2.after_join(vo);
 			
+			return "redirect:/userLibrary/service/after/list";
+		}
+		
+		// 방과후 이벤트 신청 취소 메소드
+		@RequestMapping(value = "userLibrary/service/after/joindel", method = RequestMethod.POST)
+		public String after_joindel(L_AfterVO vo,RedirectAttributes rttr) throws Exception {
+			Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+			
+			// Id를 세션id로 변경
+			vo.setId(auth.getName());
+			
+			// id 랑 anum 을 기준으로 신청취소
+			service2.after_joindel(vo);
+
 			return "redirect:/userLibrary/service/after/list";
 		}
 		
@@ -392,34 +413,45 @@ public class ServiceController {
 		
 		// 문화행사 게시판 상세글 메소드
 		@RequestMapping(value = "userLibrary/service/culture/read", method = RequestMethod.GET)
-		public String culture_read(@RequestParam("num") int num, Model model) throws Exception {
+		public String culture_read(CultureVO vo, Model model) throws Exception {
 			logger.info("이벤트 글읽기 페이지");
 			
+			Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+			
+			// 현재 카운터값 가져옴
+			model.addAttribute("culture_tocnt", service2.culture_tocnt(vo));
+			
+			// Id를 세션id로 변경
+			vo.setId(auth.getName());
+			
+			// isID 라고 변수명을 지정하고 보냄 
+			model.addAttribute("isID", service2.culture_sessionid(vo));
+			 
 			// 해당되는 글의 번호에 대한정보를 가져와서 출력
-			model.addAttribute(service2.culture_read(num));
-			service2.culture_viewcnt(num);
+			model.addAttribute(service2.culture_read(vo));
+			service2.culture_viewcnt(vo);
 			
 			return "userLibrary/service/culture/read";
 		}
 		
 		// 문화행사 게시판 글 삭제 메소드
 		@RequestMapping(value = "userLibrary/service/culture/delete", method = RequestMethod.POST)
-		public String culture_delete(@RequestParam("num") int num, RedirectAttributes rttr) throws Exception {
+		public String culture_delete(CultureVO vo, RedirectAttributes rttr) throws Exception {
 			logger.info("이벤트 글삭제 페이지");
 			
 			// 해당되는 글의 번호에 대한게시글을 삭제 하고 완료 메세지 띄움
-			service2.culture_delete(num);
+			service2.culture_delete(vo);
 			rttr.addFlashAttribute("msg", "SUCCESS");
 			return "redirect:/userLibrary/service/culture/list";
 		}
 		
 		// 문화행사 게시판 글 수정 폼 메소드
 		@RequestMapping(value = "userLibrary/service/culture/modify", method = RequestMethod.GET)
-		public String culture_modify(@RequestParam("num") int num, Model model) throws Exception {
+		public String culture_modify(CultureVO vo, Model model) throws Exception {
 			logger.info("이벤트 글수정 페이지");
 			
 			// 해당되는 글의 번호의 정보를 가져와 출력
-			model.addAttribute(service2.culture_read(num));
+			model.addAttribute(service2.culture_read(vo));
 			
 			return "userLibrary/service/culture/modify";
 		}
@@ -449,12 +481,26 @@ public class ServiceController {
 		
 		// 문화행사 이벤트 신청 메소드
 		@RequestMapping(value = "userLibrary/service/culture/join", method = RequestMethod.POST)
-		public String culture_join(L_CultureVO vo, Model model) throws Exception {
+		public String culture_join(L_CultureVO vo) throws Exception {
 			logger.info("이벤트 신청 페이지");
 			
 			// mapper에서 afterlist에 해당 신청자를 넣고 바로 그 글에대한 현제 인원수를 +1 해줌
 			service2.culture_join(vo);
 			
+			return "redirect:/userLibrary/service/culture/list";
+		}
+		
+		// 문화행사 이벤트 신청 취소 메소드
+		@RequestMapping(value = "userLibrary/service/culture/joindel", method = RequestMethod.POST)
+		public String culture_joindel(L_CultureVO vo,RedirectAttributes rttr) throws Exception {
+			Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+			
+			// Id를 세션id로 변경
+			vo.setId(auth.getName());
+			
+			// id 랑 anum 을 기준으로 신청취소
+			service2.culture_joindel(vo);
+
 			return "redirect:/userLibrary/service/culture/list";
 		}
 }
