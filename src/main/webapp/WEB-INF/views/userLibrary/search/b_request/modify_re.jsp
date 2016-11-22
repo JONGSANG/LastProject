@@ -3,12 +3,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insert title here</title>
+<title>희망도서신청</title>
 </head>
 <body>
-<div style = "float:right; font-size:13px; ">
-	<a href = "/" style="text-decoration:none; color:gray;">home ></a><a href = "#" style="text-decoration:none; color:gray;">도서관소식 >&nbsp;</a><b style="color: navy;">자유게시판</b>
-	</div><br><br>
+	<section>
+	<div id="word">
+	<font style="font-size: 40px">희망도서신청</font>
+	</div>
+	<div id="link"><div id="link26"><a href = "/" >home ></a><a href = "#" >검색 >&nbsp;</a></div><b>희망도서신청</b></div>
+	</section>
 	<form action="modify_re" method="post">
 		<input type="hidden" name="num" value="${boardVO2.num}"> <input
 			type="hidden" name="hNum" value="${boardVO2.hNum}">

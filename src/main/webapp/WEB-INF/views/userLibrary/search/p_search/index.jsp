@@ -4,25 +4,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insert title here</title>
+<title>간행물 검색</title>
 </head>
 <body>
-	연속간행물 페이지
-	<%-- 	<form action="result" method="get">
-		<table width="600" border="1">
-			<tr>
-				<th width="100"><select name="searchType">
-						<option value="bTitle">제목명</option>
-						<option value="bWriter">저자명</option>
-						<option value="bCompany">출판사</option>
-				</select></th>
-				<th width="400"><input type="text" name='keyword'
-					id="keywordInput" value='${vo.keyword }'></th>
-				<th width="100"><button id='searchBtn'>Search</button></th>
-			</tr>
-		</table>
-	</form>
- --%>
+<section>
+		<div id="word">
+			<font style="font-size: 40px">간행물 검색</font>
+		</div>
+		<div id="link">
+			<div id="link25">
+				<a href="/">home ></a><a href="#">검색 >&nbsp;</a>
+			</div>
+			<b>간행물 검색</b>
+		</div>
+</section>
 
 	<table width="600" border="1">
 		<tr>

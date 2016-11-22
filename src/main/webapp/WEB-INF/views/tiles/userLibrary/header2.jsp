@@ -28,7 +28,7 @@
         <div class="nav">
             <nav id="topmenu">  
                 <ul >
-                     <li id="menu" class="current li-none"><a href="#">도서관소개</a>
+                     <li id="menu" class="current li-none listyle"><a href="#">도서관소개</a>
                      <ul class="sub">
                      <li><a class="submenu start" href="/userLibrary/libInfo/intro">인사말</a></li>
                      	<li><a class="submenu" href="/userLibrary/libInfo/org">조직도</a></li>
@@ -37,7 +37,7 @@
                      	<li><a class="submenu end" href="/userLibrary/libInfo/b_status">자료현황</a></li>
                      </ul>
                      </li>
-                    <li id="menu"><a href="#">&nbsp;이용안내&nbsp;</a>
+                    <li id="menu" class="listyle"><a href="#">&nbsp;이용안내&nbsp;</a>
                     <ul class="sub">
                     	<li><a class="submenu start" href="/userLibrary/using/time">이용시간</a></li>
                     	<li><a class="submenu" href="/userLibrary/using/s_room">열람실</a></li>
@@ -47,7 +47,7 @@
                     	<li><a class="submenu end" href="/userLibrary/using/b_room">문헌정보실</a></li>
                     </ul>
                     </li>
-                    <li id="menu"><a href="#">&nbsp;&nbsp;&nbsp;검색&nbsp;&nbsp;&nbsp;</a>
+                    <li id="menu" class="listyle"><a href="#">&nbsp;&nbsp;&nbsp;검색&nbsp;&nbsp;&nbsp;</a>
                     <ul class="sub">
                     	<li><a class="submenu" href="/userLibrary/search/b_search/index">도서검색</a></li>
                     	<li><a class="submenu" href="/userLibrary/search/n_search/index">신착도서</a></li>
@@ -55,7 +55,7 @@
                     	<li><a class="submenu end" href="/userLibrary/search/b_request/listAll">희망도서신청</a></li>
                     </ul>
                     </li>
-                    <li id="menu" class="li-left li-none"><a href="#">도서관소식</a>
+                    <li id="menu" class="li-left li-none listyle"><a href="#">도서관소식</a>
                     <ul class="sub">
                     	<li><a class="submenu" href="/userLibrary/libNews/notice/listAll">공지사항</a></li>
                     	<li><a class="submenu" href="/userLibrary/libNews/schedule">도서관 일정</a></li>
@@ -65,7 +65,7 @@
                     	<li><a class="submenu end" href="/userLibrary/libNews/openSource">공개자료실</a></li>
                     </ul>
                     </li>
-                    <li id="menu"><a href="#">&nbsp;&nbsp;서비스&nbsp;&nbsp;</a>
+                    <li id="menu" class="listyle"><a href="#">&nbsp;&nbsp;서비스&nbsp;&nbsp;</a>
                     <ul class="sub">
                     	<li><a class="submenu" href="/userLibrary/service/after/list">방과후 학교</a></li>
                     	<li><a class="submenu" href="/userLibrary/service/culture/list">문화 행사</a></li>
@@ -74,7 +74,7 @@
                     	<li><a class="submenu end" href="/userLibrary/service/min_board/listAll">민원게시판</a></li>
                     </ul>
                     </li>
-                    <li id="menu"><a href="#">&nbsp;&nbsp;내정보&nbsp;&nbsp;</a>
+                    <li id="menu" class="listyle"><a href="#">&nbsp;&nbsp;내정보&nbsp;&nbsp;</a>
                     <ul class="sub">
                     	<li><a class="submenu" href="/userLibrary/myInfo/modifyCheck">개인정보 수정</a></li>
                     	<li><a class="submenu" href="/userLibrary/myInfo/d_status">대출현황</a></li>

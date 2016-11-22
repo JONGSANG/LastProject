@@ -3,7 +3,7 @@
 
 <div id="menu">
 	<a href="/" id="logo"><img src="/resources/images/manuintroduce.png"
-		alt="logo"></a> <img src="/resources/images/line.png"
+		alt="logo"></a><br> <img id="line" src="/resources/images/line.png"
 		alt="logo">
 	<ul>
 		<li><a class="menubtn" href="/userLibrary/libInfo/intro">인사말</a>

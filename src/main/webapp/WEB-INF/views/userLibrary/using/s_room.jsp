@@ -3,12 +3,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>열람실 안내</title>
+<title>열람실</title>
 </head>
 <body>
-<div style = "float:right; font-size:13px; ">
-	<a href = "/" style="text-decoration:none; color:gray;">home ></a><a href = "#" style="text-decoration:none; color:gray;">이용안내 >&nbsp;</a><b style="color: navy;">열람실</b>
-	</div><br><br>
+	<section>
+	<div id="word">
+	<font style="font-size: 40px">열람실</font>
+	</div>
+	<div id="link"><div id="link43"><a href = "/" >home ></a><a href = "#" >이용안내 >&nbsp;</a></div><b>열람실</b></div>
+	</section>
+	
 	<h3 align="center" >- 이용안내 -</h3>
 <table border="1" style="solid" align="center" >
 

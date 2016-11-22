@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 			<div id="menu">
 				<a href="/" id="logo"><img src="/resources/images/manumember.png" alt="logo"></a>
-				<img alt="" src="/resources/images/line.png" width="180px" height="20px">
+				<img id="line" alt="" src="/resources/images/line.png">
 				<ul >
 					<li>
 						<a class="menubtn" href="/userLibrary/myInfo/modifyCheck">개인정보 수정</a>

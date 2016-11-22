@@ -3,10 +3,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insert title here</title>
+<title>방과후 학교</title>
 </head>
 <body>
-<br>
+	<section>
+		<div id="word">
+			<font style="font-size: 40px">방과후 학교</font>
+		</div>
+		<div id="link">
+			<div id="link35">
+				<a href="/">home ></a><a href="#">서비스 >&nbsp;</a>
+			</div>
+			<b>방과후 학교</b>
+		</div>
+	</section>
 <h3>after_write page</h3><br>
 <form method = "POST">
 ID : <input type = "text" name = "id" value = "${afterVO.id }" readonly> <br>

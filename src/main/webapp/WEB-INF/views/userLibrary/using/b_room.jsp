@@ -6,9 +6,12 @@
 <title>문헌 정보실</title>
 </head>
 <body>
-	<div style = "float:right; font-size:13px; ">
-	<a href = "/" style="text-decoration:none; color:gray;">home ></a><a href = "#" style="text-decoration:none; color:gray;">이용안내 >&nbsp;</a><b style="color: navy;">문헌정보실</b>
-	</div><br><br>
+	<section>
+	<div id="word">
+	<font style="font-size: 40px">시설현황</font>
+	</div>
+	<div id="link"><div id="link45"><a href = "/" >home ></a><a href = "#" >이용안내 >&nbsp;</a></div><b>문헌정보실</b></div>
+	</section>
 <table>
 <tr>
 	<th align="left" width="750">

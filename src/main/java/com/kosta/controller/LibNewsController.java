@@ -384,4 +384,14 @@ public class LibNewsController {
 		// 삭제 후의 listAll 띄어주기
 		return "redirect:listAll";	
 	}
+	
+	@RequestMapping(value="userLibrary/libNews/schedule", method=RequestMethod.GET)
+	public String userList(Model model) throws Exception {
+		
+		logger.info("회원정보관리 페이지");
+		
+		
+		
+		return "userLibrary/libNews/schedule";
+	}
 }

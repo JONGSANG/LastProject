@@ -3,10 +3,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insert title here</title>
+<title>문화 행사</title>
 </head>
 <body>
-<br>
+	<section>
+		<div id="word">
+			<font style="font-size: 40px">문화 행사</font>
+		</div>
+		<div id="link">
+			<div id="link34">
+				<a href="/">home ></a><a href="#">서비스 >&nbsp;</a>
+			</div>
+			<b>문화 행사</b>
+		</div>
+	</section>
 <h3>culture_write page</h3><br>
 <form method = "POST">
 ID : <input type = "text" name = "id" value = "${cultureVO.id }" readonly> <br>

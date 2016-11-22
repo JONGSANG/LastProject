@@ -5,9 +5,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insert title here</title>
+<title>대출 현황</title>
 </head>
 <body>
+	<section>
+		<div id="word">
+			<font style="font-size: 40px">대출 현황</font>
+		</div>
+		<div id="link">
+			<div id="link34">
+				<a href="/">home ></a><a href="#">내 정보 >&nbsp;</a>
+			</div>
+			<b>대출 현황</b>
+		</div>
+	</section>
 	<table>
 		<tr>
 			<th>책 제목

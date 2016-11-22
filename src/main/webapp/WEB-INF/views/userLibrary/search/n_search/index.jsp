@@ -4,10 +4,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insert title here</title>
+<title>신착도서</title>
 </head>
 <body>
-	검색 메인 인덱스 파일입니다.
+<section>
+		<div id="word">
+			<font style="font-size: 40px">신착도서</font>
+		</div>
+		<div id="link">
+			<div id="link24">
+				<a href="/">home ></a><a href="#">검색 >&nbsp;</a>
+			</div>
+			<b>신착도서</b>
+		</div>
+</section>
 	<form action="result" method="get">
 		<table width="600" border="1">
 			<tr>
