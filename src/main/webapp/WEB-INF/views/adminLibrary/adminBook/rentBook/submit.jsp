@@ -22,16 +22,6 @@
 					<input type="submit" value="반납" >
 				</td>
 			</tr>
-			<tr>
-<%-- 				<c:if test="${rcnt < 5 }">
-					<td width="100">책 번호 :</td>
-					<td width="300">
-						<input type="text" name='bno'>
-						<input type="submit" value="대출">
-					</td>
-					<td><b>대출 가능</b></td>
-				</c:if>
- --%>			</tr>
 		</form>
 
 			<tr>

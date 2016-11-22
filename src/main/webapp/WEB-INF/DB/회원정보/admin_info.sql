@@ -35,6 +35,9 @@ constraint pk_admin_info primary key(ID),
 constraint fk_admin_info foreign key(ID) references member(ID) on delete cascade on update cascade
 
 );
+
+alter table admin_info add joindate DATE not null; 
+
 -------------------------------------------------------------
 -- test DATA
 -------------------------------------------------------------

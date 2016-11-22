@@ -6,7 +6,16 @@ public class Rent_BookVO {
 	private String bno, id, btitle;
 	private Date rent_date, submit_date;
 	private int rcnt; //현재 대출한 책의 권수를 저장하는 변수
+	private int checkLate;
 	
+	
+	
+	public int getCheckLate() {
+		return checkLate;
+	}
+	public void setCheckLate(int checkLate) {
+		this.checkLate = checkLate;
+	}
 	public String getBtitle() {
 		return btitle;
 	}

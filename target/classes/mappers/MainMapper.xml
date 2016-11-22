@@ -32,10 +32,13 @@ select name from USER_INFO where ID=#{id}
 		SELECT id, bno, SUBMIT_DATE 
 		FROM RENT_BOOK a
 		where datediff(curdate(),SUBMIT_DATE) > 0
-		and NOT EXISTS (SELECT bno, submit_date FROM late b where a.bno=b.bno and a.submit_date=b.start_date)
+		and NOT EXISTS (SELECT bno, start_date FROM late b where a.bno=b.bno and a.submit_date=b.start_date)
 	]]>
 	</insert>
-	
+<!-- 대출테이블에 연체된 책 연체됫다고 표시하기.. -->
+	<update id="updateRent">
+		update rent_book set check_late = true where datediff(curdate(), submit_date)>0
+	</update>
 <!-- 연체료 계산해주는 메소드 -->
 	<update id="updateLate">	
 		update late set money = datediff( curdate(),start_date)*100

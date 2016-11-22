@@ -50,4 +50,14 @@ public class AdminBookServiceImpl implements AdminBookService {
 		return adminBookDAO.selectBook2(vo);
 	}
 
+	@Override
+	public void submitBook(Rent_BookVO vo) {
+		adminBookDAO.submitBook(vo);
+	}
+
+	@Override
+	public int checkLate(Rent_BookVO vo) {
+		return adminBookDAO.checkLate(vo);
+	}
+
 }

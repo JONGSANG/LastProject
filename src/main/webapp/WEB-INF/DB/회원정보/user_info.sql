@@ -34,6 +34,10 @@ joindate DATE not null,
 constraint pk_user_info primary key(ID),
 constraint fk_user_info foreign key(ID) references member(ID) on delete cascade on update cascade
 );
+
+
+alter table user_info add joindate DATE not null; 
+
 -------------------------------------------------------------
 -- test DATA
 -------------------------------------------------------------
