@@ -6,9 +6,13 @@
 <title>조직도</title>
 </head>
 <body>
-	<div style = "float:right; font-size:13px; ">
-	<a href = "/" style="text-decoration:none; color:gray;">home ></a><a href = "#" style="text-decoration:none; color:gray;">도서관소개 >&nbsp;</a><b style="color: navy;">조직도</b>
-	</div><br><br>
+	<section>
+	<div id="word">
+	<font style="font-size: 40px">조직도</font>
+	</div>
+	<div id="link"><div id="link53"><a href = "/" >home ></a><a href = "#" >도서관소개 >&nbsp;</a></div><b>조직도</b></div>
+	</section>
+	<br>
 	<h5><font color="gray">도서관에 오신것을 환영합니다.</font></h5><p>
 	
 	<h5>부서및 기관안내 직원목록</h5><p><p>

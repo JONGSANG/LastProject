@@ -39,7 +39,7 @@ body - 계속 바뀌면서 출력하는 content영역
 	임시해결 - 내부 내용만 바뀌는 동적인 좌측단(menu)을 만들기 힘들어서, 템플릿을 여러개 만드는 방법으로 해결
 	-->
 	<definition name="userLibrary/member/*" template="/WEB-INF/views/tiles/userLibrary/memberLayout.jsp">
-		<put-attribute name="header2" value="/WEB-INF/views/tiles/userLibrary/header2.jsp"></put-attribute>
+		<put-attribute name="memberheader" value="/WEB-INF/views/tiles/userLibrary/memberheader.jsp"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/userLibrary/member/{1}.jsp"></put-attribute>
 		<put-attribute name="footer" value="/WEB-INF/views/tiles/userLibrary/footer.jsp"></put-attribute>
 	</definition>

@@ -7,9 +7,12 @@
 </head>
 <body>
 <div>
-	<div style = "float:right; font-size:13px; ">
-	<a href = "/" style="text-decoration:none; color:gray;">home ></a><a href = "#" style="text-decoration:none; color:gray;">이용안내 >&nbsp;</a><b style="color: navy;">이용시간</b>
-	</div><br><br>
+	<section>
+	<div id="word">
+	<font style="font-size: 40px">이용시간</font>
+	</div>
+	<div id="link"><div id="link44"><a href = "/" >home ></a><a href = "#" >이용안내 >&nbsp;</a></div><b>이용시간</b></div>
+	</section>
 	<table width = "600" cellpadding="5" cellspacing="0" border="1" style="border-collapse:collapse; border:1px gray solid;">
 		<tr align = "center">
 			<td width = "250px">실별</td>

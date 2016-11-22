@@ -6,9 +6,13 @@
 <title>찾아오는 길</title>
 </head>
 <body>
-	<div style = "float:right; font-size:13px; ">
-	<a href = "/" style="text-decoration:none; color:gray;">home ></a><a href = "#" style="text-decoration:none; color:gray;">도서관소개 >&nbsp;</a><b style="color: navy;">찾아오는 길</b>
-	</div><br><br>
+	<section>
+	<div id="word">
+	<font style="font-size: 40px">찾아오는 길</font>
+	</div>
+	<div id="link"><div id="link56"><a href = "/" >home ></a><a href = "#" >도서관소개 >&nbsp;</a></div><b>찾아오는 길</b></div>
+	</section>
+	<br>
 <div>
 	<div id="map" style="width:600px;height:400px; align:center;"></div>
 	<br>

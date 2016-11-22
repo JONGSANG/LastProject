@@ -4,6 +4,13 @@
 <html>
 <head>
 <title>Insert title here</title>
+<script>
+	var a='${false}';
+	
+    if(a=='false'){
+    	alert("일치하는 정보가 없습니다. 다시 입력해주세요");
+    }
+	</script>
 </head>
 <body>
 	<p>찾으시려는 아이디의 정보를 입력해주세요
@@ -18,11 +25,5 @@
 		<input type="reset" value="다시쓰기">
 	</form>
 </body>
-<script>
-	var a='${false}';
-	
-    if(a=='false'){
-    	alert("일치하는 정보가 없습니다. 다시 입력해주세요");
-    }
-	</script>
+
 </html>

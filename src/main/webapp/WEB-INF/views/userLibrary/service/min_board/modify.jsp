@@ -3,12 +3,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insert title here</title>
+<title>민원 게시판</title>
 </head>
 <body>
-	<div style = "float:right; font-size:13px; ">
-	<a href = "/" style="text-decoration:none; color:gray;">home ></a><a href = "#" style="text-decoration:none; color:gray;">서비스 >&nbsp;</a><b style="color: navy;">민원게시판</b>
-	</div><br><br>
+		<section>
+		<div id="word">
+			<font style="font-size: 40px">민원 게시판</font>
+		</div>
+		<div id="link">
+			<div id="link35">
+				<a href="/">home ></a><a href="#">서비스 >&nbsp;</a>
+			</div>
+			<b>민원 게시판</b>
+		</div>
+	</section>
 	<h2>수정 페이지</h2>
 	<form action="modify" method="post">
 		<table border="1">

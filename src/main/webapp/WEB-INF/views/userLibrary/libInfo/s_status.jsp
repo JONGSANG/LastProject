@@ -6,9 +6,12 @@
 <title>시설현황</title>
 </head>
 <body>
-	<div style = "float:right; font-size:13px; ">
-	<a href = "/" style="text-decoration:none; color:gray;">home ></a><a href = "#" style="text-decoration:none; color:gray;">도서관소개 >&nbsp;</a><b style="color: navy;">시설현황</b>
-	</div><br><br>
+	<section>
+	<div id="word">
+	<font style="font-size: 40px">시설현황</font>
+	</div>
+	<div id="link"><div id="link54"><a href = "/" >home ></a><a href = "#" >도서관소개 >&nbsp;</a></div><b>시설현황</b></div>
+	</section>
 <div>
 	> 시설현황<br>
 		- 위치 : 경기도 성남시 분당구 삼평동 대왕판교로 670길(구 682번지) 유스페이스2 B동<br>

@@ -3,12 +3,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insert title here</title>
+<title>공지사항</title>
 </head>
 <body>
-<div style = "float:right; font-size:13px; ">
-	<a href = "/" style="text-decoration:none; color:gray;">home ></a><a href = "#" style="text-decoration:none; color:gray;">도서관소식 >&nbsp;</a><b style="color: navy;">공지사항</b>
-	</div><br><br>
+	<section>
+		<div id="word">
+			<font style="font-size: 40px">공지사항</font>
+		</div>
+		<div id="link">
+			<div id="link54">
+				<a href="/">home ></a><a href="#">도서관소식 >&nbsp;</a>
+			</div>
+			<b>공지사항</b>
+		</div>
+	</section>
 <form role="form" method="post">
 	<table border="1">
 		<tr>

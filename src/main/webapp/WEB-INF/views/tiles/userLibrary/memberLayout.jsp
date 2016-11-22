@@ -6,24 +6,25 @@
 <head>
 <title>Kosta Library</title>
 <link rel="stylesheet" type="text/css" media="screen" href="/resources/css/userLibrary/reset.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="/resources/css/userLibrary/header2.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="/resources/css/userLibrary/menu.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="/resources/css/userLibrary/member.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="/resources/css/userLibrary/login.css">
 		<script src="/resources/js/jquery-1.8.3.min.js"></script>
-		<script src="/resources/js/tms-0.4.1.js"></script>
-		<script src="/resources/js/menu.js"></script>
+		<script src="/resources/js/header.js"></script>
 		
 </head>
 <body>
 		<div class="slider">
-		<tiles:insertAttribute name="header2" />
+		<tiles:insertAttribute name="memberheader" />
 		</div>
 		
 			<div id="logincontent">
 		<tiles:insertAttribute name="body" />
 			</div>
 		
-		<div>
+		<div style="border-top: 5px solid #E4E4E4; background-color: white;">
+		<br>
 		<tiles:insertAttribute name="footer" />
-		</div>
+		<br>
+	</div>
 </body>
 </html>

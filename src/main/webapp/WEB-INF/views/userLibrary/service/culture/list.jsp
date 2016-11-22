@@ -4,9 +4,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>list</title>
+<title>문화 행사</title>
 </head>
 <body>
+	<section>
+		<div id="word">
+			<font style="font-size: 40px">문화 행사</font>
+		</div>
+		<div id="link">
+			<div id="link34">
+				<a href="/">home ></a><a href="#">서비스 >&nbsp;</a>
+			</div>
+			<b>문화 행사</b>
+		</div>
+	</section>
 <h3>list page</h3><br>
 <div>
 	<table border = "1">

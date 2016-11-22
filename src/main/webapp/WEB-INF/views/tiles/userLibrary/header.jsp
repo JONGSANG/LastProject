@@ -21,7 +21,7 @@
 					</ul>
 				</nav>
 				<div class="dat">
-				<span class="date">월요일 10월 9일 2016년 17시 51분</span>
+				<span class="date">월요일 10월 9일 2016년 17시 51분 11</span>
 				</div>
 			</div>
   	<div>

@@ -5,9 +5,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insert title here</title>
+<title>간행물 검색</title>
 </head>
 <body>
+<section>
+		<div id="word">
+			<font style="font-size: 40px">간행물 검색</font>
+		</div>
+		<div id="link">
+			<div id="link25">
+				<a href="/">home ></a><a href="#">검색 >&nbsp;</a>
+			</div>
+			<b>간행물 검색</b>
+		</div>
+</section>
 	<table width="600" border="1">
 		<tr>
 			<th width="150" rowspan="6"><img

@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insert title here</title>
+<title>대출 내역</title>
 <script src="//code.jquery.com/jquery-3.1.0.min.js"></script>
 <script>
 $(document).ready(function(){
@@ -39,6 +39,17 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
+		<section>
+		<div id="word">
+			<font style="font-size: 40px">대출 내역</font>
+		</div>
+		<div id="link">
+			<div id="link34">
+				<a href="/">home ></a><a href="#">내 정보 >&nbsp;</a>
+			</div>
+			<b>대출 내역</b>
+		</div>
+	</section>
 <p>파란색 항목은 수정 불가
 <form role="form" method="post">
 		<input type="hidden" id="id" name="id" value="${MemberVO.id}">
