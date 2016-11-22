@@ -85,6 +85,8 @@ public class AdminBookController {
 			vo.setId(service.searchID(vo));
 			model.addAttribute("userInfo", service.userInfo(vo));
 			model.addAttribute("rent", service.currentRent(vo));
+			model.addAttribute("rcnt", service.rentCnt(vo));
+
 			return "adminLibrary/adminBook/rentBook/submit";
 		}
 	}

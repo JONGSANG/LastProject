@@ -38,5 +38,7 @@ public interface AdminBookDAO {
 	// 대출 실행
 	public void submitBook(Rent_BookVO vo);
 
+	// 반납받은 책으로 아이디 검색
+	public String searchID(Rent_BookVO vo);
 
 }

@@ -66,4 +66,9 @@ public class AdminBookDAOImpl implements AdminBookDAO {
 		return sqlSession.selectOne(namespace+"checkLate",vo);
 	}
 
+	@Override
+	public String searchID(Rent_BookVO vo) {
+		return sqlSession.selectOne(namespace+"searchID",vo);
+	}
+
 }

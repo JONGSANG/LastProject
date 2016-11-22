@@ -17,37 +17,23 @@
 		<table width=1000; border="1">
 			<tr>
 				<td width="100">책 번호 :</td>
-				<td width="300">
-					<input type="text" name='bno'>
+				<td width="300" colspan='2'>
+					<input type="text" name='bno' maxlength="8" required="required">
 					<input type="submit" value="검색">
 				</td>
 			
 			</tr>
-			<tr>
 			
-			<c:if test="${check_late == 0}">
-				<c:if test="${rcnt < 5 }">
-					<td width="100">회원 ID :</td>
-					<td width="300" colspan="2">
-						<input type="text" name='id' value="${userInfo.id}" required="required"> 
-						<input type="submit" value="검색" >
-					</td>
-					<td><b>대출 가능</b></td>
-				</c:if>
-			</c:if>
-			</tr>
 		</form>
 
 			<tr>
 				<td>ID: ${userInfo.id}</td>
 				<td>이름: ${userInfo.name}</td>
-				<c:if test="${rcnt < 5 }">
-					<td><b>현재 대출 권수: ${rcnt} 권</b></td>
-				</c:if>
-				<c:if test="${rcnt >= 5 }">
+				<td><b>현재 대출 권수: ${rcnt} 권</b></td>
+<%-- 				<c:if test="${rcnt >= 5 }">
 					<td><b style="color: RED">현재 대출 권수: ${rcnt} 권 [[ 대출 불가 ]]</b></td>
 				</c:if>
-
+ --%>
 
 			</tr>
 
@@ -119,11 +105,6 @@
 		alert("[연체]이용자로 대출이 불가능합니다.");
 	}
 
-
-	var rcnt = '${rcnt}';
-	if (rcnt >= 5) {
-		alert("대출 도서가 5권이 초과했습니다.");
-	}
 </script>
 
 </html>

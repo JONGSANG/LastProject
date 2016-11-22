@@ -40,9 +40,7 @@
 			<tr>
 				<td>ID: ${userInfo.id}</td>
 				<td>이름: ${userInfo.name}</td>
-				<c:if test="${rcnt < 5 }">
 					<td><b>현재 대출 권수: ${rcnt} 권</b></td>
-				</c:if>
 				<c:if test="${rcnt >= 5 }">
 					<td><b style="color: RED">현재 대출 권수: ${rcnt} 권 [[ 대출 불가 ]]</b></td>
 				</c:if>

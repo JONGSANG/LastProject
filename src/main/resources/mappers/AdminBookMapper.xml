@@ -17,6 +17,10 @@ SELECT COUNT(BNO) FROM room_b WHERE BNO=#{bno} and BRENT=1
 SELECT COUNT(BNO) FROM room_b WHERE BNO=#{bno} and BRENT=-1
 </select>
 
+<select id="searchID" resultType="String">
+SELECT ID FROM RENT_BOOK WHERE BNO=#{bno} AND CHECK_SUBMIT IS FALSE
+</select>
+
 <select id="checkLate" resultType="int">
 SELECT COUNT(id) FROM late WHERE end_date is null and id=#{id}
 </select>

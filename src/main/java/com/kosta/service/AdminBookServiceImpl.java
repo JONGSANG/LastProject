@@ -60,4 +60,9 @@ public class AdminBookServiceImpl implements AdminBookService {
 		return adminBookDAO.checkLate(vo);
 	}
 
+	@Override
+	public String searchID(Rent_BookVO vo) {
+		return adminBookDAO.searchID(vo);
+	}
+
 }

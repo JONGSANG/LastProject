@@ -28,6 +28,7 @@ check_late boolean default false
 
 alter table rent_book add check_late boolean default false
 
+SELECT ID FROM RENT_BOOK WHERE BNO='01010011' AND CHECK_SUBMIT IS FALSE
 
 
 
