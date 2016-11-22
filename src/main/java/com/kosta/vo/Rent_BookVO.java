@@ -7,9 +7,16 @@ public class Rent_BookVO {
 	private Date rent_date, submit_date;
 	private int rcnt; //현재 대출한 책의 권수를 저장하는 변수
 	private int checkLate;
+	private boolean check_late;
 	
 	
 	
+	public boolean isCheck_late() {
+		return check_late;
+	}
+	public void setCheck_late(boolean check_late) {
+		this.check_late = check_late;
+	}
 	public int getCheckLate() {
 		return checkLate;
 	}

@@ -92,7 +92,7 @@ public class PageMaker {
   
   
   public String makeBSearch(int page){
-    
+
     UriComponents uriComponents =
               UriComponentsBuilder.newInstance()
               .queryParam("page", page)

@@ -17,10 +17,24 @@
 		<table width=1000; border="1">
 			<tr>
 				<td width="100">책 번호 :</td>
-				<td width="300" colspan="2">
-					<input type="text" name='bno' required="required"> 
-					<input type="submit" value="반납" >
+				<td width="300">
+					<input type="text" name='bno'>
+					<input type="submit" value="검색">
 				</td>
+			
+			</tr>
+			<tr>
+			
+			<c:if test="${check_late == 0}">
+				<c:if test="${rcnt < 5 }">
+					<td width="100">회원 ID :</td>
+					<td width="300" colspan="2">
+						<input type="text" name='id' value="${userInfo.id}" required="required"> 
+						<input type="submit" value="검색" >
+					</td>
+					<td><b>대출 가능</b></td>
+				</c:if>
+			</c:if>
 			</tr>
 		</form>
 
@@ -46,6 +60,7 @@
 							<th width="500">책 제목</th>
 							<th width="150">대여 일</th>
 							<th width="150">반납 예정일</th>
+							<th width="100">연체 여부</th>
 						</tr>
 
 						<c:forEach items="${rent}" var="rent" varStatus="var">
@@ -56,6 +71,14 @@
 									<td width="500">${rent.btitle }</td>
 									<td width="150"><fmt:formatDate value="${rent.rent_date }" pattern="yy-MM-dd"/> </td>
 									<td width="150"><fmt:formatDate value="${rent.submit_date }" pattern="yy-MM-dd"/> </td>
+									<td width="100">
+										<c:if test="${rent.check_late==true}">
+											<b style="color: RED">O</b>
+										</c:if>
+										<c:if test="${rent.check_late==false}">
+											<b >X</b>
+										</c:if>
+									</td>
 								</tr>
 							</c:if>
 						</c:forEach>
@@ -90,10 +113,12 @@
 	var result = '${msg}';
 	if (result == 'NOID') {
 		alert("[회원ID]를 잘못입력 하셨습니다.");
-	}
-	if (result == 'NOBOOK') {
+	}else if (result == 'NOBOOK') {
 		alert("[책번호]를 잘못입력 하셨습니다.");
+	}else if (result == 'LATE') {
+		alert("[연체]이용자로 대출이 불가능합니다.");
 	}
+
 
 	var rcnt = '${rcnt}';
 	if (rcnt >= 5) {

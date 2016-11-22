@@ -27,6 +27,11 @@ check_late boolean default false
 
 
 alter table rent_book add check_late boolean default false
+
+
+
+
+
 INSERT INTO RENT_BOOK(BNO, ID, RENT_DATE, SUBMIT_DATE) VALUES('0112', 'test', '2016-10-18', '2016-11-02')
 
 

@@ -35,7 +35,7 @@ AND R.ID=#{id}
 </select>
 
 <select id="currentRent" resultType="Rent_BookVO">
-SELECT R.RENT_DATE , R.SUBMIT_DATE, B.BTITLE, B.BNO, checkLate
+SELECT R.RENT_DATE , R.SUBMIT_DATE, B.BTITLE, B.BNO, check_Late
 FROM RENT_BOOK R
 INNER JOIN BOOK B ON R.BNO=B.BNO 
 INNER JOIN ROOM_B RB ON R.BNO=RB.BNO

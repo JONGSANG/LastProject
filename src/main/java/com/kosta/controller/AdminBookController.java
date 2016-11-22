@@ -36,19 +36,20 @@ public class AdminBookController {
 				return "redirect:/adminLibrary/adminBook/rentBook/rent";
 			} else {
 				if(service.checkLate(vo)==0){ // 연체테이블에서 연체내역이 있는 사용자인지 판별 0이면 연체내역이 없음 
+					model.addAttribute("check_late", service.checkLate(vo));
 					model.addAttribute("userInfo", service.userInfo(vo));
 					model.addAttribute("rent", service.currentRent(vo));
 					model.addAttribute("rcnt", service.rentCnt(vo));
 					return "adminLibrary/adminBook/rentBook/rent";
 				} else {
 					//연체 정보를 넘겨야함.
+					model.addAttribute("check_late", service.checkLate(vo));
 					model.addAttribute("msg", "LATE");
 					model.addAttribute("userInfo", service.userInfo(vo));
 					model.addAttribute("rent", service.currentRent(vo));
 					model.addAttribute("rcnt", service.rentCnt(vo));
 					return "adminLibrary/adminBook/rentBook/rent";
 				}
-				
 			}
 		} else {
 			model.addAttribute("userInfo", service.userInfo(vo));
@@ -81,10 +82,10 @@ public class AdminBookController {
 			model.addAttribute("msg", "NOBOOK");
 			return "adminLibrary/adminBook/rentBook/submit";
 		}else{
-			service.submitBook(vo);
-			
-			
-		return "adminLibrary/adminBook/rentBook/submit";
+			vo.setId(service.searchID(vo));
+			model.addAttribute("userInfo", service.userInfo(vo));
+			model.addAttribute("rent", service.currentRent(vo));
+			return "adminLibrary/adminBook/rentBook/submit";
 		}
 	}
 
