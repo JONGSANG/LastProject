@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.kosta.dao.AdminInfoDAO;
 import com.kosta.vo.MemberVO;
+import com.kosta.vo.PageInfo;
+import com.kosta.vo.SearchType;
 
 @Service
 public class AdminInfoServiceImpl implements AdminInfoService {
@@ -19,8 +21,23 @@ public class AdminInfoServiceImpl implements AdminInfoService {
 	private BCryptPasswordEncoder passwordEncoder;
 
 	@Override
-	public List<MemberVO> userList() throws Exception {	
-		return null;
+	public List<MemberVO> userList(PageInfo page) throws Exception {	
+		return adminInfodao.userList(page);
+	}
+	
+	@Override
+	public int listCount() throws Exception {
+		return adminInfodao.listCount();
+	}
+	
+	@Override
+	public List<MemberVO> searchUser(PageInfo page) throws Exception {
+		return adminInfodao.searchUser(page);
+	}
+
+	@Override
+	public int searchCount(SearchType search) throws Exception {
+		return adminInfodao.searchCount(search);
 	}
 
 	@Override

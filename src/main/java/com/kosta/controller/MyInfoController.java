@@ -1,5 +1,8 @@
 package com.kosta.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -14,6 +17,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.kosta.service.MyInfoService;
 import com.kosta.vo.MemberVO;
+import com.kosta.vo.MyInfoVO;
 
 @Controller
 public class MyInfoController {
@@ -139,4 +143,6 @@ public class MyInfoController {
 		
 		return "userLibrary/myInfo/s_history";
 	}
+	
+	
 }
