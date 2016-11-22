@@ -77,8 +77,17 @@ $(document).ready(function(){
 			<option>백수</option>
 			<option>기타</option>
 		</select><br>
-		<label for="phone">전화번호</label>
-		<input type="tel" id="phone" name="phone" placeholder="-없이 작성하세요" value="${MemberVO.phone}" required><br>
+		<label for="phone">휴대전화번호</label>
+		<select name="phone1">
+			<option value="010" selected>010</option>
+			<option value="011">011</option>
+			<option value="016">016</option>
+			<option value="017">017</option>
+			<option value="018">018</option>
+			<option value="019">019</option>
+		</select> - 
+		<input type="number" name="phone2" pattern=".{3,4}" placeholder="3~4자리 숫자" maxlength="4" required> - 
+		<input type="number" name="phone3" pattern=".{4,4}" placeholder="4자리 숫자" maxlength="4" required><br>
 		<label for="email">이메일</label>
 		<input type="email" id="email" name="email" value="${MemberVO.email}" required><br>
 		<label for="address">주소</label>

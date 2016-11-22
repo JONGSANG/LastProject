@@ -35,20 +35,26 @@ public class AdminBookController {
 				rttr.addFlashAttribute("msg", "NOID");
 				return "redirect:/adminLibrary/adminBook/rentBook/rent";
 			} else {
-				model.addAttribute("userInfo", service.userInfo(vo));
-				model.addAttribute("rent", service.currentRent(vo));
-				model.addAttribute("rcnt", service.rentCnt(vo));
-				return "adminLibrary/adminBook/rentBook/rent";
+				if(service.checkLate(vo)==0){ // 연체테이블에서 연체내역이 있는 사용자인지 판별 0이면 연체내역이 없음 
+					model.addAttribute("userInfo", service.userInfo(vo));
+					model.addAttribute("rent", service.currentRent(vo));
+					model.addAttribute("rcnt", service.rentCnt(vo));
+					return "adminLibrary/adminBook/rentBook/rent";
+				} else {
+					//연체 정보를 넘겨야함.
+					model.addAttribute("msg", "LATE");
+					model.addAttribute("userInfo", service.userInfo(vo));
+					model.addAttribute("rent", service.currentRent(vo));
+					model.addAttribute("rcnt", service.rentCnt(vo));
+					return "adminLibrary/adminBook/rentBook/rent";
+				}
+				
 			}
 		} else {
 			model.addAttribute("userInfo", service.userInfo(vo));
 			model.addAttribute("rent", service.currentRent(vo));
 			model.addAttribute("rcnt", service.rentCnt(vo));
 			if (service.selectBook(vo) == 0) { // 입력한 책번호가 없거나 잘못 입력을 눌렀을때 0
-				System.out.println(service.selectBook(vo));
-				System.out.println(vo.getBno());
-				System.out.println(vo.getBno());
-				System.out.println(vo.getBno());
 				model.addAttribute("msg", "NOBOOK");
 				return "adminLibrary/adminBook/rentBook/rent";
 			} else {
@@ -65,6 +71,21 @@ public class AdminBookController {
 	public String submitGet() {
 		logger.info("SubmitBook page");
 		return "adminLibrary/adminBook/rentBook/submit";
+	}
+
+	@RequestMapping(value = "adminLibrary/adminBook/rentBook/submit", method = RequestMethod.POST)
+	public String submitPost(Model model, Rent_BookVO vo, RedirectAttributes rttr) {
+		logger.info("SubmitBook page");
+		//주석
+		if(service.selectBook2(vo)==0){ //입력한 책이 대출중이 아닐경우 0
+			model.addAttribute("msg", "NOBOOK");
+			return "adminLibrary/adminBook/rentBook/submit";
+		}else{
+			service.submitBook(vo);
+			
+			
+		return "adminLibrary/adminBook/rentBook/submit";
+		}
 	}
 
 	

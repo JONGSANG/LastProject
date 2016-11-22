@@ -16,21 +16,11 @@
 	<form method="post">
 		<table width=1000; border="1">
 			<tr>
-				<td width="100">회원 ID :</td>
+				<td width="100">책 번호 :</td>
 				<td width="300" colspan="2">
-					<input type="text" name='id' value="${userInfo.id}" required="required"> 
-					<input type="submit" value="검색" >
+					<input type="text" name='bno' required="required"> 
+					<input type="submit" value="반납" >
 				</td>
-			</tr>
-			<tr>
-				<c:if test="${rcnt < 5 }">
-					<td width="100">책 번호 :</td>
-					<td width="300">
-						<input type="text" name='bno'>
-						<input type="submit" value="대출">
-					</td>
-					<td><b>대출 가능</b></td>
-				</c:if>
 			</tr>
 		</form>
 

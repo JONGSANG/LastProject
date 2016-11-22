@@ -33,8 +33,8 @@
 			<td>${rent.btitle}
 			<td>${rent.rent_date}
 			<td>${rent.submit_date}
-			<td>구현예정
-			<c:if test="${rent.brent==1}">
+			<td><c:out value="${rent.late}" ></c:out>
+			<c:if test="${rent.brent==-1}">
 			<td>대출중
 			</c:if>
 			<td><a href="">반납연기</a>

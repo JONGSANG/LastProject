@@ -29,11 +29,15 @@ EMAIL varchar(200) not null,
 ADDRESS varchar(500) not null,
 J_PART varchar(50) not null,
 J_LEVEL varchar(50) not null,
+JOINDATE DATE not null,
 
 constraint pk_admin_info primary key(ID),
 constraint fk_admin_info foreign key(ID) references member(ID) on delete cascade on update cascade
 
 );
+
+alter table admin_info add joindate DATE not null; 
+
 -------------------------------------------------------------
 -- test DATA
 -------------------------------------------------------------

@@ -48,5 +48,10 @@ public class MainDAOImpl implements MainDAO{
 	public void insertLate() throws Exception {
 		sqlSession.insert("MainMapper.insertLate");
 	}
+
+	@Override
+	public void updateRent() throws Exception {
+		sqlSession.update("MainMapper.updateRent");
+	}
 	
 }

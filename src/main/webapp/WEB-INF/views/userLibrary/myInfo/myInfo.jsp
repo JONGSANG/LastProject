@@ -43,7 +43,7 @@
 			<td>${MemberVO.email}
 		</tr>
 		<tr>
-			<td>전화번호
+			<td>휴대전화번호
 			<td>${MemberVO.phone}
 		</tr>
 		<tr>

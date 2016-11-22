@@ -97,7 +97,7 @@ limit #{pageStart}, #{perPageNum}
 </insert>
 
 <select id="after_list" resultType="AfterVO">
-	select num, title, id, write_date, aselect, max_cnt, tocnt, viewcnt from after
+	select num, title, id, write_date, aselect, max_cnt, (select count(num) from after_list where anum=a.num and state=1) as tocnt, viewcnt from after a
 </select>
 
 <select id="after_read" resultType="AfterVO">
@@ -128,6 +128,17 @@ limit #{pageStart}, #{perPageNum}
 	update after set tocnt = tocnt+1 where num=#{anum}
 </update>
 
+<select id="after_sessionid" resultType="int">
+	select count(id) from after_list where anum = #{num} and id = #{id}
+</select>
+
+<delete id="after_joindel">
+	delete from after_list where anum = #{anum} and id = #{id}
+</delete>
+
+<select id="after_tocnt" resultType="int">
+	select count(state) from after_list where state = 1 and anum = #{num}
+</select>
 
 
 
@@ -137,7 +148,7 @@ limit #{pageStart}, #{perPageNum}
 </insert>
 
 <select id="culture_list" resultType="CultureVO">
-	select num, title, id, write_date, cselect, max_cnt, tocnt, viewcnt from culture
+	select num, title, id, write_date, cselect, max_cnt, (select count(num) from culture_list where anum=c.num and state=1) as tocnt, viewcnt from culture c
 </select>
 
 <select id="culture_read" resultType="CultureVO">
@@ -167,5 +178,17 @@ limit #{pageStart}, #{perPageNum}
 <update id="culture_joinup">
 	update culture set tocnt = tocnt+1 where num=#{anum}
 </update>
+
+<select id="culture_sessionid" resultType="int">
+	select count(id) from culture_list where anum = #{num} and id = #{id}
+</select>
+
+<delete id="culture_joindel">
+	delete from culture_list where anum = #{anum} and id = #{id}
+</delete>
+
+<select id="culture_tocnt" resultType="int">
+	select count(state) from culture_list where state = 1 and anum = #{num}
+</select>
 
 </mapper>

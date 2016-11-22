@@ -33,8 +33,6 @@
 	
 	<tx:annotation-driven/>
 	
-	<!-- <bean id="" class=""></bean> -->
-	
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="host" value="smtp.gmail.com"></property>
 		<property name="port" value="587"></property>

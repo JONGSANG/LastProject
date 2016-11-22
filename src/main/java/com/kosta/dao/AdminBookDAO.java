@@ -6,6 +6,9 @@ import com.kosta.vo.Rent_BookVO;
 import com.kosta.vo.User_InfoVO;
 
 public interface AdminBookDAO {
+
+	//대출
+	
 	// 회원이 등록되어있는지 확인하는 서비스
 	public int selectMember(Rent_BookVO vo);
 	
@@ -23,5 +26,17 @@ public interface AdminBookDAO {
 
 	// 유저 대출 내역 중 현재 대출 권수 일기
 	public int rentCnt(Rent_BookVO vo);
+	
+	// 연체자인지 판별
+	public int checkLate(Rent_BookVO vo);
+
+	//반납
+	
+	// 책번호가 맞는 것인지 확인하는 서비스
+	public int selectBook2(Rent_BookVO vo);
+	
+	// 대출 실행
+	public void submitBook(Rent_BookVO vo);
+
 
 }

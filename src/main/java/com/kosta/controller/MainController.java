@@ -15,42 +15,45 @@ import com.kosta.vo.NoticeVO;
 @Controller
 public class MainController {
 	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
-	
+
 	@Autowired
 	MainService mainService;
-	
+
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String userMain(Model model) throws Exception {
 		logger.info("도서관 메인 페이지");
-		
-		
-		//로그인 후 세션 
+
+		// 로그인 후 세션
 		model.addAttribute("vo", mainService.getName());
-		
-		//탭메뉴 공지사항
+
+		// 탭메뉴 공지사항
 		model.addAttribute("notice", mainService.noticeList());
-		
-		//탭메뉴 자유게시판
+
+		// 탭메뉴 자유게시판
 		model.addAttribute("f_board", mainService.f_boardList());
-		
-		//탭메뉴 민원게시판
+
+		// 탭메뉴 민원게시판
 		model.addAttribute("m_board", mainService.m_boardList());
-		
-		//연체료 정보 삽입
+
+		// 연체료 정보 삽입
 		mainService.insertLate();
-		//연체료 계산
+		// 연체료 계산
 		mainService.updateLate();
+		// 연체료 대출테이블에 업데이트
+		mainService.updateRent();
 		return "userLibrary";
 	}
-	
+
 	@RequestMapping(value = "/adminLibrary", method = RequestMethod.GET)
 	public String adminMain(Model model) throws Exception {
 		logger.info("관리자 메인 페이지");
-		
-		//연체료 정보 삽입
+
+		// 연체료 정보 삽입
 		mainService.insertLate();
-		//연체료 계산
+		// 연체료 계산
 		mainService.updateLate();
+		// 연체료 대출테이블에 업데이트
+		mainService.updateRent();
 		return "adminLibrary";
 	}
 }

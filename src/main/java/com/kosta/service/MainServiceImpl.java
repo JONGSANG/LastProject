@@ -53,4 +53,9 @@ public class MainServiceImpl implements MainService {
 		maindao.insertLate();
 	}
 
+	@Override
+	public void updateRent() throws Exception {
+		maindao.updateRent();
+	}
+
 }

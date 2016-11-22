@@ -13,6 +13,14 @@ SELECT COUNT(ID) FROM MEMBER WHERE ID=#{id}
 SELECT COUNT(BNO) FROM room_b WHERE BNO=#{bno} and BRENT=1
 </select>
 
+<select id="selectBook2" resultType="int">
+SELECT COUNT(BNO) FROM room_b WHERE BNO=#{bno} and BRENT=-1
+</select>
+
+<select id="checkLate" resultType="int">
+SELECT COUNT(id) FROM late WHERE end_date is null and id=#{id}
+</select>
+
 <select id="userInfo" resultType="User_InfoVO">
 SELECT * FROM USER_INFO WHERE ID=#{id}
 </select>
@@ -27,7 +35,7 @@ AND R.ID=#{id}
 </select>
 
 <select id="currentRent" resultType="Rent_BookVO">
-SELECT R.RENT_DATE , R.SUBMIT_DATE, B.BTITLE, B.BNO
+SELECT R.RENT_DATE , R.SUBMIT_DATE, B.BTITLE, B.BNO, checkLate
 FROM RENT_BOOK R
 INNER JOIN BOOK B ON R.BNO=B.BNO 
 INNER JOIN ROOM_B RB ON R.BNO=RB.BNO
