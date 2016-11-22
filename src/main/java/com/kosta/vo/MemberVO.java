@@ -1,5 +1,7 @@
 package com.kosta.vo;
 
+import java.util.Date;
+
 public class MemberVO {
 	
 	private String id;
@@ -8,7 +10,9 @@ public class MemberVO {
 	private boolean enabled;
 	private String birth;
 	private String gender;
-	private String phone;
+	private String phone1;
+	private String phone2;
+	private String phone3;
 	private String email;
 	private String address;
 	private String j_part;
@@ -16,7 +20,14 @@ public class MemberVO {
 	private String role;
 	private String job;
 	private int handicap;
+	private Date joinDate;
 	
+	public Date getJoinDate() {
+		return joinDate;
+	}
+	public void setJoinDate(Date joinDate) {
+		this.joinDate = joinDate;
+	}
 	public String getId() {
 		return id;
 	}
@@ -53,11 +64,23 @@ public class MemberVO {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public String getPhone() {
-		return phone;
+	public String getPhone1() {
+		return phone1;
 	}
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public void setPhone1(String phone1) {
+		this.phone1 = phone1;
+	}
+	public String getPhone2() {
+		return phone2;
+	}
+	public void setPhone2(String phone2) {
+		this.phone2 = phone2;
+	}
+	public String getPhone3() {
+		return phone3;
+	}
+	public void setPhone3(String phone3) {
+		this.phone3 = phone3;
 	}
 	public String getEmail() {
 		return email;

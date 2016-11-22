@@ -38,9 +38,8 @@ public class ServiceController {
 	/*본 게시물 작성페이지 띄우기*/
 	
 	// 주소값을 정해주고 GET 방식으로 보냄
-	@RequestMapping(value = "userLibrary/service/min_board/register", method = RequestMethod.GET)	
-	
 	// F_BoardVO:본 게시물 속성 값	
+	@RequestMapping(value = "userLibrary/service/min_board/register", method = RequestMethod.GET)	
 	public String registerGET(M_BoardVO vo, Model model) throws Exception {	
 		
 		// Console 창에 띄어줌
@@ -60,9 +59,8 @@ public class ServiceController {
 	/*작성페이지의 작성값을 보내기*/
 	
 	// POST방식으로 보냄
-	@RequestMapping(value = "userLibrary/service/min_board/register", method = RequestMethod.POST)
-	
 	// vo에 담아서 보냄, RedirectAttributes로 알림창 띄움
+	@RequestMapping(value = "userLibrary/service/min_board/register", method = RequestMethod.POST)
 	public String registerPost(Model model, M_BoardVO vo) throws Exception {
 					
 		//id title content
@@ -101,9 +99,8 @@ public class ServiceController {
 
 	/*상세 내용으로 띄우기*/
 	// 기입한 주소값으로 GET방식으로 보냄
-	@RequestMapping(value = "userLibrary/service/min_board/read", method = RequestMethod.GET)	
-	
 	// RequestParam으로 num 값을 가져옴
+	@RequestMapping(value = "userLibrary/service/min_board/read", method = RequestMethod.GET)	
 	public String read(@RequestParam("num") int num, Model model,@ModelAttribute("pageInfo_rep") M_Board_ReVO vo2) throws Exception {	
 		
 		// Console 창에 알림띄어줌
@@ -185,10 +182,9 @@ public class ServiceController {
 
 	/*댓글 수정하기*/
 	
-	// 기입한 주소값으로 GET방식으로 보냄
-	@RequestMapping(value = "userLibrary/service/min_board/modify_re", method = RequestMethod.GET)	
-	
+	// 기입한 주소값으로 GET방식으로 보냄	
 	// 본게시물 num의 외래키인 fnum과 댓글의 num을 가져와서 댓글을 구별
+	@RequestMapping(value = "userLibrary/service/min_board/modify_re", method = RequestMethod.GET)
 	public void modify_reGET(@RequestParam("num") String num,@RequestParam("mnum") String mnum, Model model) throws Exception {
 			
 		// Console창에 띄움

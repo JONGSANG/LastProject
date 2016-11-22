@@ -10,7 +10,7 @@ INSERT INTO MEMBER(ID, PWD) VALUES(#{id}, #{pwd})
 </insert>
 
 <insert id="user_info">
-INSERT INTO USER_INFO(ID, NAME, BIRTH, GENDER, JOB, PHONE, EMAIL, ADDRESS, HANDICAP, JOINDATE) VALUES(#{id}, #{name}, #{birth}, #{gender}, #{job}, #{phone}, #{email}, #{address}, #{handicap}, NOW())
+INSERT INTO USER_INFO(ID, NAME, BIRTH, GENDER, JOB, PHONE, EMAIL, ADDRESS, HANDICAP, JOINDATE) VALUES(#{id}, #{name}, #{birth}, #{gender}, #{job}, CONCAT(#{phone1},'-',#{phone2},'-',#{phone3}), #{email}, #{address}, #{handicap}, NOW())
 </insert>
 
 <insert id="role">

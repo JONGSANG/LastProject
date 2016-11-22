@@ -30,7 +30,7 @@ UPDATE MEMBER SET PWD=#{pwd} WHERE ID=#{id}
 </update>
 
 <update id="updateUser_info">
-UPDATE USER_INFO SET NAME=#{name}, JOB=#{job}, PHONE=#{phone}, EMAIL=#{email}, ADDRESS=#{address}, HANDICAP=#{handicap} WHERE ID=#{id}
+UPDATE USER_INFO SET NAME=#{name}, JOB=#{job}, PHONE=CONCAT(#{phone1},'-',#{phone2},'-',#{phone3}), EMAIL=#{email}, ADDRESS=#{address}, HANDICAP=#{handicap} WHERE ID=#{id}
 </update>
 
 <delete id="deleteMember">
@@ -46,7 +46,7 @@ DELETE FROM ROLE WHERE ID=#{id}
 </delete>
 
 <select id="currentRent" resultType="MyInfoVO">
-SELECT R.RENT_DATE, R.SUBMIT_DATE, RB.BRENT, B.BTITLE
+SELECT R.RENT_DATE, R.SUBMIT_DATE, RB.BRENT, B.BTITLE, DATEDIFF(CURDATE(),R.SUBMIT_DATE) AS late
 FROM RENT_BOOK R
 INNER JOIN BOOK B ON R.BNO=B.BNO 
 INNER JOIN ROOM_B RB ON R.BNO=RB.BNO

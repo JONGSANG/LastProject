@@ -19,6 +19,14 @@ public class MyInfoVO {
 	private Date after_date;
 	private Date culture_date;
 	
+	private int late;
+	
+	public int getLate() {
+		return late;
+	}
+	public void setLate(int late) {
+		this.late = late;
+	}
 	public Date getCulture_date() {
 		return culture_date;
 	}

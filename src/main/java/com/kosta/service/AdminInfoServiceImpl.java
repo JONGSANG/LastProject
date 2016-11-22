@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.kosta.dao.AdminInfoDAO;
 import com.kosta.vo.MemberVO;
+import com.kosta.vo.PageInfo;
 
 @Service
 public class AdminInfoServiceImpl implements AdminInfoService {
@@ -19,8 +20,13 @@ public class AdminInfoServiceImpl implements AdminInfoService {
 	private BCryptPasswordEncoder passwordEncoder;
 
 	@Override
-	public List<MemberVO> userList() throws Exception {	
-		return null;
+	public List<MemberVO> userList(PageInfo page) throws Exception {	
+		return adminInfodao.userList(page);
+	}
+	
+	@Override
+	public int listCount() throws Exception {
+		return adminInfodao.listCount();
 	}
 
 	@Override

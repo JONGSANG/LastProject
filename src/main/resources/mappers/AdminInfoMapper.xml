@@ -11,6 +11,14 @@ FROM MEMBER M
 INNER JOIN USER_INFO U ON M.ID=U.ID
 INNER JOIN ROLE R ON M.ID=R.ID
 ORDER BY JOINDATE DESC
+LIMIT #{pageStart}, #{perPageNum}
+</select>
+
+<select id="listCount" resultType="int">
+SELECT count(M.ID)
+FROM MEMBER M
+INNER JOIN USER_INFO U ON M.ID=U.ID
+INNER JOIN ROLE R ON M.ID=R.ID
 </select>
 
 <select id="searchUser" resultType="MemberVO">
@@ -28,6 +36,7 @@ WHERE name=#{name}
 WHERE email=#{email}
 </if>
 ORDER BY JOINDATE DESC
+LIMIT #{pageStart}, #{perPageNum}
 </select>
 
 <insert id="member">
@@ -35,7 +44,7 @@ INSERT INTO MEMBER(ID, PWD) VALUES(#{id}, #{pwd})
 </insert>
 
 <insert id="admin_info">
-INSERT INTO ADMIN_INFO(ID, NAME, BIRTH, GENDER, PHONE, EMAIL, ADDRESS, J_PART, J_LEVEL, JOINDATE) VALUES(#{id}, #{name}, #{birth}, #{gender}, #{phone}, #{email}, #{address}, #{j_part}, #{j_level}, NOW())
+INSERT INTO ADMIN_INFO(ID, NAME, BIRTH, GENDER, PHONE, EMAIL, ADDRESS, J_PART, J_LEVEL, JOINDATE) VALUES(#{id}, #{name}, #{birth}, #{gender}, CONCAT(#{phone1},'-',#{phone2},'-',#{phone3}), #{email}, #{address}, #{j_part}, #{j_level}, NOW())
 </insert>
 
 <insert id="role">
