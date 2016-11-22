@@ -35,7 +35,7 @@ INSERT INTO MEMBER(ID, PWD) VALUES(#{id}, #{pwd})
 </insert>
 
 <insert id="admin_info">
-INSERT INTO ADMIN_INFO(ID, NAME, BIRTH, GENDER, PHONE, EMAIL, ADDRESS, J_PART, J_LEVEL) VALUES(#{id}, #{name}, #{birth}, #{gender}, #{phone}, #{email}, #{address}, #{j_part}, #{j_level})
+INSERT INTO ADMIN_INFO(ID, NAME, BIRTH, GENDER, PHONE, EMAIL, ADDRESS, J_PART, J_LEVEL, JOINDATE) VALUES(#{id}, #{name}, #{birth}, #{gender}, #{phone}, #{email}, #{address}, #{j_part}, #{j_level}, NOW())
 </insert>
 
 <insert id="role">
