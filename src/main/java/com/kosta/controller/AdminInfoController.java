@@ -5,15 +5,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.kosta.service.AdminInfoService;
-import com.kosta.vo.F_BoardVO;
 import com.kosta.vo.MemberVO;
-import com.kosta.vo.PageInfo;
 import com.kosta.vo.PageMaker;
 import com.kosta.vo.SearchType;
 
@@ -26,32 +24,33 @@ public class AdminInfoController {
 	private AdminInfoService adminInfoService;
 	
 	@RequestMapping(value="adminLibrary/adminInfo/m_list", method=RequestMethod.GET)
-	public String userListGET(Model model, PageInfo page) throws Exception {
+	public String userListGET(Model model, SearchType search) throws Exception {
 		
 		logger.info("회원정보관리 페이지");
 		
-		model.addAttribute("userList", adminInfoService.userList(page));
+		model.addAttribute("userList", adminInfoService.userList(search));
 		PageMaker pageMaker = new PageMaker();
-		pageMaker.setPageInfo(page);
-		pageMaker.setTotalCount(adminInfoService.listCount());
+		pageMaker.setPageInfo(search);
+		pageMaker.setTotalCount(adminInfoService.listCount(search));
 		model.addAttribute("pageMaker", pageMaker);
 		
 		return "adminLibrary/adminInfo/m_list";
 	}
 	
-	@RequestMapping(value="adminLibrary/adminInfo/m_search", method=RequestMethod.GET)
-	public String userSearchGET(Model model, @ModelAttribute("pageInfo") SearchType search) throws Exception {
+	@RequestMapping(value="adminLibrary/adminInfo/a_list", method=RequestMethod.GET)
+	public String adminListGET(Model model, SearchType search) throws Exception {
 		
-		logger.info("회원정보관리 페이지(검색결과)");
+		logger.info("관리자정보관리 페이지");
 		
-		model.addAttribute("userList", adminInfoService.searchUser(search));
+		model.addAttribute("adminList", adminInfoService.adminList(search));
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setPageInfo(search);
-		pageMaker.setTotalCount(adminInfoService.searchCount(search));
+		pageMaker.setTotalCount(adminInfoService.adminCount(search));
 		model.addAttribute("pageMaker", pageMaker);
 		
-		return "adminLibrary/adminInfo/m_list";
+		return "adminLibrary/adminInfo/a_list";
 	}
+	
 	
 	@RequestMapping(value="adminLibrary/adminInfo/addAdmin", method=RequestMethod.GET)
 	public String addAdminGET(Model model) throws Exception {
@@ -73,11 +72,47 @@ public class AdminInfoController {
 		return "redirect:/adminLibrary/adminInfo/a_list";
 	}
 	
-	@RequestMapping(value="adminLibrary/adminInfo/a_list", method=RequestMethod.GET)
-	public String adminListGET(MemberVO vo) throws Exception {
+	@RequestMapping(value="adminLibrary/adminInfo/adminCheck", method=RequestMethod.GET)
+	public String adminCheckGET(Model model) throws Exception {
 		
-		logger.info("관리자정보관리 페이지");
+		logger.info("관리자 비밀번호 확인 페이지");
 		
-		return "adminLibrary/adminInfo/a_list";
+		return "adminLibrary/adminInfo/adminCheck";
+	}
+	
+	@RequestMapping(value="adminLibrary/adminInfo/adminCheck", method=RequestMethod.POST)
+	public String adminCheckPOST(@RequestParam("password") String rawPassword, Model model) throws Exception {
+		
+		logger.info("관리자 비밀번호 확인 페이지");
+		
+		boolean result=adminInfoService.passwordCheck(rawPassword);
+		if(result==false){
+			//메세지 안넘어감, ajax로 변경 필요
+			model.addAttribute("fail", "fail");
+			return "adminLibrary/adminInfo/adminCheck";
+		}
+		
+		return "redirect:/adminLibrary/adminInfo/passwordModify";
+	}
+	
+	
+	@RequestMapping(value="adminLibrary/adminInfo/passwordModify", method=RequestMethod.GET)
+	public String passwordModifyGET() throws Exception {
+		
+		logger.info("관리자 비밀번호 변경 페이지");
+		
+		return "adminLibrary/adminInfo/passwordModify";
+	}
+	
+	@RequestMapping(value="adminLibrary/adminInfo/passwordModify", method=RequestMethod.POST)
+	public String passwordModifyPOST(MemberVO vo, RedirectAttributes rttr) throws Exception {
+		
+		logger.info("관리자 비밀번호 변경 페이지");
+		
+		adminInfoService.passwordModify(vo);
+		
+		rttr.addFlashAttribute("success", "success");
+		
+		return "redirect:/adminLibrary";
 	}
 }

@@ -43,14 +43,14 @@
 			<option>정보자료과</option>
 			<option>독서문화진흥과</option>
 			<option>평생학습지원과</option>
-			<option>정보봉사과ㅏ</option>
+			<option>정보봉사과</option>
 		</select><br>
 		<label for="j_level">직급</label>
 		<select	name="j_level">
 			<option>도서관장</option>
 			<option>과장</option>
 			<option>담당팀장</option>
-			<option>직원</option>
+			<option selected="selected">직원</option>
 		</select><br>
 		<button type="submit" id="submit" value="관리자 추가">관리자 추가</button>
 		<input type="reset" value="다시쓰기">

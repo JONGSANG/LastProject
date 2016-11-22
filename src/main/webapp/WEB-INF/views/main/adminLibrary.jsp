@@ -4,6 +4,13 @@
 <html>
 <head>
 <title>Insert title here</title>
+<script>
+	var success='${success}';
+	
+    if(success=='success'){
+    	alert("비밀번호 수정 완료");
+    }
+</script>
 </head> 
 <body>
 	adminLibrary영역
