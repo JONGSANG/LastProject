@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.kosta.vo.MemberVO;
 import com.kosta.vo.PageInfo;
+import com.kosta.vo.SearchType;
 
 @Repository
 public class AdminInfoDAOImpl implements AdminInfoDAO {
@@ -24,6 +25,16 @@ public class AdminInfoDAOImpl implements AdminInfoDAO {
 	@Override
 	public int listCount() throws Exception {
 		return sqlSession.selectOne("AdminInfoMapper.listCount");
+	}
+	
+	@Override
+	public List<MemberVO> searchUser(PageInfo page) throws Exception {
+		return sqlSession.selectList("AdminInfoMapper.searchUser", page);
+	}
+
+	@Override
+	public int searchCount(SearchType search) throws Exception {
+		return sqlSession.selectOne("AdminInfoMapper.searchCount", search);
 	}
 	
 	@Override

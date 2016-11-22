@@ -21,19 +21,48 @@ INNER JOIN USER_INFO U ON M.ID=U.ID
 INNER JOIN ROLE R ON M.ID=R.ID
 </select>
 
+<select id="searchCount" resultType="int">
+SELECT COUNT(M.ID)
+FROM MEMBER M
+INNER JOIN USER_INFO U ON M.ID=U.ID
+INNER JOIN ROLE R ON M.ID=R.ID
+<if test="searchType=='아이디'">
+WHERE M.ID LIKE CONCAT('%',#{keyword},'%')
+</if>
+<if test="searchType=='이름'">
+WHERE U.NAME LIKE CONCAT('%',#{keyword},'%')
+</if>
+<if test="searchType=='이메일'">
+WHERE U.EMAIL LIKE CONCAT('%',#{keyword},'%')
+</if>
+<if test="searchType=='휴대폰번호'">
+WHERE U.PHONE LIKE CONCAT('%',#{keyword},'%')
+</if>
+<if test="searchType=='회원등급'">
+WHERE R.ROLE LIKE CONCAT('%',#{keyword},'%')
+</if>
+</select>
+
+
 <select id="searchUser" resultType="MemberVO">
 SELECT M.ID, U.NAME, U.BIRTH, U.PHONE, U.JOINDATE, R.ROLE
 FROM MEMBER M
 INNER JOIN USER_INFO U ON M.ID=U.ID
 INNER JOIN ROLE R ON M.ID=R.ID
-<if test="keyword==id">
-WHERE id=#{id}
+<if test="searchType=='아이디'">
+WHERE M.ID LIKE CONCAT('%',#{keyword},'%')
 </if>
-<if test="keyword==name">
-WHERE name=#{name}
+<if test="searchType=='이름'">
+WHERE U.NAME LIKE CONCAT('%',#{keyword},'%')
 </if>
-<if test="keyword==email">
-WHERE email=#{email}
+<if test="searchType=='이메일'">
+WHERE U.EMAIL LIKE CONCAT('%',#{keyword},'%')
+</if>
+<if test="searchType=='휴대폰번호'">
+WHERE U.PHONE LIKE CONCAT('%',#{keyword},'%')
+</if>
+<if test="searchType=='회원등급'">
+WHERE R.ROLE LIKE CONCAT('%',#{keyword},'%')
 </if>
 ORDER BY JOINDATE DESC
 LIMIT #{pageStart}, #{perPageNum}

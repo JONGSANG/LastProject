@@ -52,5 +52,17 @@
 		<li><a
 			href="m_list${pageMaker.makeQuery(pageMaker.endPage +1) }">&raquo;</a></li>
 	</c:if>
+	
+	<form action="/adminLibrary/adminInfo/m_search" method="get">
+		<select name="searchType">
+			<option value='아이디'>아이디</option>
+			<option value='이름'>이름</option>
+			<option value='전화번호'>전화번호</option>
+			<option value='이메일'>이메일</option>
+			<option value='회원등급'>회원등급</option>
+		</select>
+		<input type="text" name="keyword" required>
+		<input type="submit" value="검색">
+	</form>
 </body>
 </html>
