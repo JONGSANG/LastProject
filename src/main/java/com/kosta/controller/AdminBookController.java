@@ -45,10 +45,6 @@ public class AdminBookController {
 			model.addAttribute("rent", service.currentRent(vo));
 			model.addAttribute("rcnt", service.rentCnt(vo));
 			if (service.selectBook(vo) == 0) { // 입력한 책번호가 없거나 잘못 입력을 눌렀을때 0
-				System.out.println(service.selectBook(vo));
-				System.out.println(vo.getBno());
-				System.out.println(vo.getBno());
-				System.out.println(vo.getBno());
 				model.addAttribute("msg", "NOBOOK");
 				return "adminLibrary/adminBook/rentBook/rent";
 			} else {
@@ -65,6 +61,17 @@ public class AdminBookController {
 	public String submitGet() {
 		logger.info("SubmitBook page");
 		return "adminLibrary/adminBook/rentBook/submit";
+	}
+
+	@RequestMapping(value = "adminLibrary/adminBook/rentBook/submit", method = RequestMethod.POST)
+	public String submitPost(Model model, Rent_BookVO vo, RedirectAttributes rttr) {
+		logger.info("SubmitBook page");
+		if(service.selectBook2(vo)==0){ //입력한 책이 대출중이 아닐경우 0
+			rttr.addFlashAttribute("msg", "NOBOOOK");
+			return "redirect:/adminLibrary/adminBook/rentBook/submit";
+		}else{
+		return "adminLibrary/adminBook/rentBook/submit";
+		}
 	}
 
 	

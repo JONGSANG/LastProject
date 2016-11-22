@@ -20,6 +20,8 @@ constraint pk_late primary key(bno)
 );
 
 
+
+
 insert into late values('y','1','2016/11/15','2016/11/20',0);
 insert into late values('y1','2','2016/11/14','2016/11/20',0);
 insert into late values('y2','3','2016/11/12','2016/11/20',0);

@@ -13,6 +13,11 @@ SELECT COUNT(ID) FROM MEMBER WHERE ID=#{id}
 SELECT COUNT(BNO) FROM room_b WHERE BNO=#{bno} and BRENT=1
 </select>
 
+<select id="selectBook2" resultType="int">
+SELECT COUNT(BNO) FROM room_b WHERE BNO=#{bno} and BRENT=-1
+</select>
+
+
 <select id="userInfo" resultType="User_InfoVO">
 SELECT * FROM USER_INFO WHERE ID=#{id}
 </select>

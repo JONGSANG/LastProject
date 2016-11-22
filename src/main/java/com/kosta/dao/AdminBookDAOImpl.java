@@ -50,4 +50,9 @@ public class AdminBookDAOImpl implements AdminBookDAO {
 		return sqlSession.selectOne(namespace+"selectBook", vo);
 	}
 
+	@Override
+	public int selectBook2(Rent_BookVO vo) {
+		return sqlSession.selectOne(namespace+"selectBook2", vo);
+	}
+
 }
