@@ -82,4 +82,21 @@ UPDATE ROOM_B SET BRENT=-1 , BRENT_CNT=BRENT_CNT+1
 WHERE BNO=#{bno}
 </update>
 
+
+
+<!-- 신규 도서 등록 SQL -->
+
+<select id="selectBookList" resultType="BookVO">
+select * from book 
+order by bno desc
+limit #{pageStart}, #{perPageNum}
+</select>
+
+<!-- 페이징 -->
+ <select id="countBookList" resultType="int">
+ select count(bno) 
+ from book
+ </select>
+
+
 </mapper>

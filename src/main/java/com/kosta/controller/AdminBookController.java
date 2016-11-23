@@ -5,12 +5,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.kosta.service.AdminBookService;
+import com.kosta.vo.BookVO;
+import com.kosta.vo.PageMaker;
 import com.kosta.vo.Rent_BookVO;
 
 @Controller
@@ -82,7 +85,6 @@ public class AdminBookController {
 		logger.info("SubmitBook page");
 		// 주석
 		if (select.equals("null")) {
-
 			if (service.selectBook2(vo) == 0) { // 입력한 책이 대출중이 아닐경우 0
 				model.addAttribute("msg", "NOBOOK");
 				return "adminLibrary/adminBook/rentBook/submit";
@@ -114,5 +116,21 @@ public class AdminBookController {
 			}
 		}
 	}
+
+	@RequestMapping(value = "adminLibrary/adminBook/register/index", method = RequestMethod.GET)
+	public String reg_bookGet(Model model, @ModelAttribute("pageInfo") BookVO vo) {
+		logger.info("selectBookList page");
+		model.addAttribute("list",service.selectBookList(vo));
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setPageInfo(vo);
+		
+		pageMaker.setTotalCount(service.countBookList(vo));
+		model.addAttribute("pageMaker", pageMaker);
+
+		return "adminLibrary/adminBook/register/index";
+	}
+
+
 
 }

@@ -2,6 +2,7 @@ package com.kosta.dao;
 
 import java.util.List;
 
+import com.kosta.vo.BookVO;
 import com.kosta.vo.Rent_BookVO;
 import com.kosta.vo.User_InfoVO;
 
@@ -49,4 +50,14 @@ public interface AdminBookDAO {
 
 	// 책에 대한 연체금액 뽑아오기.
 	public String selectMoney(Rent_BookVO vo);
+	
+	// 신규 도서 등록
+	
+	// 모든 책 리스트 불러오기
+	public List<BookVO> selectBookList(BookVO vo);
+	
+	// 책리스트 페이징
+	public int countBookList(BookVO vo);
+	
+
 }

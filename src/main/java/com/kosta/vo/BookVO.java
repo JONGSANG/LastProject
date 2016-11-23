@@ -2,7 +2,7 @@ package com.kosta.vo;
 
 import java.util.Date;
 
-public class BookVO {
+public class BookVO extends PageInfo{
 
 	private String bNo, bTitle, bWriter, bCompany, bIntro;
 	private Date buy_date;

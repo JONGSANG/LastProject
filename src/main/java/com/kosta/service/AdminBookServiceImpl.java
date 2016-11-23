@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kosta.dao.AdminBookDAO;
+import com.kosta.vo.BookVO;
 import com.kosta.vo.Rent_BookVO;
 import com.kosta.vo.User_InfoVO;
 
@@ -78,6 +79,16 @@ public class AdminBookServiceImpl implements AdminBookService {
 	@Override
 	public void submitBook(Rent_BookVO vo) {
 		adminBookDAO.submitBook(vo);
+	}
+
+	@Override
+	public List<BookVO> selectBookList(BookVO vo) {
+		return adminBookDAO.selectBookList(vo);
+	}
+
+	@Override
+	public int countBookList(BookVO vo) {
+		return adminBookDAO.countBookList(vo);
 	}
 
 }

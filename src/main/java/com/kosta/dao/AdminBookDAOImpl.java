@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.kosta.vo.BookVO;
 import com.kosta.vo.Rent_BookVO;
 import com.kosta.vo.User_InfoVO;
 
@@ -93,6 +94,16 @@ public class AdminBookDAOImpl implements AdminBookDAO {
 	@Override
 	public String selectMoney(Rent_BookVO vo) {
 		return sqlSession.selectOne(namespace+"selectMoney", vo);
+	}
+
+	@Override
+	public List<BookVO> selectBookList(BookVO vo) {
+		return sqlSession.selectList(namespace+"selectBookList",vo);
+	}
+
+	@Override
+	public int countBookList(BookVO vo) {
+		return sqlSession.selectOne(namespace+"countBookList",vo);
 	}
 
 }
