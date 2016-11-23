@@ -40,13 +40,13 @@
 	<form action="${login}" method="post">
 	  </tr></tbody></table><table cellpadding="0" cellspacing="0" border="0">
         <tbody><tr><td height="26"><img src="/resources/images/login/login_28.gif" width="70" height="23"></td>
-        <td><input style="padding-left:5px;" type="text" name="j_username" tabindex="1">&nbsp;</td>
+        <td><input style="padding-left:5px; height: 25px" type="text" name="j_username" tabindex="1">&nbsp;</td>
         <td width="113" rowspan="2">
         <input type="image" src="/resources/images/login/login_25.gif" width="113" height="58" name=Submit; style="height:58px;border:0;" align="absmiddle"></td>
       </tr>
       <tr>
         <td><img src="/resources/images/login/login_31.gif" width="70" height="23"></td>
-        <td><input style="padding-left:5px;" type="password" name="j_password" tabindex="1">&nbsp;</td>
+        <td><input style="padding-left:5px; height: 25px" type="password" name="j_password" tabindex="1" >&nbsp;</td>
       </tr>
 
     </tbody></table></td>
@@ -62,9 +62,10 @@
       <tr>
         <td height="50" align="center" bgcolor="#EEEEEE" style="border-radius: 10px" width="605">
         <a href="/userLibrary/member/join"><img src="/resources/images/login/login_80.png" width="120"></a>
-       
-        <a href="/userLibrary/member/findID"><img src="/resources/images/login/login_81.png" width="120"></a>
-        <a href="/userLibrary/member/findPassword"><img src="/resources/images/login/login_82.png" width="120"></a>
+        
+        <!-- scrollbars=yes : yes일경우 스크롤바가 생기고 no일경우 생기지않음  resizable=no : 새창의 크기 변경하지 못함 yes 일 경우 변경할수 있습니다. -->
+        <a href="/userLibrary/popup/findID" onClick="window.open(this.href, 'findID', 'width=400, height=430, left=500, top=150'); return false;"><img src="/resources/images/login/login_81.png" width="120"></a>
+        <a href="/userLibrary/popup/findPassword" onClick="window.open(this.href, 'findPassword', 'width=400, height=430, left=500, top=150'); return false;"><img src="/resources/images/login/login_82.png" width="120"></a>
         </td>
       </tr>
     </tbody></table></td>

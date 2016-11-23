@@ -163,9 +163,9 @@ $(document).ready(function(){
 							</tr>
 							<tr>
 								<td><img src="/resources/images/login/login_75.png" width="100" height="23" ></td>
-								<td><input type="text" id="birth" name="birth" tabindex="1" size="23" style="text-align: center; font-size: 13px; height: 25px"
-								onkeypress="if (event.keyCode<999|| event.keyCode>1000)  event.returnValue=false;"  
-								style='IME-MODE:disabled; text-align: center;' ></td>
+								<td><input type="text" id="birth" name="birth" tabindex="1" size="23" 
+								style="text-align: center; font-size: 13px; height: 25px; IME-MODE:disabled; text-align: center;"
+								onkeypress="if (event.keyCode<7 || event.keyCode>9)  event.returnValue=false;" ></td>
 								<td><img alt="" src="/resources/images/login/login_56.png" height="33" onClick="datePicker(event,'birth')">
 								</td>
 							</tr>
