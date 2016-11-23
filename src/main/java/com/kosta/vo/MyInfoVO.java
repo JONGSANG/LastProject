@@ -9,7 +9,21 @@ public class MyInfoVO {
 	private String submit_date;
 	private String reserve_date;
 	private int brent;
+	private boolean check_submit;
+	private boolean check_late;
 	
+	public boolean isCheck_submit() {
+		return check_submit;
+	}
+	public void setCheck_submit(boolean check_submit) {
+		this.check_submit = check_submit;
+	}
+	public boolean isCheck_late() {
+		return check_late;
+	}
+	public void setCheck_late(boolean check_late) {
+		this.check_late = check_late;
+	}
 	private String id;
 	private String cselect;
 	private String aselect;

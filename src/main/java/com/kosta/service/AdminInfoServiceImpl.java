@@ -9,6 +9,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.kosta.dao.AdminInfoDAO;
+import com.kosta.vo.AdminInfoVO;
 import com.kosta.vo.MemberVO;
 import com.kosta.vo.SearchType;
 
@@ -62,5 +63,43 @@ public class AdminInfoServiceImpl implements AdminInfoService {
 		adminInfodao.passwordModify(vo);
 	}
 
+	@Override
+	public MemberVO detailUser(String id) throws Exception {
+		return adminInfodao.detailUser(id);
+	}
 
+	@Override
+	public List<AdminInfoVO> detailRent(String id) throws Exception {
+		return adminInfodao.detailRent(id);
+	}
+
+	@Override
+	public void roleChange(MemberVO vo) throws Exception {
+		adminInfodao.roleChange(vo);
+	}
+
+	@Override
+	public void userDelete(String id) throws Exception {
+		adminInfodao.userDelete(id);
+	}
+
+	@Override
+	public MemberVO detailAdmin(String id) throws Exception {
+		return adminInfodao.detailAdmin(id);
+	}
+
+	@Override
+	public void adminPart(MemberVO vo) throws Exception {
+		adminInfodao.adminPart(vo);
+	}
+
+	@Override
+	public void adminLevel(MemberVO vo) throws Exception {
+		adminInfodao.adminLevel(vo);
+	}
+
+	@Override
+	public void adminDelete(String id) throws Exception {
+		adminInfodao.adminDelete(id);
+	}
 }
