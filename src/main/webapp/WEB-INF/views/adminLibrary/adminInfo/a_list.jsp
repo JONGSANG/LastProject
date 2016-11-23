@@ -25,7 +25,7 @@
 		</tr>
 		<c:forEach items="${adminList}" var="adminList">
 		<tr>
-			<td>${adminList.id}
+			<td><a href="/adminLibrary/adminInfo/adminDetail?id=${adminList.id}">${adminList.id}</a>
 			<td>${adminList.name}
 			<td>${adminList.j_part}
 			<td>${adminList.j_level}

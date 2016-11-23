@@ -35,7 +35,6 @@ constraint pk_user_info primary key(ID),
 constraint fk_user_info foreign key(ID) references member(ID) on delete cascade on update cascade
 );
 
-
 alter table user_info add joindate DATE not null; 
 
 -------------------------------------------------------------
@@ -45,4 +44,4 @@ insert into user_info values('kosta1', '홍길동', '1990-01-01', '남', '회사
 insert into user_info values('kosta2', '김김김', '2000-01-01', '남', '대학생', '010-1234-1234', 'IIIdddDDD89@naver.com', '경기도 포천시 일동면 기산서1길 15-1',1);
 insert into user_info values('kosta3', '박박박', '1990-08-01', '남', '회사원', '010-2222-2222', 'test89@naver.com', '서울특별시 강북구 수유3동 풍림아이원 104동 1105호',-1);
 insert into user_info values('kosta4', '최최최', '1990-02-02', '남', '회사원', '010-2255-2121', 'test89@naver.com', '동해물과 백두산이 마르고 닳도록',1);
-
+insert into user_info(ID, NAME, BIRTH, GENDER, JOB, PHONE, EMAIL, ADDRESS, HAnDICAP, JOINDATE) VALUES('ksh', 'ksh', '2011-01-01', '남', '학생', '010-0000-0000', 'kosta@kosta.com', '주소', 1, now())

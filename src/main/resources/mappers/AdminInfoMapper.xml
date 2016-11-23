@@ -126,4 +126,55 @@ SELECT PWD FROM MEMBER WHERE ID=#{id}
 UPDATE MEMBER SET PWD=#{pwd} WHERE ID=#{id}
 </update>
 
+<select id="detailUser" resultType="MemberVO">
+SELECT M.ID, U.NAME, U.BIRTH, U.EMAIL, U.PHONE, U.JOB, R.ROLE
+FROM MEMBER M
+INNER JOIN USER_INFO U ON M.ID=U.ID
+INNER JOIN ROLE R ON M.ID=R.ID
+WHERE M.ID=#{id}
+</select>
+
+<select id="detailRent" resultType="AdminInfoVO">
+SELECT R.RENT_DATE, R.SUBMIT_DATE, R.CHECK_SUBMIT, R.CHECK_LATE, B.BTITLE, DATEDIFF(CURDATE(),R.SUBMIT_DATE) AS LATE
+FROM RENT_BOOK R
+INNER JOIN BOOK B ON R.BNO=B.BNO
+WHERE R.ID=#{id}
+</select>
+
+<update id="roleChange">
+UPDATE ROLE SET ROLE=#{role} WHERE ID=#{id}
+</update>
+
+<delete id="deleteMember">
+DELETE FROM MEMBER WHERE ID=#{id}
+</delete>
+
+<delete id="deleteUser_info">
+DELETE FROM USER_INFO WHERE ID=#{id}
+</delete>
+
+<delete id="deleteRole">
+DELETE FROM ROLE WHERE ID=#{id}
+</delete>
+
+<select id="detailAdmin" resultType="MemberVO">
+SELECT M.ID, A.NAME, A.J_PART, A.J_LEVEL, A.PHONE
+FROM MEMBER M
+INNER JOIN ADMIN_INFO A ON M.ID=A.ID
+INNER JOIN ROLE R ON M.ID=R.ID
+WHERE M.ID=#{id}
+</select>
+
+<update id="adminPart">
+UPDATE ADMIN_INFO SET J_PART=#{j_part} WHERE ID=#{id}
+</update>
+
+<update id="adminLevel">
+UPDATE ADMIN_INFO SET J_LEVEL=#{j_level} WHERE ID=#{id}
+</update>
+
+<delete id="deleteAdmin_info">
+DELETE FROM ADMIN_INFO WHERE ID=#{id}
+</delete>
+
 </mapper>

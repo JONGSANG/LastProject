@@ -9,7 +9,9 @@
 		<link rel="stylesheet" type="text/css" media="screen" href="/resources/css/userLibrary/member.css">
 		<link rel="stylesheet" type="text/css" media="screen" href="/resources/css/userLibrary/login.css">
 		<script src="/resources/js/jquery-1.8.3.min.js"></script>
-		<script src="/resources/js/header.js"></script>
+		<script src="//code.jquery.com/jquery-3.1.0.min.js"></script>
+		<script src="/resources/js/date_picker.js"></script>
+		<script src="/resources/js/member.js"></script>
 		
 </head>
 <body>

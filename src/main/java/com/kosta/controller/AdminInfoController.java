@@ -115,4 +115,80 @@ public class AdminInfoController {
 		
 		return "redirect:/adminLibrary";
 	}
+	
+	@RequestMapping(value="adminLibrary/adminInfo/userDetail", method=RequestMethod.GET)
+	public String userDetailGET(@RequestParam("id") String id, Model model) throws Exception {
+		
+		logger.info("상세보기 페이지(회원)");
+		//회원정보 출력
+		model.addAttribute("user", adminInfoService.detailUser(id));
+		//대여정보 출력
+		model.addAttribute("rent", adminInfoService.detailRent(id));
+		
+		return "adminLibrary/adminInfo/userDetail";
+	}
+	
+	@RequestMapping(value="adminLibrary/adminInfo/roleChange", method=RequestMethod.POST)
+	public String roleChangePOST(MemberVO vo, RedirectAttributes rttr) throws Exception {
+		
+		logger.info("회원등급 변경 페이지");
+		
+		adminInfoService.roleChange(vo);
+		
+		rttr.addFlashAttribute("change", "change");
+		
+		return "redirect:/adminLibrary/adminInfo/m_list";
+	}
+	
+	@RequestMapping(value="adminLibrary/adminInfo/userDelete", method=RequestMethod.POST)
+	public String userDeletePOST(@RequestParam("id") String id, RedirectAttributes rttr) throws Exception {
+		
+		logger.info("회원계정 삭제 페이지");
+		
+		adminInfoService.userDelete(id);
+		
+		rttr.addFlashAttribute("leave", "leave");
+		
+		return "redirect:/adminLibrary/adminInfo/m_list";
+	}
+	
+	@RequestMapping(value="adminLibrary/adminInfo/adminDetail", method=RequestMethod.GET)
+	public String adminDetailGET(@RequestParam("id") String id, Model model) throws Exception {
+		
+		logger.info("상세보기 페이지(관리자)");
+		
+		model.addAttribute("admin", adminInfoService.detailAdmin(id));
+		
+		return "adminLibrary/adminInfo/adminDetail";
+	}
+	
+	@RequestMapping(value="adminLibrary/adminInfo/adminPart", method=RequestMethod.POST)
+	public String adminPartPOST(MemberVO vo, Model model) throws Exception {
+		
+		logger.info("상세보기 페이지(관리자)");
+		
+		adminInfoService.adminPart(vo);
+		
+		return "redirect:/adminLibrary/adminInfo/a_list";
+	}
+	
+	@RequestMapping(value="adminLibrary/adminInfo/adminLevel", method=RequestMethod.POST)
+	public String adminLevelPOST(MemberVO vo, Model model) throws Exception {
+		
+		logger.info("상세보기 페이지(관리자)");
+		
+		adminInfoService.adminLevel(vo);
+		
+		return "redirect:/adminLibrary/adminInfo/a_list";
+	}
+	
+	@RequestMapping(value="adminLibrary/adminInfo/adminDelete", method=RequestMethod.POST)
+	public String adminDeletePOST(String id, Model model) throws Exception {
+		
+		logger.info("상세보기 페이지(관리자)");
+		
+		adminInfoService.adminDelete(id);
+		
+		return "redirect:/adminLibrary/adminInfo/a_list";
+	}
 }

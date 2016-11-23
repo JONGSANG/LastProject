@@ -6,6 +6,17 @@
 <html>
 <head>
 <title>Insert title here</title>
+<script>
+var change='${change}';
+var leave='${leave}';
+
+if(change=='change'){
+	alert("권한 변경 완료");
+}
+if(leave=='leave'){
+	alert("회원 탈퇴 완료");
+}
+</script>
 </head>
 <body>
 	<table>
@@ -19,7 +30,7 @@
 		</tr>
 		<c:forEach items="${userList}" var="userList">
 		<tr>
-			<td>${userList.id}
+			<td><a href="/adminLibrary/adminInfo/userDetail?id=${userList.id}">${userList.id}</a>
 			<td>${userList.name}
 			<td>${userList.birth}
 			<td>${userList.phone}

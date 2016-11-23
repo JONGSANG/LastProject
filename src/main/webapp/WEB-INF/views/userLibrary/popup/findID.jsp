@@ -5,9 +5,9 @@
 <head>
 <title>Insert title here</title>
 <script>
-	var a='${false}';
+	var a='${faller}';
 	
-    if(a=='false'){
+    if(a=='faller'){
     	alert("일치하는 정보가 없습니다. 다시 입력해주세요");
     }
 	</script>
