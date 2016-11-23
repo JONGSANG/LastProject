@@ -14,18 +14,17 @@
 
 	<br>
 	<form method="post">
+		<input type="hidden" value="null" name="select">
 		<table width=1000; border="1">
 			<tr>
 				<td width="100">책 번호 :</td>
 				<td width="300" colspan='2'>
-					<input type="text" name='bno' maxlength="8" required="required">
+					<input type="text" name='bno' maxlength="8" >
 					<input type="submit" value="검색">
 				</td>
 			
 			</tr>
 			
-		</form>
-
 			<tr>
 				<td>ID: ${userInfo.id}</td>
 				<td>이름: ${userInfo.name}</td>
@@ -41,17 +40,24 @@
 				<td colspan="3">
 					<table width=1000 border="1">
 						<tr>
+							<th width="50">선택</th>
 							<th width="50">순번</th>
 							<th width="100">책번호</th>
 							<th width="500">책 제목</th>
 							<th width="150">대여 일</th>
 							<th width="150">반납 예정일</th>
 							<th width="100">연체 여부</th>
+							<th width="100">연체 금액</th>
+							
 						</tr>
-
+					</form>
+					<form method="post">
 						<c:forEach items="${rent}" var="rent" varStatus="var">
 							<c:if test="${rcnt != 0}">
 								<tr>
+									<td width="50">
+										<input type="radio" value="${rent.bno }" name="select" >
+									</td>
 									<td width="50">${var.count }</td>
 									<td width="100">${rent.bno }</td>
 									<td width="500">${rent.btitle }</td>
@@ -65,37 +71,28 @@
 											<b >X</b>
 										</c:if>
 									</td>
+									<td width="100">
+										<c:if test="${rent.money==0 }">0 원</c:if> 
+										<c:if test="${rent.money!=0 }">${rent.money} 원</c:if> 
+									</td>
 								</tr>
 							</c:if>
 						</c:forEach>
 					</table>
 				</td>
 			</tr>
-		</table>
+			<tr>
+				<td colspan="5" align="right">
+					<input type="submit" id="btn_submit" onclick="submit_event();">
+				</td>
+			</tr>
+		</form>
+		
+	</table>
+	
 </body>
 <script language=javascript>
-/* 	function getPost(mode) {
-		var theForm = document.frmSubmit;
-		if (mode == "01") {
-			if (theForm.id.value == '') {
-				alert("[회원ID]를 잘못입력 하셨습니다.");
-			} else {
-				theForm.method = "post";
-				theForm.action = "index";
-			}
-		} else if (mode == "02") {
-			if (theForm.bno.value == '') {
-				alert("책 번호를 입력하세요!!");
-				
-			} else {
-				theForm.method = "post";
-				theForm.action = "rent";
-			}
-		} else {
-			theForm.submit();
-		}
-	}
- */
+	var money = '${money}';
 	var result = '${msg}';
 	if (result == 'NOID') {
 		alert("[회원ID]를 잘못입력 하셨습니다.");
@@ -103,8 +100,18 @@
 		alert("[책번호]를 잘못입력 하셨습니다.");
 	}else if (result == 'LATE') {
 		alert("[연체]이용자로 대출이 불가능합니다.");
+	}else if (result == 'LATEBOOK'){
+		alert("연체료 [ "+money+" ] 를 꼭 확인 하시길 바랍니다.");
+	}else if (result == 'SUBMIT'){
+		alert("반납이 완료되었습니다.");	
 	}
 
+	function submit_event(){
+		if (confirm("반납 하시겠습니까? ") == true){    //확인
+		    document.form.submit();
+		}else{   //취소
+		    return;
+		}
+	}
 </script>
-
 </html>

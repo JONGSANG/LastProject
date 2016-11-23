@@ -1,6 +1,11 @@
 select * from RENT_BOOK;
 drop table RENT_BOOK;
 
+delete from RENT_BOOK;
+
+
+update rent_book set submit_date = '2016-11-22' where bno = '01010011'
+
 --------------------------------------------------------------
 -- RENT_BOOK : RENT_BOOK 정보 Table
 -- INSERT 할시, RENT_DATE 값에 +15 를 SUBMIT_DATE 에 넣을것.
@@ -16,6 +21,8 @@ drop table RENT_BOOK;
 --);
 -----------------------------------------------
 
+
+
 CREATE TABLE RENT_BOOK(
 BNO varchar(50) ,
 ID varchar(50),
@@ -29,8 +36,6 @@ check_late boolean default false
 alter table rent_book add check_late boolean default false
 
 SELECT ID FROM RENT_BOOK WHERE BNO='01010011' AND CHECK_SUBMIT IS FALSE
-
-
 
 
 INSERT INTO RENT_BOOK(BNO, ID, RENT_DATE, SUBMIT_DATE) VALUES('0112', 'test', '2016-10-18', '2016-11-02')

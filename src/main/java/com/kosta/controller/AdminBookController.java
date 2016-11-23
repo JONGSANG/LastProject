@@ -35,15 +35,17 @@ public class AdminBookController {
 				rttr.addFlashAttribute("msg", "NOID");
 				return "redirect:/adminLibrary/adminBook/rentBook/rent";
 			} else {
-				if(service.checkLate(vo)==0){ // 연체테이블에서 연체내역이 있는 사용자인지 판별 0이면 연체내역이 없음 
-					model.addAttribute("check_late", service.checkLate(vo));
+				if (service.checkLateUser(vo) == 0) { // 연체테이블에서 연체내역이 있는 사용자인지
+														// 판별
+														// 0이면 연체내역이 없음
+					model.addAttribute("check_late", service.checkLateUser(vo));
 					model.addAttribute("userInfo", service.userInfo(vo));
 					model.addAttribute("rent", service.currentRent(vo));
 					model.addAttribute("rcnt", service.rentCnt(vo));
 					return "adminLibrary/adminBook/rentBook/rent";
 				} else {
-					//연체 정보를 넘겨야함.
-					model.addAttribute("check_late", service.checkLate(vo));
+					// 연체 정보를 넘겨야함.
+					model.addAttribute("check_late", service.checkLateUser(vo));
 					model.addAttribute("msg", "LATE");
 					model.addAttribute("userInfo", service.userInfo(vo));
 					model.addAttribute("rent", service.currentRent(vo));
@@ -67,7 +69,7 @@ public class AdminBookController {
 			}
 		}
 	}
-	
+
 	@RequestMapping(value = "adminLibrary/adminBook/rentBook/submit", method = RequestMethod.GET)
 	public String submitGet() {
 		logger.info("SubmitBook page");
@@ -75,23 +77,42 @@ public class AdminBookController {
 	}
 
 	@RequestMapping(value = "adminLibrary/adminBook/rentBook/submit", method = RequestMethod.POST)
-	public String submitPost(Model model, Rent_BookVO vo, RedirectAttributes rttr) {
+	public String submitPost(@RequestParam("select") String select, Model model, Rent_BookVO vo,
+			RedirectAttributes rttr) {
 		logger.info("SubmitBook page");
-		//주석
-		if(service.selectBook2(vo)==0){ //입력한 책이 대출중이 아닐경우 0
-			model.addAttribute("msg", "NOBOOK");
-			return "adminLibrary/adminBook/rentBook/submit";
-		}else{
-			vo.setId(service.searchID(vo));
-			model.addAttribute("userInfo", service.userInfo(vo));
-			model.addAttribute("rent", service.currentRent(vo));
-			model.addAttribute("rcnt", service.rentCnt(vo));
+		// 주석
+		if (select.equals("null")) {
 
-			return "adminLibrary/adminBook/rentBook/submit";
+			if (service.selectBook2(vo) == 0) { // 입력한 책이 대출중이 아닐경우 0
+				model.addAttribute("msg", "NOBOOK");
+				return "adminLibrary/adminBook/rentBook/submit";
+			} else {
+				vo.setId(service.searchID(vo));
+				model.addAttribute("userInfo", service.userInfo(vo));
+				model.addAttribute("rent", service.currentRent(vo));
+				model.addAttribute("rcnt", service.rentCnt(vo));
+				return "adminLibrary/adminBook/rentBook/submit";
+			}
+		} else {
+			vo.setBno(select);
+			vo.setId(service.searchID(vo));
+			if (service.checkLateBook(vo)) {
+				model.addAttribute("money", service.selectMoney(vo));
+				model.addAttribute("msg", "LATEBOOK");
+				service.submitLateBook(vo);
+				model.addAttribute("userInfo", service.userInfo(vo));
+				model.addAttribute("rent", service.currentRent(vo));
+				model.addAttribute("rcnt", service.rentCnt(vo));
+				return "adminLibrary/adminBook/rentBook/submit";
+			} else {
+				model.addAttribute("msg", "SUBMIT");
+				service.submitBook(vo);
+				model.addAttribute("userInfo", service.userInfo(vo));
+				model.addAttribute("rent", service.currentRent(vo));
+				model.addAttribute("rcnt", service.rentCnt(vo));
+				return "adminLibrary/adminBook/rentBook/submit";
+			}
 		}
 	}
 
-	
-	
-	
 }

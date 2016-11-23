@@ -1,5 +1,10 @@
 select * from late;
 drop table late;
+SELECT check_late FROM rent_book WHERE check_submit = false and bno='012'
+
+SELECT MONEY FROM LATE WHERE end_date is null and bno='01010011'
+
+
 
 --------------------------------------------------------------
 --연체자 아이디

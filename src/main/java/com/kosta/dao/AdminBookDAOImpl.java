@@ -56,19 +56,43 @@ public class AdminBookDAOImpl implements AdminBookDAO {
 	}
 
 	@Override
+	@Transactional
+	public void submitLateBook(Rent_BookVO vo) {
+		//연체테이블 업뎃
+		sqlSession.update(namespace+"submitLate", vo);
+		//대출테이블 업뎃
+		sqlSession.update(namespace+"submitRent", vo);
+		//문헌정보실 책 찾아서 업뎃
+		sqlSession.update(namespace+"submitRoom_b", vo);
+	}
+	
+	@Override
+	@Transactional
 	public void submitBook(Rent_BookVO vo) {
-		sqlSession.insert(namespace+"insertRent", vo);
-		sqlSession.update(namespace+"updateRent", vo);		
+		//대출테이블 업뎃
+		sqlSession.update(namespace+"submitRent", vo);
+		//문헌정보실 책 찾아서 업뎃
+		sqlSession.update(namespace+"submitRoom_b", vo);
 	}
 
 	@Override
-	public int checkLate(Rent_BookVO vo) {
-		return sqlSession.selectOne(namespace+"checkLate",vo);
+	public int checkLateUser(Rent_BookVO vo) {
+		return sqlSession.selectOne(namespace+"checkLateUser",vo);
 	}
 
 	@Override
 	public String searchID(Rent_BookVO vo) {
 		return sqlSession.selectOne(namespace+"searchID",vo);
+	}
+
+	@Override
+	public boolean checkLateBook(Rent_BookVO vo) {
+		return sqlSession.selectOne(namespace+"checkLateBook", vo);
+	}
+
+	@Override
+	public String selectMoney(Rent_BookVO vo) {
+		return sqlSession.selectOne(namespace+"selectMoney", vo);
 	}
 
 }

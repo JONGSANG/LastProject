@@ -1,6 +1,28 @@
 select * from room_b;
 drop table room_b;
 
+
+
+update rent_book set submit_date='2016-11-22' where bno='01010021' and id = 'spurs89'
+
+UPDATE ROOM_B SET BRENT=-1 , BRENT_CNT=BRENT_CNT+1 
+WHERE BNO='01010011'
+
+
+
+SELECT R.RENT_DATE , R.SUBMIT_DATE, B.BTITLE, B.BNO, check_submit,check_Late, brent, l.money as money
+FROM RENT_BOOK R
+INNER JOIN BOOK B ON R.BNO=B.BNO 
+INNER JOIN ROOM_B RB ON R.BNO=RB.BNO
+LEFT JOIN LATE L ON R.BNO=L.BNO and submit_date=start_date
+WHERE RB.BRENT=-1 
+AND R.CHECK_SUBMIT = false
+AND R.ID='spurs89'
+
+
+
+update rent_book set check_submit = true where bno='01010012'
+
 --------------------------------------------------------------
 -- room_b : room_b 정보 Table
 

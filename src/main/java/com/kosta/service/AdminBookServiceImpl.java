@@ -51,18 +51,33 @@ public class AdminBookServiceImpl implements AdminBookService {
 	}
 
 	@Override
-	public void submitBook(Rent_BookVO vo) {
-		adminBookDAO.submitBook(vo);
+	public void submitLateBook(Rent_BookVO vo) {
+		adminBookDAO.submitLateBook(vo);
 	}
 
 	@Override
-	public int checkLate(Rent_BookVO vo) {
-		return adminBookDAO.checkLate(vo);
+	public int checkLateUser(Rent_BookVO vo) {
+		return adminBookDAO.checkLateUser(vo);
 	}
 
 	@Override
 	public String searchID(Rent_BookVO vo) {
 		return adminBookDAO.searchID(vo);
+	}
+
+	@Override
+	public boolean checkLateBook(Rent_BookVO vo) {
+		return adminBookDAO.checkLateBook(vo);
+	}
+
+	@Override
+	public String selectMoney(Rent_BookVO vo) {
+		return adminBookDAO.selectMoney(vo);
+	}
+
+	@Override
+	public void submitBook(Rent_BookVO vo) {
+		adminBookDAO.submitBook(vo);
 	}
 
 }

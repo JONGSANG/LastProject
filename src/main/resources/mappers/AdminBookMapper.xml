@@ -21,8 +21,16 @@ SELECT COUNT(BNO) FROM room_b WHERE BNO=#{bno} and BRENT=-1
 SELECT ID FROM RENT_BOOK WHERE BNO=#{bno} AND CHECK_SUBMIT IS FALSE
 </select>
 
-<select id="checkLate" resultType="int">
+<select id="checkLateUser" resultType="int">
 SELECT COUNT(id) FROM late WHERE end_date is null and id=#{id}
+</select>
+
+<select id="checkLateBook" resultType="boolean">
+SELECT check_late FROM rent_book WHERE check_submit = false and bno=#{bno}
+</select>
+
+<select id="selectMoney" resultType="String">
+SELECT MONEY FROM LATE WHERE end_date is null and bno=#{bno}
 </select>
 
 <select id="userInfo" resultType="User_InfoVO">
@@ -36,25 +44,41 @@ INNER JOIN BOOK B ON R.BNO=B.BNO
 INNER JOIN ROOM_B RB ON R.BNO=RB.BNO
 WHERE RB.BRENT=-1 
 AND R.ID=#{id}
+AND R.CHECK_SUBMIT = false
+
 </select>
 
 <select id="currentRent" resultType="Rent_BookVO">
-SELECT R.RENT_DATE , R.SUBMIT_DATE, B.BTITLE, B.BNO, check_Late
+SELECT R.RENT_DATE , R.SUBMIT_DATE, B.BTITLE, B.BNO, check_Late, l.money as money
 FROM RENT_BOOK R
 INNER JOIN BOOK B ON R.BNO=B.BNO 
 INNER JOIN ROOM_B RB ON R.BNO=RB.BNO
+LEFT JOIN LATE L ON R.BNO=L.BNO 
 WHERE RB.BRENT=-1 
 AND R.ID=#{id}
+AND R.CHECK_SUBMIT = false
+
 </select>
 
-
 <insert id="insertRent">
-INSERT INTO RENT_BOOK 
+INSERT INTO RENT_BOOK(BNO,ID,RENT_DATE,SUBMIT_DATE) 
 VALUES(#{bno},#{id},now(),date_add(now(), interval +15 day ))
 </insert>
 
+<update id="submitRent">
+UPDATE RENT_BOOK SET CHECK_SUBMIT = true WHERE bno = #{bno} 
+</update>
+
+<update id="submitLate">
+UPDATE LATE SET END_DATE = curdate() WHERE bno = #{bno} 
+</update>
+
+<update id="submitRoom_b">
+UPDATE ROOM_B SET BRENT = 1 WHERE bno = #{bno} 
+</update>
+
 <update id="updateRent">
-UPDATE ROOM_B SET BRENT=-1 , BRENT_CNT=+1 
+UPDATE ROOM_B SET BRENT=-1 , BRENT_CNT=BRENT_CNT+1 
 WHERE BNO=#{bno}
 </update>
 

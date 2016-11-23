@@ -8,9 +8,15 @@ public class Rent_BookVO {
 	private int rcnt; //현재 대출한 책의 권수를 저장하는 변수
 	private int checkLate;
 	private boolean check_late;
+	private int money;
 	
 	
-	
+	public int getMoney() {
+		return money;
+	}
+	public void setMoney(int money) {
+		this.money = money;
+	}
 	public boolean isCheck_late() {
 		return check_late;
 	}

@@ -85,28 +85,6 @@
 		</table>
 </body>
 <script language=javascript>
-/* 	function getPost(mode) {
-		var theForm = document.frmSubmit;
-		if (mode == "01") {
-			if (theForm.id.value == '') {
-				alert("[회원ID]를 잘못입력 하셨습니다.");
-			} else {
-				theForm.method = "post";
-				theForm.action = "index";
-			}
-		} else if (mode == "02") {
-			if (theForm.bno.value == '') {
-				alert("책 번호를 입력하세요!!");
-				
-			} else {
-				theForm.method = "post";
-				theForm.action = "rent";
-			}
-		} else {
-			theForm.submit();
-		}
-	}
- */
 	var result = '${msg}';
 	if (result == 'NOID') {
 		alert("[회원ID]를 잘못입력 하셨습니다.");
@@ -115,7 +93,6 @@
 	}else if (result == 'LATE') {
 		alert("[연체]이용자로 대출이 불가능합니다.");
 	}
-
 
 	var rcnt = '${rcnt}';
 	if (rcnt >= 5) {

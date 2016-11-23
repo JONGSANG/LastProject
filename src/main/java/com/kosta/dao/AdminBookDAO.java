@@ -28,17 +28,25 @@ public interface AdminBookDAO {
 	public int rentCnt(Rent_BookVO vo);
 	
 	// 연체자인지 판별
-	public int checkLate(Rent_BookVO vo);
+	public int checkLateUser(Rent_BookVO vo);
 
 	//반납
 	
 	// 책번호가 맞는 것인지 확인하는 서비스
 	public int selectBook2(Rent_BookVO vo);
 	
-	// 대출 실행
+	// 연체책 반납 실행
+	public void submitLateBook(Rent_BookVO vo);
+
+	// 그냥 반납 실행
 	public void submitBook(Rent_BookVO vo);
 
 	// 반납받은 책으로 아이디 검색
 	public String searchID(Rent_BookVO vo);
 
+	// 연체자인지 판별
+	public boolean checkLateBook(Rent_BookVO vo);
+
+	// 책에 대한 연체금액 뽑아오기.
+	public String selectMoney(Rent_BookVO vo);
 }
