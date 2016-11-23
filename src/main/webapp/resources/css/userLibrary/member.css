@@ -11,6 +11,8 @@
 			background-image: url("../../images/login/backg.png"); background-size: cover; }
 .slider { width:1024px; height:70px; margin:0 auto; position:relative; z-index:1001; }
 body{background-color: #DADEE4 }
+table td{padding-top: 5px;}
+table.signtable > td {padding-left: 10px}
 
 /*********************************header*************************************/
 
@@ -25,6 +27,40 @@ a {text-decoration:none; cursor:pointer; }
 #top_nav .th {padding-right:0;margin-right:0;background:none; position: absolute; right: 1px;}
 
 .dat{width:1024px; margin:0 auto;  position:relative; font-family: 'Jeju Gothic', cursive; color: #5A7595; font-size: 13px }
+
+/****************************body ********************************************/
+
+.signbtn{
+ width:170px;
+ border-radius: 5px;font-size:16px; padding: 8px 8px 8px 8px; text-decoration:none; display:inline-block;text-shadow: 0px 0px 0 rgba(255,255,255,0.3);font-weight:bold; color: #253559;
+ background-color: #FCFDFF; background-image: -webkit-gradient(linear, left top, left bottom, from(#FCFDFF), to(#BEC9CF));
+ background-image: linear-gradient(to bottom, #FCFDFF, #BEC9CF);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#FCFDFF, endColorstr=#BEC9CF);
+}
+
+.signbtn:hover{
+ color: #435fa0;
+ border:0px solid #B6C7CC;
+ background-color: #CBCBCB; background-image: -webkit-gradient(linear, left top, left bottom, from(#CBCBCB), to(#EDEDF7));
+ background-image: linear-gradient(to bottom, #CBCBCB, #EDEDF7);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#CBCBCB, endColorstr=#EDEDF7);
+
+}
+
+.comfirmbtn{ 
+width:100px; height:30px;  font-family: '맑은 고딕';
+ border-radius: 5px;font-size:12px; padding: 8px 8px 8px 8px; text-decoration:none; display:inline-block;text-shadow: 0px 0px 0 rgba(255,255,255,0.3);font-weight:bold; color: #253559;
+ background-color: #FCFDFF; background-image: -webkit-gradient(linear, left top, left bottom, from(#FCFDFF), to(#BEC9CF));
+ background-image: linear-gradient(to bottom, #FCFDFF, #BEC9CF);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#FCFDFF, endColorstr=#BEC9CF);
+	
+}
+.comfirmbtn:hover{
+ color: #435fa0;
+ border:0px solid #B6C7CC;
+ background-color: #CBCBCB; background-image: -webkit-gradient(linear, left top, left bottom, from(#CBCBCB), to(#EDEDF7));
+ background-image: linear-gradient(to bottom, #CBCBCB, #EDEDF7);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#CBCBCB, endColorstr=#EDEDF7);
+
+}
+
+select{height: 23px; background-color: #e1e1e1; border-color : #c5c5c5; color: #5b5b5b; border-radius: 3px; font-family: 'Hanna', serif; }
 
 /****************************footer************************/
 footer {width:1024px; margin:0 auto; z-index:1000; position:relative; padding-top: 5px;}

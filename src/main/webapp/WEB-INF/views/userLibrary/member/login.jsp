@@ -60,11 +60,11 @@
     <td background="/resources/images/login/login_12.gif"><table width="0" border="0" align="center" cellpadding="0" cellspacing="0">
       <tbody>
       <tr>
-        <td height="40" align="center" bgcolor="#EEEEEE" style="border-radius: 10px" width="605">
-        <a href="/userLibrary/member/join"><img src="/resources/images/login/login_80.png" width="100"></a>
+        <td height="50" align="center" bgcolor="#EEEEEE" style="border-radius: 10px" width="605">
+        <a href="/userLibrary/member/join"><img src="/resources/images/login/login_80.png" width="120"></a>
        
-        <a href="/userLibrary/member/findID"><img src="/resources/images/login/login_81.png" width="100"></a>
-        <a href="/userLibrary/member/findPassword"><img src="/resources/images/login/login_82.png" width="100"></a>
+        <a href="/userLibrary/member/findID"><img src="/resources/images/login/login_81.png" width="120"></a>
+        <a href="/userLibrary/member/findPassword"><img src="/resources/images/login/login_82.png" width="120"></a>
         </td>
       </tr>
     </tbody></table></td>
@@ -72,15 +72,15 @@
    <tr>
     <td height="50" background="/resources/images/login/login_12.gif"></td>
   </tr>
- <td background="/resources/images/login/login_12.gif" height="30" align="center"><img src="/resources/images/login/login_21.gif" width="635" height="18"></td>
+ <td background="/resources/images/login/login_12.gif" height="30" align="center">
+ <img src="/resources/images/login/login_21.gif" width="635" height="18"></td>
   <tr>
-    <td><img src="/resources/images/login/login_44.gif" width="755" height="30"></td>
+    <td background="/resources/images/login/login_12.gif" height="30" align="center">
+    <img src="/resources/images/login/login_44.gif" width="755" height="40">
+    </td>
   </tr>
-  <!-- <tr>
-    <td height="15"><img src="/resources/images/login/login_46.gif" width="755" height="46"></td>
-  </tr> -->
 </tbody></table>
-
+<br><br>
 
 </body>
 </html>
