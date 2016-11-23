@@ -57,7 +57,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> 도서 대출/반납</a></li>
+            <li><a href="rent"><i class="fa fa-circle-o"></i> 도서 대출/반납</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> 신규도서 등록</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> 도서 폐기 등록</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> 서고 도서 목록</a></li>
