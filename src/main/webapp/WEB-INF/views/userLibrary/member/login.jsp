@@ -40,12 +40,13 @@
 	<form action="${login}" method="post">
 	  </tr></tbody></table><table cellpadding="0" cellspacing="0" border="0">
         <tbody><tr><td height="26"><img src="/resources/images/login/login_28.gif" width="70" height="23"></td>
-        <td><input type="text" name="j_username" tabindex="1"></td>
-        <td width="120" rowspan="2" align="right"><input type="image" src="/resources/images/login/login_25.gif" width="113" height="58" name=Submit; style="height:58px;border:0;" align="absmiddle"></td>
+        <td><input style="padding-left:5px;" type="text" name="j_username" tabindex="1">&nbsp;</td>
+        <td width="113" rowspan="2">
+        <input type="image" src="/resources/images/login/login_25.gif" width="113" height="58" name=Submit; style="height:58px;border:0;" align="absmiddle"></td>
       </tr>
       <tr>
         <td><img src="/resources/images/login/login_31.gif" width="70" height="23"></td>
-        <td><input type="password" name="j_password" tabindex="1"></td>
+        <td><input style="padding-left:5px;" type="password" name="j_password" tabindex="1">&nbsp;</td>
       </tr>
 
     </tbody></table></td>

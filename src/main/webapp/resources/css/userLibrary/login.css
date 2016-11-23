@@ -7,6 +7,6 @@
     textarea {background-color:#FFFFFF; BORDER-LEFT: #BECAB5 1px solid; BORDER-RIGHT: #BECAB5 1px solid; BORDER-TOP: #BECAB5 1px solid; BORDER-BOTTOM: #BECAB5 1px solid; LINE-HEIGHT: 9pt; color: #333333; font :10pt Gulim,돋움,Helvetica,Arial,Verdana;}
 
     select	  {font :9pt Gulim,굴림,Helvetica,Arial,Verdana; height:19; color:#333333; }
-    input      {background-color:#FFFFFF; height:19; BORDER-LEFT: #898989 1px solid; BORDER-RIGHT: #898989 1px solid; BORDER-TOP: #898989 1px solid; BORDER-BOTTOM: #898989 1px solid; LINE-HEIGHT: 9pt; color: #333333; font :11pt Gulim,굴림,Helvetica,Arial,Verdana; padding: 2px 0px 2px 5px;}
 
-
+input {background:#dfdfdf; border-radius: 5px 5px 5px 5px; height: 20px }
+input:focus { outline:0;background:#fff;box-shadow:0 0 2px rgba(0,0,0,.8) inset}

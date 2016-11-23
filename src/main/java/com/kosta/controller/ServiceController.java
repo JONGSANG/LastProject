@@ -499,4 +499,11 @@ public class ServiceController {
 
 			return "redirect:/userLibrary/service/culture/list";
 		}
+		
+		//주간 식단표 뷰페이
+				@RequestMapping(value="userLibrary/service/food", method=RequestMethod.GET)
+				public String foodGET(Model model) {
+					logger.info("주간식단표!!!!!!");
+					return "userLibrary/service/food";
+				}
 }

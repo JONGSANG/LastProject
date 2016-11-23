@@ -12,10 +12,10 @@
 						<a class="menubtn" href="/userLibrary/libNews/schedule">도서관일정</a>
 					</li>
 					<li>
-						<a class="menubtn" href="/userLibrary/libNews/recommand">추천도서</a>
+						<a class="menubtn" href="/userLibrary/libNews/recommand/recommand">추천도서</a>
 					</li>
 					<li>
-						<a class="menubtn" href="/userLibrary/libNews/best">대출도서 베스트</a>
+						<a class="menubtn" href="/userLibrary/libNews/best/listBest">대출도서 베스트</a>
 					</li>
 					<li>
 						<a class="menubtn" href="/userLibrary/libNews/f_board/listAll">자유게시판</a>
