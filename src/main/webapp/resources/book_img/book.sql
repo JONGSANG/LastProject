@@ -42,7 +42,6 @@ BWRITER varchar(50),
 BCOMPANY varchar(50),
 BINTRO text,
 BYEAR year(4),
-BUY_DATE DATE,
 BLOCATION tinyint DEFAULT 1, 
 
 
@@ -5298,4 +5297,6 @@ values('99141212','행복이 가득한 집 (월간) : 12월 [2012]','디자인�
 '행복이 가득한 집 은 한국적인 것의 힘, 대한민국 가족의 힘을 이야기하는 잡지입니다. 로열티를 지불하지않는 자존심과 긍지의 잡지 행복이 가득한 집 은 남다른 안목, 지성을 갖춘 분을 독자로 모십니다.
 ',
 2012,'2013/01/01');
+
+
 
