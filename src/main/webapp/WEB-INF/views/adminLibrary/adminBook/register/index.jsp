@@ -1,33 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
 <title>Insert title here</title>
 </head>
 <body>
-<!-- <table width="600" border="1" class="table table-bordered table-hober dataTable">
- -->
- <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
+<table width="600" border="1" class="table table-bordered table-hober dataTable">
  	<tr>
- 
-		<th width="50">번호</th>
+		<th width="50">책 번호</th>
 		<th width="350">책 제목</th>
 		<th width="100">저자명</th>
 		<th width="100">출판사</th>
-		<th width="100">대출 여부</th>
+		<th width="100">구입 날짜</th>
 	</tr>
-	
-	
 	<c:forEach items="${list}" var="bookVO" >
 		<tr>
-			<%-- <th width="50">${var.index }</th> --%>
 			<td width="50">${bookVO.bNo }</td>
 			<td width="350"><a href="readInfo?bNo=${bookVO.bNo}">${bookVO.bTitle}</a></td>
 			<td width="100">${bookVO.bWriter}</td>
 			<td width="100">${bookVO.bCompany}</td>
-			<td width="100">${bookVO.bCompany}</td>
+			<td width="100"><fmt:formatDate value="${bookVO.buy_date}" pattern="yyyy.MM.dd"/></td>
 		</tr>
 	</c:forEach>
 </table>
