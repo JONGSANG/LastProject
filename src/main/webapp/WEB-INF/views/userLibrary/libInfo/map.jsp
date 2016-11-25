@@ -6,7 +6,6 @@
 <title>찾아오는 길</title>
 </head>
 <body>
-<div id="insidebody">
 	<section>
 	<div id="word">
 	<font style="font-size: 40px">찾아오는 길</font>

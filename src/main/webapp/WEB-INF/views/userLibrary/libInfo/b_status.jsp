@@ -6,7 +6,6 @@
 <title>자료현황</title>
 </head>
 <body>
-<div id="insidebody">
 	<section>
 		<div id="word">
 			<font style="font-size: 40px">자료현황</font>

@@ -11,8 +11,9 @@ $(document).ready(function() {
 	   
 	   hour=now.getHours();
 	   minutes=now.getMinutes();
+	   seconds=now.getSeconds();
 	   if (minutes<10) {minutes='0'+minutes};
-	   $('.date').append(hour+'시 '+minutes+'분');
+	   $('.date').append(hour+'시 '+minutes+'분 '+seconds+'초 ');
 	}
   	setInterval(SetData,60);
 
