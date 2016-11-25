@@ -64,8 +64,8 @@
         <a href="/userLibrary/member/join"><img src="/resources/images/login/login_80.png" width="120"></a>
         
         <!-- scrollbars=yes : yes일경우 스크롤바가 생기고 no일경우 생기지않음  resizable=no : 새창의 크기 변경하지 못함 yes 일 경우 변경할수 있습니다. -->
-        <a href="/userLibrary/popup/findID" onClick="window.open(this.href, 'findID', 'width=400, height=430, left=500, top=150'); return false;"><img src="/resources/images/login/login_81.png" width="120"></a>
-        <a href="/userLibrary/popup/findPassword" onClick="window.open(this.href, 'findPassword', 'width=400, height=430, left=500, top=150'); return false;"><img src="/resources/images/login/login_82.png" width="120"></a>
+        <a href="/userLibrary/popup/findID" onClick="window.open(this.href, 'findID', 'width=414, height=353, left=500, top=150'); return false;"><img src="/resources/images/login/login_81.png" width="120"></a>
+        <a href="/userLibrary/popup/findPassword" onClick="window.open(this.href, 'findPassword', 'width=414, height=378, left=500, top=150'); return false;"><img src="/resources/images/login/login_82.png" width="120"></a>
         </td>
       </tr>
     </tbody></table></td>

@@ -5,7 +5,7 @@
 <html>
 <head>
 <title>Kosta Library</title>
-<link rel="stylesheet" type="text/css" media="screen" href="/resources/css/userLibrary/reset.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="/resources/css/userLibrary/reset.css">
 		<link rel="stylesheet" type="text/css" media="screen" href="/resources/css/userLibrary/member.css">
 		<link rel="stylesheet" type="text/css" media="screen" href="/resources/css/userLibrary/login.css">
 		<script src="/resources/js/jquery-1.8.3.min.js"></script>

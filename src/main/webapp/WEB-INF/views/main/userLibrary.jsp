@@ -42,7 +42,7 @@
 				src="/resources/images/btntime.PNG" width="80px"></a> <a
 				href="/userLibrary/libInfo/map"><img alt=""
 				src="/resources/images/btnway.PNG" width="80px"></a> <a
-				href="/userLibrary/service/min_board"><img alt=""
+				href="/userLibrary/service/min_board/listAll"><img alt=""
 				src="/resources/images/btnmin.PNG" width="80px"></a>
 		</div>
 	</div>
@@ -152,9 +152,10 @@
 						<p>
 							<span class="llogbottom"><a
 								href="/userLibrary/member/join">회원가입</a></span> <span
-								class="rlogbottom"> <a href="/userLibrary/member/findID">아이디
-									찾기</a>&nbsp;|&nbsp; <a href="/userLibrary/member/findPassword">비밀번호
-									찾기</a>
+								class="rlogbottom"> <a href="/userLibrary/popup/findID" onClick="window.open(this.href, 'findID', 'width=414, height=353, left=500, top=150'); return false;">
+								아이디 찾기</a>&nbsp;|&nbsp; 
+								<a href="/userLibrary/popup/findPassword" onClick="window.open(this.href, 'findPassword', 'width=414, height=378, left=500, top=150'); return false;">
+								비밀번호 찾기</a>
 							</span>
 						</p>
 					</div>
@@ -223,11 +224,11 @@
 		<!-- 작은 배너 시작  -->
 		<div id="s_banner_wrap">
 			<ul class="bxslider">
-				<a href="http://www.kosta.or.kr/"><div
+				<a href="http://www.kosta.or.kr/" target="_blank"><div
 						style="width: 256px; height: 100px; background: url('/resources/images/logoKosta.png');"></div></a>
-				<a href="http://www.snlib.go.kr/index.do"><div
+				<a href="http://www.snlib.go.kr/index.do" target="_blank"><div
 						style="width: 256px; height: 100px; background: url('/resources/images/logoSeongnam.png');"></div></a>
-				<a href="https://www.yonginlib.go.kr:5444/intro.asp"><div
+				<a href="https://www.yonginlib.go.kr:5444/intro.asp" target="_blank"><div
 						style="width: 256px; height: 100px; background: url('/resources/images/logoyongin.png');"></div></a>
 
 			</ul>

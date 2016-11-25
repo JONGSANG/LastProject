@@ -36,7 +36,7 @@ private static final Logger logger = LoggerFactory.getLogger(MemberController.cl
 		//만약 일치하는 값이 없다면 vo에 저장되는 값은 null이기 때문에 if문이 실행됨
 		if(vo==null){
 			//ajax 수정필요, 일치하는 회원정보가 없으면
-			rttr.addAttribute("faller", "false");
+			rttr.addAttribute("faller", "faller");
 			return "redirect:/userLibrary/popup/findID";
 		}
 		
@@ -44,7 +44,7 @@ private static final Logger logger = LoggerFactory.getLogger(MemberController.cl
 		memberService.idEmail(vo);
 		rttr.addAttribute("idSuccess", "idSuccess");
 		
-		return "redirect:/userLibrary/member/login";
+		return "redirect:/userLibrary/popup/nextId";
 	}
 	
 	@RequestMapping(value="userLibrary/popup/findPassword", method=RequestMethod.GET)
@@ -64,7 +64,7 @@ private static final Logger logger = LoggerFactory.getLogger(MemberController.cl
 		//만약 일치하는 값이 없다면 vo에 저장되는 값은 null이기 때문에 if문이 실행됨
 		if(vo==null){
 			//ajax 수정필요, 일치하는 회원정보가 없으면
-			rttr.addAttribute("false", "false");
+			rttr.addAttribute("faller", "faller");
 			return "redirect:/userLibrary/popup/findPassword";
 		}
 		
@@ -73,6 +73,19 @@ private static final Logger logger = LoggerFactory.getLogger(MemberController.cl
 		memberService.passwordEmail(vo);
 		rttr.addAttribute("pwdSuccess", "pwdSuccess");
 		
-		return "redirect:/userLibrary/member/login";
+		return "redirect:/userLibrary/popup/nextPassword";
+	}
+	
+	@RequestMapping("userLibrary/popup/nextId")
+	public String nextIdGET() {
+		logger.info("이메일 전송 메세지 띄우는 페이지");
+		
+		return "userLibrary/popup/nextId";
+	}
+	@RequestMapping("userLibrary/popup/nextPassword")
+	public String nextPasswordGET() {
+		logger.info("이메일 전송 메세지 띄우는 페이지");
+		
+		return "userLibrary/popup/nextPassword";
 	}
 }

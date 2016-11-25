@@ -1,0 +1,27 @@
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css); /* 제주 고딕 	font-family: 'Jeju Gothic', serif;  */
+
+.fineId {border: #9BABBF 7px solid; width: 400px; border-radius: 10px; text-align: center; }
+
+.idheader {text-align: center; width: 400px;}
+table td{padding-top: 5px}
+
+
+input {background:#dfdfdf; border-radius: 3px 3px 3px 3px; height: 20px; }
+input:focus { outline:0;background:#fff;box-shadow:0 0 2px rgba(0,0,0,.8) inset}
+
+.btn{
+ width:130px; height : 30px;
+ border-radius: 5px;font-size:12px; padding: 8px 8px 8px 8px; text-decoration:none; display:inline-block;text-shadow: 0px 0px 0 rgba(255,255,255,0.3);font-weight:bold; color: #253559;
+ background-color: #FCFDFF; background-image: -webkit-gradient(linear, left top, left bottom, from(#FCFDFF), to(#BEC9CF));
+ background-image: linear-gradient(to bottom, #FCFDFF, #BEC9CF);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#FCFDFF, endColorstr=#BEC9CF);
+}
+
+.btn:hover{
+ color: #435fa0;
+ border:0px solid #B6C7CC;
+ background-color: #CBCBCB; background-image: -webkit-gradient(linear, left top, left bottom, from(#CBCBCB), to(#EDEDF7));
+ background-image: linear-gradient(to bottom, #CBCBCB, #EDEDF7);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#CBCBCB, endColorstr=#EDEDF7);
+
+}
+
+.nextText { font-size: 18px; color:#253559; font-family: 'Jeju Gothic', serif;}

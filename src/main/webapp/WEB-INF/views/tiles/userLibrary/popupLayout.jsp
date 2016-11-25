@@ -6,6 +6,9 @@
 <head>
 <title>Kosta Library</title>
 
+		<link rel="stylesheet" type="text/css" media="screen" href="/resources/css/userLibrary/reset.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="/resources/css/userLibrary/popup.css">
+		<script src="/resources/js/date_picker.js"></script>
 </head>
 <body>
 

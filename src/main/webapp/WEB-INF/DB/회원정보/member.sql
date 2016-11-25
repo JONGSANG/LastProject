@@ -1,6 +1,6 @@
 select * from member;
 drop table member;
-
+delete from member;
 --------------------------------------------------------------
 -- member : Login Table
 --------------------------------------------------------------
