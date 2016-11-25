@@ -14,14 +14,14 @@
 }
 
 #leftmenu {flex: 1; padding-right: 5px;  }
-#left{padding-left: 7px; border: #E4E4E4 2px solid; border-radius: 10px; box-shadow: 2px 2px #BDBDBD; padding-bottom: 5px}
-#left img{width: 180px; padding-top: 10px}
+#left{padding-left: 3px; border: #E4E4E4 2px solid; border-radius: 10px; box-shadow: 2px 2px #BDBDBD; padding-bottom: 5px}
+#left img{width: 180px; padding-top: 10px; padding-left: 3px}
 #left ul{padding-top: 20px}
-#rightcontent {flex: 4; background-color: #ffffff; float: left; }
-#insidebody{padding: 20px 0 0 20px; max-width: 790px; border: #EAEAEA 1px solid; box-shadow: 2px 2px #D8D8D8; border-radius: 10px; margin-top: 3px}
+#rightcontent {flex: 4; background-color: #F6F6F6; float: left; padding: 5px 7px 5px 5px; border-radius: 7px}
+#insidebody{padding: 20px 0 20px 20px; max-width: 790px; border: #EAEAEA 1px solid; box-shadow: 2px 2px #D8D8D8; border-radius: 10px; margin-top: 3px; background-color: white;}
 
 /* --------------------------section---------------------------------------- */
-section{ font-size: 13px; width: 800px; border:#EAEAEA 1px solid; border-radius : 10px; padding-right : 10px; padding-top : 5px; box-shadow:2px 2px #D8D8D8; height: 112px}
+section{ font-size: 13px; width: 800px; border:#EAEAEA 1px solid; border-radius : 10px; padding-right : 10px; padding-top : 5px; box-shadow:2px 2px #D8D8D8; height: 105px; background-color: white;}
 section #link{float: right; }
 section #word{padding-top: 30px; padding-left:20px; width: 250px; position: absolute; font-family: 'Hanna', serif; color: #39369C; text-shadow: 2px 2px #BDBDBD;}
 #link53 {margin-right: 40px; margin-top: 5px}

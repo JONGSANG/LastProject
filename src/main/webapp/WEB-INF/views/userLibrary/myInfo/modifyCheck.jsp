@@ -25,11 +25,26 @@
 		</div>
 	</section>
 	<div id="insidebody">
+	
 	<form action="/userLibrary/myInfo/modifyCheck" method="post">
-		<p>안전한 개인정보 보호를 위해 비밀번호를 한번 더 입력해주세요</p>
+	<table>
+	<tr>
+	<td><img src="/resources/images/word/modifycheck.png"></td>
+	<td>안전한 개인정보 보호를 위해 <font color="blue">비밀번호를 한번 더 입력해주세요</font></td>
+	</tr>
+	<tr>
+	<td></td>
+	<td>
 		<input type="password" name="password" placeholder="최대 12자 영문/숫자" maxlength="12" required>
 		<input type="submit" value="수정하기">
+	</td>
+	</tr>
+	</table>
+		
+		
+		
 	</form>
+	
 	</div>
 	
 </body>
