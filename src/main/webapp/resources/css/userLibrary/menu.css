@@ -13,3 +13,31 @@
 
 }
 
+#leftmenu {flex: 1; padding-right: 5px;  }
+#left{padding-left: 5px; border: #E4E4E4 2px solid; border-radius: 10px; box-shadow: 2px 2px #BDBDBD; padding-bottom: 5px}
+#left img{width: 180px; padding-top: 10px}
+#left ul{padding-top: 20px}
+#rightcontent {flex: 4; background-color: #ffffff; float: left; }
+#insidebody{padding: 20px 0 0 20px; max-width: 790px; border: #EAEAEA 1px solid; box-shadow: 2px 2px #D8D8D8; border-radius: 10px; margin-top: 3px}
+
+/* --------------------------section---------------------------------------- */
+section{ font-size: 13px; width: 805px; border:#EAEAEA 1px solid; border-radius : 10px; padding-right : 5px; box-shadow:2px 2px #D8D8D8; height: 112px}
+section #link{float: right; }
+section #word{padding-top: 30px; padding-left:20px; width: 250px; position: absolute; font-family: 'Hanna', serif; color: #39369C; text-shadow: 2px 2px #BDBDBD;}
+#link53 {margin-right: 40px; margin-top: 5px}
+#link54 {margin-right: 50px; margin-top: 5px}
+#link55 {margin-right: 65px; margin-top: 5px}
+#link56 {margin-right: 70px; margin-top: 5px}
+#link59 {margin-right: 100px; margin-top: 5px}
+#link43 {margin-right: 45px; margin-top: 5px}
+#link44 {margin-right: 55px; margin-top: 5px}
+#link45 {margin-right: 65px; margin-top: 5px}
+#link24 {margin-right: 55px; margin-top: 5px}
+#link25 {margin-right: 70px; margin-top: 5px}
+#link26 {margin-right: 80px; margin-top: 5px}
+#link34 {margin-right: 60px; margin-top: 5px}
+#link35 {margin-right: 75px; margin-top: 5px}
+#link36 {margin-right: 80px; margin-top: 5px}
+#link37 {margin-right: 85px; margin-top: 5px}
+#link a {text-decoration: none; color: gray; font-size: 10px; margin-top: 5px}
+#link b {text-decoration: none; color: navy; float: right; margin-top: -21px}

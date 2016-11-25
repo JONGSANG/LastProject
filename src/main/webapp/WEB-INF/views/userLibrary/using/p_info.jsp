@@ -12,7 +12,7 @@
 	</div>
 	<div id="link"><div id="link45"><a href = "/" >home ></a><a href = "#" >이용안내 >&nbsp;</a></div><b>주차장안내</b></div>
 	</section>
-	
+	<div id="insidebody">
 	주차장시간
 	주차장 지하 2~3층
 	주차장 요금
@@ -142,5 +142,6 @@
 		// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
 		infowindow.open(map, marker); 
 	</script>
+	</div>
 </body>
 </html>

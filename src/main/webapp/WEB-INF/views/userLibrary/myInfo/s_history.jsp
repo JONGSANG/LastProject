@@ -19,6 +19,7 @@
 			<b>행사신청 내역</b>
 		</div>
 	</section>
+	<div id="insidebody">
 	<table>
 		<tr>
 			<th>카테고리
@@ -68,5 +69,6 @@
 			</tr>
 		</c:forEach>
 	</table>
+	</div>
 </body>
 </html>

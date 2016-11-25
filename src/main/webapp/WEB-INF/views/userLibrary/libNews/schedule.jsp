@@ -17,5 +17,7 @@
 			<b>도서관 일정</b>
 		</div>
 	</section>
+	<div id="insidebody">
+	</div>
 </body>
 </html>

@@ -17,6 +17,7 @@
 			<b>자유게시판</b>
 		</div>
 	</section>
+	<div id="insidebody">
 	<form action="modify_re" method="post">
 		<input type="hidden" name="num" value="${boardVO2.num}"> <input
 			type="hidden" name="fnum" value="${boardVO2.fnum}">
@@ -41,5 +42,6 @@
 			</tr>
 		</table>
 	</form>
+	</div>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<div id="menu">
+<div id="left">
 	<a href="/" id="logo"><img src="/resources/images/manuintroduce.png"
 		alt="logo"></a><br> <img id="line" src="/resources/images/line.png"
 		alt="logo">

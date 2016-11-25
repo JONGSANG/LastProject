@@ -22,6 +22,7 @@
 			<b>민원 게시판</b>
 		</div>
 	</section>
+	<div id="insidebody">
 <table border="1">
 	<tr>
 		<th style="width: 40px" align="center">번호</th>
@@ -72,6 +73,6 @@
 
 		</ul>
 	</div>
-
+</div>
 </body>
 </html>

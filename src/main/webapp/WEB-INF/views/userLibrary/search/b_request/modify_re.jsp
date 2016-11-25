@@ -12,6 +12,7 @@
 	</div>
 	<div id="link"><div id="link26"><a href = "/" >home ></a><a href = "#" >검색 >&nbsp;</a></div><b>희망도서신청</b></div>
 	</section>
+	<div id="insidebody">
 	<form action="modify_re" method="post">
 		<input type="hidden" name="num" value="${boardVO2.num}"> <input
 			type="hidden" name="hNum" value="${boardVO2.hNum}">
@@ -36,5 +37,6 @@
 			</tr>
 		</table>
 	</form>
+	</div>
 </body>
 </html>

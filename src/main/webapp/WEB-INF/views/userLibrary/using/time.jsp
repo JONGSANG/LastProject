@@ -6,13 +6,13 @@
 <title>이용시간</title>
 </head>
 <body>
-<div>
 	<section>
 	<div id="word">
 	<font style="font-size: 40px">이용시간</font>
 	</div>
 	<div id="link"><div id="link44"><a href = "/" >home ></a><a href = "#" >이용안내 >&nbsp;</a></div><b>이용시간</b></div>
 	</section>
+	<div id="insidebody">
 	<table width = "600" cellpadding="5" cellspacing="0" border="1" style="border-collapse:collapse; border:1px gray solid;">
 		<tr align = "center">
 			<td width = "250px">실별</td>

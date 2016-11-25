@@ -3,9 +3,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>사서가 추천 하는 최고의 추천서적!!!</title>
+<title>대출도서 베스트</title>
 </head>
 <body>
+<section>
+		<div id="word">
+			<font style="font-size: 40px">대출도서 베스트</font>
+		</div>
+		<div id="link">
+			<div id="link59">
+				<a href="/">home ></a><a href="#">도서관소식 >&nbsp;</a>
+			</div>
+			<b>대출도서 베스트</b>
+		</div>
+	</section>
+<div id="insidebody">
 	<center>
 	<h3> 사서가 추천하는 최고의 서적들!! </h3>
 	
@@ -42,6 +54,7 @@
 		</tr>
 	</table>
 	</center>
+	</div>
 
 </body>
 </html>

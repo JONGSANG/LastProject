@@ -19,6 +19,7 @@
 			<b>간행물 검색</b>
 		</div>
 </section>
+<div id="insidebody">
 	<table width="600" border="1">
 		<tr>
 			<th width="150" rowspan="6"><img
@@ -59,6 +60,6 @@
 		</tr>
 	</table>
 
-
+</div>
 </body>
 </html>

@@ -17,6 +17,7 @@
 			<b>공지사항</b>
 		</div>
 	</section>
+	<div id="insidebody">
 <form role="form" method="post">
 	<table border="1">
 		<tr>
@@ -36,6 +37,6 @@
 		</tr>
 	</table>
 </form>
-
+</div>
 </body>
 </html>

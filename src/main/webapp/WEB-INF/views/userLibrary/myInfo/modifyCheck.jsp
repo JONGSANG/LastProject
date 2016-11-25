@@ -24,12 +24,13 @@
 			<b>개인정보 수정</b>
 		</div>
 	</section>
+	<div id="insidebody">
 	<form action="/userLibrary/myInfo/modifyCheck" method="post">
 		<p>안전한 개인정보 보호를 위해 비밀번호를 한번 더 입력해주세요</p>
 		<input type="password" name="password" placeholder="최대 12자 영문/숫자" maxlength="12" required>
 		<input type="submit" value="수정하기">
 	</form>
-	
+	</div>
 	
 </body>
 </html>

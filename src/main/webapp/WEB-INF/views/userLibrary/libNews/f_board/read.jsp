@@ -19,6 +19,7 @@
 			<b>자유게시판</b>
 		</div>
 	</section>
+	<div id="insidebody">
 	<form role="form" method="post">
 
 		<input type='hidden' name='num' value="${boardVO.num}">
@@ -31,7 +32,7 @@
 		<tr>
 			<th>제목</th>
 			<th><input type="text" name='title' class="form-control"
-				value="${boardVO.title}" readonly="readonly">
+				value="${boardVO.title}" readonly="readonly"></th>
 		</tr>
 		<tr>
 			<th>내용</th>
@@ -75,7 +76,7 @@
 				<th><textarea name="content" rows="3" placeholder="Enter ..."></textarea></th>
 			</tr>
 			<tr>
-				<th colspan="2"><button type="submit">확인</button>
+				<th colspan="2"><button type="submit">확인</button></th>
 			</tr>
 		</table>
 	</form>
@@ -138,6 +139,6 @@
 
 		</ul>
 	</div>
-	
+	</div>
 </body>
 </html>

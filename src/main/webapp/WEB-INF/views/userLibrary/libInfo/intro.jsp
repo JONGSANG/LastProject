@@ -12,7 +12,7 @@
 	</div>
 	<div id="link"><div id="link53"><a href = "/" >home ></a><a href = "#" >도서관소개 >&nbsp;</a></div><b>인사말</b></div>
 	</section>
-	<br>
+<div id="insidebody">
 <table>
 	<tr>
 		<th>
@@ -42,5 +42,6 @@
 	</th>
 	</tr>
 </table>
+</div>
 </body>
 </html>

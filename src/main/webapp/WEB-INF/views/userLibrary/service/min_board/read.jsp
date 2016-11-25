@@ -19,6 +19,7 @@
 			<b>민원 게시판</b>
 		</div>
 	</section>
+	<div id="insidebody">
 	<form role="form" method="post">
 
 		<input type='hidden' name='num' value="${boardVO.num}">
@@ -136,7 +137,7 @@
 
 		</ul>
 	</div>
-		
+		</div>
 	
 </body>
 </html>

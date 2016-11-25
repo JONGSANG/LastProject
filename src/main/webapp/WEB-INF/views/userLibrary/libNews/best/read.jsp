@@ -6,9 +6,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>대출도서 베스트</title>
 </head>
 <body>
+<section>
+		<div id="word">
+			<font style="font-size: 40px">대출도서 베스트</font>
+		</div>
+		<div id="link">
+			<div id="link59">
+				<a href="/">home ></a><a href="#">도서관소식 >&nbsp;</a>
+			</div>
+			<b>대출도서 베스트</b>
+		</div>
+	</section>
+<div id="insidebody">
 	<table width="600" border="1">
 		<tr>
 			<th width="150" rowspan="6"><img src="/resources/book_img/${read.BNO}.jpg" width="100"></th>
@@ -49,6 +61,6 @@
 	</table>
 	<input type=button value="뒤로가기" onClick="history.back();">
 	<a href='listBest'><button type="submit"> 목록 보기 </button></a>
-
+</div>
 </body>
 </html>

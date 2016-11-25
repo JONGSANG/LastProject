@@ -6,16 +6,17 @@
 <title>조직도</title>
 </head>
 <body>
+
 	<section>
 	<div id="word">
 	<font style="font-size: 40px">조직도</font>
 	</div>
 	<div id="link"><div id="link53"><a href = "/" >home ></a><a href = "#" >도서관소개 >&nbsp;</a></div><b>조직도</b></div>
 	</section>
-	<br>
-	<h5><font color="gray">도서관에 오신것을 환영합니다.</font></h5><p>
+	<div id="insidebody">
+	<h5><font color="gray">도서관에 오신것을 환영합니다.</font></h5>
 	
-	<h5>부서및 기관안내 직원목록</h5><p><p>
+	<h5>부서및 기관안내 직원목록</h5>
 	<table align="center">
 		<tr align="center" bgcolor="#B2CCFF" height="20">
 			<th width="150">직위</th>
@@ -126,5 +127,6 @@
 			<td>어린이자료실 운영,회원증 발급</td>
 		</tr>
 	</table>
+	</div>
 </body>
 </html>

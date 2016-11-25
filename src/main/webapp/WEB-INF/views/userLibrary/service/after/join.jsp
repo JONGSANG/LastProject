@@ -17,6 +17,7 @@
 			<b>방과후 학교</b>
 		</div>
 	</section>
+	<div id="insidebody">
 <h3>join page</h3><br>
 <form action = "join" method = "POST">
 <table border = "1">
@@ -34,6 +35,6 @@
 </table>
 <input type = "submit" value = "신청하기">
 </form>
-
+</div>
 </body>
 </html>

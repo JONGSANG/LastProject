@@ -20,6 +20,7 @@
 			<b>방과후 학교</b>
 		</div>
 	</section>
+	<div id="insidebody">
 <h3>after_read page</h3><br>
 	<table border = "1">
 		<tr>
@@ -71,5 +72,6 @@
 		<input type = "submit" value = "삭제">
 	</form>
 </security:authorize>
+</div>
 </body>
 </html>

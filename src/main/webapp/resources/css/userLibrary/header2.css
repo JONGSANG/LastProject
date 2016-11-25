@@ -7,39 +7,16 @@
 
 /* Global properties ======================================================== */
 html, body {width:100%; padding:0; margin:0;}
-#menu{ padding-left: 10px}
 #line{margin-top: 10px}
-#menu img{width: 180px; padding-top: 10px}
-#menu ul{padding-top: 20px}
+
 
 
 
  #header2 {width:1024px; margin:0 auto; z-index:1000; position:relative; display: flex; padding-top: 50px}
-#leftmenu {flex: 1; height: 405px }
-#rightcontent {flex: 4; background-color: #ffffff; float: left; min-height: 500px}
 #logincontent {width:1024px; min-height:450px; margin:0 auto; z-index:1000; position:relative; padding-top: 100px; padding-left: 250px }
 .slider { width:1024px; height:100px; margin:0 auto; position:relative; z-index:1001;  }
 
-/* --------------------------section---------------------------------------- */
-section{ font-size: 13px; width: 819px; background-image: url("../../images/body.png"); background-size: cover; height: 112px}
-section #link{float: right; }
-section #word{padding-top: 30px; padding-left:20px; width: 250px; position: absolute; font-family: 'Hanna', serif; color: sienna; text-shadow: 2px 2px #BDBDBD;}
-#link53 {margin-right: 40px; margin-top: 5px}
-#link54 {margin-right: 50px; margin-top: 5px}
-#link55 {margin-right: 65px; margin-top: 5px}
-#link56 {margin-right: 70px; margin-top: 5px}
-#link43 {margin-right: 45px; margin-top: 5px}
-#link44 {margin-right: 55px; margin-top: 5px}
-#link45 {margin-right: 65px; margin-top: 5px}
-#link24 {margin-right: 55px; margin-top: 5px}
-#link25 {margin-right: 70px; margin-top: 5px}
-#link26 {margin-right: 80px; margin-top: 5px}
-#link34 {margin-right: 60px; margin-top: 5px}
-#link35 {margin-right: 75px; margin-top: 5px}
-#link36 {margin-right: 80px; margin-top: 5px}
-#link37 {margin-right: 85px; margin-top: 5px}
-#link a {text-decoration: none; color: gray; font-size: 10px; margin-top: 5px}
-#link b {text-decoration: none; color: navy; float: right; margin-top: -21px}
+
 
 /*********************************header*************************************/
  

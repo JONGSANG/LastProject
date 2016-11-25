@@ -12,6 +12,7 @@
 	</div>
 	<div id="link"><div id="link45"><a href = "/" >home ></a><a href = "#" >이용안내 >&nbsp;</a></div><b>책대출안내</b></div>
 	</section>
+	<div id="insidebody">
 <table>
 	<tr> 
 		<th width="750">
@@ -45,5 +46,6 @@
 		</th>
 	</tr>
 </table>
+</div>
 </body>
 </html>

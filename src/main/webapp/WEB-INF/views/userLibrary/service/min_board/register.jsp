@@ -17,6 +17,7 @@
 			<b>민원 게시판</b>
 		</div>
 	</section>
+	<div id="insidebody">
 	<br>
 	<br>
 	<form role="form" method="post">
@@ -51,6 +52,6 @@
 			</tr>
 		</table>
 	</form>
-
+</div>
 </body>
 </html>

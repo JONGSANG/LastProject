@@ -12,8 +12,7 @@
 	</div>
 	<div id="link"><div id="link26"><a href = "/" >home ></a><a href = "#" >검색 >&nbsp;</a></div><b>희망도서신청</b></div>
 	</section>
-	<br>
-	<br>
+	<div id="insidebody">
 	<form action="modify" method="post">
 
 	<table border="1">
@@ -60,5 +59,6 @@
 		</tr>
 	</table>
 	</form>
+	</div>
 </body>
 </html>

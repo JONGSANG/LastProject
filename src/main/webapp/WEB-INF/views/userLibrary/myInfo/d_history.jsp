@@ -19,6 +19,7 @@
 			<b>대출 내역</b>
 		</div>
 	</section>
+	<div id="insidebody">
 	<table>
 		<tr>
 			<th>책번호
@@ -35,5 +36,6 @@
 		</tr>
 		</c:forEach>
 	</table>
+	</div>
 </body>
 </html>

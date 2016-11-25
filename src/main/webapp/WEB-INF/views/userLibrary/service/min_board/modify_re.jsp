@@ -17,6 +17,7 @@
 			<b>민원 게시판</b>
 		</div>
 	</section>
+	<div id="insidebody">
 	<h2>수정 페이지</h2>
 	<form action="modify_re" method="post">
 		<input type="hidden" name="num" value="${boardVO2.num}"> 
@@ -42,5 +43,6 @@
 			</tr>
 		</table>
 	</form>
+	</div>
 </body>
 </html>

@@ -12,6 +12,7 @@
 	</div>
 	<div id="link"><div id="link44"><a href = "/" >home ></a><a href = "#" >이용안내 >&nbsp;</a></div><b>회원안내</b></div>
 	</section>
+	<div id="insidebody">
 	<table>
 		<tr>
 			<th width="750">
@@ -71,5 +72,6 @@
 		[step1]회원증 재발급에 필요한 서류를 지참하고 도서관 종합자료실을 방문하여 회원증 발급<br>
 		&nbsp;&nbsp;&nbsp;&nbsp;* 필요한 서류는 위 '회원가입 절차' [step2]의 회색박스 참조.
 	</h5>
+	</div>
 </body>
 </html>

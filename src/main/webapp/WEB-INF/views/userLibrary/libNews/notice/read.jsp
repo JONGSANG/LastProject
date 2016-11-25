@@ -20,6 +20,7 @@
 			<b>공지사항</b>
 		</div>
 	</section>
+	<div id="insidebody">
 	<form role="form" method="post">
 
 		<input type='hidden' name='num' value="${noticeVO.num}">
@@ -55,5 +56,6 @@
 		</tr>
 
 	</table>
+	</div>
 </body>
 </html>

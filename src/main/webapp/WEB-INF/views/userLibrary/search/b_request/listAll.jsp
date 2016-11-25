@@ -14,6 +14,7 @@
 	</div>
 	<div id="link"><div id="link26"><a href = "/" >home ></a><a href = "#" >검색 >&nbsp;</a></div><b>희망도서신청</b></div>
 	</section>
+	<div id="insidebody">
 <table border="1">
 	<tr>
 		<th style="width: 40px" align="center">번호</th>
@@ -61,7 +62,7 @@
 
 		</ul>
 	</div>
-    
+    </div>
     
 </body>
 </html>

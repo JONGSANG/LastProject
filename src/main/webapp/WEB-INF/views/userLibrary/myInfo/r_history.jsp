@@ -19,6 +19,7 @@
 			<b>신청 내역</b>
 		</div>
 	</section>
+	<div id="insidebody">
 	<table>
 		<tr>
 			<th>책제목
@@ -45,5 +46,6 @@
 			</tr>
 		</c:forEach>
 	</table>
+	</div>
 </body>
 </html>

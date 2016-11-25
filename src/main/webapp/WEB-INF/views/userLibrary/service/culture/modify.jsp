@@ -17,6 +17,7 @@
 			<b>문화 행사</b>
 		</div>
 	</section>
+	<div id="insidebody">
 <h3>modify page</h3><br>
 <form method = "POST">
 <table border = "1">
@@ -46,5 +47,7 @@
 	</tr>
 </table>
 <input type = "submit" value = "수정하기"><input type = "reset" value = "취소">
+</form>
+</div>
 </body>
 </html>

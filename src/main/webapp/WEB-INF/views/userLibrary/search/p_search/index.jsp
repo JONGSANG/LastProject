@@ -18,7 +18,7 @@
 			<b>간행물 검색</b>
 		</div>
 </section>
-
+<div id="insidebody">
 	<table width="600" border="1">
 		<tr>
 			<th width="50">번호</th>
@@ -62,6 +62,6 @@
 
 		</ul>
 	</div>
-
+</div>
 </body>
 </html>

@@ -6,6 +6,7 @@
 <title>자료현황</title>
 </head>
 <body>
+<div id="insidebody">
 	<section>
 		<div id="word">
 			<font style="font-size: 40px">자료현황</font>
@@ -17,6 +18,8 @@
 			<b>자료현황</b>
 		</div>
 	</section>
-	<br> userLibrary/libInfo/b_status.jsp 파일입니다
+	<div id="insidebody">
+	 userLibrary/libInfo/b_status.jsp 파일입니다
+	</div>
 </body>
 </html>

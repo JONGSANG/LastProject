@@ -6,13 +6,14 @@
 <title>시설현황</title>
 </head>
 <body>
+
 	<section>
 	<div id="word">
 	<font style="font-size: 40px">시설현황</font>
 	</div>
 	<div id="link"><div id="link54"><a href = "/" >home ></a><a href = "#" >도서관소개 >&nbsp;</a></div><b>시설현황</b></div>
 	</section>
-<div>
+	<div id="insidebody">
 	> 시설현황<br>
 		- 위치 : 경기도 성남시 분당구 삼평동 대왕판교로 670길(구 682번지) 유스페이스2 B동<br>
 		- 구조 : 지하1층, 지하3층<br>
@@ -117,6 +118,7 @@
 			<td>휴게실 / 편의시설</td>
 		</tr>
 	</table>
+	 </div>
 </div>
 </body>
 </html>

@@ -18,4 +18,4 @@ constraint pk_BOOK primary key(BNO)
 --);
 ------------------------------------
 
-INSERT INTO RESERVE_BOOK(BNO, ID, RESERVE_DATE) values('01010012', 'ksh', '2016-11-18');
+INSERT INTO RESERVE_BOOK(BNO, ID, RESERVE_DATE) values('01010012', 'choirj91', '2016-11-18');

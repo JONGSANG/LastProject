@@ -12,7 +12,7 @@
 	</div>
 	<div id="link"><div id="link43"><a href = "/" >home ></a><a href = "#" >이용안내 >&nbsp;</a></div><b>열람실</b></div>
 	</section>
-	
+	<div id="insidebody">
 	<h3 align="center" >- 이용안내 -</h3>
 <table border="1" style="solid" align="center" >
 
@@ -47,5 +47,6 @@
 </table>
 <h3> - 이용문의 - </h3>
 <h4>OO 도서관 문헌 정보팀 : XX-XXX-XXXX</h4>
+</div>
 </body>
 </html>

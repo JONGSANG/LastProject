@@ -25,6 +25,7 @@
 			<b>대출 내역</b>
 		</div>
 	</section>
+	<div id="insidebody">
 	<table>
 		<tr>
 			<td>아이디
@@ -63,5 +64,6 @@
 		onclick="document.location.href='/userLibrary/myInfo/modifyCheck'">
 	<input type="button" value="회원탈퇴"
 		onclick="document.location.href='/userLibrary/myInfo/leave'">
+		</div>
 </body>
 </html>

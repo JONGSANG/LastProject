@@ -6,14 +6,14 @@
 <title>찾아오는 길</title>
 </head>
 <body>
+<div id="insidebody">
 	<section>
 	<div id="word">
 	<font style="font-size: 40px">찾아오는 길</font>
 	</div>
 	<div id="link"><div id="link56"><a href = "/" >home ></a><a href = "#" >도서관소개 >&nbsp;</a></div><b>찾아오는 길</b></div>
 	</section>
-	<br>
-<div>
+	<div id="insidebody">
 	<div id="map" style="width:600px;height:400px; align:center;"></div>
 	<br>
 	> 주변 교통안내 <br>
@@ -32,6 +32,7 @@
 	<br>
 	> 주소(폰굵) 경기도 성남시 분당구 삼평동 대왕판교로 670길(구 682번지) 유스페이스2 B동<br>
 	> 교육문의(폰굵) 취업교육 : 070-7090-4977 / 재직자교육 : 070-7090-4974
+</div>
 </div>
 <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=d8a783ab647cf241b46707bc4e31d1ac"></script>
 	<script>

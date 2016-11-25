@@ -20,6 +20,7 @@
 			<b>문화 행사</b>
 		</div>
 	</section>
+	<div id="insidebody">
 <h3>list page</h3><br>
 <div>
 	<table border = "1">
@@ -57,5 +58,6 @@
 		alert("처리가 완료되었습니다.");
 	}
 </script>
+</div>
 </body>
 </html>

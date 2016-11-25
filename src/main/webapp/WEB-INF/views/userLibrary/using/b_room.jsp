@@ -12,6 +12,7 @@
 	</div>
 	<div id="link"><div id="link45"><a href = "/" >home ></a><a href = "#" >이용안내 >&nbsp;</a></div><b>문헌정보실</b></div>
 	</section>
+	<div id="insidebody">
 <table>
 <tr>
 	<th align="left" width="750">
@@ -129,5 +130,6 @@
 			<th>1</th>
 		</tr>
 	</table>
+	</div>
 </body>
 </html>

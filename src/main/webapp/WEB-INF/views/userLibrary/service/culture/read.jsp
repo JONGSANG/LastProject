@@ -20,6 +20,7 @@
 			<b>문화 행사</b>
 		</div>
 	</section>
+	<div id="insidebody">
 <h3>culture_read page</h3><br>
 	<table border = "1">
 		<tr>
@@ -83,5 +84,6 @@
 	<input type = "hidden" name = "num" value = "${cultureVO.num }">
 	<input type = "submit" value = "삭제">
 </form> --%>
+</div>
 </body>
 </html>

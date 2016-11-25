@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-			<div id="menu">
+			<div id="left">
 				<a href="/" id="logo"><img src="/resources/images/manumember.png" alt="logo"></a>
 				<img id="line" alt="" src="/resources/images/line.png">
 				<ul >

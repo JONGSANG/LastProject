@@ -19,6 +19,7 @@
 			<b>신착도서</b>
 		</div>
 </section>
+<div id="insidebody">
 	<form action="result" method="get">
 		<table width="600" border="1">
 			<tr>
@@ -69,6 +70,6 @@
 		</tr>
 	</table>
 
-
+</div>
 </body>
 </html>

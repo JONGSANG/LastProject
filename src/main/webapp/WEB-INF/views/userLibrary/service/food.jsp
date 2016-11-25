@@ -3,9 +3,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insert title here</title>
+<title>구내 식단표</title>
 </head>
 <body>
+<section>
+		<div id="word">
+			<font style="font-size: 40px">구내 식단표</font>
+		</div>
+		<div id="link">
+			<div id="link35">
+				<a href="/">home ></a><a href="#">서비스 >&nbsp;</a>
+			</div>
+			<b>구내 식단표</b>
+		</div>
+	</section>
+<div id="insidebody">
 	<h3 align="center"> 구내 식당 주간 식단표 &nbsp; &nbsp; &nbsp; &nbsp;</h3>
 	시간표 : 조 식 6:30 ~ 8:30<br /> 중 식 11:30 ~ 1:30<br /> 석 식 17:30 ~ 19:30<br />
 	<table border="1" style="solied">
@@ -44,5 +56,6 @@
 		</tr>
 	</table>
 	<h4> 본 식단은 식자재 수급에 따라 일정이 추후 변경 될 수 있사오니 양지해 주시기 바랍니다.</h4>
+	</div>
 </body>
 </html>
