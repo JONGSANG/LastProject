@@ -87,7 +87,25 @@ WHERE BNO=#{bno}
 <!-- 신규 도서 등록 SQL -->
 
 <select id="selectBookList" resultType="BookVO">
-select * from book 
+select * from book
+<if test="searchType!=null">
+	<if test="searchType=='01'">
+	WHERE bno LIKE CONCAT('%',#{keyword},'%')
+	</if>
+	<if test="searchType=='이름'">
+	WHERE U.NAME LIKE CONCAT('%',#{keyword},'%')
+	</if>
+	<if test="searchType=='이메일'">
+	WHERE U.EMAIL LIKE CONCAT('%',#{keyword},'%')
+	</if>
+	<if test="searchType=='휴대폰번호'">
+	WHERE U.PHONE LIKE CONCAT('%',#{keyword},'%')
+	</if>
+	<if test="searchType=='회원등급'">
+	WHERE R.ROLE LIKE CONCAT('%',#{keyword},'%')
+	</if>
+</if>
+ 
 order by bno desc
 limit #{pageStart}, #{perPageNum}
 </select>

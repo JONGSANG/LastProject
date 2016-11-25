@@ -131,7 +131,7 @@ public class AdminBookController {
 
 	
 	@RequestMapping(value = "adminLibrary/adminBook/register/index", method = RequestMethod.GET)
-	public String reg_bookGet(Model model, @ModelAttribute("pageInfo") BookVO vo) {
+	public String reg_bookGet(Model model, BookVO vo) {
 		logger.info("selectBookList page");
 		model.addAttribute("list",service.selectBookList(vo));
 		
