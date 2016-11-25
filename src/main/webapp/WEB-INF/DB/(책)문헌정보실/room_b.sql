@@ -2,7 +2,6 @@ select * from room_b;
 drop table room_b;
 
 
-
 update rent_book set submit_date='2016-11-22' where bno='01010021' and id = 'spurs89'
 
 UPDATE ROOM_B SET BRENT=-1 , BRENT_CNT=BRENT_CNT+1 

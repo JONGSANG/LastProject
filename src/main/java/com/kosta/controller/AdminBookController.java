@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.kosta.service.AdminBookService;
+import com.kosta.service.SearchService;
 import com.kosta.vo.BookVO;
 import com.kosta.vo.PageMaker;
 import com.kosta.vo.Rent_BookVO;
@@ -23,7 +24,9 @@ public class AdminBookController {
 
 	@Autowired
 	private AdminBookService service;
-
+	@Autowired
+	private SearchService searchService;
+	
 	@RequestMapping(value = "adminLibrary/adminBook/rentBook/rent", method = RequestMethod.GET)
 	public String rentGet() {
 		logger.info("RentBook page");
@@ -117,6 +120,16 @@ public class AdminBookController {
 		}
 	}
 
+////////////////////////////////////////////////////////////////////////	
+	
+	
+	@RequestMapping(value = "adminLibrary/adminBook/**/readInfo", method = RequestMethod.GET)
+	public void readInfo(Model model, @RequestParam("bNo") String bNo) throws Exception {
+		logger.info("search result!  page !");
+		model.addAttribute("read",searchService.readInfo(bNo));
+	}
+
+	
 	@RequestMapping(value = "adminLibrary/adminBook/register/index", method = RequestMethod.GET)
 	public String reg_bookGet(Model model, @ModelAttribute("pageInfo") BookVO vo) {
 		logger.info("selectBookList page");
