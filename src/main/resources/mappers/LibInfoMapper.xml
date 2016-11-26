@@ -15,7 +15,8 @@ select
 (select count(bno)from book where bno like '%0402%') sang,
 (select count(bno)from book where bno like '%0501%') gun,
 (select count(bno)from book where bno like '%0701%') inm,
-(select count(bno)from book where bno like '%99%') wol
+(select count(bno)from book where bno like '%99%') wol,
+(select count(bno)from book) allb
 </select>
 
 </mapper>

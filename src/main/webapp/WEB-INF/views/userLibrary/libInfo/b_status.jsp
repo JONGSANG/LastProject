@@ -26,6 +26,7 @@
 			<th>예술</th>
 			<th>어린이</th>
 			<th>연속간행물</th>
+			<th rowspan="2">총합</th>
 			
 		</tr>
 		<tr>
@@ -40,15 +41,16 @@
 			<th>월간지</th>
 		</tr>
 		<tr>
-			<th>${b_status.si} 권</th>
-			<th>${b_status.san} 권</th>
-			<th>${b_status.so} 권</th>
-			<th>${b_status.pro} 권</th>
-			<th>${b_status.jung} 권</th>
-			<th>${b_status.sang} 권</th>
-			<th>${b_status.gun} 권</th>
-			<th>${b_status.inm} 권</th>
-			<th>${b_status.wol} 권</th>
+			<td>${b_status.si} 권</td>
+			<td>${b_status.san} 권</td>
+			<td>${b_status.so} 권</td>
+			<td>${b_status.pro} 권</td>
+			<td>${b_status.jung} 권</td>
+			<td>${b_status.sang} 권</td>
+			<td>${b_status.gun} 권</td>
+			<td>${b_status.inm} 권</td>
+			<td>${b_status.wol} 권</td>
+			<td>${b_status.allb} 권</td>
 		</tr>
 	</table>
 	</div>

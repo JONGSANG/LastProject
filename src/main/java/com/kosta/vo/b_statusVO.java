@@ -2,7 +2,7 @@ package com.kosta.vo;
 
 public class b_statusVO {
 
-	private int si, san, so, pro, jung, sang, gun, inm, wol;
+	private int si, san, so, pro, jung, sang, gun, inm, wol,allb;
 
 	public int getSi() {
 		return si;
@@ -74,6 +74,14 @@ public class b_statusVO {
 
 	public void setWol(int wol) {
 		this.wol = wol;
+	}
+
+	public int getAllb() {
+		return allb;
+	}
+
+	public void setAllb(int allb) {
+		this.allb = allb;
 	}
 	
 	
