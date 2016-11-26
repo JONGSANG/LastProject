@@ -7,6 +7,8 @@ drop table after_list;
 		inner join after on list.anum = after.num
 		where state = 1 and 
 
+		select count(bno) from book where bno like '0101%'
+		
 
 --------------------------------------------------------------
 -- after_list : after_list 신청자 stack 정보 Table
