@@ -142,11 +142,11 @@ public class AdminBookController {
 		pageMaker.setTotalCount(service.countBookList(vo));
 		model.addAttribute("pageMaker", pageMaker);
 
-		return "adminLibrary/adminBook/room_b/index";
+		return "adminLibrary/adminBook/room_b/b_list";
 	}
 	
-	//비치도서 목록보기.
-	@RequestMapping(value = "adminLibrary/adminBook/room_b/w_list", method = RequestMethod.GET)
+	//폐기도서 목록보기.
+	@RequestMapping(value = "adminLibrary/adminBook/warehouse/w_list", method = RequestMethod.GET)
 	public String w_listGet(Model model, BookVO vo) {
 		logger.info("selectBookList page");
 		vo.setbLocation(0);
@@ -158,7 +158,7 @@ public class AdminBookController {
 		pageMaker.setTotalCount(service.countBookList(vo));
 		model.addAttribute("pageMaker", pageMaker);
 
-		return "adminLibrary/adminBook/room_b/index";
+		return "adminLibrary/adminBook/warehouse/w_list";
 	}
 
 
