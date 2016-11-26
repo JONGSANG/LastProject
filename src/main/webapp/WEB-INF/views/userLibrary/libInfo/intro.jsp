@@ -13,7 +13,7 @@
 	<div id="link"><div id="link53"><a href = "/" >home ></a><a href = "#" >도서관소개 >&nbsp;</a></div><b>인사말</b></div>
 	</section>
 <div id="insidebody">
-<img style="z-index: 100" alt="" src="/resources/images/word/library_info.png">
+<img src="/resources/images/word/library_info.png">
 </div>
 </body>
 </html>

@@ -36,9 +36,9 @@
 .searchform{width:490px;padding:10px; border-radius: 3px 0 0 3px; }
 .searchform input {width:356px;height:10px;padding:10px; background:#dfdfdf; border-radius: 3px 0 0 3px; }
 .searchform input:focus {outline:0;background:#fff;box-shadow:0 0 2px rgba(0,0,0,.8) inset}
-.searchform button {overflow:visible;position:relative;float:right;border:0;padding:0;cursor:pointer;height:30px;width:50px;
+.searchform button {overflow:visible;position:relative;float:right;border:0;padding:0;cursor:pointer;height:30px;width:50px;cursor:pointer;
     font: bold 12px/35px 'Jeju Gothic';line-height:30px;color: #fff;background:#d83c3c;border-radius: 0 3px 3px 0;text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);}   
-.searchform button:hover{ackground: #e54040}   
+.searchform button:hover{background: #e54040}   
 .searchform button:active,.searchform button:focus{background:#c42f2f;outline:0}
 .searchform button:before {content:'';position:absolute;border-width: 8px 8px 8px 0;border-style: solid solid solid none;border-color: transparent #d83c3c transparent;
     top: 8px;left: -6px;}

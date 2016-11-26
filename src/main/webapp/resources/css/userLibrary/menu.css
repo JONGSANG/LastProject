@@ -1,3 +1,11 @@
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css); /* 제주 고딕 	font-family: 'Jeju Gothic', serif;  */
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css); /* notosans font-family: 'Noto Sans KR', sans-serif; */
+@import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css); /* 제주 한라산 font-family: 'Jeju Hallasan', serif; */
+@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css); /* 나눔 손글씨 붓 font-family: 'Nanum Brush Script', serif; */
+@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css); /* 나눔 손글씨 펜  font-family: 'Nanum Pen Script', serif;  */
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css); /* 한나체 font-family: 'Hanna', serif; */
+
+
 .menubtn{
  width:170px;
  border-radius: 5px;font-size:16px; padding: 8px 8px 8px 8px; text-decoration:none; display:inline-block;text-shadow: 0px 0px 0 rgba(255,255,255,0.3);font-weight:bold; color: #253559;
@@ -17,8 +25,30 @@
 #left{padding-left: 3px; border: #E4E4E4 2px solid; border-radius: 10px; box-shadow: 2px 2px #BDBDBD; padding-bottom: 5px}
 #left img{width: 180px; padding-top: 10px; padding-left: 3px}
 #left ul{padding-top: 20px}
-#rightcontent {flex: 4; background-color: #F6F6F6; float: left; padding: 5px 7px 5px 5px; border-radius: 7px}
+#rightcontent {flex: 4; background-color: #F6F6F6; float: left; padding: 5px 7px 5px 5px; border-radius: 7px; margin-bottom: 15px}
 #insidebody{padding: 20px 0 20px 20px; max-width: 790px; border: #EAEAEA 1px solid; box-shadow: 2px 2px #D8D8D8; border-radius: 10px; margin-top: 3px; background-color: white;}
+#modicenter{padding-left: 230px}
+#modibox{border: #EAEAEA 1px solid; box-shadow: 2px 2px #D8D8D8; width: 310px; padding: 5px 5px 5px 5px; border-radius: 10px}
+
+input {background:#dfdfdf; border-radius: 3px 3px 3px 3px; height: 30px; padding-left: 10px }
+input:focus { outline:0;background:#fff;box-shadow:0 0 2px rgba(0,0,0,.8) inset}
+
+button{ 
+width:100px; height:30px;  font-family: '맑은 고딕'; cursor:pointer;
+ border-radius: 5px;font-size:12px; text-decoration:none; display:inline-block;text-shadow: 0px 0px 0 rgba(255,255,255,0.3);font-weight:bold; color: #253559;
+ background-color: #FCFDFF; background-image: -webkit-gradient(linear, left top, left bottom, from(#FCFDFF), to(#BEC9CF));
+ background-image: linear-gradient(to bottom, #FCFDFF, #BEC9CF);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#FCFDFF, endColorstr=#BEC9CF);
+	
+}
+button:hover{
+ color: #435fa0;
+ border:0px solid #B6C7CC;
+ background-color: #CBCBCB; background-image: -webkit-gradient(linear, left top, left bottom, from(#CBCBCB), to(#EDEDF7));
+ background-image: linear-gradient(to bottom, #CBCBCB, #EDEDF7);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#CBCBCB, endColorstr=#EDEDF7);
+
+}
+
+select{height: 23px; background-color: #e1e1e1; border-color : #c5c5c5; color: #5b5b5b; border-radius: 3px; font-family: 'Hanna', serif; }
 
 /* --------------------------section---------------------------------------- */
 section{ font-size: 13px; width: 800px; border:#EAEAEA 1px solid; border-radius : 10px; padding-right : 10px; padding-top : 5px; box-shadow:2px 2px #D8D8D8; height: 105px; background-color: white;}
@@ -41,3 +71,14 @@ section #word{padding-top: 30px; padding-left:20px; width: 250px; position: abso
 #link37 {margin-right: 85px; margin-top: 5px}
 #link a {text-decoration: none; color: gray; font-size: 10px; margin-top: 5px}
 #link b {text-decoration: none; color: navy; float: right; margin-top: -21px}
+
+/* table */
+.moditable #td1 {background-color: #F3F3F3; vertical-align: middle; padding: 0 5px 0 5px}
+.moditable #td1 img {padding-bottom: 3px}
+.viewtable { box-shadow: 4px 4px #fdf5e1; margin-left: 7px; margin-top: 10px}
+.viewtable #vtd1 {background-color: #E5EFF3; border-bottom: #c9dfe7 1px solid; border-right:#c9dfe7 1px solid; font-family: 'Noto Sans KR', sans-serif; text-align: center; font-size: 17px; font-weight: 500;}
+.viewtable #vtd2 {background-color: #FCFCFC; border-bottom: #e8e8e8 1px solid; font-family: 'Jeju Gothic', serif; font-size: 14px; padding-top: 3px; text-align: center;}
+.viewtable th {background-color: #f0f0f0; vertical-align: middle; border-left : #e2e2e2 1px solid; border-bottom : #cfcfcf 1px solid; border-right: #e2e2e2 1px solid; border-top : #e2e2e2 1px solid;  height: 35px }
+.viewtable td {height: 35px; vertical-align: middle; border-bottom: #C6C6C6 1 solid; }
+.viewtable #thstart {border-left: #EAEAEA 1px solid;}
+.viewtable #thend {border-right: #EAEAEA 1px solid;}

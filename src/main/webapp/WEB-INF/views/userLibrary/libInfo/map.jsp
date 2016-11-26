@@ -15,23 +15,7 @@
 	<div id="insidebody">
 	<div id="map" style="width:600px;height:400px; align:center;"></div>
 	<br>
-	> 주변 교통안내 <br>
-	* 지하철 <br>
-		- 신분당선 판교역 1번 출구(도보 10분)<br>
-		- 신분당선 판교역 4번출구 에서 마을버스 => 하이펙스/H스퀘어 에서 하차(약2분 소요)<br>
-	<br>
-	* 버스<br>
-		- 판교역 서편(판교역 4번출구) : <font color = "#FF9A00">마을버스 602-1, 602-2, 71 등</font><br>
-		- 하이펙스 : <font color = "#257B00">일반 280번, 310번, 390번</font><br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color = "#FF9A00">마을버스 602-1번, 71번, 73번, 812번</font><br>
-		- 봇들육교 : <font color = "#257B00">일반 101번, 330번, 350번, 380번, 500번</font><br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color = "#FF9A00">마을버스 602-1번, 71번</font><br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color = "#FF0000">직행버스 4000번, 9005번</font><br>
-		- 금토천교 : <font color = "#FF0000">직행버스 1007번, 1007-1번, 5600번, 5700번, 6800번, 6900번</font><br>
-	<br>
-	> 주소(폰굵) 경기도 성남시 분당구 삼평동 대왕판교로 670길(구 682번지) 유스페이스2 B동<br>
-	> 교육문의(폰굵) 취업교육 : 070-7090-4977 / 재직자교육 : 070-7090-4974
-</div>
+	<img src="/resources/images/word/library_map.png">
 </div>
 <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=d8a783ab647cf241b46707bc4e31d1ac"></script>
 	<script>

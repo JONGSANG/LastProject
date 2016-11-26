@@ -176,7 +176,7 @@
 								height="33px"></a><br> <a
 							href="/userLibrary/myInfo/d_status"><img alt=""
 								src="/resources/images/loglist.png" width="100px" height="30px"></a><br>
-							<a href="/userLibrary/myInfo/modify"><img alt=""
+							<a href="/userLibrary/myInfo/modifyCheck"><img alt=""
 								src="/resources/images/loginfo.png" width="100px" height="30px"></a>
 						</td>
 					</tr>

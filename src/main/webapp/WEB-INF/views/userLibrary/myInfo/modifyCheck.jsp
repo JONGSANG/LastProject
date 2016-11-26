@@ -29,20 +29,20 @@
 	<form action="/userLibrary/myInfo/modifyCheck" method="post">
 	<table>
 	<tr>
-	<td><img src="/resources/images/word/modifycheck.png"></td>
-	<td>안전한 개인정보 보호를 위해 <font color="blue">비밀번호를 한번 더 입력해주세요</font></td>
+	<td style="padding-top: 10px"><img src="/resources/images/word/modifycheck.png"></td>
+	<td><img src="/resources/images/word/modifyword.png"></td>
 	</tr>
 	<tr>
-	<td></td>
+	<td style="height: 30px"></td>
+	</tr>
+	<tr>
+	<td>&nbsp;<img src="/resources/images/login/login_722.png" height="30"></td>
 	<td>
-		<input type="password" name="password" placeholder="최대 12자 영문/숫자" maxlength="12" required>
-		<input type="submit" value="수정하기">
+		&nbsp;&nbsp;&nbsp;<input type="password" name="password" placeholder="최대 12자 영문/숫자" maxlength="12" required>
+		<button type="submit" id="submit">수정하기</button>
 	</td>
 	</tr>
 	</table>
-		
-		
-		
 	</form>
 	
 	</div>
