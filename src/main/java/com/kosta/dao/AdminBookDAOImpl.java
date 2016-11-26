@@ -106,4 +106,14 @@ public class AdminBookDAOImpl implements AdminBookDAO {
 		return sqlSession.selectOne(namespace+"countBookList",vo);
 	}
 
+	@Override
+	public List<BookVO> selectBookList2(BookVO vo) {
+		return sqlSession.selectList(namespace+"selectBookList2",vo);
+	}
+
+	@Override
+	public int countBookList2(BookVO vo) {
+		return sqlSession.selectOne(namespace+"countBookList2",vo);
+	}
+
 }
