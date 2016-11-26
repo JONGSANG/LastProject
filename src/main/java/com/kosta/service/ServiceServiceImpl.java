@@ -12,6 +12,7 @@ import com.kosta.vo.AfterVO;
 import com.kosta.vo.CultureVO;
 import com.kosta.vo.L_AfterVO;
 import com.kosta.vo.L_CultureVO;
+import com.kosta.vo.O_BoardVO;
 
 @Service
 public class ServiceServiceImpl implements ServiceService {
@@ -172,5 +173,41 @@ public class ServiceServiceImpl implements ServiceService {
 	@Override
 	public void culture_joindel(L_CultureVO vo) throws Exception {
 		dao.culture_joindel(vo);
+	}
+	
+	//--------------------------------------- 공개자료실 --------------------------------------- 
+	// 공개자료실 글 작성 메소드
+	@Override
+	public void openboard_join(O_BoardVO vo) throws Exception {
+		dao.openboard_join(vo);
+	}
+	
+	// 공개자료실 게시판 리스트 폼 메소드
+	@Override
+	public List<O_BoardVO> openboard_list() throws Exception {
+		return dao.openboard_list();
+	}
+	
+	// 공개자료실 게시판 상세글 메소드
+	@Override
+	public O_BoardVO openboard_read(O_BoardVO vo) throws Exception {
+		return dao.openboard_read(vo);
+	}
+	
+	// 공개자료실 게시판 상세글 조회수
+	@Override
+	public void openboard_viewcnt(O_BoardVO vo) throws Exception {
+		dao.openboard_viewcnt(vo);
+	}
+	
+	// 공개자료실 게시판 글 삭제 메소드
+	@Override
+	public void openboard_delete(O_BoardVO vo) throws Exception {
+		dao.openboard_delete(vo);
+	}
+
+	@Override
+	public void openboard_modify(O_BoardVO vo) throws Exception {
+		dao.openboard_modify(vo);
 	}
 }

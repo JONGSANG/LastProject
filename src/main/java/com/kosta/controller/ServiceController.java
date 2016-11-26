@@ -1,5 +1,10 @@
 package com.kosta.controller;
 
+import java.io.File;
+import java.util.UUID;
+
+import javax.annotation.Resource;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,10 +12,12 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.kosta.service.M_BoardService;
@@ -21,6 +28,7 @@ import com.kosta.vo.L_AfterVO;
 import com.kosta.vo.L_CultureVO;
 import com.kosta.vo.M_BoardVO;
 import com.kosta.vo.M_Board_ReVO;
+import com.kosta.vo.O_BoardVO;
 import com.kosta.vo.PageMaker;
 import com.kosta.vo.PageMaker_rep;
 
@@ -28,6 +36,9 @@ import com.kosta.vo.PageMaker_rep;
 public class ServiceController {
  
 	private static final Logger logger = LoggerFactory.getLogger(ServiceController.class);
+	
+	@Resource(name = "uploadPath")
+	private String uploadPath;
 
 	@Autowired
 	private M_BoardService service;
@@ -506,4 +517,135 @@ public class ServiceController {
 					logger.info("주간식단표!!!!!!");
 					return "userLibrary/service/food";
 				}
+		//--------------------------------------- 공개자료실 ---------------------------------------
+		// 공개자료실 글 작성 폼 메소드
+		@RequestMapping(value = "userLibrary/service/openboard/write", method = RequestMethod.GET)
+		public String openboard_join(O_BoardVO vo) throws Exception {
+			logger.info("공개자료실 글 작성 폼 페이지");
+			Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+			
+			// 현재 세션아이디로 글작성 id에 띄움
+			vo.setId(auth.getName());
+			return "userLibrary/service/openboard/write";
+		}
+		
+		// 공개자료실 글 작성 메소드
+		@RequestMapping(value = "userLibrary/service/openboard/write", method = RequestMethod.POST)
+		public String openboard_join(O_BoardVO vo, RedirectAttributes rttr) throws Exception {
+			logger.info("공개자료실 글 작성 페이지");
+			Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+			
+			// 현재 세션아이디로 글작성 id에 띄움
+			vo.setId(auth.getName());
+			
+			// 선택해서 올린파일을 f로 지정함
+			MultipartFile f = vo.getFile();
+			
+			// 만약 f(파일)가 존재하면, 해당파일에 대한
+			// 원본이름과, 수정된 이름을 가지게됨.
+			// 그리고 newname 으로된 파일을 해당 경로에 복사해놓음(물리적경로)
+			if (!f.isEmpty()) {
+				String orgname = f.getOriginalFilename();
+				String savedName = (uploadFile(f.getOriginalFilename(), f.getBytes()));
+				String newname = savedName;
+				vo.setOrgname(orgname);
+				vo.setNewname(newname);
+			}
+			
+			// 게시물을 db에 등록
+			service2.openboard_join(vo);
+			
+			return "redirect:/userLibrary/service/openboard/list";
+		}
+		
+		// 공개자료실 리스트 메소드
+		@RequestMapping(value = "userLibrary/service/openboard/list", method = RequestMethod.GET)
+		public String openboard_list(Model model) throws Exception {
+			logger.info("공개자료실 게시판 리스트 폼 페이지");
+			
+			// db에 담긴 전체 리스트를 list 란 이름으로 지정
+			model.addAttribute("list",service2.openboard_list());
+			
+			return "userLibrary/service/openboard/list";
+		}
+		
+		// 공개자료실 게시판 상세글 메소드
+		@RequestMapping(value = "userLibrary/service/openboard/read", method = RequestMethod.GET)
+		public String openboard_read(O_BoardVO vo, Model model) throws Exception {
+			
+			model.addAttribute(service2.openboard_read(vo));
+			
+			// 해당 게시글을 읽을때마다 viewcnt(뷰카운터) +1
+			service2.openboard_viewcnt(vo);
+			
+			return "userLibrary/service/openboard/read";
+		}
+		
+		// 공개자료실 게시판 글 삭제 메소드
+		@RequestMapping(value = "userLibrary/service/openboard/delete", method = RequestMethod.POST)
+		public String openboard_delete(O_BoardVO vo, RedirectAttributes rttr) throws Exception {
+			
+			// 삭제하는 게시글 안에있는 파일의 newname을가져옴
+			// 이유는 파일을 저장할때 원본이름이 아닌 수정된 newname으로 저장했음
+			String filename = vo.getNewname();
+			
+			// 해당 파일의 물리적경로랑 위에서 filename(newname)을 합치면
+			// 해당 경로의 실제 파일이 있는위치가 되서 그 파일을 삭제함
+			File file = new File("C:/Last_Project/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/library/resources/file/"+filename);
+			file.delete();
+			
+			service2.openboard_delete(vo);
+			return "redirect:/userLibrary/service/openboard/list";
+		}
+		
+		// 공개자료실 게시판 글 수정 폼 메소드
+		@RequestMapping(value = "userLibrary/service/openboard/modify", method = RequestMethod.GET)
+		public String openboard_modify(O_BoardVO vo, Model model) throws Exception {
+			model.addAttribute(service2.openboard_read(vo));
+			return "userLibrary/service/openboard/modify";
+		}
+		
+		// 공개자료실 게시판 글 수정 메소드
+		@RequestMapping(value = "userLibrary/service/openboard/modify", method = RequestMethod.POST)
+		public String openboard_modify(O_BoardVO vo, RedirectAttributes rttr, Model model) throws Exception {
+			
+			// 수정 할때
+			// 실제 존재하는 파일을 삭제 -> 다시 그 경로에 새로운파일을 생성 -> db 업데이트
+			String filename = vo.getNewname();
+			File file = new File("/resources/file/"+filename);
+			file.delete();
+			
+			Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+			vo.setId(auth.getName());
+			
+			MultipartFile f = vo.getFile();
+			if (!f.isEmpty()) {
+				String orgname = f.getOriginalFilename();
+				String savedName = (uploadFile(f.getOriginalFilename(), f.getBytes()));
+				String newname = savedName;
+				vo.setOrgname(orgname);
+				vo.setNewname(newname);
+			}
+			
+			service2.openboard_modify(vo);
+			
+			return "redirect:/userLibrary/service/openboard/list";
+		}
+		
+		private String uploadFile(String originalName, byte[] fileData) throws Exception {
+			
+			// 파일 중복 이름을 막기위해 UUID 사용
+			UUID uid = UUID.randomUUID();
+			
+			// 파일이름을 저장할때
+			// 랜덤이름 + _ + 실제파일명 으로 하고 uploadpath 에 실제 파일을 저장(복사) 해놓음
+			// uploadpath 를 서버안에다가 지정해놓으면, 실제 프로젝트를
+			// 새로고침을 안해도 서버내에 존재하기때문에 파일을 바로 다운로드 가능함.
+			// 단 서버를 삭제하고 다시만들시 저장된 파일들은 전부 날라감
+			String savedName = uid.toString() + "_" + originalName;
+			File target = new File(uploadPath, savedName);
+			FileCopyUtils.copy(fileData, target);
+			
+			return savedName;
+		}
 }

@@ -27,9 +27,10 @@ NUM integer auto_increment,
 ID varchar(50),
 TITLE varchar(200), 
 CONTENT text,
-WRITE_DATE DATETIME,
+WRITE_DATE DATETIME default now(),
 VIEWCNT integer default 0,
-FILESRC VARCHAR(1000),
+ORGNAME VARCHAR(1000),
+NEWNAME VARCHAR(1000),
 constraint pk_o_board primary key(NUM)
 );
 
