@@ -158,7 +158,21 @@ public class AdminBookController {
 
 		return "adminLibrary/adminBook/warehouse/w_list";
 	}
+	
+	//폐기도서 등록.
+	@RequestMapping(value = "adminLibrary/adminBook/warehouse/w_li", method = RequestMethod.GET)
+	public String reg_WGet(Model model, BookVO vo) {
+		logger.info("selectBookList page");
+		model.addAttribute("list",service.selectBookList2(vo));
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setPageInfo(vo);
+		
+		pageMaker.setTotalCount(service.countBookList2(vo));
+		model.addAttribute("pageMaker", pageMaker);
 
+		return "adminLibrary/adminBook/warehouse/w_list";
+	}
 
 
 }

@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.kosta.mappers.LibInfoMapper">
 
-<select id="b_status" resultType="b_statusVO">
+<select id="b_status" resultType="B_statusVO">
 select 
 (select count(bno) from book where bno like '0101%') si,
 (select count(bno)from book where bno like '%0102%') san,

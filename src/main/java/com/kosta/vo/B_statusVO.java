@@ -1,6 +1,6 @@
 package com.kosta.vo;
 
-public class b_statusVO {
+public class B_statusVO {
 
 	private int si, san, so, pro, jung, sang, gun, inm, wol,allb, wol_cnt;
 

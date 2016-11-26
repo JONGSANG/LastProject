@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kosta.dao.LibInfoDAO;
-import com.kosta.vo.b_statusVO;
+import com.kosta.vo.B_statusVO;
 
 @Service
 public class LibInfoServiceImpl implements LibInfoService {
@@ -13,7 +13,7 @@ public class LibInfoServiceImpl implements LibInfoService {
 	private LibInfoDAO libInfoDAO;
 
 	@Override
-	public b_statusVO b_status() {
+	public B_statusVO b_status() {
 		return libInfoDAO.b_status();
 	}
 	

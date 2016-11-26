@@ -4,7 +4,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.kosta.vo.b_statusVO;
+import com.kosta.vo.B_statusVO;
 
 @Repository
 public class LibInfoDAOImpl implements LibInfoDAO {
@@ -15,7 +15,7 @@ public class LibInfoDAOImpl implements LibInfoDAO {
 	private SqlSession sqlSession;
 
 	@Override
-	public b_statusVO b_status() {
+	public B_statusVO b_status() {
 		return sqlSession.selectOne(namespace+"b_status");
 	}
 
