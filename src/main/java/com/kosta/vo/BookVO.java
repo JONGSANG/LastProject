@@ -8,7 +8,31 @@ public class BookVO extends PageInfo{
 	private Date buy_date;
 	private int bLocation;
 	private int bYear;
+	private String searchType;
+	private String value;
+	private String keyword;
 	
+	
+	
+	
+	public String getKeyword() {
+		return keyword;
+	}
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
+	public String getSearchType() {
+		return searchType;
+	}
+	public void setSearchType(String searchType) {
+		this.searchType = searchType;
+	}
+	public String getValue() {
+		return value;
+	}
+	public void setValue(String value) {
+		this.value = value;
+	}
 	public String getbNo() {
 		return bNo;
 	}

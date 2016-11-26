@@ -129,10 +129,11 @@ public class AdminBookController {
 		model.addAttribute("read",searchService.readInfo(bNo));
 	}
 
-	
-	@RequestMapping(value = "adminLibrary/adminBook/register/index", method = RequestMethod.GET)
-	public String reg_bookGet(Model model, BookVO vo) {
+	//비치도서 목록보기.
+	@RequestMapping(value = "adminLibrary/adminBook/room_b/b_list", method = RequestMethod.GET)
+	public String b_listGet(Model model, BookVO vo) {
 		logger.info("selectBookList page");
+		vo.setbLocation(1);
 		model.addAttribute("list",service.selectBookList(vo));
 		
 		PageMaker pageMaker = new PageMaker();
@@ -141,7 +142,23 @@ public class AdminBookController {
 		pageMaker.setTotalCount(service.countBookList(vo));
 		model.addAttribute("pageMaker", pageMaker);
 
-		return "adminLibrary/adminBook/register/index";
+		return "adminLibrary/adminBook/room_b/index";
+	}
+	
+	//비치도서 목록보기.
+	@RequestMapping(value = "adminLibrary/adminBook/room_b/w_list", method = RequestMethod.GET)
+	public String w_listGet(Model model, BookVO vo) {
+		logger.info("selectBookList page");
+		vo.setbLocation(0);
+		model.addAttribute("list",service.selectBookList(vo));
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setPageInfo(vo);
+		
+		pageMaker.setTotalCount(service.countBookList(vo));
+		model.addAttribute("pageMaker", pageMaker);
+
+		return "adminLibrary/adminBook/room_b/index";
 	}
 
 

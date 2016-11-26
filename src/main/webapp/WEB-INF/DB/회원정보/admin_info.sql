@@ -1,6 +1,7 @@
 select * from admin_info;
 drop table admin_info;
 
+delete from admin_info
 --------------------------------------------------------------
 -- admin_info : admin 정보 Table
 --------------------------------------------------------------

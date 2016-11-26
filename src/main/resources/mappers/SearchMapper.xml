@@ -92,29 +92,6 @@ limit #{pageStart}, #{perPageNum}
 		num = #{num} 	
 </update>
 
-
-
-
-
-<!-- 
-<select id="readInfo" resultType="BookVO">
-	select bNo, bTitle, bWriter, bCompany, bIntro, buy_date, bLocation, bYear
-	from book
-	where bNo = #{bNo}
-</select> -->
-
-<!-- <select id="search" resultType="BookVO">
-	select * from book where #{select} = #{value}
-</select> -->
-<!-- 
-<select id="search" resultType="BookVO">
-	<![CDATA[
-	select * from book where bTitle like concat('%',#{value},'%')
-	]]>
-</select>
- -->
- 
- 
  
  <sql id="search">
  <if test="searchType != null" > 
@@ -124,10 +101,11 @@ limit #{pageStart}, #{perPageNum}
 
 <select id="b_searchResult" resultType="SearchVO">
 <![CDATA[  
-select a.bNO,  b.brent , btitle, bWriter, bCompany, bIntro, buy_date, bLocation, bYear
+select a.bno,  b.brent , btitle, bWriter, bCompany, bIntro, buy_date, bLocation, bYear
 from book a 
 inner join room_b b on a.bno = b.bno 
 where  bLocation > 0 
+and a.bno not LIKE '99%'
 ]]> 
   <include refid="search"></include>
 <![CDATA[    
@@ -139,10 +117,11 @@ where  bLocation > 0
   
 <select id="listBSearchCount" resultType="int">
 <![CDATA[  
-select count(a.bNO)
+select count(a.bno)
 from book a 
 inner join room_b b on a.bno = b.bno 
 where  bLocation > 0 
+and a.bno not LIKE '99%'
 ]]>
   <include refid="search"></include>
 
@@ -151,10 +130,11 @@ where  bLocation > 0
 
 <select id="n_searchResult" resultType="SearchVO">
 <![CDATA[  
-select a.bNO,  b.brent , btitle, bWriter, bCompany, bIntro, buy_date, bLocation, bYear
+select count(a.bNO)
 from book a 
 inner join room_b b on a.bno = b.bno 
-where  bLocation > 0 
+where  bLocation > 0
+and a.bno not LIKE '99%' 
 and buy_date between #{start_date} and #{end_date}
 ]]> 
 <![CDATA[    
@@ -171,6 +151,7 @@ select count(a.bNO)
 from book a 
 inner join room_b b on a.bno = b.bno 
 where  bLocation > 0 
+and a.bno not LIKE '99%'
 and buy_date between #{start_date} and #{end_date}
 ]]>
  

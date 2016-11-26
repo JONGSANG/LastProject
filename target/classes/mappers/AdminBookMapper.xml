@@ -85,27 +85,109 @@ WHERE BNO=#{bno}
 
 
 <!-- 신규 도서 등록 SQL -->
+<sql id="search">
+<if test="searchType!=null">
+	AND BTITLE LIKE CONCAT('%',#{keyword},'%')
+	<if test="searchType=='01'">
+		<if test="value=='전체'">
+		AND bno LIKE CONCAT(#{searchType},'%')
+		</if>
+		<if test="value=='시집'">
+		AND bno LIKE CONCAT(#{searchType},'01','%')
+		</if>
+		<if test="value=='산문집'">
+		AND bno LIKE CONCAT(#{searchType},'02','%')
+		</if>
+		<if test="value=='소설'">
+		AND bno LIKE CONCAT(#{searchType},'03','%')
+		</if>
+	</if>
+	<if test="searchType=='03'">
+		<if test="value=='전체'">
+		AND bno LIKE CONCAT(#{searchType},'%')
+		</if>
+		<if test="value=='프로그래밍'">
+		AND bno LIKE CONCAT(#{searchType},'01','%')
+		</if>
+	</if>
+	<if test="searchType=='04'">
+		<if test="value=='전체'">
+		AND bno LIKE CONCAT(#{searchType},'%')
+		</if>
+		<if test="value=='정치/외교'">
+		AND bno LIKE CONCAT(#{searchType},'01','%')
+		</if>
+		<if test="value=='생태/환경'">
+		AND bno LIKE CONCAT(#{searchType},'02','%')
+		</if>
+	</if>
+	<if test="searchType=='05'">
+		<if test="value=='전체'">
+		AND bno LIKE CONCAT(#{searchType},'%')
+		</if>
+		<if test="value=='건축'">
+		AND bno LIKE CONCAT(#{searchType},'01','%')
+		</if>
+	</if>
+	<if test="searchType=='07'">
+		<if test="value=='전체'">
+		AND bno LIKE CONCAT(#{searchType},'%')
+		</if>
+		<if test="value=='인물'">
+		AND bno LIKE CONCAT(#{searchType},'01','%')
+		</if>
+	</if>
+	<if test="searchType=='99'">
+		<if test="value=='전체'">
+		AND bno LIKE CONCAT(#{searchType},'%')
+		</if>
+		<if test="value=='베스트일레븐'">
+		AND bno LIKE CONCAT(#{searchType},'01','%')
+		</if>
+		<if test="value=='GAMERZ'">
+		AND bno LIKE CONCAT(#{searchType},'02','%')
+		</if>
+		<if test="value=='PC사랑'">
+		AND bno LIKE CONCAT(#{searchType},'03','%')
+		</if>
+		<if test="value=='GQ코리아'">
+		AND bno LIKE CONCAT(#{searchType},'04','%')
+		</if>
+		<if test="value=='매거진B'">
+		AND bno LIKE CONCAT(#{searchType},'05','%')
+		</if>
+		<if test="value=='위즈키즈'">
+		AND bno LIKE CONCAT(#{searchType},'06','%')
+		</if>
+		<if test="value=='과학소년'">
+		AND bno LIKE CONCAT(#{searchType},'07','%')
+		</if>
+		<if test="value=='더스타'">
+		AND bno LIKE CONCAT(#{searchType},'08','%')
+		</if>
+		<if test="value=='마리끌레르'">
+		AND bno LIKE CONCAT(#{searchType},'09','%')
+		</if>
+		<if test="value=='아망'">
+		AND bno LIKE CONCAT(#{searchType},'10','%')
+		</if>
+		<if test="value=='탑기어'">
+		AND bno LIKE CONCAT(#{searchType},'11','%')
+		</if>
+		<if test="value=='좋은생각'">
+		AND bno LIKE CONCAT(#{searchType},'12','%')
+		</if>
+		<if test="value=='행복이가득한집'">
+		AND bno LIKE CONCAT(#{searchType},'13','%')
+		</if>
+	</if>
+</if>
+</sql>
 
 <select id="selectBookList" resultType="BookVO">
 select * from book
-<if test="searchType!=null">
-	<if test="searchType=='01'">
-	WHERE bno LIKE CONCAT('%',#{keyword},'%')
-	</if>
-	<if test="searchType=='이름'">
-	WHERE U.NAME LIKE CONCAT('%',#{keyword},'%')
-	</if>
-	<if test="searchType=='이메일'">
-	WHERE U.EMAIL LIKE CONCAT('%',#{keyword},'%')
-	</if>
-	<if test="searchType=='휴대폰번호'">
-	WHERE U.PHONE LIKE CONCAT('%',#{keyword},'%')
-	</if>
-	<if test="searchType=='회원등급'">
-	WHERE R.ROLE LIKE CONCAT('%',#{keyword},'%')
-	</if>
-</if>
- 
+where bLocation=#{bLocation}
+<include refid="search"></include>
 order by bno desc
 limit #{pageStart}, #{perPageNum}
 </select>
@@ -114,6 +196,9 @@ limit #{pageStart}, #{perPageNum}
  <select id="countBookList" resultType="int">
  select count(bno) 
  from book
+ where bLocation=#{bLocation}
+ 
+ <include refid="search"></include>
  </select>
 
 
