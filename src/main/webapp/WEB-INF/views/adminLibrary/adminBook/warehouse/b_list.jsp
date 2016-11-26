@@ -70,7 +70,7 @@ function updateList(str){
 		<th width="100">저자명</th>
 		<th width="100">출판사</th>
 		<th width="100">구입 날짜</th>
-		<th width="100">대출 여부</th>
+		<th width="100">폐기 날짜</th>
 	</tr>
 	<c:forEach items="${list}" var="bookVO" >
 		<tr>
@@ -79,15 +79,7 @@ function updateList(str){
 			<td width="100">${bookVO.bWriter}</td>
 			<td width="100">${bookVO.bCompany}</td>
 			<td width="100"><fmt:formatDate value="${bookVO.buy_date}" pattern="yyyy.MM.dd"/></td>
-			<td width="100">
-				<c:if test="${bookVO.bRent == 1}">
-					N
-				</c:if> 
-				<c:if test="${bookVO.bRent != 1 }">
-					대출 중
-				</c:if>
-			</td>
-			
+			<td width="100"><fmt:formatDate value="${bookVO.f_date}" pattern="yyyy.MM.dd"/></td>
 		</tr>
 	</c:forEach>
 </table>

@@ -133,7 +133,6 @@ public class AdminBookController {
 	@RequestMapping(value = "adminLibrary/adminBook/room_b/b_list", method = RequestMethod.GET)
 	public String b_listGet(Model model, BookVO vo) {
 		logger.info("selectBookList page");
-		vo.setbLocation(1);
 		model.addAttribute("list",service.selectBookList(vo));
 		
 		PageMaker pageMaker = new PageMaker();
@@ -149,13 +148,12 @@ public class AdminBookController {
 	@RequestMapping(value = "adminLibrary/adminBook/warehouse/w_list", method = RequestMethod.GET)
 	public String w_listGet(Model model, BookVO vo) {
 		logger.info("selectBookList page");
-		vo.setbLocation(0);
-		model.addAttribute("list",service.selectBookList(vo));
+		model.addAttribute("list",service.selectBookList2(vo));
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setPageInfo(vo);
 		
-		pageMaker.setTotalCount(service.countBookList(vo));
+		pageMaker.setTotalCount(service.countBookList2(vo));
 		model.addAttribute("pageMaker", pageMaker);
 
 		return "adminLibrary/adminBook/warehouse/w_list";

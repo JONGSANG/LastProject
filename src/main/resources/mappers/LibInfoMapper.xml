@@ -16,6 +16,7 @@ select
 (select count(bno)from book where bno like '%0501%') gun,
 (select count(bno)from book where bno like '%0701%') inm,
 (select count(bno)from book where bno like '%99%') wol,
+(select count(distinct bcompany)from book where bno like '%99%') wol_cnt,
 (select count(bno)from book) allb
 </select>
 

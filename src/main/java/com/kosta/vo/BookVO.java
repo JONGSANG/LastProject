@@ -5,9 +5,9 @@ import java.util.Date;
 public class BookVO extends PageInfo{
 
 	private String bNo, bTitle, bWriter, bCompany, bIntro;
-	private Date buy_date;
+	private Date buy_date,f_date;
 	private int bLocation;
-	private int bYear;
+	private int bYear,bRent, brent_cnt;
 	private String searchType;
 	private String value;
 	private String keyword;
@@ -15,6 +15,24 @@ public class BookVO extends PageInfo{
 	
 	
 	
+	public Date getF_date() {
+		return f_date;
+	}
+	public void setF_date(Date f_date) {
+		this.f_date = f_date;
+	}
+	public int getbRent() {
+		return bRent;
+	}
+	public void setbRent(int bRent) {
+		this.bRent = bRent;
+	}
+	public int getBrent_cnt() {
+		return brent_cnt;
+	}
+	public void setBrent_cnt(int brent_cnt) {
+		this.brent_cnt = brent_cnt;
+	}
 	public String getKeyword() {
 		return keyword;
 	}

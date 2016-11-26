@@ -90,116 +90,137 @@ WHERE BNO=#{bno}
 	AND BTITLE LIKE CONCAT('%',#{keyword},'%')
 	<if test="searchType=='01'">
 		<if test="value=='전체'">
-		AND bno LIKE CONCAT(#{searchType},'%')
+		and a.bno like CONCAT(#{searchType},'%')
 		</if>
 		<if test="value=='시집'">
-		AND bno LIKE CONCAT(#{searchType},'01','%')
+		and a.bno like CONCAT(#{searchType},'01','%')
 		</if>
 		<if test="value=='산문집'">
-		AND bno LIKE CONCAT(#{searchType},'02','%')
+		and a.bno like CONCAT(#{searchType},'02','%')
 		</if>
 		<if test="value=='소설'">
-		AND bno LIKE CONCAT(#{searchType},'03','%')
+		and a.bno like CONCAT(#{searchType},'03','%')
 		</if>
 	</if>
 	<if test="searchType=='03'">
 		<if test="value=='전체'">
-		AND bno LIKE CONCAT(#{searchType},'%')
+		and a.bno like CONCAT(#{searchType},'%')
 		</if>
 		<if test="value=='프로그래밍'">
-		AND bno LIKE CONCAT(#{searchType},'01','%')
+		and a.bno like CONCAT(#{searchType},'01','%')
 		</if>
 	</if>
 	<if test="searchType=='04'">
 		<if test="value=='전체'">
-		AND bno LIKE CONCAT(#{searchType},'%')
+		and a.bno like CONCAT(#{searchType},'%')
 		</if>
 		<if test="value=='정치/외교'">
-		AND bno LIKE CONCAT(#{searchType},'01','%')
+		and a.bno like CONCAT(#{searchType},'01','%')
 		</if>
 		<if test="value=='생태/환경'">
-		AND bno LIKE CONCAT(#{searchType},'02','%')
+		and a.bno like CONCAT(#{searchType},'02','%')
 		</if>
 	</if>
 	<if test="searchType=='05'">
 		<if test="value=='전체'">
-		AND bno LIKE CONCAT(#{searchType},'%')
+		and a.bno like CONCAT(#{searchType},'%')
 		</if>
 		<if test="value=='건축'">
-		AND bno LIKE CONCAT(#{searchType},'01','%')
+		and a.bno like CONCAT(#{searchType},'01','%')
 		</if>
 	</if>
 	<if test="searchType=='07'">
 		<if test="value=='전체'">
-		AND bno LIKE CONCAT(#{searchType},'%')
+		and a.bno like CONCAT(#{searchType},'%')
 		</if>
 		<if test="value=='인물'">
-		AND bno LIKE CONCAT(#{searchType},'01','%')
+		and a.bno like CONCAT(#{searchType},'01','%')
 		</if>
 	</if>
 	<if test="searchType=='99'">
 		<if test="value=='전체'">
-		AND bno LIKE CONCAT(#{searchType},'%')
+		and a.bno like CONCAT(#{searchType},'%')
 		</if>
 		<if test="value=='베스트일레븐'">
-		AND bno LIKE CONCAT(#{searchType},'01','%')
+		and a.bno like CONCAT(#{searchType},'01','%')
 		</if>
 		<if test="value=='GAMERZ'">
-		AND bno LIKE CONCAT(#{searchType},'02','%')
+		and a.bno like CONCAT(#{searchType},'02','%')
 		</if>
 		<if test="value=='PC사랑'">
-		AND bno LIKE CONCAT(#{searchType},'03','%')
+		and a.bno like CONCAT(#{searchType},'03','%')
 		</if>
 		<if test="value=='GQ코리아'">
-		AND bno LIKE CONCAT(#{searchType},'04','%')
+		and a.bno like CONCAT(#{searchType},'04','%')
 		</if>
 		<if test="value=='매거진B'">
-		AND bno LIKE CONCAT(#{searchType},'05','%')
+		and a.bno like CONCAT(#{searchType},'05','%')
 		</if>
 		<if test="value=='위즈키즈'">
-		AND bno LIKE CONCAT(#{searchType},'06','%')
+		and a.bno like CONCAT(#{searchType},'06','%')
 		</if>
 		<if test="value=='과학소년'">
-		AND bno LIKE CONCAT(#{searchType},'07','%')
+		and a.bno like CONCAT(#{searchType},'07','%')
 		</if>
 		<if test="value=='더스타'">
-		AND bno LIKE CONCAT(#{searchType},'08','%')
+		and a.bno like CONCAT(#{searchType},'08','%')
 		</if>
 		<if test="value=='마리끌레르'">
-		AND bno LIKE CONCAT(#{searchType},'09','%')
+		and a.bno like CONCAT(#{searchType},'09','%')
 		</if>
 		<if test="value=='아망'">
-		AND bno LIKE CONCAT(#{searchType},'10','%')
+		and a.bno like CONCAT(#{searchType},'10','%')
 		</if>
 		<if test="value=='탑기어'">
-		AND bno LIKE CONCAT(#{searchType},'11','%')
+		and a.bno like CONCAT(#{searchType},'11','%')
 		</if>
 		<if test="value=='좋은생각'">
-		AND bno LIKE CONCAT(#{searchType},'12','%')
+		and a.bno like CONCAT(#{searchType},'12','%')
 		</if>
 		<if test="value=='행복이가득한집'">
-		AND bno LIKE CONCAT(#{searchType},'13','%')
+		and a.bno like CONCAT(#{searchType},'13','%')
 		</if>
 	</if>
 </if>
 </sql>
-
+<!-- 비치도서목록 -->
 <select id="selectBookList" resultType="BookVO">
-select * from book
-where bLocation=#{bLocation}
+select a.bno,  b.brent , btitle, bWriter, bCompany, bIntro, buy_date, bLocation, bYear
+from book a 
+inner join room_b b on a.bno = b.bno 
+where  bLocation > 0 
 <include refid="search"></include>
 order by bno desc
 limit #{pageStart}, #{perPageNum}
 </select>
 
 <!-- 페이징 -->
- <select id="countBookList" resultType="int">
- select count(bno) 
- from book
- where bLocation=#{bLocation}
- 
+<select id="countBookList" resultType="int">
+select count(a.bno) 
+from book a 
+inner join room_b b on a.bno = b.bno 
+where  bLocation = 1 
  <include refid="search"></include>
  </select>
 
+<!-- 폐기도서목록 -->
+<select id="selectBookList2" resultType="BookVO">
+select a.bno,  b.f_date , btitle, bWriter, bCompany, bIntro, buy_date, bLocation, bYear
+from book a 
+inner join room_f b on a.bno = b.bno 
+where  bLocation = 0 
+<include refid="search"></include>
+order by bno desc
+limit #{pageStart}, #{perPageNum}
+</select>
+
+<!-- 페이징 -->
+<select id="countBookList2" resultType="int">
+select count(a.bno) 
+from book a 
+inner join room_f b on a.bno = b.bno 
+where  bLocation = 1 
+ <include refid="search"></include>
+ </select>
 
 </mapper>

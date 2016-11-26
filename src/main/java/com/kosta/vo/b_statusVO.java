@@ -2,7 +2,15 @@ package com.kosta.vo;
 
 public class b_statusVO {
 
-	private int si, san, so, pro, jung, sang, gun, inm, wol,allb;
+	private int si, san, so, pro, jung, sang, gun, inm, wol,allb, wol_cnt;
+
+	public int getWol_cnt() {
+		return wol_cnt;
+	}
+
+	public void setWol_cnt(int wol_cnt) {
+		this.wol_cnt = wol_cnt;
+	}
 
 	public int getSi() {
 		return si;
