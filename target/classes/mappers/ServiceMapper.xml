@@ -191,4 +191,28 @@ limit #{pageStart}, #{perPageNum}
 	select count(state) from culture_list where state = 1 and anum = #{num}
 </select>
 
+<insert id="openboard_join">
+	insert into o_board(id, title, content, orgname, newname) values(#{id}, #{title}, #{content}, #{orgname}, #{newname})
+</insert>
+
+<select id="openboard_list" resultType="O_BoardVO">
+	select num, title, id, write_date, viewcnt from o_board
+</select>
+
+<select id="openboard_read" resultType="O_BoardVO">
+	select * from o_board where num = #{num}
+</select>
+
+<delete id="openboard_delete">
+	delete from o_board where num = #{num}
+</delete>
+
+<update id="openboard_modify">
+	update o_board set title = #{title}, content = #{content}, newname = #{newname}, orgname = #{orgname} where num = #{num}
+</update>
+
+<update id="openboard_viewcnt">
+	update o_board set viewcnt = viewcnt+1 where num=#{num} 
+</update>
+
 </mapper>

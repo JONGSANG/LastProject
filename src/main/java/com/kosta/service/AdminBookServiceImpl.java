@@ -91,4 +91,14 @@ public class AdminBookServiceImpl implements AdminBookService {
 		return adminBookDAO.countBookList(vo);
 	}
 
+	@Override
+	public List<BookVO> selectBookList2(BookVO vo) {
+		return adminBookDAO.selectBookList2(vo);
+	}
+
+	@Override
+	public int countBookList2(BookVO vo) {
+		return adminBookDAO.countBookList2(vo);
+	}
+
 }

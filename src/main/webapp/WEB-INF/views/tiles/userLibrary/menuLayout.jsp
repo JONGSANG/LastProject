@@ -14,7 +14,6 @@
 <script src="/resources/js/jquery-1.8.3.min.js"></script>
 <script src="/resources/js/tms-0.4.1.js"></script>
 <script src="/resources/js/menu.js"></script>
-
 </head>
 <body>
 	<div class="slider">

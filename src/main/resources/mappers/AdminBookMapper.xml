@@ -85,36 +85,142 @@ WHERE BNO=#{bno}
 
 
 <!-- 신규 도서 등록 SQL -->
-
-<select id="selectBookList" resultType="BookVO">
-select * from book
+<sql id="search">
 <if test="searchType!=null">
+	AND BTITLE LIKE CONCAT('%',#{keyword},'%')
 	<if test="searchType=='01'">
-	WHERE bno LIKE CONCAT('%',#{keyword},'%')
+		<if test="value=='전체'">
+		and a.bno like CONCAT(#{searchType},'%')
+		</if>
+		<if test="value=='시집'">
+		and a.bno like CONCAT(#{searchType},'01','%')
+		</if>
+		<if test="value=='산문집'">
+		and a.bno like CONCAT(#{searchType},'02','%')
+		</if>
+		<if test="value=='소설'">
+		and a.bno like CONCAT(#{searchType},'03','%')
+		</if>
 	</if>
-	<if test="searchType=='이름'">
-	WHERE U.NAME LIKE CONCAT('%',#{keyword},'%')
+	<if test="searchType=='03'">
+		<if test="value=='전체'">
+		and a.bno like CONCAT(#{searchType},'%')
+		</if>
+		<if test="value=='프로그래밍'">
+		and a.bno like CONCAT(#{searchType},'01','%')
+		</if>
 	</if>
-	<if test="searchType=='이메일'">
-	WHERE U.EMAIL LIKE CONCAT('%',#{keyword},'%')
+	<if test="searchType=='04'">
+		<if test="value=='전체'">
+		and a.bno like CONCAT(#{searchType},'%')
+		</if>
+		<if test="value=='정치/외교'">
+		and a.bno like CONCAT(#{searchType},'01','%')
+		</if>
+		<if test="value=='생태/환경'">
+		and a.bno like CONCAT(#{searchType},'02','%')
+		</if>
 	</if>
-	<if test="searchType=='휴대폰번호'">
-	WHERE U.PHONE LIKE CONCAT('%',#{keyword},'%')
+	<if test="searchType=='05'">
+		<if test="value=='전체'">
+		and a.bno like CONCAT(#{searchType},'%')
+		</if>
+		<if test="value=='건축'">
+		and a.bno like CONCAT(#{searchType},'01','%')
+		</if>
 	</if>
-	<if test="searchType=='회원등급'">
-	WHERE R.ROLE LIKE CONCAT('%',#{keyword},'%')
+	<if test="searchType=='07'">
+		<if test="value=='전체'">
+		and a.bno like CONCAT(#{searchType},'%')
+		</if>
+		<if test="value=='인물'">
+		and a.bno like CONCAT(#{searchType},'01','%')
+		</if>
+	</if>
+	<if test="searchType=='99'">
+		<if test="value=='전체'">
+		and a.bno like CONCAT(#{searchType},'%')
+		</if>
+		<if test="value=='베스트일레븐'">
+		and a.bno like CONCAT(#{searchType},'01','%')
+		</if>
+		<if test="value=='GAMERZ'">
+		and a.bno like CONCAT(#{searchType},'02','%')
+		</if>
+		<if test="value=='PC사랑'">
+		and a.bno like CONCAT(#{searchType},'03','%')
+		</if>
+		<if test="value=='GQ코리아'">
+		and a.bno like CONCAT(#{searchType},'04','%')
+		</if>
+		<if test="value=='매거진B'">
+		and a.bno like CONCAT(#{searchType},'05','%')
+		</if>
+		<if test="value=='위즈키즈'">
+		and a.bno like CONCAT(#{searchType},'06','%')
+		</if>
+		<if test="value=='과학소년'">
+		and a.bno like CONCAT(#{searchType},'07','%')
+		</if>
+		<if test="value=='더스타'">
+		and a.bno like CONCAT(#{searchType},'08','%')
+		</if>
+		<if test="value=='마리끌레르'">
+		and a.bno like CONCAT(#{searchType},'09','%')
+		</if>
+		<if test="value=='아망'">
+		and a.bno like CONCAT(#{searchType},'10','%')
+		</if>
+		<if test="value=='탑기어'">
+		and a.bno like CONCAT(#{searchType},'11','%')
+		</if>
+		<if test="value=='좋은생각'">
+		and a.bno like CONCAT(#{searchType},'12','%')
+		</if>
+		<if test="value=='행복이가득한집'">
+		and a.bno like CONCAT(#{searchType},'13','%')
+		</if>
 	</if>
 </if>
- 
+</sql>
+<!-- 비치도서목록 -->
+<select id="selectBookList" resultType="BookVO">
+select a.bno,  b.brent , btitle, bWriter, bCompany, bIntro, buy_date, bLocation, bYear
+from book a 
+inner join room_b b on a.bno = b.bno 
+where  bLocation > 0 
+<include refid="search"></include>
 order by bno desc
 limit #{pageStart}, #{perPageNum}
 </select>
 
 <!-- 페이징 -->
- <select id="countBookList" resultType="int">
- select count(bno) 
- from book
+<select id="countBookList" resultType="int">
+select count(a.bno) 
+from book a 
+inner join room_b b on a.bno = b.bno 
+where  bLocation = 1 
+ <include refid="search"></include>
  </select>
 
+<!-- 폐기도서목록 -->
+<select id="selectBookList2" resultType="BookVO">
+select a.bno,  b.f_date , btitle, bWriter, bCompany, bIntro, buy_date, bLocation, bYear
+from book a 
+inner join room_f b on a.bno = b.bno 
+where  bLocation = 0 
+<include refid="search"></include>
+order by bno desc
+limit #{pageStart}, #{perPageNum}
+</select>
+
+<!-- 페이징 -->
+<select id="countBookList2" resultType="int">
+select count(a.bno) 
+from book a 
+inner join room_f b on a.bno = b.bno 
+where  bLocation = 1 
+ <include refid="search"></include>
+ </select>
 
 </mapper>

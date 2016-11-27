@@ -6,6 +6,7 @@ import com.kosta.vo.AfterVO;
 import com.kosta.vo.CultureVO;
 import com.kosta.vo.L_AfterVO;
 import com.kosta.vo.L_CultureVO;
+import com.kosta.vo.O_BoardVO;
 
 public interface ServiceService {
 	
@@ -76,4 +77,23 @@ public interface ServiceService {
 	
 	// 방과후 이벤트 신청 취소 메소드
 	public void culture_joindel(L_CultureVO vo) throws Exception;
+	
+	//---------------------- 공개자료실 ----------------------
+	// 공개자료실 글 작성 메소드
+	public void openboard_join(O_BoardVO vo) throws Exception;
+	
+	// 공개자료실 게시판 리스트 폼 메소드
+	public List<O_BoardVO> openboard_list() throws Exception;
+	
+	// 공개자료실 게시판 상세글 메소드
+	public O_BoardVO openboard_read(O_BoardVO vo) throws Exception;
+	
+	// 공개자료실 게시판 상세글 조회수
+	public void openboard_viewcnt(O_BoardVO vo) throws Exception;
+	
+	// 공개자료실 게시판 글 삭제 메소드
+	public void openboard_delete(O_BoardVO vo) throws Exception;
+	
+	// 공개자료실 게시판 글 수정 메소드
+	public void openboard_modify(O_BoardVO vo) throws Exception;
 }

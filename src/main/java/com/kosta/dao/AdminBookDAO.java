@@ -53,11 +53,17 @@ public interface AdminBookDAO {
 	
 	// 신규 도서 등록
 	
-	// 모든 책 리스트 불러오기
+	// 비치도서목록 불러오기
 	public List<BookVO> selectBookList(BookVO vo);
 	
 	// 책리스트 페이징
 	public int countBookList(BookVO vo);
+	
+	// 폐기 도서목록 불러오기
+	public List<BookVO> selectBookList2(BookVO vo);
+	
+	// 책리스트 페이징
+	public int countBookList2(BookVO vo);
 	
 
 }

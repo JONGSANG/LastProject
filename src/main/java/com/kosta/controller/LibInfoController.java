@@ -2,16 +2,22 @@ package com.kosta.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.kosta.service.LibInfoService;
+
 @Controller
 public class LibInfoController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(LibInfoController.class);
-	
+
+	@Autowired
+	private LibInfoService service;
+
 	@RequestMapping(value="userLibrary/libInfo/org", method=RequestMethod.GET)
 	public String orgGET(Model model) {
 		logger.info("조직도");
@@ -39,7 +45,7 @@ public class LibInfoController {
 	@RequestMapping(value="userLibrary/libInfo/b_status", method=RequestMethod.GET)
 	public String b_statusGET(Model model) {
 		logger.info("자료현황");
-		//
+		model.addAttribute("b_status",service.b_status());
 		return "userLibrary/libInfo/b_status";
 	}
 }

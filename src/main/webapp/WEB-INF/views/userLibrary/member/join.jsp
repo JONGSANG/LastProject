@@ -85,7 +85,7 @@ $(document).ready(function(){
 							<tr>
 								<td><img src="/resources/images/login/login_71.png" width="100" height="23">&nbsp;&nbsp;</td>
 								<td><input type="text" id="id" name="id" placeholder="최대 12자 영문/숫자" tabindex="1" size="23" style="text-align: center; font-size: 13px; height: 25px"></td>
-								<td><button class="comfirmbtn" id="result" value="ID중복확인" style="padding-top: 5px">ID중복확인</button></td>
+								<td>&nbsp;<button class="comfirmbtn" id="result" value="ID중복확인" style="padding-top: 5px">ID중복확인</button></td>
 							</tr>
 							<tr>
 								<td><img src="/resources/images/login/login_72.png" width="100" height="23"></td>
