@@ -18,7 +18,7 @@
 		<tr>
 			<td>${after.num}</td>
 			<td>${after.aselect}</td>
-			<td><a href="/adminLibrary/adminService/a_detail?num='${after.num}'">${after.title}</a>
+			<td><a href="/adminLibrary/adminService/a_detail?num=${after.num}">${after.title}</a>
 			<td>${after.tocnt}/${after.max_cnt}</td>
 		</tr>
 		</c:forEach>

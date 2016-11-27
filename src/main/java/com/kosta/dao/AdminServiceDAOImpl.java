@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.kosta.vo.AfterVO;
 import com.kosta.vo.CultureVO;
 import com.kosta.vo.L_AfterVO;
+import com.kosta.vo.L_CultureVO;
 import com.kosta.vo.PageInfo;
 
 @Repository
@@ -45,6 +46,16 @@ public class AdminServiceDAOImpl implements AdminServiceDAO {
 	@Override
 	public List<L_AfterVO> afterID(int num) throws Exception {
 		return sqlSession.selectList("AdminServiceMapper.afterID", num);
+	}
+
+	@Override
+	public CultureVO cultureDetail(int num) throws Exception {
+		return sqlSession.selectOne("AdminServiceMapper.cultureDetail", num);
+	}
+
+	@Override
+	public List<L_CultureVO> cultureID(int num) throws Exception {
+		return sqlSession.selectList("AdminServiceMapper.cultureID", num);
 	}
 	
 }

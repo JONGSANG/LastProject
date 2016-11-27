@@ -9,6 +9,7 @@ import com.kosta.dao.AdminServiceDAO;
 import com.kosta.vo.AfterVO;
 import com.kosta.vo.CultureVO;
 import com.kosta.vo.L_AfterVO;
+import com.kosta.vo.L_CultureVO;
 import com.kosta.vo.PageInfo;
 
 @Service
@@ -45,6 +46,16 @@ public class AdminServiceServiceImpl implements AdminServiceService {
 	@Override
 	public List<L_AfterVO> afterID(int num) throws Exception {
 		return adminServicedao.afterID(num);
+	}
+
+	@Override
+	public CultureVO cultureDetail(int num) throws Exception {
+		return adminServicedao.cultureDetail(num);
+	}
+
+	@Override
+	public List<L_CultureVO> cultureID(int num) throws Exception {
+		return adminServicedao.cultureID(num);
 	}
 	
 	

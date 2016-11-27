@@ -11,7 +11,7 @@
 	<table>
 		<tr>
 			<th>제목</th>
-			<th>${detail.id}</th>
+			<th>${detail.title}</th>
 		</tr>
 		<tr>
 			<td>시작일</td>
@@ -19,8 +19,8 @@
 			<td>현재인원</td>
 		</tr>
 		<tr>
-			<td><fmt:formatDate value="${detail.start_date}" pattern="yyyy.MM.dd"/></td>
-			<td><fmt:formatDate value="${detail.end_date}" pattern="yyyy.MM.dd"/></td>
+			<td>${detail.start_date}"</td>
+			<td>${detail.end_date}"</td>
 			<td>${detail.tocnt}/${detail.max_cnt}</td>
 		</tr>
 	</table>
@@ -32,12 +32,12 @@
 			<td>신청상태</td>
 			<td>처리</td>
 		</tr>
-		<c:forEach items="${id}" var="id">
+		<c:forEach items="${list}" var="list">
 		<tr>
-			<td>${id.id}</td>
-			<td>${id.after_date}</td>
-			<td>${id.state}</td>
-			<td>임시</td>
+			<td>${list.id}</td>
+			<td>${list.after_date}"</td>
+			<td>${list.state}</td>
+			<td></td>
 		</tr>
 		</c:forEach>
 	</table>

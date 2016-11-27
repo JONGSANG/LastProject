@@ -43,7 +43,7 @@ public class AdminServiceController {
 		logger.info("방과후학교(상세보기) 페이지");
 		
 		model.addAttribute("detail", adminServiceService.afterDetail(num));
-		model.addAttribute("id", adminServiceService.afterID(num));
+		model.addAttribute("list", adminServiceService.afterID(num));
 		
 		return "adminLibrary/adminService/a_detail";
 	}
@@ -65,11 +65,12 @@ public class AdminServiceController {
 	}
 	
 	@RequestMapping(value="adminLibrary/adminService/c_detail", method=RequestMethod.GET)
-	public String cultureDetailGET(Model model) throws Exception {
+	public String cultureDetailGET(@RequestParam("num") int num, Model model) throws Exception {
 		
 		logger.info("문화행사(상세보기) 페이지");
 		
-		//model.addAttribute("detail", adminServiceService.afterDetail());
+		model.addAttribute("detail", adminServiceService.cultureDetail(num));
+		model.addAttribute("list", adminServiceService.cultureID(num));
 		
 		return "adminLibrary/adminService/c_detail";
 	}
