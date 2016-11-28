@@ -138,4 +138,12 @@ limit #{pageStart}, #{perPageNum}
 		num = #{num}
 	</update>
 
+
+<!-- 대출 도서 베스트 -->
+<!-- 문학 -->
+	<select id="munBest" resultType="bookVO">
+		select a.bno, btitle, bwriter, bcompany, max(brent_cnt)
+		from book a
+		inner join room_b b on a.bno=b.bno 
+	</select>
 </mapper>
