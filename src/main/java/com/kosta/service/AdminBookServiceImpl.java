@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.kosta.dao.AdminBookDAO;
 import com.kosta.vo.BookVO;
-import com.kosta.vo.RegisterVO;
 import com.kosta.vo.Rent_BookVO;
 import com.kosta.vo.User_InfoVO;
 
@@ -103,13 +102,18 @@ public class AdminBookServiceImpl implements AdminBookService {
 	}
 
 	@Override
-	public List<RegisterVO> selectRegBookList(RegisterVO vo) {
+	public List<BookVO> selectRegBookList(BookVO vo) {
 		return adminBookDAO.selectRegBookList(vo);
 	}
 
 	@Override
-	public int countRegBookList(RegisterVO vo) {
+	public int countRegBookList(BookVO vo) {
 		return adminBookDAO.countRegBookList(vo);
+	}
+
+	@Override
+	public void reg_ware(BookVO vo) {
+		adminBookDAO.reg_ware(vo);
 	}
 
 }
