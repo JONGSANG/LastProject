@@ -17,11 +17,19 @@ public interface AdminServiceDAO {
 
 	public int cultureCount() throws Exception;
 	
-	public AfterVO afterDetail(int num) throws Exception;
+	public AfterVO afterDetail(AfterVO vo) throws Exception;
 	
-	public List<L_AfterVO> afterID(int num) throws Exception;
+	public List<L_AfterVO> afterID(AfterVO vo) throws Exception;
 	
-	public CultureVO cultureDetail(int num) throws Exception;
+	public CultureVO cultureDetail(CultureVO vo) throws Exception;
 
-	public List<L_CultureVO> cultureID(int num) throws Exception;
+	public List<L_CultureVO> cultureID(CultureVO vo) throws Exception;
+	
+	public int afterDetailCount(AfterVO vo) throws Exception;
+	
+	public int cultureDetailCount(CultureVO vo) throws Exception;
+
+	public void afterChange(L_AfterVO vo) throws Exception;
+
+	public void cultureChange(L_CultureVO vo) throws Exception;
 }

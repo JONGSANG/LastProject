@@ -18,7 +18,7 @@
 		<tr>
 			<td>${culture.num}</td>
 			<td>${culture.cselect}</td>
-			<td><a href="/adminLibrary/adminService/a_detail?num=${culture.num}">${culture.title}</a>
+			<td><a href="/adminLibrary/adminService/c_detail?num=${culture.num}">${culture.title}</a>
 			<td>${culture.tocnt}/${culture.max_cnt}</td>
 		</tr>
 		</c:forEach>

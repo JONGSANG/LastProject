@@ -2,7 +2,7 @@ package com.kosta.vo;
 
 import java.util.Date;
 
-public class CultureVO {
+public class CultureVO extends PageInfo {
 	
 	private int num, viewcnt, max_cnt, tocnt;
 	private String id, cselect, title, content, start_date, end_date;
