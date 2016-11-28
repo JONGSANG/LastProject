@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
@@ -14,6 +15,9 @@
 <table>
 	<tr>
 		<td>글번호 : <input type = "text" name = "num" value = "${o_BoardVO.num }" readonly></td>
+	</tr>
+	<tr>
+		<td>글작성날짜 : <fmt:formatDate value="${o_BoardVO.write_date}" pattern="yyyy-MM-dd"/></td>
 	</tr>
 	<tr>
 		<td>작성자 : <input type = "text" name = "id" value = "${o_BoardVO.id }" readonly></td>

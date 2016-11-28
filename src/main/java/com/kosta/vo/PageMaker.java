@@ -128,5 +128,29 @@ public class PageMaker {
 	              .build();             
 	    
 	    return uriComponents.toUriString();
-	  } 
+	  }
+  	
+	public String detail(int page){
+	    
+	    UriComponents uriComponents =
+	              UriComponentsBuilder.newInstance()
+	              .queryParam("page", page)
+	              .queryParam("perPageNum", pageInfo.getPerPageNum())
+	              .queryParam("num", ((AfterVO)pageInfo).getNum())
+	              .build();             
+	    
+	    return uriComponents.toUriString();
+	  }
+	
+	public String cultureDetail(int page){
+	    
+	    UriComponents uriComponents =
+	              UriComponentsBuilder.newInstance()
+	              .queryParam("page", page)
+	              .queryParam("perPageNum", pageInfo.getPerPageNum())
+	              .queryParam("num", ((CultureVO)pageInfo).getNum())
+	              .build();             
+	    
+	    return uriComponents.toUriString();
+	  }
 }

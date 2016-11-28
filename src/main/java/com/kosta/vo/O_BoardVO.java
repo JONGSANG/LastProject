@@ -1,11 +1,14 @@
 package com.kosta.vo;
 
+import java.util.Date;
+
 import org.springframework.web.multipart.MultipartFile;
 
 public class O_BoardVO {
 	
 	private int num, viewcnt;
-	private String id, title, content, write_date, orgname, newname;
+	private String id, title, content, orgname, newname;
+	private Date write_date;
 	private MultipartFile file;
 	
 	public MultipartFile getFile() {
@@ -44,12 +47,6 @@ public class O_BoardVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public String getWrite_date() {
-		return write_date;
-	}
-	public void setWrite_date(String write_date) {
-		this.write_date = write_date;
-	}
 	public String getOrgname() {
 		return orgname;
 	}
@@ -62,6 +59,10 @@ public class O_BoardVO {
 	public void setNewname(String newname) {
 		this.newname = newname;
 	}
-	
-	
+	public Date getWrite_date() {
+		return write_date;
+	}
+	public void setWrite_date(Date write_date) {
+		this.write_date = write_date;
+	}
 }

@@ -6,6 +6,13 @@
 <html>
 <head>
 <title>Insert title here</title>
+<script type="text/javascript">
+var maxcount='${maxcount}';
+
+if(maxcount=='full'){
+	alert("최대인원 초과");
+}
+</script>
 </head>
 <body>
 	<table>
@@ -35,11 +42,54 @@
 		<c:forEach items="${list}" var="list">
 		<tr>
 			<td>${list.id}</td>
-			<td>${list.after_date}"</td>
-			<td>${list.state}</td>
-			<td></td>
+			<td>${list.culture_date}"</td>
+			<c:if test="${list.state==1}">
+			<td>승인완료</td>
+			</c:if>
+			<c:if test="${list.state==0}">
+			<td>대기중</td>
+			</c:if>
+			<c:if test="${list.state==-1}">
+			<td>승인거절</td>
+			</c:if>
+			<c:if test="${list.state==0}">
+			<td>
+			<form action="/adminLibrary/adminService/c_change" method="get">
+			<input type="hidden" name="tocnt" value="${detail.tocnt}">
+			<input type="hidden" name="max_cnt" value="${detail.max_cnt}">
+			<input type="hidden" name="id" value="${list.id}">
+			<input type="hidden" name="anum" value="${list.anum}">
+			<select name="state">
+				<option value="1">승인</option>
+				<option value="-1">거절</option>
+			</select>
+			<input type="submit" value="변경">
+			</form>
+			</td>
+			</c:if>
+			<c:if test="${list.state!=0}">
+			<td>처리완료</td>
+			</c:if>
 		</tr>
 		</c:forEach>
 	</table>
+	
+	<c:if test="${pageMaker.prev}">
+		<li><a
+			href="c_detail${pageMaker.cultureDetail(pageMaker.startPage - 1) }">&laquo;</a></li>
+	</c:if>
+
+	<c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage }"
+		var="idx">
+		<li
+			<c:out value="${pageMaker.pageInfo.page == idx?'class =active':''}"/>>
+			<a href="c_detail${pageMaker.cultureDetail(idx)}">${idx}</a>
+		</li>
+	</c:forEach>
+
+	<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+		<li><a
+			href="c_detail${pageMaker.cultureDetail(pageMaker.endPage +1) }">&raquo;</a></li>
+	</c:if>
 </body>
 </html>

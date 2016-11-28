@@ -1,9 +1,12 @@
 package com.kosta.vo;
 
+import java.util.Date;
+
 public class L_AfterVO {
 	
 	private int num, anum, state;
-	private String id, after_date;
+	private String id;
+	private Date after_date;
 	
 	public int getNum() {
 		return num;
@@ -29,10 +32,10 @@ public class L_AfterVO {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getAfter_date() {
+	public Date getAfter_date() {
 		return after_date;
 	}
-	public void setAfter_date(String after_date) {
+	public void setAfter_date(Date after_date) {
 		this.after_date = after_date;
 	}
 }

@@ -39,23 +39,43 @@ public class AdminServiceServiceImpl implements AdminServiceService {
 	}
 
 	@Override
-	public AfterVO afterDetail(int num) throws Exception {
-		return adminServicedao.afterDetail(num);
+	public AfterVO afterDetail(AfterVO vo) throws Exception {
+		return adminServicedao.afterDetail(vo);
 	}
 
 	@Override
-	public List<L_AfterVO> afterID(int num) throws Exception {
-		return adminServicedao.afterID(num);
+	public List<L_AfterVO> afterID(AfterVO vo) throws Exception {
+		return adminServicedao.afterID(vo);
 	}
 
 	@Override
-	public CultureVO cultureDetail(int num) throws Exception {
-		return adminServicedao.cultureDetail(num);
+	public CultureVO cultureDetail(CultureVO vo) throws Exception {
+		return adminServicedao.cultureDetail(vo);
 	}
 
 	@Override
-	public List<L_CultureVO> cultureID(int num) throws Exception {
-		return adminServicedao.cultureID(num);
+	public List<L_CultureVO> cultureID(CultureVO vo) throws Exception {
+		return adminServicedao.cultureID(vo);
+	}
+
+	@Override
+	public int afterDetailCount(AfterVO vo) throws Exception {
+		return adminServicedao.afterDetailCount(vo);
+	}
+
+	@Override
+	public int cultureDetailCount(CultureVO vo) throws Exception {
+		return adminServicedao.cultureDetailCount(vo);
+	}
+
+	@Override
+	public void afterChange(L_AfterVO vo) throws Exception {
+		adminServicedao.afterChange(vo);
+	}
+
+	@Override
+	public void cultureChange(L_CultureVO vo) throws Exception {
+		adminServicedao.cultureChange(vo);
 	}
 	
 	

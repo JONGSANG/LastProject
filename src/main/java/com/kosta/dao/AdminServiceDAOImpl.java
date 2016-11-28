@@ -39,23 +39,43 @@ public class AdminServiceDAOImpl implements AdminServiceDAO {
 	}
 
 	@Override
-	public AfterVO afterDetail(int num) throws Exception {
-		return sqlSession.selectOne("AdminServiceMapper.afterDetail", num);
+	public AfterVO afterDetail(AfterVO vo) throws Exception {
+		return sqlSession.selectOne("AdminServiceMapper.afterDetail", vo);
 	}
 
 	@Override
-	public List<L_AfterVO> afterID(int num) throws Exception {
-		return sqlSession.selectList("AdminServiceMapper.afterID", num);
+	public List<L_AfterVO> afterID(AfterVO vo) throws Exception {
+		return sqlSession.selectList("AdminServiceMapper.afterID", vo);
 	}
 
 	@Override
-	public CultureVO cultureDetail(int num) throws Exception {
-		return sqlSession.selectOne("AdminServiceMapper.cultureDetail", num);
+	public CultureVO cultureDetail(CultureVO vo) throws Exception {
+		return sqlSession.selectOne("AdminServiceMapper.cultureDetail", vo);
 	}
 
 	@Override
-	public List<L_CultureVO> cultureID(int num) throws Exception {
-		return sqlSession.selectList("AdminServiceMapper.cultureID", num);
+	public List<L_CultureVO> cultureID(CultureVO vo) throws Exception {
+		return sqlSession.selectList("AdminServiceMapper.cultureID", vo);
+	}
+
+	@Override
+	public int afterDetailCount(AfterVO vo) throws Exception {
+		return sqlSession.selectOne("AdminServiceMapper.afterDetailCount", vo);
+	}
+
+	@Override
+	public int cultureDetailCount(CultureVO vo) throws Exception {
+		return sqlSession.selectOne("AdminServiceMapper.afterDetailCount", vo);
+	}
+
+	@Override
+	public void afterChange(L_AfterVO vo) throws Exception {
+		sqlSession.update("AdminServiceMapper.afterChange", vo);
+	}
+
+	@Override
+	public void cultureChange(L_CultureVO vo) throws Exception {
+		sqlSession.update("AdminServiceMapper.cultureChange", vo);
 	}
 	
 }

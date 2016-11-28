@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
@@ -22,9 +23,9 @@
 	<c:forEach items = "${list}" var = "list">
 		<tr align = "center">
 			<td>${list.num }</td>
-			<td><a href = '/userLibrary/service/openboard/read?num=${list.num}'>${list.title }</a></td>
+			<td><a href = '/userLibrary/service/openboard/read?num=${list.num}'>${list.title}</a></td>
 			<td>${list.id }</td>
-			<td>${list.write_date }</td>
+			<td><fmt:formatDate value="${list.write_date}" pattern="yyyy-MM-dd"/></td>
 			<td>${list.viewcnt }</td>
 		</tr>
 	</c:forEach>
