@@ -3,7 +3,7 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.kosta.mappers.libNewsMapper">
+<mapper namespace="com.kosta.mappers.LibNewsMapper">
 
 <!-- 글목록에 id, title, content, write_date를 입력/now()는 현재 시각을 알려줌 -->
 <insert id="f_create">
