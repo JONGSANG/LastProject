@@ -403,7 +403,7 @@ public class LibNewsController {
 		model.addAttribute("young", service.youngBest());//어린이베스트도서
 		model.addAttribute("gan", service.ganBest());//간행물베스트도서
 		
-		return "userLibrary/libNews/best/bestList";
+		return "userLibrary/libNews/best/listBest";
 	}
 	
 	
