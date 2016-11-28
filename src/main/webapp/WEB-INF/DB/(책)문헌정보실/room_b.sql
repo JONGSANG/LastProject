@@ -1,26 +1,8 @@
 select * from room_b;
 drop table room_b;
 
+SELECT COUNT(BNO) FROM room_b WHERE BNO='d' and BRENT=1
 
-update rent_book set submit_date='2016-11-22' where bno='01010021' and id = 'spurs89'
-
-UPDATE ROOM_B SET BRENT=-1 , BRENT_CNT=BRENT_CNT+1 
-WHERE BNO='01010011'
-
-
-
-SELECT R.RENT_DATE , R.SUBMIT_DATE, B.BTITLE, B.BNO, check_submit,check_Late, brent, l.money as money
-FROM RENT_BOOK R
-INNER JOIN BOOK B ON R.BNO=B.BNO 
-INNER JOIN ROOM_B RB ON R.BNO=RB.BNO
-LEFT JOIN LATE L ON R.BNO=L.BNO and submit_date=start_date
-WHERE RB.BRENT=-1 
-AND R.CHECK_SUBMIT = false
-AND R.ID='spurs89'
-
-
-
-update rent_book set check_submit = true where bno='01010012'
 
 --------------------------------------------------------------
 -- room_b : room_b 정보 Table
@@ -34,7 +16,7 @@ update rent_book set check_submit = true where bno='01010012'
 --
 --CREATE TABLE room_b(
 --BNO varchar(20) , 책번호만 저장합니다.
---BRENT tinyint, 책 대출 여부 1. 대출가능 -1. 대출중
+--BRENT tinyint, 책 대출 여부 1. 대출가능 -1. 대출중 0.대출 예약 
 --constraint pk_room_b primary key(BNO)
 --);
 --베스트 대출도서에서도 대출 카운트를 세어와야함..................
@@ -51,3 +33,17 @@ constraint fk_room_b foreign key(BNO) references book(bno) on delete cascade on 
 INSERT INTO room_b(bno)
 SELECT bno
 FROM book;
+
+
+
+UPDATE ROOM_B SET BRENT=-1 , BRENT_CNT=+1 
+WHERE BNO='01010011'
+
+
+
+
+
+
+insert into room_b(bno, brent, brent_cnt) values('01010011', 1, 0);
+insert into room_b(bno, brent, brent_cnt) values('01010012', 1, 0);
+insert into room_b(bno, brent, brent_cnt) values('99011503', 1, 0);

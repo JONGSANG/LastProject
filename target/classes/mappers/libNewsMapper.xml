@@ -138,4 +138,49 @@ limit #{pageStart}, #{perPageNum}
 		num = #{num}
 	</update>
 
+
+<!-- 대출 도서 베스트 -->
+	<!-- 문학 -->
+	<select id="munBest" resultType="bookVO">
+		select a.bno, btitle, bwriter, bcompany,max(brent_cnt) as brent_cnt
+		from book a
+		inner join room_b b on a.bno=b.bno 
+		where a.bno like '01%'
+	</select>
+	<!-- 컴퓨터 -->
+	<select id="comBest" resultType="bookVO">
+		select a.bno, btitle, bwriter, bcompany ,max(brent_cnt) as brent_cnt
+		from book a
+		inner join room_b b on a.bno=b.bno 
+		where a.bno like '03%'
+	</select>
+	<!-- 사회/정치 -->
+	<select id="socBest" resultType="bookVO">
+		select a.bno, btitle, bwriter, bcompany ,max(brent_cnt) as brent_cnt
+		from book a
+		inner join room_b b on a.bno=b.bno 
+		where a.bno like '04%'
+	</select>
+	<!-- 예술 -->
+	<select id="artBest" resultType="bookVO">
+		select a.bno, btitle, bwriter, bcompany ,max(brent_cnt) as brent_cnt
+		from book a
+		inner join room_b b on a.bno=b.bno 
+		where a.bno like '05%'
+	</select>
+	<!-- 어린이 -->
+	<select id="youngBest" resultType="bookVO">
+		select a.bno, btitle, bwriter, bcompany ,max(brent_cnt) as brent_cnt
+		from book a
+		inner join room_b b on a.bno=b.bno 
+		where a.bno like '07%'
+	</select>
+	<!-- 연속간행물 -->
+	<select id="ganBest" resultType="bookVO">
+		select a.bno, btitle, bwriter, bcompany ,max(brent_cnt) as brent_cnt
+		from book a
+		inner join room_b b on a.bno=b.bno 
+		where a.bno like '99%'
+	</select>
+	
 </mapper>

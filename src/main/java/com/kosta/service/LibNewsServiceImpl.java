@@ -9,6 +9,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import com.kosta.dao.LibNewsDAO;
+import com.kosta.vo.BookVO;
 import com.kosta.vo.F_BoardVO;
 import com.kosta.vo.F_Board_ReVO;
 import com.kosta.vo.NoticeVO;
@@ -142,5 +143,35 @@ public class LibNewsServiceImpl implements LibNewsService {
 	public int n_listAllCount(NoticeVO vo) throws Exception {
 		return 	libNewsDAO.n_listAllCount(vo);
 
+	}
+
+	@Override
+	public BookVO munBest() {
+		return libNewsDAO.munBest();
+	}
+
+	@Override
+	public BookVO comBest() {
+		return libNewsDAO.comBest();
+	}
+
+	@Override
+	public BookVO socBest() {
+		return libNewsDAO.socBest();
+	}
+
+	@Override
+	public BookVO artBest() {
+		return libNewsDAO.artBest();
+	}
+
+	@Override
+	public BookVO youngBest() {
+		return libNewsDAO.youngBest();
+	}
+
+	@Override
+	public BookVO ganBest() {
+		return libNewsDAO.ganBest();
 	}
 }
