@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.kosta.service.M_BoardService;
 import com.kosta.service.ServiceService;
 import com.kosta.vo.AfterVO;
 import com.kosta.vo.CultureVO;
@@ -41,9 +40,7 @@ public class ServiceController {
 	private String uploadPath;
 
 	@Autowired
-	private M_BoardService service;
-	@Autowired
-	private ServiceService service2;
+	private ServiceService service;
 	
 
 	/*본 게시물 작성페이지 띄우기*/
@@ -80,7 +77,7 @@ public class ServiceController {
 		logger.info(vo.toString());	
 
 		// F_BoardService로 담은 vo를 보냄
-		service.regist(vo);		
+		service.m_regist(vo);		
 
 		// 업데이트된 listAll을 띄어줌
 		return "redirect:listAll";	
@@ -96,7 +93,7 @@ public class ServiceController {
 		logger.info("listAll 페이지");		
 		
 		// 다음 페이지로 값을 넘겨줌, list라는 별칭으로 service.listAll()을 담음
-		model.addAttribute("list", service.listAll(vo));	
+		model.addAttribute("list", service.m_listAll(vo));	
 		
 		// 페이징 처리
 		PageMaker pageMaker = new PageMaker();
@@ -117,14 +114,14 @@ public class ServiceController {
 		// Console 창에 알림띄어줌
 		logger.info("read get 페이지");		
 		
-		service.updateViewCnt(num);
+		service.m_updateViewCnt(num);
 		
 		// boardVO라는 별칭으로 service.read(num)을 담음 , 그 num에 해당하는 content를 띄우기 위해서
-		model.addAttribute("boardVO", service.read(num));
+		model.addAttribute("boardVO", service.m_read(num));
 		// num 값을 보냄
 		model.addAttribute("num", num);	
 		// 답변 목록 띄우기 위해서
-		model.addAttribute("clist", service.commentList(vo2));
+		model.addAttribute("clist", service.m_commentList(vo2));
 		
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 	    model.addAttribute("id", auth.getName());
@@ -153,7 +150,7 @@ public class ServiceController {
 		// num 값을 보내줌
 		model.addAttribute("num", num);	
 		// 댓글에 담은 값들 (vo2)를 F_BoardService로 보냄
-		service.insertComment(vo2);	
+		service.m_insertComment(vo2);	
 	
 		return "redirect:/userLibrary/service/min_board/read?num="+num;
 	}
@@ -172,7 +169,7 @@ public class ServiceController {
 		logger.info("modify GET 페이지");		
 		
 		// service.read(num)을 boardVO로 기재하여 사용
-		model.addAttribute("boardVO", service.read(num));	
+		model.addAttribute("boardVO", service.m_read(num));	
 	}
 
 	/* 본 게시물에서 수정한 내용을 보내기*/
@@ -186,7 +183,7 @@ public class ServiceController {
 		logger.info("modify GET 페이지");		
 		model.addAttribute("num", num);
 
-		service.modify(board);
+		service.m_modify(board);
 		
 		return "redirect:read?num="+num;
 	}
@@ -202,7 +199,7 @@ public class ServiceController {
 		logger.info("modify_re GET 페이지");		
 		
 		// 댓글의 내용을 보여줌
-		model.addAttribute("boardVO2",service.read2(Integer.parseInt(num)));	
+		model.addAttribute("boardVO2",service.m_read2(Integer.parseInt(num)));	
 	}
 
 	/*댓글 수정내용 값 보내기*/
@@ -215,7 +212,7 @@ public class ServiceController {
 		// Console창에 띄움
 		logger.info("modify_re POST 페이지");		
 
-		service.update_re(board);
+		service.m_update_re(board);
 
 		// 글쓰기 num의 외래키인 댓글의 fnum을 불러옴
 		return "redirect:read?num="+mnum;	
@@ -230,7 +227,7 @@ public class ServiceController {
 		// Console창에 띄움
 		logger.info("remove GET 페이지");		
 		
-		service.remove(num);
+		service.m_remove(num);
 
 		// 삭제 후의 listAll 띄어주기
 		return "redirect:listAll";	
@@ -249,7 +246,7 @@ public class ServiceController {
 		int n = Integer.parseInt(num);	
 		
 		// int 형태의 num을 보내줌
-		service.remove_re(n);	
+		service.m_remove_re(n);	
 
 		// 댓글이 달려있는 본게시물을 띄어줌
 		return "redirect:read?num="+mnum;	
@@ -275,7 +272,7 @@ public class ServiceController {
 			logger.info("이벤트 글쓰기 페이지");
 			
 			// input 으로 전송받은 것들을 db에 입력 하고 완료 메세지 띄움
-			service2.after_write(vo);
+			service.after_write(vo);
 			rttr.addFlashAttribute("msg", "SUCCESS");
 			
 			return "redirect:/userLibrary/service/after/list";
@@ -287,7 +284,7 @@ public class ServiceController {
 			logger.info("이벤트 글게시판 페이지"); 
 			
 			// after 테이블에 모든정보를 담고 list라고 선언
-			model.addAttribute("list", service2.after_list());
+			model.addAttribute("list", service.after_list());
 			
 			return "userLibrary/service/after/list";
 		}
@@ -299,14 +296,14 @@ public class ServiceController {
 			
 			Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 			// 현재 카운터값 가져옴
-			model.addAttribute("after_tocnt", service2.after_tocnt(vo));
+			model.addAttribute("after_tocnt", service.after_tocnt(vo));
 			// Id를 세션id로 변경
 			vo.setId(auth.getName());
 			// isID 라고 변수명을 지정하고 보냄
-			model.addAttribute("isID", service2.after_sessionid(vo)); 
+			model.addAttribute("isID", service.after_sessionid(vo)); 
 			// 해당되는 글의 번호에 대한정보를 가져와서 출력
-			model.addAttribute(service2.after_read(vo));
-			service2.after_viewcnt(vo);
+			model.addAttribute(service.after_read(vo));
+			service.after_viewcnt(vo);
 			
 			return "userLibrary/service/after/read";
 		}
@@ -317,7 +314,7 @@ public class ServiceController {
 			logger.info("이벤트 글삭제 페이지");
 			
 			// 해당되는 글의 번호에 대한게시글을 삭제 하고 완료 메세지 띄움
-			service2.after_delete(vo);
+			service.after_delete(vo);
 			rttr.addFlashAttribute("msg", "SUCCESS");
 			return "redirect:/userLibrary/service/after/list";
 		}
@@ -328,7 +325,7 @@ public class ServiceController {
 			logger.info("이벤트 글수정 페이지");
 			
 			// 해당되는 글의 번호의 정보를 가져와 출력
-			model.addAttribute(service2.after_read(vo));
+			model.addAttribute(service.after_read(vo));
 			
 			return "userLibrary/service/after/modify";
 		}
@@ -339,7 +336,7 @@ public class ServiceController {
 			logger.info("이벤트 글수정 페이지");
 			
 			// 해당되는 글의 번호에 대한게시글을 수정 하고 완료 메세지 띄움
-			service2.after_modify(vo);
+			service.after_modify(vo);
 			rttr.addFlashAttribute("msg", "SUCCESS");
 			
 			return "redirect:/userLibrary/service/after/list";
@@ -351,7 +348,7 @@ public class ServiceController {
 			logger.info("이벤트 신청 페이지");
 			
 			// read에서 보낸 num값을 받아서 해당되는 id, aselect, num 출력
-			model.addAttribute(service2.after_joiner(vo));
+			model.addAttribute(service.after_joiner(vo));
 			
 			return "userLibrary/service/after/join";
 		}
@@ -362,7 +359,7 @@ public class ServiceController {
 			logger.info("이벤트 신청 페이지");
 			
 			// mapper에서 afterlist에 해당 신청자를 넣고 바로 그 글에대한 현제 인원수를 +1 해줌
-			service2.after_join(vo);
+			service.after_join(vo);
 			
 			return "redirect:/userLibrary/service/after/list";
 		}
@@ -376,7 +373,7 @@ public class ServiceController {
 			vo.setId(auth.getName());
 			
 			// id 랑 anum 을 기준으로 신청취소
-			service2.after_joindel(vo);
+			service.after_joindel(vo);
 
 			return "redirect:/userLibrary/service/after/list";
 		}
@@ -401,7 +398,7 @@ public class ServiceController {
 			logger.info("이벤트 글쓰기 페이지");
 			
 			// input 으로 전송받은 것들을 db에 입력 하고 완료 메세지 띄움
-			service2.culture_write(vo);
+			service.culture_write(vo);
 			rttr.addFlashAttribute("msg", "SUCCESS");
 			
 			return "redirect:/userLibrary/service/culture/list";
@@ -413,7 +410,7 @@ public class ServiceController {
 			logger.info("이벤트 글게시판 페이지");
 			
 			// after 테이블에 모든정보를 담고 list라고 선언
-			model.addAttribute("list", service2.culture_list());
+			model.addAttribute("list", service.culture_list());
 			
 			return "userLibrary/service/culture/list";
 		}
@@ -426,17 +423,17 @@ public class ServiceController {
 			Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 			
 			// 현재 카운터값 가져옴
-			model.addAttribute("culture_tocnt", service2.culture_tocnt(vo));
+			model.addAttribute("culture_tocnt", service.culture_tocnt(vo));
 			
 			// Id를 세션id로 변경
 			vo.setId(auth.getName());
 			
 			// isID 라고 변수명을 지정하고 보냄 
-			model.addAttribute("isID", service2.culture_sessionid(vo));
+			model.addAttribute("isID", service.culture_sessionid(vo));
 			 
 			// 해당되는 글의 번호에 대한정보를 가져와서 출력
-			model.addAttribute(service2.culture_read(vo));
-			service2.culture_viewcnt(vo);
+			model.addAttribute(service.culture_read(vo));
+			service.culture_viewcnt(vo);
 			
 			return "userLibrary/service/culture/read";
 		}
@@ -447,7 +444,7 @@ public class ServiceController {
 			logger.info("이벤트 글삭제 페이지");
 			
 			// 해당되는 글의 번호에 대한게시글을 삭제 하고 완료 메세지 띄움
-			service2.culture_delete(vo);
+			service.culture_delete(vo);
 			rttr.addFlashAttribute("msg", "SUCCESS");
 			return "redirect:/userLibrary/service/culture/list";
 		}
@@ -458,7 +455,7 @@ public class ServiceController {
 			logger.info("이벤트 글수정 페이지");
 			
 			// 해당되는 글의 번호의 정보를 가져와 출력
-			model.addAttribute(service2.culture_read(vo));
+			model.addAttribute(service.culture_read(vo));
 			
 			return "userLibrary/service/culture/modify";
 		}
@@ -469,7 +466,7 @@ public class ServiceController {
 			logger.info("이벤트 글수정 페이지");
 			
 			// 해당되는 글의 번호에 대한게시글을 수정 하고 완료 메세지 띄움
-			service2.culture_modify(vo);
+			service.culture_modify(vo);
 			rttr.addFlashAttribute("msg", "SUCCESS");
 			
 			return "redirect:/userLibrary/service/culture/list";
@@ -481,7 +478,7 @@ public class ServiceController {
 			logger.info("이벤트 신청 페이지");
 			
 			// read에서 보낸 num값을 받아서 해당되는 id, aselect, num 출력
-			model.addAttribute(service2.culture_joiner(vo));
+			model.addAttribute(service.culture_joiner(vo));
 			
 			return "userLibrary/service/culture/join";
 		}
@@ -492,7 +489,7 @@ public class ServiceController {
 			logger.info("이벤트 신청 페이지");
 			
 			// mapper에서 afterlist에 해당 신청자를 넣고 바로 그 글에대한 현제 인원수를 +1 해줌
-			service2.culture_join(vo);
+			service.culture_join(vo);
 			
 			return "redirect:/userLibrary/service/culture/list";
 		}
@@ -506,7 +503,7 @@ public class ServiceController {
 			vo.setId(auth.getName());
 			
 			// id 랑 anum 을 기준으로 신청취소
-			service2.culture_joindel(vo);
+			service.culture_joindel(vo);
 
 			return "redirect:/userLibrary/service/culture/list";
 		}
@@ -553,7 +550,7 @@ public class ServiceController {
 			}
 			
 			// 게시물을 db에 등록
-			service2.openboard_join(vo);
+			service.openboard_join(vo);
 			
 			return "redirect:/userLibrary/service/openboard/list";
 		}
@@ -564,7 +561,7 @@ public class ServiceController {
 			logger.info("공개자료실 게시판 리스트 폼 페이지");
 			
 			// db에 담긴 전체 리스트를 list 란 이름으로 지정
-			model.addAttribute("list",service2.openboard_list());
+			model.addAttribute("list",service.openboard_list());
 			
 			return "userLibrary/service/openboard/list";
 		}
@@ -573,10 +570,10 @@ public class ServiceController {
 		@RequestMapping(value = "userLibrary/service/openboard/read", method = RequestMethod.GET)
 		public String openboard_read(O_BoardVO vo, Model model) throws Exception {
 			
-			model.addAttribute(service2.openboard_read(vo));
+			model.addAttribute(service.openboard_read(vo));
 			
 			// 해당 게시글을 읽을때마다 viewcnt(뷰카운터) +1
-			service2.openboard_viewcnt(vo);
+			service.openboard_viewcnt(vo);
 			
 			return "userLibrary/service/openboard/read";
 		}
@@ -594,14 +591,14 @@ public class ServiceController {
 			File file = new File("C:/Last_Project/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/library/resources/file/"+filename);
 			file.delete();
 			
-			service2.openboard_delete(vo);
+			service.openboard_delete(vo);
 			return "redirect:/userLibrary/service/openboard/list";
 		}
 		
 		// 공개자료실 게시판 글 수정 폼 메소드
 		@RequestMapping(value = "userLibrary/service/openboard/modify", method = RequestMethod.GET)
 		public String openboard_modify(O_BoardVO vo, Model model) throws Exception {
-			model.addAttribute(service2.openboard_read(vo));
+			model.addAttribute(service.openboard_read(vo));
 			return "userLibrary/service/openboard/modify";
 		}
 		
@@ -627,7 +624,7 @@ public class ServiceController {
 				vo.setNewname(newname);
 			}
 			
-			service2.openboard_modify(vo);
+			service.openboard_modify(vo);
 			
 			return "redirect:/userLibrary/service/openboard/list";
 		}
