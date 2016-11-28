@@ -5,7 +5,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,6 +14,8 @@ import com.kosta.service.AdminBookService;
 import com.kosta.service.SearchService;
 import com.kosta.vo.BookVO;
 import com.kosta.vo.PageMaker;
+import com.kosta.vo.PageMaker_rep;
+import com.kosta.vo.RegisterVO;
 import com.kosta.vo.Rent_BookVO;
 
 @Controller
@@ -160,18 +161,18 @@ public class AdminBookController {
 	}
 	
 	//폐기도서 등록.
-	@RequestMapping(value = "adminLibrary/adminBook/warehouse/w_li", method = RequestMethod.GET)
-	public String reg_WGet(Model model, BookVO vo) {
+	@RequestMapping(value = "adminLibrary/adminBook/reg_ware/index", method = RequestMethod.GET)
+	public String reg_WGet(Model model, RegisterVO vo) {
 		logger.info("selectBookList page");
-		model.addAttribute("list",service.selectBookList2(vo));
+		model.addAttribute("list",service.selectRegBookList(vo));
 		
-		PageMaker pageMaker = new PageMaker();
+		PageMaker_rep pageMaker = new PageMaker_rep();
 		pageMaker.setPageInfo(vo);
 		
-		pageMaker.setTotalCount(service.countBookList2(vo));
+		pageMaker.setTotalCount(service.countRegBookList(vo));
 		model.addAttribute("pageMaker", pageMaker);
 
-		return "adminLibrary/adminBook/warehouse/w_list";
+		return "adminLibrary/adminBook/reg_ware/index";
 	}
 
 
