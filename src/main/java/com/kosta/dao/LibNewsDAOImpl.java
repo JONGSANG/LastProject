@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.kosta.vo.BookVO;
 import com.kosta.vo.F_BoardVO;
 import com.kosta.vo.F_Board_ReVO;
 import com.kosta.vo.NoticeVO;
@@ -126,5 +127,35 @@ public class LibNewsDAOImpl implements LibNewsDAO {
 	@Override
 	public int n_listAllCount(NoticeVO vo) throws Exception {
 		return sqlSession.selectOne("com.kosta.mappers.libNewsMapper.n_listAllCount", vo);
+	}
+
+	@Override
+	public BookVO munBest() {
+		return sqlSession.selectOne("com.kosta.mappers.libNewsMapper.munBest");
+	}
+
+	@Override
+	public BookVO comBest() {
+		return sqlSession.selectOne("com.kosta.mappers.libNewsMapper.comBest");
+	}
+
+	@Override
+	public BookVO socBest() {
+		return sqlSession.selectOne("com.kosta.mappers.libNewsMapper.socBest");
+	}
+
+	@Override
+	public BookVO artBest() {
+		return sqlSession.selectOne("com.kosta.mappers.libNewsMapper.artBest");
+	}
+
+	@Override
+	public BookVO youngBest() {
+		return sqlSession.selectOne("com.kosta.mappers.libNewsMapper.youngBest");
+	}
+
+	@Override
+	public BookVO ganBest() {
+		return sqlSession.selectOne("com.kosta.mappers.libNewsMapper.ganBest");
 	}
 }

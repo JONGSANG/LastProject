@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
- 
-import com.kosta.service.BestService;
+
 import com.kosta.service.LibNewsService;
+import com.kosta.service.SearchService;
 import com.kosta.vo.F_BoardVO;
 import com.kosta.vo.F_Board_ReVO;
 import com.kosta.vo.NoticeVO;
@@ -28,9 +28,7 @@ public class LibNewsController {
  
 	@Autowired
 	private LibNewsService service;
-	@Autowired
-	private BestService service1;
- 
+	private SearchService searchService;
 	 /*본 게시물 작성페이지 띄우기*/
 	
 	// 주소값을 정해주고 GET 방식으로 보냄
@@ -398,43 +396,16 @@ public class LibNewsController {
 	@RequestMapping(value="userLibrary/libNews/best/listBest", method=RequestMethod.GET)
 	public String listBestGET(Model model) {
 		logger.info("사서추천도서!!!!!");
-		return "userLibrary/libNews/best/listBest";
+		model.addAttribute("mun", service.munBest());//문학베스트도서
+		model.addAttribute("com", service.comBest());//컴퓨터베스트도서
+		model.addAttribute("soc", service.socBest());//사회베스트도서
+		model.addAttribute("art", service.artBest());//예술베스트도서
+		model.addAttribute("young", service.youngBest());//어린이베스트도서
+		model.addAttribute("gan", service.ganBest());//간행물베스트도서
+		
+		return "userLibrary/libNews/best/bestList";
 	}
 	
-	@RequestMapping(value = "/userLibrary/libNews/best/best", method = RequestMethod.GET)
-	public void best(Model model) throws Exception {
-		logger.info("best");
-		model.addAttribute("best", service1.best());
-	}
-	
-	@RequestMapping(value = "/userLibrary/libNews/best/genre1", method = RequestMethod.GET)
-	public void genre1(Model model) throws Exception {
-		logger.info("best");
-		model.addAttribute("genre1", service1.genre1());
-	}
-	@RequestMapping(value = "/userLibrary/libNews/best/genre2", method = RequestMethod.GET)
-	public void genre2(Model model) throws Exception {
-		logger.info("best");
-		model.addAttribute("genre2", service1.genre2());
-	}
-	@RequestMapping(value = "/userLibrary/libNews/best/genre3", method = RequestMethod.GET)
-	public void genre3(Model model) throws Exception {
-		logger.info("best");
-		model.addAttribute("genre3", service1.genre3());
-	}
-	@RequestMapping(value = "/userLibrary/libNews/best/genre4", method = RequestMethod.GET)
-	public void genre4(Model model) throws Exception {
-		logger.info("best");
-		model.addAttribute("genre4", service1.genre4());
-	}
- 
-	// 상세보기
-	@RequestMapping(value = "/userLibrary/libNews/best/read", method = RequestMethod.GET)
-	public void read(@RequestParam("BNO") String BNO, Model model) throws Exception {
-		logger.info("read");
-		System.out.println("넘버"+BNO);
-		model.addAttribute("read",service1.read(BNO));
-	}
 	
 	// 사서 추천 리스트 보기
 		@RequestMapping(value="userLibrary/libNews/recommand/recommand", method=RequestMethod.GET)

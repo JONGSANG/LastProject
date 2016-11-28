@@ -2,6 +2,7 @@ package com.kosta.service;
 
 import java.util.List;
 
+import com.kosta.vo.BookVO;
 import com.kosta.vo.F_BoardVO;
 import com.kosta.vo.F_Board_ReVO;
 import com.kosta.vo.NoticeVO;
@@ -70,4 +71,20 @@ public interface LibNewsService {
 		
 		// 조회수 업데이트
 		public void n_updateViewCnt(int num) throws Exception;
+		
+		// 도서 대출 베스트
+		//문학베스트도서
+		public BookVO munBest();
+		//컴퓨터베스트도서
+		public BookVO comBest();
+		//사회베스트도서
+		public BookVO socBest();
+		//예술베스트도서
+		public BookVO artBest();
+		//어린이베스트도서
+		public BookVO youngBest();
+		//간행물베스트도서
+		public BookVO ganBest();
+		
+		
 }
