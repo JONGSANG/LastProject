@@ -7,10 +7,6 @@ update rent_book set submit_date='2016-11-22' where bno='01010021' and id = 'spu
 UPDATE ROOM_B SET BRENT=-1 , BRENT_CNT=BRENT_CNT+1 
 WHERE BNO='01010011'
 
-
-
-select bno, max(brent_cnt) from room_b
-
 SELECT R.RENT_DATE , R.SUBMIT_DATE, B.BTITLE, B.BNO, check_submit,check_Late, brent, l.money as money
 FROM RENT_BOOK R
 INNER JOIN BOOK B ON R.BNO=B.BNO 

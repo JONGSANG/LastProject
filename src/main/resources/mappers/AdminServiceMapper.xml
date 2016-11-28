@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="AdminServiceMapper">
+
+<select id="afterList" resultType="AfterVO">
+SELECT NUM, ASELECT, TITLE, MAX_CNT, (SELECT COUNT(ANUM) FROM AFTER_LIST WHERE STATE=1) AS TOCNT 
+FROM AFTER
+ORDER BY WRITE_DATE DESC
+LIMIT #{pageStart}, #{perPageNum}
+</select>
+
+<select id="afterCount" resultType="int">
+SELECT COUNT(NUM)
+FROM AFTER
+</select>
+
+<select id="cultureList" resultType="CultureVO">
+SELECT NUM, CSELECT, TITLE, MAX_CNT, (SELECT COUNT(ANUM) FROM CULTURE_LIST WHERE STATE=1) AS TOCNT 
+FROM CULTURE
+ORDER BY WRITE_DATE DESC
+LIMIT #{pageStart}, #{perPageNum}
+</select>
+
+<select id="cultureCount" resultType="int">
+SELECT COUNT(NUM)
+FROM CULTURE
+</select>
+
+<select id="afterDetail" resultType="AfterVO">
+SELECT TITLE, START_DATE, END_DATE, MAX_CNT, (SELECT COUNT(ANUM) FROM AFTER_LIST WHERE STATE=1) AS TOCNT
+FROM AFTER
+WHERE NUM=#{num}
+</select>
+
+<select id="afterID" resultType="L_AfterVO">
+SELECT ID, STATE, AFTER_DATE
+FROM AFTER_LIST
+WHERE ANUM=#{num}
+</select>
+
+</mapper>
