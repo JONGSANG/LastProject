@@ -31,7 +31,7 @@ public class LibNewsController {
 	@Autowired
 	private BestService service1;
 
-	 /*본 게시물 작성페이지 띄우기*/
+	 /*본 게시물 작성페이지 띄우기*/  
 	
 	// 주소값을 정해주고 GET 방식으로 보냄
 	@RequestMapping(value = "userLibrary/libNews/f_board/register", method = RequestMethod.GET)
