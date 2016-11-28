@@ -9,6 +9,8 @@ WHERE BNO='01010011'
 
 
 
+select bno, max(brent_cnt) from room_b
+
 SELECT R.RENT_DATE , R.SUBMIT_DATE, B.BTITLE, B.BNO, check_submit,check_Late, brent, l.money as money
 FROM RENT_BOOK R
 INNER JOIN BOOK B ON R.BNO=B.BNO 

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.kosta.service.BestService;
 import com.kosta.service.F_BoardService;
 import com.kosta.service.NoticeService;
+import com.kosta.vo.BookVO;
 import com.kosta.vo.F_BoardVO;
 import com.kosta.vo.F_Board_ReVO;
 import com.kosta.vo.NoticeVO;
@@ -397,48 +398,6 @@ public class LibNewsController {
 		
 		return "userLibrary/libNews/schedule";
 	}
-	
-	@RequestMapping(value="userLibrary/libNews/best/listBest", method=RequestMethod.GET)
-	public String listBestGET(Model model) {
-		logger.info("사서추천도서!!!!!");
-		return "userLibrary/libNews/best/listBest";
-	}
-	
-	@RequestMapping(value = "/userLibrary/libNews/best/best", method = RequestMethod.GET)
-	public void best(Model model) throws Exception {
-		logger.info("best");
-		model.addAttribute("best", service1.best());
-	}
-	
-	@RequestMapping(value = "/userLibrary/libNews/best/genre1", method = RequestMethod.GET)
-	public void genre1(Model model) throws Exception {
-		logger.info("best");
-		model.addAttribute("genre1", service1.genre1());
-	}
-	@RequestMapping(value = "/userLibrary/libNews/best/genre2", method = RequestMethod.GET)
-	public void genre2(Model model) throws Exception {
-		logger.info("best");
-		model.addAttribute("genre2", service1.genre2());
-	}
-	@RequestMapping(value = "/userLibrary/libNews/best/genre3", method = RequestMethod.GET)
-	public void genre3(Model model) throws Exception {
-		logger.info("best");
-		model.addAttribute("genre3", service1.genre3());
-	}
-	@RequestMapping(value = "/userLibrary/libNews/best/genre4", method = RequestMethod.GET)
-	public void genre4(Model model) throws Exception {
-		logger.info("best");
-		model.addAttribute("genre4", service1.genre4());
-	}
-
-	// 상세보기
-	@RequestMapping(value = "/userLibrary/libNews/best/read", method = RequestMethod.GET)
-	public void read(@RequestParam("BNO") String BNO, Model model) throws Exception {
-		logger.info("read");
-		System.out.println("넘버"+BNO);
-		model.addAttribute("read",service1.read(BNO));
-	}
-	
 	// 사서 추천 리스트 보기
 		@RequestMapping(value="userLibrary/libNews/recommand/recommand", method=RequestMethod.GET)
 		public String recommandGET(Model model) {
