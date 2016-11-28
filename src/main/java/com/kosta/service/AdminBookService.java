@@ -3,7 +3,6 @@ package com.kosta.service;
 import java.util.List;
 
 import com.kosta.vo.BookVO;
-import com.kosta.vo.RegisterVO;
 import com.kosta.vo.Rent_BookVO;
 import com.kosta.vo.User_InfoVO;
 
@@ -57,12 +56,13 @@ public interface AdminBookService {
 	// 폐기 도서 등록
 
 	// 비치도서 리스트 불러오기
-	public List<RegisterVO> selectRegBookList(RegisterVO vo);
+	public List<BookVO> selectRegBookList(BookVO vo);
 	// 책리스트 페이징
-	public int countRegBookList(RegisterVO vo);
-		
+	public int countRegBookList(BookVO vo);
+	// 폐기 등록 
+	public void reg_ware(BookVO vo);
 	
-	
+
 	// 비치도서 리스트 불러오기
 	public List<BookVO> selectBookList(BookVO vo);
 	
@@ -74,5 +74,7 @@ public interface AdminBookService {
 	
 	// 책리스트 페이징
 	public int countBookList2(BookVO vo);
+	
+	
 
 }

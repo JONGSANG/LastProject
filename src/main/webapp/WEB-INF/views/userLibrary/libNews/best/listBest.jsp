@@ -95,26 +95,26 @@
 <h1>연속간행물</h1>
 	<table border="2" width="300">
 		<tr>
-			<th>사진</th>
-			<td>
-				<img src="/resources/book_img/${mun.bNo}.jpg" width="100">
+			<th width="100">사진</th>
+			<td width="200">
+				<img src="/resources/book_img/${gan.bNo}.jpg" width="100">
 			</td>
 		</tr>
 		<tr>
 			<th>책 명</th>
-			<td>${mun.bTitle}</td>
+			<td>${gan.bTitle}</td>
 		</tr>
 		<tr>
 			<th>저자명</th>
-			<td>${mun.bWriter}</td>
+			<td>${gan.bWriter}</td>
 		</tr>
 		<tr>
 			<th>출판사</th>
-			<td>${mun.bCompany}</td>
+			<td>${gan.bCompany}</td>
 		</tr>
 		<tr>
 			<th>대출횟수</th>
-			<td>${mun.brent_cnt}</td>
+			<td>${gan.brent_cnt}</td>
 		</tr>		
 	</table>
 

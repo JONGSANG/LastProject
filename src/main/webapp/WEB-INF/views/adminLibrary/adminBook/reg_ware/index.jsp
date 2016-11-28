@@ -7,6 +7,13 @@
 <head>
 <title>Insert title here</title>
 <script language="JavaScript">
+
+var msg = '${msg}';
+if (msg == 'success') {
+	alert("폐기등록이 완료되었습니다.");
+	location.href=document.referrer;
+}
+
 function Activity(name, list){
     this.name = name;
     this.list = list;
@@ -36,6 +43,7 @@ function updateList(str){
         }
     }
 }
+
 </script>
 </head>
 <body>
@@ -61,7 +69,7 @@ function updateList(str){
 				<input type="submit" value="검색">
 			</th>
 		</tr>
-	</table>
+	</table>	
 </form>
 <table width="600" border="1" class="table table-bordered table-hober dataTable">
  	<tr>
@@ -70,7 +78,7 @@ function updateList(str){
 		<th width="100">저자명</th>
 		<th width="100">출판사</th>
 		<th width="100">구입 날짜</th>
-		<th width="100">대출 여부</th>
+		<th width="100">폐기 등록</th>
 	</tr>
 	<c:forEach items="${list}" var="bookVO" >
 		<tr>
@@ -80,14 +88,8 @@ function updateList(str){
 			<td width="100">${bookVO.bCompany}</td>
 			<td width="100"><fmt:formatDate value="${bookVO.buy_date}" pattern="yyyy.MM.dd"/></td>
 			<td width="100">
-				<c:if test="${bookVO.bRent == 1}">
-					N
-				</c:if> 
-				<c:if test="${bookVO.bRent != 1 }">
-					대출 중
-				</c:if>
+				<button onclick="if(confirm('[ ${bookVO.bTitle} ] \n\n위 도서를 정말로 폐기 하시겠습니까?')==true) location='reg_ware?bNo=${bookVO.bNo}';">폐기</button>
 			</td>
-			
 		</tr>
 	</c:forEach>
 </table>

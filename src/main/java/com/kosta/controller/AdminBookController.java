@@ -1,5 +1,7 @@
 package com.kosta.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.kosta.service.AdminBookService;
 import com.kosta.service.SearchService;
 import com.kosta.vo.BookVO;
-import com.kosta.vo.PageMaker;
 import com.kosta.vo.PageMaker_rep;
-import com.kosta.vo.RegisterVO;
 import com.kosta.vo.Rent_BookVO;
 
 @Controller
@@ -136,7 +136,7 @@ public class AdminBookController {
 		logger.info("selectBookList page");
 		model.addAttribute("list",service.selectBookList(vo));
 		
-		PageMaker pageMaker = new PageMaker();
+		PageMaker_rep pageMaker = new PageMaker_rep();
 		pageMaker.setPageInfo(vo);
 		
 		pageMaker.setTotalCount(service.countBookList(vo));
@@ -151,7 +151,7 @@ public class AdminBookController {
 		logger.info("selectBookList page");
 		model.addAttribute("list",service.selectBookList2(vo));
 		
-		PageMaker pageMaker = new PageMaker();
+		PageMaker_rep pageMaker = new PageMaker_rep();
 		pageMaker.setPageInfo(vo);
 		
 		pageMaker.setTotalCount(service.countBookList2(vo));
@@ -162,7 +162,7 @@ public class AdminBookController {
 	
 	//폐기도서 등록.
 	@RequestMapping(value = "adminLibrary/adminBook/reg_ware/index", method = RequestMethod.GET)
-	public String reg_WGet(Model model, RegisterVO vo) {
+	public String reg_WGet(Model model, BookVO vo) {
 		logger.info("selectBookList page");
 		model.addAttribute("list",service.selectRegBookList(vo));
 		
@@ -173,6 +173,14 @@ public class AdminBookController {
 		model.addAttribute("pageMaker", pageMaker);
 
 		return "adminLibrary/adminBook/reg_ware/index";
+	}
+	
+	//폐기도서 등록.
+	@RequestMapping(value = "adminLibrary/adminBook/reg_ware/reg_ware", method = RequestMethod.GET)
+	public String reg_WareGet(BookVO vo, RedirectAttributes rttr) {
+		service.reg_ware(vo);
+		rttr.addFlashAttribute("msg", "success");
+		return "redirect:/adminLibrary/adminBook/reg_ware/index";    
 	}
 
 
