@@ -116,4 +116,9 @@ public class AdminBookServiceImpl implements AdminBookService {
 		adminBookDAO.reg_ware(vo);
 	}
 
+	@Override
+	public BookVO selectLastBookList(BookVO vo) {
+		return adminBookDAO.selectLastBookList(vo);
+	}
+
 }

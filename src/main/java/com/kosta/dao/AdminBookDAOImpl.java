@@ -133,4 +133,9 @@ public class AdminBookDAOImpl implements AdminBookDAO {
 		sqlSession.insert(namespace+"reg_wareInsert", vo);
 	}
 
+	@Override
+	public BookVO selectLastBookList(BookVO vo) {
+		return sqlSession.selectOne(namespace+"selectLastBookList", vo);
+	}
+
 }

@@ -118,5 +118,13 @@
 			<td width="100"><fmt:formatDate value="${lastBook.buy_date}" pattern="yyyy.MM.dd"/></td>
 		</tr>
 </table>
+<form action="register" method="post">
+<input type="hidden" value="${searchType}" name="searchType">
+<input type="hidden" value="${keyword}" name="keyword">
+<input type="radio" value="A" name="select"> 다른 종류의 책을 신규로 등록 	
+<input type="radio" value="B" name="select"> 같은 종류의 책을 추가로 등록
+<input type="submit" value="등록">
+</form>
+
 </body>
 </html>

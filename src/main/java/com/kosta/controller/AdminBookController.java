@@ -182,6 +182,42 @@ public class AdminBookController {
 		rttr.addFlashAttribute("msg", "success");
 		return "redirect:/adminLibrary/adminBook/reg_ware/index";    
 	}
+	
+	//신규도서 등록.
 
+	
+	@RequestMapping(value = "adminLibrary/adminBook/reg_new/index", method = RequestMethod.GET)
+	public String reg_NewGet(Model model, BookVO vo) {
+		logger.info("selectBookList page");
+		return "adminLibrary/adminBook/reg_new/index";
+	}
+	
+	@RequestMapping(value = "adminLibrary/adminBook/reg_new/index", method = RequestMethod.POST)
+	public String reg_NewPost(Model model, BookVO vo) {
+		logger.info("selectBookList page");
+		model.addAttribute("lastBook",service.selectLastBookList(vo));
+		model.addAttribute("searchType",vo.getSearchType());
+		model.addAttribute("keyword", vo.getKeyword());
+		return "adminLibrary/adminBook/reg_new/register";
+	}
 
+	//신규도서 등록.
+	@RequestMapping(value = "adminLibrary/adminBook/reg_new/register", method = RequestMethod.POST)
+	public String registerGet(@RequestParam("searchType") String searchType,
+							  @RequestParam("keyword") String keyword,
+							  Model model, BookVO vo) {
+		logger.info("selectBookList page");
+		vo.setSearchType(searchType);
+		vo.setKeyword(keyword);
+		model.addAttribute("lastBook",service.selectLastBookList(vo));
+		return "adminLibrary/adminBook/reg_new/registerForm";
+	}
+	
+
+	/*
+	if(select.equals("A")){
+		model.addAttribute("BNO", (((Integer.parseInt(vo.getbNo())/10)+1)*10));
+	}else{
+		model.addAttribute("BNO", ((Integer.parseInt(vo.getbNo())+1)));
+	}*/
 }

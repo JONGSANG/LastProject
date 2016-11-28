@@ -252,4 +252,15 @@ update book set blocation=0 where bno=#{bNo}
 <insert id="reg_wareInsert">
 insert into room_f values(#{bNo},curdate())
 </insert>
+
+<!-- 신규 도서 등록 -->
+<!-- 마지막 도서 정보 불러오기 -->
+<select id="selectLastBookList" resultType="BookVO">
+select max(bno) as bno, btitle, bcompany, byear, buy_date, bwriter, bintro
+from book
+where bno is not null 
+<include refid="search"></include>
+</select>
 </mapper>
+
+

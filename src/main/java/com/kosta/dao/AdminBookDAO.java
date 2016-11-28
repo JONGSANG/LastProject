@@ -52,9 +52,12 @@ public interface AdminBookDAO {
 	public String selectMoney(Rent_BookVO vo);
 	
 	// 신규 도서 등록
+	// 마지막 BNO의 정보 불러오기
+	public BookVO selectLastBookList(BookVO vo);
+	
+	
 	
 	// 폐기 도서 등록
-
 	// 비치도서 리스트 불러오기
 	public List<BookVO> selectRegBookList(BookVO vo);
 	// 책리스트 페이징
