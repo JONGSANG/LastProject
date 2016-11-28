@@ -23,13 +23,13 @@ import com.kosta.vo.PageMaker_rep;
 //이 페이지가 Controller이라는 것을 알려줌
 @Controller	
 public class LibNewsController {
-
+ 
 	private static final Logger logger = LoggerFactory.getLogger(LibNewsController.class);
 
 	@Autowired
 	private LibNewsService service;
 	@Autowired
-	private BestService service1;
+	private BestService service1; 
 
 	 /*본 게시물 작성페이지 띄우기*/
 	
