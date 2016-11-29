@@ -18,54 +18,53 @@
 		</div>
 	</section>
 	<div id="insidebody">
-	책들
-	<table witdh=600 border="1">
+	<img alt="" src="/resources/images/word/library_brent1.png">
+	<table class="viewtable">
 		<tr>
 			<th colspan="3">문학</th>
 			<th>컴퓨터</th>
 			<th colspan="2">사회/정치</th>
 			<th>예술</th>
 			<th>어린이</th>
-			<th rowspan="2">총합</th>
+			<th width="70px" rowspan="2">총합</th>
 			
 		</tr>
 		<tr>
-			<th>시집</th>
-			<th>산문집</th>
-			<th>소설</th>
-			<th>프로그래밍언어</th>
-			<th>정치/외교</th>
-			<th>생태/환경</th>
-			<th>건축</th>
-			<th>인물</th>
+			<th width="60px">시집</th>
+			<th width="80px">산문집</th>
+			<th width="60px">소설</th>
+			<th width="140px">프로그래밍언어</th>
+			<th width="100px">정치/외교</th>
+			<th width="100px">생태/환경</th>
+			<th width="60px">건축</th>
+			<th width="60px">인물</th>
 		</tr>
 		<tr>
-			<td>${b_status.si} 권</td>
-			<td>${b_status.san} 권</td>
-			<td>${b_status.so} 권</td>
-			<td>${b_status.pro} 권</td>
-			<td>${b_status.jung} 권</td>
-			<td>${b_status.sang} 권</td>
-			<td>${b_status.gun} 권</td>
-			<td>${b_status.inm} 권</td>
-			<td>${b_status.allb-b_status.wol} 권</td>
+			<td id="vtd2">${b_status.si} 권</td>
+			<td id="vtd2">${b_status.san} 권</td>
+			<td id="vtd2">${b_status.so} 권</td>
+			<td id="vtd2">${b_status.pro} 권</td>
+			<td id="vtd2">${b_status.jung} 권</td>
+			<td id="vtd2">${b_status.sang} 권</td>
+			<td id="vtd2">${b_status.gun} 권</td>
+			<td id="vtd2">${b_status.inm} 권</td>
+			<td id="vtd2">${b_status.allb-b_status.wol} 권</td>
 		</tr>
 	</table>
-	</div>
-	<div id="insidebody">
-	연속간행물
-		<table witdh=300 border="1">
+	<img style="margin-top: 20px" alt="" src="/resources/images/word/library_brent2.png">
+		<table class="viewtable">
 			<tr>
 				<th colspan="2">연속간행물</th>
 			</tr>
 			<tr>
-				<th>종 수</th>
-				<th>총 권수</th>
+				<th  width="70px">종 수</th>
+				<th  width="90px">총 권수</th>
 			</tr>
 			<tr>
-				<td>${b_status.wol_cnt} 종</td>
-				<td>${b_status.wol} 권</td>
+				<td id="vtd2">${b_status.wol_cnt} 종</td>
+				<td id="vtd2">${b_status.wol} 권</td>
 			</tr>
 		</table>
+		</div>
 </body>
 </html>

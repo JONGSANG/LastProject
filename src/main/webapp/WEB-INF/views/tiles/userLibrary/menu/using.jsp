@@ -19,8 +19,5 @@
 					<li>
 						<a class="menubtn" href="/userLibrary/using/p_info">주차장안내</a>
 					</li>
-					<li>
-						<a class="menubtn" href="/userLibrary/using/b_room">문헌정보실</a>
-					</li>
 				</ul>
 			</div>

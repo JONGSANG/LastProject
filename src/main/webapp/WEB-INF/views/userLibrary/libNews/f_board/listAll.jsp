@@ -22,43 +22,44 @@
 		</div>
 	</section>
 	<div id="insidebody">
-<table border="1">
+<table class="listtable">
 	<tr>
-		<th style="width: 40px" align="center">번호</th>
-		<th align="center" width="300">제목</th>
-		<th align="center" width="130">ID</th>
-		<th align="center">작성 일자</th>
-		<th style="width: 60px" align="center">조회수</th>
+		<th width="80px">번호</th>
+		<th width="350px">제목</th>
+		<th width="140px">ID</th>
+		<th width="120px">작성 일자</th>
+		<th width="80px">조회수</th>
 	</tr>
 	
 	<c:forEach items="${list}" var="list" varStatus="var">
 	<tr>
-		<td align="center">${list.num }</td>
-		<td align="center"><a href='read?num=${list.num}'>${list.title} 
+		<td>${list.num }</td>
+		<td style="padding-top: 5px"><a href='read?num=${list.num}'>${list.title} 
       	<c:if test="${list.re_cnt != 0}">[ ${list.re_cnt} ]</c:if></a></td>
-		<td align="center">${list.id}</td>
-		<td align="center"><fmt:formatDate value="${list.write_date}" pattern="yyyy-MM-dd"/>
+		<td>${list.id}</td>
+		<td><fmt:formatDate value="${list.write_date}" pattern="yyyy-MM-dd"/>
 		
 		</td>
-		<td align="center">${list.viewcnt}</td>
+		<td>${list.viewcnt}</td>
 	</tr>
 	</c:forEach>
 </table>
 	
-	<security:authorize access="hasRole('ROLE_USER')">
-	<a href='/userLibrary/libNews/f_board/register'><button type="submit" class="btn btn-primary">글쓰기</button></a>
+    <div class="text-center">
+    <security:authorize access="hasRole('ROLE_USER')">
+	<a href='/userLibrary/libNews/f_board/register' style="float: right;">
+	<button type="submit" class="btn btn-primary">글쓰기</button>
+	</a>
 	</security:authorize>
 	
-    <div class="text-center">
+	<div class="paging">
 		<ul class="pagination">
 
 			<c:if test="${pageMaker.prev}">
-				<li><a
-					href="listAll${pageMaker.makeQuery(pageMaker.startPage - 1) }">&laquo;</a></li>
+				<li><a href="listAll${pageMaker.makeQuery(pageMaker.startPage - 1) }">&laquo;</a></li>
 			</c:if>
 
-			<c:forEach begin="${pageMaker.startPage }"
-				end="${pageMaker.endPage }" var="idx">
+			<c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage }" var="idx">
 				<li <c:out value="${pageMaker.pageInfo.page == idx?'class =active':''}"/>>
 					<a href="listAll${pageMaker.makeQuery(idx)}">${idx}</a>
 				</li>
@@ -70,6 +71,7 @@
 			</c:if>
 
 		</ul>
+		</div>
 	</div>
     </div>
     

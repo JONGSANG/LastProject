@@ -20,8 +20,5 @@
 					<li>
 						<a class="menubtn" href="/userLibrary/libNews/f_board/listAll">자유게시판</a>
 					</li>
-					<li>
-						<a class="menubtn" href="/userLibrary/libNews/openSource">공개자료실</a>
-					</li>
 				</ul>
 			</div>

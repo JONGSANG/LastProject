@@ -33,8 +33,4 @@ public class UsingController {
 	public String p_infoGET(Model model) {
 		return "userLibrary/using/p_info";
 	}
-	@RequestMapping(value="userLibrary/using/b_room", method=RequestMethod.GET)
-	public String recommandGET(Model model) {
-		return "userLibrary/using/b_room";
-	}
 }

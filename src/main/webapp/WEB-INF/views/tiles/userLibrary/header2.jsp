@@ -43,8 +43,7 @@
                     	<li><a class="submenu" href="/userLibrary/using/s_room">열람실</a></li>
                     	<li><a class="submenu" href="/userLibrary/using/b_rent">책대출안내</a></li>
                     	<li><a class="submenu" href="/userLibrary/using/m_info">회원안내</a></li>
-                    	<li><a class="submenu" href="/userLibrary/using/p_info">주차장안내</a></li>
-                    	<li><a class="submenu end" href="/userLibrary/using/b_room">문헌정보실</a></li>
+                    	<li><a class="submenu end" href="/userLibrary/using/p_info">주차장안내</a></li>
                     </ul>
                     </li>
                     <li id="menu" class="listyle"><a href="#">&nbsp;&nbsp;&nbsp;검색&nbsp;&nbsp;&nbsp;</a>
@@ -61,8 +60,7 @@
                     	<li><a class="submenu" href="/userLibrary/libNews/schedule">도서관 일정</a></li>
                     	<li><a class="submenu" href="/userLibrary/libNews/recommand/recommand">추천도서</a></li>
                     	<li><a class="submenu" href="/userLibrary/libNews/best/listBest">대출도서 베스트</a></li>
-                    	<li><a class="submenu" href="/userLibrary/libNews/f_board/listAll">자유게시판</a></li>
-                    	<li><a class="submenu end" href="/userLibrary/libNews/openSource">공개자료실</a></li>
+                    	<li><a class="submenu end" href="/userLibrary/libNews/f_board/listAll">자유게시판</a></li>
                     </ul>
                     </li>
                     <li id="menu" class="listyle"><a href="#">&nbsp;&nbsp;서비스&nbsp;&nbsp;</a>
@@ -71,6 +69,7 @@
                     	<li><a class="submenu" href="/userLibrary/service/culture/list">문화 행사</a></li>
                     	<li><a class="submenu" href="/userLibrary/service/food">구내 식단표</a></li>
                     	<li><a class="submenu" href="/userLibrary/service/delivery">도서배달서비스</a></li>
+                    	<li><a class="submenu" href="/userLibrary/service/openboard/list">공개자료실</a></li>
                     	<li><a class="submenu end" href="/userLibrary/service/min_board/listAll">민원게시판</a></li>
                     </ul>
                     </li>

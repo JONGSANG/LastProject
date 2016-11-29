@@ -35,7 +35,7 @@
 		</tr>
 		<tr >
 			<td id="vtd1">일반열람실, 장애인열람실</td>
-			<td id="vtd2" style="border-right: #e8e8e8 1px solid;">07:00 ~ 24:00</td>
+			<td id="vtd2" style="border-right: #e8e8e8 1px solid;">07:00 ~ 22:00</td>
 			<td id="vtd2">매월 둘째, 넷째 금요일</td>
 		</tr>
 	</table>
@@ -55,7 +55,7 @@
 		</tr>
 		<tr >
 			<td id="vtd1">주차장</td>
-			<td id="vtd2" style="border-right: #e8e8e8 1px solid;">04:00 ~ 24:00</td>
+			<td id="vtd2" style="border-right: #e8e8e8 1px solid;">04:00 ~ 22:00</td>
 			<td id="vtd2"></td>
 		</tr>
 		<tr >

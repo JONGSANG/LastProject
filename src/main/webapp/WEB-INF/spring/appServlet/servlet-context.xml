@@ -28,7 +28,7 @@
 	</beans:bean>
 	
 	<beans:bean id = "uploadPath" class = "java.lang.String">
-		<beans:constructor-arg value = "C:/Last_Project/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/library/resources/file" />
+		<beans:constructor-arg value = "C:/Last_Project/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/library/resources/file" />
 	</beans:bean>
  	
  	<beans:bean id="TilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">

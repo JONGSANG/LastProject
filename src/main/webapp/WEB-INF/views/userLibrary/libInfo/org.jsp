@@ -17,7 +17,7 @@
 	<img alt="" src="/resources/images/word/library_organization.png">
 	<img alt="" src="/resources/images/word/library_org.png">
 	<br><br>
-	<table class="viewtable" align="center">
+	<table class="viewtable">
 		<tr>
 			<th width="130" >직위</th>
 			<th width="100">이름</th>

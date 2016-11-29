@@ -17,6 +17,9 @@
 						<a class="menubtn" href="/userLibrary/service/delivery">도서배달서비스</a>
 					</li>
 					<li>
+						<a class="menubtn" href="/userLibrary/service/openboard/list">공개자료실</a>
+					</li>
+					<li>
 						<a class="menubtn" href="/userLibrary/service/min_board/listAll">민원게시판</a>
 					</li>
 				</ul>
