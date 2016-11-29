@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="StudyRoomMapper">
+
+<select id="roomList" resultType="StudyRoomVO">
+SELECT *
+FROM STUDYROOM
+WHERE
+<if test="#{type}='a'">
+	NUM LIKE a%
+</if>
+<if test="#{type}='b'">
+	NUM LIKE b%
+</if>
+<if test="#{type}='c'">
+	NUM LIKE b%
+</if>
+</select>
+
+</mapper>
+
+
