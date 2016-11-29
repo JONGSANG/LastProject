@@ -23,34 +23,34 @@
 	<form role="form" method="post">
 		<input type='hidden' name='num' value="${boardVO.num}">
 	</form>
-	<table class="listread">
+	<table class="listread" style="width: 760px">
+	<tr>
+	<th width="80px">글번호</th><td  width="30px" id="listTitle" align="center">${boardVO.num}</td>
+	<th width="100px">아이디</th><td  width="120px" id="listTitle" align="center">${boardVO.id}</td>
+	<th width="100px">조회수</th><td  width="80px" id="listTitle" align="center">${boardVO.viewcnt}</td>
+	<th width="100px">작성날짜</th><td  width="140px" id="listTitle" align="center"><fmt:formatDate value="${boardVO.write_date}" pattern="yyyy-MM-dd"/></td>
+	</tr>
+	<tr>
+	<th>제목</th><td id="listTitle" colspan="7">${boardVO.title}</td>
+	</tr>
+	<tr>
+		<td id="listcontents" colspan="8" style="height: 400px">${boardVO.content}</td>
+	</tr>
 		<tr>
-			<th id="listTitle" width="40px">제목</th>
-			<th id="listcontents" width="300px"><input type="text" name='title' class="form-control"
-				value="${boardVO.title}" readonly="readonly"></th>
-			<th id="listTitle" width="80px">ID</th>
-			<th id="listcontents" width="100px"><input type="text" name="id" class="form-control"
-				value="${boardVO.id}" readonly="readonly"></th>
-		</tr>
-		<tr>
-			<td colspan="4">${boardVO.content}</td>
-		</tr>
-		<tr>
-			<th colspan="2">
+			<td colspan="8" style="padding-top: 5px; border: none;">
+			<div class="fright">
 			<c:if test="${boardVO.id==id}">
-				<button type="button"
+				<button style="width: 50px" type="button"
 					onclick="location.href='modify?num=${boardVO.num}'">수정</button>
-			
-				<button type="button"
+				<button style="width: 50px" type="button"
 					onclick="location.href='remove?num=${boardVO.num}'">삭제</button>
 			</c:if> 
 					<a href='listAll'><button type="submit">목록보기</button></a>
-			
-			</th>
+			</div>
+			</td>
 		</tr>
-
 	</table>
-
+<br><br><br><br><br><br>
 	<form role="form" method="post">
 		<input type="hidden" name="num" value="${boardVO.num}">
 		<table border="1">

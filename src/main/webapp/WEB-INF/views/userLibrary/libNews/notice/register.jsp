@@ -19,7 +19,11 @@
 	</section>
 	<div id="insidebody">
 <form role="form" method="post">
-	<table border="1">
+	<table class="listread">
+	<tr>
+		<th width="80px">제목</th><td width="500px"><input type="text" name='title' placeholder="Enter Title"></td>
+		<th width="50px">작성자</th><td width="50px"><input type="text" name="id" value="${ id }" readonly="readonly"></td>
+	</tr>
 		<tr>
 			<th width="80">제목</th>
 			<th><input type="text" name='title' placeholder="Enter Title">
@@ -30,7 +34,7 @@
 		</tr>
 		<tr>
 			<th>ID</th>
-			<th><input type="text" name="id" value="${ id }" placeholder="Enter id"></th>
+			<th></th>
 		</tr>
 		<tr>
 			<th colspan="2"><button type="submit">확인</button>

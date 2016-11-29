@@ -6,6 +6,10 @@
 @import url(http://fonts.googleapis.com/earlyaccess/hanna.css); /* 한나체 font-family: 'Hanna', serif; */
 
 
+/* global */
+.fright{float: right;}
+.listw{width: 100px}
+
 .menubtn{
  width:170px;
  border-radius: 5px;font-size:16px; padding: 8px 8px 8px 8px; text-decoration:none; display:inline-block;text-shadow: 0px 0px 0 rgba(255,255,255,0.3);font-weight:bold; color: #253559;
@@ -84,11 +88,17 @@ section #word{padding-top: 30px; padding-left:20px; width: 250px; position: abso
 .viewtable #thend {border-right: #EAEAEA 1px solid;}
 
 .listtable th{ background-color: #E8EBF1; border-bottom: #C4CDD9 1px solid; border-top: #7187A3 1px solid; height: 30px; vertical-align: middle;}
-.listtable td{text-align: center; vertical-align: middle; height: 28px; border-bottom: #E8EBF1 1px solid; font-family: 'Jeju Gothic', serif; font-size: 14px; color: #4c4c4c}
-.listtable a{color: #686868; font-family: 'Jeju Gothic', serif; font-size: 14px; vertical-align: middle; padding-top: 5px}
+.listtable td{text-align: center; vertical-align: middle; height: 28px; border-bottom: #E8EBF1 1px solid; font-family: 'Jeju Gothic', serif; font-size: 15px; color: #4c4c4c}
+.listtable a{color: #686868; font-family: 'Jeju Gothic', serif; font-size: 15px; vertical-align: middle; padding-top: 5px}
 
-.listread {float: left;}
+.listread {border-top: #7187A3 1px solid;}
+.listread th{background-color: #E8EBF1; border-bottom: #C4CDD9 1px solid;  border-top: #7187A3 1px solid; height: 25px; vertical-align: middle;}
+.listread td{border-bottom: #C4CDD9 1px solid; font-family: 'Noto Sans KR', sans-serif; padding-bottom: 5px; height: 25px;}
+.listread #listTitle{  height: 25px; padding-top: 5px; padding-left: 5px}
+.listread #listcontents { padding: 10px 0 0 10px; border-bottom: #C4CDD9 1px solid;}
 
+#write {background-color: white;}
+#write:FOCUS {border: none; box-shadow:0 0 0;}
 
 .text-center {border-top: #7187A3 1px solid; width: 770px; margin-top: -1px; padding-top: 10px; text-align: center;}
 

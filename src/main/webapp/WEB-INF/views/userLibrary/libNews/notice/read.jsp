@@ -22,39 +22,34 @@
 	</section>
 	<div id="insidebody">
 	<form role="form" method="post">
-
 		<input type='hidden' name='num' value="${noticeVO.num}">
-
 	</form>
-
-	<h2>상세보기 페이지</h2>
-
-	<table border="1">
-		<tr>
-			<th>제목</th>
-			<th><input type="text" name='title' class="form-control"
-				value="${noticeVO.title}" readonly="readonly">
-		</tr>
-		<tr>
-			<th>내용</th>
-			<th><textarea class="form-control" name="content" rows="3"
-					readonly="readonly">${noticeVO.content}</textarea></th>
-		</tr>
-		<tr>
-			<th>ID</th>
-			<th><input type="text" name="id" class="form-control"
-				value="${noticeVO.id}" readonly="readonly"></th>
-		</tr>
-		<tr>
-			<th colspan="2">
-				<button type="button"
+	<table class="listread" style="width: 760px">
+	<tr>
+	<th width="80px">글번호</th><td  width="30px" id="listTitle" align="center">${noticeVO.num}</td>
+	<th width="100px">아이디</th><td  width="120px" id="listTitle" align="center">${noticeVO.id}</td>
+	<th width="100px">조회수</th><td  width="80px" id="listTitle" align="center">${noticeVO.viewcnt}</td>
+	<th width="100px">작성날짜</th><td  width="140px" id="listTitle" align="center"><fmt:formatDate value="${noticeVO.write_date}" pattern="yyyy-MM-dd"/></td>
+	</tr>
+	<tr>
+	<th>제목</th><td id="listTitle" colspan="7">${noticeVO.title}</td>
+	</tr>
+	<tr>
+		<td id="listcontents" colspan="8" style="height: 400px">${noticeVO.content}</td>
+	</tr>
+	<tr>
+			<td colspan="8" style="padding-top: 5px; border: none;">
+			<div class="fright">
+			<c:if test="${boardVO.id==id}">
+				<button style="width: 50px" type="button"
 					onclick="location.href='modify?num=${noticeVO.num}'">수정</button>
-				<button type="button"
-					onclick="location.href='remove?num=${noticeVO.num}'">삭제</button> <a
-				href='listAll'><button type="submit">목록보기</button></a>
-			</th>
+				<button style="width: 50px" type="button"
+					onclick="location.href='remove?num=${noticeVO.num}'">삭제</button>
+			</c:if> 
+					<a href='listAll'><button type="submit">목록보기</button></a>
+			</div>
+			</td>
 		</tr>
-
 	</table>
 	</div>
 </body>
