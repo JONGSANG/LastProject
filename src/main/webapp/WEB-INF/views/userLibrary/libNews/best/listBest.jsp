@@ -63,31 +63,31 @@
 		<tr>
 			<th>사진</th>
 			<td>
-				<img src="/resources/book_img/${mun.bNo}.jpg" width="100">
+				<img src="/resources/book_img/${art.bNo}.jpg" width="100">
 			</td>
 			<td>
-				<img src="/resources/book_img/${com.bNo}.jpg" width="100">
+				<img src="/resources/book_img/${young.bNo}.jpg" width="100">
 			</td>
 		</tr>
 		<tr>
 			<th>책 명</th>
-			<td>${mun.bTitle}</td>
-			<td>${com.bTitle}</td>
+			<td>${art.bTitle}</td>
+			<td>${young.bTitle}</td>
 		</tr>
 		<tr>
 			<th>저자명</th>
-			<td>${mun.bWriter}</td>
-			<td>${com.bWriter}</td>
+			<td>${art.bWriter}</td>
+			<td>${young.bWriter}</td>
 		</tr>
 		<tr>
 			<th>출판사</th>
-			<td>${mun.bCompany}</td>
-			<td>${com.bCompany}</td>
+			<td>${art.bCompany}</td>
+			<td>${young.bCompany}</td>
 		</tr>
 		<tr>
 			<th>대출횟수</th>
-			<td>${mun.brent_cnt}</td>
-			<td>${com.brent_cnt}</td>
+			<td>${art.brent_cnt}</td>
+			<td>${young.brent_cnt}</td>
 		</tr>		
 	</table>
 
