@@ -5,19 +5,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="StudyRoomMapper">
 
-<select id="roomList" resultType="StudyRoomVO">
+<select id="aRoomList"  resultType="StudyRoomVO">
 SELECT *
 FROM STUDYROOM
-WHERE
-<if test="#{type}='a'">
-	NUM LIKE a%
-</if>
-<if test="#{type}='b'">
-	NUM LIKE b%
-</if>
-<if test="#{type}='c'">
-	NUM LIKE b%
-</if>
+WHERE NUM LIKE 'a%'
+</select>
+
+<select id="bRoomList"  resultType="StudyRoomVO">
+SELECT *
+FROM STUDYROOM
+WHERE NUM LIKE 'a%'
+</select>
+
+<select id="cRoomList"  resultType="StudyRoomVO">
+SELECT *
+FROM STUDYROOM
+WHERE NUM LIKE 'c%'
 </select>
 
 </mapper>

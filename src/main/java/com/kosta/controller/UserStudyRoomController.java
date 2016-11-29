@@ -20,31 +20,31 @@ public class UserStudyRoomController {
 	StudyRoomService studyRoomService;
 	
 	@RequestMapping(value="userStudyRoom/aRoom/index", method=RequestMethod.GET)
-	public String aRoomGET(StudyRoomVO vo, Model model) throws Exception{
+	public String aRoomGET(Model model) throws Exception{
 		
 		logger.info("A열람실 페이지");
 		
-		model.addAttribute("list", studyRoomService.aRoomList(vo));
+		model.addAttribute("list", studyRoomService.aRoomList());
 		
 		return "userStudyRoom/aRoom/index";
 	}
 	
 	@RequestMapping(value="userStudyRoom/bRoom/index", method=RequestMethod.GET)
-	public String bRoomGET(StudyRoomVO vo, Model model) throws Exception{
+	public String bRoomGET(Model model) throws Exception{
 		
 		logger.info("B열람실 페이지");
 		
-		model.addAttribute("list", studyRoomService.bRoomList(vo));
+		model.addAttribute("list", studyRoomService.bRoomList());
 		
 		return "userStudyRoom/bRoom/index";
 	}
 	
 	@RequestMapping(value="userStudyRoom/cRoom/index", method=RequestMethod.GET)
-	public String cRoomGET(StudyRoomVO vo, Model model) throws Exception{
+	public String cRoomGET(Model model) throws Exception{
 		
 		logger.info("C열람실 페이지");
 		
-		model.addAttribute("list", studyRoomService.cRoomList(vo));
+		model.addAttribute("list", studyRoomService.cRoomList());
 		
 		return "userStudyRoom/cRoom/index";
 	}

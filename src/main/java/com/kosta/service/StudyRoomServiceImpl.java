@@ -15,21 +15,18 @@ public class StudyRoomServiceImpl implements StudyRoomService {
 	StudyRoomDAO studyRoomdao;
 
 	@Override
-	public List<StudyRoomVO> aRoomList(StudyRoomVO vo) throws Exception {
-		vo.setType("a");
-		return studyRoomdao.RoomList(vo);
+	public List<StudyRoomVO> aRoomList() throws Exception {
+		return studyRoomdao.aRoomList();
 	}
 
 	@Override
-	public List<StudyRoomVO> bRoomList(StudyRoomVO vo) throws Exception {
-		vo.setType("b");
-		return studyRoomdao.RoomList(vo);
+	public List<StudyRoomVO> bRoomList() throws Exception {
+		return studyRoomdao.bRoomList();
 	}
 
 	@Override
-	public List<StudyRoomVO> cRoomList(StudyRoomVO vo) throws Exception {
-		vo.setType("c");
-		return studyRoomdao.RoomList(vo);
+	public List<StudyRoomVO> cRoomList() throws Exception {
+		return studyRoomdao.cRoomList();
 	}
 	
 }

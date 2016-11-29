@@ -6,9 +6,9 @@ import com.kosta.vo.StudyRoomVO;
 
 public interface StudyRoomService {
 	
-	public List<StudyRoomVO> aRoomList(StudyRoomVO vo) throws Exception;
+	public List<StudyRoomVO> aRoomList() throws Exception;
 	
-	public List<StudyRoomVO> bRoomList(StudyRoomVO vo) throws Exception;
+	public List<StudyRoomVO> bRoomList() throws Exception;
 	
-	public List<StudyRoomVO> cRoomList(StudyRoomVO vo) throws Exception;
+	public List<StudyRoomVO> cRoomList() throws Exception;
 }
