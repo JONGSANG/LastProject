@@ -67,7 +67,7 @@
 		<table border="1">
 			<tr>
 				<th>ID</th>
-				<th><input type="text" name="id" placeholder="Enter id" value="${ id }"></th>
+				<th><input type="text" name="id" placeholder="Enter id" value="${ id }"  readonly="readonly"></th>
 			</tr>
 			<tr>
 				<th>제목</th>
