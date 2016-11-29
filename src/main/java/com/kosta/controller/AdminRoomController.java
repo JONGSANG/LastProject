@@ -17,7 +17,7 @@ public class AdminRoomController {
 
 	private static final Logger logger = LoggerFactory.getLogger(AdminRoomController.class);
 	
-	@RequestMapping(value = "adminLibrary/adminStudyRoom/aRoom/index", method = RequestMethod.GET)
+	@RequestMapping(value = "adminLibrary/adminStudyRoom/index", method = RequestMethod.GET)
 	public String rentGet(Model model) {
 		logger.info("RentBook page");
 		
@@ -32,6 +32,6 @@ public class AdminRoomController {
 		model.addAttribute("list",list);
 		
 		System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());list.get(0).getbNo();
-		return "adminLibrary/adminStudyRoom/aRoom/index";
+		return "adminLibrary/adminStudyRoom/index";
 	}
 }
