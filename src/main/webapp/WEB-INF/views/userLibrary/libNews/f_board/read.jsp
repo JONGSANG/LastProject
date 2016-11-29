@@ -21,28 +21,19 @@
 	</section>
 	<div id="insidebody">
 	<form role="form" method="post">
-
 		<input type='hidden' name='num' value="${boardVO.num}">
-
 	</form>
-
-	<h2>상세보기 페이지</h2>
-
-	<table border="1">
+	<table class="listread">
 		<tr>
-			<th>제목</th>
-			<th><input type="text" name='title' class="form-control"
+			<th id="listTitle" width="40px">제목</th>
+			<th id="listcontents" width="300px"><input type="text" name='title' class="form-control"
 				value="${boardVO.title}" readonly="readonly"></th>
-		</tr>
-		<tr>
-			<th>내용</th>
-			<th><textarea class="form-control" name="content" rows="3"
-					readonly="readonly">${boardVO.content}</textarea></th>
-		</tr>
-		<tr>
-			<th>ID</th>
-			<th><input type="text" name="id" class="form-control"
+			<th id="listTitle" width="80px">ID</th>
+			<th id="listcontents" width="100px"><input type="text" name="id" class="form-control"
 				value="${boardVO.id}" readonly="readonly"></th>
+		</tr>
+		<tr>
+			<td colspan="4">${boardVO.content}</td>
 		</tr>
 		<tr>
 			<th colspan="2">
