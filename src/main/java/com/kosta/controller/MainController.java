@@ -56,4 +56,12 @@ public class MainController {
 		mainService.updateRent();
 		return "adminLibrary";
 	}
+	
+	@RequestMapping(value = "/userStudyRoom", method = RequestMethod.GET)
+	public String studyRoomMain(Model model) throws Exception {
+		
+		logger.info("열람실 메인 페이지");
+		
+		return "userStudyRoom";
+	}
 }

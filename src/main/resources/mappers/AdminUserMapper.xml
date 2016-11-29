@@ -5,8 +5,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="AdminUserMapper">
 
-<select id="" resultType="String">
-
+<select id="allMember" resultType="String">
+SELECT ID
+FROM MEMBER
 </select>
 
 </mapper>

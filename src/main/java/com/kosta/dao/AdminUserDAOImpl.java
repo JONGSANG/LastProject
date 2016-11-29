@@ -1,5 +1,7 @@
 package com.kosta.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -13,7 +15,6 @@ public class AdminUserDAOImpl implements AdminUserDAO {
 	
 	@Override
 	public String[] allMember() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return null;//sqlSession.selectList("AdminUserMapper.allMember");
 	}
 }

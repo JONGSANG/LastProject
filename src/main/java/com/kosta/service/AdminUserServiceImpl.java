@@ -18,7 +18,7 @@ public class AdminUserServiceImpl implements AdminUserService {
 	
 	@Override
 	public void memberMail(MailVO vo) throws Exception {
-		//vo.setTo(adminUserdao.allMember());
+		vo.setTo(adminUserdao.allMember());
 	}
 	
 }
