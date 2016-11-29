@@ -25,19 +25,19 @@
 		<td id="vtd1">제1 일반 열람실</td>
 		<td id="vtd2" style="border-right: #e8e8e8 1px solid;">지상3층</td>
 		<td id="vtd2" style="border-right: #e8e8e8 1px solid;">09:00 ~ 22:00</td>
-		<td id="vtd2">268석</td>
+		<td id="vtd2">62석</td>
 	</tr>
 	<tr align="center">
 		<td id="vtd1">제2 일반 열람실</td>
 		<td id="vtd2" style="border-right: #e8e8e8 1px solid;">지상3층</td>
 		<td id="vtd2" style="border-right: #e8e8e8 1px solid;">09:00 ~ 22:00</td>
-		<td id="vtd2">248석</td>
+		<td id="vtd2">42석</td>
 	</tr>
 	<tr align="center">
-		<td id="vtd1">어린이 열람실</td>
-		<td id="vtd2" style="border-right: #e8e8e8 1px solid;">지하1층</td>
+		<td id="vtd1">노트북 열람실</td>
+		<td id="vtd2" style="border-right: #e8e8e8 1px solid;">지상2층</td>
 		<td id="vtd2" style="border-right: #e8e8e8 1px solid;">09:00 ~ 18:00</td>
-		<td id="vtd2">68석</td>
+		<td id="vtd2">24석</td>
 	</tr>
 	<tr align="center">
 		<td id="vtd1">장애인 열람실</td>

@@ -82,7 +82,7 @@
 			<td id="vtd2">평생교육</td>
 		</tr>
 		<tr width="30px" style = "font-size:12px;">
-			<td id="vtd1" rowspan = "2">지상2층</td>
+			<td id="vtd1" rowspan = "3">지상2층</td>
 			<td id="vtd2">문헌정보실</td>
 			<td id="vtd2">1,163.40</td>
 			<td id="vtd2">153</td>
@@ -92,19 +92,25 @@
 			<td id="vtd2">복사실</td>
 			<td id="vtd2">13.36</td>
 			<td id="vtd2"></td>
-			<td id="vtd2"></td>
+			<td id="vtd2">인쇄공간</td>
+		</tr>
+		<tr width="30px" style = "font-size:12px;">
+			<td id="vtd2">노트북 열람실</td>
+			<td id="vtd2">238.74</td>
+			<td id="vtd2">24</td>
+			<td id="vtd2">개인랜선, 학습공간</td>
 		</tr>
 		<tr width="30px" style = "font-size:12px;">
 			<td id="vtd1" rowspan = "3">지상3층</td>
 			<td id="vtd2">제1일반열람실</td>
-			<td id="vtd2">487.30</td>
-			<td id="vtd2">268</td>
+			<td id="vtd2">502.30</td>
+			<td id="vtd2">62</td>
 			<td id="vtd2">학습공간</td>
 		</tr>
 		<tr width="30px" style = "font-size:12px;">
 			<td id="vtd2">제2일반열람실</td>
-			<td id="vtd2">502.96</td>
-			<td id="vtd2">248</td>
+			<td id="vtd2">487.96</td>
+			<td id="vtd2">42</td>
 			<td id="vtd2">학습공간</td>
 		</tr>
 		<tr width="30px" style = "font-size:12px;">
