@@ -17,21 +17,58 @@ public class AdminRoomController {
 
 	private static final Logger logger = LoggerFactory.getLogger(AdminRoomController.class);
 	
-	@RequestMapping(value = "adminLibrary/adminStudyRoom/index", method = RequestMethod.GET)
-	public String rentGet(Model model) {
+	@RequestMapping(value = "adminLibrary/adminStudyRoom/aRoom/index", method = RequestMethod.GET)
+	public String aRoomIndexGet(Model model) {
 		logger.info("RentBook page");
 		
 		List<BookVO> list = new ArrayList<BookVO>();
 		BookVO vo = new BookVO();
 		
-		vo.setbNo("되라되라되라고");
+		vo.setbNo("dd");
+		list.add(vo);
+		BookVO vo2 = new BookVO();
+
+		vo2.setbNo("제발제발");
+		list.add(vo2);
+		System.out.println(list.get(0).getbNo());
+		System.out.println(list.get(1).getbNo());
+		model.addAttribute("list",list);
+		model.addAttribute("state",0);
+		return "adminLibrary/adminStudyRoom/aRoom/index";
+	}
+	
+	@RequestMapping(value = "adminLibrary/adminStudyRoom/bRoom/index", method = RequestMethod.GET)
+	public String bRoomIndexGet(Model model) {
+		logger.info("RentBook page");
+		
+		List<BookVO> list = new ArrayList<BookVO>();
+		BookVO vo = new BookVO();
+		
+		vo.setbNo("dd");
 		list.add(vo);
 		vo.setbNo("제발제발");
 		list.add(vo);
 		
 		model.addAttribute("list",list);
-		
-		System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());System.out.println(list.get(0).getbNo());list.get(0).getbNo();
-		return "adminLibrary/adminStudyRoom/index";
+		model.addAttribute("state",0);
+		return "adminLibrary/adminStudyRoom/bRoom/index";
 	}
+
+	@RequestMapping(value = "adminLibrary/adminStudyRoom/cRoom/index", method = RequestMethod.GET)
+	public String cRoomIndexGet(Model model) {
+		logger.info("RentBook page");
+		
+		List<BookVO> list = new ArrayList<BookVO>();
+		BookVO vo = new BookVO();
+		
+		vo.setbNo("dd");
+		list.add(vo);
+		vo.setbNo("제발제발");
+		list.add(vo);
+		
+		model.addAttribute("list",list);
+		model.addAttribute("state",0);
+		return "adminLibrary/adminStudyRoom/cRoom/index";
+	}
+
 }
