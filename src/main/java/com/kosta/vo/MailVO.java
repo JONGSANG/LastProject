@@ -1,7 +1,6 @@
 package com.kosta.vo;
 
 public class MailVO {
-	private String[] to;
 	private String subject;
 	private String text;
 
@@ -19,14 +18,6 @@ public class MailVO {
 
 	public void setText(String text) {
 		this.text = text;
-	}
-
-	public String[] getTo() {
-		return to;
-	}
-
-	public void setTo(String[] to) {
-		this.to = to;
 	}
 	
 }

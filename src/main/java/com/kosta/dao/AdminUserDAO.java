@@ -4,6 +4,8 @@ import java.util.List;
 
 public interface AdminUserDAO {
 
-	public String[] allMember() throws Exception;
+	public List<String> allMember() throws Exception;
+
+	public List<String> allAdmin() throws Exception;
 	
 }

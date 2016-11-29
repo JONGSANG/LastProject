@@ -6,6 +6,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.kosta.vo.MemberVO;
+
 @Repository
 public class AdminUserDAOImpl implements AdminUserDAO {
 
@@ -14,7 +16,12 @@ public class AdminUserDAOImpl implements AdminUserDAO {
 	private SqlSession sqlSession;
 	
 	@Override
-	public String[] allMember() throws Exception {
-		return null;//sqlSession.selectList("AdminUserMapper.allMember");
+	public List<String> allMember() throws Exception {
+		return sqlSession.selectList("AdminUserMapper.allMember");
+	}
+
+	@Override
+	public List<String> allAdmin() throws Exception {
+		return sqlSession.selectList("AdminUserMapper.allAdmin");
 	}
 }
