@@ -16,12 +16,15 @@
 </style>
 </head>
 <body>
-<c:forEach items="${list}" var="list">
-	<c:out value="${list.bNo}"></c:out>
-</c:forEach>
+<%-- <c:forEach items="${list}" var="list" varStatus="var">
+	<c:set value="${list.bNo}" var="a[${var.index}]"/>
+</c:forEach> --%>
 <h1>제 1 열람실</h1>
+<%-- 
+<c:set var="변수이름" value="값" scope="영역 page | request | session | application중 하나 지정"/>
+or <c:set var="변수이름" scope="영역">값</c:set>
 
-
+ --%>
 <table width="910px" border="1" class="room" >
 <!-- 1 행 -->
 	<tr>
@@ -98,7 +101,7 @@
 	<!-- 3 열 -->
 		<c:if test="${state==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list.get(1).getbNo()}
 				1
 			</td>
 		</c:if>
@@ -117,7 +120,7 @@
 	<!-- 4 열 -->
 		<c:if test="${state==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[1].getbNo()}
 				1
 			</td>
 		</c:if>
@@ -1100,7 +1103,7 @@
 	<!-- 8 열 -->
 		<c:if test="${state==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[1].getbNo()}
 				1
 			</td>
 		</c:if>
@@ -1119,7 +1122,7 @@
 	<!-- 9 열 -->
 		<c:if test="${state==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getbNo()}
 				1
 			</td>
 		</c:if>
@@ -1157,7 +1160,7 @@
 	<!-- 11 열 -->
 		<c:if test="${state==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list.get(1).getbNo()}
 				1
 			</td>
 		</c:if>
