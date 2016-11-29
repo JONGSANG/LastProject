@@ -3,58 +3,120 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>대출도서 베스트</title>
+<title>Insert title here</title>
 </head>
 <body>
-<section>
-		<div id="word">
-			<font style="font-size: 40px">대출도서 베스트</font>
-		</div>
-		<div id="link">
-			<div id="link59">
-				<a href="/">home ></a><a href="#">도서관소식 >&nbsp;</a>
-			</div>
-			<b>대출도서 베스트</b>
-		</div>
-	</section>
-<div id="insidebody">
-	<center>
-	<h3> 사서가 추천하는 최고의 서적들!! </h3>
-	
-	<table width="750" cellpadding="0" cellspacing="0" border="1" align="center">
-		<tr align="center">
-			<td>번호</td>
-			<td>이름</td>
-			<td>제목</td>
+<h1>도서</h1>
+	<table border="2" width="700">
+		<tr>
+			<th width="100">분야</th>
+			<td width="200">문학</td>
+			<td width="200">컴퓨터</td>
+			<td width="200">정치/사회</td>
 		</tr>
-		<tr align="center">
-			<td>1</td>
-			<td>관리자</td>
-			<td><a href="best">우리 도서관 최고 대출 도서 20권 </a></td>
+		<tr>
+			<th>사진</th>
+			<td>
+				<img src="/resources/book_img/${mun.bNo}.jpg" width="100">
+			</td>
+			<td>
+				<img src="/resources/book_img/${com.bNo}.jpg" width="100">
+			</td>
+			<td>
+				<img src="/resources/book_img/${soc.bNo}.jpg" width="100">
+			</td>		
 		</tr>
-		<tr align="center">
-			<td>2</td>
-			<td>관리자</td>
-			<td><a href="genre1">우리 도서관 최고 대출 시집 5권 </a></td>
+		<tr>
+			<th>책 명</th>
+			<td>${mun.bTitle}</td>
+			<td>${com.bTitle}</td>
+			<td>${soc.bTitle}</td>
 		</tr>
-		<tr align="center">
-			<td>3</td>
-			<td>관리자</td>
-			<td><a href="genre2">우리 도서관 최고 대출 산문집 5권</a></td>
+		<tr>
+			<th>저자명</th>
+			<td>${mun.bWriter}</td>
+			<td>${com.bWriter}</td>
+			<td>${soc.bWriter}</td>
 		</tr>
-		<tr align="center">
-			<td>4</td>
-			<td>관리자</td>
-			<td><a href="genre3">우리 도서관 최고 대출 소설 5권</a></td>
+		<tr>
+			<th>출판사</th>
+			<td>${mun.bCompany}</td>
+			<td>${com.bCompany}</td>
+			<td>${soc.bCompany}</td>
 		</tr>
-		<tr align="center">
-			<td>5</td>
-			<td>관리자</td>
-			<td><a href="genre4">우리 도서관 최고 대출 간행물 5권</a></td>
-		</tr>
+		<tr>
+			<th>대출횟수</th>
+			<td>${mun.brent_cnt}</td>
+			<td>${com.brent_cnt}</td>
+			<td>${soc.brent_cnt}</td>
+		</tr>		
 	</table>
-	</center>
-	</div>
+
+<hr>
+
+	<table border="2" width="500">
+		<tr>
+			<th width="100">분야</th>
+			<td width="200">예술</td>
+			<td width="200">어린이</td>
+		</tr>
+		<tr>
+			<th>사진</th>
+			<td>
+				<img src="/resources/book_img/${mun.bNo}.jpg" width="100">
+			</td>
+			<td>
+				<img src="/resources/book_img/${com.bNo}.jpg" width="100">
+			</td>
+		</tr>
+		<tr>
+			<th>책 명</th>
+			<td>${mun.bTitle}</td>
+			<td>${com.bTitle}</td>
+		</tr>
+		<tr>
+			<th>저자명</th>
+			<td>${mun.bWriter}</td>
+			<td>${com.bWriter}</td>
+		</tr>
+		<tr>
+			<th>출판사</th>
+			<td>${mun.bCompany}</td>
+			<td>${com.bCompany}</td>
+		</tr>
+		<tr>
+			<th>대출횟수</th>
+			<td>${mun.brent_cnt}</td>
+			<td>${com.brent_cnt}</td>
+		</tr>		
+	</table>
+
+<hr>
+<h1>연속간행물</h1>
+	<table border="2" width="300">
+		<tr>
+			<th width="100">사진</th>
+			<td width="200">
+				<img src="/resources/book_img/${gan.bNo}.jpg" width="100">
+			</td>
+		</tr>
+		<tr>
+			<th>책 명</th>
+			<td>${gan.bTitle}</td>
+		</tr>
+		<tr>
+			<th>저자명</th>
+			<td>${gan.bWriter}</td>
+		</tr>
+		<tr>
+			<th>출판사</th>
+			<td>${gan.bCompany}</td>
+		</tr>
+		<tr>
+			<th>대출횟수</th>
+			<td>${gan.brent_cnt}</td>
+		</tr>		
+	</table>
 
 </body>
 </html>

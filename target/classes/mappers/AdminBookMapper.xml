@@ -188,7 +188,7 @@ WHERE BNO=#{bno}
 select a.bno,  b.brent , btitle, bWriter, bCompany, bIntro, buy_date, bLocation, bYear
 from book a 
 inner join room_b b on a.bno = b.bno 
-where  bLocation > 0 
+where  bLocation = 1 
 <include refid="search"></include>
 order by bno desc
 limit #{pageStart}, #{perPageNum}
@@ -219,8 +219,48 @@ limit #{pageStart}, #{perPageNum}
 select count(a.bno) 
 from book a 
 inner join room_f b on a.bno = b.bno 
+where  bLocation = 0 
+ <include refid="search"></include>
+ </select>
+
+<!-- 폐기도서등록 리스트 불러오기 -->
+<select id="selectRegBookList" resultType="BookVO">
+select a.bno,  b.brent , btitle, bWriter, bCompany, bIntro, buy_date, bLocation, bYear
+from book a 
+inner join room_b b on a.bno = b.bno 
+where  bLocation = 1 
+<include refid="search"></include>
+order by bno desc
+limit #{pageStart}, #{perPageNum}
+</select>
+
+<!-- 페이징 -->
+<select id="countRegBookList" resultType="int">
+select count(a.bno) 
+from book a 
+inner join room_b b on a.bno = b.bno 
 where  bLocation = 1 
  <include refid="search"></include>
  </select>
 
+<!-- book table blocation 변경 -->
+<update id="reg_wareUpdate">
+update book set blocation=0 where bno=#{bNo}
+</update>
+
+<!-- room_f 등록 폐기 -->
+<insert id="reg_wareInsert">
+insert into room_f values(#{bNo},curdate())
+</insert>
+
+<!-- 신규 도서 등록 -->
+<!-- 마지막 도서 정보 불러오기 -->
+<select id="selectLastBookList" resultType="BookVO">
+select max(bno) as bno, btitle, bcompany, byear, buy_date, bwriter, bintro
+from book
+where bno is not null 
+<include refid="search"></include>
+</select>
 </mapper>
+
+

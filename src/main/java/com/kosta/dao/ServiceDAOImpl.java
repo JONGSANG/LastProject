@@ -11,6 +11,8 @@ import com.kosta.vo.AfterVO;
 import com.kosta.vo.CultureVO;
 import com.kosta.vo.L_AfterVO;
 import com.kosta.vo.L_CultureVO;
+import com.kosta.vo.M_BoardVO;
+import com.kosta.vo.M_Board_ReVO;
 import com.kosta.vo.O_BoardVO;
 
 @Repository
@@ -18,6 +20,77 @@ public class ServiceDAOImpl implements ServiceDAO {
 	
 	@Autowired
 	private SqlSession sqlSession;
+	
+	//------------------------------------민원게시판----------------------------------------
+
+	@Override
+	public void m_create(M_BoardVO vo) throws Exception {
+		sqlSession.insert("com.kosta.mappers.ServiceMapper.m_create", vo);	// ServiceMapper의 create로 보냄
+	}
+
+	@Override
+	public M_BoardVO m_read(int num) throws Exception {
+		return sqlSession.selectOne("com.kosta.mappers.ServiceMapper.m_read", num);
+	}
+
+	@Override
+	public void m_update(M_BoardVO vo) throws Exception {
+		sqlSession.update("com.kosta.mappers.ServiceMapper.m_update", vo);
+	}
+
+	@Override
+	public void m_delete(int num) throws Exception {
+		sqlSession.delete("com.kosta.mappers.ServiceMapper.m_delete", num);
+	}
+
+	@Override
+	public List<M_BoardVO> m_listAll(M_BoardVO vo) throws Exception {
+		return sqlSession.selectList("com.kosta.mappers.ServiceMapper.m_listAll",vo);
+	}
+
+	@Override
+	public M_Board_ReVO m_read2(int num) throws Exception {
+		return sqlSession.selectOne("com.kosta.mappers.ServiceMapper.m_read2", num);
+	}
+	
+	@Override
+	public void m_delete_re(int num) throws Exception {
+		sqlSession.delete("com.kosta.mappers.ServiceMapper.m_delete_re", num);
+	}
+	
+	@Override
+	public void m_insertComment(M_Board_ReVO vo2) throws Exception {
+		sqlSession.insert("com.kosta.mappers.ServiceMapper.m_insertComment", vo2);
+		
+	}
+
+	@Override
+	public List<M_Board_ReVO> m_commentList(M_Board_ReVO vo) throws Exception {
+		
+		return sqlSession.selectList("com.kosta.mappers.ServiceMapper.m_commentList", vo);
+	}
+
+	@Override
+	public void m_update_re(M_Board_ReVO vo2) throws Exception {
+		sqlSession.update("com.kosta.mappers.ServiceMapper.m_update_re", vo2);
+	}
+
+	// 조회수 업데이트
+	@Override
+	public void m_updateViewCnt(int num) throws Exception {
+		sqlSession.update("com.kosta.mappers.ServiceMapper.m_updateViewCnt", num);
+		
+	}
+
+	@Override
+	public int m_listCount(M_BoardVO vo) throws Exception {
+		return sqlSession.selectOne("com.kosta.mappers.ServiceMapper.m_listCount", vo);
+	}
+
+	@Override
+	public int m_repAllCount(M_Board_ReVO vo) throws Exception {
+		return sqlSession.selectOne("com.kosta.mappers.ServiceMapper.m_repAllCount", vo);
+	}
 	
 	//--------------------------------------- 방과후 --------------------------------------- 
 	// 방과후 글 작성 메소드

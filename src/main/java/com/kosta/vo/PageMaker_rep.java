@@ -82,10 +82,8 @@ public class PageMaker_rep {
 	public String makeRepQuery(int page) {
 
 		UriComponents uriComponents = UriComponentsBuilder.newInstance()
-				.queryParam("num", ((F_Board_ReVO)pageInfo).getNum())
-				.queryParam("page", page)
-				.queryParam("perPageNum", pageInfo.getPerPageNum())
-				.build();
+				.queryParam("num", ((F_Board_ReVO) pageInfo).getNum()).queryParam("page", page)
+				.queryParam("perPageNum", pageInfo.getPerPageNum()).build();
 
 		return uriComponents.toUriString();
 	}
@@ -93,26 +91,32 @@ public class PageMaker_rep {
 	public String makeHopeQuery(int page) {
 
 		UriComponents uriComponents = UriComponentsBuilder.newInstance()
-				.queryParam("num", ((Hope_repVO)pageInfo).getNum())
-				.queryParam("page", page)
-				.queryParam("perPageNum", pageInfo.getPerPageNum())
-				.build();
+				.queryParam("num", ((Hope_repVO) pageInfo).getNum()).queryParam("page", page)
+				.queryParam("perPageNum", pageInfo.getPerPageNum()).build();
 
 		return uriComponents.toUriString();
 	}
-	
 
 	public String makeMRepQuery(int page) {
 
 		UriComponents uriComponents = UriComponentsBuilder.newInstance()
-				.queryParam("num", ((M_Board_ReVO)pageInfo).getNum())
-				.queryParam("page", page)
-				.queryParam("perPageNum", pageInfo.getPerPageNum())
-				.build();
+				.queryParam("num", ((M_Board_ReVO) pageInfo).getNum()).queryParam("page", page)
+				.queryParam("perPageNum", pageInfo.getPerPageNum()).build();
 
 		return uriComponents.toUriString();
 	}
 
+	public String makeBookList(int page) {
+
+		UriComponents uriComponents = UriComponentsBuilder.newInstance().queryParam("page", page)
+				.queryParam("perPageNum", pageInfo.getPerPageNum())
+				.queryParam("keyword", ((BookVO) pageInfo).getKeyword())
+				.queryParam("searchType", ((BookVO) pageInfo).getSearchType())
+				.queryParam("value", ((BookVO) pageInfo).getValue()).build();
+
+		return uriComponents.toUriString();
+	}
+	
 	// public String makeNSearch(int page){
 	//
 	// UriComponents uriComponents =

@@ -2,7 +2,7 @@ package com.kosta.vo;
 
 import java.util.Date;
 
-public class AfterVO {
+public class AfterVO extends PageInfo {
 	
 	private int num;
 	private String id, aselect, title, content, start_date, end_date;

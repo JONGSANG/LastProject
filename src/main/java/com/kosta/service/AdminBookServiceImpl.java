@@ -101,4 +101,24 @@ public class AdminBookServiceImpl implements AdminBookService {
 		return adminBookDAO.countBookList2(vo);
 	}
 
+	@Override
+	public List<BookVO> selectRegBookList(BookVO vo) {
+		return adminBookDAO.selectRegBookList(vo);
+	}
+
+	@Override
+	public int countRegBookList(BookVO vo) {
+		return adminBookDAO.countRegBookList(vo);
+	}
+
+	@Override
+	public void reg_ware(BookVO vo) {
+		adminBookDAO.reg_ware(vo);
+	}
+
+	@Override
+	public BookVO selectLastBookList(BookVO vo) {
+		return adminBookDAO.selectLastBookList(vo);
+	}
+
 }

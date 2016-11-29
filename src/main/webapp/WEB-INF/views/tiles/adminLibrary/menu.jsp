@@ -41,7 +41,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="#"><i class="fa fa-circle-o"></i> 연체 관리</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> 단체 메일발송</a></li>
+            <li><a href="/adminLibrary/adminUser/memberMail"><i class="fa fa-circle-o"></i> 단체 메일발송</a></li>
           </ul>
         </li>
          <li>
@@ -59,7 +59,7 @@
           <ul class="treeview-menu">
             <li><a href="/adminLibrary/adminBook/rentBook/rent"><i class="fa fa-circle-o"></i> 도서 대출/반납</a></li>
             <li><a href="/adminLibrary/adminBook/register/index"><i class="fa fa-circle-o"></i> 신규도서 등록</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> 도서 폐기 등록</a></li>
+            <li><a href="/adminLibrary/adminBook/reg_ware/index"><i class="fa fa-circle-o"></i> 도서 폐기 등록</a></li>
             <li><a href="/adminLibrary/adminBook/warehouse/w_list"><i class="fa fa-circle-o"></i> 폐기 도서 목록</a></li>
             <li><a href="/adminLibrary/adminBook/room_b/b_list"><i class="fa fa-circle-o"></i> 비치 도서 목록</a></li>
           </ul>

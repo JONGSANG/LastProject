@@ -1,5 +1,5 @@
 package com.kosta.controller;
-
+ 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,28 +12,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.kosta.service.BestService;
-import com.kosta.service.F_BoardService;
-import com.kosta.service.NoticeService;
+import com.kosta.service.LibNewsService;
+import com.kosta.service.SearchService;
 import com.kosta.vo.F_BoardVO;
 import com.kosta.vo.F_Board_ReVO;
 import com.kosta.vo.NoticeVO;
 import com.kosta.vo.PageMaker;
 import com.kosta.vo.PageMaker_rep;
-
+ 
 //이 페이지가 Controller이라는 것을 알려줌
 @Controller	
 public class LibNewsController {
-
+ 
 	private static final Logger logger = LoggerFactory.getLogger(LibNewsController.class);
-
+ 
 	@Autowired
-	private F_BoardService service;
-	@Autowired
-	private NoticeService noticeservice;
-	@Autowired
-	private BestService service1;
-
+	private LibNewsService service;
+	private SearchService searchService;
 	 /*본 게시물 작성페이지 띄우기*/
 	
 	// 주소값을 정해주고 GET 방식으로 보냄
@@ -45,17 +40,17 @@ public class LibNewsController {
 		// Console 창에 띄어줌
 		logger.info("register get 페이지 입니다.");
 		logger.info(vo.toString());		
-
+ 
 		// AuthenticationManager에 인증을 요청할 때 필요한 정보를 담는 목적
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-
+ 
 		// id의 정보를 담아 넘김
 		model.addAttribute("id", auth.getName());
 		
 		// register.jsp(글쓰기)페이지로 이동
 		return "userLibrary/libNews/f_board/register";
 	}
-
+ 
 	/*작성페이지의 작성값을 보내기*/
 	
 	// 글쓰기 페이지에서 확인버튼을 누르면 POST방식으로 보냄
@@ -63,18 +58,18 @@ public class LibNewsController {
 	
 	// vo에 담아서 보냄, Model에 담아 보냄
 	public String registerPost(Model model, F_BoardVO vo) throws Exception {
-
+ 
 		// Console 창에 띄어줌
 		logger.info("register post");
 		logger.info(vo.toString());	
-
+ 
 		// F_BoardService로 담은 vo를 보냄
-		service.regist(vo);		
-
+		service.f_regist(vo);		
+ 
 		// 업데이트된 listAll을 띄어줌
 		return "redirect:listAll";	
 	}
-
+ 
 	/*전체 목록 띄우기*/
 	
 	// 페이징 추가
@@ -86,19 +81,19 @@ public class LibNewsController {
 		logger.info("listAll 페이지");	
 		
 		// 다음 페이지로 값을 넘겨줌, list라는 별칭으로 service.listAll()을 담음
-		model.addAttribute("list", service.listAll(vo));	
+		model.addAttribute("list", service.f_listAll(vo));	
 		
 		// 페이징 처리
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setPageInfo(vo);
-
+ 
 	    pageMaker.setTotalCount(service.f_listAllCount(vo));
 	    model.addAttribute("pageMaker", pageMaker);
 	    
 	    // listAll.jsp 페이지로 이동
 		return "userLibrary/libNews/f_board/listAll";	
 	}
-
+ 
 	/*상세 내용으로 띄우기*/
 	
 	// 상세내용을 GET방식으로 가져옴
@@ -112,14 +107,14 @@ public class LibNewsController {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		vo.setId(auth.getName());
 		
-		service.updateViewCnt(vo);
+		service.f_updateViewCnt(vo);
 		
 		// boardVO라는 별칭으로 service.read(vo)를 담음 , 그 vo(num을 가져오기 위해)에 해당하는 content를 띄우기 위해서
-		model.addAttribute("boardVO", service.read(vo));	
+		model.addAttribute("boardVO", service.f_read(vo));	
 		// num 값을 보냄
 		model.addAttribute("num", vo);	
 		// 답변 목록 띄우기 위해서
-		model.addAttribute("clist", service.commentList(vo2));
+		model.addAttribute("clist", service.f_commentList(vo2));
 	    model.addAttribute("id", auth.getName());
 		
 	    // 페이징 처리
@@ -132,7 +127,7 @@ public class LibNewsController {
 	 // read.jsp로 페이지 이동
 		return "userLibrary/libNews/f_board/read";	
 	}
-
+ 
 	/* 댓글 작성시 값보내서 띄우기*/
 	
 	// 댓글 작성시 값을 POST방식으로 보냄
@@ -148,11 +143,11 @@ public class LibNewsController {
 		model.addAttribute("num", num);
 		
 		// 댓글에 담은 값들 (vo2)를 F_BoardService로 보냄
-		service.insertComment(vo2);
-
+		service.f_insertComment(vo2);
+ 
 		return "redirect:/userLibrary/libNews/f_board/read?num="+num;
 	}
-
+ 
 	/* 본 게시물 수정 페이지 띄우기*/
 	
 	// 수정페이지를  GET방식으로 보냄
@@ -164,25 +159,25 @@ public class LibNewsController {
 		logger.info("modify GET 페이지");		
 		
 		// service.read(vo)를 boardVO로 기재하여 사용
-		model.addAttribute("boardVO", service.read(vo));	
+		model.addAttribute("boardVO", service.f_read(vo));	
 	}
-
+ 
 	/*본 게시물에서 수정한 내용을 보내기*/
 	
 	// 수정내용을 POST방식으로 보냄
 	@RequestMapping(value = "userLibrary/libNews/f_board/modify", method = RequestMethod.POST)	
 	public String modifyPOST(Model model, @RequestParam("num") String num, F_BoardVO board)
 			throws Exception {
-
+ 
 		// Console창에 띄움
 		logger.info("modify GET 페이지");		
 		model.addAttribute("num", num);
-
-		service.modify(board);
-
+ 
+		service.f_modify(board);
+ 
 		return "redirect:read?num="+num;
 	}
-
+ 
 	/*댓글 수정하기*/
 	
 	// 댓굴 수정을 GET방식으로 보냄
@@ -195,9 +190,9 @@ public class LibNewsController {
 		logger.info("modify_re GET 페이지");		
 		
 		// 댓글의 내용을 보여줌
-		model.addAttribute("boardVO2",service.read2(Integer.parseInt(num)));	
+		model.addAttribute("boardVO2",service.f_read2(Integer.parseInt(num)));	
 	}
-
+ 
 	/*댓글 수정내용 값 보내기*/
 	
 	// 댓글 수정 내용 값을 GET방식으로 보냄
@@ -207,13 +202,13 @@ public class LibNewsController {
 		
 		// Console창에 띄움
 		logger.info("modify_re POST 페이지");		
-
-		service.update_re(board);
-
+ 
+		service.f_update_re(board);
+ 
 		// 글쓰기 num의 외래키인 댓글의 fnum을 불러옴
 		return "redirect:read?num="+fnum;	
 	}
-
+ 
 	/*삭제하기*/
 	
 	// 기입한 주소값으로 GET방식으로 보냄
@@ -223,12 +218,12 @@ public class LibNewsController {
 		// Console창에 띄움
 		logger.info("remove GET 페이지");		
 		
-		service.remove(num);
-
+		service.f_remove(num);
+ 
 		// 삭제 후의 listAll 띄어주기
 		return "redirect:listAll";	
 	}
-
+ 
 	/*삭제하기*/
 	
 	// 삭제값을 GET방식으로 가져옴
@@ -242,14 +237,14 @@ public class LibNewsController {
 		int n = Integer.parseInt(num);	
 		
 		// int 형태의 num을 보내줌
-		service.remove_re(n);	
-
+		service.f_remove_re(n);	
+ 
 		// 댓글이 달려있는 본게시물을 띄어줌
 		return "redirect:read?num="+fnum;	
 	}
 	
 	///////////////////////공지사항 게시판 구현////////////////////////////////
-
+ 
 	/*본 게시물 작성페이지 띄우기*/
 	
 	// 주소값을 정해주고 GET 방식으로 보냄
@@ -263,14 +258,14 @@ public class LibNewsController {
 		
 		// AuthenticationManager에 인증을 요청할 때 필요한 정보를 담는 목적
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-
+ 
 		// id의 정보를 담아 넘김
 		model.addAttribute("id", auth.getName());	
 		
 		// register.jsp(글쓰기)페이지로 이동
 		return "userLibrary/libNews/notice/register";	
 	}
-
+ 
 	/*작성페이지의 작성값을 보내기*/
 	
 	// POST방식으로 보냄
@@ -283,14 +278,14 @@ public class LibNewsController {
 		// Console 창에 띄어줌
 		logger.info("register post");
 		logger.info(noticeVO.toString());	
-
+ 
 		// noticeVOService로 담은 vo를 보냄
-		noticeservice.regist(noticeVO);		
-
+		service.n_regist(noticeVO);		
+ 
 		// 업데이트된 listAll을 띄어줌
 		return "redirect:listAll";	
 	}
-
+ 
 	/*전체 목록 띄우기*/
 	
 	// 페이징 추가
@@ -302,18 +297,18 @@ public class LibNewsController {
 		logger.info("listAll 페이지");		
 		
 		// 다음 페이지로 값을 넘겨줌, list라는 별칭으로 service.listAll()을 담음
-		model.addAttribute("list", noticeservice.listAll(vo));	
+		model.addAttribute("list", service.n_listAll(vo));	
 		
 		// 페이징 처리
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setPageInfo(vo);
-	    pageMaker.setTotalCount(noticeservice.n_listAllCount(vo));
+	    pageMaker.setTotalCount(service.n_listAllCount(vo));
 	    model.addAttribute("pageMaker", pageMaker);
 	    
 	    // listAll.jsp 페이지로 이동
 		return "userLibrary/libNews/notice/listAll";	
 	}
-
+ 
 	
 	/*상세 내용으로 띄우기*/
 	
@@ -326,10 +321,10 @@ public class LibNewsController {
 		// Console 창에 알림띄어줌
 		logger.info("read get 페이지");		
 		
-		noticeservice.updateViewCnt(num);
+		service.n_updateViewCnt(num);
 		
 		// boardVO라는 별칭으로 service.read(num)을 담음 , 그 num에 해당하는 content를 띄우기 위해서
-		model.addAttribute("noticeVO", noticeservice.read(num));	
+		model.addAttribute("noticeVO", service.n_read(num));	
 		
 		// num 값을 보냄
 		model.addAttribute("num", num);	
@@ -340,7 +335,7 @@ public class LibNewsController {
 	    // read.jsp로 페이지 이동
 		return "userLibrary/libNews/notice/read";	
 	}
-
+ 
 	/*본 게시물 수정 페이지 띄우기*/
 	
 	// 기입한 주소값으로 GET방식으로 보냄
@@ -353,26 +348,26 @@ public class LibNewsController {
 		logger.info("modify GET 페이지");		
 		
 		// service.read(num)을 boardVO로 기재하여 사용
-		model.addAttribute("noticeVO", noticeservice.read(num));	
+		model.addAttribute("noticeVO", service.n_read(num));	
 	}
-
+ 
 	/*본 게시물에서 수정한 내용을 보내기*/
 	
 	// 기입한 주소값으로 POST방식으로 보냄
 	@RequestMapping(value = "userLibrary/libNews/notice/modify", method = RequestMethod.POST)	
 	public String no_modifyPOST(Model model, @RequestParam("num") String num, NoticeVO noticeVO)
 			throws Exception {
-
+ 
 		// Console창에 띄움
 		logger.info("modify GET 페이지");		
 		
 		model.addAttribute("num", num);
-
-		noticeservice.modify(noticeVO);
-
+ 
+		service.n_modify(noticeVO);
+ 
 		return "redirect:read?num"+num;
 	}
-
+ 
 	/*삭제하기*/
 	
 	// 기입한 주소값으로 GET방식으로 보냄
@@ -382,8 +377,8 @@ public class LibNewsController {
 		// Console창에 띄움
 		logger.info("remove GET 페이지");		
 		
-		noticeservice.remove(num);
-
+		service.n_remove(num);
+ 
 		// 삭제 후의 listAll 띄어주기
 		return "redirect:listAll";	
 	}
@@ -401,43 +396,16 @@ public class LibNewsController {
 	@RequestMapping(value="userLibrary/libNews/best/listBest", method=RequestMethod.GET)
 	public String listBestGET(Model model) {
 		logger.info("사서추천도서!!!!!");
+		model.addAttribute("mun", service.munBest());//문학베스트도서
+		model.addAttribute("com", service.comBest());//컴퓨터베스트도서
+		model.addAttribute("soc", service.socBest());//사회베스트도서
+		model.addAttribute("art", service.artBest());//예술베스트도서
+		model.addAttribute("young", service.youngBest());//어린이베스트도서
+		model.addAttribute("gan", service.ganBest());//간행물베스트도서
+		
 		return "userLibrary/libNews/best/listBest";
 	}
 	
-	@RequestMapping(value = "/userLibrary/libNews/best/best", method = RequestMethod.GET)
-	public void best(Model model) throws Exception {
-		logger.info("best");
-		model.addAttribute("best", service1.best());
-	}
-	
-	@RequestMapping(value = "/userLibrary/libNews/best/genre1", method = RequestMethod.GET)
-	public void genre1(Model model) throws Exception {
-		logger.info("best");
-		model.addAttribute("genre1", service1.genre1());
-	}
-	@RequestMapping(value = "/userLibrary/libNews/best/genre2", method = RequestMethod.GET)
-	public void genre2(Model model) throws Exception {
-		logger.info("best");
-		model.addAttribute("genre2", service1.genre2());
-	}
-	@RequestMapping(value = "/userLibrary/libNews/best/genre3", method = RequestMethod.GET)
-	public void genre3(Model model) throws Exception {
-		logger.info("best");
-		model.addAttribute("genre3", service1.genre3());
-	}
-	@RequestMapping(value = "/userLibrary/libNews/best/genre4", method = RequestMethod.GET)
-	public void genre4(Model model) throws Exception {
-		logger.info("best");
-		model.addAttribute("genre4", service1.genre4());
-	}
-
-	// 상세보기
-	@RequestMapping(value = "/userLibrary/libNews/best/read", method = RequestMethod.GET)
-	public void read(@RequestParam("BNO") String BNO, Model model) throws Exception {
-		logger.info("read");
-		System.out.println("넘버"+BNO);
-		model.addAttribute("read",service1.read(BNO));
-	}
 	
 	// 사서 추천 리스트 보기
 		@RequestMapping(value="userLibrary/libNews/recommand/recommand", method=RequestMethod.GET)

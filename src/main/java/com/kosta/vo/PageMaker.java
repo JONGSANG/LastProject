@@ -117,21 +117,6 @@ public class PageMaker {
     
     return uriComponents.toUriString();
   } 
-
-	public String makeBookList(int page){
-	    
-	    UriComponents uriComponents =
-	              UriComponentsBuilder.newInstance()
-	              .queryParam("page", page)
-	              .queryParam("perPageNum", pageInfo.getPerPageNum())
-	              .queryParam("keyword",((BookVO)pageInfo).getKeyword())
-	              .queryParam("searchType", ((BookVO)pageInfo).getSearchType())
-	              .queryParam("value", ((BookVO)pageInfo).getValue())
-	              .build();             
-	    
-	    return uriComponents.toUriString();
-	  } 
-
   	public String typeSearch(int page){
 	    
 	    UriComponents uriComponents =
@@ -143,5 +128,29 @@ public class PageMaker {
 	              .build();             
 	    
 	    return uriComponents.toUriString();
-	  } 
+	  }
+  	
+	public String detail(int page){
+	    
+	    UriComponents uriComponents =
+	              UriComponentsBuilder.newInstance()
+	              .queryParam("page", page)
+	              .queryParam("perPageNum", pageInfo.getPerPageNum())
+	              .queryParam("num", ((AfterVO)pageInfo).getNum())
+	              .build();             
+	    
+	    return uriComponents.toUriString();
+	  }
+	
+	public String cultureDetail(int page){
+	    
+	    UriComponents uriComponents =
+	              UriComponentsBuilder.newInstance()
+	              .queryParam("page", page)
+	              .queryParam("perPageNum", pageInfo.getPerPageNum())
+	              .queryParam("num", ((CultureVO)pageInfo).getNum())
+	              .build();             
+	    
+	    return uriComponents.toUriString();
+	  }
 }

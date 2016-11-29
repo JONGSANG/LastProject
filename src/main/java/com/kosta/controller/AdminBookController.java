@@ -1,11 +1,12 @@
 package com.kosta.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,7 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.kosta.service.AdminBookService;
 import com.kosta.service.SearchService;
 import com.kosta.vo.BookVO;
-import com.kosta.vo.PageMaker;
+import com.kosta.vo.PageMaker_rep;
 import com.kosta.vo.Rent_BookVO;
 
 @Controller
@@ -135,7 +136,7 @@ public class AdminBookController {
 		logger.info("selectBookList page");
 		model.addAttribute("list",service.selectBookList(vo));
 		
-		PageMaker pageMaker = new PageMaker();
+		PageMaker_rep pageMaker = new PageMaker_rep();
 		pageMaker.setPageInfo(vo);
 		
 		pageMaker.setTotalCount(service.countBookList(vo));
@@ -150,7 +151,7 @@ public class AdminBookController {
 		logger.info("selectBookList page");
 		model.addAttribute("list",service.selectBookList2(vo));
 		
-		PageMaker pageMaker = new PageMaker();
+		PageMaker_rep pageMaker = new PageMaker_rep();
 		pageMaker.setPageInfo(vo);
 		
 		pageMaker.setTotalCount(service.countBookList2(vo));
@@ -160,19 +161,63 @@ public class AdminBookController {
 	}
 	
 	//폐기도서 등록.
-	@RequestMapping(value = "adminLibrary/adminBook/warehouse/w_li", method = RequestMethod.GET)
+	@RequestMapping(value = "adminLibrary/adminBook/reg_ware/index", method = RequestMethod.GET)
 	public String reg_WGet(Model model, BookVO vo) {
 		logger.info("selectBookList page");
-		model.addAttribute("list",service.selectBookList2(vo));
+		model.addAttribute("list",service.selectRegBookList(vo));
 		
-		PageMaker pageMaker = new PageMaker();
+		PageMaker_rep pageMaker = new PageMaker_rep();
 		pageMaker.setPageInfo(vo);
 		
-		pageMaker.setTotalCount(service.countBookList2(vo));
+		pageMaker.setTotalCount(service.countRegBookList(vo));
 		model.addAttribute("pageMaker", pageMaker);
 
-		return "adminLibrary/adminBook/warehouse/w_list";
+		return "adminLibrary/adminBook/reg_ware/index";
+	}
+	
+	//폐기도서 등록.
+	@RequestMapping(value = "adminLibrary/adminBook/reg_ware/reg_ware", method = RequestMethod.GET)
+	public String reg_WareGet(BookVO vo, RedirectAttributes rttr) {
+		service.reg_ware(vo);
+		rttr.addFlashAttribute("msg", "success");
+		return "redirect:/adminLibrary/adminBook/reg_ware/index";    
+	}
+	
+	//신규도서 등록.
+
+	
+	@RequestMapping(value = "adminLibrary/adminBook/reg_new/index", method = RequestMethod.GET)
+	public String reg_NewGet(Model model, BookVO vo) {
+		logger.info("selectBookList page");
+		return "adminLibrary/adminBook/reg_new/index";
+	}
+	
+	@RequestMapping(value = "adminLibrary/adminBook/reg_new/index", method = RequestMethod.POST)
+	public String reg_NewPost(Model model, BookVO vo) {
+		logger.info("selectBookList page");
+		model.addAttribute("lastBook",service.selectLastBookList(vo));
+		model.addAttribute("searchType",vo.getSearchType());
+		model.addAttribute("keyword", vo.getKeyword());
+		return "adminLibrary/adminBook/reg_new/register";
 	}
 
+	//신규도서 등록.
+	@RequestMapping(value = "adminLibrary/adminBook/reg_new/register", method = RequestMethod.POST)
+	public String registerGet(@RequestParam("searchType") String searchType,
+							  @RequestParam("keyword") String keyword,
+							  Model model, BookVO vo) {
+		logger.info("selectBookList page");
+		vo.setSearchType(searchType);
+		vo.setKeyword(keyword);
+		model.addAttribute("lastBook",service.selectLastBookList(vo));
+		return "adminLibrary/adminBook/reg_new/registerForm";
+	}
+	
 
+	/*
+	if(select.equals("A")){
+		model.addAttribute("BNO", (((Integer.parseInt(vo.getbNo())/10)+1)*10));
+	}else{
+		model.addAttribute("BNO", ((Integer.parseInt(vo.getbNo())+1)));
+	}*/
 }

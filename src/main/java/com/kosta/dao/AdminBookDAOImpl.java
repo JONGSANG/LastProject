@@ -103,17 +103,39 @@ public class AdminBookDAOImpl implements AdminBookDAO {
 
 	@Override
 	public int countBookList(BookVO vo) {
-		return sqlSession.selectOne(namespace+"countBookList",vo);
+		return sqlSession.selectOne(namespace+"countBookList", vo);
 	}
 
 	@Override
 	public List<BookVO> selectBookList2(BookVO vo) {
-		return sqlSession.selectList(namespace+"selectBookList2",vo);
+		return sqlSession.selectList(namespace+"selectBookList2", vo);
 	}
 
 	@Override
 	public int countBookList2(BookVO vo) {
-		return sqlSession.selectOne(namespace+"countBookList2",vo);
+		return sqlSession.selectOne(namespace+"countBookList2", vo);
+	}
+
+	@Override
+	public List<BookVO> selectRegBookList(BookVO vo) {
+		return sqlSession.selectList(namespace+"selectRegBookList", vo);
+	}
+
+	@Override
+	public int countRegBookList(BookVO vo) {
+		return sqlSession.selectOne(namespace+"countRegBookList", vo);
+	}
+
+	@Override
+	@Transactional
+	public void reg_ware(BookVO vo) {
+		sqlSession.update(namespace+"reg_wareUpdate", vo);
+		sqlSession.insert(namespace+"reg_wareInsert", vo);
+	}
+
+	@Override
+	public BookVO selectLastBookList(BookVO vo) {
+		return sqlSession.selectOne(namespace+"selectLastBookList", vo);
 	}
 
 }
