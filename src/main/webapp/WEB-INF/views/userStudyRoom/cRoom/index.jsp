@@ -75,40 +75,40 @@
 			<td width="50px" height="50px" id="empty">
 			</td>
 	<!-- 2 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 3 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
@@ -116,78 +116,78 @@
 			<td width="50px" height="50px" id="empty">
 			</td>
 	<!-- 5 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 6 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 7 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 8 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
@@ -195,97 +195,97 @@
 			<td width="50px" height="50px" id="empty">
 			</td>
 	<!-- 10 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 11 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 12 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 13 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 14 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
@@ -299,40 +299,40 @@
 			<td width="50px" height="50px" id="empty">
 			</td>
 	<!-- 2 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 3 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
@@ -340,78 +340,78 @@
 			<td width="50px" height="50px" id="empty">
 			</td>
 	<!-- 5 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 6 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 7 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 8 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
@@ -419,97 +419,97 @@
 			<td width="50px" height="50px" id="empty">
 			</td>
 	<!-- 10 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 11 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 12 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 13 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 14 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
@@ -571,40 +571,40 @@
 			<td width="50px" height="50px" id="empty">
 			</td>
 	<!-- 2 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 3 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
@@ -612,78 +612,78 @@
 			<td width="50px" height="50px" id="empty">
 			</td>
 	<!-- 5 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 6 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 7 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 8 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
@@ -691,97 +691,97 @@
 			<td width="50px" height="50px" id="empty">
 			</td>
 	<!-- 10 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 11 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 12 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 13 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 14 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
@@ -795,40 +795,40 @@
 			<td width="50px" height="50px" id="empty">
 			</td>
 	<!-- 2 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 3 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
@@ -836,78 +836,78 @@
 			<td width="50px" height="50px" id="empty">
 			</td>
 	<!-- 5 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 6 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 7 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 8 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
@@ -915,97 +915,97 @@
 			<td width="50px" height="50px" id="empty">
 			</td>
 	<!-- 10 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 11 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 12 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 13 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
 	<!-- 14 열 -->
-		<c:if test="${state==0}">
+		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==1}">
+		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
-		<c:if test="${state==2}">
+		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
-				${list.get(0).getbNo()}
+				${list[0].getNum()}
 				1
 			</td>
 		</c:if>
