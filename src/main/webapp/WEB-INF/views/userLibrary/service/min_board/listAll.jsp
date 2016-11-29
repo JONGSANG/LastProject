@@ -23,36 +23,39 @@
 		</div>
 	</section>
 	<div id="insidebody">
-<table border="1">
+<table class="listtable">
 	<tr>
-		<th style="width: 40px" align="center">번호</th>
-		<th align="center" width="300">제목</th>
-		<th align="center" width="150">민원 종류</th>
-		<th align="center" width="130">ID</th>
-		<th align="center">작성 일자</th>
-		<th style="width: 60px" align="center">조회수</th>
+		<th width="80px">번호</th>
+		<th width="100px">민원종류</th>
+		<th width="290px">제목</th>
+		<th width="100px">ID</th>
+		<th width="120px">작성 일자</th>
+		<th width="80px">조회수</th>
 	</tr>
 	
 	<c:forEach items="${list}" var="list" varStatus="var">
 	<tr>
-		<td align="center">${var.index+1}</td>
-		<td align="center"><a href='read?num=${list.num}'>${list.title} 
+		<td>${var.index+1}</td>
+		<td>${list.mselect}</td>
+		<td style="padding-top: 5px"><a href='read?num=${list.num}'>${list.title} 
       	<c:if test="${list.re_cnt != 0}">[ ${list.re_cnt} ]</c:if></a></td>
-		<td align="center">${list.mselect}</td>
-		<td align="center">${list.id}</td>
-		<td align="center"><fmt:formatDate value="${list.min_date}" pattern="yyyy-MM-dd"/>
-		</td>
-		<td align="center">${list.viewcnt}</td>
+		<td>${list.id}</td>
+		<td><fmt:formatDate value="${list.min_date}" pattern="yyyy-MM-dd"/></td>
+		<td>${list.viewcnt}</td>
 	</tr>
 	</c:forEach>
 </table>
 
+<div class="text-center">
 <security:authorize access="hasRole('ROLE_USER')">
-<a href='/userLibrary/service/min_board/register'><button type="submit" class="btn btn-primary">글쓰기</button></a>
+<a href='/userLibrary/service/min_board/register' style="float: right;">
+<button type="submit" class="btn btn-primary">글쓰기</button></a>
 </security:authorize>
 
-    <div class="text-center">
+    
+		<div class="paging">
 		<ul class="pagination">
+
 
 			<c:if test="${pageMaker.prev}">
 				<li><a
@@ -73,6 +76,7 @@
 
 		</ul>
 	</div>
+</div>
 </div>
 </body>
 </html>

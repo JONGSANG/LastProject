@@ -6,34 +6,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insert title here</title>
+<title>공개자료실</title>
 </head>
 <body>
-<h3>openboard list</h3>
-<table>
+<section>
+		<div id="word">
+			<font style="font-size: 40px">공개 자료실</font>
+		</div>
+		<div id="link">
+			<div id="link35">
+				<a href="/">home ></a><a href="#">서비스 >&nbsp;</a>
+			</div>
+			<b>공개 자료실</b>
+		</div>
+	</section>
+	<div id="insidebody">
+<table class="listtable">
 	<tr>
-		<th>글 번호</th>
-		<th>제목</th>
-		<th>작성자</th>
-		<th>글작성날짜</th>
-		<th>조회수</th>
+		<th width="80px">번호</th>
+		<th width="350px">제목</th>
+		<th width="140px">ID</th>
+		<th width="120px">작성 일자</th>
+		<th width="80px">조회수</th>
 	</tr>
 	<!-- openboard_list 메소드에서 전체 목록을 불러올때 'list'라고 지정해뒀기때문에 list. 으로 시작함.
 		 forEach문을 사용해서 반복처리함 -->
-	<c:forEach items = "${list}" var = "list">
-		<tr align = "center">
-			<td>${list.num }</td>
-			<td><a href = '/userLibrary/service/openboard/read?num=${list.num}'>${list.title}</a></td>
-			<td>${list.id }</td>
-			<td><fmt:formatDate value="${list.write_date}" pattern="yyyy-MM-dd"/></td>
-			<td>${list.viewcnt }</td>
-		</tr>
+	<c:forEach items="${list}" var="list" varStatus="var">
+	<tr>
+		<td>${list.num }</td>
+		<td style="padding-top: 5px"><a href='read?num=${list.num}'>${list.title}</td>
+		<td>${list.id}</td>
+		<td><fmt:formatDate value="${list.write_date}" pattern="yyyy-MM-dd"/></td>
+		<td>${list.viewcnt}</td>
+	</tr>
 	</c:forEach>
 </table>
+
 <!-- 공개게시판에 대한건 읽는건 아무나 가능하지만, 글쓰기 자체는 관리자만 가능하기때문에
 	 권한 ROLE_ADMIN 을 가진 아이디만 가능함 -->
-<security:authorize access="hasRole('ROLE_ADMIN')" >
-<input type = "button" value = "글쓰기" onclick = "location.href='/userLibrary/service/openboard/write'">
-</security:authorize>
+<div class="text-center">
+    <security:authorize access="hasRole('ROLE_ADMIN')">
+	<a href='/userLibrary/service/openboard/write' style="float: right;">
+	<button type="submit" class="btn btn-primary">글쓰기</button></a>
+	</security:authorize>
+	
+	<div class="paging">
+		<ul class="pagination">
+
+			<c:if test="${pageMaker.prev}">
+				<li><a href="list${pageMaker.makeQuery(pageMaker.startPage - 1) }">&laquo;</a></li>
+			</c:if>
+
+			<c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage }" var="idx">
+				<li <c:out value="${pageMaker.pageInfo.page == idx?'class =active':''}"/>>
+					<a href="list${pageMaker.makeQuery(idx)}">${idx}</a>
+				</li>
+			</c:forEach>
+
+			<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+				<li><a
+					href="list${pageMaker.makeQuery(pageMaker.endPage +1) }">&raquo;</a></li>
+			</c:if>
+
+		</ul>
+		</div>
+	</div>
+
+</div>
 </body>
 </html>

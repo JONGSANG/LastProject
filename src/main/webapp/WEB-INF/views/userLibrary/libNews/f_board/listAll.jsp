@@ -33,7 +33,7 @@
 	
 	<c:forEach items="${list}" var="list" varStatus="var">
 	<tr>
-		<td>${list.num }</td>
+		<td>${var.index+1}</td>
 		<td style="padding-top: 5px"><a href='read?num=${list.num}'>${list.title} 
       	<c:if test="${list.re_cnt != 0}">[ ${list.re_cnt} ]</c:if></a></td>
 		<td>${list.id}</td>

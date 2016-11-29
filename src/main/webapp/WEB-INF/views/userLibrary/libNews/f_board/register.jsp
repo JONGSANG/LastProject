@@ -19,18 +19,22 @@
 	</section>
 	<div id="insidebody">
 <form role="form" method="post">
-	<table class="listread">
+	<table class="listread" style="margin-right: 20px;" >
 	
 	<tr>
-		<th width="80px">제목</th><td width="500px" style="padding-left: 10px"><input id="write" width: 460px" type="text" name='title' placeholder="Enter Title"></td>
-		<th width="80px">작성자</th><td width="100px">${ id }</td>
+		<th width="80px">제목</th>
+		<td width="500px" valign="middle" style="padding-left: 10px; padding-top: 5px">
+		<input id="write" style="width: 480px; " type="text" name='title' placeholder="제목을 입력해 주세요.">
+		</td>
+		<th width="80px">작성자</th><td align="center" valign="middle" width="100px">${ id }</td>
 	</tr>
 		<tr>
-			<th>내용</th>
-			<th><textarea name="content" rows="3" placeholder="Enter ..."></textarea></th>
+			<td colspan="4" style="padding-top: 10px" align="center">
+			<textarea id="regiwrite" name="content" rows="20" cols="105" placeholder="내용을 입력해 주세요." ></textarea>
+			</td>
 		</tr>
 		<tr>
-			<th colspan="2"><button type="submit">확인</button>
+			<td colspan="4" style="border: none; padding-top: 5px"><div class="fright"><button type="submit">글쓰기</button></div></td>
 		</tr>
 	</table>
 </form>

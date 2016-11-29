@@ -62,10 +62,6 @@ public class LibNewsController {
 		// Console 창에 띄어줌
 		logger.info("register post");
 		logger.info(vo.toString());	
-		
-		String temp = vo.getContent();
-		temp = temp.replaceAll("\r\n", "<br>");
-		vo.setContent(temp);
  
 		// F_BoardService로 담은 vo를 보냄
 		service.f_regist(vo);		

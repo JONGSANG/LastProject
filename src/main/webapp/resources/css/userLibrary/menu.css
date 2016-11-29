@@ -3,7 +3,6 @@
 @import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css); /* 제주 한라산 font-family: 'Jeju Hallasan', serif; */
 @import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css); /* 나눔 손글씨 붓 font-family: 'Nanum Brush Script', serif; */
 @import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css); /* 나눔 손글씨 펜  font-family: 'Nanum Pen Script', serif;  */
-@import url(http://fonts.googleapis.com/earlyaccess/hanna.css); /* 한나체 font-family: 'Hanna', serif; */
 
 
 /* global */
@@ -97,8 +96,10 @@ section #word{padding-top: 30px; padding-left:20px; width: 250px; position: abso
 .listread #listTitle{  height: 25px; padding-top: 5px; padding-left: 5px}
 .listread #listcontents { padding: 10px 0 0 10px; border-bottom: #C4CDD9 1px solid;}
 
-#write {background-color: white;}
-#write:FOCUS {border: none; box-shadow:0 0 0;}
+#write {background-color: white; border-radius: 0;} 	/* input*/
+#write:FOCUS {border: none; box-shadow:0 0 0 0; border-radius: 0;}
+
+
 
 .text-center {border-top: #7187A3 1px solid; width: 770px; margin-top: -1px; padding-top: 10px; text-align: center;}
 
@@ -110,8 +111,15 @@ section #word{padding-top: 30px; padding-left:20px; width: 250px; position: abso
 .paging a{ color: #004080; }
 .paging a:HOVER {color: red;}
 .pagination > .active > a,
-.pagination > .active > a:hover{
-  z-index: 3;
-  color: red;
-  cursor: default;
-}
+.pagination > .active > a:hover{ z-index: 3; color: red; cursor: default; }
+
+/* ----------------------댓글--------------------------  */
+.commentdiv {width: 750px; height: 160px; background-color:#eceff2; padding: 5px 0 0 15px; border: #C4CDD9 1px solid; border-radius: 10px; margin-top: 10px }
+#regiwritetitle { font-family: 'Noto Sans KR', sans-serif; font-size: 20px; color: #475870}
+#regiwrite {border: #e0e0e0 1px solid; resize: none; background-color: white; border-radius: 5px}
+#regiwrite:FOCUS {background-color: white; border: #a2a2ff 1px solid;}
+#commentstart {font-family: 'Noto Sans KR', sans-serif; color: #c0c0c0 ; font-size: 12px}
+
+.commentre {font-size: 13px}
+.readcomment {border-bottom: #C4CDD9 1px solid; border-top: #C4CDD9 1px solid; margin-top: -1px}
+.margintop10{margin-top: 10px; width: 770px}

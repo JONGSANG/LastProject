@@ -27,7 +27,7 @@
 	<table class="listread" style="width: 760px">
 	<tr>
 	<th width="80px">글번호</th><td  width="30px" id="listTitle" align="center">${noticeVO.num}</td>
-	<th width="100px">아이디</th><td  width="120px" id="listTitle" align="center">${noticeVO.id}</td>
+	<th width="100px">ID</th><td  width="120px" id="listTitle" align="center">${noticeVO.id}</td>
 	<th width="100px">조회수</th><td  width="80px" id="listTitle" align="center">${noticeVO.viewcnt}</td>
 	<th width="100px">작성날짜</th><td  width="140px" id="listTitle" align="center"><fmt:formatDate value="${noticeVO.write_date}" pattern="yyyy-MM-dd"/></td>
 	</tr>
@@ -35,12 +35,12 @@
 	<th>제목</th><td id="listTitle" colspan="7">${noticeVO.title}</td>
 	</tr>
 	<tr>
-		<td id="listcontents" colspan="8" style="height: 400px">${noticeVO.content}</td>
+		<td id="listcontents" colspan="8" style="height: 400px"><textarea rows="20" cols="105" style="resize: none;" readonly="readonly">${ noticeVO.content }</textarea></td>
 	</tr>
 	<tr>
 			<td colspan="8" style="padding-top: 5px; border: none;">
 			<div class="fright">
-			<c:if test="${boardVO.id==id}">
+			<c:if test="${noticeVO.id==id}">
 				<button style="width: 50px" type="button"
 					onclick="location.href='modify?num=${noticeVO.num}'">수정</button>
 				<button style="width: 50px" type="button"
