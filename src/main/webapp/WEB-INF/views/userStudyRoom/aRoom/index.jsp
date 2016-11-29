@@ -315,19 +315,16 @@
 		<c:if test="${list[0].getState()==0}">
 			<td width="50px" height="50px" id="off" onclick="location.href='####'" >
 				${list.get(0).getNum()}
-				1
 			</td>
 		</c:if>
 		<c:if test="${list[0].getState()==1}">
 			<td width="50px" height="50px" id="onM" onclick="location.href='####'" >
 				${list.get(0).getNum()}
-				1
 			</td>
 		</c:if>
 		<c:if test="${list[0].getState()==2}">
 			<td width="50px" height="50px" id="onW" onclick="location.href='####'" >
 				${list.get(0).getNum()}
-				1
 			</td>
 		</c:if>
 	<!-- 7 열 -->
