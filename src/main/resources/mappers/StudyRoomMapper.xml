@@ -14,7 +14,7 @@ WHERE NUM LIKE 'a%'
 <select id="bRoomList"  resultType="StudyRoomVO">
 SELECT *
 FROM STUDYROOM
-WHERE NUM LIKE 'a%'
+WHERE NUM LIKE 'b%'
 </select>
 
 <select id="cRoomList"  resultType="StudyRoomVO">

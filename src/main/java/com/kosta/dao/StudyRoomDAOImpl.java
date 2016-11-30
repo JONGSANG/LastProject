@@ -26,7 +26,7 @@ public class StudyRoomDAOImpl implements StudyRoomDAO {
 
 	@Override
 	public List<StudyRoomVO> cRoomList() throws Exception {
-		return sqlSession.selectList("StudyRoomMapper.bRoomList");
+		return sqlSession.selectList("StudyRoomMapper.cRoomList");
 	}
 
 	

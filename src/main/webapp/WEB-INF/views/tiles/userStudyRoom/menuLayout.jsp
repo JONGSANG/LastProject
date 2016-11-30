@@ -5,6 +5,7 @@
 <html>
 <head>
 <title>Insert title here</title>
+<script src="//code.jquery.com/jquery-3.1.0.min.js"></script>
 </head>
 <body>
   <tiles:insertAttribute name="header" />

@@ -14,6 +14,10 @@
 	border: none;
 }
 </style>
+<script>
+opener.location.reload();
+window.close();
+</script>
 </head>
 <body>
 <h1>제 1 열람실</h1>
@@ -73,7 +77,8 @@
 			</td>
 	<!-- 2 열 -->
 		<c:if test="${list[0].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[0].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[0].getNum()}', 'findID', 'width=414, height=353, left=500, top=150'); return false;">
+			<%-- <td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[0].getNum()}'" > --%>
 				${list[0].getNum()}
 			</td>
 		</c:if>

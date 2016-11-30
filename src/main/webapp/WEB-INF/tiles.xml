@@ -48,6 +48,10 @@ body - 계속 바뀌면서 출력하는 content영역
 		<put-attribute name="body" value="/WEB-INF/views/userLibrary/popup/{1}.jsp"></put-attribute>
 	</definition>
 	
+	<definition name="userStudyRoom/popup/*" template="/WEB-INF/views/tiles/userStudyRoom/popupLayout.jsp">
+		<put-attribute name="body" value="/WEB-INF/views/userStudyRoom/popup/{1}.jsp"></put-attribute>
+	</definition>
+	
 	
 	<definition name="*/*/*" template="/WEB-INF/views/tiles/{1}/menuLayout.jsp">
 		<put-attribute name="header" value="/WEB-INF/views/tiles/{1}/header.jsp"></put-attribute>
