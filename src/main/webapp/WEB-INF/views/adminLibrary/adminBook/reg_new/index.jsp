@@ -35,7 +35,7 @@
      }
      else if(val == '07'){
          alert("[ 어린이 ]을 선택하셨습니다.\n");
-         addOption('어린이', targetE);
+         addOption('인물', targetE);
      }
      else if(val == '99'){         
     	 alert("[ 연속간행물 ]을 선택하셨습니다.\n");
@@ -80,7 +80,7 @@
 		<tr>
 			<th width="500">
 				대 분류 : 
-			    <select name="searchType" id="searchType" onchange="doChange(this, 'keyword')">
+			    <select name="searchType" id="searchType" onchange="doChange(this, 'value')">
 			        <option >---------------</option>
 			        <option value="01">문학</option>
 			        <option value="03">컴퓨터</option>
@@ -90,7 +90,7 @@
 			        <option value="99">연속간행물</option>
 			    </select>
 				소 분류 : 
-			    <select name="keyword" id="keyword">
+			    <select name=value id="value">
 			        <option >---------------</option>
 			    </select>
  			</th>

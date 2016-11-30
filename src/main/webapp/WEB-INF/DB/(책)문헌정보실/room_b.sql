@@ -5,6 +5,10 @@ SELECT COUNT(BNO) FROM room_b WHERE BNO='d' and BRENT=1
 
 select * from book where bno like CONCAT('04','01','%')
 	
+select bno, a.btitle, a.bcompany, a.byear, a.buy_date, a.bwriter, a.bintro
+from book a
+where bno=(select  max(bno) as bno from book a where a.bno is not null
+		and a.bno like CONCAT('04','01','%'))
 
 
 --------------------------------------------------------------

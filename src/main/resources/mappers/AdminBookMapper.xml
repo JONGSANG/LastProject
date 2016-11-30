@@ -87,7 +87,6 @@ WHERE BNO=#{bno}
 <!-- 신규 도서 등록 SQL -->
 <sql id="search">
 <if test="searchType!=null">
-	AND BTITLE LIKE CONCAT('%',#{keyword},'%')
 	<if test="searchType=='01'">
 		<if test="value=='전체'">
 		and a.bno like CONCAT(#{searchType},'%')
@@ -181,6 +180,9 @@ WHERE BNO=#{bno}
 		and a.bno like CONCAT(#{searchType},'13','%')
 		</if>
 	</if>
+	<if test="keyword!=null">
+		AND BTITLE LIKE CONCAT('%',#{keyword},'%')
+	</if>
 </if>
 </sql>
 <!-- 비치도서목록 -->
@@ -256,9 +258,10 @@ insert into room_f values(#{bNo},curdate())
 <!-- 신규 도서 등록 -->
 <!-- 마지막 도서 정보 불러오기 -->
 <select id="selectLastBookList" resultType="BookVO">
-select bno, a.btitle, a.bcompany, a.byear, a.buy_date, a.bwriter, a.bintro
+select a.bno, a.btitle, a.bcompany, a.byear, a.buy_date, a.bwriter, a.bintro
 from book a
-where bno=(select  max(bno) as bno from book a where bno is not null <include refid="search"></include> )
+where bno=(select  max(bno) as bno from book a where a.bno is not null
+ <include refid="search"></include> )
 	
 
 </select>

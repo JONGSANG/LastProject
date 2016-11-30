@@ -199,21 +199,8 @@ public class AdminBookController {
 
 		model.addAttribute("lastBook",service.selectLastBookList(vo));
 		model.addAttribute("searchType",vo.getSearchType());
-		model.addAttribute("keyword", vo.getKeyword());
-		System.out.println(vo.getKeyword());
-		System.out.println(vo.getKeyword());
-		System.out.println(vo.getKeyword());
-		System.out.println(vo.getKeyword());
-		System.out.println(vo.getKeyword());
-		System.out.println(vo.getKeyword());
-		System.out.println(vo.getKeyword());
-		System.out.println(vo.getKeyword());
-		System.out.println(vo.getKeyword());
-		System.out.println(vo.getKeyword());
-		System.out.println(vo.getKeyword());
-		System.out.println(vo.getKeyword());
-		System.out.println(vo.getKeyword());
-		System.out.println(vo.getKeyword());
+		model.addAttribute("value", vo.getValue());
+		System.out.println(vo.getValue());
 		System.out.println(vo.getSearchType());
 		System.out.println(vo.getSearchType());
 		System.out.println(vo.getSearchType());
@@ -232,11 +219,11 @@ public class AdminBookController {
 	//신규도서 등록.
 	@RequestMapping(value = "adminLibrary/adminBook/reg_new/register", method = RequestMethod.POST)
 	public String registerGet(@RequestParam("searchType") String searchType,
-							  @RequestParam("keyword") String keyword,
+							  @RequestParam("value") String value,
 							  Model model, BookVO vo) {
 		logger.info("selectBookList page");
 		vo.setSearchType(searchType);
-		vo.setKeyword(keyword);
+		vo.setValue(value);
 		model.addAttribute("lastBook",service.selectLastBookList(vo));
 		return "adminLibrary/adminBook/reg_new/registerForm";
 	}
