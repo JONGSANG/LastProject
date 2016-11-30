@@ -76,7 +76,7 @@
 			</td>
 	<!-- 2 열 -->
 		<c:if test="${list[0].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[0].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[0].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[0].getNum()}
 			</td>
 		</c:if>
@@ -92,7 +92,7 @@
 		</c:if>
 	<!-- 3 열 -->
 		<c:if test="${list[1].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[1].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[1].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[1].getNum()}
 			</td>
 		</c:if>
@@ -111,7 +111,7 @@
 			</td>
 	<!-- 5 열 -->
 		<c:if test="${list[2].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[2].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[2].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[2].getNum()}
 			</td>
 		</c:if>
@@ -127,7 +127,7 @@
 		</c:if>
 	<!-- 6 열 -->
 		<c:if test="${list[3].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[3].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[3].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[3].getNum()}
 			</td>
 		</c:if>
@@ -143,7 +143,7 @@
 		</c:if>
 	<!-- 7 열 -->
 		<c:if test="${list[4].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[4].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[4].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[4].getNum()}
 			</td>
 		</c:if>
@@ -159,7 +159,7 @@
 		</c:if>
 	<!-- 8 열 -->
 		<c:if test="${list[5].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[5].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[5].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[5].getNum()}
 			</td>
 		</c:if>
@@ -178,7 +178,7 @@
 			</td>
 	<!-- 10 열 -->
 		<c:if test="${list[6].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[6].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[6].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[6].getNum()}
 			</td>
 		</c:if>
@@ -194,7 +194,7 @@
 		</c:if>
 	<!-- 11 열 -->
 		<c:if test="${list[7].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[7].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[7].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[7].getNum()}
 			</td>
 		</c:if>
@@ -210,7 +210,7 @@
 		</c:if>
 	<!-- 12 열 -->
 		<c:if test="${list[8].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[8].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[8].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[8].getNum()}
 			</td>
 		</c:if>
@@ -226,7 +226,7 @@
 		</c:if>
 	<!-- 13 열 -->
 		<c:if test="${list[9].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[9].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[9].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[9].getNum()}
 			</td>
 		</c:if>
@@ -242,7 +242,7 @@
 		</c:if>
 	<!-- 14 열 -->
 		<c:if test="${list[10].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[10].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[10].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[10].getNum()}
 			</td>
 		</c:if>
@@ -267,7 +267,7 @@
 			</td>
 	<!-- 2 열 -->
 		<c:if test="${list[11].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[11].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[11].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[11].getNum()}
 			</td>
 		</c:if>
@@ -283,7 +283,7 @@
 		</c:if>
 	<!-- 3 열 -->
 		<c:if test="${list[12].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[12].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[12].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[12].getNum()}
 			</td>
 		</c:if>
@@ -302,7 +302,7 @@
 			</td>
 	<!-- 5 열 -->
 		<c:if test="${list[13].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[13].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[13].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[13].getNum()}
 			</td>
 		</c:if>
@@ -318,7 +318,7 @@
 		</c:if>
 	<!-- 6 열 -->
 		<c:if test="${list[14].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[14].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[14].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[14].getNum()}
 			</td>
 		</c:if>
@@ -334,7 +334,7 @@
 		</c:if>
 	<!-- 7 열 -->
 		<c:if test="${list[15].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[15].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[15].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[15].getNum()}
 			</td>
 		</c:if>
@@ -350,7 +350,7 @@
 		</c:if>
 	<!-- 8 열 -->
 		<c:if test="${list[16].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[16].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[16].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[16].getNum()}
 			</td>
 		</c:if>
@@ -369,7 +369,7 @@
 			</td>
 	<!-- 10 열 -->
 		<c:if test="${list[17].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[17].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[17].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[17].getNum()}
 			</td>
 		</c:if>
@@ -385,7 +385,7 @@
 		</c:if>
 	<!-- 11 열 -->
 		<c:if test="${list[18].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[18].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[18].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[18].getNum()}
 			</td>
 		</c:if>
@@ -401,7 +401,7 @@
 		</c:if>
 	<!-- 12 열 -->
 		<c:if test="${list[19].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[19].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[19].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[19].getNum()}
 			</td>
 		</c:if>
@@ -417,7 +417,7 @@
 		</c:if>
 	<!-- 13 열 -->
 		<c:if test="${list[20].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[20].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[20].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[20].getNum()}
 			</td>
 		</c:if>
@@ -433,7 +433,7 @@
 		</c:if>
 	<!-- 14 열 -->
 		<c:if test="${list[21].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[21].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[21].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[21].getNum()}
 			</td>
 		</c:if>
@@ -506,7 +506,7 @@
 			</td>
 	<!-- 2 열 -->
 		<c:if test="${list[22].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[22].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[22].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[22].getNum()}
 			</td>
 		</c:if>
@@ -522,7 +522,7 @@
 		</c:if>
 	<!-- 3 열 -->
 		<c:if test="${list[23].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[23].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[23].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[23].getNum()}
 			</td>
 		</c:if>
@@ -541,7 +541,7 @@
 			</td>
 	<!-- 5 열 -->
 		<c:if test="${list[24].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[24].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[24].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[24].getNum()}
 			</td>
 		</c:if>
@@ -557,7 +557,7 @@
 		</c:if>
 	<!-- 6 열 -->
 		<c:if test="${list[25].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[25].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[25].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[25].getNum()}
 			</td>
 		</c:if>
@@ -573,7 +573,7 @@
 		</c:if>
 	<!-- 7 열 -->
 		<c:if test="${list[26].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[26].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[26].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[26].getNum()}
 			</td>
 		</c:if>
@@ -589,7 +589,7 @@
 		</c:if>
 	<!-- 8 열 -->
 		<c:if test="${list[27].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[27].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[27].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[27].getNum()}
 			</td>
 		</c:if>
@@ -608,7 +608,7 @@
 			</td>
 	<!-- 10 열 -->
 		<c:if test="${list[28].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[28].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[28].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[28].getNum()}
 			</td>
 		</c:if>
@@ -624,7 +624,7 @@
 		</c:if>
 	<!-- 11 열 -->
 		<c:if test="${list[29].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[29].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[29].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[29].getNum()}
 			</td>
 		</c:if>
@@ -640,7 +640,7 @@
 		</c:if>
 	<!-- 12 열 -->
 		<c:if test="${list[30].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[30].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[30].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[30].getNum()}
 			</td>
 		</c:if>
@@ -656,7 +656,7 @@
 		</c:if>
 	<!-- 13 열 -->
 		<c:if test="${list[31].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[31].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[31].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[31].getNum()}
 			</td>
 		</c:if>
@@ -672,7 +672,7 @@
 		</c:if>
 	<!-- 14 열 -->
 		<c:if test="${list[32].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[32].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[32].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[32].getNum()}
 			</td>
 		</c:if>
@@ -697,7 +697,7 @@
 			</td>
 	<!-- 2 열 -->
 		<c:if test="${list[33].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[33].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[33].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[33].getNum()}
 			</td>
 		</c:if>
@@ -713,7 +713,7 @@
 		</c:if>
 	<!-- 3 열 -->
 		<c:if test="${list[34].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[34].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[34].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[34].getNum()}
 			</td>
 		</c:if>
@@ -732,7 +732,7 @@
 			</td>
 	<!-- 5 열 -->
 		<c:if test="${list[35].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[35].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[35].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[35].getNum()}
 			</td>
 		</c:if>
@@ -748,7 +748,7 @@
 		</c:if>
 	<!-- 6 열 -->
 		<c:if test="${list[36].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[36].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[36].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[36].getNum()}
 			</td>
 		</c:if>
@@ -764,7 +764,7 @@
 		</c:if>
 	<!-- 7 열 -->
 		<c:if test="${list[37].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[37].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[37].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[37].getNum()}
 			</td>
 		</c:if>
@@ -780,7 +780,7 @@
 		</c:if>
 	<!-- 8 열 -->
 		<c:if test="${list[38].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[38].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[38].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[38].getNum()}
 			</td>
 		</c:if>
@@ -799,7 +799,7 @@
 			</td>
 	<!-- 10 열 -->
 		<c:if test="${list[39].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[39].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[39].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[39].getNum()}
 			</td>
 		</c:if>
@@ -815,7 +815,7 @@
 		</c:if>
 	<!-- 11 열 -->
 		<c:if test="${list[40].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[40].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[40].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[40].getNum()}
 			</td>
 		</c:if>
@@ -831,7 +831,7 @@
 		</c:if>
 	<!-- 12 열 -->
 		<c:if test="${list[41].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[41].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[41].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[41].getNum()}
 			</td>
 		</c:if>
@@ -847,7 +847,7 @@
 		</c:if>
 	<!-- 13 열 -->
 		<c:if test="${list[42].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[42].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[42].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[42].getNum()}
 			</td>
 		</c:if>
@@ -863,7 +863,7 @@
 		</c:if>
 	<!-- 14 열 -->
 		<c:if test="${list[43].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[43].getNum()}'" >
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[43].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[43].getNum()}
 			</td>
 		</c:if>
