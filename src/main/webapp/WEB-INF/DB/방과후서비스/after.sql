@@ -24,6 +24,8 @@ CONTENT varchar(2000),
 WRITE_DATE DATETIME default now(),
 START_DATE DATE,
 END_DATE DATE,
+orgname varchar(2000),
+newname varchar(2000),
 
 VIEWCNT INTEGER default 0,
 max_cnt INTEGER,

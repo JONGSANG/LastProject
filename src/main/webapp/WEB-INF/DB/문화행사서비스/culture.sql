@@ -40,6 +40,8 @@ CONTENT text,
 WRITE_DATE DATETIME default now(),
 START_DATE DATE,
 END_DATE DATE, 
+orgname varchar(2000),
+newname varchar(2000),
 
 VIEWCNT integer default 0,
 MAX_CNT INTEGER,

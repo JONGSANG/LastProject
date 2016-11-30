@@ -19,7 +19,7 @@
 	</section>
 	<div id="insidebody">
 <h3>modify page</h3><br>
-<form method = "POST">
+<form method = "POST" enctype="multipart/form-data">
 <table border = "1">
 	<tr>
 		<td>이벤트번호 : ${cultureVO.num }</td>
@@ -45,7 +45,11 @@
 	<tr>
 		<td>Start_date : <input type = "date" name = "start_date" required="required">&nbsp;&nbsp;End_date : <input type = "date" name = "end_date" required="required"></td>
 	</tr>
+	<tr>
+		<td>imgfile : <input type = "file" name = "file" required = "required" accept = "image/gif, image/jpeg, image/png"></td>
+	</tr>
 </table>
+<input type = "hidden" name = "newname" value = "${cultureVO.newname }">
 <input type = "submit" value = "수정하기"><input type = "reset" value = "취소">
 </form>
 </div>

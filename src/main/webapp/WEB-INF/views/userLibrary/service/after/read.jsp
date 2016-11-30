@@ -6,6 +6,33 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script type="text/javascript">
+function doImgPop(img){ 
+	 img1= new Image(); 
+	 img1.src=(img); 
+	 imgControll(img); 
+	} 
+	  
+	function imgControll(img){ 
+	 if((img1.width!=0)&&(img1.height!=0)){ 
+	    viewImage(img); 
+	  } 
+	  else{ 
+	     controller="imgControll('"+img+"')"; 
+	     intervalID=setTimeout(controller,20); 
+	  } 
+	}
+	function viewImage(img){ 
+	 W=img1.width; 
+	 H=img1.height; 
+	 O="width="+W+",height="+H+",scrollbars=yes"; 
+	 imgWin=window.open("","",O); 
+	 imgWin.document.write("<html><head><title>:*:*:*: 이미지상세보기 :*:*:*:*:*:*:</title></head>");
+	 imgWin.document.write("<body topmargin=0 leftmargin=0>");
+	 imgWin.document.write("<img src="+img+" onclick='self.close()' style='cursor:pointer;' title ='클릭하시면 창이 닫힙니다.'>");
+	 imgWin.document.close();
+	}
+</script>
 <title>방과후 학교</title>
 </head>
 <body>
@@ -39,6 +66,9 @@
 			<th colspan = "2" align = "left">제목 : (${afterVO.aselect})  ${afterVO.title }</th>
 		</tr>
 		<tr>
+			<th><img src = "/resources/file/${afterVO.newname }"width="295px" height="295px" title="클릭하시면 원본크기로 보실 수 있습니다." style="cursor: pointer;" onclick="doImgPop('/resources/file/${afterVO.newname }')"/></th>
+		</tr>
+		<tr>
 			<th colspan = "2" align = "left">내용 : ${afterVO.content }</th> 
 		</tr>
 	</table><br>
@@ -68,6 +98,7 @@
 	</form>
 
 	<form action = "delete", method = "POST">
+		<input type = "hidden" name = "newname" value = "${afterVO.newname }">
 		<input type = "hidden" name = "num" value = "${afterVO.num }">
 		<input type = "submit" value = "삭제">
 	</form>

@@ -92,8 +92,8 @@ limit #{pageStart}, #{perPageNum}
 
 
 <insert id="after_write">
-	insert into after(id, title, content, start_date, end_date, aselect,max_cnt) 
-	values(#{id},#{title},#{content},#{start_date},#{end_date},#{aselect}, #{max_cnt})
+	insert into after(id, title, content, start_date, end_date, aselect,max_cnt, orgname, newname) 
+	values(#{id},#{title},#{content},#{start_date},#{end_date},#{aselect}, #{max_cnt}, #{orgname}, #{newname})
 </insert>
 
 <select id="after_list" resultType="AfterVO">
@@ -113,7 +113,7 @@ limit #{pageStart}, #{perPageNum}
 </delete>
 
 <update id="after_modify">
-	update after set title = #{title}, content = #{content}, start_date = #{start_date}, end_date = #{end_date}, aselect = #{aselect}, max_cnt = #{max_cnt} where num = #{num}
+	update after set title = #{title}, content = #{content}, start_date = #{start_date}, end_date = #{end_date}, aselect = #{aselect}, max_cnt = #{max_cnt}, newname = #{newname}, orgname = #{orgname} where num = #{num}
 </update>
 
 <select id="after_joiner" resultType="AfterVO">
@@ -143,8 +143,8 @@ limit #{pageStart}, #{perPageNum}
 
 
 <insert id="culture_write">
-	insert into culture(id, title, content, start_date, end_date, cselect,max_cnt) 
-	values(#{id},#{title},#{content},#{start_date},#{end_date},#{cselect}, #{max_cnt})
+	insert into culture(id, title, content, start_date, end_date, cselect,max_cnt, orgname, newname) 
+	values(#{id},#{title},#{content},#{start_date},#{end_date},#{cselect}, #{max_cnt}, #{orgname}, #{newname})
 </insert>
 
 <select id="culture_list" resultType="CultureVO">
@@ -164,7 +164,7 @@ limit #{pageStart}, #{perPageNum}
 </delete>
 
 <update id="culture_modify">
-	update culture set title = #{title}, content = #{content}, start_date = #{start_date}, end_date = #{end_date}, cselect = #{cselect}, max_cnt = #{max_cnt} where num = #{num}
+	update culture set title = #{title}, content = #{content}, start_date = #{start_date}, end_date = #{end_date}, cselect = #{cselect}, max_cnt = #{max_cnt}, orgname = #{orgname}, newname = #{newname} where num = #{num}
 </update>
 
 <select id="culture_joiner" resultType="CultureVO">

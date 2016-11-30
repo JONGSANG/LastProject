@@ -2,15 +2,36 @@ package com.kosta.vo;
 
 import java.util.Date;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class AfterVO extends PageInfo {
 	
 	private int num;
-	private String id, aselect, title, content, start_date, end_date;
+	private String id, aselect, title, content, start_date, end_date, orgname, newname;
 	private Date  write_date;
 	private int viewcnt, tocnt;
 	private int max_cnt;
+	private MultipartFile file;
 	
 	
+	public String getOrgname() {
+		return orgname;
+	}
+	public void setOrgname(String orgname) {
+		this.orgname = orgname;
+	}
+	public String getNewname() {
+		return newname;
+	}
+	public void setNewname(String newname) {
+		this.newname = newname;
+	}
+	public MultipartFile getFile() {
+		return file;
+	}
+	public void setFile(MultipartFile file) {
+		this.file = file;
+	}
 	public int getNum() {
 		return num;
 	}
