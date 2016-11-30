@@ -78,7 +78,7 @@
 <form action="index" method="post">
 	<table width="600" border="1" class="table table-bordered table-hober dataTable">
 		<tr>
-			<th width="580">
+			<th width="500">
 				대 분류 : 
 			    <select name="searchType" id="searchType" onchange="doChange(this, 'value')">
 			        <option >---------------</option>
@@ -118,30 +118,20 @@
 			<td width="100"><fmt:formatDate value="${lastBook.buy_date}" pattern="yyyy.MM.dd"/></td>
 		</tr>
 </table>
-<form action="register" method="post">
-	<input type="hidden" value="${searchType}" name="searchType">
-	<input type="hidden" value="${value}" name="value">
+	<form action="registerSelect" method="post">
+		<input type="hidden" value="${searchType}" name="searchType">
+		<input type="hidden" value="${keyword}" name="keyword">
+	<c:if test="${select.equals('A')}">	
+		<input type="radio" value="A" name="select" checked="checked"> 다른 종류의 책을 신규로 등록 	
+	</c:if>
+	<c:if test="${select.equals('B')}">	
+		<input type="radio" value="B" name="select" checked="checked"> 같은 종류의 책을 추가로 등록
+	</c:if>
+	</form>
 
-<table class="table table-bordered table-hober dataTable">
-<tr>
-	<th>도서 등록</th>
-	<th>연속간행물</th>
-	<td rowspan="2">
-		<input type="submit" value="등록">
-	</td>
-</tr>
-		<tr>
-			<td>
-				<input type="radio" value="A" name="select" checked="checked"> 다른 종류의 책을 신규로 등록<br>	
-				<input type="radio" value="B" name="select"> 같은 종류의 책을 추가로 등록
-			</td>
-			<td>
-				<input type="radio" value="C" name="select"> 연속간행물 등록
-			</td>
-			
-		</tr>
-</table>
-</form>
+	<form action="registerPro" method="post">
+		<input type="text" name ="bNo" value="${BNO}" readonly="readonly">
+	</form>
 
 </body>
 </html>

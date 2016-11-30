@@ -8,8 +8,8 @@
 <title>도서검색</title>
 </head>
 <body>
-<h3>도서 등록</h3>
-<form action="registerBook" method="post">
+<h3>연속간행물 등록</h3>
+<form action="registerGan" method="post">
 	<table width="600" border="1" >
 		<tr>
 			<th width="150" rowspan="6">

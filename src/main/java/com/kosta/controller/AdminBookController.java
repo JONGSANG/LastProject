@@ -197,36 +197,19 @@ public class AdminBookController {
 		model.addAttribute("lastBook",service.selectLastBookList(vo));
 		model.addAttribute("searchType",vo.getSearchType());
 		model.addAttribute("value", vo.getValue());
-		System.out.println(vo.getValue());
-		System.out.println(vo.getSearchType());
-		System.out.println(vo.getSearchType());
-		System.out.println(vo.getSearchType());
-		System.out.println(vo.getSearchType());
-		System.out.println(vo.getSearchType());
-		System.out.println(vo.getSearchType());
-		System.out.println(vo.getSearchType());
-		System.out.println(vo.getSearchType());
-		System.out.println(vo.getSearchType());
-		System.out.println(vo.getSearchType());
-		System.out.println(vo.getSearchType());
-		
+	
 		return "adminLibrary/adminBook/reg_new/registerSelect";
 	}
 
 	//신규도서 등록.
 	@RequestMapping(value = "adminLibrary/adminBook/reg_new/register", method = RequestMethod.POST)
-	public String registerGet(
-							  Model model, BookVO vo) {
+	public String registerGet(Model model, BookVO vo) {
 		logger.info("selectBookList page");
-//		BookVO vo2 = new BookVO();
-//		
+
 		String select = vo.getSelect();
 		vo=service.selectLastBookList(vo);
 		vo.setSelect(select);
-		System.out.println(vo.getSelect());
-		System.out.println(vo.getSelect());
-		System.out.println(vo.getbNo());
-		System.out.println(vo.getSelect());
+		
 		CodeMaker codeMaker = new CodeMaker(vo);
 		
 		model.addAttribute("lastBook",vo);
@@ -234,10 +217,12 @@ public class AdminBookController {
 		model.addAttribute("BNO", codeMaker.create());
 		
 		if(vo.getSelect().equals("A")||vo.getSelect().equals("B")){
-			
 			return "adminLibrary/adminBook/reg_new/registerForm";
 		}else{
-			return "adminLibrary/adminBook/reg_new/registerFromGan";
+			return "adminLibrary/adminBook/reg_new/registerFormGan";
 		}
 	}
+	
+	
+	
 }

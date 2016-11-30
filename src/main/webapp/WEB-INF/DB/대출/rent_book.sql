@@ -4,7 +4,8 @@ drop table RENT_BOOK;
 delete from RENT_BOOK;
 
 
-update rent_book set submit_date = '2016-11-22' where bno = '01010011'
+update rent_book set submit_date = '2016-11-22' where bno = '01010011' and id = 'spurs89'
+update rent_book set submit_date = '2016-11-22' where bno = '01010012' and id = 'spurs89'
 
 --------------------------------------------------------------
 -- RENT_BOOK : RENT_BOOK 정보 Table

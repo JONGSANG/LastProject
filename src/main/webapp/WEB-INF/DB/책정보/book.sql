@@ -1,5 +1,18 @@
-select * from BOOK;
+select * from BOOK;select * from late;
 drop table BOOK;
+
+SELECT MONEY FROM LATE WHERE end_date is null and bno='01010011'
+
+SELECT R.RENT_DATE , R.SUBMIT_DATE, B.BTITLE, B.BNO, check_Late, l.money as money
+FROM RENT_BOOK R
+INNER JOIN BOOK B ON R.BNO=B.BNO 
+INNER JOIN ROOM_B RB ON R.BNO=RB.BNO
+LEFT JOIN LATE L ON R.BNO=L.BNO 
+WHERE RB.BRENT=-1 
+AND R.ID='spurs89'
+AND R.CHECK_SUBMIT = false
+
+
 
 delete from book
 delete from book where bno = '040101212'
