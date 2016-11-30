@@ -13,6 +13,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.kosta.service.AdminBookService;
 import com.kosta.service.SearchService;
 import com.kosta.vo.BookVO;
+import com.kosta.vo.CodeMaker;
 import com.kosta.vo.PageMaker_rep;
 import com.kosta.vo.Rent_BookVO;
 
@@ -217,23 +218,26 @@ public class AdminBookController {
 	public String registerGet(
 							  Model model, BookVO vo) {
 		logger.info("selectBookList page");
-		BookVO vo2=new BookVO();
-		vo2=service.selectLastBookList(vo);
+//		BookVO vo2 = new BookVO();
+//		
+		String select = vo.getSelect();
+		vo=service.selectLastBookList(vo);
+		vo.setSelect(select);
+		System.out.println(vo.getSelect());
+		System.out.println(vo.getSelect());
+		System.out.println(vo.getbNo());
+		System.out.println(vo.getSelect());
+		CodeMaker codeMaker = new CodeMaker(vo);
 		
-		model.addAttribute("lastBook",service.selectLastBookList(vo));
+		model.addAttribute("lastBook",vo);
 		model.addAttribute("select",vo.getSelect());
-		if(vo.getSelect().equals("A")){
-			model.addAttribute("BNO", (((Integer.parseInt(vo2.getbNo())/10)+1)*10)+1);
-			return "adminLibrary/adminBook/reg_new/registerForm";
-		}else if(vo.getSelect().equals("B")){
-			model.addAttribute("BNO", ((Integer.parseInt(vo2.getbNo())+1)));
+		model.addAttribute("BNO", codeMaker.create());
+		
+		if(vo.getSelect().equals("A")||vo.getSelect().equals("B")){
+			
 			return "adminLibrary/adminBook/reg_new/registerForm";
 		}else{
-			model.addAttribute("msg", "NOCHECK");
-			return "adminLibrary/adminBook/reg_new/registerSelect";
+			return "adminLibrary/adminBook/reg_new/registerFromGan";
 		}
-		
 	}
-	
-
 }

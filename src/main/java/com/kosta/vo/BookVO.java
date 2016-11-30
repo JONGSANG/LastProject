@@ -12,8 +12,23 @@ public class BookVO extends PageInfo_rep{
 	private String value;
 	private String keyword;
 	private String select;
+	private String gan_M;
+	private String gan_Y;
 	
 	
+	
+	public String getGan_Y() {
+		return gan_Y;
+	}
+	public void setGan_Y(String gan_Y) {
+		this.gan_Y = gan_Y;
+	}
+	public String getGan_M() {
+		return gan_M;
+	}
+	public void setGan_M(String gan_M) {
+		this.gan_M = gan_M;
+	}
 	public String getSelect() {
 		return select;
 	}
