@@ -77,8 +77,7 @@ window.close();
 			</td>
 	<!-- 2 열 -->
 		<c:if test="${list[0].getState()==0}">
-			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[0].getNum()}', 'findID', 'width=414, height=353, left=500, top=150'); return false;">
-			<%-- <td width="50px" height="50px" id="off" onclick="location.href='insert?num=${list[0].getNum()}'" > --%>
+			<td width="50px" height="50px" id="off" onclick="window.open('insert?num=${list[0].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[0].getNum()}
 			</td>
 		</c:if>

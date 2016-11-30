@@ -10,7 +10,7 @@
 <form action="/userStudyRoom/insert" method="post">
 <input type="hidden" name="num" value="${num}">
 <input type="text" name="id" placeholder="아이디를 입력하거나 회원증을 스캔해주세요">
-<input type="submit" value="열람실 사용" onclick="">
+<input type="submit" value="열람실 사용" onclick="opener.location.reload()">
 </form>
 </body>
 </html>

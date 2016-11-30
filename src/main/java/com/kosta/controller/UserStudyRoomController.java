@@ -62,11 +62,11 @@ public class UserStudyRoomController {
 	}
 	
 	@RequestMapping(value="userStudyRoom/insert", method=RequestMethod.POST)
-	public String InsertPOST(@RequestParam("num") String num, Model model) throws Exception {
+	public String InsertPOST(StudyRoomVO vo, Model model) throws Exception {
 		
 		logger.info("열람실 팝업");
-		System.out.println("넘버값 잘 넘어오니?"+num);
-		model.addAttribute("num", num);
+		System.out.println("넘버값 잘 넘어오니?"+vo.getNum());
+		
 		
 		return "userStudyRoom/aRoom/index";
 	}
