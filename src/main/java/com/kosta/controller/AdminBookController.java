@@ -18,6 +18,8 @@ import com.kosta.vo.BookVO;
 import com.kosta.vo.PageMaker_rep;
 import com.kosta.vo.Rent_BookVO;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
+
 @Controller
 public class AdminBookController {
 
@@ -123,7 +125,7 @@ public class AdminBookController {
 
 ////////////////////////////////////////////////////////////////////////	
 	
-	
+	//상세보기
 	@RequestMapping(value = "adminLibrary/adminBook/**/readInfo", method = RequestMethod.GET)
 	public void readInfo(Model model, @RequestParam("bNo") String bNo) throws Exception {
 		logger.info("search result!  page !");
@@ -184,21 +186,47 @@ public class AdminBookController {
 	}
 	
 	//신규도서 등록.
-
-	
+	//페이지 불러오기
 	@RequestMapping(value = "adminLibrary/adminBook/reg_new/index", method = RequestMethod.GET)
 	public String reg_NewGet(Model model, BookVO vo) {
 		logger.info("selectBookList page");
 		return "adminLibrary/adminBook/reg_new/index";
 	}
-	
+	//
 	@RequestMapping(value = "adminLibrary/adminBook/reg_new/index", method = RequestMethod.POST)
 	public String reg_NewPost(Model model, BookVO vo) {
 		logger.info("selectBookList page");
+
 		model.addAttribute("lastBook",service.selectLastBookList(vo));
 		model.addAttribute("searchType",vo.getSearchType());
 		model.addAttribute("keyword", vo.getKeyword());
-		return "adminLibrary/adminBook/reg_new/register";
+		System.out.println(vo.getKeyword());
+		System.out.println(vo.getKeyword());
+		System.out.println(vo.getKeyword());
+		System.out.println(vo.getKeyword());
+		System.out.println(vo.getKeyword());
+		System.out.println(vo.getKeyword());
+		System.out.println(vo.getKeyword());
+		System.out.println(vo.getKeyword());
+		System.out.println(vo.getKeyword());
+		System.out.println(vo.getKeyword());
+		System.out.println(vo.getKeyword());
+		System.out.println(vo.getKeyword());
+		System.out.println(vo.getKeyword());
+		System.out.println(vo.getKeyword());
+		System.out.println(vo.getSearchType());
+		System.out.println(vo.getSearchType());
+		System.out.println(vo.getSearchType());
+		System.out.println(vo.getSearchType());
+		System.out.println(vo.getSearchType());
+		System.out.println(vo.getSearchType());
+		System.out.println(vo.getSearchType());
+		System.out.println(vo.getSearchType());
+		System.out.println(vo.getSearchType());
+		System.out.println(vo.getSearchType());
+		System.out.println(vo.getSearchType());
+		
+		return "adminLibrary/adminBook/reg_new/registerSelect";
 	}
 
 	//신규도서 등록.

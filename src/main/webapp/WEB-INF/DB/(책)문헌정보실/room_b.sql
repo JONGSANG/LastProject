@@ -3,6 +3,9 @@ drop table room_b;
 
 SELECT COUNT(BNO) FROM room_b WHERE BNO='d' and BRENT=1
 
+select * from book where bno like CONCAT('04','01','%')
+	
+
 
 --------------------------------------------------------------
 -- room_b : room_b 정보 Table
