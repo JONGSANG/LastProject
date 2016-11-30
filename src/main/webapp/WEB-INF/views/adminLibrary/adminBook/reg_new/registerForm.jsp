@@ -35,7 +35,7 @@
      }
      else if(val == '07'){
          alert("[ 어린이 ]을 선택하셨습니다.\n");
-         addOption('어린이', targetE);
+         addOption('인물', targetE);
      }
      else if(val == '99'){         
     	 alert("[ 연속간행물 ]을 선택하셨습니다.\n");
@@ -80,7 +80,7 @@
 		<tr>
 			<th width="500">
 				대 분류 : 
-			    <select name="searchType" id="searchType" onchange="doChange(this, 'keyword')">
+			    <select name="searchType" id="searchType" onchange="doChange(this, 'value')">
 			        <option >---------------</option>
 			        <option value="01">문학</option>
 			        <option value="03">컴퓨터</option>
@@ -90,7 +90,7 @@
 			        <option value="99">연속간행물</option>
 			    </select>
 				소 분류 : 
-			    <select name="keyword" id="keyword">
+			    <select name="value" id="value">
 			        <option >---------------</option>
 			    </select>
  			</th>
@@ -118,16 +118,19 @@
 			<td width="100"><fmt:formatDate value="${lastBook.buy_date}" pattern="yyyy.MM.dd"/></td>
 		</tr>
 </table>
-	<form action="register" method="post">
+	<form action="registerSelect" method="post">
 		<input type="hidden" value="${searchType}" name="searchType">
 		<input type="hidden" value="${keyword}" name="keyword">
-		<input type="radio" value="A" name="select"> 다른 종류의 책을 신규로 등록 	
-		<input type="radio" value="B" name="select"> 같은 종류의 책을 추가로 등록
-		<input type="submit" value="등록">
+	<c:if test="${select.equals('A')}">	
+		<input type="radio" value="A" name="select" checked="checked"> 다른 종류의 책을 신규로 등록 	
+	</c:if>
+	<c:if test="${select.equals('B')}">	
+		<input type="radio" value="B" name="select" checked="checked"> 같은 종류의 책을 추가로 등록
+	</c:if>
 	</form>
-asdfsdfdsf
+
 	<form action="registerPro" method="post">
-		<input type="text" name ="ss">
+		<input type="text" name ="bNo" value="${BNO}" readonly="readonly">
 	</form>
 
 </body>

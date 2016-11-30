@@ -1,7 +1,5 @@
 package com.kosta.controller;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +15,6 @@ import com.kosta.service.SearchService;
 import com.kosta.vo.BookVO;
 import com.kosta.vo.PageMaker_rep;
 import com.kosta.vo.Rent_BookVO;
-
-import ch.qos.logback.core.net.SyslogOutputStream;
 
 @Controller
 public class AdminBookController {
@@ -220,19 +216,29 @@ public class AdminBookController {
 	@RequestMapping(value = "adminLibrary/adminBook/reg_new/register", method = RequestMethod.POST)
 	public String registerGet(@RequestParam("searchType") String searchType,
 							  @RequestParam("value") String value,
+							  @RequestParam("select") String select,
 							  Model model, BookVO vo) {
 		logger.info("selectBookList page");
 		vo.setSearchType(searchType);
 		vo.setValue(value);
+		
+		BookVO vo2=new BookVO();
+		vo2=service.selectLastBookList(vo);
+		
 		model.addAttribute("lastBook",service.selectLastBookList(vo));
-		return "adminLibrary/adminBook/reg_new/registerForm";
+		model.addAttribute("select",select);
+		if(select.equals("A")){
+			model.addAttribute("BNO", (((Integer.parseInt(vo2.getbNo())/10)+1)*10)+1);
+			return "adminLibrary/adminBook/reg_new/registerForm";
+		}else if(select.equals("B")){
+			model.addAttribute("BNO", ((Integer.parseInt(vo2.getbNo())+1)));
+			return "adminLibrary/adminBook/reg_new/registerForm";
+		}else{
+			model.addAttribute("msg", "NOCHECK");
+			return "adminLibrary/adminBook/reg_new/registerSelect";
+		}
+		
 	}
 	
 
-	/*
-	if(select.equals("A")){
-		model.addAttribute("BNO", (((Integer.parseInt(vo.getbNo())/10)+1)*10));
-	}else{
-		model.addAttribute("BNO", ((Integer.parseInt(vo.getbNo())+1)));
-	}*/
 }
