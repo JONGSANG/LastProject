@@ -12,5 +12,8 @@ public interface StudyRoomService {
 	
 	public List<StudyRoomVO> cRoomList() throws Exception;
 	
-	public String sessionCheck() throws Exception;
+	public Boolean idCheck(StudyRoomVO vo) throws Exception;
+
+	public void insert(StudyRoomVO vo) throws Exception;
+	
 }

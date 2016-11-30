@@ -28,6 +28,16 @@ public class StudyRoomDAOImpl implements StudyRoomDAO {
 	public List<StudyRoomVO> cRoomList() throws Exception {
 		return sqlSession.selectList("StudyRoomMapper.cRoomList");
 	}
+	
+	@Override
+	public Boolean idCheck(StudyRoomVO vo) throws Exception {
+		return sqlSession.selectOne("StudyRoomMapper.idCheck", vo);
+	}
+	
+	@Override
+	public void insert(StudyRoomVO vo) throws Exception {
+		sqlSession.update("StudyRoomMapper.insert", vo);
+	}
 
 	
 }

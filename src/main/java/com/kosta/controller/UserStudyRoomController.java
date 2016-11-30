@@ -55,19 +55,26 @@ public class UserStudyRoomController {
 	public String InsertGET(@RequestParam("num") String num, Model model) throws Exception {
 		
 		logger.info("열람실 팝업");
-		System.out.println("넘버값 잘 넘어오니?"+num);
 		model.addAttribute("num", num);
 		
 		return "userStudyRoom/popup/insert";
 	}
 	
-	@RequestMapping(value="userStudyRoom/insert", method=RequestMethod.POST)
-	public String InsertPOST(StudyRoomVO vo, Model model) throws Exception {
+	@RequestMapping(value="userStudyRoom/insert", method=RequestMethod.GET)
+	public String InsertPOST(StudyRoomVO vo, Model model,RedirectAttributes rttr) throws Exception {
 		
 		logger.info("열람실 팝업");
-		System.out.println("넘버값 잘 넘어오니?"+vo.getNum());
+		System.out.println("넘버값 잘 넘어오니?실행"+vo.getNum());
+		boolean idCheck=studyRoomService.idCheck(vo);
 		
+		if(idCheck==true){
+			studyRoomService.insert(vo);
+			
+			return "userStudyRoom/popup/insert";
+		}
 		
-		return "userStudyRoom/aRoom/index";
+		rttr.addFlashAttribute("noid", "noid");
+		
+		return "redirect:/userStudyRoom/popup/insert?num="+vo.getNum();
 	}
 }

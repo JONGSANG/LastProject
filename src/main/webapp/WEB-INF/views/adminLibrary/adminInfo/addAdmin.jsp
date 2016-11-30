@@ -20,8 +20,8 @@
 		<label for="birth">생년월일</label>
 		<input type="date" id="birth" name="birth" required="required"><br>
 		<label for="gender">성별</label>
-		남성 <input type="radio" name="gender" value="남" checked="checked">
-		여성 <input type="radio" name="gender" value="여" ><br>
+		남성 <input type="radio" name="gender" value="1" checked="checked">
+		여성 <input type="radio" name="gender" value="2" ><br>
 		<label for="phone">휴대전화번호</label>
 		<select name="phone1">
 			<option value="010" selected>010</option>

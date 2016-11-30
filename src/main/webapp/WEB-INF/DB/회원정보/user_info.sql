@@ -1,8 +1,6 @@
 select * from user_info;
 drop table user_info;
 
-
-
 --------------------------------------------------------------
 -- user_info : USER 정보 Table
 --------------------------------------------------------------
@@ -25,7 +23,7 @@ CREATE TABLE user_info(
 ID varchar(50) not null,
 NAME varchar(50) not null,
 BIRTH DATE not null,
-GENDER varchar(20) not null,
+GENDER tinyint not null,
 JOB varchar(50) not null,
 PHONE varchar(100) not null,
 EMAIL varchar(200) not null,

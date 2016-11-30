@@ -23,6 +23,16 @@ FROM STUDYROOM
 WHERE NUM LIKE 'c%'
 </select>
 
+<update id="insert">
+UPDATE STUDYROOM 
+SET STATE=(SELECT GENDER FROM USER_INFO WHERE ID=#{id}), START_TIME=CURTIME(), END_TIME=ADDTIME(CURTIME(), '4:00'), ID=#{id}
+WHERE NUM=#{num}
+</update>
+
+<select id="idCheck" resultType="boolean">
+SELECT EXISTS (SELECT ID FROM MEMBER WHERE ID=#{id})
+</select>
+
 </mapper>
 
 

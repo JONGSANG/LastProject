@@ -9,7 +9,7 @@ public class MemberVO {
 	private String pwd;
 	private boolean enabled;
 	private String birth;
-	private String gender;
+	private int gender;
 	private String phone;
 	
 	public String getPhone() {
@@ -66,10 +66,10 @@ public class MemberVO {
 	public void setBirth(String birth) {
 		this.birth = birth;
 	}
-	public String getGender() {
+	public int getGender() {
 		return gender;
 	}
-	public void setGender(String gender) {
+	public void setGender(int gender) {
 		this.gender = gender;
 	}
 	public String getPhone1() {

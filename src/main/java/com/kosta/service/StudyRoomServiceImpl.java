@@ -30,13 +30,15 @@ public class StudyRoomServiceImpl implements StudyRoomService {
 	public List<StudyRoomVO> cRoomList() throws Exception {
 		return studyRoomdao.cRoomList();
 	}
+	
+	@Override
+	public Boolean idCheck(StudyRoomVO vo) throws Exception {
+		return studyRoomdao.idCheck(vo);
+	}
 
 	@Override
-	public String sessionCheck() throws Exception {
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		return auth.getName();
+	public void insert(StudyRoomVO vo) throws Exception {
+		studyRoomdao.insert(vo);
 	}
-	
-	
 	
 }
