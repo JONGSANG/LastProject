@@ -11,10 +11,15 @@ public class BookVO extends PageInfo_rep{
 	private String searchType;
 	private String value;
 	private String keyword;
+	private String select;
 	
 	
-	
-	
+	public String getSelect() {
+		return select;
+	}
+	public void setSelect(String select) {
+		this.select = select;
+	}
 	public Date getF_date() {
 		return f_date;
 	}

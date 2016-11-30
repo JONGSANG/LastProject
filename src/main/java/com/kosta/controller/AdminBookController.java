@@ -214,23 +214,18 @@ public class AdminBookController {
 
 	//신규도서 등록.
 	@RequestMapping(value = "adminLibrary/adminBook/reg_new/register", method = RequestMethod.POST)
-	public String registerGet(@RequestParam("searchType") String searchType,
-							  @RequestParam("value") String value,
-							  @RequestParam("select") String select,
+	public String registerGet(
 							  Model model, BookVO vo) {
 		logger.info("selectBookList page");
-		vo.setSearchType(searchType);
-		vo.setValue(value);
-		
 		BookVO vo2=new BookVO();
 		vo2=service.selectLastBookList(vo);
 		
 		model.addAttribute("lastBook",service.selectLastBookList(vo));
-		model.addAttribute("select",select);
-		if(select.equals("A")){
+		model.addAttribute("select",vo.getSelect());
+		if(vo.getSelect().equals("A")){
 			model.addAttribute("BNO", (((Integer.parseInt(vo2.getbNo())/10)+1)*10)+1);
 			return "adminLibrary/adminBook/reg_new/registerForm";
-		}else if(select.equals("B")){
+		}else if(vo.getSelect().equals("B")){
 			model.addAttribute("BNO", ((Integer.parseInt(vo2.getbNo())+1)));
 			return "adminLibrary/adminBook/reg_new/registerForm";
 		}else{
