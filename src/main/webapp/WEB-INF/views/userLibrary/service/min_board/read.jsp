@@ -155,10 +155,10 @@
 		<input type="hidden" name="id" value="${id}">
 		<table>
 		<tr>
-		<td id="regiwritetitle" colspan="2">댓글</td>
+		<td id="regiwritetitle">댓글</td>
 		</tr>
 		<tr>
-		<td style="padding-top: 5px"><textarea id="regiwrite" style="padding: 5px 0 0 5px" name="content" rows="5" cols="102" placeholder="내용을 입력해 주세요." ></textarea></td>
+		<td style="padding-top: 5px"><textarea id="regiwrite" style="padding: 5px 0 0 5px" name="content" rows="5" cols="107" placeholder="내용을 입력해 주세요." ></textarea></td>
 		</tr>
 		<tr>
 			<td><div class="fright"><button type="submit">댓글 작성</button></td></div>
@@ -180,8 +180,8 @@
 		<td colspan="2">
 		<c:if test="${clist.id==id}">
 		<div class="fright" style="padding-bottom: 10px">
-			<button type="button" style="width: 50px" onclick="location.href='modify_re?num=${clist.num }&fnum=${clist.mnum }'">수정</button>
-			<button type="button" style="width: 50px" onclick="location.href='remove_re?num=${clist.num}&fnum=${clist.mnum }'">삭제</button>
+			<button type="button" style="width: 50px" onclick="location.href='modify_re?num=${clist.num }&mnum=${clist.mnum }'">수정</button>
+			<button type="button" style="width: 50px" onclick="location.href='remove_re?num=${clist.num}&mnum=${clist.mnum }'">삭제</button>
 		</div>
 		</c:if>
 		</td>

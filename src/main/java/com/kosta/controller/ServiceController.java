@@ -334,7 +334,7 @@ public class ServiceController {
 		
 		// 해당 파일의 물리적경로랑 위에서 filename(newname)을 합치면
 		// 해당 경로의 실제 파일이 있는위치가 되서 그 파일을 삭제함
-		File file = new File("C:/Last_Project/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/library/resources/file/"+filename);
+		File file = new File("C:/Last_Project/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/library/resources/file/"+filename);
 		file.delete();
 		
 		// 해당되는 글의 번호에 대한게시글을 삭제 하고 완료 메세지 띄움
@@ -361,7 +361,7 @@ public class ServiceController {
 		
 		String filename = vo.getNewname();
 		System.out.println("filename =================== : " + filename);
-		File file = new File("C:/Last_Project/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/library/resources/file/"+filename);
+		File file = new File("C:/Last_Project/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/library/resources/file/"+filename);
 		file.delete();
 		
 		MultipartFile f = vo.getFile();
@@ -502,7 +502,7 @@ public class ServiceController {
 		
 		// 해당 파일의 물리적경로랑 위에서 filename(newname)을 합치면
 		// 해당 경로의 실제 파일이 있는위치가 되서 그 파일을 삭제함
-		File file = new File("C:/Last_Project/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/library/resources/file/"+filename);
+		File file = new File("C:/Last_Project/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/library/resources/file/"+filename);
 		file.delete();
 		
 		// 해당되는 글의 번호에 대한게시글을 삭제 하고 완료 메세지 띄움
@@ -529,7 +529,7 @@ public class ServiceController {
 		
 		String filename = vo.getNewname();
 		System.out.println("filename =================== : " + filename);
-		File file = new File("C:/Last_Project/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/library/resources/file/"+filename);
+		File file = new File("C:/Last_Project/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/library/resources/file/"+filename);
 		file.delete();
 		
 		MultipartFile f = vo.getFile();
@@ -664,7 +664,7 @@ public class ServiceController {
 		
 		// 해당 파일의 물리적경로랑 위에서 filename(newname)을 합치면
 		// 해당 경로의 실제 파일이 있는위치가 되서 그 파일을 삭제함
-		File file = new File("C:/Last_Project/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/wtpwebapps/library/resources/file/"+filename);
+		File file = new File("C:/Last_Project/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/library/resources/file/"+filename);
 		file.delete();
 		
 		service.openboard_delete(vo);

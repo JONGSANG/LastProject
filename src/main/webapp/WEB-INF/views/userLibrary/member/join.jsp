@@ -112,10 +112,10 @@ $(document).ready(function(){
 								<td><img src="/resources/images/login/login_76.png" width="100" height="23"></td>
 								<td>
 								<img alt="남자" height="27px" src="/resources/images/login/login_52.png">
-								 <input type="radio" name="gender" value="남" checked="checked" style="width: 18px; margin-top: 5px">
+								 <input type="radio" name="gender" value="1" checked="checked" style="width: 18px; margin-top: 5px">
 								 &nbsp;
 								 <img alt="여자" height="27px" src="/resources/images/login/login_53.png">
-								<input type="radio" name="gender" value="여" style="width: 18px; margin-top: 5px" >
+								<input type="radio" name="gender" value="2" style="width: 18px; margin-top: 5px" >
 								</td>
 							</tr>
 							<tr>

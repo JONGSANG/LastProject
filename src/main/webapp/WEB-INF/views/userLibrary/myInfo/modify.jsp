@@ -94,22 +94,22 @@ function getSrc(e)
 							</tr>
 							<tr>
 								<td id="td1"><img src="/resources/images/login/login_766.png" width="100" height="23"></td>
-							<c:if test="${MemberVO.gender=='남'}">
+							<c:if test="${MemberVO.gender=='1'}">
 								<td style="padding-top: 5px; padding-left: 35px">
 								<img alt="남자" height="27px" src="/resources/images/login/login_52.png">
-								 <input type="radio" name="gender" value="남"  onfocus="setRadioCl(event)" checked style="width: 18px; margin-top: 5px">
+								 <input type="radio" name="gender" value="1"  onfocus="setRadioCl(event)" checked style="width: 18px; margin-top: 5px">
 								 &nbsp;
 								 <img alt="여자" height="27px" src="/resources/images/login/login_53.png">
-								<input type="radio" name="gender" value="여" onfocus="setRadioCl(event)" style="width: 18px; margin-top: 5px" >
+								<input type="radio" name="gender" value="2" onfocus="setRadioCl(event)" style="width: 18px; margin-top: 5px" >
 								</td>
 							</c:if>
-							<c:if test="${MemberVO.gender=='여'}">
+							<c:if test="${MemberVO.gender=='2'}">
 							<td style="padding-top: 5px; padding-left: 35px">
 								<img alt="남자" height="27px" src="/resources/images/login/login_52.png">
-								 <input type="radio" name="gender" value="남" onfocus="setRadioCl(event)" style="width: 18px; margin-top: 5px">
+								 <input type="radio" name="gender" value="1" onfocus="setRadioCl(event)" style="width: 18px; margin-top: 5px">
 								 &nbsp;
 								 <img alt="여자" height="27px" src="/resources/images/login/login_53.png">
-								<input type="radio" name="gender" value="여"  onfocus="setRadioCl(event)" checked style="width: 18px; margin-top: 5px" >
+								<input type="radio" name="gender" value="2"  onfocus="setRadioCl(event)" checked style="width: 18px; margin-top: 5px" >
 								</td>
 							</c:if>	
 								
