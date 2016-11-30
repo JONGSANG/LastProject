@@ -19,7 +19,7 @@
 		</div>
 	</section>
 	<div id="insidebody">
-	<table>
+	<%-- <table>
 		<tr>
 			<th>책 제목
 			<th>예약일
@@ -33,13 +33,41 @@
 				<td>${reserve.btitle}
 				<td>${reserve.reserve_date}
 				<td>${reserve.submit_date}
-				<td>구현예정 <c:if test="${reserve.brent==1}">
-						<td>대출중
-					</c:if>
-				<td><a href="">취소</a>
+				<td>구현예정 
+				<c:if test="${reserve.brent==1}"> <td>대출중 </c:if>
+				<td><a href="">취소</a></td>
 			</tr>
 		</c:forEach>
-	</table>
+	</table> --%>
+	
+	<table class="listtable">
+	<tr>
+		<th width="200px">책제목</th>
+		<th width="130px">예약일</th>
+		<th width="130px">반남예정일</th>
+		<th width="130px">예약만료일</th>
+		<th width="90px">상태</th>
+		<th width="90px">취소</th>
+	</tr>
+	
+	<c:if test="${empty reserve}">
+	<tr>
+	<td colspan="6">내역이 존재하지 않습니다.</td>
+	</tr>
+	</c:if>
+	
+	<c:forEach items="${reserve}" var="reserve">
+	<tr>
+		<td>${reserve.btitle}</td>
+		<td>${reserve.reserve_date}</td>
+		<td>${reserve.submit_date}</td>
+		<td>구현예정</td>
+		<c:if test="${reserve.brent==1}"> <td style="color: red;">대출중</td> </c:if>
+		<td><a href="">취소</a></td>
+	</tr>
+	</c:forEach>
+</table>
+	
 	</div>
 </body>
 </html>

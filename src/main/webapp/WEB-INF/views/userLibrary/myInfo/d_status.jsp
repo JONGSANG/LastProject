@@ -20,7 +20,8 @@
 		</div>
 	</section>
 	<div id="insidebody">
-	<table>
+	
+	<%-- <table>
 		<tr>
 			<th>책 제목
 			<th>대출일
@@ -35,13 +36,39 @@
 			<td>${rent.rent_date}
 			<td>${rent.submit_date}
 			<td><c:out value="${rent.late}" ></c:out>
-			<c:if test="${rent.brent==-1}">
-			<td>대출중
-			</c:if>
+			<c:if test="${rent.brent==-1}"><td>대출중 </c:if>
 			<td><a href="">반납연기</a>
 		</tr>
 		</c:forEach>
-	</table>
+	</table> --%>
+	
+	<table class="listtable">
+	<tr>
+		<th width="100px">책제목</th>
+		<th width="110px">대출일</th>
+		<th width="140px">반납예정일</th>
+		<th width="140px">연체일수</th>
+		<th width="140px">상태</th>
+		<th width="140px">반납연기</th>
+	</tr>
+	<c:if test="${empty rent}">
+	<tr>
+	<td colspan="6">내역이 존재하지 않습니다.</td>
+	</tr>
+	</c:if>
+	<c:forEach items="${rent}" var="rent">
+	<tr>
+		<td>${rent.btitle}</td>
+		<td>${rent.rent_date}</td>
+		<td>${rent.submit_date}</td>
+		<td><c:out value="${rent.late}" ></c:out></td>
+		<c:if test="${rent.brent==-1}"><td style="color: red;">대출중 </c:if>
+		<c:if test="${rent.brent!=-1}"><td></td></c:if>
+		<td><a href="">반납연기</a>
+	</tr>
+	</c:forEach>
+</table>
+	
 	</div>
 </body>
 </html>

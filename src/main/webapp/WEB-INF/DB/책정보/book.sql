@@ -2,6 +2,7 @@ select * from BOOK;
 drop table BOOK;
 
 delete from book
+delete from book where bno = '040101212'
 
  select 
    count(distinct substring(bNo, 1, 4)) 

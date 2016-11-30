@@ -74,7 +74,7 @@
 		<td id="commentstart" >${ clist.id}</td><td id="commentstart" width="710">&nbsp;|&nbsp;<fmt:formatDate value="${clist.rep_date}" pattern="yyyy-MM-dd" /></td>
 		</tr>
 		<tr>
-		<td colspan="2" style="height: 50px"><textarea style=" resize: none;" rows="4" cols="105">${ clist.content }</textarea></td>
+		<td colspan="2" style="height: 50px; padding-top: 5px"><textarea style=" resize: none;" rows="4" cols="105">${ clist.content }</textarea></td>
 		</tr>
 		<tr style="border-bottom: #C4CDD9 1px solid; ">
 		<td colspan="2">

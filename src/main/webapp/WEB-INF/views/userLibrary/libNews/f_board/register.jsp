@@ -18,9 +18,8 @@
 		</div>
 	</section>
 	<div id="insidebody">
-<form role="form" method="post">
+	<form role="form" method="post">
 	<table class="listread" style="margin-right: 20px;" >
-	
 	<tr>
 		<th width="80px">제목</th>
 		<td width="500px" valign="middle" style="padding-left: 10px; padding-top: 5px">

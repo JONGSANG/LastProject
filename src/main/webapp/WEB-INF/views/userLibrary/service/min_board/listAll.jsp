@@ -35,7 +35,7 @@
 	
 	<c:forEach items="${list}" var="list" varStatus="var">
 	<tr>
-		<td>${var.index+1}</td>
+		<td>${list.num}</td>
 		<td>${list.mselect}</td>
 		<td style="padding-top: 5px"><a href='read?num=${list.num}'>${list.title} 
       	<c:if test="${list.re_cnt != 0}">[ ${list.re_cnt} ]</c:if></a></td>

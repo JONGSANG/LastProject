@@ -32,7 +32,8 @@
 	</tr>
 		<c:forEach items="${list}" var="list" varStatus="var">
 	<tr>
-		<td>${var.index+1}</td>
+<%-- 		<td>${var.index+1}</td> --%>
+		<td>${list.num}</td>
 		<td style="padding-top: 5px"><a href='read?num=${list.num}'>${list.title} </td>
 		<td>${list.id}</td>
 		<td><fmt:formatDate value="${list.write_date}" pattern="yyyy-MM-dd"/></td>

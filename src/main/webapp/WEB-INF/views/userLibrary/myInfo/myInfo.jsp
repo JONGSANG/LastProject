@@ -16,13 +16,13 @@
 <body>
 	<section>
 		<div id="word">
-			<font style="font-size: 40px">대출 내역</font>
+			<font style="font-size: 40px">마이페이지</font>
 		</div>
 		<div id="link">
-			<div id="link34">
+			<div id="link35">
 				<a href="/">home ></a><a href="#">내 정보 >&nbsp;</a>
 			</div>
-			<b>대출 내역</b>
+			<b>마이 페이지</b>
 		</div>
 	</section>
 	<div id="insidebody">

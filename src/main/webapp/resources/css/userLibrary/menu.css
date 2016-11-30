@@ -118,8 +118,9 @@ section #word{padding-top: 30px; padding-left:20px; width: 250px; position: abso
 #regiwritetitle { font-family: 'Noto Sans KR', sans-serif; font-size: 20px; color: #475870}
 #regiwrite {border: #e0e0e0 1px solid; resize: none; background-color: white; border-radius: 5px}
 #regiwrite:FOCUS {background-color: white; border: #a2a2ff 1px solid;}
-#commentstart {font-family: 'Noto Sans KR', sans-serif; color: #c0c0c0 ; font-size: 12px}
+#commentstart {font-family: 'Noto Sans KR', sans-serif; color: #8677f0 ; font-size: 12px}
 
 .commentre {font-size: 13px}
 .readcomment {border-bottom: #C4CDD9 1px solid; border-top: #C4CDD9 1px solid; margin-top: -1px}
 .margintop10{margin-top: 10px; width: 770px}
+
