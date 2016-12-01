@@ -23,7 +23,24 @@
               reader.readAsDataURL(input.files[0]);
             }
         }
-    </script>
+    	function onlyNumber(event){
+    		event = event || window.event;
+    		var keyID = (event.which) ? event.which : event.keyCode;
+    		if ( (keyID >= 48 && keyID <= 57) || (keyID >= 96 && keyID <= 105) || keyID == 8 || keyID == 46 || keyID == 37 || keyID == 39 ) 
+    			return;
+    		else
+    			return false;
+    	}
+    	
+    	function removeChar(event) {
+    		event = event || window.event;
+    		var keyID = (event.which) ? event.which : event.keyCode;
+    		if ( keyID == 8 || keyID == 46 || keyID == 37 || keyID == 39 ) 
+    			return;
+    		else
+    			event.target.value = event.target.value.replace(/[^0-9]/g, "");
+    	}
+ </script>
 </head>
 <body>
 <h3>연속간행물 등록</h3>
@@ -39,22 +56,26 @@
 			<input type="hidden" value="${BNO}" name="bNo">
 		</tr>
 		<tr>
-			<th width="50">제목 명</th>
-			<th width="250"><input type="text" name="bTitle" placeholder=" * 제목을 입력해주세요"></th>
+			<th width="50">간행물종류</th>
+			<%-- <th width="50">${bookVO.bNo }</th> --%>
+			<th width="100">${lastBook.bCompany}</th>
+			<input type="hidden" value="${lastBook.bCompany}" name="bNo">
+		</tr>
+		
+		<tr>
+			<th width="50">전체 이름</th>
+			<th width="250"><input type="text" name="bTitle" placeholder=" ex) ${lastBook.bCompany} : 1월 [2015] "></th>
 		</tr>
 		<tr>
 			<th width="50">저자 명</th>
-			<th width="100"><input type="text" name="bWriter"placeholder=" ex) 이OO"></th>
-		</tr>
-		<tr>
-			<th width="50">출판사 명</th>
-			<%-- <th width="50">${bookVO.bNo }</th> --%>
-			<th width="100"><input type="text" name="bCompany" placeholder=" ex) kosta"></th>
+			<th width="100"><input type="text" name="bWriter"placeholder=" ex) kosta 편집부"></th>
 		</tr>
 		<tr>
 			<th width="50">출간년도</th>
 			<%-- <th width="50">${bookVO.bNo }</th> --%>
-			<th width="100"><input type="text" name="bYear" maxlength="4" placeholder=" ex) 2016"> 년</th>
+			<th width="100">
+				<input type="text" name="bYear"  onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)' 
+				style='ime-mode:disabled;' maxlength="4" placeholder=" ex) 2016"> 년</th>
 			</tr>
 			<tr>
 			<th width="50">구입 일자</th>
@@ -68,7 +89,7 @@
 		</tr>
 		<tr>
 			<th colspan="3" height="300" align="left">
-				<textarea style="resize: none;" name="bIntro" rows="16" cols="72" 
+				<textarea style="resize: none;" name="bIntro" rows="16" cols="72"
 				placeholder=" 
 					* 간단한 책소개를 입력하세요.
 					" ></textarea>

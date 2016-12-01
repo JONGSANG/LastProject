@@ -22,9 +22,7 @@ public class CodeMaker {
 			temp=(Integer.parseInt(bno)+1); // Int 형태로 변환호 코드 계산 
 			code=String.format("%08d",temp);
 		}else if(vo.getSelect().equals("C")){	//select : C ==>(연속간행물) 등록  
-			temp=((Integer.parseInt(bno)/10000)+1); // Int 형태로 변환호 코드 계산 
-			code=String.format("%04d",temp);
-			code=code.substring(0, 4)+vo.getGan_Y()+vo.getGan_M();
+			code=bno.substring(0, 4)+vo.getGan_Y()+vo.getGan_M();
 		}
 		
 		return code;
