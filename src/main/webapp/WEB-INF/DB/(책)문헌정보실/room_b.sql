@@ -5,10 +5,11 @@ SELECT COUNT(BNO) FROM room_b WHERE BNO='d' and BRENT=1
 
 select * from book where bno like CONCAT('04','01','%')
 	
-select bno, a.btitle, a.bcompany, a.byear, a.buy_date, a.bwriter, a.bintro
-from book a
-where bno=(select  max(bno) as bno from book a where a.bno is not null
-		and a.bno like CONCAT('04','01','%'))
+SELECT l.id, l.bno, b.btitle, l.start_date, l.end_date, u.name, b.bcompany, l.money, b.bwriter
+FROM LATE l
+INNER JOIN BOOK b on b.bno = l.bno
+INNER JOIN USER_INFO u on u.id = l.id
+WHERE l.end_date is null
 		
 --------------------------------------------------------------
 -- room_b : room_b 정보 Table

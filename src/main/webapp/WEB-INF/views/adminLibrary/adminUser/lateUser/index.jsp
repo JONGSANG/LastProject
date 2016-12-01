@@ -6,57 +6,48 @@
 <html>
 <head>
 <title>Insert title here</title>
+<script src="/resources/js/jquery-1.3.2.min.js"></script>
+<script src="/resources/js/table_error.js" type="text/javascript"></script>
+<style type="text/css">
+.clickable {cursor: pointer;}
+.hover {text-decoration: underline;}
+th{ background:#669999;}
+.odd{ background: #CCFFFF;}
+.even{ background: #CCCCFF;}
+</style>
 </head>
 <body>
-	<br>
-					<table width=1000 border="1">
-						<tr>
-							<th width="50">순번</th>
-							<th width="100">책번호</th>
-							<th width="500">책 제목</th>
-							<th width="150">대여 일</th>
-							<th width="150">반납 예정일</th>
-							<th width="100">연체 여부</th>
-						</tr>
-
-						<c:forEach items="${rent}" var="rent" varStatus="var">
-							<c:if test="${rcnt != 0}">
-								<tr>
-									<td width="50">${var.count }</td>
-									<td width="100">${rent.bno }</td>
-									<td width="500">${rent.btitle }</td>
-									<td width="150"><fmt:formatDate value="${rent.rent_date }" pattern="yy-MM-dd"/> </td>
-									<td width="150"><fmt:formatDate value="${rent.submit_date }" pattern="yy-MM-dd"/> </td>
-									<td width="100">
-										<c:if test="${rent.check_late==true}">
-											<b style="color: RED">O</b>
-										</c:if>
-										<c:if test="${rent.check_late==false}">
-											<b >X</b>
-										</c:if>
-									</td>
-								</tr>
-							</c:if>
-						</c:forEach>
-					</table>
-				</td>
-			</tr>
-		</table>
+<h3>연체 관리</h3>
+<br>
+	<a href="lateUserMail">연체사용자에게 단체 메일 보내기</a>
+<br>
+<table class="sortable paginated table table-bordered table-hober dataTable">
+    <thead>
+      <tr>
+        <th class="sorting">ID</th>
+        <th class="sorting">이름</th>
+        <th class="sorting">책 번호</th>
+        <th class="sorting">책 제목</th>
+        <th class="sorting">저자</th>
+        <th class="sort-date">출판사</th>
+        <th class="sorting">연체 시작일</th>
+        <th class="sorting">연체료</th>
+      </tr>
+    </thead>
+    <tbody>
+    <c:forEach items="${lateUser}" var="lateUser">
+      <tr>
+       <td>${lateUser.id }</td>
+       <td>${lateUser.name }</td>
+       <td>${lateUser.bno }</td>
+       <td>${lateUser.btitle }</td>
+       <td>${lateUser.bwriter }</td>
+       <td>${lateUser.bcompany }</td>
+       <td><fmt:formatDate value="${lateUser.start_date }" pattern="yy-MM-dd"/> </td>
+       <td><b style="color: red;">${lateUser.money }</b></td>
+      </tr>
+     </c:forEach>
+    </tbody>
+  </table>
 </body>
-<script language=javascript>
-	var result = '${msg}';
-	if (result == 'NOID') {
-		alert("[회원ID]를 잘못입력 하셨습니다.");
-	}else if (result == 'NOBOOK') {
-		alert("[책번호]를 잘못입력 하셨습니다.");
-	}else if (result == 'LATE') {
-		alert("[연체]이용자로 대출이 불가능합니다.");
-	}
-
-	var rcnt = '${rcnt}';
-	if (rcnt >= 5) {
-		alert("대출 도서가 5권이 초과했습니다.");
-	}
-</script>
-
 </html>

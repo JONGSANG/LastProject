@@ -15,4 +15,20 @@ SELECT EMAIL
 FROM ADMIN_INFO
 </select>
 
+<select id="selectLateUserList" resultType="LateVO">
+SELECT l.id, l.bno, b.btitle, l.start_date, l.end_date, u.name, b.bcompany, l.money, b.bwriter
+FROM LATE l
+INNER JOIN BOOK b on b.bno = l.bno
+INNER JOIN USER_INFO u on u.id = l.id
+WHERE l.end_date is null
+</select>
+
+
+<select id="lateUser" resultType="String">
+SELECT u.EMAIL
+FROM LATE l
+INNER JOIN BOOK b on b.bno = l.bno
+INNER JOIN USER_INFO u on u.id = l.id
+WHERE l.end_date is null
+</select>
 </mapper>

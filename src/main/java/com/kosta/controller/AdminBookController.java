@@ -37,8 +37,6 @@ public class AdminBookController {
 	@Resource(name = "bookImgPath")
 	private String bookImgPath;
 
-
-	
 	
 	@RequestMapping(value = "adminLibrary/adminBook/rentBook/rent", method = RequestMethod.GET)
 	public String rentGet() {

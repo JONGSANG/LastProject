@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -54,4 +55,33 @@ public class AdminUserController {
 			
 			return "redirect:/adminLibrary";
 		}
+		
+		// 연체 관리
+		@RequestMapping(value="adminLibrary/adminUser/lateUser/index", method=RequestMethod.GET)
+		public String lateAdminGet(Model model){
+			logger.info("연체 관리 페이지");
+			model.addAttribute("lateUser", adminUserService.selectLateUserList());
+			return "adminLibrary/adminUser/lateUser/index";
+		}
+		
+		// 연체자에게 단체메일 발송 페이지 불러오기
+		@RequestMapping(value="adminLibrary/adminUser/lateUser/lateUserMail", method=RequestMethod.GET)
+		public String lateUserMailGET(MailVO vo, RedirectAttributes rttr) throws Exception {
+			logger.info("단체메일발송(연체자) 처리 페이지");
+
+			return "adminLibrary/adminUser/lateUser/lateUserMail";
+		}
+			
+
+		// 연체자에게 단체메일 발송
+		@RequestMapping(value="adminLibrary/adminUser/lateUser/lateUserMail", method=RequestMethod.POST)
+		public String lateUserMailPOST(MailVO vo, RedirectAttributes rttr) throws Exception {
+			
+			logger.info("단체메일발송(연체자) 처리 페이지");
+			
+			adminUserService.lateUserMail(vo);
+			
+			return "redirect:/adminLibrary";
+		}
+
 }
