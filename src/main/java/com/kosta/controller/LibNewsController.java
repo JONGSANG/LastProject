@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.kosta.service.LibNewsService;
-import com.kosta.service.SearchService;
 import com.kosta.vo.F_BoardVO;
 import com.kosta.vo.F_Board_ReVO;
 import com.kosta.vo.NoticeVO;
@@ -28,7 +27,6 @@ public class LibNewsController {
  
 	@Autowired
 	private LibNewsService service;
-	private SearchService searchService;
 	 /*본 게시물 작성페이지 띄우기*/
 	
 	// 주소값을 정해주고 GET 방식으로 보냄

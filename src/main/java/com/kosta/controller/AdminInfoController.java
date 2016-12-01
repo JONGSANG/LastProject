@@ -87,7 +87,6 @@ public class AdminInfoController {
 		
 		boolean result=adminInfoService.passwordCheck(rawPassword);
 		if(result==false){
-			//메세지 안넘어감, ajax로 변경 필요
 			model.addAttribute("fail", "fail");
 			return "adminLibrary/adminInfo/adminCheck";
 		}

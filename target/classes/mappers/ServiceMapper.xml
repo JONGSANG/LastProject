@@ -27,7 +27,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <!-- 전체 목록 띄우기 -->
 <select id="m_listAll" resultType="M_BoardVO">
-	select num, mselect, title, content, id, min_date, viewcnt, (select count(num) 
+	select num, mselect, title, id, min_date, viewcnt, (select count(num) 
                                              from minwon_rep a 
                                              where a.mnum = b.num ) as re_cnt
    from minwon b

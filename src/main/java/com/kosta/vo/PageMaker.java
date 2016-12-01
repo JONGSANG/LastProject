@@ -153,4 +153,12 @@ public class PageMaker {
 	    
 	    return uriComponents.toUriString();
 	  }
+	
+	 public String multi(int page1) {
+
+		    UriComponents uriComponents = UriComponentsBuilder.newInstance().queryParam("page1", page1)
+		        .queryParam("perPageNum", pageInfo.getPerPageNum()).build();
+
+		    return uriComponents.toUriString();
+		  }
 }
