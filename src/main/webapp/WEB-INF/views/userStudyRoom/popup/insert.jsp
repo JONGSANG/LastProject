@@ -6,9 +6,13 @@
 <title>Insert title here</title>
 <script>
 	var noid='${noid}';
+	var al='${al}';
 	
     if(noid=='noid'){
     	alert("일치하는 정보가 없습니다. 다시 입력해주세요");
+    }
+    if(al=='al'){
+    	alert("이미 사용중인 좌석이 있습니다")
     }
 </script>
 </head>

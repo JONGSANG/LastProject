@@ -14,6 +14,8 @@ public interface StudyRoomService {
 	
 	public Boolean idCheck(StudyRoomVO vo) throws Exception;
 
+	public String seatCheck(StudyRoomVO vo) throws Exception;
+	
 	public void insert(StudyRoomVO vo) throws Exception;
 	
 }

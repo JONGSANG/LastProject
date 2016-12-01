@@ -35,9 +35,13 @@ public class StudyRoomDAOImpl implements StudyRoomDAO {
 	}
 	
 	@Override
+	public String seatCheck(StudyRoomVO vo) throws Exception {
+		return sqlSession.selectOne("StudyRoomMapper.seatCheck", vo);
+	}
+	
+	@Override
 	public void insert(StudyRoomVO vo) throws Exception {
 		sqlSession.update("StudyRoomMapper.insert", vo);
 	}
-
 	
 }

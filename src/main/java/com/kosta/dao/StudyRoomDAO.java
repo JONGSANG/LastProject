@@ -11,7 +11,9 @@ public interface StudyRoomDAO {
 	
 	public List<StudyRoomVO> cRoomList() throws Exception;
 
-	public void insert(StudyRoomVO vo) throws Exception;
-
 	public Boolean idCheck(StudyRoomVO vo) throws Exception;
+
+	public String seatCheck(StudyRoomVO vo) throws Exception;
+	
+	public void insert(StudyRoomVO vo) throws Exception;
 }

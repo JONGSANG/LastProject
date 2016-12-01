@@ -37,8 +37,12 @@ public class StudyRoomServiceImpl implements StudyRoomService {
 	}
 
 	@Override
+	public String seatCheck(StudyRoomVO vo) throws Exception {
+		return studyRoomdao.seatCheck(vo);
+	}
+	
+	@Override
 	public void insert(StudyRoomVO vo) throws Exception {
 		studyRoomdao.insert(vo);
 	}
-	
 }

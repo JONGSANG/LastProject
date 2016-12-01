@@ -33,6 +33,12 @@ WHERE NUM=#{num}
 SELECT EXISTS (SELECT ID FROM MEMBER WHERE ID=#{id})
 </select>
 
+<select id="seatCheck" resultType="String">
+SELECT NUM
+FROM STUDYROOM
+WHERE id=#{id}
+</select>
+
 </mapper>
 
 
