@@ -99,6 +99,7 @@ limit #{pageStart}, #{perPageNum}
  </if>  
 </sql>
 
+<!-- 모든 책중에 문헌정보실Table에 있는 책만 불러온다 -->
 <select id="b_searchResult" resultType="SearchVO">
 <![CDATA[  
 select a.bno,  b.brent , btitle, bWriter, bCompany, bIntro, buy_date, bLocation, bYear
@@ -127,7 +128,7 @@ and a.bno not LIKE '99%'
 
 </select>  
 
-
+<!-- 날짜범위를 정해주고, blocation은 책 비치 위치인데 1이 문헌정보실을 표시해주어 0보다 크다고 범위를 준다. -->
 <select id="n_searchResult" resultType="SearchVO">
 <![CDATA[  
 select count(a.bNO)
@@ -157,8 +158,8 @@ and buy_date between #{start_date} and #{end_date}
  
 </select>  
 
- 
- <select id="readInfo" resultType="SearchVO">
+<!-- 해당되는 책 정보를 가져오기 -->
+<select id="readInfo" resultType="SearchVO">
 select a.bNO,  b.brent , btitle, bWriter, bCompany, bIntro, buy_date, bLocation, bYear
 from book a 
 inner join room_b b on a.bno = b.bno 
@@ -167,7 +168,7 @@ where a.bNo = #{bNo}
  
  <!-- 연속 간행물 sql  -->
  
- <!-- 전체 목록 띄우기 -->
+<!-- 연속 간행물의 전체 목록 띄우기 책 번호 앞4자리가 다른 것을 출력(종류가 다른 간행물 목록) -->
 <select id="p_listAll" resultType="SearchVO">
 select distinct substring(bNo, 1, 4) p_bNo , bCompany, bWriter, bYear  
 from book
@@ -192,7 +193,7 @@ limit #{pageStart}, #{perPageNum}
  </select>
 
 
-<!-- 제목 선택 후 월별 목록 띄우기 -->
+<!-- 제목 선택 후 월별 목록 띄우기 책 번호 7,8번째 숫자가 다른 것을 출력-->
 <select id="p_listOneAll" resultType="SearchVO">
 select distinct substring(bNo, 7, 2) p_bMonth , bNo, bCompany, bWriter, bYear, bTitle, bIntro  
 from book

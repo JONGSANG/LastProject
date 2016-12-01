@@ -10,21 +10,26 @@ import com.kosta.vo.SearchVO;
 
 
 public interface SearchService {
+	// 도서 상세 정보 보기
 	public SearchVO readInfo(String bNo)throws Exception;
+	// 도서 검색 결과
 	public List<SearchVO> b_searchResult(SearchVO vo) throws Exception;
+	// 신착 도서 검색 결과
 	public List<SearchVO> n_searchResult(SearchVO vo) throws Exception;
 	
-	
-	
+	// 신착 도서 결과 페이징 처리를 위한 검색 갯수
 	public int listNSearchCount(SearchVO vo) throws Exception;
+	// 도서 검색 결과 페이징 처리를 위한 검색 갯수
 	public int listBSearchCount(SearchVO vo) throws Exception;
 
-	
-	
+	// 연속 간행물의 모든 목록
 	public List<SearchVO> p_listAll(SearchVO vo) throws Exception;
+	// 연속 간행물의 모든 목록 중 하나를 선택하였을 때 그 종류의 목록
 	public List<SearchVO> p_listOneAll(SearchVO vo) throws Exception;
-
+	
+	// 연속 간행물 모든 목록의 페이징 처리를 위한 목록 갯수
 	public int listCount(PageInfo pageInfo) throws Exception;
+	// 연속 간행물 목록 중 세부 목록의 페이징 처리를 위한 목록 갯수
 	public int resultCount(PageInfo pageInfo) throws Exception;
 ///////////////////////////
 	

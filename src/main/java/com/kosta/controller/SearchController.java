@@ -28,78 +28,103 @@ public class SearchController {
 	@Autowired
 	private SearchService service;
 
+	// 지정해준 경로를 GET방식으로 보내줌_도서 검색 창 띄우기
 	@RequestMapping(value = "userLibrary/search/b_search/index", method = RequestMethod.GET)
 	public String b_searchGET(Model model) {
+		// 콘솔창에 띄우기
 		logger.info("search index(main) page !");
+		
+		// index.jsp로 이동
 		return "userLibrary/search/b_search/index";
 	}
 
+	// 도서 검색 후 결과창 
 	@RequestMapping(value = "userLibrary/search/b_search/result", method = RequestMethod.GET)
 	public String b_searchListGET(Model model,@ModelAttribute("pageInfo") SearchVO vo) throws Exception {
+		// 도서 검색 결과를 list라는 별칭을 지정해주어 값을 넘겨줌
 		model.addAttribute("list", service.b_searchResult(vo));
 		
-		
+		// 페이징 처리
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setPageInfo(vo);
 		
 		pageMaker.setTotalCount(service.listBSearchCount(vo));
 		model.addAttribute("pageMaker", pageMaker);
+		
+		// 도서 검색 결과를 index_result로 보내줌
 		return "userLibrary/search/b_search/index_result";
 	}
 
 	//////////////////////////////
 	
-	
+	// 신착도서검색창 띄우기
 	@RequestMapping(value = "userLibrary/search/n_search/index", method = RequestMethod.GET)
 	public String n_searchGET(Model model) {
+		// 콘솔창에 띄어줌
 		logger.info("search index(main) page !");
+		
+		// index.jsp로 이동
 		return "userLibrary/search/n_search/index";
 	}
 
+	// 신착도서검색을 했을 때 결과창 띄우기
 	@RequestMapping(value = "userLibrary/search/n_search/result", method = RequestMethod.GET)
+	// Model에 담아 값을 보낼 것임
 	public String n_searchListGET(Model model,@ModelAttribute("pageInfo") SearchVO vo) throws Exception {
-		
+		// service.n_searchResult(vo)를 list라는 별칭을 줌
 		model.addAttribute("list", service.n_searchResult(vo));
 		
+		// 페이징 처리
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setPageInfo(vo);
 		
 		pageMaker.setTotalCount(service.listNSearchCount(vo));
 		model.addAttribute("pageMaker", pageMaker);
+		//index_result창을 띄어줌
 		return "userLibrary/search/n_search/index_result";
 	}	
 	
 	//////////////////////////////  연속간행물
 	
-
+	// 모든 연속 간행물 띄우기
 	@RequestMapping(value = "userLibrary/search/p_search/index", method = RequestMethod.GET)
 	public String p_indexGET(Model model,@ModelAttribute("pageInfo") SearchVO vo) throws Exception {
 
+		// 연속간행물의 가져온 모든 목록을 list로 지정해서 값을 넘김
 		model.addAttribute("list", service.p_listAll(vo));
+		//페이징 처리
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setPageInfo(vo);
 
 	    pageMaker.setTotalCount(service.listCount(vo));
 	    model.addAttribute("pageMaker", pageMaker);
+	    // index.jsp로 넘어감
 		return "userLibrary/search/p_search/index";
 	}
 
+	// 모든 연속 간행물 중 하나를 선택하였을 때 그 간행물 종류의 목록들을 띄우게 함
 	@RequestMapping(value = "userLibrary/search/p_search/result", method = RequestMethod.GET)
 	public String p_resultGET(Model model,@ModelAttribute("pageInfo") SearchVO vo) throws Exception {
 		
+		// 모든 목록 중 하나를 선택하였을 때 그 종류의 간행물 목록의 정보를 list로 담아 넘김
 		model.addAttribute("list", service.p_listOneAll(vo));
+		// 페이징 처리
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setPageInfo(vo);
 
 	    pageMaker.setTotalCount(service.resultCount(vo));
 	    model.addAttribute("pageMaker", pageMaker);
+	    // index_result로 값을 넘겨줌 
 		return "userLibrary/search/p_search/index_result";
 	}
 
+	// 목록 중 하나를 선택하였을 때 그 책의 정보를 띄어준다.
 	@RequestMapping(value = "userLibrary/search/**/readInfo", method = RequestMethod.GET)
 	public void readInfo(Model model, @RequestParam("bNo") String bNo) throws Exception {
 		logger.info("search result!  page !");
+		// 책정보들을 read로 지정하여 값을 넘겨줌
 		model.addAttribute("read",service.readInfo(bNo));
+		// 주소창에 readInfo가 띄어지면 해당되는 책정보가 뜬다.
 	}
 	
 	////////////////////////////////

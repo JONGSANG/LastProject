@@ -22,6 +22,7 @@ public class MyInfoController {
 	@Autowired
 	private MyInfoService myInfoService;
 	
+	// 
 	@RequestMapping(value="/userLibrary/myInfo/myInfo", method=RequestMethod.GET)
 	public String myInfoGET(Model model) throws Exception{
 		logger.info("내 정보 페이지");
@@ -43,7 +44,6 @@ public class MyInfoController {
 		
 		boolean result=myInfoService.passwordCheck(rawPassword);
 		if(result==false){
-			//메세지 안넘어감, ajax로 변경 필요
 			rttr.addAttribute("fail", "fail");
 			return "redirect:/userLibrary/myInfo/modifyCheck";
 		}
@@ -82,7 +82,6 @@ public class MyInfoController {
 		boolean result=myInfoService.passwordCheck(rawPassword);
 		
 		if(result==false){
-			//메세지 안넘어감, ajax로 변경 필요
 			rttr.addAttribute("false", "false");
 			return "redirect:/userLibrary/myInfo/leave";
 		}
