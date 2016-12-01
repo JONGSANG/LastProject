@@ -19,21 +19,17 @@
 		</div>
 	</section>
 	<div id="insidebody">
-	<form action="result" method="get">
-		<table width="600" border="1">
-			<tr>
-				<th width="100"><select name="searchType">
-						<option value="bTitle">제목명</option>
-						<option value="bWriter">저자명</option>
-						<option value="bCompany">출판사</option>
-				</select></th>
-				<th width="400"><input type="text" name='keyword'
-					id="keywordInput" value='${vo.keyword }'></th>
-				<th width="100"><button id='searchBtn'>Search</button></th>
-			</tr>
-		</table>
-	</form>
-
+	<div style="border-bottom: #d3d3d3 1px solid; padding-bottom: 20px; width: 770px">
+	<form class="searchform cf" action="result" method="get">
+				<select id="select_box" name="searchType">
+					<option value="bTitle">제목명</option>
+					<option value="bWriter">저자명</option>
+					<option value="bCompany">출판사</option>
+				</select> <input style="width: 590px; " type="text" name='keyword' id="keywordInput" value='${vo.keyword }'>
+				<button id="searchBtn">검색</button>
+			</form>
+	</div>
+	
 	<%-- 
 	<c:forEach items="${list}" var="bookVO">
 		<table border="1">
@@ -45,34 +41,35 @@
 		</table>
 	</c:forEach>
  --%>
-
-
-	<table width="600" border="1">
-		<tr>
-			<th width="50">번호</th>
-			<th width="350">책 제목</th>
-			<th width="100">저자명</th>
-			<th width="100">출판사</th>
-			<th width="100">대출 여부</th>
-		</tr>
-		<c:forEach items="${list}" var="bookVO" varStatus="var">
-			<tr>
-				<%-- <th width="50">${var.index }</th> --%>
-				<th width="50">${bookVO.bNo }</th>
-				<th width="350"><a href="readInfo?bNo=${bookVO.bNo}">${bookVO.bTitle}</a></th>
-				<th width="100">${bookVO.bWriter}</th>
-				<th width="100">${bookVO.bCompany}</th>
-				<th width="100"><c:if test="${bookVO.bRent == 1}">
+	
+	<table class="listtable" style="margin-top: 20px">
+	<tr>
+		<th width="100px">책 번호</th>
+		<th width="320px">책 제목</th>
+		<th width="140px">저자명</th>
+		<th width="100px">출판사</th>
+		<th width="100px">대출 여부</th>
+	</tr>
+	<c:forEach items="${list}" var="bookVO" varStatus="var">
+	<tr>
+		<td align="center">${bookVO.bNo }&nbsp;호</td>
+		<td align="center"><a href="readInfo?bNo=${bookVO.bNo}">${bookVO.bTitle}</a></td>
+		<td align="center">${bookVO.bWriter}</td>
+		<td align="center">${bookVO.bCompany}</td>
+		<td align="center">
+		<c:if test="${bookVO.bRent == 1}">
 					대출 가능
 				</c:if> <c:if test="${bookVO.bRent != 1 }">
 					대출 불가
-				</c:if></th>
+		</c:if>
+		</td>
+	</tr>
+	</c:forEach>
+</table>
 
-			</tr>
-		</c:forEach>
-	</table>
 
 	<div class="text-center">
+		  <div class="paging">
 		<ul class="pagination">
 
 			<c:if test="${pageMaker.prev}">
@@ -96,6 +93,6 @@
 		</ul>
 	</div>
 </div>
-
+</div>
 </body>
 </html>

@@ -19,28 +19,46 @@
 		</div>
 </section>
 <div id="insidebody">
-	<form action="result" method="get">
-		<table width="600" border="1">
-			<tr>
-				<th width="100">검색 날짜</th>
-				<th width="400"><input type="date" name='start_date'> 부터 ~ <input type="date" name='end_date'> 까지</th>
-				<th width="100"><button id='searchBtn'>Search</button></th>
-			</tr>
+	
+	<div style="border-bottom: #d3d3d3 1px solid; padding-bottom: 20px; width: 770px">
+	<form class="searchform cf" action="result" method="get">
+	<table class="listtable" style="margin-top: 20px;">
+	<tr>
+		<td width="180px" style="text-align: right; padding-right: 10px; border: none; font-size: 17px">검색 날짜</td>
+		<td width="140px" style="border: none; "">
+		<img src="/resources/images/login/login_56.png" style="margin-top: 3px" height="25" onClick="datePicker(event,'start_date')">
+				<input type="text" id="start_date" name="start_date" tabindex="1" size="23" value="2016-01-01"
+				style="text-align: center; font-size: 14px; width : 90px; height: 25px; IME-MODE:disabled; text-align: center; background-color: white;"
+				onkeypress="if (event.keyCode<7 || event.keyCode>9)  event.returnValue=false;" >
+		</td>
+		<td width=60px" style="border: none; font-size: 17px">~부터</td>
+		<td width="140px" style="border: none; "">
+		<img src="/resources/images/login/login_56.png" style="margin-top: 3px" height="25" onClick="datePicker(event,'end_date')">
+				<input type="text" id="end_date" name="end_date" tabindex="1" size="23" value="2016-02-01"
+				style="text-align: center; font-size: 14px; width : 90px; height: 25px; IME-MODE:disabled; text-align: center; background-color: white;"
+				onkeypress="if (event.keyCode<7 || event.keyCode>9)  event.returnValue=false;" >
+		</td>
+		<td width="60px" style="border: none; font-size: 17px">~까지</td>
+		<td width="180px" style="text-align: left; padding-left: 10px; border: none;"><button id='searchBtn'>검색</button></td>
+	</tr>
 		</table>
-
-	</form>
-	<br><hr><br>
-	<table width="600" >
-		<tr>
-			<th>검색 시작 날짜를 선택하시고,</th>
-		</tr>
-		<tr>
-			<th>검색 기준 날짜를 선택한 후</th>
-		</tr>
-		<tr>
-			<th>[[ 검색 ]] 버튼을 눌러 주세요</th>
-		</tr>
-	</table>
+			</form>
+	</div>
+	
+	
+	<table class="listtable" style="margin-top: 20px">
+	<tr>
+		<th width="80px">일련번호</th>
+		<th width="340px">책 제목</th>
+		<th width="140px">저자명</th>
+		<th width="100px">출판사</th>
+		<th width="100px">대출 여부</th>
+	</tr>
+	<tr>
+		<td align="center" colspan="5">검색 날짜를 선택한 후 [검색] 버튼을 눌러 주세요.</td>
+	</tr>
+</table>
+	
 	<%-- 	<jsp:include page="${content}">
 		<jsp:param value="" name="" />
 	</jsp:include>

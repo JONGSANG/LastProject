@@ -19,28 +19,25 @@
 		</div>
 </section>
 <div id="insidebody">
-	<table width="600" border="1">
-		<tr>
-			<th width="50">번호</th>
-			<!-- <th width="350">간행물 제목</th> -->
-			<th width="450">간행물 제목</th>
-			<th width="100">출간 년도</th>
-			<th width="100">저자명</th>
-			<!-- <th width="100">출판사</th> -->
-		</tr>
-		<c:forEach items="${list}" var="bookVO" varStatus="var">
-			<tr>
-				<th width="50">${var.count }</th>
-				<%-- <th width="50">${bookVO.bNo }</th> --%>
-				<%-- <th width="350"><a href="readInfo?bNo=${bookVO.bNo}">${bookVO.bCompany}</a></th> --%>
-				<th width="450"><a href="result?p_bNo=${bookVO.p_bNo}">${bookVO.bCompany}</a></th>
-				<th width="100">${bookVO.bYear}</th>
-				<th width="100">${bookVO.bWriter}</th>
-				<%-- <th width="100">${bookVO.bCompany}</th> --%>
-			</tr>
-		</c:forEach>
-	</table>
+	<table class="listtable">
+	<tr>
+		<th width="120px">간행물 번호</th>
+		<th width="390px">간행물 제목</th>
+		<th width="140px">저자명</th>
+		<th width="100px">출간 년도</th>
+	</tr>
+	<c:forEach items="${list}" var="bookVO" varStatus="var">
+	<tr>
+		<td align="center">${bookVO.p_bNo }</td>
+		<td align="center"><a href='result?p_bNo=${bookVO.p_bNo}'>${bookVO.bCompany}</a></td>
+		<td align="center">${bookVO.bWriter}</td>
+		<td align="center">${bookVO.bYear}</td>
+	</tr>
+	</c:forEach>
+</table>
+	
 	<div class="text-center">
+		  <div class="paging">
 		<ul class="pagination">
 
 			<c:if test="${pageMaker.prev}">
@@ -62,6 +59,7 @@
 
 		</ul>
 	</div>
+</div>
 </div>
 </body>
 </html>

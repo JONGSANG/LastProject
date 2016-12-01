@@ -19,43 +19,60 @@
 		</div>
 </section>
 <div id="insidebody">
-	<form action="result" method="get">
-		<table width="600" border="1">
-			<tr>
-				<th width="100">검색 날짜</th>
-				<th width="400"><input type="date" name='start_date'>
-					부터 ~ <input type="date" name='end_date'> 까지</th>
-				<th width="100"><button id='searchBtn'>Search</button></th>
-			</tr>
+	<div style="border-bottom: #d3d3d3 1px solid; padding-bottom: 20px; width: 770px">
+	<form class="searchform cf" action="result" method="get">
+	<table class="listtable" style="margin-top: 20px;">
+	<tr>
+		<td width="180px" style="text-align: right; padding-right: 10px; border: none; font-size: 17px">검색 날짜</td>
+		<td width="140px" style="border: none; "">
+		<img src="/resources/images/login/login_56.png" style="margin-top: 3px" height="25" onClick="datePicker(event,'start_date')">
+				<input type="text" id="start_date" name="start_date" tabindex="1" size="23" value="2016-01-01"
+				style="text-align: center; font-size: 14px; width : 90px; height: 25px; IME-MODE:disabled; text-align: center; background-color: white;"
+				onkeypress="if (event.keyCode<7 || event.keyCode>9)  event.returnValue=false;" >
+		</td>
+		<td width=60px" style="border: none; font-size: 17px">~부터</td>
+		<td width="140px" style="border: none; "">
+		<img src="/resources/images/login/login_56.png" style="margin-top: 3px" height="25" onClick="datePicker(event,'end_date')">
+				<input type="text" id="end_date" name="end_date" tabindex="1" size="23" value="2016-02-01"
+				style="text-align: center; font-size: 14px; width : 90px; height: 25px; IME-MODE:disabled; text-align: center; background-color: white;"
+				onkeypress="if (event.keyCode<7 || event.keyCode>9)  event.returnValue=false;" >
+		</td>
+		<td width="60px" style="border: none; font-size: 17px">~까지</td>
+		<td width="180px" style="text-align: left; padding-left: 10px; border: none;"><button id='searchBtn'>검색</button></td>
+	</tr>
 		</table>
-	</form>
+			</form>
+	</div>
 
-
-	<table width="600" border="1">
-		<tr>
-			<th width="50">인련 번호</th>
-			<th width="350">책 제목</th>
-			<th width="100">저자명</th>
-			<th width="100">출판사</th>
-			<th width="100">대출 여부</th>
-		</tr>
-		<c:forEach items="${list}" var="bookVO" varStatus="var">
-			<tr>
-				<%-- <th width="50">${var.index }</th> --%>
-				<th width="50">${bookVO.bNo }</th>
-				<th width="350"><a href="readInfo?bNo=${bookVO.bNo}">${bookVO.bTitle}</a></th>
-				<th width="100">${bookVO.bWriter}</th>
-				<th width="100">${bookVO.bCompany}</th>
-				<th width="100"><c:if test="${bookVO.bRent == 1}">
+	<table class="listtable" style="margin-top: 20px">
+	<tr>
+		<th width="80px">일련번호</th>
+		<th width="340px">책 제목</th>
+		<th width="140px">저자명</th>
+		<th width="100px">출판사</th>
+		<th width="100px">대출 여부</th>
+	</tr>
+	<c:forEach items="${list}" var="bookVO" varStatus="var">
+	<tr>
+		<td align="center">${bookVO.bNo }&nbsp;호</td>
+		<td align="center"><a href="readInfo?bNo=${bookVO.bNo}">${bookVO.bTitle}</a></td>
+		<td align="center">${bookVO.bWriter}</td>
+		<td align="center">${bookVO.bCompany}</td>
+		<td align="center">
+		<c:if test="${bookVO.bRent == 1}">
 					대출 가능
 				</c:if> <c:if test="${bookVO.bRent != 1 }">
 					대출 불가
-				</c:if></th>
-
-			</tr>
-		</c:forEach>
-	</table>
+		</c:if>
+		</td>
+	</tr>
+	</c:forEach>
+</table>
+	
+	
+	
 	<div class="text-center">
+		  <div class="paging">
 		<ul class="pagination">
 
 			<c:if test="${pageMaker.prev}">
@@ -77,6 +94,7 @@
 			</c:if>
 
 		</ul>
+	</div>
 	</div>
 </div>
 </body>
