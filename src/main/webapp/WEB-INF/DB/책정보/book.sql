@@ -1,4 +1,5 @@
-select * from BOOK;select * from late;
+select * from BOOK;
+select * from late;
 drop table BOOK;
 
 SELECT MONEY FROM LATE WHERE end_date is null and bno='01010011'
@@ -2349,7 +2350,7 @@ values('04010121','국가란 무엇인가','유시민','돌베개',
 ',
 2011,'2011/11/01');
 insert into book(bno,btitle,bwriter,bcompany,bintro,byear,buy_date) 
-values('040101212','국가란 무엇인가','유시민','돌베개',
+values('04010122','국가란 무엇인가','유시민','돌베개',
 '이 책은 2009년 벽두에 일어난 ‘용산참사’를 계기로 저자가 오랫동안 고민해온 
 “도대체 국가란 무엇인가?”라는 문제를 정치인의 관점에서 되짚어보고 독자와 적극 
 소통하기 위해 쓴 것이다. 진보와 보수를 가르는 중요한 차이가 국가를 보는 관점에서 

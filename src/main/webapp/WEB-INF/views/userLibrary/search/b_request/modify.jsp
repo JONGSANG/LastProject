@@ -14,74 +14,41 @@
 	</section>
 	<div id="insidebody">
 	<form action="modify" method="post">
-
-	<table border="1">
-		<tr>
-			<th>번호</th>
-			<th><input type="text" name='num' class="form-control"
-				value="${boardVO.num}" readonly="readonly"></th>
-		</tr>
-		<tr>
-			<th>제목</th>
-			<th><input type="text" name='bName' class="form-control"
-				value="${boardVO.bName}"></th>
-		</tr>
-
-		<tr>
-			<th width="80">저자 명</th>
-			<th><input type="text" name='bWriter' class="form-control"
-				value="${boardVO.bWriter}">
-		</tr>
-		<tr>
-			<th width="80">출판사</th>
-			<th><input type="text" name='bCompany' class="form-control"
-				value="${boardVO.bCompany}">
-		</tr>
-		<tr>
-			<th width="80">출간년도</th>
-			<th><input type="text" name='bYear' placeholder="ex) 2015" class="form-control"
-				value="${boardVO.bYear}">
-		</tr>
-		<tr>
-			<th>희망 사유(책 소개)</th>
-			<th><textarea class="form-control" name="bIntro" rows="3">${boardVO.bIntro}</textarea></th>
-		</tr>
-		<tr>
-			<th>ID</th>
-			<th><input type="text" name="id" class="form-control"
-				value="${boardVO.id}" readonly="readonly"></th>
-		</tr>
-		<tr>
-			<th colspan="2">
-				<button type="submit">저장</button>
-				<button type="reset">취소</button>
-			</th>
-		</tr>
-	</table>
-	
+	<input type="hidden" name='num' value="${boardVO.num}" >
 	<table class="listread" style="width: 760px">
 	<tr>
-	<th width="80px">책제목</th><td  width="200px" id="listTitle" align="center">${boardVO.bName}</td>
-	<th width="80px">저자명</th><td  width="200px" id="listTitle" align="center">${boardVO.bWriter}</td>
+	<th width="80px">책제목</th>
+	<td width="200px" valign="middle" style="padding-left: 10px; padding-top: 5px">
+		<input id="write" style="width: 180px;" value="${boardVO.bName}" type="text" name='bName'>
+		</td>
+	<th width="80px">저자명</th>
+	<td  width="200px" valign="middle" style="padding-left: 10px; padding-top: 5px">
+		<input id="write" style="width: 180px; " value="${boardVO.bWriter}" type="text" name='bWriter'>
+		</td>
 	<th width="80px">작성자</th><td  width="100px" id="listTitle" align="center">${boardVO.id}</td>
 	</tr>
 	<tr>
-	<th>출판사</th><td id="listTitle" align="center">${boardVO.bCompany}</td>
-	<th>출간년도</th><td id="listTitle" style="padding-left: 10px">${boardVO.bYear}</td>
+	<th>출판사</th>
+	<td valign="middle" style="padding-left: 10px; padding-top: 5px">
+	<input id="write" style="width: 180px; " type="text" name='bCompany' value="${boardVO.bCompany}">
+	</td>
+	<th>출간년도</th>
+	<td valign="middle" style="padding-left: 10px; padding-top: 5px">
+	<input type='text'  id="write" style="width: 180px;" value="${boardVO.bYear}"
+	onkeypress="if (event.keyCode<48|| event.keyCode>57)  event.returnValue=false;"  
+	style='IME-MODE:disabled; text-align: center;'  size="2" name="bYear"  pattern=".{4}" maxlength="4"> 
+	</td>
 	</tr>
 	<tr>
-		<td id="listcontents" colspan="6" style="height: 400px"><textarea rows="20" cols="105" style="resize: none;" readonly="readonly">${boardVO.bIntro}</textarea></td>
+		<td colspan="6" style="padding-top: 10px" align="center">
+			<textarea id="regiwrite" name="bIntro" rows="20" cols="105" >${boardVO.bIntro}</textarea>
+			</td>
 	</tr>
 		<tr>
 			<td colspan="8" style="padding-top: 5px; border: none;">
 			<div class="fright">
-			<c:if test="${boardVO.id==id}">
-				<button style="width: 50px" type="button"
-					onclick="location.href='modify?num=${boardVO.num}'">수정</button>
-				<button style="width: 50px" type="button"
-					onclick="location.href='remove?num=${boardVO.num}'">삭제</button>
-			</c:if> 
-					<a href='listAll'><button type="submit">목록보기</button></a>
+			<button type="submit" value="수정하기">수정하기</button>
+			<button onclick="javascript:history.back()" >돌아가기</button>
 			</div>
 			</td>
 		</tr>

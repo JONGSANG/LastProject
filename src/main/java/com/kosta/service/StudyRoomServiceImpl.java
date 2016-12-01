@@ -8,6 +8,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import com.kosta.dao.StudyRoomDAO;
+import com.kosta.vo.ChartVO;
 import com.kosta.vo.StudyRoomVO;
 
 @Service
@@ -44,5 +45,10 @@ public class StudyRoomServiceImpl implements StudyRoomService {
 	@Override
 	public void insert(StudyRoomVO vo) throws Exception {
 		studyRoomdao.insert(vo);
+	}
+
+	@Override
+	public ChartVO chart() throws Exception {
+		return studyRoomdao.chart();
 	}
 }

@@ -54,10 +54,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/adminLibrary/adminStudyRoom/currentState"><i class="fa fa-circle-o"></i>열람실현황</a></li>
-            <li><a href="/adminLibrary/adminStudyRoom/aRoom/index"><i class="fa fa-circle-o"></i>A열람실</a></li>
-            <li><a href="/adminLibrary/adminStudyRoom/bRoom/index"><i class="fa fa-circle-o"></i>B열람실</a></li>
-            <li><a href="/adminLibrary/adminStudyRoom/cRoom/index"><i class="fa fa-circle-o"></i>C열람실(노트북)</a></li>
+            <li><a href="/adminLibrary/adminStudyRoom/aRoom/index"><i class="fa fa-circle-o"></i>제 1 열람실</a></li>
+            <li><a href="/adminLibrary/adminStudyRoom/bRoom/index"><i class="fa fa-circle-o"></i>제 2 열람실</a></li>
+            <li><a href="/adminLibrary/adminStudyRoom/cRoom/index"><i class="fa fa-circle-o"></i>노트북 열람실</a></li>
           </ul>
         </li>
         <li class="treeview">

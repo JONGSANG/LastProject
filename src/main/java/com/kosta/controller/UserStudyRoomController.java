@@ -26,6 +26,7 @@ public class UserStudyRoomController {
 		
 		logger.info("A열람실 페이지");
 		
+		model.addAttribute("chart", studyRoomService.chart());
 		model.addAttribute("list", studyRoomService.aRoomList());
 		
 		return "userStudyRoom/aRoom/index";
@@ -36,6 +37,7 @@ public class UserStudyRoomController {
 		
 		logger.info("B열람실 페이지");
 		
+		model.addAttribute("chart", studyRoomService.chart());
 		model.addAttribute("list", studyRoomService.bRoomList());
 		
 		return "userStudyRoom/bRoom/index";
@@ -46,6 +48,7 @@ public class UserStudyRoomController {
 		
 		logger.info("C열람실 페이지");
 		
+		model.addAttribute("chart", studyRoomService.chart());
 		model.addAttribute("list", studyRoomService.cRoomList());
 		
 		return "userStudyRoom/cRoom/index";

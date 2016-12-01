@@ -2,6 +2,7 @@ package com.kosta.service;
 
 import java.util.List;
 
+import com.kosta.vo.ChartVO;
 import com.kosta.vo.StudyRoomVO;
 
 public interface AdminStudyRoomService {
@@ -21,4 +22,6 @@ public interface AdminStudyRoomService {
 	public StudyRoomVO detail(String num) throws Exception;
 
 	public void delete(String num) throws Exception;
+
+	public ChartVO chart() throws Exception;
 }
