@@ -17,7 +17,6 @@ public class CultureVO extends PageInfo {
 	public void setState(int state) {
 		this.state = state;
 	}
-	
 	public String getOrgname() {
 		return orgname;
 	}

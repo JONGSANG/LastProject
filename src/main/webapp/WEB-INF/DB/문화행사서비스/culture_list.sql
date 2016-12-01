@@ -37,3 +37,6 @@ constraint pk_culture_list primary key(NUM),
 constraint fk_culture_list foreign key(anum) REFERENCES culture(num) on delete cascade on update cascade
 
 );
+
+
+select num from culture where num not exists (select anum from culture_list)

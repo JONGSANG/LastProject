@@ -85,6 +85,13 @@ WHERE BNO=#{bno}
 
 
 <!-- 신규 도서 등록 SQL -->
+<insert id="insertBook">
+INSERT INTO BOOK (bNo, bTitle, bWriter, bCompany, bIntro, bYear, buy_date)
+VALUES (#{bNo}, #{bTitle}, #{bWriter}, #{bCompany}, #{bIntro}, #{bYear}, #{buyDate})
+</insert>
+<insert id="insertRoom_b">
+INSERT INTO room_b(bno) values(#{bNo})
+</insert>
 <sql id="search">
 <if test="searchType!=null">
 	<if test="searchType=='01'">

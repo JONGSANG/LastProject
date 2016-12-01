@@ -15,7 +15,7 @@
      removeAll(targetE);
      
      if(val == '01'){
-         alert("[ 인문 ]을 선택하셨습니다.\n");
+         alert("[ 문학 ]을 선택하셨습니다.\n");
          addOption('시집', targetE);
          addOption('산문집', targetE);
          addOption('소설', targetE);
@@ -69,6 +69,12 @@
          e.remove(1);
      }
  }
+ 
+var msg = '${msg}';
+if (msg == 'insertS') {
+	alert("등록이 완료되었습니다.");
+}
+ 
 </script>
 </head>
 <body>

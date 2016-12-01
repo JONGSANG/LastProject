@@ -138,4 +138,10 @@ public class AdminBookDAOImpl implements AdminBookDAO {
 		return sqlSession.selectOne(namespace+"selectLastBookList", vo);
 	}
 
+	@Override
+	public void insertBook(BookVO vo) {
+		sqlSession.insert(namespace+"insertBook", vo);
+		sqlSession.insert(namespace+"insertRoom_b", vo);
+	}
+
 }

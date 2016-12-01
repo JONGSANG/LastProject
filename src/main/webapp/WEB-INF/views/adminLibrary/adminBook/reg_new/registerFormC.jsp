@@ -5,15 +5,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>도서검색</title>
+<title>연속간행물 등록</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+        $(function() {
+            $("#file").on('change', function(){
+                readURL(this);
+            });
+        });
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                    $('#img_preview').attr('src', e.target.result);
+                }
+              reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
 </head>
 <body>
 <h3>연속간행물 등록</h3>
-<form action="registGan" method="post">
+<form action="registBook" method="post"  enctype="multipart/form-data">
 	<table width="600" border="1" >
 		<tr>
 			<th width="150" rowspan="6">
-			이미지 등록칸..</th>
+				<img id="img_preview" width="200">
+				<input type="file" name = "file" id = "file" accept="image/*" required="required">
+			</th>
 			<th width="90">번호</th>
 			<th width="250">${BNO}</th>
 			<input type="hidden" value="${BNO}" name="bNo">
@@ -40,7 +60,7 @@
 			<th width="50">구입 일자</th>
 			<%-- <th width="50">${bookVO.bNo }</th> --%>
 			<th width="100">
-				<input type="date" name="buy_date">
+				<input type="date" name="buyDate">
 			</th>
 		</tr>
 		<tr>
@@ -48,7 +68,10 @@
 		</tr>
 		<tr>
 			<th colspan="3" height="300" align="left">
-				<textarea style="resize: none;" name="bIntro" rows="16" cols="72" placeholder=" * 간단한 책소개를 입력하세요." ></textarea>
+				<textarea style="resize: none;" name="bIntro" rows="16" cols="72" 
+				placeholder=" 
+					* 간단한 책소개를 입력하세요.
+					" ></textarea>
 			</th>
 		</tr>
 		<tr>

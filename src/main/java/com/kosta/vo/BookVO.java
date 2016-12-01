@@ -2,6 +2,8 @@ package com.kosta.vo;
 
 import java.util.Date;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class BookVO extends PageInfo_rep{
 
 	private String bNo, bTitle, bWriter, bCompany, bIntro;
@@ -14,9 +16,23 @@ public class BookVO extends PageInfo_rep{
 	private String select;
 	private String gan_M;
 	private String gan_Y;
+	private MultipartFile file;
+	private String buyDate;
 	
 	
 	
+	public String getBuyDate() {
+		return buyDate;
+	}
+	public void setBuyDate(String buyDate) {
+		this.buyDate = buyDate;
+	}
+	public MultipartFile getFile() {
+		return file;
+	}
+	public void setFile(MultipartFile file) {
+		this.file = file;
+	}
 	public String getGan_Y() {
 		return gan_Y;
 	}

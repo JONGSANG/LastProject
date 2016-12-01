@@ -121,4 +121,10 @@ public class AdminBookServiceImpl implements AdminBookService {
 		return adminBookDAO.selectLastBookList(vo);
 	}
 
+	@Override
+	public void insertBook(BookVO vo) {
+		adminBookDAO.insertBook(vo);
+		
+	}
+
 }

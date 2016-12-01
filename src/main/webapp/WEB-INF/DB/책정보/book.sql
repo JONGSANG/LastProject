@@ -13,10 +13,10 @@ AND R.ID='spurs89'
 AND R.CHECK_SUBMIT = false
 
 SELECT COUNT(id) FROM late WHERE end_date is null and id='spurs89'
-
+SELECT (SELECT COUNT(NUM) FROM MINWON)-(SELECT COUNT(distinct MNUM) FROM MINWON_REP)
 
 delete from book
-delete from book where bno = '040101212'
+delete from book where bno = '01010041'
 
  select 
    count(distinct substring(bNo, 1, 4)) 
@@ -57,7 +57,7 @@ WHERE RB.BRENT=-1
 AND R.ID='spurs89'
 AND R.CHECK_SUBMIT = false
    
-   
+   alter table book drop column orgname
    
 CREATE TABLE BOOK(
 BNO varchar(20) ,
@@ -69,9 +69,10 @@ BYEAR year(4),
 BUY_DATE DATE,
 BLOCATION tinyint DEFAULT 1, 
 
-
 constraint pk_BOOK primary key(BNO)
 );
+
+
 ------------------------------------------------------------
 -- 문학 01
 ------------------------------------------------------------

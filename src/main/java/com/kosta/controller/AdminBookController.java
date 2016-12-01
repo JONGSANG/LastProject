@@ -1,13 +1,21 @@
 package com.kosta.controller;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.UUID;
+
+import javax.annotation.Resource;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.kosta.service.AdminBookService;
@@ -26,6 +34,11 @@ public class AdminBookController {
 	private AdminBookService service;
 	@Autowired
 	private SearchService searchService;
+	@Resource(name = "bookImgPath")
+	private String bookImgPath;
+
+
+	
 	
 	@RequestMapping(value = "adminLibrary/adminBook/rentBook/rent", method = RequestMethod.GET)
 	public String rentGet() {
@@ -197,39 +210,61 @@ public class AdminBookController {
 		model.addAttribute("lastBook",service.selectLastBookList(vo));
 		model.addAttribute("searchType",vo.getSearchType());
 		model.addAttribute("value", vo.getValue());
-	
+		
+		
 		return "adminLibrary/adminBook/reg_new/registerSelect";
 	}
 
 	//신규도서 등록.
-	@RequestMapping(value = "adminLibrary/adminBook/reg_new/registBook", method = RequestMethod.POST)
+	@RequestMapping(value = "adminLibrary/adminBook/reg_new/register", method = RequestMethod.POST)
 	public String registerPost(Model model, BookVO vo) {
 		logger.info("registBook page");
 
 		String select = vo.getSelect();
-		vo=service.selectLastBookList(vo);
-		vo.setSelect(select);
+		String gan_M = vo.getGan_M();
+		String gan_Y = vo.getGan_Y();
 		
+		vo=service.selectLastBookList(vo);
+		
+		vo.setSelect(select);
+		vo.setGan_Y(gan_Y);
+		vo.setGan_M(gan_M);
 		CodeMaker codeMaker = new CodeMaker(vo);
 		
 		model.addAttribute("lastBook",vo);
 		model.addAttribute("select",vo.getSelect());
 		model.addAttribute("BNO", codeMaker.create());
 		
-		if(vo.getSelect().equals("A")||vo.getSelect().equals("B")){
-			return "adminLibrary/adminBook/reg_new/registerForm";
-		}else{
-			return "adminLibrary/adminBook/reg_new/registerFormGan";
+		if(vo.getSelect().equals("A")){
+			return "adminLibrary/adminBook/reg_new/registerFormA";
+		}else if(vo.getSelect().equals("B")){
+			return "adminLibrary/adminBook/reg_new/registerFormB";
+		}
+		else{
+			return "adminLibrary/adminBook/reg_new/registerFormC";
 		}
 	}
 	
-	@RequestMapping(value = "adminLibrary/adminBook/reg_new/registerBook", method = RequestMethod.POST)
-	public String regBookPost(BookVO vo, RedirectAttributes rttr){
+	@RequestMapping(value = "adminLibrary/adminBook/reg_new/registBook", method = RequestMethod.POST)
+	public String regBookPost(BookVO vo, RedirectAttributes rttr) throws Exception{
 		logger.info("registBook excute page");
-
+		
+		// 선택해서 올린파일을 f로 지정함
+		MultipartFile f = vo.getFile();
+		// 저장될 파일 명을 bno.jpg로 바꿔줌
+		String filename = vo.getbNo()+".jpg";
+		uploadFile(filename, f.getBytes());
+		
 		service.insertBook(vo);
-		rttr.addFlashAttribute("msg", "insertS")
-		return "redirect:adminLibrary/adminBook/reg_new/index";
+		rttr.addFlashAttribute("msg", "insertS");
+		return "redirect:/adminLibrary/adminBook/reg_new/index";
 	}
 	
+	// 이미지 업로드용	
+	private void uploadFile(String filename, byte[] fileData) throws Exception {
+		
+		File target = new File(bookImgPath, filename);
+		FileCopyUtils.copy(fileData, target);
+	}
+
 }

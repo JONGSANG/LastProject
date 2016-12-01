@@ -54,6 +54,8 @@ public interface AdminBookDAO {
 	// 신규 도서 등록
 	// 마지막 BNO의 정보 불러오기
 	public BookVO selectLastBookList(BookVO vo);
+	// 도서 등록
+	public void insertBook(BookVO vo);
 	
 	
 	
