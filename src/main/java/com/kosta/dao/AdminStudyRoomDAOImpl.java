@@ -9,39 +9,49 @@ import org.springframework.stereotype.Repository;
 import com.kosta.vo.StudyRoomVO;
 
 @Repository
-public class StudyRoomDAOImpl implements StudyRoomDAO {
+public class AdminStudyRoomDAOImpl implements AdminStudyRoomDAO {
 	
 	@Autowired
 	SqlSession sqlSession;
 
 	@Override
 	public List<StudyRoomVO> aRoomList() throws Exception {
-		return sqlSession.selectList("StudyRoomMapper.aRoomList");
+		return sqlSession.selectList("AdminStudyRoomMapper.aRoomList");
 	}
 
 	@Override
 	public List<StudyRoomVO> bRoomList() throws Exception {
-		return sqlSession.selectList("StudyRoomMapper.bRoomList");
+		return sqlSession.selectList("AdminStudyRoomMapper.bRoomList");
 	}
 
 	@Override
 	public List<StudyRoomVO> cRoomList() throws Exception {
-		return sqlSession.selectList("StudyRoomMapper.cRoomList");
+		return sqlSession.selectList("AdminStudyRoomMapper.cRoomList");
 	}
-	
+
 	@Override
 	public Boolean idCheck(StudyRoomVO vo) throws Exception {
-		return sqlSession.selectOne("StudyRoomMapper.idCheck", vo);
+		return sqlSession.selectOne("AdminStudyRoomMapper.idCheck", vo);
 	}
-	
+
 	@Override
 	public String seatCheck(StudyRoomVO vo) throws Exception {
-		return sqlSession.selectOne("StudyRoomMapper.seatCheck", vo);
+		return sqlSession.selectOne("AdminStudyRoomMapper.seatCheck", vo);
 	}
-	
+
 	@Override
 	public void insert(StudyRoomVO vo) throws Exception {
-		sqlSession.update("StudyRoomMapper.insert", vo);
+		sqlSession.insert("AdminStudyRoomMapper.insert", vo);
 	}
-	
+
+	@Override
+	public StudyRoomVO detail(String num) throws Exception {
+		return sqlSession.selectOne("AdminStudyRoomMapper.detail", num);
+	}
+
+	@Override
+	public void delete(String num) throws Exception {
+		sqlSession.update("AdminStudyRoomMapper.delete", num);
+	}
+
 }

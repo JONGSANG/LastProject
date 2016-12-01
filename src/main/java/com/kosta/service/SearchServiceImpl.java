@@ -19,16 +19,19 @@ public class SearchServiceImpl implements SearchService{
 	@Autowired
 	private SearchDAO SearchDAO;
 
+	// 도서 검색 결과에 필요한 SearchVO
 	@Override
 	public List<SearchVO> b_searchResult(SearchVO vo) throws Exception {
 		return SearchDAO.b_searchResult(vo);
 	}
 	
+	// 신착 도서 검색 결과에 List형식의 SearchVO가 필요
 	@Override
 	public List<SearchVO> n_searchResult(SearchVO vo) throws Exception {
 		return SearchDAO.n_searchResult(vo);
 	}
 
+	// 도서 상세 정보 보기를 위해 그 책 번호 필요
 	@Override
 	public SearchVO readInfo(String bNo) throws Exception {
 		return SearchDAO.readInfo(bNo);
@@ -44,11 +47,13 @@ public class SearchServiceImpl implements SearchService{
 		return SearchDAO.listBSearchCount(vo);
 	}
 
+	// 연속 간행물의 모든 list 목록의 정보
 	@Override
 	public List<SearchVO> p_listAll(SearchVO vo) throws Exception {
 		return SearchDAO.p_listAll(vo);
 	}
-
+	
+	// 연속 간행물의 모든 목록 중 하나의 세부 목록 정보
 	@Override
 	public List<SearchVO> p_listOneAll(SearchVO vo) throws Exception {
 		return SearchDAO.p_listOneAll(vo);
@@ -75,8 +80,8 @@ public class SearchServiceImpl implements SearchService{
 
 		// 어떤 게시물을 상세보기 하기 위해선 num
 		@Override
-		public HopeVO read(int num) throws Exception {
-			return SearchDAO.read(num);
+		public HopeVO read(HopeVO vo) throws Exception {
+			return SearchDAO.read(vo);
 		}
 
 		// 등록한 댓글을 보기 위해서
@@ -126,8 +131,8 @@ public class SearchServiceImpl implements SearchService{
 
 		// 조회수 업데이트
 		@Override
-		public void updateViewCnt(int num) throws Exception {
-			SearchDAO.updateViewCnt(num);
+		public void updateViewCnt(HopeVO vo) throws Exception {
+			SearchDAO.updateViewCnt(vo);
 		}
 
 		// 글 페이징

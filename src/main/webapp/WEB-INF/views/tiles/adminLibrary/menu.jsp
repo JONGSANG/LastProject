@@ -46,9 +46,19 @@
           </ul>
         </li>
          <li>
-          <a href="pages/widgets.html">
-            <i class="fa fa-th"></i> <span>열람실 관리</span>
+          <a href="#">
+            <i class="fa fa-th"></i> 
+            <span>열람실 관리</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
           </a>
+          <ul class="treeview-menu">
+            <li><a href="/adminLibrary/adminStudyRoom/currentState"><i class="fa fa-circle-o"></i>열람실현황</a></li>
+            <li><a href="/adminLibrary/adminStudyRoom/aRoom/index"><i class="fa fa-circle-o"></i>A열람실</a></li>
+            <li><a href="/adminLibrary/adminStudyRoom/bRoom/index"><i class="fa fa-circle-o"></i>B열람실</a></li>
+            <li><a href="/adminLibrary/adminStudyRoom/cRoom/index"><i class="fa fa-circle-o"></i>C열람실(노트북)</a></li>
+          </ul>
         </li>
         <li class="treeview">
           <a href="#">
@@ -86,7 +96,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/examples/invoice.html"><i class="fa fa-circle-o"></i> 민원 목록 조회</a></li>
+            <li><a href="/adminLibrary/adminEtc/mList"><i class="fa fa-circle-o"></i> 민원 목록 조회</a></li>
             <li><a href="pages/examples/profile.html"><i class="fa fa-circle-o"></i> 일정 관리</a></li>
             <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> 추천 도서 등록</a></li>
           </ul>

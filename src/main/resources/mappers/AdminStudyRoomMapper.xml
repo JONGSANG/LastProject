@@ -3,7 +3,7 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="StudyRoomMapper">
+<mapper namespace="AdminStudyRoomMapper">
 
 <select id="aRoomList"  resultType="StudyRoomVO">
 SELECT *
@@ -36,8 +36,21 @@ SELECT EXISTS (SELECT ID FROM MEMBER WHERE ID=#{id})
 <select id="seatCheck" resultType="String">
 SELECT NUM
 FROM STUDYROOM
-WHERE id=#{id}
+WHERE ID=#{id}
 </select>
+
+<select id="detail" resultType="StudyRoomVO">
+SELECT A.NUM, A.ID, B.NAME, A.START_TIME, A.END_TIME
+FROM STUDYROOM A
+INNER JOIN USER_INFO B ON A.ID=B.ID
+WHERE A.NUM=#{num}
+</select>
+
+<update id="delete">
+UPDATE STUDYROOM
+SET STATE=0, START_TIME=NULL, END_TIME=NULL, ID=NULL
+WHERE NUM=#{num}
+</update>
 
 </mapper>
 
