@@ -83,7 +83,7 @@ public class MyInfoController {
 		
 		if(result==false){
 			//메세지 안넘어감, ajax로 변경 필요
-			rttr.addAttribute("false", "false");
+			rttr.addAttribute("fail", "fail");
 			return "redirect:/userLibrary/myInfo/leave";
 		}
 		

@@ -3,120 +3,131 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insert title here</title>
+<title>대출도서 베스트</title>
 </head>
 <body>
-<h1>도서</h1>
-	<table border="2" width="700">
+<section>
+		<div id="word">
+			<font style="font-size: 40px">대출도서 베스트</font>
+		</div>
+		<div id="link">
+			<div id="link59">
+				<a href="/">home ></a><a href="#">도서관소식 >&nbsp;</a>
+			</div>
+			<b>대출도서 베스트</b>
+		</div>
+	</section>
+	<div id="insidebody">
+	<table class="viewtable">
 		<tr>
 			<th width="100">분야</th>
-			<td width="200">문학</td>
-			<td width="200">컴퓨터</td>
-			<td width="200">정치/사회</td>
+			<td id="vtd1" width="200">문학</td>
+			<td id="vtd1" width="200">컴퓨터</td>
+			<td id="vtd1" width="200">정치/사회</td>
 		</tr>
 		<tr>
 			<th>사진</th>
-			<td>
+			<td id="vtd2">
 				<img src="/resources/book_img/${mun.bNo}.jpg" width="100">
 			</td>
-			<td>
+			<td id="vtd2">
 				<img src="/resources/book_img/${com.bNo}.jpg" width="100">
 			</td>
-			<td>
+			<td id="vtd2">
 				<img src="/resources/book_img/${soc.bNo}.jpg" width="100">
 			</td>		
 		</tr>
 		<tr>
 			<th>책 명</th>
-			<td>${mun.bTitle}</td>
-			<td>${com.bTitle}</td>
-			<td>${soc.bTitle}</td>
+			<td id="vtd2">${mun.bTitle}</td>
+			<td id="vtd2">${com.bTitle}</td>
+			<td id="vtd2">${soc.bTitle}</td>
 		</tr>
 		<tr>
 			<th>저자명</th>
-			<td>${mun.bWriter}</td>
-			<td>${com.bWriter}</td>
-			<td>${soc.bWriter}</td>
+			<td id="vtd2">${mun.bWriter}</td>
+			<td id="vtd2">${com.bWriter}</td>
+			<td id="vtd2">${soc.bWriter}</td>
 		</tr>
 		<tr>
 			<th>출판사</th>
-			<td>${mun.bCompany}</td>
-			<td>${com.bCompany}</td>
-			<td>${soc.bCompany}</td>
+			<td id="vtd2">${mun.bCompany}</td>
+			<td id="vtd2">${com.bCompany}</td>
+			<td id="vtd2">${soc.bCompany}</td>
 		</tr>
 		<tr>
 			<th>대출횟수</th>
-			<td>${mun.brent_cnt}</td>
-			<td>${com.brent_cnt}</td>
-			<td>${soc.brent_cnt}</td>
+			<td id="vtd2">${mun.brent_cnt}</td>
+			<td id="vtd2">${com.brent_cnt}</td>
+			<td id="vtd2">${soc.brent_cnt}</td>
 		</tr>		
 	</table>
 
-<hr>
-
-	<table border="2" width="500">
+	<table class="viewtable">
 		<tr>
 			<th width="100">분야</th>
-			<td width="200">예술</td>
-			<td width="200">어린이</td>
+			<td id="vtd1" width="200">예술</td>
+			<td id="vtd1" width="200">어린이</td>
 		</tr>
 		<tr>
 			<th>사진</th>
-			<td>
+			<td id="vtd2">
 				<img src="/resources/book_img/${art.bNo}.jpg" width="100">
 			</td>
-			<td>
+			<td id="vtd2">
 				<img src="/resources/book_img/${young.bNo}.jpg" width="100">
 			</td>
 		</tr>
 		<tr>
 			<th>책 명</th>
-			<td>${art.bTitle}</td>
-			<td>${young.bTitle}</td>
+			<td id="vtd2">${art.bTitle}</td>
+			<td id="vtd2">${young.bTitle}</td>
 		</tr>
 		<tr>
 			<th>저자명</th>
-			<td>${art.bWriter}</td>
-			<td>${young.bWriter}</td>
+			<td id="vtd2">${art.bWriter}</td>
+			<td id="vtd2">${young.bWriter}</td>
 		</tr>
 		<tr>
 			<th>출판사</th>
-			<td>${art.bCompany}</td>
-			<td>${young.bCompany}</td>
+			<td id="vtd2">${art.bCompany}</td>
+			<td id="vtd2">${young.bCompany}</td>
 		</tr>
 		<tr>
 			<th>대출횟수</th>
-			<td>${art.brent_cnt}</td>
-			<td>${young.brent_cnt}</td>
+			<td id="vtd2">${art.brent_cnt}</td>
+			<td id="vtd2">${young.brent_cnt}</td>
 		</tr>		
 	</table>
 
-<hr>
-<h1>연속간행물</h1>
-	<table border="2" width="300">
+	<table class="viewtable">
+		<tr>
+			<th width="100">분야</th>
+			<td id="vtd1" width="200">연속간행물</td>
+		</tr>
 		<tr>
 			<th width="100">사진</th>
-			<td width="200">
+			<td id="vtd2" width="200">
 				<img src="/resources/book_img/${gan.bNo}.jpg" width="100">
 			</td>
 		</tr>
 		<tr>
 			<th>책 명</th>
-			<td>${gan.bTitle}</td>
+			<td id="vtd2">${gan.bTitle}</td>
 		</tr>
 		<tr>
 			<th>저자명</th>
-			<td>${gan.bWriter}</td>
+			<td id="vtd2">${gan.bWriter}</td>
 		</tr>
 		<tr>
 			<th>출판사</th>
-			<td>${gan.bCompany}</td>
+			<td id="vtd2">${gan.bCompany}</td>
 		</tr>
 		<tr>
 			<th>대출횟수</th>
-			<td>${gan.brent_cnt}</td>
+			<td id="vtd2">${gan.brent_cnt}</td>
 		</tr>		
 	</table>
-
+</div>
 </body>
 </html>

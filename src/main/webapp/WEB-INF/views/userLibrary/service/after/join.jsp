@@ -18,23 +18,26 @@
 		</div>
 	</section>
 	<div id="insidebody">
-<h3>join page</h3><br>
 <form action = "join" method = "POST">
-<table border = "1">
 <input type = "hidden" name = "anum" value = "${afterVO.num }">
+	<table>
 	<tr>
-		<td>[${afterVO.aselect }] 이벤트 신청서</td>
+	<td style="padding-top: 10px" ><img src="/resources/images/word/modifycheck.png"></td>
+	<td><img src="/resources/images/word/ask.png"></td>
 	</tr>
 	<tr>
-		<td>ID :<input type = "text" name = "id" value = "${afterVO.id }" readonly></td>
+	<td style="height: 30px"></td>
 	</tr>
 	<tr>
-		<td>주의 : 한번 신청하게되면 취소가 불가하오니<br>
-		신중히 신청해주시기 바랍니다.</td>
+	<td>&nbsp;<img src="/resources/images/login/login_711.png" height="30"></td>
+	<td>
+		&nbsp;&nbsp;&nbsp;<input type = "text" name = "id" value = "${afterVO.id }" readonly>
+		<button type="submit" id="submit">신청하기</button>
+	</td>
 	</tr>
-</table>
-<input type = "submit" value = "신청하기">
-</form>
+	</table>
+	</form>
+
 </div>
 </body>
 </html>

@@ -83,7 +83,8 @@
 				<td align="center" colspan="8"><img
 					src="/resources/file/${afterVO.newname }" width="750px"
 					title="클릭하시면 원본크기로 보실 수 있습니다." style="cursor: pointer;"
-					onclick="doImgPop('/resources/file/${afterVO.newname }')" /></td>
+					onclick="doImgPop('/resources/file/${afterVO.newname }')" />
+					</td>
 			</tr>
 			<tr>
 				<td id="listcontents" colspan="8" style="height: 400px"><textarea
@@ -103,10 +104,12 @@
 					</form>
 					<div class="fright">
 						<c:if test="${isID!=0 }">
-							<form action="/userLibrary/service/after/joindel" method="POST">
+						<c:if test="${afterVO.state==0 }">
+						<form action="/userLibrary/service/culture/joindel" method="POST">
 								<input type="hidden" name="anum" value="${afterVO.num }">
 								<button name="submit" value="신청취소">신청 취소</button>
 							</form>
+							</c:if>
 						</c:if>
 						<security:authorize access="hasRole('ROLE_USER')">
 							<c:if test="${isID==0 }">

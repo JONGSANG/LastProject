@@ -6,10 +6,17 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class CultureVO extends PageInfo {
 	
-	private int num, viewcnt, max_cnt, tocnt;
+	private int num, viewcnt, max_cnt, tocnt, state;
 	private String id, cselect, title, content, start_date, end_date, orgname, newname;
 	private Date write_date;
 	private MultipartFile file;
+	
+	public int getState() {
+		return state;
+	}
+	public void setState(int state) {
+		this.state = state;
+	}
 	
 	public String getOrgname() {
 		return orgname;

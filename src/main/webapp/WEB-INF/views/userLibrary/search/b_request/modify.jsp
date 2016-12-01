@@ -58,6 +58,35 @@
 			</th>
 		</tr>
 	</table>
+	
+	<table class="listread" style="width: 760px">
+	<tr>
+	<th width="80px">책제목</th><td  width="200px" id="listTitle" align="center">${boardVO.bName}</td>
+	<th width="80px">저자명</th><td  width="200px" id="listTitle" align="center">${boardVO.bWriter}</td>
+	<th width="80px">작성자</th><td  width="100px" id="listTitle" align="center">${boardVO.id}</td>
+	</tr>
+	<tr>
+	<th>출판사</th><td id="listTitle" align="center">${boardVO.bCompany}</td>
+	<th>출간년도</th><td id="listTitle" style="padding-left: 10px">${boardVO.bYear}</td>
+	</tr>
+	<tr>
+		<td id="listcontents" colspan="6" style="height: 400px"><textarea rows="20" cols="105" style="resize: none;" readonly="readonly">${boardVO.bIntro}</textarea></td>
+	</tr>
+		<tr>
+			<td colspan="8" style="padding-top: 5px; border: none;">
+			<div class="fright">
+			<c:if test="${boardVO.id==id}">
+				<button style="width: 50px" type="button"
+					onclick="location.href='modify?num=${boardVO.num}'">수정</button>
+				<button style="width: 50px" type="button"
+					onclick="location.href='remove?num=${boardVO.num}'">삭제</button>
+			</c:if> 
+					<a href='listAll'><button type="submit">목록보기</button></a>
+			</div>
+			</td>
+		</tr>
+	</table>
+	
 	</form>
 	</div>
 </body>

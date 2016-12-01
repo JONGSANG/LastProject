@@ -99,16 +99,18 @@ function doImgPop(img){
 					</form>
 					<div class="fright">
 						<c:if test="${isID!=0 }">
-							<form action="/userLibrary/service/after/joindel" method="POST">
+						<c:if test="${cultureVO.state==0 }">
+						<form action="/userLibrary/service/culture/joindel" method="POST">
 								<input type="hidden" name="anum" value="${cultureVO.num }">
 								<button name="submit" value="신청취소">신청 취소</button>
 							</form>
+							</c:if>
 						</c:if>
 						<security:authorize access="hasRole('ROLE_USER')">
 							<c:if test="${isID==0 }">
 								<c:if test="${after_tocnt != cultureVO.max_cnt}">
 									<button value="신청하기"
-										onclick="location.href ='/userLibrary/service/after/join?num=${cultureVO.num}'">신청하기</button>
+										onclick="location.href ='/userLibrary/service/culture/join?num=${cultureVO.num}'">신청하기</button>
 								</c:if>
 							</c:if>
 						</security:authorize>

@@ -8,6 +8,7 @@
 /* global */
 .fright{float: right;}
 .listw{width: 100px}
+textarea {padding: 10px 0 0 10px}
 
 .menubtn{
  width:170px;
@@ -94,7 +95,7 @@ section #word{padding-top: 30px; padding-left:20px; width: 250px; position: abso
 .listread th{background-color: #E8EBF1; border-bottom: #C4CDD9 1px solid;  border-top: #7187A3 1px solid; height: 25px; vertical-align: middle;}
 .listread td{border-bottom: #C4CDD9 1px solid; font-family: 'Noto Sans KR', sans-serif; padding-bottom: 5px; height: 25px;}
 .listread #listTitle{  height: 25px; padding-top: 5px;}
-.listread #listcontents { padding: 10px 0 0 10px; border-bottom: #C4CDD9 1px solid;}
+.listread #listcontents { padding: 10px 0 0 10px; border-bottom: #C4CDD9 1px solid; }
 
 #write {background-color: white; border-radius: 0;} 	/* input*/
 #write:FOCUS {border: none; box-shadow:0 0 0 0; border-radius: 0;}
