@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="MyInfoMapper">
 
 <select id="myInfo" resultType="MemberVO">
-SELECT M.ID, U.NAME, U.BIRTH, U.EMAIL, U.PHONE, U.JOB, R.ROLE
+SELECT M.ID, U.NAME, U.BIRTH, U.EMAIL, U.PHONE, U.JOB, R.ROLE, U.ADDRESS, U.GENDER
 FROM MEMBER M
 INNER JOIN USER_INFO U ON M.ID=U.ID
 INNER JOIN ROLE R ON M.ID=R.ID
