@@ -97,7 +97,7 @@ limit #{pageStart}, #{perPageNum}
 </insert>
 
 <select id="after_list" resultType="AfterVO">
-	select num, title, id, write_date, aselect, max_cnt, (select count(num) from after_list where anum=a.num and state=1) as tocnt, viewcnt from after a
+	select num, title, id, write_date, aselect, max_cnt, (select count(num) from after_list where anum=a.num and state=1) as tocnt, viewcnt from after a order by num desc
 </select>
 
 <select id="after_read" resultType="AfterVO">
@@ -148,7 +148,7 @@ limit #{pageStart}, #{perPageNum}
 </insert>
 
 <select id="culture_list" resultType="CultureVO">
-	select num, title, id, write_date, cselect, max_cnt, (select count(num) from culture_list where anum=c.num and state=1) as tocnt, viewcnt from culture c
+	select num, title, id, write_date, cselect, max_cnt, (select count(num) from culture_list where anum=c.num and state=1) as tocnt, viewcnt from culture c order by num desc
 </select>
 
 <select id="culture_read" resultType="CultureVO">
@@ -196,7 +196,7 @@ limit #{pageStart}, #{perPageNum}
 </insert>
 
 <select id="openboard_list" resultType="O_BoardVO">
-	select num, title, id, write_date, viewcnt from o_board
+	select num, title, id, write_date, viewcnt from o_board order by num desc
 </select>
 
 <select id="openboard_read" resultType="O_BoardVO">

@@ -14,8 +14,8 @@
 	<div id="link"><div id="link53"><a href = "/" >home ></a><a href = "#" >도서관소개 >&nbsp;</a></div><b>조직도</b></div>
 	</section>
 	<div id="insidebody">
-	<img alt="" src="/resources/images/word/library_organization.png">
-	<img alt="" src="/resources/images/word/library_org.png">
+	<img src="/resources/images/word/library_organization.png">
+	<img src="/resources/images/word/library_org.png">
 	<br><br>
 	<table class="viewtable">
 		<tr>

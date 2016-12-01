@@ -21,42 +21,6 @@
 	
 	<div id="insidebody">
 	<form action="modify" method="post">
-		<table border="1">
-			<tr>
-				<th>번호</th>
-				<th><input type="text" name='num' class="form-control"
-					value="${boardVO.num}" readonly="readonly"></th>
-			</tr>
-			<tr>
-				<th>ID</th>
-				<th><input type="text" name="id" class="form-control"
-					value="${boardVO.id}"></th>
-			</tr>
-			<tr>
-				<th>민원 종류</th>
-				<th><input type="text" name="mselect" class="form-control"
-					value="${boardVO.mselect}"></th>
-			</tr>
-			<tr>
-				<th>제목</th>
-				<th><input type="text" name='title' class="form-control"
-					value="${boardVO.title}"></th>
-			</tr>
-			<tr>
-				<th>내용</th>
-				<th><textarea class="form-control" name="content" rows="3">${boardVO.content}</textarea></th>
-			</tr>
-			<tr>
-				<th colspan="2">
-					<button type="submit">등록</button>
-					<button type="reset">취소</button>
-				</th>
-			</tr>
-		</table>
-	</form>
-	
-	
-	<form action="modify" method="post">
 	<input type="hidden" name="num" value="${boardVO.num}">
 	<input type="hidden" name="id" value="${boardVO.id}">
 	<table class="listread" style="width: 760px">
@@ -72,8 +36,8 @@
 		<input id="write" style="width: 400px; border: #dddddd 1px solid;" type="text" name='title' value="${boardVO.title}">
 	</td>
 	<th>민원 종류</th>
-	<td>
-	<input type="text" name="mselect" class="form-control" value="${boardVO.mselect}">
+	<td style="text-align: center;">
+	<input type="text" name="mselect" class="form-control" value="${boardVO.mselect}" readonly="readonly" style="margin : 11px 0 0 10px; font-size : 14px; width : 90px; background-color: white; border: 0; height: 20px">
 	</td>
 	</tr>
 	<tr>

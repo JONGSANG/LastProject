@@ -23,8 +23,8 @@
 	<tr>
 	<th width="80px">작성자</th><td align="center" valign="middle" width="100px">${o_BoardVO.id}</td>
 	<th width="140px">파일 업로드</th>
-	<td width="450px">
-	<input style="width: 440px; background-color: white; height: 20px; " type = "file" name = "file"  required="required">
+	<td width="450px" valign="middle">
+	<input style="width: 440px; background-color: white; height: 25px; " type = "file" name = "file"  required="required">
 	</td>
 	</tr>
 	<tr>
