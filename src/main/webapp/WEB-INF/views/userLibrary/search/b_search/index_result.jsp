@@ -52,7 +52,7 @@
 	</tr>
 	<c:forEach items="${list}" var="bookVO" varStatus="var">
 	<tr>
-		<td width="100px" align="center">${bookVO.bNo }&nbsp;호</td>
+		<td width="100px" align="center">${bookVO.bNo }&nbsp;</td>
 		<td style="width: 320px" id="overf" align="center"><a href="readInfo?bNo=${bookVO.bNo}">${bookVO.bTitle}</a></td>
 		<td width="140px" align="center">${bookVO.bWriter}</td>
 		<td width="100px" align="center">${bookVO.bCompany}</td>
