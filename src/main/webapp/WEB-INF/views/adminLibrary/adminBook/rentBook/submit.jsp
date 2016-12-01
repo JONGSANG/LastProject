@@ -15,7 +15,7 @@
 	<br>
 	<form method="post">
 		<input type="hidden" value="null" name="select">
-		<table width=1000; border="1">
+		<table width=1000; border="1" class="table table-bordered table-hober dataTable" >
 			<tr>
 				<td width="100">책 번호 :</td>
 				<td width="300" colspan='2'>
@@ -38,7 +38,7 @@
 
 			<tr height=200 valign=top>
 				<td colspan="3">
-					<table width=1000 border="1">
+					<table width=1000 border="1" class="table table-bordered table-hober dataTable" >
 						<tr>
 							<th width="50">선택</th>
 							<th width="50">순번</th>

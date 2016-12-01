@@ -14,7 +14,7 @@
 
 	<br>
 	<form method="post">
-		<table width=1000; border="1">
+		<table width=1000; border="1"class="table table-bordered table-hober dataTable" >
 			<tr>
 				<td width="100">회원 ID :</td>
 				<td width="300" colspan="2">
@@ -50,7 +50,7 @@
 
 			<tr height=200 valign=top>
 				<td colspan="3">
-					<table width=1000 border="1">
+					<table width=1000 border="1" class="table table-bordered table-hober dataTable">
 						<tr>
 							<th width="50">순번</th>
 							<th width="100">책번호</th>
