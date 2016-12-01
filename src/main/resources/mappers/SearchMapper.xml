@@ -131,7 +131,7 @@ and a.bno not LIKE '99%'
 <!-- 날짜범위를 정해주고, blocation은 책 비치 위치인데 1이 문헌정보실을 표시해주어 0보다 크다고 범위를 준다. -->
 <select id="n_searchResult" resultType="SearchVO">
 <![CDATA[  
-select count(a.bNO)
+select a.bno,  b.brent , btitle, bWriter, bCompany, bIntro, buy_date, bLocation, bYear
 from book a 
 inner join room_b b on a.bno = b.bno 
 where  bLocation > 0
