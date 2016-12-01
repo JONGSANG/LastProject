@@ -2,6 +2,12 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<<<<<<< HEAD
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
+=======
+<%@ taglib prefix="security"
+	uri="http://www.springframework.org/security/tags"%>
+>>>>>>> a4566541effc86ab1cfc46e53478fd1adce349f3
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,15 +21,14 @@
 	<div id="link"><div id="link26"><a href = "/" >home ></a><a href = "#" >검색 >&nbsp;</a></div><b>희망도서신청</b></div>
 	</section>
 	<div id="insidebody">
-<table border="1">
+<table class="listtable">
 	<tr>
-		<th style="width: 40px" align="center">번호</th>
-		<th align="center" width="300">제목</th>
-		<th align="center" width="130">ID</th>
-		<th align="center">작성 일자</th>
-		<th style="width: 60px" align="center">조회수</th>
+		<th width="80px">번호</th>
+		<th width="350px">책 제목</th>
+		<th width="140px">ID</th>
+		<th width="120px">작성 일자</th>
+		<th width="80px">조회수</th>
 	</tr>
-	
 	<c:forEach items="${list}" var="list" varStatus="var">
 	<tr>
 		<td align="center">${list.num }</td>
@@ -38,9 +43,20 @@
 	</c:forEach>
 </table>
 
-<a href='/userLibrary/search/b_request/register'><button type="submit" class="btn btn-primary">글쓰기</button></a>
-    
+<<<<<<< HEAD
+<div class="text-center">
+ <security:authorize access="hasRole('ROLE_USER')">
+<a href='/userLibrary/search/b_request/register'><button type="submit" style="float: right;">글쓰기</button></a>
+</security:authorize>
+    <div class="paging">
+=======
+<security:authorize access="hasRole('ROLE_USER')">
+<a href='/userLibrary/search/b_request/register'>
+<button type="submit" class="btn btn-primary">글쓰기</button></a>
+</security:authorize>
+
     <div class="text-center">
+>>>>>>> a4566541effc86ab1cfc46e53478fd1adce349f3
 		<ul class="pagination">
 
 			<c:if test="${pageMaker.prev}">
@@ -63,6 +79,6 @@
 		</ul>
 	</div>
     </div>
-    
+    </div>
 </body>
 </html>

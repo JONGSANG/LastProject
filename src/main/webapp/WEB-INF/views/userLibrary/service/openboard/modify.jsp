@@ -49,7 +49,7 @@
 			<td colspan="8" style="padding-top: 5px; border: none;">
 			<div class="fright">
 			<button type="submit">저장</button>
-			<button onclick="javascript:history.back()" >취소</button>
+			<button onclick="javascript:history.back()" >돌아가기</button>
 			</div>
 			</td>
 		</tr>

@@ -80,7 +80,6 @@
 		<td colspan="2">
 		<c:if test="${clist.id==id}">
 		<div class="fright" style="padding-bottom: 10px">
-			<button type="button" style="width: 50px" onclick="location.href='modify_re?num=${clist.num }&fnum=${clist.fnum }'">수정</button>
 			<button type="button" style="width: 50px" onclick="location.href='remove_re?num=${clist.num}&fnum=${clist.fnum }'">삭제</button>
 		</div>
 		</c:if>

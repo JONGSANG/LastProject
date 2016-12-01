@@ -47,7 +47,7 @@
     <div class="text-center">
     <security:authorize access="hasRole('ROLE_USER')">
 	<a href='/userLibrary/libNews/f_board/register' style="float: right;">
-	<button type="submit" class="btn btn-primary">글쓰기</button>
+	<button type="submit">글쓰기</button>
 	</a>
 	</security:authorize>
 	

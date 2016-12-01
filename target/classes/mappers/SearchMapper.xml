@@ -23,7 +23,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <!-- 해당 num의 게시물을 수정한다. -->
 <update id="f_update">
-	update HOPE_BOOK set bName=#{bName}, bIntro=#{bIntro}, bWriter=#{bWriter}, bYear=#{bYear}, bCompany=#{bCompany}, 
+	update HOPE_BOOK set bName=#{bName}, bIntro=#{bIntro}, bWriter=#{bWriter}, bYear=#{bYear}, bCompany=#{bCompany} 
 	where num=#{num}
 </update>
 

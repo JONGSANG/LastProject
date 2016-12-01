@@ -4,7 +4,7 @@
 <html>
 <head>
 <script>
-	var false='${false}';
+	var fail='${fail}';
 	
     if(false=='false'){
     	alert("비밀번호가 맞지 않습니다");
@@ -25,7 +25,6 @@
 		</div>
 	</section>
 	<div id="insidebody">
-	
 	<form action="/userLibrary/myInfo/modifyCheck" method="post">
 	<table>
 	<tr>

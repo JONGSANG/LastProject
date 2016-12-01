@@ -15,10 +15,10 @@ $(document).ready(function(){
 	$('#repwd').keyup(function(){
 		if($('#pwd').val()==$('#repwd').val()){
 			$('#check').text('');
-		    $('#check').html("암호가 동일합니다");
+		    $('#check').html("암호가 동일합니다.");
 		} else {
 		    $('#check').text('');
-		    $('#check').html("암호가 다릅니다. 다시 입력해주세요");
+		    $('#check').html("암호가 다릅니다. 다시 입력해주세요.");
 		}
 	});
 	
@@ -28,7 +28,7 @@ $(document).ready(function(){
 		if($('#pwd').val()==$('#repwd').val()){
 			form.submit();
 		} else {
-		    alert("입력하신 두개의 암호가 다릅니다. 다시 입력해주세요")
+		    alert("입력하신 두개의 암호가 다릅니다. 다시 입력해주세요.")
 		    $('#pwd').focus();
 		    $('#pwd').val('');
 		    $('#pwd').val('');
@@ -80,7 +80,7 @@ function getSrc(e)
 							<tr>
 								<td id="td1"><img src="/resources/images/login/login_73.png" width="100" height="23" ></td>
 								<td><input type="password" id="repwd" name="repwd" tabindex="1" size="23" style="text-align: center; font-size: 13px; height: 25px; width : 176px;"></td>
-								<td><font id="check" color="red"></font></td>
+								<td><font id="check" color="red" style="position: absolute; padding-left: 30px"></font></td>
 							</tr>
 							<tr>
 								<td id="td1"><img src="/resources/images/login/login_744.png" width="100" height="23" ></td>

@@ -23,7 +23,7 @@ function datePicker(e, elm) {
 		var calDivObj = document.createElement("div");
 		calDivObj.setAttribute("id","currentDiv");
 		calDivObj.style.width = '150px';
-		calDivObj.style.height = '158px';
+		calDivObj.style.backgroundColor = 'white';
 		calDivObj.style.border = "1px solid #D0D0D0";
 		calDivObj.style.position = "absolute";
 		calDivObj.style.top = eventY+document.body.scrollTop+10+'px';

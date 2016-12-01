@@ -80,8 +80,8 @@ public class SearchServiceImpl implements SearchService{
 
 		// 어떤 게시물을 상세보기 하기 위해선 num
 		@Override
-		public HopeVO read(int num) throws Exception {
-			return SearchDAO.read(num);
+		public HopeVO read(HopeVO vo) throws Exception {
+			return SearchDAO.read(vo);
 		}
 
 		// 등록한 댓글을 보기 위해서
@@ -131,8 +131,8 @@ public class SearchServiceImpl implements SearchService{
 
 		// 조회수 업데이트
 		@Override
-		public void updateViewCnt(int num) throws Exception {
-			SearchDAO.updateViewCnt(num);
+		public void updateViewCnt(HopeVO vo) throws Exception {
+			SearchDAO.updateViewCnt(vo);
 		}
 
 		// 글 페이징
