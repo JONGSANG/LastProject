@@ -17,27 +17,27 @@
 	<table border="1">
 		<tr>
 			<th width="80">책 제목</th>
-			<th><input type="text" name='bName' >
+			<td><input type="text" name='bName' ></td>
 		</tr>
 		<tr>
 			<th width="80">저자 명</th>
-			<th><input type="text" name='bWriter' >
+			<td><input type="text" name='bWriter' ></td>
 		</tr>
 		<tr>
 			<th width="80">출판사</th>
-			<th><input type="text" name='bCompany' >
+			<td><input type="text" name='bCompany' ></td>
 		</tr>
 		<tr>
 			<th width="80">출간년도</th>
-			<th><input type="text" name='bYear' placeholder="ex) 2015">
+			<td><input type="text" name='bYear' placeholder="ex) 2015"></td>
 		</tr>
 		<tr>
 			<th>희망 사유(책 소개)</th>
-			<th><textarea name="bIntro" rows="3" placeholder="Enter ..."></textarea></th>
+			<td><textarea name="bIntro" rows="3" placeholder="Enter ..."></textarea></td>
 		</tr>
 		<tr>
 			<th>ID</th>
-			<th><input type="text" name="id" value="${ id }" readonly="readonly"></th>
+			<td><input type="text" name="id" value="${ id }" readonly="readonly"></td>
 		</tr>
 		<tr>
 			<th colspan="2"><button type="submit">확인</button>

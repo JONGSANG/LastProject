@@ -17,16 +17,17 @@ public class SearchDAOImpl implements SearchDAO{
 	@Autowired
 	private SqlSession sqlSession;
 
+	// 도서 결과를 가져오기 위한 sql문을 실행시켜준다.
 	@Override
 	public List<SearchVO> b_searchResult(SearchVO vo) throws Exception {
 		return sqlSession.selectList("com.kosta.mappers.SearchMapper.b_searchResult", vo);
 	}
-
+	// 신착 도서 결과를 가져오기 위한 sql문을 실행시켜준다.
 	@Override
 	public List<SearchVO> n_searchResult(SearchVO vo) throws Exception {
 		return sqlSession.selectList("com.kosta.mappers.SearchMapper.n_searchResult", vo);
 	}
-
+	// 도서 상세 정보보기를 위한 sql문을 실행시켜 db정보를 가져온다.
 	@Override
 	public SearchVO readInfo(String bNo) throws Exception {
 		return sqlSession.selectOne("com.kosta.mappers.SearchMapper.readInfo", bNo);
@@ -42,11 +43,13 @@ public class SearchDAOImpl implements SearchDAO{
 		return sqlSession.selectOne("com.kosta.mappers.SearchMapper.listBSearchCount", vo);
 	}
 
+	// 연속 간행물의 모든 list를 띄우기 위한 sql문으로 db정보를 가져옴
 	@Override
 	public List<SearchVO> p_listAll(SearchVO vo) throws Exception {
 		return sqlSession.selectList("com.kosta.mappers.SearchMapper.p_listAll", vo);
 	}
 
+	// 연속 간행물의 목록중 세부목록을 띄우기 위한 sql문으로 db정보를 가져옴
 	@Override
 	public List<SearchVO> p_listOneAll(SearchVO vo) throws Exception {
 		return sqlSession.selectList("com.kosta.mappers.SearchMapper.p_listOneAll", vo);
@@ -71,8 +74,8 @@ public class SearchDAOImpl implements SearchDAO{
 	}
 
 	@Override
-	public HopeVO read(int num) throws Exception {
-		return sqlSession.selectOne("com.kosta.mappers.SearchMapper.f_read", num);
+	public HopeVO read(HopeVO vo) throws Exception {
+		return sqlSession.selectOne("com.kosta.mappers.SearchMapper.f_read", vo);
 	}
 
 	@Override
@@ -121,8 +124,8 @@ public class SearchDAOImpl implements SearchDAO{
 
 	// 조회수 업데이트
 	@Override
-	public void updateViewCnt(int num) throws Exception {
-		sqlSession.update("com.kosta.mappers.SearchMapper.f_updateViewCnt", num);
+	public void updateViewCnt(HopeVO vo) throws Exception {
+		sqlSession.update("com.kosta.mappers.SearchMapper.f_updateViewCnt", vo);
 		
 	}
 

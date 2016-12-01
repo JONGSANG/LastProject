@@ -49,7 +49,7 @@
 		<tr>
 			<th>ID</th>
 			<th><input type="text" name="id" class="form-control"
-				value="${boardVO.id}"></th>
+				value="${boardVO.id}" readonly="readonly"></th>
 		</tr>
 		<tr>
 			<th colspan="2">

@@ -12,6 +12,7 @@ WHERE RB.BRENT=-1
 AND R.ID='spurs89'
 AND R.CHECK_SUBMIT = false
 
+SELECT COUNT(id) FROM late WHERE end_date is null and id='spurs89'
 
 
 delete from book
@@ -47,7 +48,17 @@ delete from book where bno = '040101212'
 --
 --constraint pk_BOOK primary key(BNO)
 --);
-
+SELECT R.RENT_DATE , R.SUBMIT_DATE, B.BTITLE, B.BNO, check_Late, l.money as money
+FROM RENT_BOOK R
+INNER JOIN BOOK B ON R.BNO=B.BNO 
+INNER JOIN ROOM_B RB ON R.BNO=RB.BNO
+LEFT JOIN LATE L ON R.BNO=L.BNO and R.SUBMIT_DATE=L.START_DATE
+WHERE RB.BRENT=-1 
+AND R.ID='spurs89'
+AND R.CHECK_SUBMIT = false
+   
+   
+   
 CREATE TABLE BOOK(
 BNO varchar(20) ,
 BTITLE varchar(100),

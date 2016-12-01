@@ -3,46 +3,54 @@ package com.kosta.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-import com.kosta.dao.StudyRoomDAO;
+import com.kosta.dao.AdminStudyRoomDAO;
 import com.kosta.vo.StudyRoomVO;
 
 @Service
-public class StudyRoomServiceImpl implements StudyRoomService {
+public class AdminStudyRoomServiceImpl implements AdminStudyRoomService {
 	
 	@Autowired
-	StudyRoomDAO studyRoomdao;
+	AdminStudyRoomDAO adminStudyRoomdao;
 
 	@Override
 	public List<StudyRoomVO> aRoomList() throws Exception {
-		return studyRoomdao.aRoomList();
+		return adminStudyRoomdao.aRoomList();
 	}
 
 	@Override
 	public List<StudyRoomVO> bRoomList() throws Exception {
-		return studyRoomdao.bRoomList();
+		return adminStudyRoomdao.bRoomList();
 	}
 
 	@Override
 	public List<StudyRoomVO> cRoomList() throws Exception {
-		return studyRoomdao.cRoomList();
+		return adminStudyRoomdao.cRoomList();
 	}
-	
+
 	@Override
 	public Boolean idCheck(StudyRoomVO vo) throws Exception {
-		return studyRoomdao.idCheck(vo);
+		return adminStudyRoomdao.idCheck(vo);
 	}
 
 	@Override
 	public String seatCheck(StudyRoomVO vo) throws Exception {
-		return studyRoomdao.seatCheck(vo);
+		return adminStudyRoomdao.seatCheck(vo);
 	}
-	
+
 	@Override
 	public void insert(StudyRoomVO vo) throws Exception {
-		studyRoomdao.insert(vo);
+		adminStudyRoomdao.insert(vo);
+	}
+
+	@Override
+	public StudyRoomVO detail(String num) throws Exception {
+		return adminStudyRoomdao.detail(num);
+	}
+
+	@Override
+	public void delete(String num) throws Exception {
+		adminStudyRoomdao.delete(num);
 	}
 }
