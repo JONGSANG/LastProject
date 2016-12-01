@@ -82,12 +82,12 @@ window.close();
 			</td>
 		</c:if>
 		<c:if test="${list[0].getState()==1}">
-			<td width="50px" height="50px" id="onM" onclick="window.open('/userStudyRoom/popup/delete?num=${list[0].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
+			<td width="50px" height="50px" id="onM" onclick="window.open('delete?num=${list[0].getNum()}', 'delete', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[0].getNum()}
 			</td>
 		</c:if>
 		<c:if test="${list[0].getState()==2}">
-			<td width="50px" height="50px" id="onW" onclick="window.open('/userStudyRoom/popup/delete?num=${list[0].getNum()}', 'insert', 'width=414, height=353, left=500, top=150'); return false;">
+			<td width="50px" height="50px" id="onW" onclick="window.open('delete?num=${list[0].getNum()}', 'delete', 'width=414, height=353, left=500, top=150'); return false;">
 				${list[0].getNum()}
 			</td>
 		</c:if>

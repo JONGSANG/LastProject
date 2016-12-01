@@ -51,19 +51,19 @@ public class UserStudyRoomController {
 		return "userStudyRoom/cRoom/index";
 	}
 	
-	@RequestMapping(value="userStudyRoom/**/insert", method=RequestMethod.GET)
-	public String InsertGET(@RequestParam("num") String num, Model model) throws Exception {
+	@RequestMapping(value="userStudyRoom/*/insert", method=RequestMethod.GET)
+	public String popupGET(@RequestParam("num") String num, Model model) throws Exception {
 		
-		logger.info("열람실 팝업");
+		logger.info("좌석배치 팝업");
 		model.addAttribute("num", num);
 		
 		return "userStudyRoom/popup/insert";
 	}
 	
 	@RequestMapping(value="userStudyRoom/insert", method=RequestMethod.GET)
-	public String InsertPOST(StudyRoomVO vo, Model model,RedirectAttributes rttr) throws Exception {
+	public String insertGET(StudyRoomVO vo, Model model,RedirectAttributes rttr) throws Exception {
 		
-		logger.info("열람실 팝업(실행)");
+		logger.info("좌석배치 팝업(실행)");
 		//입력한 아이디나 바코드가 회원 리스트에 있는지 확인
 		boolean idCheck=studyRoomService.idCheck(vo);
 	
@@ -75,7 +75,7 @@ public class UserStudyRoomController {
 			if(seatCheck==null){
 				//좌석배정
 				studyRoomService.insert(vo);
-				//아래 주소를 리턴하면 aRoom뿐만 아니라 b/cRoom도 자동으로 닫힘(스크립트에 location reload걸어놨기때문)
+				//아래 주소를 리턴하면 aRoom뿐만 아니라 b/cRoom도 자동으로 닫힘(aRoom스크립트에 location reload걸어놨기때문)
 				return "userStudyRoom/aRoom/index";			
 			}
 			//이미 사용중인 자리 있음 alert
