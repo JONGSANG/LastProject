@@ -2,7 +2,7 @@ package com.kosta.vo;
 
 import java.util.Date;
 
-public class LateVO {
+public class LateVO extends PageInfo_rep{
 	private String id, bno, money, btitle, bwriter, bcompany;
 	private Date start_date, end_date;
 	private String name, phone, email, address, gender, birth;

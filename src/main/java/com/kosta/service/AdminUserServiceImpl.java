@@ -72,10 +72,14 @@ public class AdminUserServiceImpl implements AdminUserService {
 		}
 
 	@Override
-	public List<LateVO> selectLateUserList() {
-		return adminUserdao.selectLateUserList();
+	public List<LateVO> selectLateUserList(LateVO vo) {
+		return adminUserdao.selectLateUserList(vo);
 	}
 
+	@Override
+	public int countLateUserList(LateVO vo) {
+		return adminUserdao.countLateUserList(vo);
+	}
 	@Override
 	public void lateUserMail(MailVO vo) throws Exception {
 		List<String> eMail=new ArrayList<String>();
@@ -99,4 +103,5 @@ public class AdminUserServiceImpl implements AdminUserService {
 			mailSender.send(message);
 		
 	}
+
 }

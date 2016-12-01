@@ -12,6 +12,11 @@ INNER JOIN BOOK b on b.bno = l.bno
 INNER JOIN USER_INFO u on u.id = l.id
 WHERE l.end_date is null
 		
+SELECT count(*)
+FROM LATE l
+INNER JOIN BOOK b on b.bno = l.bno
+INNER JOIN USER_INFO u on u.id = l.id
+
 --------------------------------------------------------------
 -- room_b : room_b 정보 Table
 

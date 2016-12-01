@@ -28,12 +28,17 @@ public class AdminUserDAOImpl implements AdminUserDAO {
 	}
 
 	@Override
-	public List<LateVO> selectLateUserList() {
-		return sqlSession.selectList("AdminUserMapper.selectLateUserList");
+	public List<LateVO> selectLateUserList(LateVO vo) {
+		return sqlSession.selectList("AdminUserMapper.selectLateUserList",vo);
 	}
 
 	@Override
 	public List<String> lateUser() throws Exception {
 		return sqlSession.selectList("AdminUserMapper.allAdmin");
+	}
+
+	@Override
+	public int countLateUserList(LateVO vo) {
+		return sqlSession.selectOne("AdminUserMapper.countLateUserList",vo);
 	}
 }

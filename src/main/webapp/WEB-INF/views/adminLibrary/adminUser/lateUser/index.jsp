@@ -49,5 +49,28 @@ th{ background:#669999;}
      </c:forEach>
     </tbody>
   </table>
+  
+      <div class="text-center">
+		<ul class="pagination">
+
+			<c:if test="${pageMaker.prev}">
+				<li><a
+					href="index${pageMaker.makeQuery(pageMaker.startPage - 1) }">&laquo;</a></li>
+			</c:if>
+
+			<c:forEach begin="${pageMaker.startPage }"
+				end="${pageMaker.endPage }" var="idx">
+				<li <c:out value="${pageMaker.pageInfo.page == idx?'class =active':''}"/>>
+					<a href="index${pageMaker.makeQuery(idx)}">${idx}</a>
+				</li>
+			</c:forEach>
+
+			<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+				<li><a
+					href="index${pageMaker.makeQuery(pageMaker.endPage +1) }">&raquo;</a></li>
+			</c:if>
+
+		</ul>
+	</div>
 </body>
 </html>

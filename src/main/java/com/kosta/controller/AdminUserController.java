@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.kosta.service.AdminUserService;
+import com.kosta.vo.LateVO;
 import com.kosta.vo.MailVO;
+import com.kosta.vo.PageMaker_rep;
 
 @Controller
 public class AdminUserController {
@@ -58,9 +60,15 @@ public class AdminUserController {
 		
 		// 연체 관리
 		@RequestMapping(value="adminLibrary/adminUser/lateUser/index", method=RequestMethod.GET)
-		public String lateAdminGet(Model model){
+		public String lateAdminGet(Model model, LateVO vo){
 			logger.info("연체 관리 페이지");
-			model.addAttribute("lateUser", adminUserService.selectLateUserList());
+			PageMaker_rep pageMaker = new PageMaker_rep();
+			pageMaker.setPageInfo(vo);
+			
+			pageMaker.setTotalCount(adminUserService.countLateUserList(vo));
+			model.addAttribute("pageMaker", pageMaker);
+
+			model.addAttribute("lateUser", adminUserService.selectLateUserList(vo));
 			return "adminLibrary/adminUser/lateUser/index";
 		}
 		
