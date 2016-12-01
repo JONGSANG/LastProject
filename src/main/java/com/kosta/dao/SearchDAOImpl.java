@@ -74,8 +74,8 @@ public class SearchDAOImpl implements SearchDAO{
 	}
 
 	@Override
-	public HopeVO read(int num) throws Exception {
-		return sqlSession.selectOne("com.kosta.mappers.SearchMapper.f_read", num);
+	public HopeVO read(HopeVO vo) throws Exception {
+		return sqlSession.selectOne("com.kosta.mappers.SearchMapper.f_read", vo);
 	}
 
 	@Override
@@ -124,8 +124,8 @@ public class SearchDAOImpl implements SearchDAO{
 
 	// 조회수 업데이트
 	@Override
-	public void updateViewCnt(int num) throws Exception {
-		sqlSession.update("com.kosta.mappers.SearchMapper.f_updateViewCnt", num);
+	public void updateViewCnt(HopeVO vo) throws Exception {
+		sqlSession.update("com.kosta.mappers.SearchMapper.f_updateViewCnt", vo);
 		
 	}
 

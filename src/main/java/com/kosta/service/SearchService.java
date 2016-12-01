@@ -44,7 +44,7 @@ public interface SearchService {
 	public void regist(HopeVO vo) throws Exception;
 
 	// 본 게시물을 상세 내용
-	public HopeVO read(int num) throws Exception;
+	public HopeVO read(HopeVO vo) throws Exception;
 
 	// 본 게시물의 수정
 	public void modify(HopeVO vo) throws Exception;
@@ -71,5 +71,5 @@ public interface SearchService {
 	public void remove_re(int num) throws Exception;
 	
 	// 조회수 업데이트
-	public void updateViewCnt(int num) throws Exception;
+	public void updateViewCnt(HopeVO vo) throws Exception;
 }

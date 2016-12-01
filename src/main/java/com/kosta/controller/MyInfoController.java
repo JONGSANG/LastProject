@@ -32,6 +32,7 @@ public class MyInfoController {
 		return "userLibrary/myInfo/myInfo";
 	}
 	
+	// 개인 정보 수정하기 들어가기전 password확인 창 띄우기
 	@RequestMapping(value="userLibrary/myInfo/modifyCheck", method=RequestMethod.GET)
 	public String modifyCheckGET(Model model){
 		logger.info("비밀번호수정 확인 페이지");

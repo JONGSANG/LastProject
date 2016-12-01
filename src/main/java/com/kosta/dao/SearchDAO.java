@@ -44,7 +44,7 @@ public interface SearchDAO {
 	public void create(HopeVO vo) throws Exception;
 	
 	// 본 게시물의 내용 상세보기
-	public HopeVO read(int num) throws Exception;
+	public HopeVO read(HopeVO vo) throws Exception;
 	
 	// 본 게시물 수정
 	public void update(HopeVO vo) throws Exception;
@@ -71,5 +71,5 @@ public interface SearchDAO {
 	public void update_re(Hope_repVO vo2)throws Exception;
 
 	// 게시글 조회수 증가
-	public void updateViewCnt(int num) throws Exception;
+	public void updateViewCnt(HopeVO vo) throws Exception;
 }
