@@ -19,5 +19,4 @@ select
 (select count(distinct bcompany)from book where bno like '%99%') wol_cnt,
 (select count(bno)from book) allb
 </select>
-
 </mapper>
