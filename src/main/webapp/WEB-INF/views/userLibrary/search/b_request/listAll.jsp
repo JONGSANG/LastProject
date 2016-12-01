@@ -2,12 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<<<<<<< HEAD
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
-=======
-<%@ taglib prefix="security"
-	uri="http://www.springframework.org/security/tags"%>
->>>>>>> a4566541effc86ab1cfc46e53478fd1adce349f3
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,20 +38,11 @@
 	</c:forEach>
 </table>
 
-<<<<<<< HEAD
 <div class="text-center">
  <security:authorize access="hasRole('ROLE_USER')">
 <a href='/userLibrary/search/b_request/register'><button type="submit" style="float: right;">글쓰기</button></a>
 </security:authorize>
     <div class="paging">
-=======
-<security:authorize access="hasRole('ROLE_USER')">
-<a href='/userLibrary/search/b_request/register'>
-<button type="submit" class="btn btn-primary">글쓰기</button></a>
-</security:authorize>
-
-    <div class="text-center">
->>>>>>> a4566541effc86ab1cfc46e53478fd1adce349f3
 		<ul class="pagination">
 
 			<c:if test="${pageMaker.prev}">
