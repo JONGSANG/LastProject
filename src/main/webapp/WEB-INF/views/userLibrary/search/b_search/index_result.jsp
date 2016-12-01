@@ -41,7 +41,7 @@
 		</table>
 	</c:forEach>
  --%>
-	
+	<div class="overf">
 	<table class="listtable" style="margin-top: 20px">
 	<tr>
 		<th width="100px">책 번호</th>
@@ -52,11 +52,11 @@
 	</tr>
 	<c:forEach items="${list}" var="bookVO" varStatus="var">
 	<tr>
-		<td align="center">${bookVO.bNo }&nbsp;호</td>
-		<td align="center"><a href="readInfo?bNo=${bookVO.bNo}">${bookVO.bTitle}</a></td>
-		<td align="center">${bookVO.bWriter}</td>
-		<td align="center">${bookVO.bCompany}</td>
-		<td align="center">
+		<td width="100px" align="center">${bookVO.bNo }&nbsp;호</td>
+		<td style="width: 320px" id="overf" align="center"><a href="readInfo?bNo=${bookVO.bNo}">${bookVO.bTitle}</a></td>
+		<td width="140px" align="center">${bookVO.bWriter}</td>
+		<td width="100px" align="center">${bookVO.bCompany}</td>
+		<td width="100px" align="center">
 		<c:if test="${bookVO.bRent == 1}">
 					대출 가능
 				</c:if> <c:if test="${bookVO.bRent != 1 }">
@@ -66,7 +66,7 @@
 	</tr>
 	</c:forEach>
 </table>
-
+</div>
 
 	<div class="text-center">
 		  <div class="paging">

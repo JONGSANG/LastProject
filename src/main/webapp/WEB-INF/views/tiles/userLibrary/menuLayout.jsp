@@ -22,7 +22,7 @@
 	</div>
 
 	<div id="header2">
-		<div id="leftmenu">
+		<div id="leftmenu" style="margin-bottom: 20px">
 			<tiles:insertAttribute name="menu" />
 		</div>
 		<div id="rightcontent">

@@ -29,7 +29,7 @@
 	<c:forEach items="${list}" var="bookVO" varStatus="var">
 	<tr>
 		<td align="center">${bookVO.p_bMonth }&nbsp;호</td>
-		<td align="center"><a href="readInfo?bNo=${bookVO.bNo}">${bookVO.bTitle}</a></td>
+		<td style="width: 430px" id="overf" align="center"><a href="readInfo?bNo=${bookVO.bNo}">${bookVO.bTitle}</a></td>
 		<td align="center">${bookVO.bWriter}</td>
 		<td align="center">${bookVO.bYear}</td>
 	</tr>

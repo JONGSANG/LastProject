@@ -4,14 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>대출 내역</title>
-<script type="text/javascript">
-	var modify = '${modify}';
-
-	if (modify == 'modify') {
-		alert("회원정보 수정 완료")
-	}
-</script>
+<title>개인정보</title>
 </head>
 <body>
 
@@ -27,50 +20,9 @@
 		</div>
 	</section>
 	<div id="insidebody">
-	
-	<%-- <table>
-		<tr>
-			<td>아이디
-			<td>${MemberVO.id}
-		</tr>
-		<tr>
-			<td>이름
-			<td>${MemberVO.name}
-		</tr>
-		<tr>
-			<td>생년월일
-			<td>${MemberVO.birth}
-		</tr>
-		<tr>
-			<td>이메일
-			<td>${MemberVO.email}
-		</tr>
-		<tr>
-			<td>휴대전화번호
-			<td>${MemberVO.phone}
-		</tr>
-		<tr>
-			<td>직업
-			<td>${MemberVO.job}
-		</tr>
-		<tr>
-			<td>회원등급 <c:if test="${MemberVO.role=='ROLE_SEMIUSER'}">
-					<td>준회원
-				</c:if> <c:if test="${MemberVO.role=='ROLE_USER'}">
-					<td>정회원
-				</c:if>
-		</tr>
-	</table>
-	<br>
-	<input type="button" value="회원정보수정"
-		onclick="document.location.href='/userLibrary/myInfo/modifyCheck'">
-	<input type="button" value="회원탈퇴"
-		onclick="document.location.href='/userLibrary/myInfo/leave'"> --%>
 	<div id="modicenter">
 	<div id="modibox">
-	<form role="form">
 	<table class="moditable">
-						<tbody>
 						<input type="hidden" id="id" name="id" value="${id}">
 							<tr>
 								<td id="td1" style="border-radius: 5px 0 0 0"><img src="/resources/images/login/login_71.png" width="100" height="23"></td>
@@ -135,18 +87,17 @@
 								<td><input type="text" value="정회원" readonly="readonly" tabindex="1" size="23" style="text-align: center; font-size: 13px; height: 25px; width : 176px;"></td>
 								</c:if>
 							</tr>
-							</form>
 							<tr>
-							<td colspan="2" style="padding-top: 20px; padding-bottom: 10px; padding-left: 10px" align="center">
-							<a href="/userLibrary/myInfo/modifyCheck"><button value="회원정보수정">회원정보수정</button></a>
-							<a href = "/userLibrary/myInfo/leave"><button value="회원탈퇴">회원탈퇴</button></a>
+							<td colspan="2" style="padding-top: 20px; padding-bottom: 10px; padding-left: 20px" align="center">
+							<a href="/userLibrary/myInfo/modifyCheck"><button value="회원정보수정" onclick="location.href='/userLibrary/myInfo/modifyCheck'">회원정보수정</button></a>
+							<a href = "/userLibrary/myInfo/leave"><button value="회원탈퇴" onclick="location.href='/userLibrary/myInfo/leave'">회원탈퇴</button></a>
 							</td>
 							</tr>
-						</tbody>
 					</table>
 			
 			</div>
 			</div>
+			
 		</div>
 		
 		</div>

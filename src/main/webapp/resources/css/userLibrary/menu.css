@@ -125,3 +125,5 @@ section #word{padding-top: 30px; padding-left:20px; width: 250px; position: abso
 .readcomment {border-bottom: #C4CDD9 1px solid; border-top: #C4CDD9 1px solid; margin-top: -1px}
 .margintop10{margin-top: 10px; width: 770px}
 
+/*--------------------------게시판 overflow작업----------------------------  */
+#overf {display: inline-block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; padding-top: 13px; vertical-align: middle; }

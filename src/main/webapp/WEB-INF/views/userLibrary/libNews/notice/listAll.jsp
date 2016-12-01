@@ -34,7 +34,7 @@
 	<tr>
 <%-- 		<td>${var.index+1}</td> --%>
 		<td>${list.num}</td>
-		<td style="padding-top: 5px"><a href='read?num=${list.num}'>${list.title} </td>
+		<td style="width: 340px" id="overf"><a href='read?num=${list.num}'>${list.title} </td>
 		<td>${list.id}</td>
 		<td><fmt:formatDate value="${list.write_date}" pattern="yyyy-MM-dd"/></td>
 		<td>${list.viewcnt}</td>
