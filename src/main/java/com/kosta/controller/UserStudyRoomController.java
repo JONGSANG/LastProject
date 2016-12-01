@@ -68,13 +68,14 @@ public class UserStudyRoomController {
 		boolean idCheck=studyRoomService.idCheck(vo);
 	
 		if(idCheck==true){
+			
 			//자리 중복사용을 피하기 위해 사용중인 자리가 있는지 확인
 			String seatCheck=studyRoomService.seatCheck(vo);
 			
-			if(seatCheck!=null){
+			if(seatCheck==null){
 				//좌석배정
 				studyRoomService.insert(vo);
-				//팝업처리 구조를 잘 모르겠는데, 아래 주소를 리턴하면 aRoom뿐만 아니라 b/cRoom도 자동으로 닫힘
+				//아래 주소를 리턴하면 aRoom뿐만 아니라 b/cRoom도 자동으로 닫힘(스크립트에 location reload걸어놨기때문)
 				return "userStudyRoom/aRoom/index";			
 			}
 			//이미 사용중인 자리 있음 alert
