@@ -20,20 +20,13 @@ public class AdminStudyRoomController {
 	
 	@Autowired
 	AdminStudyRoomService adminStudyRoomService;
-	
-	@RequestMapping(value="adminLibrary/adminStudyRoom/currentState", method=RequestMethod.GET)
-	public String currentStateGET(Model model) {
-		
-		logger.info("열람실현황");
-		
-		return "adminLibrary/adminStudyRoom/currentState";
-	}
 
 	@RequestMapping(value="adminLibrary/adminStudyRoom/aRoom/index", method=RequestMethod.GET)
 	public String aRoomGET(Model model) throws Exception {
 		
 		logger.info("A열람실");
 		
+		model.addAttribute("chart", adminStudyRoomService.chart());
 		model.addAttribute("list", adminStudyRoomService.aRoomList());
 		
 		return "adminLibrary/adminStudyRoom/aRoom/index";
@@ -44,6 +37,7 @@ public class AdminStudyRoomController {
 		
 		logger.info("B열람실");
 		
+		model.addAttribute("chart", adminStudyRoomService.chart());
 		model.addAttribute("list", adminStudyRoomService.bRoomList());
 		
 		return "adminLibrary/adminStudyRoom/bRoom/index";
@@ -54,6 +48,7 @@ public class AdminStudyRoomController {
 		
 		logger.info("C열람실");
 		
+		model.addAttribute("chart", adminStudyRoomService.chart());
 		model.addAttribute("list", adminStudyRoomService.cRoomList());
 		
 		return "adminLibrary/adminStudyRoom/cRoom/index";

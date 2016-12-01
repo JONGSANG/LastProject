@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.kosta.vo.ChartVO;
 import com.kosta.vo.StudyRoomVO;
 
 @Repository
@@ -52,6 +53,11 @@ public class AdminStudyRoomDAOImpl implements AdminStudyRoomDAO {
 	@Override
 	public void delete(String num) throws Exception {
 		sqlSession.update("AdminStudyRoomMapper.delete", num);
+	}
+
+	@Override
+	public ChartVO chart() throws Exception {
+		return sqlSession.selectOne("AdminStudyRoomMapper.chart");
 	}
 
 }

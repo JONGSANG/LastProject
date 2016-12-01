@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kosta.dao.AdminStudyRoomDAO;
+import com.kosta.vo.ChartVO;
 import com.kosta.vo.StudyRoomVO;
 
 @Service
@@ -52,5 +53,10 @@ public class AdminStudyRoomServiceImpl implements AdminStudyRoomService {
 	@Override
 	public void delete(String num) throws Exception {
 		adminStudyRoomdao.delete(num);
+	}
+
+	@Override
+	public ChartVO chart() throws Exception {
+		return adminStudyRoomdao.chart();
 	}
 }
