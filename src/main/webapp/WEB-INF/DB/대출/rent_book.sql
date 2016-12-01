@@ -3,10 +3,17 @@ drop table RENT_BOOK;
 
 delete from RENT_BOOK;
 
+select count(a.bNO)
+from book a 
+inner join room_b b on a.bno = b.bno 
+where  bLocation > 0
+and a.bno not LIKE '99%' 
+and buy_date between '2012-01-01' and '2016-11-11'
 
-update rent_book set submit_date = '2016-11-23' where bno = '01010011' and id = 'spurs89'
+update rent_book set submit_date = '2016-11-23' where bno = '01010032' and id = 'spurs89'
 update rent_book set rent_date = '2016-11-12' where bno = '01010011' and id = 'spurs89'
 
+delete from rent_book where bno = '01010011'
 --------------------------------------------------------------
 -- RENT_BOOK : RENT_BOOK 정보 Table
 -- INSERT 할시, RENT_DATE 값에 +15 를 SUBMIT_DATE 에 넣을것.

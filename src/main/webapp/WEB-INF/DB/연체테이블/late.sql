@@ -5,7 +5,11 @@ SELECT check_late FROM rent_book WHERE check_submit = false and bno='012'
 SELECT MONEY FROM LATE WHERE end_date is null and bno='01010011'
 
 
-
+	INSERT INTO late(id, bno, start_date)
+		SELECT id, bno, SUBMIT_DATE 
+		FROM RENT_BOOK a
+		where datediff(curdate(),SUBMIT_DATE) > 0
+		and NOT EXISTS (SELECT bno, start_date FROM late b where a.bno=b.bno and a.submit_date=b.start_date)
 --------------------------------------------------------------
 --연체자 아이디
 --책넘버
@@ -30,7 +34,7 @@ constraint pk_late primary key(bno, start_date)
 
 
 ALTER TABLE late
-add constraint pk_late primary key(bno, start_date)
+update constraint pk_late primary key(bno, start_date, ID)
 
 SELECT bno, start_date FROM late b inner join rent_book a on a.bno=b.bno where a.submit_date=b.start_date
 

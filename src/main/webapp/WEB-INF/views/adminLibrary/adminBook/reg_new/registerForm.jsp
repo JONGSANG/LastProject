@@ -9,7 +9,7 @@
 </head>
 <body>
 <h3>도서 등록</h3>
-<form action="registerBook" method="post">
+<form action="registBook" method="post">
 	<table width="600" border="1" >
 		<tr>
 			<th width="150" rowspan="6">

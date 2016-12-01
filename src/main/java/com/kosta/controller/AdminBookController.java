@@ -202,9 +202,9 @@ public class AdminBookController {
 	}
 
 	//신규도서 등록.
-	@RequestMapping(value = "adminLibrary/adminBook/reg_new/register", method = RequestMethod.POST)
-	public String registerGet(Model model, BookVO vo) {
-		logger.info("selectBookList page");
+	@RequestMapping(value = "adminLibrary/adminBook/reg_new/registBook", method = RequestMethod.POST)
+	public String registerPost(Model model, BookVO vo) {
+		logger.info("registBook page");
 
 		String select = vo.getSelect();
 		vo=service.selectLastBookList(vo);
@@ -223,6 +223,13 @@ public class AdminBookController {
 		}
 	}
 	
-	
+	@RequestMapping(value = "adminLibrary/adminBook/reg_new/registerBook", method = RequestMethod.POST)
+	public String regBookPost(BookVO vo, RedirectAttributes rttr){
+		logger.info("registBook excute page");
+
+		service.insertBook(vo);
+		rttr.addFlashAttribute("msg", "insertS")
+		return "redirect:adminLibrary/adminBook/reg_new/index";
+	}
 	
 }
