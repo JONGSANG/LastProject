@@ -90,14 +90,15 @@
     <!-- /.content -->
 
 
-	<%-- 테스트 값 불러오나 테스트를 해보자
+	 테스트 값 불러오나 테스트를 해보자
 	<c:forEach  items="${list }" var="list">
-	년도는${list.year }
-	월은${list.month }
-	일은${list.day }
-	상태는${list.state }
-	내용은${list.title }
-	</c:forEach> --%>
+	년도는${list.year }<br>
+	월은${list.month }<br>
+	일은${list.day }<br>
+	상태는${list.state }<br>
+	내용은${list.title }<br>
+	<hr>
+	</c:forEach>
 
 <script>
   $(function () {
@@ -136,6 +137,7 @@
         m = date.getMonth(),
         y = date.getFullYear();
     
+    
     $('#calendar').fullCalendar({
       header: {
         left: 'prev,next today',
@@ -148,8 +150,17 @@
         week: 'week',
         day: 'day'
       },
-      //Random default events
       events: [
+    	  
+    	  <c:forEach  items="${list }" var="list">
+    	  {
+              title: '${list.title }',
+              start: new Date("${list.year }", "${list.month }", "${list.day }"),
+              backgroundColor: "#f56954", //red
+              borderColor: "#f56954" //red
+            },
+    		</c:forEach> 
+    	  
         {
           title: '도서관 휴관',
           start: new Date("2016", "10", 1),
