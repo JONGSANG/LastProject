@@ -3,22 +3,54 @@ drop table RENT_BOOK;
 
 delete from RENT_BOOK;
 
-SELECT l.id, l.bno, b.btitle, l.start_date, l.end_date, u.name, b.bcompany, l.money, b.bwriter
+select * from late
+
+select 
+(SELECT *
+FROM LATE l
+INNER JOIN BOOK b on b.bno = l.bno
+INNER JOIN USER_INFO u on u.id = l.id
+WHERE Month(l.end_date) = Month(now()) 
+) subMtotal,
+(SELECT sum(l.money)
+FROM LATE l
+INNER JOIN BOOK b on b.bno = l.bno
+INNER JOIN USER_INFO u on u.id = l.id
+WHERE l.end_date is not null
+) subTotal,
+(SELECT sum(l.money)
 FROM LATE l
 INNER JOIN BOOK b on b.bno = l.bno
 INNER JOIN USER_INFO u on u.id = l.id
 WHERE l.end_date is null
-order by l.bno desc
+) subTotal,
+(SELECT sum(l.money)
+FROM LATE l
+INNER JOIN BOOK b on b.bno = l.bno
+INNER JOIN USER_INFO u on u.id = l.id
+WHERE l.end_date is null
+) subTotal,
+(SELECT l.id
+FROM LATE l
+INNER JOIN BOOK b on b.bno = l.bno
+INNER JOIN USER_INFO u on u.id = l.id
+WHERE l.end_date is null
+and l.money=MAX(l.money)
+) topLateUserName,
+(SELECT  FORMAT((max(l.money)/100),0)
+FROM LATE l
+INNER JOIN BOOK b on b.bno = l.bno
+INNER JOIN USER_INFO u on u.id = l.id
+WHERE l.end_date is null
+) topLateUserDay,
+
+
+	private String topLateUserID; //제일 오래 연체한 사람 아이디
+	private String topLateUserName; //제일 오래 연체한 사람 이름
 
 
 
-select count(a.bNO)
-from book a 
-inner join room_b b on a.bno = b.bno 
-where  bLocation > 0
-and a.bno not LIKE '99%' 
-and buy_date between '2012-01-01' and '2016-11-11'
-
+select convert(char(7),DATEADD(mm,-1,getdate()),121)+'-01' 
 update rent_book set submit_date = '2016-11-23' where bno = '01010032' and id = 'spurs89'
 update rent_book set submit_date = '2016-11-12' where bno = '05010013' and id = 'spurs891'
 

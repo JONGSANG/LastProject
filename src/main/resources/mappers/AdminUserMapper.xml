@@ -64,4 +64,26 @@ INNER JOIN BOOK b on b.bno = l.bno
 INNER JOIN USER_INFO u on u.id = l.id
 WHERE l.end_date is null
 </select>
+
+<select id="lateInfo" resultType="LateInfoVO">
+<![CDATA[
+select 
+(SELECT sum(l.money)
+FROM LATE l
+INNER JOIN BOOK b on b.bno = l.bno
+INNER JOIN USER_INFO u on u.id = l.id
+WHERE Month(l.end_date) = Month(now()) 
+) curMtotal,
+(SELECT sum(l.money)
+FROM LATE l
+INNER JOIN BOOK b on b.bno = l.bno
+INNER JOIN USER_INFO u on u.id = l.id
+) curTotal,
+
+
+]]>
+
+
+</select>
+
 </mapper>

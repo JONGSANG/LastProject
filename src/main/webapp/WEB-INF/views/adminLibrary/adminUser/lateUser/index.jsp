@@ -20,6 +20,8 @@ th{ background:#669999;}
 <h3>연체 관리</h3>
 <br>
 	<a href="lateUserMail">연체사용자에게 단체 메일 보내기</a>
+	<a href="lateTotalUser">연체사용자에게 단체 메일 보내기</a>
+	
 <br>
 <table class="sortable paginated table table-bordered table-hober dataTable">
     <thead>
