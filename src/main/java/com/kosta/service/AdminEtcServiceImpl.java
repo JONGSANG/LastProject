@@ -7,8 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.kosta.dao.AdminEtcDAO;
 import com.kosta.vo.M_BoardVO;
-import com.kosta.vo.PageInfo;
-import com.kosta.vo.PageInfo_rep;
+import com.kosta.vo.MultiPageInfo;
 
 @Service
 public class AdminEtcServiceImpl implements AdminEtcService {
@@ -17,7 +16,7 @@ public class AdminEtcServiceImpl implements AdminEtcService {
 	AdminEtcDAO adminEtcdao;
 
 	@Override
-	public List<M_BoardVO> noReply(PageInfo_rep page) throws Exception {
+	public List<M_BoardVO> noReply(MultiPageInfo page) throws Exception {
 		return adminEtcdao.noReply(page);
 	}
 
@@ -27,7 +26,7 @@ public class AdminEtcServiceImpl implements AdminEtcService {
 	}
 
 	@Override
-	public List<M_BoardVO> reply(PageInfo page) throws Exception {
+	public List<M_BoardVO> reply(MultiPageInfo page) throws Exception {
 		return adminEtcdao.reply(page);
 	}
 

@@ -1,11 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<title>도서관 일정</title>
-</head>
-<body>
 	<section>
 		<div id="word">
 			<font style="font-size: 40px">도서관 일정</font>
@@ -18,6 +12,30 @@
 		</div>
 	</section>
 	<div id="insidebody">
+	
+	<div id="calTitle">
+
+				<button id="prevYear" type="button" title="이전 해">◀</button>
+
+				<span id="calYear"></span><span>년</span>
+
+				<button id="nextYear" type="button" title="다음 해">▶</button>
+
+				<button id="prevMonth" type="button" title="이전 달">◁</button>
+
+				<span id="calMonth"></span>
+
+				<button id="nextMonth" type="button" title="다음 달">▷</button>
+				
+				<div id="myCalender"></div>
+			</div>
+	
+	
+	
+	
+	
 	</div>
-</body>
-</html>
+	
+	
+	
+	

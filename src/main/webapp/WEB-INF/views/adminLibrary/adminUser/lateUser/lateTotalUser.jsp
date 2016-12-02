@@ -17,12 +17,11 @@ th{ background:#000049; color: white;}
 </style>
 </head>
 <body>
-<h3>연체 관리</h3>
+<h3>전체 연체 통계 관리</h3>
 <br>
-	<a href="lateUserMail"><h3>연체사용자에게 단체 메일 보내기</h3></a>
-	<a href="lateTotalUser"><h3>전체 연체 통계 관리</h3></a>
-	
+	<a href="index"><h3>연체 관리</h3></a>
 <br>
+<div style="height:250px ">
 <table class="sortable paginated table table-bordered table-hober dataTable">
     <thead>
       <tr>
@@ -33,7 +32,7 @@ th{ background:#000049; color: white;}
         <th class="sorting">저자</th>
         <th class="sort-date">출판사</th>
         <th class="sorting">연체 시작일</th>
-        <th class="sorting">연체 일</th>
+        <th class="sorting">반납일</th>
         <th class="sorting">연체료</th>
       </tr>
     </thead>
@@ -46,35 +45,67 @@ th{ background:#000049; color: white;}
        <td>${lateUser.btitle }</td>
        <td>${lateUser.bwriter }</td>
        <td>${lateUser.bcompany }</td>
-       <td><fmt:formatDate value="${lateUser.start_date }" pattern="yy-MM-dd"/> </td>       
-       <td><b style="color: red;"><fmt:formatNumber value="${lateUser.money/100}" pattern="0"/> 일</b></td>
-       <td><b style="color: red;">${lateUser.money } 원</b></td>
+       <td><fmt:formatDate value="${lateUser.start_date }" pattern="yy-MM-dd"/> </td>
+       <td><fmt:formatDate value="${lateUser.end_date }" pattern="yy-MM-dd"/> </td>
+       <td><b style="color: red;">${lateUser.money }</b></td>
       </tr>
      </c:forEach>
     </tbody>
   </table>
-  
+  </div>
       <div class="text-center">
 		<ul class="pagination">
 
 			<c:if test="${pageMaker.prev}">
 				<li><a
-					href="index${pageMaker.makeQuery(pageMaker.startPage - 1) }">&laquo;</a></li>
+					href="lateTotalUser${pageMaker.makeQuery(pageMaker.startPage - 1) }">&laquo;</a></li>
 			</c:if>
 
 			<c:forEach begin="${pageMaker.startPage }"
 				end="${pageMaker.endPage }" var="idx">
 				<li <c:out value="${pageMaker.pageInfo.page == idx?'class =active':''}"/>>
-					<a href="index${pageMaker.makeQuery(idx)}">${idx}</a>
+					<a href="lateTotalUser${pageMaker.makeQuery(idx)}">${idx}</a>
 				</li>
 			</c:forEach>
 
 			<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
 				<li><a
-					href="index${pageMaker.makeQuery(pageMaker.endPage +1) }">&raquo;</a></li>
+					href="lateTotalUser${pageMaker.makeQuery(pageMaker.endPage +1) }">&raquo;</a></li>
 			</c:if>
 
 		</ul>
 	</div>
+	<div heigt="200">
+		<table class="able table-bordered table-hober dataTable">
+			<tr>
+				<th colspan="6">연체 정보</th>
+			</tr>
+			<tr>
+				<td class="even">연체 책 권수 : </td>
+				<td class="odd">${cntLateBook} 권</td>
+				<td class="even">연체 사용자 수 : </td>
+				<td class="odd">${cntLateUser} 명</td>
+				<td class="even">미회수 연체료 : </td>
+				<td class="odd">${lateInfo.nsubTotal} 원</td>
+			</tr>
+			<tr>
+				<td class="even">최장기 연체자 ID : </td>
+				<td class="odd">${lateUserInfo.topLateUserID} 님</td>
+				<td class="even">최장기 연체자 이름 : </td>
+				<td class="odd">${lateUserInfo.topLateUserName} 님</td>
+				<td class="even">최장기 연체 일수 : </td>
+				<td class="odd">${lateUserInfo.topLateUserDay} 일</td>
+			</tr>
+			<tr>
+				
+				<th >이번달 연체료 수입 : </th>
+				<th colspan="2" >${lateInfo.subMtotal} 원</th>
+				<th >연체료 수입 총액 : </th>
+				<th colspan="2">${lateInfo.subTotal} 원</th>
+			</tr>
+			
+		</table>
+	</div>
+	
 </body>
 </html>

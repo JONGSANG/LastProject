@@ -11,6 +11,7 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
 import com.kosta.dao.AdminUserDAO;
+import com.kosta.vo.LateInfoVO;
 import com.kosta.vo.LateVO;
 import com.kosta.vo.MailVO;
 
@@ -102,6 +103,31 @@ public class AdminUserServiceImpl implements AdminUserService {
 			//위의 설정값을 이용하여 메일발송
 			mailSender.send(message);
 		
+	}
+
+	@Override
+	public List<LateVO> selectLateCurUserList(LateVO vo) {
+		return adminUserdao.selectLateCurUserList(vo);
+	}
+
+	@Override
+	public int countLateCurUserList(LateVO vo) {
+		return adminUserdao.countLateCurUserList(vo);
+	}
+
+	@Override
+	public LateInfoVO lateInfo() {
+		return adminUserdao.lateInfo();
+	}
+
+	@Override
+	public LateInfoVO lateUserInfo() {
+		return adminUserdao.lateUserInfo();
+	}
+
+	@Override
+	public String cntLateUser() {
+		return adminUserdao.cntLateUser();
 	}
 
 }

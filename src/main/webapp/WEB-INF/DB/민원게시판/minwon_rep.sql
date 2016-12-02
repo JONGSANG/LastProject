@@ -43,7 +43,7 @@ constraint fk_minwon_rep foreign key(mnum) REFERENCES minwon(num)  on delete cas
 -- test DATA
 -------------------------------------------------------------
 insert into minwon_rep(ID,MNUM,title,content,MIN_DATE) values('kosta', 1,'답변입니다.', '불편을 드려서 죄송합니다. 빠른 조치를 취하도록 하겠습니다.',now());
-insert into minwon_rep(ID,MNUM,title,content,MIN_DATE) values('kosta', 2, '답변입니다.','그건 저도 아는 부분입니다. 감사합니다 ^^ ',now());
+insert into minwon_rep(ID,MNUM,title,content,MIN_DATE) values('kosta', 29, '답변입니다.','그건 저도 아는 부분입니다. 감사합니다 ^^ ',now());
 
 
 SELECT (SELECT COUNT(NUM) FROM MINWON)-(SELECT COUNT(NUM) FROM MINWON_REP)

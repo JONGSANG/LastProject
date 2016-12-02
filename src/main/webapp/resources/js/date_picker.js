@@ -44,7 +44,7 @@ function fBuildHtml() {
 	calHtml += "<td valign='middle' align='center'>";
 	calHtml += "<input type='button' name='PrevMonth' value='<' style='height:20px; width:20px; font:9pt Fixedsys;' onClick='fPrevMonth()'>";
 	calHtml += " <select name='tbSelYear' style='font-size:9pt' onChange='fUpdateCal(tbSelYear.value, tbSelMonth.value)'>";
-	for(i=1970;i<2030;i++) calHtml += "<OPTION value='"+i+"'>"+i+"</OPTION>";
+	for(i=1900;i<2030;i++) calHtml += "<OPTION value='"+i+"'>"+i+"</OPTION>";
 	calHtml += "</select>";
 	calHtml += " <select name='tbSelMonth' style='font-size:9pt' onChange='fUpdateCal(tbSelYear.value, tbSelMonth.value)'>";
 	for (i=0; i<12; i++) calHtml += "<option value='"+(i+1)+"'>"+gMonths[i]+"</option>";

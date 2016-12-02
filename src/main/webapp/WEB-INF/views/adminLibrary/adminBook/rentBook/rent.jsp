@@ -10,8 +10,6 @@
 <body>
 <a href="rent"><h1>[ 대출 ]</h1></a>
 <a href="submit"><h1>[ 반납 ]</h1></a>
-
-
 	<br>
 	<form method="post">
 		<table width=1000; border="1"class="table table-bordered table-hober dataTable" >

@@ -7,7 +7,7 @@
 <p>로고는 알아서 만드세요ㅋㅋ
 <a href="/adminLibrary/adminStudyRoom/aRoom/index">제 1 열람실</a>
 <a href="/adminLibrary/adminStudyRoom/bRoom/index">제 2 열람실</a>
-<a href="/adminLibrary/adminStudyRoom/bRoom/index">노트북 열람실</a>
+<a href="/adminLibrary/adminStudyRoom/cRoom/index">노트북 열람실</a>
 <table>
 	<tr>
 		<th></th>

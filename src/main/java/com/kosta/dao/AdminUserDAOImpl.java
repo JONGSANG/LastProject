@@ -6,9 +6,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.kosta.vo.LateInfoVO;
 import com.kosta.vo.LateVO;
-import com.kosta.vo.MailVO;
-import com.kosta.vo.MemberVO;
 
 @Repository
 public class AdminUserDAOImpl implements AdminUserDAO {
@@ -40,5 +39,30 @@ public class AdminUserDAOImpl implements AdminUserDAO {
 	@Override
 	public int countLateUserList(LateVO vo) {
 		return sqlSession.selectOne("AdminUserMapper.countLateUserList",vo);
+	}
+
+	@Override
+	public List<LateVO> selectLateCurUserList(LateVO vo) {
+		return sqlSession.selectList("AdminUserMapper.selectLateCurUserList",vo);
+	}
+
+	@Override
+	public int countLateCurUserList(LateVO vo) {
+		return sqlSession.selectOne("AdminUserMapper.countLateCurUserList",vo);
+	}
+
+	@Override
+	public LateInfoVO lateInfo() {
+		return sqlSession.selectOne("AdminUserMapper.lateInfo");
+	}
+
+	@Override
+	public LateInfoVO lateUserInfo() {
+		return sqlSession.selectOne("AdminUserMapper.lateUserInfo");
+	}
+
+	@Override
+	public String cntLateUser() {
+		return sqlSession.selectOne("AdminUserMapper.cntLateUser");
 	}
 }

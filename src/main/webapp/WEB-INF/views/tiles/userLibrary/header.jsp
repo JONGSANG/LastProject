@@ -58,7 +58,6 @@
                     <ul class="sub">
                     	<li><a class="submenu" href="userLibrary/libNews/notice/listAll">공지사항</a></li>
                     	<li><a class="submenu" href="userLibrary/libNews/schedule">도서관 일정</a></li>
-                    	<li><a class="submenu" href="userLibrary/libNews/recommand/recommand">추천도서</a></li>
                     	<li><a class="submenu" href="userLibrary/libNews/best/listBest">대출도서 베스트</a></li>
                     	<li><a class="submenu end" href="userLibrary/libNews/f_board/listAll">자유게시판</a></li>
                     </ul>

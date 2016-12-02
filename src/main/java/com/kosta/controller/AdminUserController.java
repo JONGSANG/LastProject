@@ -60,18 +60,36 @@ public class AdminUserController {
 		
 		// 연체 관리
 		@RequestMapping(value="adminLibrary/adminUser/lateUser/index", method=RequestMethod.GET)
-		public String lateAdminGet(Model model, LateVO vo){
+		public String lateTotalGet(Model model, LateVO vo){
+			logger.info("연체 관리 페이지");
+			PageMaker_rep pageMaker = new PageMaker_rep();
+			pageMaker.setPageInfo(vo);
+			
+			pageMaker.setTotalCount(adminUserService.countLateCurUserList(vo));
+			model.addAttribute("pageMaker", pageMaker);
+			model.addAttribute("lateUserInfo", adminUserService.lateUserInfo());
+
+			model.addAttribute("lateUser", adminUserService.selectLateCurUserList(vo));
+			return "adminLibrary/adminUser/lateUser/index";
+		}
+		
+		@RequestMapping(value="adminLibrary/adminUser/lateUser/lateTotalUser", method=RequestMethod.GET)
+		public String lateCurGet(Model model, LateVO vo){
 			logger.info("연체 관리 페이지");
 			PageMaker_rep pageMaker = new PageMaker_rep();
 			pageMaker.setPageInfo(vo);
 			
 			pageMaker.setTotalCount(adminUserService.countLateUserList(vo));
 			model.addAttribute("pageMaker", pageMaker);
-
+			model.addAttribute("lateInfo", adminUserService.lateInfo());
+			model.addAttribute("lateUserInfo", adminUserService.lateUserInfo());
 			model.addAttribute("lateUser", adminUserService.selectLateUserList(vo));
-			return "adminLibrary/adminUser/lateUser/index";
+			model.addAttribute("cntLateBook", adminUserService.countLateUserList(vo));
+			model.addAttribute("cntLateUser", adminUserService.cntLateUser());
+			
+			return "adminLibrary/adminUser/lateUser/lateTotalUser";
 		}
-		
+
 		// 연체자에게 단체메일 발송 페이지 불러오기
 		@RequestMapping(value="adminLibrary/adminUser/lateUser/lateUserMail", method=RequestMethod.GET)
 		public String lateUserMailGET(MailVO vo, RedirectAttributes rttr) throws Exception {

@@ -22,7 +22,7 @@ SELECT A.NUM, MSELECT, TITLE, ID, MIN_DATE, (SELECT COUNT(NUM) FROM MINWON_REP W
 FROM MINWON A
 WHERE A.NUM IN (SELECT MNUM FROM MINWON_REP)
 ORDER BY NUM DESC
-LIMIT #{pageStart}, #{perPageNum}
+LIMIT #{pageStart1}, #{perPageNum1}
 </select>
 
 <select id="replyCount" resultType="int">

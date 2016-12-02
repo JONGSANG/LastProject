@@ -29,22 +29,22 @@
 	</tr>
 	</c:forEach>
 </table>
-	<c:if test="${pageMaker_rep.prev}">
+	<c:if test="${multiPageMaker.prev}">
 		<li><a
-			href="mList${pageMaker_rep.makeQuery(pageMaker_rep.startPage-1) }">&laquo;</a></li>
+			href="mList${multiPageMaker.multi(multiPageMaker.startPage-1) }">&laquo;</a></li>
 	</c:if>
 
-	<c:forEach begin="${pageMaker_rep.startPage }" end="${pageMaker_rep.endPage }"
+	<c:forEach begin="${multiPageMaker.startPage }" end="${multiPageMaker.endPage }"
 		var="idx">
 		<li
-			<c:out value="${pageMaker_rep.pageInfo.page == idx?'class =active':''}"/>>
-			<a href="mList${pageMaker_rep.makeQuery(idx)}">${idx}</a>
+			<c:out value="${multiPageMaker.multiPageInfo.page == idx?'class =active':''}"/>>
+			<a href="mList${multiPageMaker.multi(idx)}">${idx}</a>
 		</li>
 	</c:forEach>
 
-	<c:if test="${pageMaker_rep.next && pageMaker_rep.endPage > 0}">
+	<c:if test="${multiPageMaker.next && multiPageMaker.endPage > 0}">
 		<li><a
-			href="mList${pageMaker_rep.makeQuery(pageMaker_rep.endPage+1) }">&raquo;</a></li>
+			href="mList${multiPageMaker.multi(multiPageMaker.endPage+1) }">&raquo;</a></li>
 	</c:if>
 	
 <table>
@@ -68,22 +68,22 @@
 	</tr>
 	</c:forEach>
 </table>
-<c:if test="${pagemaker1.prev}">
+<c:if test="${multiPageMaker.prev1}">
 		<li><a
-			href="mList${pagemaker1.multi(pagemaker1.startPage-1) }">&laquo;</a></li>
+			href="mList${multiPageMaker.multi(multiPageMaker.startPage1-1) }">&laquo;</a></li>
 	</c:if>
 
-	<c:forEach begin="${pageMaker1.startPage }" end="${pageMaker1.endPage }"
+	<c:forEach begin="${multiPageMaker.startPage1 }" end="${multiPageMaker.endPage1 }"
 		var="idx">
 		<li
-			<c:out value="${pageMaker1.pageInfo.page == idx?'class =active':''}"/>>
-			<a href="mList${pageMaker1.multi(idx)}">${idx}</a>
+			<c:out value="${multiPageMaker.multiPageInfo.page1 == idx?'class =active':''}"/>>
+			<a href="mList${multiPageMaker.multi1(idx)}">${idx}</a>
 		</li>
 	</c:forEach>
 
-	<c:if test="${pageMaker1.next && pageMaker1.endPage > 0}">
+	<c:if test="${multiPageMaker.next1 && multiPageMaker.endPage1 > 0}">
 		<li><a
-			href="mList${pagemaker1.multi(pagemaker1.endPage+1) }">&raquo;</a></li>
+			href="mList${multiPageMaker.multi(multiPageMaker.endPage1+1) }">&raquo;</a></li>
 	</c:if>
 </body>
 </html>
