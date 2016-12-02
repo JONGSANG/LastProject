@@ -223,8 +223,13 @@ limit #{pageStart}, #{perPageNum}
 	update o_board set viewcnt = viewcnt+1 where num=#{num} 
 </update>
 
+<<<<<<< Updated upstream
 <select id="schadul_list" resultType="SchadulVO">
 	select * from schadul
+=======
+<select id="handicapCheck" resultType="int">
+SELECT HANDICAP FROM MEMBER_INFO WHERE ID=#{id}
+>>>>>>> Stashed changes
 </select>
 
 </mapper>

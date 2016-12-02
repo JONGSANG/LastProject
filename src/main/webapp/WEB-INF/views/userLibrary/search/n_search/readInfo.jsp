@@ -92,6 +92,10 @@
 		<tr>
 			<td colspan="3" style="padding-top: 5px; border: none;">
 			<div class="fright">
+			<button onclick="location.href='/userLibrary/service/deliveryApply?bno=${read.bNo}'">도서배달서비스</button>
+			</div>
+			<td colspan="3" style="padding-top: 5px; border: none;">
+			<div class="fright">
 			<button onclick="javascript:history.back()" >돌아가기</button>
 			</div>
 			</td>

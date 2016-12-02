@@ -145,9 +145,14 @@ public interface ServiceDAO {
 		
 		// 공개자료실 게시판 글 수정 메소드
 		public void openboard_modify(O_BoardVO vo) throws Exception;
+<<<<<<< Updated upstream
 		
 			//----------------------스케줄--------------------------
 		
 				//스케줄 리스트 메소드
 				public List<SchadulVO> schadul_list() throws Exception;
+=======
+
+		public int handicapCheck(String id) throws Exception;
+>>>>>>> Stashed changes
 }

@@ -723,4 +723,22 @@ public class ServiceController {
 		return savedName;
 	}
 	
+<<<<<<< Updated upstream
+=======
+	@RequestMapping(value="userLibrary/service/deliveryApply", method=RequestMethod.GET)
+	public String deliveryApplyGET(@RequestParam("bNo") String bno, Model model) throws Exception {
+		
+		logger.info("도서배달서비스");
+		
+		//장애인인지 확인
+		int handicap=service.handicapCheck();
+		
+		if(handicap==1){
+			return "userLibrary/service/delivery";
+		}
+		
+		return "userLibrary/service/deliveryApply";
+	}
+	
+>>>>>>> Stashed changes
 }
