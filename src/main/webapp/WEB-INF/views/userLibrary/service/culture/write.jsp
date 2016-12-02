@@ -25,10 +25,10 @@
 	<th width="80px">카테고리</th><td align="center" valign="middle" width="80px">
 	<select style="background-color: white; border: 0"  name = "cselect" required="required">
 		<option value = "">카테고리</option>
-		<option value = "외국인맞고">외국인맞고</option>
-		<option value = "외국인포커">외국인포커</option>
-		<option value = "외국인고스톱">외국인고스톱</option>
-		<option value = "외국인체스">외국인체스</option>
+		<option value = "독서교실">독서교실</option>
+		<option value = "인형극">인형극</option>
+		<option value = "동화책읽기">동화책읽기</option>
+		<option value = "기타">기타</option>
 	</select>
 	</td>
 	<th width="80px">시작 날짜</th><td align="center" valign="middle" width="100px">

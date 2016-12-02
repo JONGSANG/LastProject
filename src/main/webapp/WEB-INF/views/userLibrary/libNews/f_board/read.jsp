@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,6 +51,7 @@
 			</td>
 		</tr>
 	</table>
+	<security:authorize access="hasRole('ROLE_USER')">
 	<div class="commentdiv">
 	<form role="form" method="post">
 		<input type="hidden" name="num" value="${boardVO.num}">
@@ -67,6 +69,7 @@
 		</table>
 		</form>
 	</div>
+	</security:authorize>
 <div class="margintop10">
 	<table class="commentre" style="border-top:#C4CDD9 1px solid; ">
 		<c:forEach items="${ clist }" var="clist" varStatus="var">
@@ -74,7 +77,7 @@
 		<td id="commentstart" >${ clist.id}</td><td id="commentstart" width="710">&nbsp;|&nbsp;<fmt:formatDate value="${clist.rep_date}" pattern="yyyy-MM-dd" /></td>
 		</tr>
 		<tr>
-		<td colspan="2" style="height: 50px; padding-top: 5px"><textarea style=" resize: none;" rows="4" cols="105">${ clist.content }</textarea></td>
+		<td colspan="2" style="height: 50px; padding-top: 5px"><textarea style=" resize: none;" rows="4" cols="105" readonly>${ clist.content }</textarea></td>
 		</tr>
 		<tr style="border-bottom: #C4CDD9 1px solid; ">
 		<td colspan="2">

@@ -28,7 +28,7 @@
 		O = "width=" + W + ",height=" + H + ",scrollbars=yes";
 		imgWin = window.open("", "", O);
 		imgWin.document
-				.write("<html><head><title>:*:*:*: 이미지상세보기 :*:*:*:*:*:*:</title></head>");
+				.write("<html><head><title>이미지상세보기</title></head>");
 		imgWin.document.write("<body topmargin=0 leftmargin=0>");
 		imgWin.document
 				.write("<img src="
@@ -104,8 +104,8 @@
 					</form>
 					<div class="fright">
 						<c:if test="${isID!=0 }">
-						<c:if test="${afterVO.state==0 }">
-						<form action="/userLibrary/service/culture/joindel" method="POST">
+						<c:if test="${isSTATE.state==0 }">
+						<form action="/userLibrary/service/after/joindel" method="POST">
 								<input type="hidden" name="anum" value="${afterVO.num }">
 								<button name="submit" value="신청취소">신청 취소</button>
 							</form>

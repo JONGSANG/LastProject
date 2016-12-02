@@ -68,6 +68,9 @@ public interface ServiceService {
 	// 방과후 게시판 상세글 세션아이디 비교
 	public int after_sessionid(AfterVO vo) throws Exception;
 	
+	// 방과후 게시판 상세글 신청상태 비교
+	public AfterVO after_sessionstate(AfterVO vo) throws Exception;
+	
 	// 방과후 게시판 상세글 조회수 메소드
 	public void after_viewcnt(AfterVO vo) throws Exception;
 	
@@ -101,6 +104,9 @@ public interface ServiceService {
 	
 	// 문화행사 게시판 상세글 세션아이디 비교
 	public int culture_sessionid(CultureVO vo) throws Exception;
+	
+	// 문화행사 게시판 상세글 신청상태 비교
+	public CultureVO culture_sessionstate(CultureVO vo) throws Exception;
 	
 	// 문화행사 게시판 상세글 조회수 메소드
 	public void culture_viewcnt(CultureVO vo) throws Exception;

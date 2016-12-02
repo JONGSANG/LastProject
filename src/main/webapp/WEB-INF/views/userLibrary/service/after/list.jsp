@@ -33,6 +33,11 @@
 	</tr>
 	<!-- openboard_list 메소드에서 전체 목록을 불러올때 'list'라고 지정해뒀기때문에 list. 으로 시작함.
 		 forEach문을 사용해서 반복처리함 -->
+	<c:if test="${empty list }">
+		<tr>
+			<td colspan = "7">작성된 글이 없습니다.</td>
+		</tr>
+	</c:if>
 	<c:forEach items="${list}" var="list" varStatus="var">
 	<tr>
 		<td>${list.num }</td>

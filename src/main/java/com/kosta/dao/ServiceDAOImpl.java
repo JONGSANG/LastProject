@@ -131,6 +131,12 @@ public class ServiceDAOImpl implements ServiceDAO {
 		
 	}
 	
+	// 방과후 게시판 상세글 신청 비교
+	@Override
+	public AfterVO after_sessionstate(AfterVO vo) throws Exception {
+		return sqlSession.selectOne("com.kosta.mappers.ServiceMapper.after_sessionstate", vo);
+	}
+	
 	// 방과후 게시판 글 삭제 메소드
 	@Override
 	public void after_delete(AfterVO vo) throws Exception {
@@ -194,13 +200,19 @@ public class ServiceDAOImpl implements ServiceDAO {
 	}
 
 	
-	// 방과후 게시판 상세글 세션아이디 비교
+	// 문화행사 게시판 상세글 세션아이디 비교
 	@Override
 	public int culture_sessionid(CultureVO vo) throws Exception {
 		return sqlSession.selectOne("com.kosta.mappers.ServiceMapper.culture_sessionid", vo);
 	}
 	
-	// 방과후 게시판 상세글 조회수 메소드
+	// 문화행사 게시판 상세글 신청 비교
+	@Override
+	public CultureVO culture_sessionstate(CultureVO vo) throws Exception {
+		return sqlSession.selectOne("com.kosta.mappers.ServiceMapper.culture_sessionstate", vo);
+	}
+	
+	// 문화행사 게시판 상세글 조회수 메소드
 	@Override
 	public void culture_viewcnt(CultureVO vo) throws Exception {
 		sqlSession.update("com.kosta.mappers.ServiceMapper.culture_viewcnt", vo);
@@ -237,7 +249,7 @@ public class ServiceDAOImpl implements ServiceDAO {
 		sqlSession.update("com.kosta.mappers.ServiceMapper.culture_joinup", vo);
 	}
 	
-	// 방과후 이벤트 신청 취소 메소드
+	// 문화행사 이벤트 신청 취소 메소드
 	@Override
 	public void culture_joindel(L_CultureVO vo) throws Exception {
 		sqlSession.delete("com.kosta.mappers.ServiceMapper.culture_joindel", vo);

@@ -135,6 +135,14 @@ public class ServiceServiceImpl implements ServiceService {
 		return dao.after_sessionid(vo);
 	}
 	
+	// 방과후 게시판 상세글 신청상태 비교
+	@Override
+	public AfterVO after_sessionstate(AfterVO vo) throws Exception {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		vo.setId(auth.getName());
+		return dao.after_sessionstate(vo);
+	}
+	
 	// 방과후 게시판 상세글 조회수 메소드
 	@Override
 	public void after_viewcnt(AfterVO vo) throws Exception {
@@ -210,6 +218,14 @@ public class ServiceServiceImpl implements ServiceService {
 	@Override
 	public int culture_sessionid(CultureVO vo) throws Exception {
 		return dao.culture_sessionid(vo);
+	}
+	
+	// 문화행사 게시판 상세글 신청 비교
+	@Override
+	public CultureVO culture_sessionstate(CultureVO vo) throws Exception {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		vo.setId(auth.getName());
+		return dao.culture_sessionstate(vo); 
 	}
 	
 	// 방과후 게시판 상세글 조회수 메소드
