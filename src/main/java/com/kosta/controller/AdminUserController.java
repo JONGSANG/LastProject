@@ -67,6 +67,7 @@ public class AdminUserController {
 			
 			pageMaker.setTotalCount(adminUserService.countLateCurUserList(vo));
 			model.addAttribute("pageMaker", pageMaker);
+			model.addAttribute("lateUserInfo", adminUserService.lateUserInfo());
 
 			model.addAttribute("lateUser", adminUserService.selectLateCurUserList(vo));
 			return "adminLibrary/adminUser/lateUser/index";
@@ -80,8 +81,12 @@ public class AdminUserController {
 			
 			pageMaker.setTotalCount(adminUserService.countLateUserList(vo));
 			model.addAttribute("pageMaker", pageMaker);
-
+			model.addAttribute("lateInfo", adminUserService.lateInfo());
+			model.addAttribute("lateUserInfo", adminUserService.lateUserInfo());
 			model.addAttribute("lateUser", adminUserService.selectLateUserList(vo));
+			model.addAttribute("cntLateBook", adminUserService.countLateUserList(vo));
+			model.addAttribute("cntLateUser", adminUserService.cntLateUser());
+			
 			return "adminLibrary/adminUser/lateUser/lateTotalUser";
 		}
 

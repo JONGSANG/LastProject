@@ -97,7 +97,6 @@
           <ul class="treeview-menu">
             <li><a href="/adminLibrary/adminEtc/mList"><i class="fa fa-circle-o"></i> 민원 목록 조회</a></li>
             <li><a href="pages/examples/profile.html"><i class="fa fa-circle-o"></i> 일정 관리</a></li>
-            <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> 추천 도서 등록</a></li>
           </ul>
         </li>
       </ul>
