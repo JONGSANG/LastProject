@@ -31,7 +31,7 @@
 	<table width="600" border="1" >
 		<tr>
 			<th width="150" rowspan="6">
-				<img id="img_preview" width="200">
+				<img id="img_preview" width="150">
 				<input type="file" name = "file" id = "file" accept="image/*" required="required">
 			</th>
 			<th width="90">번호</th>

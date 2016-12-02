@@ -30,8 +30,6 @@ SELECT count(*)
 FROM LATE l
 INNER JOIN BOOK b on b.bno = l.bno
 INNER JOIN USER_INFO u on u.id = l.id
-order by l.bno desc
-LIMIT #{pageStart}, #{perPageNum}
 </select>
 
 
@@ -52,13 +50,33 @@ FROM LATE l
 INNER JOIN BOOK b on b.bno = l.bno
 INNER JOIN USER_INFO u on u.id = l.id
 WHERE l.end_date is null
-order by l.bno desc
-LIMIT #{pageStart}, #{perPageNum}
 </select>
 
 
 <select id="lateUser" resultType="String">
 SELECT u.EMAIL
+FROM LATE l
+INNER JOIN BOOK b on b.bno = l.bno
+INNER JOIN USER_INFO u on u.id = l.id
+WHERE l.end_date is null
+</select>
+
+<select id="lateUserInfo" resultType="LateInfoVO">
+<![CDATA[
+SELECT  FORMAT((l.money)/100,0) topLateUserDay, l.id topLateUserID, u.name topLateUserName, count(*) cntLateUser
+FROM LATE l
+INNER JOIN BOOK b on b.bno = l.bno
+INNER JOIN USER_INFO u on u.id = l.id
+WHERE l.end_date is null
+and l.money=(select max(l.money) FROM LATE l
+INNER JOIN BOOK b on b.bno = l.bno
+INNER JOIN USER_INFO u on u.id = l.id
+WHERE l.end_date is null)
+]]>
+</select>
+
+<select id="cntLateUser" resultType="String">
+SELECT count(distinct l.id) cntLateUser
 FROM LATE l
 INNER JOIN BOOK b on b.bno = l.bno
 INNER JOIN USER_INFO u on u.id = l.id
@@ -73,17 +91,20 @@ FROM LATE l
 INNER JOIN BOOK b on b.bno = l.bno
 INNER JOIN USER_INFO u on u.id = l.id
 WHERE Month(l.end_date) = Month(now()) 
-) curMtotal,
+) as subMtotal,
 (SELECT sum(l.money)
 FROM LATE l
 INNER JOIN BOOK b on b.bno = l.bno
 INNER JOIN USER_INFO u on u.id = l.id
-) curTotal,
-
-
+WHERE l.end_date is not null
+) as subTotal,
+(SELECT sum(l.money)
+FROM LATE l
+INNER JOIN BOOK b on b.bno = l.bno
+INNER JOIN USER_INFO u on u.id = l.id
+WHERE l.end_date is null
+) as nsubTotal
 ]]>
-
-
 </select>
 
 </mapper>

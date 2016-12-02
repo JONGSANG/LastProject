@@ -79,6 +79,7 @@
                     	<li><a class="submenu" href="/userLibrary/myInfo/d_status">대출현황</a></li>
                     	<li><a class="submenu" href="/userLibrary/myInfo/r_status">예약현황</a></li>
                     	<li><a class="submenu" href="/userLibrary/myInfo/d_history">대출내역</a></li>
+                    	<li><a class="submenu" href="/userLibrary/myInfo/m_history">민원내역</a></li>
                     	<li><a class="submenu" href="/userLibrary/myInfo/leave">회원탈퇴</a></li>
                     	<li><a class="submenu" href="/userLibrary/myInfo/r_history">도서신청내역</a></li>
                     	<li><a class="submenu end" href="/userLibrary/myInfo/s_history">행사신청내역</a></li>

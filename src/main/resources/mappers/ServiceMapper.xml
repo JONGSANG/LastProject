@@ -132,6 +132,10 @@ limit #{pageStart}, #{perPageNum}
 	select count(id) from after_list where anum = #{num} and id = #{id}
 </select>
 
+<select id="after_sessionstate" resultType="AfterVO">
+	select state from after_list where anum = #{num} and id = #{id}
+</select>
+
 <delete id="after_joindel">
 	delete from after_list where anum = #{anum} and id = #{id}
 </delete>
@@ -181,6 +185,10 @@ limit #{pageStart}, #{perPageNum}
 
 <select id="culture_sessionid" resultType="int">
 	select count(id) from culture_list where anum = #{num} and id = #{id}
+</select>
+
+<select id="culture_sessionstate" resultType="CultureVO">
+	select state from culture_list where anum = #{num} and id = #{id}
 </select>
 
 <delete id="culture_joindel">

@@ -27,7 +27,7 @@ function doImgPop(img){
 	 H=img1.height; 
 	 O="width="+W+",height="+H+",scrollbars=yes"; 
 	 imgWin=window.open("","",O); 
-	 imgWin.document.write("<html><head><title>:*:*:*: 이미지상세보기 :*:*:*:*:*:*:</title></head>");
+	 imgWin.document.write("<html><head><title>이미지상세보기</title></head>");
 	 imgWin.document.write("<body topmargin=0 leftmargin=0>");
 	 imgWin.document.write("<img src="+img+" onclick='self.close()' style='cursor:pointer;' title ='클릭하시면 창이 닫힙니다.'>");
 	 imgWin.document.close();
@@ -99,12 +99,12 @@ function doImgPop(img){
 					</form>
 					<div class="fright">
 						<c:if test="${isID!=0 }">
-						<c:if test="${cultureVO.state==0 }">
+						<c:if test="${isSTATE.state==0 }">
 						<form action="/userLibrary/service/culture/joindel" method="POST">
 								<input type="hidden" name="anum" value="${cultureVO.num }">
 								<button name="submit" value="신청취소">신청 취소</button>
-							</form>
-							</c:if>
+						</form>
+						</c:if>
 						</c:if>
 						<security:authorize access="hasRole('ROLE_USER')">
 							<c:if test="${isID==0 }">

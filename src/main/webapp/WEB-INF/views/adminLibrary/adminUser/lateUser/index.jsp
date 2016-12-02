@@ -11,16 +11,16 @@
 <style type="text/css">
 .clickable {cursor: pointer;}
 .hover {text-decoration: underline;}
-th{ background:#669999;}
-.odd{ background: #CCFFFF;}
+th{ background:#000049; color: white;}
+.odd{ background: #F6FFCC;}
 .even{ background: #CCCCFF;}
 </style>
 </head>
 <body>
 <h3>연체 관리</h3>
 <br>
-	<a href="lateUserMail">연체사용자에게 단체 메일 보내기</a>
-	<a href="lateTotalUser">연체사용자에게 단체 메일 보내기</a>
+	<a href="lateUserMail"><h3>연체사용자에게 단체 메일 보내기</h3></a>
+	<a href="lateTotalUser"><h3>전체 연체 통계 관리</h3></a>
 	
 <br>
 <table class="sortable paginated table table-bordered table-hober dataTable">

@@ -6,7 +6,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class AfterVO extends PageInfo {
 	
-	private int num;
+	private int num, state;
 	private String id, aselect, title, content, start_date, end_date, orgname, newname;
 	private Date  write_date;
 	private int viewcnt, tocnt;
@@ -14,6 +14,12 @@ public class AfterVO extends PageInfo {
 	private MultipartFile file;
 	
 	
+	public int getState() {
+		return state;
+	}
+	public void setState(int state) {
+		this.state = state;
+	}
 	public String getOrgname() {
 		return orgname;
 	}

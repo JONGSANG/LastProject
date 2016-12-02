@@ -4,6 +4,23 @@
 <html>
 <head>
 <title>문화 행사</title>
+<script type="text/javascript">
+        $(function() {
+            $("#file").on('change', function(){
+                readURL(this);
+            });
+        });
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                    $('#img_preview').attr('src', e.target.result);
+                }
+              reader.readAsDataURL(input.files[0]);
+            }
+        }
+</script>
 </head>
 <body>
 	<section>
@@ -25,10 +42,10 @@
 	<th width="80px">카테고리</th><td align="center" valign="middle" width="80px">
 	<select style="background-color: white; border: 0"  name = "cselect" required="required">
 		<option value = "">카테고리</option>
-		<option value = "외국인맞고">외국인맞고</option>
-		<option value = "외국인포커">외국인포커</option>
-		<option value = "외국인고스톱">외국인고스톱</option>
-		<option value = "외국인체스">외국인체스</option>
+		<option value = "독서교실">독서교실</option>
+		<option value = "인형극">인형극</option>
+		<option value = "동화책읽기">동화책읽기</option>
+		<option value = "기타">기타</option>
 	</select>
 	</td>
 	<th width="80px">시작 날짜</th><td align="center" valign="middle" width="100px">
@@ -60,11 +77,12 @@
 		</td>
 		<th width="110px">파일 업로드</th>
 		<td align="center" valign="middle" colspan="2" width="150px">
-		<input style="width: 100px; background-color: white; height: 25px; margin-top: 8px" type = "file" name = "file"  required="required">
+		<input style="width: 100px; background-color: white; height: 25px; margin-top: 8px" type = "file" name = "file" id="file" required="required">
 		</td>
 	</tr>
 		<tr>
 			<td colspan="8" style="padding-top: 10px" align="center">
+			<img id="img_preview" width="200">
 			<textarea style="padding: 10px 0 0 10px" id="regiwrite" name="content" rows="20" cols="105" placeholder="내용을 입력해 주세요." ></textarea>
 			</td>
 		</tr>

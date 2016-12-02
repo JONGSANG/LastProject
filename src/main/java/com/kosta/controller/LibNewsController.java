@@ -132,7 +132,7 @@ public class LibNewsController {
 	@RequestMapping(value = "userLibrary/libNews/f_board/read", method = RequestMethod.POST)	
 	public String register_rePOST(Model model, @RequestParam("num") int num, @ModelAttribute("pageInfo_rep") F_Board_ReVO vo2)
 			throws Exception {
-		
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		// Console 창에 알림띄어줌
 		logger.info("comment post");
 		logger.info(vo2.toString());	
@@ -140,6 +140,7 @@ public class LibNewsController {
 		// num 값을 보내줌
 		model.addAttribute("num", num);
 		
+		vo2.setId(auth.getName());
 		// 댓글에 담은 값들 (vo2)를 F_BoardService로 보냄
 		service.f_insertComment(vo2);
  

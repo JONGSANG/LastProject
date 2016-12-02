@@ -140,5 +140,12 @@ public class MyInfoController {
 		return "userLibrary/myInfo/s_history";
 	}
 	
-	
+	@RequestMapping(value="userLibrary/myInfo/m_history", method=RequestMethod.GET)
+	public String minwonGET(Model model) throws Exception {
+		logger.info("민원신청내역 페이지");
+		
+		model.addAttribute("minResult", myInfoService.minwonList());
+		
+		return "userLibrary/myInfo/m_history";
+	}
 }

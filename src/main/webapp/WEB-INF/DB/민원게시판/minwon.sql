@@ -44,5 +44,3 @@ constraint pk_minwon primary key(NUM)
 -- 열람실, 노트북실, 문헌정보실, 기타 이런거 선택하게 하는거임~
 insert into minwon(ID,MSELECT,title,content,min_date) values('kosta2', '열람실','말이됩니까?', '열람실에서 밥을 먹네요. 미친건가요??',now());
 insert into minwon(ID,MSELECT,title,content,min_date) values('kosta3', '기타', '사서누나가.. 너무','사서누나가 너무 이뻐요!! ♡',now());
-
-

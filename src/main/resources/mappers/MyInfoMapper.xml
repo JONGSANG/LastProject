@@ -88,4 +88,10 @@ INNER JOIN AFTER_LIST L ON A.NUM=L.ANUM
 WHERE L.ID=#{id}
 </select>
 
+<select id="minwonList" resultType="M_BoardVO">
+SELECT A.NUM, MSELECT, TITLE, MIN_DATE, (SELECT COUNT(NUM) FROM MINWON_REP WHERE A.NUM=NUM) as re_cnt
+FROM MINWON A
+WHERE ID=#{id}
+</select>
+
 </mapper>

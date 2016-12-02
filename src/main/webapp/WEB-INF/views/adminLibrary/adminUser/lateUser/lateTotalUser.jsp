@@ -11,16 +11,17 @@
 <style type="text/css">
 .clickable {cursor: pointer;}
 .hover {text-decoration: underline;}
-th{ background:#669999;}
-.odd{ background: #CCFFFF;}
+th{ background:#000049; color: white;}
+.odd{ background: #F6FFCC;}
 .even{ background: #CCCCFF;}
 </style>
 </head>
 <body>
-<h3>연체 관리</h3>
+<h3>전체 연체 통계 관리</h3>
 <br>
-	<a href="lateUserMail">연체사용자에게 단체 메일 보내기</a>
+	<a href="index"><h3>연체 관리</h3></a>
 <br>
+<div style="height:250px ">
 <table class="sortable paginated table table-bordered table-hober dataTable">
     <thead>
       <tr>
@@ -51,7 +52,7 @@ th{ background:#669999;}
      </c:forEach>
     </tbody>
   </table>
-  
+  </div>
       <div class="text-center">
 		<ul class="pagination">
 
@@ -74,5 +75,37 @@ th{ background:#669999;}
 
 		</ul>
 	</div>
+	<div heigt="200">
+		<table class="able table-bordered table-hober dataTable">
+			<tr>
+				<th colspan="6">연체 정보</th>
+			</tr>
+			<tr>
+				<td class="even">연체 책 권수 : </td>
+				<td class="odd">${cntLateBook} 권</td>
+				<td class="even">연체 사용자 수 : </td>
+				<td class="odd">${cntLateUser} 명</td>
+				<td class="even">미회수 연체료 : </td>
+				<td class="odd">${lateInfo.nsubTotal} 원</td>
+			</tr>
+			<tr>
+				<td class="even">최장기 연체자 ID : </td>
+				<td class="odd">${lateUserInfo.topLateUserID} 님</td>
+				<td class="even">최장기 연체자 이름 : </td>
+				<td class="odd">${lateUserInfo.topLateUserName} 님</td>
+				<td class="even">최장기 연체 일수 : </td>
+				<td class="odd">${lateUserInfo.topLateUserDay} 일</td>
+			</tr>
+			<tr>
+				
+				<th >이번달 연체료 수입 : </th>
+				<th colspan="2" >${lateInfo.subMtotal} 원</th>
+				<th >연체료 수입 총액 : </th>
+				<th colspan="2">${lateInfo.subTotal} 원</th>
+			</tr>
+			
+		</table>
+	</div>
+	
 </body>
 </html>

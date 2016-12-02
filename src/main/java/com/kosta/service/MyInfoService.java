@@ -3,12 +3,13 @@ package com.kosta.service;
 import java.util.List;
 
 import com.kosta.vo.HopeVO;
+import com.kosta.vo.M_BoardVO;
 import com.kosta.vo.MemberVO;
 import com.kosta.vo.MyInfoVO;
 import com.kosta.vo.Rent_BookVO;
 
 public interface MyInfoService {
-	
+
 	public MemberVO myInfo() throws Exception;
 	
 	public boolean passwordCheck(String rawPassword) throws Exception;
@@ -30,4 +31,6 @@ public interface MyInfoService {
 	public List<MyInfoVO> cultureApply() throws Exception;
 	
 	public List<MyInfoVO> afterApply() throws Exception;
+
+	public List<M_BoardVO> minwonList() throws Exception;
 }

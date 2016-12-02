@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.kosta.vo.HopeVO;
+import com.kosta.vo.M_BoardVO;
 import com.kosta.vo.MemberVO;
 import com.kosta.vo.MyInfoVO;
 import com.kosta.vo.Rent_BookVO;
@@ -76,6 +77,11 @@ public class MyInfoDAOImple implements MyInfoDAO {
 	@Override
 	public List<MyInfoVO> afterApply(String id) throws Exception {
 		return sqlSession.selectList("MyInfoMapper.after", id);
+	}
+
+	@Override
+	public List<M_BoardVO> minwonList(String id) throws Exception {
+		return sqlSession.selectList("MyInfoMapper.minwonList", id);
 	}
 
 }
