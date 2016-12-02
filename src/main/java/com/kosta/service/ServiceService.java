@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.kosta.vo.AfterVO;
 import com.kosta.vo.CultureVO;
+import com.kosta.vo.DeliveryVO;
 import com.kosta.vo.L_AfterVO;
 import com.kosta.vo.L_CultureVO;
 import com.kosta.vo.M_BoardVO;
@@ -150,6 +151,6 @@ public interface ServiceService {
 	// 스케줄 리스트 메소드
 	public List<SchadulVO> schadule_list() throws Exception;
 
-	public int handicapCheck() throws Exception;;
+	public DeliveryVO delivery(String bno) throws Exception;
 
 }

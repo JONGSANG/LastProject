@@ -728,12 +728,7 @@ public class ServiceController {
 		
 		logger.info("도서배달서비스");
 		
-		//장애인인지 확인
-		int handicap=service.handicapCheck();
-		
-		if(handicap==1){
-			return "userLibrary/service/delivery";
-		}
+		model.addAttribute("delivery", service.delivery(bno));
 		
 		return "userLibrary/service/deliveryApply";
 	}

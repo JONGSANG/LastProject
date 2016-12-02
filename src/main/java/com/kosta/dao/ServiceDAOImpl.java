@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.kosta.vo.AfterVO;
 import com.kosta.vo.CultureVO;
+import com.kosta.vo.DeliveryVO;
 import com.kosta.vo.L_AfterVO;
 import com.kosta.vo.L_CultureVO;
 import com.kosta.vo.M_BoardVO;
@@ -296,9 +297,10 @@ public class ServiceDAOImpl implements ServiceDAO {
 	public List<SchadulVO> schadul_list() throws Exception {
 		return sqlSession.selectList("com.kosta.mappers.ServiceMapper.schadul_list");
 	}
-	
+
 	@Override
-	public int handicapCheck(String id) throws Exception {
-		return sqlSession.selectOne("com.kosta.mappers.ServiceMapper.handicapCheck", id);
+	public DeliveryVO delivery(String bno) throws Exception {
+		return sqlSession.selectOne("com.kosta.mappers.ServiceMapper.delivery", bno);
 	}
+	
 }

@@ -25,6 +25,7 @@ drop table delivery;
 --ID varchar2(50), -- 신청자 ID
 --BNO varchar2(20) , -- 책번호........ 이걸로 식별.
 --REQUEST_DATE DATE, -- 신청날짜
+--STATE tinyint --신청상태 0.대기중 1승인 -1거절
 --
 --constraint pk_delivery primary key(NUM),
 --constraint fk_delivery foreign key(ID) REFERENCES USER_INFO(ID),
@@ -33,14 +34,11 @@ drop table delivery;
 --);
 
 CREATE TABLE delivery(
-NUM integer auto_increment,
+NUM integer auto_increment primary key,
 ID varchar(50),
 BNO varchar(20) ,
-REQUEST_DATE DATETIME, 
-
-constraint pk_delivery primary key(NUM),
-constraint fk_delivery foreign key(ID) REFERENCES USER_INFO(ID),
-constraint fk_delivery2 foreign key(BNO) REFERENCES BOOK(BNO)
+REQUEST_DATE DATETIME,
+STATE int
 
 );
 

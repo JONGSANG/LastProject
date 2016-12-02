@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.kosta.dao.ServiceDAO;
 import com.kosta.vo.AfterVO;
 import com.kosta.vo.CultureVO;
+import com.kosta.vo.DeliveryVO;
 import com.kosta.vo.L_AfterVO;
 import com.kosta.vo.L_CultureVO;
 import com.kosta.vo.M_BoardVO;
@@ -318,8 +319,9 @@ public class ServiceServiceImpl implements ServiceService {
 	}
 
 	@Override
-	public int handicapCheck() throws Exception {
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		return dao.handicapCheck(auth.getName());
+	public DeliveryVO delivery(String bno) throws Exception {
+		return dao.delivery(bno);
 	}
+
+	
 }
