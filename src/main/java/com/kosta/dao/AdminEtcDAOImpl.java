@@ -7,8 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.kosta.vo.M_BoardVO;
-import com.kosta.vo.PageInfo;
-import com.kosta.vo.PageInfo_rep;
+import com.kosta.vo.MultiPageInfo;
 
 @Repository
 public class AdminEtcDAOImpl implements AdminEtcDAO {
@@ -17,7 +16,7 @@ public class AdminEtcDAOImpl implements AdminEtcDAO {
 	SqlSession sqlSession;
 
 	@Override
-	public List<M_BoardVO> noReply(PageInfo_rep page) throws Exception {
+	public List<M_BoardVO> noReply(MultiPageInfo page) throws Exception {
 		return sqlSession.selectList("AdminEtcMapper.noReply", page);
 	}
 
@@ -27,7 +26,7 @@ public class AdminEtcDAOImpl implements AdminEtcDAO {
 	}
 
 	@Override
-	public List<M_BoardVO> reply(PageInfo page) throws Exception {
+	public List<M_BoardVO> reply(MultiPageInfo page) throws Exception {
 		return sqlSession.selectList("AdminEtcMapper.reply", page);
 	}
 
