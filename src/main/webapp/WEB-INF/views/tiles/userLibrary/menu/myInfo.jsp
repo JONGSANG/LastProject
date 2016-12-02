@@ -17,6 +17,9 @@
 						<a class="menubtn" href="/userLibrary/myInfo/d_history">대출 내역</a>
 					</li>
 					<li>
+						<a class="menubtn" href="/userLibrary/myInfo/m_history">민원 내역</a>
+					</li>
+					<li>
 						<a class="menubtn" href="/userLibrary/myInfo/leave">회원 탈퇴</a>
 					</li>
 					<li>

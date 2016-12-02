@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.kosta.dao.MyInfoDAO;
 import com.kosta.vo.HopeVO;
+import com.kosta.vo.M_BoardVO;
 import com.kosta.vo.MemberVO;
 import com.kosta.vo.MyInfoVO;
 import com.kosta.vo.Rent_BookVO;
@@ -95,6 +96,12 @@ public class MyInfoServiceImpl implements MyInfoService {
 	public List<MyInfoVO> afterApply() throws Exception {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		return myInfodao.afterApply(auth.getName());
+	}
+
+	@Override
+	public List<M_BoardVO> minwonList() throws Exception {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		return myInfodao.minwonList(auth.getName());
 	}
 	
 }
