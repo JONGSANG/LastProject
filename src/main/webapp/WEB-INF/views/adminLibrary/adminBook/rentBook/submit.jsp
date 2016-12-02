@@ -22,9 +22,7 @@
 					<input type="text" name='bno' maxlength="8" >
 					<input type="submit" value="검색">
 				</td>
-			
 			</tr>
-			
 			<tr>
 				<td>ID: ${userInfo.id}</td>
 				<td>이름: ${userInfo.name}</td>
@@ -33,7 +31,6 @@
 					<td><b style="color: RED">현재 대출 권수: ${rcnt} 권 [[ 대출 불가 ]]</b></td>
 				</c:if>
  --%>
-
 			</tr>
 
 			<tr height=200 valign=top>
