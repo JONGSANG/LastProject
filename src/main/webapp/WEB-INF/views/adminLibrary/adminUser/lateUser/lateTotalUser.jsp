@@ -31,7 +31,7 @@ th{ background:#669999;}
         <th class="sorting">저자</th>
         <th class="sort-date">출판사</th>
         <th class="sorting">연체 시작일</th>
-        <th class="sorting">연체 일</th>
+        <th class="sorting">반납일</th>
         <th class="sorting">연체료</th>
       </tr>
     </thead>
@@ -44,9 +44,9 @@ th{ background:#669999;}
        <td>${lateUser.btitle }</td>
        <td>${lateUser.bwriter }</td>
        <td>${lateUser.bcompany }</td>
-       <td><fmt:formatDate value="${lateUser.start_date }" pattern="yy-MM-dd"/> </td>       
-       <td><b style="color: red;"><fmt:formatNumber value="${lateUser.money/100}" pattern="0"/> 일</b></td>
-       <td><b style="color: red;">${lateUser.money } 원</b></td>
+       <td><fmt:formatDate value="${lateUser.start_date }" pattern="yy-MM-dd"/> </td>
+       <td><fmt:formatDate value="${lateUser.end_date }" pattern="yy-MM-dd"/> </td>
+       <td><b style="color: red;">${lateUser.money }</b></td>
       </tr>
      </c:forEach>
     </tbody>

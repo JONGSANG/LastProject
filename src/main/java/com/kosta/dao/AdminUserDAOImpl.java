@@ -41,4 +41,14 @@ public class AdminUserDAOImpl implements AdminUserDAO {
 	public int countLateUserList(LateVO vo) {
 		return sqlSession.selectOne("AdminUserMapper.countLateUserList",vo);
 	}
+
+	@Override
+	public List<LateVO> selectLateCurUserList(LateVO vo) {
+		return sqlSession.selectList("AdminUserMapper.selectLateCurUserList",vo);
+	}
+
+	@Override
+	public int countLateCurUserList(LateVO vo) {
+		return sqlSession.selectOne("AdminUserMapper.countLateCurUserList",vo);
+	}
 }

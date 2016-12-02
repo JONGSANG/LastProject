@@ -40,7 +40,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> 연체 관리</a></li>
+            <li><a href="/adminLibrary/adminUser/lateUser/index"><i class="fa fa-circle-o"></i> 연체 관리</a></li>
             <li><a href="/adminLibrary/adminUser/memberMail"><i class="fa fa-circle-o"></i> 사용자 단체 메일발송</a></li>
             <li><a href="/adminLibrary/adminUser/adminMail"><i class="fa fa-circle-o"></i> 관리자 단체 메일발송</a></li>
           </ul>

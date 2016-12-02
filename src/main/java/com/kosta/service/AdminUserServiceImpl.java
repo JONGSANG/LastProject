@@ -104,4 +104,14 @@ public class AdminUserServiceImpl implements AdminUserService {
 		
 	}
 
+	@Override
+	public List<LateVO> selectLateCurUserList(LateVO vo) {
+		return adminUserdao.selectLateCurUserList(vo);
+	}
+
+	@Override
+	public int countLateCurUserList(LateVO vo) {
+		return adminUserdao.countLateCurUserList(vo);
+	}
+
 }

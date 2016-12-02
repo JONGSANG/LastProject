@@ -3,6 +3,15 @@ drop table RENT_BOOK;
 
 delete from RENT_BOOK;
 
+SELECT l.id, l.bno, b.btitle, l.start_date, l.end_date, u.name, b.bcompany, l.money, b.bwriter
+FROM LATE l
+INNER JOIN BOOK b on b.bno = l.bno
+INNER JOIN USER_INFO u on u.id = l.id
+WHERE l.end_date is null
+order by l.bno desc
+
+
+
 select count(a.bNO)
 from book a 
 inner join room_b b on a.bno = b.bno 
@@ -11,7 +20,7 @@ and a.bno not LIKE '99%'
 and buy_date between '2012-01-01' and '2016-11-11'
 
 update rent_book set submit_date = '2016-11-23' where bno = '01010032' and id = 'spurs89'
-update rent_book set rent_date = '2016-11-12' where bno = '01010011' and id = 'spurs89'
+update rent_book set submit_date = '2016-11-12' where bno = '05010013' and id = 'spurs891'
 
 delete from rent_book where bno = '01010011'
 --------------------------------------------------------------

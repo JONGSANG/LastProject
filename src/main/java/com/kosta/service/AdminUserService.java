@@ -17,5 +17,10 @@ public interface AdminUserService {
 	public int countLateUserList(LateVO vo);
 	//연체자 단체메일
 	public void lateUserMail(MailVO vo) throws Exception;
+	//연체관리 현재 유저
+	public List<LateVO> selectLateCurUserList(LateVO vo);
+	//페이징
+	public int countLateCurUserList(LateVO vo);
+
 
 }
