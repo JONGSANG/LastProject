@@ -29,4 +29,24 @@ LIMIT #{pageStart1}, #{perPageNum1}
 SELECT COUNT(DISTINCT MNUM) FROM MINWON_REP
 </select>
 
+<select id="detail" resultType="M_BoardVO">
+SELECT NUM, MSELECT, ID, VIEWCNT, MIN_DATE, TITLE, CONTENT
+FROM MINWON
+WHERE NUM=#{num}
+</select>
+
+<select id="replyDetail" resultType="M_Board_ReVO">
+SELECT ID, MIN_DATE, CONTENT
+FROM MINWON_REP
+WHERE MNUM=#{num}
+</select>
+
+<insert id="replyInsert">
+INSERT INTO MINWON_REP(ID, CONTENT, MIN_DATE, MNUM) VALUES(#{id}, #{content}, now(), #{num})
+</insert>
+
+<delete id="replyDelete">
+DELETE FROM MINWON_REP WHERE NUM=#{num}
+</delete>
+
 </mapper>

@@ -30,6 +30,11 @@
 		<th width="120px">작성 일자</th>
 		<th width="80px">조회수</th>
 	</tr>
+	<c:if test="${empty list }">
+		<tr>
+			<td colspan = "7">작성된 글이 없습니다.</td>
+		</tr>
+	</c:if>
 		<c:forEach items="${list}" var="list" varStatus="var">
 	<tr>
 <%-- 		<td>${var.index+1}</td> --%>
@@ -43,7 +48,7 @@
 	</table>
 
     <div class="text-center">
-    <security:authorize access="hasRole('ROLE_USER')">
+    <security:authorize access="hasRole('ROLE_ADMIN')">
 	<a href='/userLibrary/libNews/notice/register' style="float: right;">
 	<button type="submit" class="btn btn-primary">글쓰기</button>
 	</a>

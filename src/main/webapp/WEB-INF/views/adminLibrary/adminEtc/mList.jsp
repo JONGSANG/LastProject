@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h3>대기중인 민원</h3>
 <table>
 	<tr>
 		<th>번호</th>
@@ -47,6 +48,7 @@
 			href="mList${multiPageMaker.multi(multiPageMaker.endPage+1) }">&raquo;</a></li>
 	</c:if>
 	
+<h3>처리완료 민원</h3>
 <table>
 	<tr>
 		<th>번호</th>

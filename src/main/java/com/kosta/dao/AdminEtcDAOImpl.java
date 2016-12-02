@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.kosta.vo.M_BoardVO;
+import com.kosta.vo.M_Board_ReVO;
 import com.kosta.vo.MultiPageInfo;
 
 @Repository
@@ -33,6 +34,26 @@ public class AdminEtcDAOImpl implements AdminEtcDAO {
 	@Override
 	public int replyCount() throws Exception {
 		return sqlSession.selectOne("AdminEtcMapper.replyCount");
+	}
+
+	@Override
+	public M_BoardVO detail(int num) throws Exception {
+		return sqlSession.selectOne("AdminEtcMapper.detail", num);
+	}
+
+	@Override
+	public List<M_Board_ReVO> replyDetail(int num) throws Exception {
+		return sqlSession.selectList("AdminEtcMapper.replyDetail", num);
+	}
+
+	@Override
+	public void replyInsert(M_Board_ReVO vo) throws Exception {
+		sqlSession.insert("AdminEtcMapper.replyInsert", vo);
+	}
+
+	@Override
+	public void replyDelete(int num) throws Exception {
+		sqlSession.delete("AdminEtcMapper.replyDelete", num);
 	}
 
 }

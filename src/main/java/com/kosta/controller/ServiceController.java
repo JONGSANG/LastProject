@@ -315,6 +315,8 @@ public class ServiceController {
 		vo.setId(auth.getName());
 		// isID 라고 변수명을 지정하고 보냄
 		model.addAttribute("isID", service.after_sessionid(vo)); 
+		// 신청한 id에 대한 승인/미승인 확인
+		model.addAttribute("isSTATE",service.after_sessionstate(vo));
 		// 해당되는 글의 번호에 대한정보를 가져와서 출력
 		model.addAttribute(service.after_read(vo));
 		service.after_viewcnt(vo);
@@ -477,12 +479,11 @@ public class ServiceController {
 		// 현재 카운터값 가져옴
 		model.addAttribute("culture_tocnt", service.culture_tocnt(vo));
 		
-		// Id를 세션id로 변경
 		vo.setId(auth.getName());
-		
 		// isID 라고 변수명을 지정하고 보냄 
 		model.addAttribute("isID", service.culture_sessionid(vo));
-		 
+		// isSTATE 라고 변수명을 지정하고 보냄
+		model.addAttribute("isSTATE",service.culture_sessionstate(vo));
 		// 해당되는 글의 번호에 대한정보를 가져와서 출력
 		model.addAttribute(service.culture_read(vo));
 		service.culture_viewcnt(vo);
