@@ -403,33 +403,4 @@ public class LibNewsController {
 		
 		return "userLibrary/libNews/best/listBest";
 	}
-	
-	
-	// 사서 추천 리스트 보기
-		@RequestMapping(value="userLibrary/libNews/recommand/recommand", method=RequestMethod.GET)
-		public String recommandGET(Model model) {
-			logger.info("사서추천도서!!!!!");
-			return "userLibrary/libNews/recommand/recommand";
-		}
-		//사이트 누르면 그 사이트로 바로 이동 기능 
-		@RequestMapping(value="userLibrary/libNews/recommand/recommand_k", method=RequestMethod.GET)
-		public String recommand_kGET(Model model) {
-			logger.info("사서추천도서 상세보기!!!!!!!");
-			return "userLibrary/libNews/recommand/recommand_k";
-		}
-		@RequestMapping(value="userLibrary/libNews/recommand/recommand_y", method=RequestMethod.GET)
-		public String recommand_yGET(Model model) {
-			logger.info("사서추천도서 상세보기!!!!!!!");
-			return "userLibrary/libNews/recommand/recommand_y";
-		}
-		@RequestMapping(value="userLibrary/libNews/recommand/recommand_24", method=RequestMethod.GET)
-		public String recommand_24GET(Model model) {
-			logger.info("사서추천도서 상세보기!!!!!!!");
-			return "userLibrary/libNews/recommand/recommand_24";
-		}
-		@RequestMapping(value="userLibrary/libNews/recommand/recommand_b", method=RequestMethod.GET)
-		public String recommand_bGET(Model model) {
-			logger.info("사서추천도서 상세보기!!!!!!!");
-			return "userLibrary/libNews/recommand/recommand_b";
-		}
 }
