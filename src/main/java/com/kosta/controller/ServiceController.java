@@ -723,8 +723,6 @@ public class ServiceController {
 		return savedName;
 	}
 	
-<<<<<<< Updated upstream
-=======
 	@RequestMapping(value="userLibrary/service/deliveryApply", method=RequestMethod.GET)
 	public String deliveryApplyGET(@RequestParam("bNo") String bno, Model model) throws Exception {
 		
@@ -740,5 +738,4 @@ public class ServiceController {
 		return "userLibrary/service/deliveryApply";
 	}
 	
->>>>>>> Stashed changes
 }

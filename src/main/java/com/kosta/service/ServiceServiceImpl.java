@@ -313,13 +313,13 @@ public class ServiceServiceImpl implements ServiceService {
 	}
 
 	@Override
-<<<<<<< Updated upstream
 	public List<SchadulVO> schadule_list() throws Exception {
 		return dao.schadul_list();
-=======
+	}
+
+	@Override
 	public int handicapCheck() throws Exception {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		return dao.handicapCheck(auth.getName());
->>>>>>> Stashed changes
 	}
 }

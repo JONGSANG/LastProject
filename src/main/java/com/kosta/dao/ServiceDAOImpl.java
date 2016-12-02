@@ -293,12 +293,12 @@ public class ServiceDAOImpl implements ServiceDAO {
 	}
 
 	@Override
-<<<<<<< Updated upstream
 	public List<SchadulVO> schadul_list() throws Exception {
 		return sqlSession.selectList("com.kosta.mappers.ServiceMapper.schadul_list");
-=======
+	}
+	
+	@Override
 	public int handicapCheck(String id) throws Exception {
 		return sqlSession.selectOne("com.kosta.mappers.ServiceMapper.handicapCheck", id);
->>>>>>> Stashed changes
 	}
 }
