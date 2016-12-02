@@ -19,21 +19,30 @@ if(leave=='leave'){
 </script>
 </head>
 <body>
-	<table>
+	<div class="box">
+            <div class="box-header">
+              <h3 class="box-title">대기중인 민원</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
 		<tr>
-			<th>아이디
-			<th>이름
-			<th>생년월일
-			<th>전화번호
-			<th>가입일
-			<th>회원등급
+			<th>아이디</th>
+			<th>이름</th>
+			<th>생년월일</th>
+			<th>전화번호</th>
+			<th>가입일</th>
+			<th>회원등급</th>
 		</tr>
+		</thead>
+		<tbody>
 		<c:forEach items="${userList}" var="userList">
 		<tr>
-			<td><a href="/adminLibrary/adminInfo/userDetail?id=${userList.id}">${userList.id}</a>
-			<td>${userList.name}
-			<td>${userList.birth}
-			<td>${userList.phone}
+			<td><a href="/adminLibrary/adminInfo/userDetail?id=${userList.id}">${userList.id}</a></td>
+			<td>${userList.name}</td>
+			<td>${userList.birth}</td>
+			<td>${userList.phone}</td>
 			<td><fmt:formatDate value="${userList.joinDate}" pattern="yyyy.MM.dd"/>
 			<td>
 			<c:if test="${userList.role=='ROLE_SEMIUSER'}">
@@ -42,11 +51,14 @@ if(leave=='leave'){
 			<c:if test="${userList.role=='ROLE_USER'}">
 				"정회원"
 			</c:if>
+			</td>
 		</tr>
 		</c:forEach>
+		</tbody>
 	</table>
+	
 
-	<c:if test="${pageMaker.prev}">
+<%-- 	<c:if test="${pageMaker.prev}">
 		<li><a
 			href="m_list${pageMaker.typeSearch(pageMaker.startPage - 1) }">&laquo;</a></li>
 	</c:if>
@@ -74,6 +86,8 @@ if(leave=='leave'){
 		</select>
 		<input type="text" name="keyword" required>
 		<input type="submit" value="검색">
-	</form>
+	</form> --%>
+	
+
 </body>
 </html>

@@ -5,11 +5,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insert title here</title>
+<title>민원 리스트</title>
 </head>
 <body>
-<h3>대기중인 민원</h3>
-<table>
+ <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">대기중인 민원</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
 	<tr>
 		<th>번호</th>
 		<th>민원종류</th>
@@ -18,6 +24,8 @@
 		<th>작성일자</th>
 		<th>조회수</th>
 	</tr>
+	 </thead>
+                <tbody>
 	<c:forEach items="${noReply}" var="noReply">
 	<tr>
 		<td>${noReply.num}</td>
@@ -29,8 +37,10 @@
 		<td>${noReply.viewcnt}</td>
 	</tr>
 	</c:forEach>
+	 </tbody>
 </table>
-	<c:if test="${multiPageMaker.prev}">
+</div>
+<%-- 	<c:if test="${multiPageMaker.prev}">
 		<li><a
 			href="mList${multiPageMaker.multi(multiPageMaker.startPage-1) }">&laquo;</a></li>
 	</c:if>
@@ -46,10 +56,16 @@
 	<c:if test="${multiPageMaker.next && multiPageMaker.endPage > 0}">
 		<li><a
 			href="mList${multiPageMaker.multi(multiPageMaker.endPage+1) }">&raquo;</a></li>
-	</c:if>
+	</c:if> --%>
 	
-<h3>처리완료 민원</h3>
-<table>
+ <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">처리완료 민원</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
 	<tr>
 		<th>번호</th>
 		<th>민원종류</th>
@@ -58,6 +74,8 @@
 		<th>작성일자</th>
 		<th>조회수</th>
 	</tr>
+	</thead>
+	<tbody>
 	<c:forEach items="${reply}" var="reply">
 	<tr>
 		<td>${reply.num}</td>
@@ -69,8 +87,10 @@
 		<td>${reply.viewcnt}</td>
 	</tr>
 	</c:forEach>
+	</tbody>
 </table>
-<c:if test="${multiPageMaker.prev1}">
+</div>
+<%-- <c:if test="${multiPageMaker.prev1}">
 		<li><a
 			href="mList${multiPageMaker.multi(multiPageMaker.startPage1-1) }">&laquo;</a></li>
 	</c:if>
@@ -87,5 +107,7 @@
 		<li><a
 			href="mList${multiPageMaker.multi(multiPageMaker.endPage1+1) }">&raquo;</a></li>
 	</c:if>
+	 --%>
+
 </body>
 </html>

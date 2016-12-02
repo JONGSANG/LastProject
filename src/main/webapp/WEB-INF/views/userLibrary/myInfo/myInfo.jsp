@@ -43,10 +43,10 @@
 							<c:if test="${MemberVO.gender=='1'}">
 								<td style="padding-top: 5px; padding-left: 35px">
 								<img alt="남자" height="27px" src="/resources/images/login/login_52.png">
-								 <input type="radio" value="1"  onfocus="setRadioCl(event)" checked style="width: 18px; margin-top: 5px">
+								 <input type="radio" value="1"  onfocus="setRadioCl(event)" checked style="width: 18px; margin-top: 5px" readonly="readonly" disabled="disabled">
 								 &nbsp;
 								 <img alt="여자" height="27px" src="/resources/images/login/login_53.png">
-								<input type="radio" value="2" onfocus="setRadioCl(event)" style="width: 18px; margin-top: 5px" >
+								<input type="radio" value="2" onfocus="setRadioCl(event)" style="width: 18px; margin-top: 5px" readonly="readonly" disabled="disabled">
 								</td>
 							</c:if>
 							<c:if test="${MemberVO.gender=='2'}">

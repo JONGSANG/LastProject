@@ -77,7 +77,9 @@
           <div class="box box-primary">
             <div class="box-body no-padding">
               <!-- THE CALENDAR -->
+              
               <div id="calendar"></div>
+              
             </div>
             <!-- /.box-body -->
           </div>
@@ -155,7 +157,7 @@
     	  <c:forEach  items="${list }" var="list">
     	  {
               title: '${list.title }',
-              start: new Date("${list.year }", "${list.month }", "${list.day }"),
+              start: new Date("${list.year }", "${list.month-1 }", "${list.day }"),
               backgroundColor: "#f56954", //red
               borderColor: "#f56954" //red
             },

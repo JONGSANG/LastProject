@@ -10,7 +10,9 @@
  <link rel="stylesheet" href="/resources/css/adminLibrary/_all-skins.css">
  <link rel="stylesheet" href="/resources/css/adminLibrary/AdminLTE.css">
  <link rel="stylesheet" href="/resources/css/adminLibrary/bootstrap.css">
- 
+ <!-- 테이블부분 -->
+  <link rel="stylesheet" href="/resources/css/adminLibrary/dataTables.bootstrap.css">
+  
    <!-- 캘린더-->
   <link rel="stylesheet" href="/resources/css/adminLibrary/fullcalendar.css">
   <link rel="stylesheet" href="/resources/css/adminLibrary/fullcalendar.print.css" media="print">
@@ -19,12 +21,31 @@
   
   <script src="/resources/js/jquery-2.2.3.min.js"></script> 
 <script src="/resources/js/bootstrap.js"></script>
+
+<script src="/resources/js/dataTables.bootstrap.js"></script>
+<script src="/resources/js/jquery.dataTables.js"></script>
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <script src="/resources/js/app.js"></script> 
 <!-- 캘린더 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
 <script src="/resources/js/fullcalendar.js"></script>
+<!-- 테이블부분 -->
+<script src="/resources/js/dataTables.bootstrap.js"></script>
+<script src="/resources/js/jquery.dataTables.js"></script>
   
+  <script type="text/javascript">
+  $(function () {
+	    $("#example1").DataTable();
+	    $('#example2').DataTable({
+	      "paging": true,
+	      "lengthChange": false,
+	      "searching": false,
+	      "ordering": true,
+	      "info": true,
+	      "autoWidth": false
+	    });
+	  });
+  </script>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">

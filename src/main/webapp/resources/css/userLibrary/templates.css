@@ -28,7 +28,7 @@ h1 {display:inline-block; z-index:100; position:absolute; top:6px; left:460px; z
 .nav ul #menu a {font-size:18px; line-height:24px; color:#fff; display:inline-block; font-family: 'Jeju Gothic', serif;}
 .nav ul #menu a:hover { color:#bf96c7;}
 .nav ul #menu .sub{position: absolute; height: 0px; overflow: hidden; transition: height .2s; -webkit-transition: height .2s; }
-.nav ul #menu:hover .sub{height: 300px;} 
+.nav ul #menu:hover .sub{height: 350px;} 
 .sub {padding-top: 38px; margin-left: -25px}
 .submenu{width:140px; height:30px; line-height : 24px;  background-color: rgba(22,22,22,0.5);  text-align: center; padding-top: 10px;}
 .submenu:hover {color:#bf96c7;}
