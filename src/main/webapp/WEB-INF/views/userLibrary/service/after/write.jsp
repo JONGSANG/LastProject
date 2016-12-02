@@ -4,6 +4,23 @@
 <html>
 <head>
 <title>방과후 학교</title>
+<script type="text/javascript">
+        $(function() {
+            $("#file").on('change', function(){
+                readURL(this);
+            });
+        });
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                    $('#img_preview').attr('src', e.target.result);
+                }
+              reader.readAsDataURL(input.files[0]);
+            }
+        }
+</script>
 </head>
 <body>
 	<section>
@@ -65,6 +82,7 @@
 	</tr>
 		<tr>
 			<td colspan="8" style="padding-top: 10px" align="center">
+			<img id="img_preview" width="200">
 			<textarea style="padding: 10px 0 0 10px" id="regiwrite" name="content" rows="20" cols="105" placeholder="내용을 입력해 주세요." ></textarea>
 			</td>
 		</tr>
