@@ -87,7 +87,7 @@ public class ServiceController {
 	
 	// 기입한 주소값으로 GET방식으로 보냄
 	@RequestMapping(value = "userLibrary/service/min_board/listAll", method = RequestMethod.GET)	
-	public String listALL(Model model,@ModelAttribute("pageInfo") M_BoardVO vo) throws Exception {
+	public String listALL(Model model, M_BoardVO vo) throws Exception {
 		
 		// Console 창에 알림띄어줌
 		logger.info("listAll 페이지");		

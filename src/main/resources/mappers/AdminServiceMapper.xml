@@ -77,4 +77,8 @@ UPDATE CULTURE_LIST SET STATE=#{state}
 WHERE ID=#{id} AND ANUM=#{anum} 
 </update>
 
+<select id="schadule_list" resultType="SchadulVO">
+	select * from schadul
+</select>
+
 </mapper>

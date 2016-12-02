@@ -120,4 +120,16 @@ public class AdminServiceController {
 		
 		return "redirect:/adminLibrary/adminService/c_detail?num="+vo.getAnum();
 	}
+	
+	@RequestMapping("adminLibrary/adminService/calendar")
+	public String calendar(Model model) throws Exception {
+		
+		model.addAttribute("list", adminServiceService.schadule_list());
+		
+		logger.info("관리자 스케쥴");
+		
+		
+		return "adminLibrary/adminService/calendar";
+		
+	}
 }

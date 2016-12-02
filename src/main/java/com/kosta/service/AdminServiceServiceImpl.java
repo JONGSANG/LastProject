@@ -11,6 +11,7 @@ import com.kosta.vo.CultureVO;
 import com.kosta.vo.L_AfterVO;
 import com.kosta.vo.L_CultureVO;
 import com.kosta.vo.PageInfo;
+import com.kosta.vo.SchadulVO;
 
 @Service
 public class AdminServiceServiceImpl implements AdminServiceService {
@@ -78,5 +79,9 @@ public class AdminServiceServiceImpl implements AdminServiceService {
 		adminServicedao.cultureChange(vo);
 	}
 	
+	@Override
+	public List<SchadulVO> schadule_list() throws Exception {
+		return adminServicedao.schadule_list();
+	}
 	
 }

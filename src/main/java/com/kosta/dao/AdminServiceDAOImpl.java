@@ -11,6 +11,7 @@ import com.kosta.vo.CultureVO;
 import com.kosta.vo.L_AfterVO;
 import com.kosta.vo.L_CultureVO;
 import com.kosta.vo.PageInfo;
+import com.kosta.vo.SchadulVO;
 
 @Repository
 public class AdminServiceDAOImpl implements AdminServiceDAO {
@@ -76,6 +77,11 @@ public class AdminServiceDAOImpl implements AdminServiceDAO {
 	@Override
 	public void cultureChange(L_CultureVO vo) throws Exception {
 		sqlSession.update("AdminServiceMapper.cultureChange", vo);
+	}
+
+	@Override
+	public List<SchadulVO> schadule_list() throws Exception {
+		return sqlSession.selectList("AdminServiceMapper.schadule_list");
 	}
 	
 }

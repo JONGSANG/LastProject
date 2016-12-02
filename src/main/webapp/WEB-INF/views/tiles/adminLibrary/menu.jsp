@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 
 <aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <!-- Sidebar user panel -->
       <div class="user-panel">
@@ -14,7 +13,6 @@
           오늘 하루도 화이팅!!!
         </div>
       </div>
-      <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="treeview">
           <a href='#'>
@@ -98,9 +96,9 @@
             <li><a href="/adminLibrary/adminEtc/mList"><i class="fa fa-circle-o"></i> 민원 목록 조회</a></li>
             <li><a href="pages/examples/profile.html"><i class="fa fa-circle-o"></i> 일정 관리</a></li>
             <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> 추천 도서 등록</a></li>
+            <li><a href="/adminLibrary/adminService/calendar"><i class="fa fa-circle-o"></i> 도서관 일정</a></li>
           </ul>
         </li>
       </ul>
     </section>
-    <!-- /.sidebar -->
   </aside>

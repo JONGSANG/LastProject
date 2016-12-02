@@ -15,6 +15,7 @@ import com.kosta.vo.L_CultureVO;
 import com.kosta.vo.M_BoardVO;
 import com.kosta.vo.M_Board_ReVO;
 import com.kosta.vo.O_BoardVO;
+import com.kosta.vo.SchadulVO;
 
 @Service
 public class ServiceServiceImpl implements ServiceService {
@@ -293,5 +294,10 @@ public class ServiceServiceImpl implements ServiceService {
 	@Override
 	public void openboard_modify(O_BoardVO vo) throws Exception {
 		dao.openboard_modify(vo);
+	}
+
+	@Override
+	public List<SchadulVO> schadule_list() throws Exception {
+		return dao.schadul_list();
 	}
 }

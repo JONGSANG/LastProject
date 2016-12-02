@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.kosta.vo.AdminInfoVO;
 import com.kosta.vo.MemberVO;
+import com.kosta.vo.SchadulVO;
 import com.kosta.vo.SearchType;
 
 public interface AdminInfoService {
@@ -36,4 +37,6 @@ public interface AdminInfoService {
 	public void adminLevel(MemberVO vo) throws Exception;
 
 	public void adminDelete(String id) throws Exception;
+	
+	
 }
