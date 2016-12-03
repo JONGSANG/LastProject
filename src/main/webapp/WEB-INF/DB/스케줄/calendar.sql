@@ -9,7 +9,7 @@ state integer(10) not null,
 title varchar(500) not null
 );
 
-insert into schadul(year,month,day,state,title) values('2016', '12','6',1,'도서관 휴관');
+insert into schadul(year,month,day,state,title) values('2016', '12','09',1,'도서관 휴관');
 insert into schadul(year,month,day,state,title) values('2016', '12','13',1,'도서관 휴관');
 insert into schadul(year,month,day,state,title) values('2016', '12','20',1,'도서관 휴관');
 insert into schadul(year,month,day,state,title) values('2016', '12','27',1,'도서관 휴관');

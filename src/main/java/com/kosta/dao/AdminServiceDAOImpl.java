@@ -83,5 +83,15 @@ public class AdminServiceDAOImpl implements AdminServiceDAO {
 	public List<SchadulVO> schadule_list() throws Exception {
 		return sqlSession.selectList("AdminServiceMapper.schadule_list");
 	}
+
+	@Override
+	public void schadule_insert(SchadulVO vo) throws Exception {
+		sqlSession.insert("AdminServiceMapper.schadule_insert", vo);
+	}
+
+	@Override
+	public void schedule_delete(SchadulVO vo) throws Exception {
+		sqlSession.delete("AdminServiceMapper.schedule_delete", vo);
+	}
 	
 }

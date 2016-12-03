@@ -35,4 +35,8 @@ public interface AdminServiceService {
 	public void cultureChange(L_CultureVO vo) throws Exception;
 	
 	public List<SchadulVO> schadule_list() throws Exception;
+	
+	public void schedule_insert(SchadulVO vo) throws Exception;
+	
+	public void schedule_delete(SchadulVO vo) throws Exception;
 }

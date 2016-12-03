@@ -1,5 +1,9 @@
 package com.kosta.controller;
  
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -382,12 +386,17 @@ public class LibNewsController {
 		return "redirect:listAll";	
 	}
 	
-	@RequestMapping(value="userLibrary/libNews/schedule", method=RequestMethod.GET)
+	@RequestMapping("userLibrary/libNews/schedule")
 	public String userList(Model model) throws Exception {
 		
-		logger.info("회원정보관리 페이지");
+		logger.info("스케줄 페이지");
+//		Date date = new Date();
+		Calendar date =Calendar.getInstance();
 		
 		
+		model.addAttribute("list", service.schadule_list());
+		model.addAttribute("nowyear", date.get(Calendar.YEAR));
+		model.addAttribute("nowmonth", date.get(Calendar.MONTH));
 		
 		return "userLibrary/libNews/schedule";
 	}

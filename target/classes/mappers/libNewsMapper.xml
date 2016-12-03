@@ -182,5 +182,9 @@ limit #{pageStart}, #{perPageNum}
 		inner join room_b b on a.bno=b.bno 
 		where a.bno like '99%'
 	</select>
+	<!-- 도서관 일정 -->
+	<select id="schadule_list" resultType="SchadulVO">
+	select * from schadul order by day
+	</select>
 	
 </mapper>

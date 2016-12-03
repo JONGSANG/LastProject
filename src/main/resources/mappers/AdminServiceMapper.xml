@@ -81,4 +81,13 @@ WHERE ID=#{id} AND ANUM=#{anum}
 	select * from schadul
 </select>
 
+
+<insert id="schadule_insert">
+	insert into schadul(year, month, day, state, title) values( #{year}, #{month}, #{day}, #{state}, #{title})
+</insert>
+
+<delete id="schedule_delete">
+	delete from schadul where year=#{year} AND month=#{month} AND day=#{day}
+</delete>
+
 </mapper>

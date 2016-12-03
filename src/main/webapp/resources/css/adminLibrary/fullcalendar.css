@@ -18,6 +18,8 @@ body .fc { /* extra precedence to overcome jqui */
 	font-size: 1em;
 }
 
+#caldelete {font-size: 12px; display: block; border: 0; color: black; background-color: rgba(255,255,255,0.1); position: absolute;}
+#caldelete:HOVER {color: red;}
 
 /* Colors
 --------------------------------------------------------------------------------------------------*/
@@ -46,7 +48,7 @@ body .fc { /* extra precedence to overcome jqui */
 }
 
 .fc-unthemed .fc-today {
-	background: #fcf8e3;
+	background: rgba(201, 223, 231, 0.51);
 }
 
 .fc-highlight { /* when user is selecting cells */

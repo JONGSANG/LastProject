@@ -223,10 +223,6 @@ limit #{pageStart}, #{perPageNum}
 	update o_board set viewcnt = viewcnt+1 where num=#{num} 
 </update>
 
-<select id="schadul_list" resultType="SchadulVO">
-	select * from schadul
-</select>
-
 <select id="delivery" resultType="DeliveryVO">
 SELECT 
 </select>

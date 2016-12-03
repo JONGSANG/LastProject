@@ -293,10 +293,6 @@ public class ServiceDAOImpl implements ServiceDAO {
 		sqlSession.selectOne("com.kosta.mappers.ServiceMapper.openboard_modify",vo);
 	}
 
-	@Override
-	public List<SchadulVO> schadul_list() throws Exception {
-		return sqlSession.selectList("com.kosta.mappers.ServiceMapper.schadul_list");
-	}
 
 	@Override
 	public DeliveryVO delivery(String bno) throws Exception {

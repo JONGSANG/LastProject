@@ -38,4 +38,8 @@ public interface AdminServiceDAO {
 	
 	//스케줄 리스트 메소드
 	public List<SchadulVO> schadule_list() throws Exception;
+	
+	public void schadule_insert(SchadulVO vo) throws Exception;
+	
+	public void schedule_delete(SchadulVO vo) throws Exception;
 }

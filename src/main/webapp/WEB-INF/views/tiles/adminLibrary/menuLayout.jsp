@@ -27,7 +27,7 @@
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <script src="/resources/js/app.js"></script> 
 <!-- 캘린더 -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<script src="/resources/js/moment.min.js"></script>
 <script src="/resources/js/fullcalendar.js"></script>
 <!-- 테이블부분 -->
 <script src="/resources/js/dataTables.bootstrap.js"></script>

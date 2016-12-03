@@ -13,6 +13,7 @@ import com.kosta.vo.BookVO;
 import com.kosta.vo.F_BoardVO;
 import com.kosta.vo.F_Board_ReVO;
 import com.kosta.vo.NoticeVO;
+import com.kosta.vo.SchadulVO;
 
 @Service
 public class LibNewsServiceImpl implements LibNewsService {
@@ -173,5 +174,10 @@ public class LibNewsServiceImpl implements LibNewsService {
 	@Override
 	public BookVO ganBest() {
 		return libNewsDAO.ganBest();
+	}
+	
+	@Override
+	public List<SchadulVO> schadule_list() throws Exception {
+		return libNewsDAO.schadule_list();
 	}
 }

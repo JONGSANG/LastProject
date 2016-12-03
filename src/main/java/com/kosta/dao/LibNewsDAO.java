@@ -6,6 +6,7 @@ import com.kosta.vo.BookVO;
 import com.kosta.vo.F_BoardVO;
 import com.kosta.vo.F_Board_ReVO;
 import com.kosta.vo.NoticeVO;
+import com.kosta.vo.SchadulVO;
 
 public interface LibNewsDAO {
 
@@ -91,5 +92,10 @@ public interface LibNewsDAO {
 
 	// 간행물베스트도서
 	public BookVO ganBest();
+	
+	//----------------------스케줄--------------------------
+	
+		//스케줄 리스트 메소드
+		public List<SchadulVO> schadule_list() throws Exception;
 
 }

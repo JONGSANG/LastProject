@@ -83,5 +83,15 @@ public class AdminServiceServiceImpl implements AdminServiceService {
 	public List<SchadulVO> schadule_list() throws Exception {
 		return adminServicedao.schadule_list();
 	}
+
+	@Override
+	public void schedule_insert(SchadulVO vo) throws Exception {
+		adminServicedao.schadule_insert(vo);
+	}
+
+	@Override
+	public void schedule_delete(SchadulVO vo) throws Exception {
+		adminServicedao.schedule_delete(vo);
+	}
 	
 }

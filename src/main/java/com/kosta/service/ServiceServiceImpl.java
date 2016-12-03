@@ -314,11 +314,6 @@ public class ServiceServiceImpl implements ServiceService {
 	}
 
 	@Override
-	public List<SchadulVO> schadule_list() throws Exception {
-		return dao.schadul_list();
-	}
-
-	@Override
 	public DeliveryVO delivery(String bno) throws Exception {
 		return dao.delivery(bno);
 	}

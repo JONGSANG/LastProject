@@ -1,5 +1,7 @@
 package com.kosta.controller;
 
+import java.util.Calendar;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.kosta.service.AdminServiceService;
@@ -16,6 +19,7 @@ import com.kosta.vo.L_AfterVO;
 import com.kosta.vo.L_CultureVO;
 import com.kosta.vo.PageInfo;
 import com.kosta.vo.PageMaker;
+import com.kosta.vo.SchadulVO;
 
 @Controller
 public class AdminServiceController {
@@ -121,8 +125,11 @@ public class AdminServiceController {
 		return "redirect:/adminLibrary/adminService/c_detail?num="+vo.getAnum();
 	}
 	
-	@RequestMapping("adminLibrary/adminService/calendar")
-	public String calendar(Model model) throws Exception {
+	@RequestMapping(value="adminLibrary/adminService/calendar", method=RequestMethod.GET)
+	public String calendarGET(Model model) throws Exception {
+		Calendar date =Calendar.getInstance();
+		model.addAttribute("nowyear", date.get(Calendar.YEAR));
+		model.addAttribute("nowmonth", date.get(Calendar.MONTH));
 		
 		model.addAttribute("list", adminServiceService.schadule_list());
 		
@@ -130,6 +137,38 @@ public class AdminServiceController {
 		
 		
 		return "adminLibrary/adminService/calendar";
+		
+	}
+	
+	@RequestMapping(value="adminLibrary/adminService/calendar", method=RequestMethod.POST)
+	public String calendarPost(SchadulVO vo ,RedirectAttributes rttr) throws Exception {
+		
+		adminServiceService.schedule_insert(vo);
+		
+		logger.info("관리자 스케쥴");
+		
+		
+		return "redirect:/adminLibrary/adminService/calendar";
+		
+	}
+	@RequestMapping(value="adminLibrary/adminService/calendar/delete", method=RequestMethod.POST)
+	public String calendardelete(@RequestParam("date")String date, RedirectAttributes rttr, SchadulVO vo) throws Exception {
+		
+		System.out.println("뭐가 올까요" + date);
+		
+		logger.info("관리자 스케쥴");
+		String year = date.substring(0, 4);
+		String month = date.substring(5, 7);
+		String day = date.substring(8);
+		
+		if (day.substring(0, 1).equals("0")) {
+			day = day.substring(1);
+		}
+		vo.setDay(day); vo.setMonth(month); vo.setYear(year);
+		
+		adminServiceService.schedule_delete(vo);
+		
+		return "redirect:/adminLibrary/adminService/calendar";
 		
 	}
 }

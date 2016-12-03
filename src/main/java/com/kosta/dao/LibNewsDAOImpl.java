@@ -10,6 +10,7 @@ import com.kosta.vo.BookVO;
 import com.kosta.vo.F_BoardVO;
 import com.kosta.vo.F_Board_ReVO;
 import com.kosta.vo.NoticeVO;
+import com.kosta.vo.SchadulVO;
 
 @Repository
 public class LibNewsDAOImpl implements LibNewsDAO {
@@ -157,5 +158,10 @@ public class LibNewsDAOImpl implements LibNewsDAO {
 	@Override
 	public BookVO ganBest() {
 		return sqlSession.selectOne("com.kosta.mappers.LibNewsMapper.ganBest");
+	}
+	
+	@Override
+	public List<SchadulVO> schadule_list() throws Exception {
+		return sqlSession.selectList("com.kosta.mappers.LibNewsMapper.schadule_list");
 	}
 }

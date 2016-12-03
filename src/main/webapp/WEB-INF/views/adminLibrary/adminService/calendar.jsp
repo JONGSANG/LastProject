@@ -1,108 +1,82 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
 <title>도서관 일정</title>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-    <section class="content-header">
-      <h1>
-       	 도서관 일정관리 
-      </h1>
-    </section>
+	<section class="content-header">
+		<h1>도서관 일정관리</h1>
+	</section>
+	<div class="box box-solid">
+		<div id="calendar"></div>
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="box box-solid">
-            <div class="box-header with-border">
-              <h4 class="box-title">이벤트 추가 목록</h4>
-            </div>
-            <div class="box-body">
-              <!-- the events -->
-              <div id="external-events">
-                <div class="external-event bg-green">도서관 행사</div>
-                 <div class="external-event bg-red">도서관 휴관</div>
-                <div class="external-event bg-light-blue">기타 일정</div>
-                <div class="checkbox">
-                  <label for="drop-remove">
-                    <input type="checkbox" id="drop-remove">
-                  	  일정목록 지우기
-                  </label>
-                </div>
-              </div>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /. box -->
-          <div class="box box-solid">
-            <div class="box-header with-border">
-              <h3 class="box-title">일정 만들기</h3>
-            </div>
-            <div class="box-body">
-              <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
-                <ul class="fc-color-picker" id="color-chooser">
-                  <li><a class="text-aqua" href="#"><i class="fa fa-square"></i></a></li>
-                  <li><a class="text-blue" href="#"><i class="fa fa-square"></i></a></li>
-                  <li><a class="text-light-blue" href="#"><i class="fa fa-square"></i></a></li>
-                  <li><a class="text-teal" href="#"><i class="fa fa-square"></i></a></li>
-                  <li><a class="text-yellow" href="#"><i class="fa fa-square"></i></a></li>
-                  <li><a class="text-orange" href="#"><i class="fa fa-square"></i></a></li>
-                  <li><a class="text-green" href="#"><i class="fa fa-square"></i></a></li>
-                  <li><a class="text-lime" href="#"><i class="fa fa-square"></i></a></li>
-                  <li><a class="text-red" href="#"><i class="fa fa-square"></i></a></li>
-                  <li><a class="text-purple" href="#"><i class="fa fa-square"></i></a></li>
-                  <li><a class="text-fuchsia" href="#"><i class="fa fa-square"></i></a></li>
-                  <li><a class="text-muted" href="#"><i class="fa fa-square"></i></a></li>
-                  <li><a class="text-navy" href="#"><i class="fa fa-square"></i></a></li>
-                </ul>
-              </div>
-              <!-- /btn-group -->
-              <div class="input-group">
-                <input id="new-event" type="text" class="form-control" placeholder="Event Title">
+	</div>
+	<!-- /.box-body -->
 
-                <div class="input-group-btn">
-                  <button id="add-new-event" type="button" class="btn btn-primary btn-flat">Add</button>
-                </div>
-                <!-- /btn-group -->
-              </div>
-              <!-- /input-group -->
-            </div>
-          </div>
-        </div>
-        <!-- /.col -->
-        <div class="col-md-9">
-          <div class="box box-primary">
-            <div class="box-body no-padding">
-              <!-- THE CALENDAR -->
-              
-              <div id="calendar"></div>
-              
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /. box -->
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
-    </section>
-    <!-- /.content -->
+	<div>
+
+		<div class="box box-solid">
+			<div class="box-header with-border">
+				<h3 class="box-title">일정 추가하기</h3>
+			</div>
+		</div>
+		<form method="post">
+			<table class="table table-bordered table-striped dataTable no-footer">
+				<tr>
+					<th width="150px" style="text-align: center;">도서관 일정 카테고리</th>
+					<th width="280px" style="text-align: center;">일정 날짜</th>
+					<th style="text-align: center;">일정 내용</th>
+				</tr>
+				<tr>
+					<td align="center" style="vertical-align: middle;"><select
+						style="width: 100px; height: 30px;" name="state"
+						required="required">
+							<option value="1">도서관 휴관</option>
+							<option value="2">도서관 행사</option>
+							<option value="3">기타 일정</option>
+					</select></td>
+					<c:set var="nowy" value="${nowyear-2 }"></c:set>
+					<td align="center" style="vertical-align: middle;"><select
+						style="width: 80px; height: 30px;" name="year" required="required">
+							<c:forEach begin="${nowyear-2 }" end="${nowyear+2 }">
+								<option value="${nowy}">${nowy }&nbsp;년</option>
+								<c:set var="nowy" value="${nowy+1 }"></c:set>
+							</c:forEach>
+					</select> <c:set var="nowm" value="1"></c:set> <select
+						style="width: 70px; height: 30px" name="month" required="required">
+							<c:forEach begin="1" end="12">
+								<option value="${nowm }">${nowm }&nbsp;월</option>
+								<c:set var="nowm" value="${nowm+1 }"></c:set>
+							</c:forEach>
+					</select> <c:set var="nowd" value="1"></c:set> <select
+						style="width: 70px; height: 30px" name="day" required="required">
+							<c:forEach begin="1" end="31">
+								<option value="${nowd }">${nowd }&nbsp;일</option>
+								<c:set var="nowd" value="${nowd+1 }"></c:set>
+							</c:forEach>
+					</select></td>
+
+					<td align="center">
+							<!-- /btn-group -->
+							<input type="text" style="max-width: 2000px" name="title"
+								class="form-control">
+
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3"><button type="submit"
+							class="btn btn-block btn-success">추가</button></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	</div>
 
 
-	 테스트 값 불러오나 테스트를 해보자
-	<c:forEach  items="${list }" var="list">
-	년도는${list.year }<br>
-	월은${list.month }<br>
-	일은${list.day }<br>
-	상태는${list.state }<br>
-	내용은${list.title }<br>
-	<hr>
-	</c:forEach>
 
-<script>
+	<script>
   $(function () {
 
     /* initialize the external events
@@ -158,25 +132,35 @@
     	  {
               title: '${list.title }',
               start: new Date("${list.year }", "${list.month-1 }", "${list.day }"),
+              <c:if test="${list.state == 1 }">
               backgroundColor: "#f56954", //red
               borderColor: "#f56954" //red
+            	  </c:if>
+              <c:if test="${list.state == 2 }">
+              backgroundColor: "#00a65a", //green
+              borderColor: "#00a65a" //green
+            	  </c:if>
+              <c:if test="${list.state == 3 }">
+              backgroundColor: "#3c8dbc", //blue
+              borderColor: "#3c8dbc" //blue
+            	  </c:if>
             },
     		</c:forEach> 
     	  
         {
-          title: '도서관 휴관',
-          start: new Date("2016", "10", 1),
-          end: new Date("2016", "10", d + 2),
-          backgroundColor: "#f56954", //red
-          borderColor: "#f56954" //red
+          title: '도서관 오픈',
+          start: new Date("2000", "12"-1, 6),
+//           end: new Date("2016", "10", d + 2),
+          backgroundColor: "#3c8dbc", //red
+          borderColor: "#3c8dbc" //red
         },
-        {
+       /*  {
           title: 'Long Event',
           start: new Date(y, m, d - 5),
           end: new Date(y, m, d - 2),
           backgroundColor: "#f39c12", //yellow
           borderColor: "#f39c12" //yellow
-        }
+        } */
        
       ],
       editable: true,

@@ -4630,7 +4630,7 @@ DayGrid.mixin({
 
 		titleHtml =
 			'<span class="fc-title">' +
-				(htmlEscape(event.title || '') || '&nbsp;') +  // we always want one line of height
+				(htmlEscape(event.title || '') || '&nbsp;') + // we always want one line of height
 			'</span>';
 		
 		return '<a class="' + classes.join(' ') + '"' +
@@ -9098,12 +9098,10 @@ var BasicView = fcViews.basic = View.extend({
 
 		return '' +
 			'<td class="' + classes.join(' ') + '" data-date="' + date.format() + '">' +
-			'<form action="calendar/delete" method="post">' + '<input type="hidden" name="date" value="'+ date.format() +'">' +
-			'<button id="caldelete" type="submit" value="일정삭제">일정삭제</button>'  + '</form>' + 
 				date.date() +
 			'</td>';
 	},
-	
+
 
 	// Generates an HTML attribute string for setting the width of the week number column, if it is known
 	weekNumberStyleAttr: function() {
