@@ -11,14 +11,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.kosta.service.SearchService;
 import com.kosta.vo.HopeVO;
 import com.kosta.vo.Hope_repVO;
 import com.kosta.vo.PageMaker;
 import com.kosta.vo.PageMaker_rep;
+import com.kosta.vo.ReserveVO;
 import com.kosta.vo.SearchVO;
 
 @Controller
@@ -136,6 +135,14 @@ public class SearchController {
 		// 주소창에 readInfo가 띄어지면 해당되는 책정보가 뜬다.
 	}
 	
+	// 대출 예약
+	@RequestMapping(value="/userLibrary/service/reserve", method=RequestMethod.GET)
+	public String reserveGET(ReserveVO vo) throws Exception{
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		vo.setId(auth.getName());
+		service.reserve(vo);
+		return "redirect:/userLibrary/search/b_search/readInfo?bNo="+vo.getBno();
+	}
 	////////////////////////////////
 	// 희망도서 신청
 	

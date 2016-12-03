@@ -1,5 +1,10 @@
 select * from reserve_book
 drop table reserve_book;
+select a.bNO,  b.brent , btitle, bWriter, bCompany, bIntro, buy_date, bLocation, bYear ,c.submit_date,d.reserve_date
+from book a 
+inner join room_b b on a.bno = b.bno 
+left join rent_book c on a.bno=c.bno and check_submit=false
+left join reserve_book d on a.bno=d.bno
 
 CREATE TABLE RESERVE_BOOK (
 BNO varchar(20) ,

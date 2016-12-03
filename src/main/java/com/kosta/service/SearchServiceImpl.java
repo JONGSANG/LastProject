@@ -11,6 +11,7 @@ import com.kosta.dao.SearchDAO;
 import com.kosta.vo.Hope_repVO;
 import com.kosta.vo.HopeVO;
 import com.kosta.vo.PageInfo;
+import com.kosta.vo.ReserveVO;
 import com.kosta.vo.SearchVO;
 
 @Service
@@ -149,6 +150,11 @@ public class SearchServiceImpl implements SearchService{
 		@Override
 		public int checkUser(String id) throws Exception {
 			return SearchDAO.checkUser(id);
+		}
+
+		@Override
+		public void reserve(ReserveVO vo) throws Exception {
+			SearchDAO.reserve(vo);
 		}
 
 	

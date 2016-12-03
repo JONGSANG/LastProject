@@ -76,6 +76,44 @@
 			<textarea id="regiwrite" style="padding: 10px 0 0 10px" name="content" rows="10" cols="104" readonly="readonly;" disabled="disabled">${read.bIntro}</textarea>
 			</td>
 		</tr>
+		<tr>		
+			<th colspan="3">대출 현황</th>
+		</tr>
+		<tr>
+			<td id="vtd1">대출 여부</td>
+		<c:if test="${read.bRent==1}">			
+			<td id="vtd2">
+				대출 가능
+			</td>
+			<td id="vtd1">대출 기간은 15일 이며 연체시, 추가 대출이 불가합니다.
+			</td>
+		</c:if>
+		<c:if test="${read.bRent==-1}">
+		<c:if test="${read.reserve_date!=null}">			
+			<td id="vtd2">
+				대출 중(예약불가)
+			</td>
+			<td id="vtd1">대출 기간은 15일 이며 연체시, 추가 대출이 불가합니다.
+			</td>
+		<tr>			
+			<td id="vtd1">반납 예정일</td>
+			<td id="vtd2" colspan="2">[ 대출 예약 중 ] 입니다.</td>
+		</tr>
+		</c:if>
+		<c:if test="${read.reserve_date==null}">			
+			<td id="vtd2">
+				대출 중(예약가능)
+			</td>
+			<td id="vtd1">대출 기간은 15일 이며 연체시, 추가 대출이 불가합니다.
+			</td>
+		<tr>			
+			<td id="vtd1">반납 예정일</td>
+			<td id="vtd2" colspan="2">[ ${read.submit_date} ] 입니다.<button onclick="location.href='/userLibrary/service/reserve?bno=${read.bNo}&submit_date=${read.submit_date}'">대출 예약하기</button></td>
+		</tr>
+		</c:if>
+		</c:if>
+			</td>
+		</tr>
 	</table>
 	<c:if test="${checkUser==-1 }">
 	<table>

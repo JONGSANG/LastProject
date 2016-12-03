@@ -5,46 +5,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>신착도서</title>
+<title>도서검색</title>
 </head>
 <body>
-<section>
+	<section>
 		<div id="word">
-			<font style="font-size: 40px">신착도서</font>
+			<font style="font-size: 40px">도서검색</font>
 		</div>
 		<div id="link">
 			<div id="link24">
 				<a href="/">home ></a><a href="#">검색 >&nbsp;</a>
 			</div>
-			<b>신착도서</b>
+			<b>도서검색</b>
 		</div>
-</section>
-<div id="insidebody">
+	</section>
+	<div id="insidebody">
 	<div style="border-bottom: #d3d3d3 1px solid; padding-bottom: 20px; width: 770px">
 	<form class="searchform cf" action="result" method="get">
-	<table class="listtable" style="margin-top: 20px;">
-	<tr>
-		<td width="180px" style="text-align: right; padding-right: 10px; border: none; font-size: 17px">검색 날짜</td>
-		<td width="140px" style="border: none; "">
-		<img src="/resources/images/login/login_56.png" style="margin-top: 3px" height="25" onClick="datePicker(event,'start_date')">
-				<input type="text" id="start_date" name="start_date" tabindex="1" size="23" value="2016-01-01"
-				style="text-align: center; font-size: 14px; width : 90px; height: 25px; IME-MODE:disabled; text-align: center; background-color: white;"
-				onkeypress="if (event.keyCode<7 || event.keyCode>9)  event.returnValue=false;" >
-		</td>
-		<td width=60px" style="border: none; font-size: 17px">~부터</td>
-		<td width="140px" style="border: none; "">
-		<img src="/resources/images/login/login_56.png" style="margin-top: 3px" height="25" onClick="datePicker(event,'end_date')">
-				<input type="text" id="end_date" name="end_date" tabindex="1" size="23" value="2016-02-01"
-				style="text-align: center; font-size: 14px; width : 90px; height: 25px; IME-MODE:disabled; text-align: center; background-color: white;"
-				onkeypress="if (event.keyCode<7 || event.keyCode>9)  event.returnValue=false;" >
-		</td>
-		<td width="60px" style="border: none; font-size: 17px">~까지</td>
-		<td width="180px" style="text-align: left; padding-left: 10px; border: none;"><button id='searchBtn'>검색</button></td>
-	</tr>
-		</table>
+				<select id="select_box" name="searchType">
+					<option value="bTitle">제목명</option>
+					<option value="bWriter">저자명</option>
+					<option value="bCompany">출판사</option>
+				</select> <input style="width: 590px; " type="text" name='keyword' id="keywordInput" value='${vo.keyword }'>
+				<button id="searchBtn">검색</button>
 			</form>
 	</div>
-<table class="viewtable" style="width: 750px">
+
+	<table class="viewtable" style="width: 750px">
 	<tr>
 		<th>사진</th>
 		<th colspan="2">도서 정보</th>
@@ -86,9 +73,50 @@
 		</tr>
 		<tr>
 			<td colspan="3" height="300" align="left">
-			<textarea id="regiwrite" style="padding: 10px 0 0 10px; overflow-y:hidden" name="content" rows="10" cols="104" readonly="readonly; " disabled="disabled">${read.bIntro}</textarea>
+			<textarea id="regiwrite" style="padding: 10px 0 0 10px" name="content" rows="10" cols="104" readonly="readonly;" disabled="disabled">${read.bIntro}</textarea>
 			</td>
 		</tr>
+		<tr>		
+			<th colspan="3">대출 현황</th>
+		</tr>
+		<tr>
+			<td id="vtd1">대출 여부</td>
+		<c:if test="${read.bRent==1}">			
+			<td id="vtd2">
+				대출 가능
+			</td>
+			<td id="vtd1">대출 기간은 15일 이며 연체시, 추가 대출이 불가합니다.
+			</td>
+		</c:if>
+		<c:if test="${read.bRent==-1}">
+		<c:if test="${read.reserve_date!=null}">			
+			<td id="vtd2">
+				대출 중(예약불가)
+			</td>
+			<td id="vtd1">대출 기간은 15일 이며 연체시, 추가 대출이 불가합니다.
+			</td>
+		<tr>			
+			<td id="vtd1">반납 예정일</td>
+			<td id="vtd2" colspan="2">[ 대출 예약 중 ] 입니다.</td>
+		</tr>
+		</c:if>
+		<c:if test="${read.reserve_date==null}">			
+			<td id="vtd2">
+				대출 중(예약가능)
+			</td>
+			<td id="vtd1">대출 기간은 15일 이며 연체시, 추가 대출이 불가합니다.
+			</td>
+		<tr>			
+			<td id="vtd1">반납 예정일</td>
+			<td id="vtd2" colspan="2">[ ${read.submit_date} ] 입니다.<button onclick="location.href='/userLibrary/service/reserve?bno=${read.bNo}&submit_date=${read.submit_date}'">대출 예약하기</button></td>
+		</tr>
+		</c:if>
+		</c:if>
+			</td>
+		</tr>
+	</table>
+	<c:if test="${checkUser==-1 }">
+	<table>
 		<tr>
 			<td colspan="3" style="padding-top: 5px; border: none;">
 			<div class="fright">
@@ -101,8 +129,7 @@
 			</td>
 		</tr>
 	</table>
-
-
+	</c:if>
 </div>
 </body>
 </html>
