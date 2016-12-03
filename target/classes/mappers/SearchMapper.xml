@@ -160,13 +160,21 @@ and buy_date between #{start_date} and #{end_date}
 
 <!-- 해당되는 책 정보를 가져오기 -->
 <select id="readInfo" resultType="SearchVO">
-select a.bNO,  b.brent , btitle, bWriter, bCompany, bIntro, buy_date, bLocation, bYear
+select a.bNO,  b.brent , btitle, bWriter, bCompany, bIntro, buy_date, bLocation, bYear ,c.submit_date,d.reserve_date
 from book a 
 inner join room_b b on a.bno = b.bno 
+left join rent_book c on a.bno=c.bno and check_submit=false
+left join reserve_book d on a.bno=d.bno
 where a.bNo = #{bNo}
  </select>
- 
- <!-- 연속 간행물 sql  -->
+ <!-- 예약하기 -->
+ <insert id="reserve">
+ insert into reserve_book
+ value(#{bno},#{id},curdate(),#{submit_date})
+ </insert>
+
+
+<!-- 연속 간행물 sql  -->
  
 <!-- 연속 간행물의 전체 목록 띄우기 책 번호 앞4자리가 다른 것을 출력(종류가 다른 간행물 목록) -->
 <select id="p_listAll" resultType="SearchVO">
@@ -231,5 +239,9 @@ select
  </select>
 
  -->
+ 
+ <select id="checkUser" resultType="int">
+ select handicap from user_info where id=#{id}
+ </select>
  
 </mapper>

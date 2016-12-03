@@ -6,9 +6,26 @@ public class SearchVO extends PageInfo{
 
 	private String searchType, keyword, bNo, p_bNo, p_bMonth, bTitle, bWriter, bCompany, bIntro;
 	private Date buy_date; 
-	private String start_date, end_date;
+	private String start_date, end_date, submit_date,reserve_date;
 	private int bLocation, bYear, bRent;
 	
+	
+	public String getReserve_date() {
+		return reserve_date;
+	}
+
+	public void setReserve_date(String reserve_date) {
+		this.reserve_date = reserve_date;
+	}
+
+	public String getSubmit_date() {
+		return submit_date;
+	}
+
+	public void setSubmit_date(String submit_date) {
+		this.submit_date = submit_date;
+	}
+
 	public String getP_bMonth() {
 		return p_bMonth;
 	}

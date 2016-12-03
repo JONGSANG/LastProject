@@ -1,6 +1,14 @@
 select * from user_info;
 drop table user_info;
 
+select a.bNO,  b.brent , btitle, bWriter, bCompany, bIntro, buy_date, bLocation, bYear ,c.submit_date
+from book a 
+inner join room_b b on a.bno = b.bno 
+left join rent_book c on a.bno=c.bno and check_submit=false
+where a.bNo = '01010013'
+
+
+
 --------------------------------------------------------------
 -- user_info : USER 정보 Table
 --------------------------------------------------------------
@@ -18,6 +26,7 @@ drop table user_info;
 --
 --constraint pk_user_info primary key(ID)
 --);
+ select handicap from user_info where id='spurs894'
 
 CREATE TABLE user_info(
 ID varchar(50) not null,

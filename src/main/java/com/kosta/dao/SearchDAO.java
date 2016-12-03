@@ -5,6 +5,7 @@ import java.util.List;
 import com.kosta.vo.HopeVO;
 import com.kosta.vo.Hope_repVO;
 import com.kosta.vo.PageInfo;
+import com.kosta.vo.ReserveVO;
 import com.kosta.vo.SearchVO;
 
 public interface SearchDAO {
@@ -72,4 +73,9 @@ public interface SearchDAO {
 
 	// 게시글 조회수 증가
 	public void updateViewCnt(HopeVO vo) throws Exception;
+	
+	// 대출예약
+	public void reserve(ReserveVO vo) throws Exception;
+	// 장애여부 확인
+	public int checkUser(String id) throws Exception;
 }

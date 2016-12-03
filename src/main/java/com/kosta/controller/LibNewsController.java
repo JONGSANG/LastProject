@@ -45,7 +45,7 @@ public class LibNewsController {
  
 		// AuthenticationManager에 인증을 요청할 때 필요한 정보를 담는 목적
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
- 
+		
 		// id의 정보를 담아 넘김
 		model.addAttribute("id", auth.getName());
 		

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.kosta.vo.HopeVO;
 import com.kosta.vo.Hope_repVO;
 import com.kosta.vo.PageInfo;
+import com.kosta.vo.ReserveVO;
 import com.kosta.vo.SearchVO;
 
 @Repository
@@ -137,6 +138,14 @@ public class SearchDAOImpl implements SearchDAO{
 	@Override
 	public int f_repAllCount(Hope_repVO vo) throws Exception {
 		return sqlSession.selectOne("com.kosta.mappers.SearchMapper.f_repAllCount", vo);
+	}
+	@Override
+	public int checkUser(String id) throws Exception {
+		return sqlSession.selectOne("com.kosta.mappers.SearchMapper.checkUser", id);
+	}
+	@Override
+	public void reserve(ReserveVO vo) throws Exception {
+		sqlSession.insert("com.kosta.mappers.SearchMapper.reserve", vo);
 	}
 
 
