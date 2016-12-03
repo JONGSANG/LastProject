@@ -72,4 +72,7 @@ public interface SearchDAO {
 
 	// 게시글 조회수 증가
 	public void updateViewCnt(HopeVO vo) throws Exception;
+	
+	// 장애여부 확인
+	public int checkUser(String id) throws Exception;
 }

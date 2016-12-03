@@ -146,6 +146,11 @@ public class SearchServiceImpl implements SearchService{
 			return SearchDAO.f_repAllCount(vo);
 		}
 
+		@Override
+		public int checkUser(String id) throws Exception {
+			return SearchDAO.checkUser(id);
+		}
+
 	
 
 }

@@ -76,6 +76,9 @@
 			<textarea id="regiwrite" style="padding: 10px 0 0 10px" name="content" rows="10" cols="104" readonly="readonly;" disabled="disabled">${read.bIntro}</textarea>
 			</td>
 		</tr>
+	</table>
+	<c:if test="${checkUser==-1 }">
+	<table>
 		<tr>
 			<td colspan="3" style="padding-top: 5px; border: none;">
 			<div class="fright">
@@ -88,7 +91,7 @@
 			</td>
 		</tr>
 	</table>
-
+	</c:if>
 </div>
 </body>
 </html>

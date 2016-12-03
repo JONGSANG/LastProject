@@ -72,4 +72,7 @@ public interface SearchService {
 	
 	// 조회수 업데이트
 	public void updateViewCnt(HopeVO vo) throws Exception;
+	
+	// 장애여부 확인
+	public int checkUser(String id) throws Exception;
 }
