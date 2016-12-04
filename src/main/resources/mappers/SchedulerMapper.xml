@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="SchedulerMapper">
+
+<update id="roomTimeOut">
+UPDATE STUDYROOM SET STATE=0, START_TIME=NULL, END_TIME=NULL, ID=NULL WHERE (TIMEDIFF(END_TIME, CURTIME()) <![CDATA[<]]> 0)
+</update>
+
+</mapper>
+
+
