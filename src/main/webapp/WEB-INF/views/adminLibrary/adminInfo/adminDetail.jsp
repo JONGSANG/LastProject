@@ -7,23 +7,27 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<table>
+ <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">관리자 정보</h3>
+            </div>
+              <div class="box-body">
+                <div class="form-group">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-11">
+                <table class="table table-bordered table-striped dataTable no-footer">
 		<tr>
-			<th colspan="9">관리자정보
+			<th width="100px" style="text-align: center;">아이디</th>
+			<th width="100px" style="text-align: center;">이름</th>
+			<th width="100px" style="text-align: center;">전화번호</th>
+			<th width="250px" style="text-align: center;" colspan="2">부서</th>
+			<th width="250px" style="text-align: center;" colspan="2">직급</th>
 		</tr>
 		<tr>
-			<th>아이디
-			<th>이름
-			<th>전화번호
-			<th>부서
-			<th>직급
-			<th>관리자삭제
-		</tr>
-		<tr>
-			<td>${admin.id}
-			<td>${admin.name}
-			<td>${admin.phone}
-			<td><form action="/adminLibrary/adminInfo/adminPart" method="post">
+			<td id="vtd1" style="text-align: center;">${admin.id}</td>
+			<td id="vtd1" style="text-align: center;">${admin.name}</td>
+			<td id="vtd1" style="text-align: center;">${admin.phone}</td>
+			<td id="vtd1" style="text-align: center;"><form action="/adminLibrary/adminInfo/adminPart" method="post">
 				<input type="hidden" name="id" value="${admin.id}">
 				<select name="j_part">
 					<c:if test="${admin.j_part=='행정지원과'}">
@@ -57,9 +61,10 @@
 					<option>정보봉사과</option>
 					</c:if>
 				</select>
-				<input type="submit" value="부서변경">
+				</td>
+				<td><button type="submit" class="btn btn-block btn-success" value="부서변경">부서변경</button></td>
 			</form>
-			<td><form action="/adminLibrary/adminInfo/adminLevel" method="post">
+			<td id="vtd1"><form action="/adminLibrary/adminInfo/adminLevel" method="post">
 				<input type="hidden" name="id" value="${admin.id}">
 				<select name="j_level">
 					<c:if test="${admin.j_level=='도서관장'}">
@@ -86,14 +91,36 @@
 					<c:if test="${admin.j_level!='직원'}">
 					<option>직원</option>
 					</c:if>
-				</select>
-				<input type="submit" value="직급변경">
-			</form>
-			<td><form action="/adminLibrary/adminInfo/adminDelete" method="post">
-				<input type="hidden" name="id" value="${admin.id}">
-				<input type="submit" value="관리자삭제">
+				</select></td>
+				<td>
+				<button type="submit" class="btn btn-block btn-success" value="직급변경">직급변경</button>
+				</td>
 			</form>
 		</tr>
 	</table>
+                </div>
+                </div>
+              </div>
+              <div class="box-footer">
+              <div class="col-sm-11"></div>
+              <div class="col-sm-1">
+              
+              <form action="/adminLibrary/adminInfo/adminDelete" method="post">
+                <input type="hidden" name="id" value="${admin.id}">
+				<button type="submit" class="btn btn-block btn-danger" value="관리자삭제">관리자삭제</button></td>
+                </form>
+              </div>
+              </div>
+          </div>
+            </div>
+	
+	<!-- <table>
+	<tr><td>&nbsp;</td></tr>
+	
+	<tr>
+	<td width="807px"></td>
+	<td width="100px" style="float: right;"><button class="btn btn-block btn-primary" onclick="javascript:history.back()" >돌아가기</button></td>
+	</tr>
+	</table> -->
 </body>
 </html>

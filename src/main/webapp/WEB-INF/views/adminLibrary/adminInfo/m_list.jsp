@@ -21,7 +21,7 @@ if(leave=='leave'){
 <body>
 	<div class="box">
             <div class="box-header">
-              <h3 class="box-title">대기중인 민원</h3>
+              <h3 class="box-title">회원정보 관리</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">

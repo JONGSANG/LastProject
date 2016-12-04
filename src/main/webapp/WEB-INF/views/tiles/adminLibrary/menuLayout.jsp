@@ -55,10 +55,12 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-		
+		<div>
 		<tiles:insertAttribute name="header" />
+		</div>
+		<div>
 		<tiles:insertAttribute name="menu2" />
-		
+		</div>
 		<div class="content-wrapper adminbody"  style="min-height: 901px;">
 		<tiles:insertAttribute name="body" />
 		</div>

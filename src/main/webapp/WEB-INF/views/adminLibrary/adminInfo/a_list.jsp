@@ -15,26 +15,37 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<table>
+ <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">관리자 정보 관리</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
 		<tr>
-			<th>아이디
-			<th>이름
-			<th>부서
-			<th>직급
-			<th>전화번호
+			<th>아이디</th>
+			<th>이름</th>
+			<th>부서</th>
+			<th>직급</th>
+			<th>전화번호</th>
 		</tr>
+		</thead>
+		<tbody>
 		<c:forEach items="${adminList}" var="adminList">
 		<tr>
-			<td><a href="/adminLibrary/adminInfo/adminDetail?id=${adminList.id}">${adminList.id}</a>
-			<td>${adminList.name}
-			<td>${adminList.j_part}
-			<td>${adminList.j_level}
-			<td>${adminList.phone}
+			<td><a href="/adminLibrary/adminInfo/adminDetail?id=${adminList.id}">${adminList.id}</a></td>
+			<td>${adminList.name}</td>
+			<td>${adminList.j_part}</td>
+			<td>${adminList.j_level}</td>
+			<td>${adminList.phone}</td>
 		</tr>
 		</c:forEach>
+		</tbody>
 	</table>
+	</div>
 	
-	<c:if test="${pageMaker.prev}">
+	<%-- <c:if test="${pageMaker.prev}">
 		<li><a
 			href="m_list${pageMaker.typeSearch(pageMaker.startPage - 1) }">&laquo;</a></li>
 	</c:if>
@@ -50,9 +61,9 @@
 	<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
 		<li><a
 			href="m_list${pageMaker.typeSearch(pageMaker.endPage +1) }">&raquo;</a></li>
-	</c:if>
+	</c:if> --%>
 	
-	<form method="get">
+	<!-- <form method="get">
 		<select name="searchType">
 			<option value='아이디'>아이디</option>
 			<option value='이름'>이름</option>
@@ -62,6 +73,6 @@
 		</select>
 		<input type="text" name="keyword" required>
 		<input type="submit" value="검색">
-	</form>
+	</form> -->
 </body>
 </html>
