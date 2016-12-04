@@ -7,8 +7,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- 데이트픽커 -->
 <script src="/resources/js/bootstrap-datepicker.js"></script>
+<script src="/resources/js/icheck.js"></script>
 <link rel="stylesheet" href="/resources/css/adminLibrary/datepicker3.css">
 <script>
+/* 날짜 */
+$('#datepicker').datepicker({
+    autoclose: true
+  });
+
 $(document).ready(function(){
 	/* 메세지로만 암호일치여부확인 */
 	$('#pwd').keyup(function(){
@@ -135,7 +141,7 @@ $(document).ready(function(){
     <form action="../../index.html" method="post">
       <div class="form-group has-feedback">
         <input type="text" id="id" name="id" class="form-control" style="padding-right: 0" placeholder="아이디를 입력해 주세요. (최대 12자 영문/숫자)" autofocus required>
-        <button type="button" id="result" class="btn btn-block btn-success" value="ID중복확인">ID중복확인</button>
+        <div id="result"><button type="button" id="result" class="btn btn-block btn-success" value="ID중복확인">ID중복확인</button></div>
       </div>
       <div class="form-group has-feedback">
         <input type="password" style="padding-right: 0" id="pwd" name="pwd" class="form-control" placeholder="비밀번호를 입력해주세요.(최대 12자 영문/숫자)" required>
@@ -164,9 +170,6 @@ $(document).ready(function(){
       <div class="row">
         <div class="col-xs-8">
           <div class="checkbox icheck">
-            <label>
-              <input type="checkbox"> I agree to the <a href="#">terms</a>
-            </label>
           </div>
         </div>
         <!-- /.col -->
@@ -181,13 +184,6 @@ $(document).ready(function(){
   <!-- /.form-box -->
 </div>
 <!-- /.register-box -->
-
-<!-- iCheck -->
-<script src="../../plugins/iCheck/icheck.min.js"></script>
-<script type="text/javascript"> //Date picker
-$('#datepicker').datepicker({
-    autoclose: true
-  });</script>
 
 </body>
 </body>
