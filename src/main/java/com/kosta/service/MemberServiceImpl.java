@@ -86,5 +86,10 @@ public class MemberServiceImpl implements MemberService {
 		mailSender.send(message);
 		
 	}
+
+	@Override
+	public String idCheck(String checkid) throws Exception {
+		return memberdao.idCheck(checkid);
+	}
 	
 }

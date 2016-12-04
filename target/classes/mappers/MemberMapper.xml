@@ -29,4 +29,8 @@ SELECT ID, NAME, EMAIL FROM USER_INFO WHERE ID=#{id} AND NAME=#{name} AND EMAIL=
 UPDATE MEMBER SET PWD=#{pwd} WHERE ID=#{id}
 </update>
 
+<select id="checkid" resultType="String">
+SELECT COUNT(ID) FROM MEMBER WHERE ID=#{id}
+</select>
+
 </mapper>

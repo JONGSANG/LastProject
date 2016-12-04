@@ -35,4 +35,9 @@ public class MemberDAOImpl implements MemberDAO {
 	public void passwordEmail(MemberVO vo) throws Exception {
 		sqlSession.update("MemberMapper.passwordEmail", vo);
 	}
+
+	@Override
+	public String idCheck(String checkid) throws Exception {
+		return sqlSession.selectOne("MemberMapper.checkid", checkid);
+	}
 }

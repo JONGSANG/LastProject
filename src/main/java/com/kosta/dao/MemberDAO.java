@@ -10,4 +10,6 @@ public interface MemberDAO {
 	public MemberVO findPassword(MemberVO vo) throws Exception;
 	
 	public void passwordEmail(MemberVO vo) throws Exception;
+
+	public String idCheck(String checkid) throws Exception;
 }

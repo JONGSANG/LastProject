@@ -25,20 +25,47 @@ $(document).ready(function(){
 		}
 	});
 	
+	var idcheck;
+	$('#result').click(function(){
+		
+		$.ajax({
+			url:"/userLibrary/member/check",
+			type:"post",
+			data:{checkid:$("#id").val()},
+			dataType:"json",
+			success : function(data){
+				idcheck=data;
+				if(data=='0'){
+					alert("중복된 아이디가 없습니다")
+				} else {
+					alert("중복된 아이디입니다. 다시 입력 해주세요");
+				}
+			}
+			});
+		});
+	
 	/* 가입하기 클릭시 */
 	var form = $("form[role='form']");
 	$('#submit').click(function(){
-		if($('#pwd').val()==$('#repwd').val()){
-			form.submit();
-		} else {
-		    alert("입력하신 두개의 암호가 다릅니다. 다시 입력해주세요")
+		if(idcheck==null) {
+			alert("아이디 중복확인이 필요합니다")
+			return false;
+		} else if(idcheck=='1'){
+		 	alert("중복된 아이디입니다. 다시 입력 해주세요")
+		 	idcheck=null;
+		 	return false;
+		} else if($('#pwd').val()!=$('#repwd').val()){
+			alert("입력하신 두개의 암호가 다릅니다. 다시 입력해주세요")
 		    $('#pwd').focus();
 		    $('#pwd').val('');
 		    $('#pwd').val('');
+		    return false;
+		} else if(idcheck==0&&$('#pwd').val()==$('#repwd').val()){
+			form.submit();
 		}
-	})
-	
-	
+		
+		})
+
 });
 </script>
 </head>
@@ -85,7 +112,7 @@ $(document).ready(function(){
 							<tr>
 								<td><img src="/resources/images/login/login_71.png" width="100" height="23">&nbsp;&nbsp;</td>
 								<td><input type="text" id="id" name="id" placeholder="최대 12자 영문/숫자" tabindex="1" size="23" style="text-align: center; font-size: 13px; height: 25px"></td>
-								<td>&nbsp;<button class="comfirmbtn" id="result" value="ID중복확인" style="padding-top: 5px">ID중복확인</button></td>
+								<td>&nbsp;<div class="comfirmbtn" id="result" style="padding-top: 5px">ID중복확인</div></td>
 							</tr>
 							<tr>
 								<td><img src="/resources/images/login/login_72.png" width="100" height="23"></td>
