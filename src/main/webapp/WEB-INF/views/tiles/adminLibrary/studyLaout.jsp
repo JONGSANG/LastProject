@@ -10,6 +10,7 @@
  <link rel="stylesheet" href="/resources/css/adminLibrary/_all-skins.css">
  <link rel="stylesheet" href="/resources/css/adminLibrary/AdminLTE.css">
  <link rel="stylesheet" href="/resources/css/adminLibrary/bootstrap.css">
+ <link rel="stylesheet" href="/resources/css/adminLibrary/room.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">

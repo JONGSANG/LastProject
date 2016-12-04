@@ -5,9 +5,9 @@
 @import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css); /* 나눔 손글씨 펜  font-family: 'Nanum Pen Script', serif;  */
 
 
-.aroomback {border : 0; background-image: url("../../images/aroom.png"); background-size: cover;}
-.broomback {border : 0; background-image: url("../../images/broom.png"); background-size: cover;}
-.croomback {border : 0; background-image: url("../../images/croom.png"); background-size: cover;}
+.aroomback {border : 0; background-image: url("../../images/adminaroom.png"); background-size: cover;}
+.broomback {border : 0; background-image: url("../../images/adminbroom.png"); background-size: cover;}
+.croomback {border : 0; background-image: url("../../images/admincroom.png"); background-size: cover;}
 .aroomback td{text-align: center; color: rgba(48, 91, 109, 0.91); }
 .broomback td{text-align: center; color: rgba(48, 91, 109, 0.91); }
 .croomback td{text-align: center; color: rgba(48, 91, 109, 0.91); }

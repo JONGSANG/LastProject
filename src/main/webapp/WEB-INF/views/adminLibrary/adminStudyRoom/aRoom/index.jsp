@@ -21,7 +21,7 @@ window.close();
 </head>
 <body>
 <h1>제 1 열람실</h1>
-<table width="910px" border="1" class="room" >
+<table width="910px" border="1" class="room aroomback" >
 <!-- 1 행 -->
 	<tr>
 	<!-- 1 열 -->
@@ -1305,6 +1305,6 @@ window.close();
 
 </table>
 
-
+</div>
 </body>
 </html>

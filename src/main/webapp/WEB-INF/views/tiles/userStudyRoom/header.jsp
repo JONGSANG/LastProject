@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insert title here</title>
+<title>열람실</title>
 </head>
 <body>
 <div style="padding-top: 20px; padding-left: 20px">
