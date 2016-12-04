@@ -18,6 +18,7 @@ body {
 .layout-boxed body {
   height: 100%;
 }
+select {height: 24px; width: 120px}
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

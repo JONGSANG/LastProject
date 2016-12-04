@@ -18,12 +18,12 @@
 		</div>
 	</section>
 	<div id="insidebody">
-	<table class="viewtable">
+	<table class="viewtable" style="margin-right: 20px">
 		<tr>
 			<th width="100">분야</th>
-			<td id="vtd1" width="200">문학</td>
-			<td id="vtd1" width="200">컴퓨터</td>
-			<td id="vtd1" width="200">정치/사회</td>
+			<td id="vtd1" width="190">문학</td>
+			<td id="vtd1" width="190">컴퓨터</td>
+			<td id="vtd1" width="190">정치/사회</td>
 		</tr>
 		<tr>
 			<th>사진</th>

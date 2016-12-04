@@ -8,45 +8,54 @@
 <title>도서검색</title>
 </head>
 <body>
-	<table width="600" border="1">
+ <div class="box-header">
+              <h3 class="box-title">책 상세보기</h3>
+            </div>
+<table class="viewtable" style="width: 750px">
+	<tr>
+		<th style="text-align: center;">사진</th>
+		<th style="text-align: center;" colspan="2">도서 정보</th>
+		
+	</tr>
 		<tr>
-			<th width="150" rowspan="6"><img
-				src="/resources/book_img/${read.bNo}.jpg" width="100"></th>
-			<th width="90">번호</th>
-			<th width="250">${read.bNo }</th>
+			<th width="200" rowspan="6"><img
+				src="/resources/book_img/${read.bNo}.jpg" width="200"></th>
+			<td id="vtd1">번호</td>
+			<td id="vtd2">${read.bNo }</td>
 		</tr>
 		<tr>
-			<th width="50">제목 명</th>
-			<th width="250">${read.bTitle }</th>
+			<td id="vtd1">제목 명</td>
+			<td id="vtd2">${read.bTitle }</td>
 		</tr>
 		<tr>
-			<th width="50">저자 명</th>
-			<th width="100">${read.bWriter}</th>
+			<td id="vtd1">저자 명</td>
+			<td id="vtd2">${read.bWriter}</td>
 		</tr>
 		<tr>
-			<th width="50">출판사 명</th>
-			<%-- <th width="50">${bookVO.bNo }</th> --%>
-			<th width="100">${read.bCompany}</th>
+			<td id="vtd1">출판사 명</td>
+			<%-- <td width="50">${bookVO.bNo }</td> --%>
+			<td id="vtd2">${read.bCompany}</td>
 		</tr>
 		<tr>
-			<th width="50">출간년도</th>
-			<%-- <th width="50">${bookVO.bNo }</th> --%>
-			<th width="100">${read.bYear} 년</th>
+			<td id="vtd1">출간년도</td>
+			<%-- <td width="50">${bookVO.bNo }</td> --%>
+			<td id="vtd2">${read.bYear} 년</td>
 			</tr>
 			<tr>
-			<th width="50">구입 일자</th>
-			<%-- <th width="50">${bookVO.bNo }</th> --%>
-			<th width="100">
+			<td id="vtd1">구입 일자</td>
+			<%-- <td width="50">${bookVO.bNo }</td> --%>
+			<td id="vtd2">
 				<fmt:formatDate value="${read.buy_date}" pattern="yyyy.MM.dd"/>
-			</th>
+			</td>
 		</tr>
 		<tr>
-			<th colspan="3">책 소개</th>
+			<th style="text-align: center;" colspan="3">책 소개</th>
 		</tr>
 		<tr>
-			<th colspan="3" height="300" align="left">${read.bIntro}</th>
+			<td colspan="3" height="300" align="left">
+			<textarea id="regiwrite" style="padding: 10px 0 0 10px; resize: none;" name="content" rows="10" cols="104" readonly="readonly;" disabled="disabled">${read.bIntro}</textarea>
+			</td>
 		</tr>
-	</table>
 
 
 </body>

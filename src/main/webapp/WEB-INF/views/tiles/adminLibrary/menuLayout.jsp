@@ -10,6 +10,7 @@
  <link rel="stylesheet" href="/resources/css/adminLibrary/_all-skins.css">
  <link rel="stylesheet" href="/resources/css/adminLibrary/AdminLTE.css">
  <link rel="stylesheet" href="/resources/css/adminLibrary/bootstrap.css">
+ <link rel="stylesheet" href="/resources/css/adminLibrary/admin.css">
  <!-- 테이블부분 -->
   <link rel="stylesheet" href="/resources/css/adminLibrary/dataTables.bootstrap.css">
   
@@ -58,7 +59,7 @@
 		<tiles:insertAttribute name="header" />
 		<tiles:insertAttribute name="menu2" />
 		
-		<div class="content-wrapper"  style="min-height: 901px;">
+		<div class="content-wrapper adminbody"  style="min-height: 901px;">
 		<tiles:insertAttribute name="body" />
 		</div>
 		

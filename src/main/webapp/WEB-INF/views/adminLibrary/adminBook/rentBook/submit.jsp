@@ -8,12 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="rent"><h1>[ 대출 ]</h1></a>
-<a href="submit"><h1>[ 반납 ]</h1></a>
-
-
-	<br>
-	<form method="post">
+<button class="adbtn" onclick="location.href='rent'">대출</button>&nbsp;&nbsp; 
+<button class="adbtn" onclick="location.href='submit'">반납</button>&nbsp;&nbsp; 
+	<form method="post" style="margin-top: 20px;" >
 		<input type="hidden" value="null" name="select">
 		<table width=1000; border="1" class="table table-bordered table-hober dataTable" >
 			<tr>

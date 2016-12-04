@@ -67,6 +67,25 @@ $(document).ready(function(){
 		})
 
 });
+
+
+/* 숫자만 입력하기 */
+		function onlyNumber(event){
+			event = event || window.event;
+			var keyID = (event.which) ? event.which : event.keyCode;
+			if ( (keyID >= 48 && keyID <= 57) || (keyID >= 96 && keyID <= 105) || keyID == 8 || keyID == 46 || keyID == 37 || keyID == 39 ) 
+				return;
+			else
+				return false;
+		}
+		function removeChar(event) {
+			event = event || window.event;
+			var keyID = (event.which) ? event.which : event.keyCode;
+			if ( keyID == 8 || keyID == 46 || keyID == 37 || keyID == 39 ) 
+				return;
+			else
+				event.target.value = event.target.value.replace(/[^0-9]/g, "");
+		}
 </script>
 </head>
 <body>
@@ -112,7 +131,7 @@ $(document).ready(function(){
 							<tr>
 								<td><img src="/resources/images/login/login_71.png" width="100" height="23">&nbsp;&nbsp;</td>
 								<td><input type="text" id="id" name="id" placeholder="최대 12자 영문/숫자" tabindex="1" size="23" style="text-align: center; font-size: 13px; height: 25px"></td>
-								<td>&nbsp;<div class="comfirmbtn" id="result" style="padding-top: 5px">ID중복확인</div></td>
+								<td>&nbsp;<div class="comfirmbtn" id="result" style="padding-top: 5px; height: 13px; text-align: center;">ID중복확인</div></td>
 							</tr>
 							<tr>
 								<td><img src="/resources/images/login/login_72.png" width="100" height="23"></td>
@@ -131,7 +150,7 @@ $(document).ready(function(){
 								<td><img src="/resources/images/login/login_75.png" width="100" height="23" ></td>
 								<td><input type="text" id="birth" name="birth" tabindex="1" size="23" 
 								style="text-align: center; font-size: 13px; height: 25px; IME-MODE:disabled; text-align: center;"
-								onkeypress="if (event.keyCode<7 || event.keyCode>9)  event.returnValue=false;" ></td>
+								onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)' placeholder="2016-01-01"></td>
 								<td><img alt="" src="/resources/images/login/login_56.png" height="33" onClick="datePicker(event,'birth')">
 								</td>
 							</tr>
@@ -168,7 +187,7 @@ $(document).ready(function(){
 								</select>
 								&nbsp;-&nbsp;
 								<input type='text'  
-								onkeypress="if (event.keyCode<48|| event.keyCode>57)  event.returnValue=false;"  
+								onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)'
 								style='IME-MODE:disabled; text-align: center;'  
               					size="2"
               					name="phone2" 
@@ -176,7 +195,7 @@ $(document).ready(function(){
               					maxlength="4"> 
               					&nbsp;-&nbsp;
 								<input type='text'  
-								onkeypress="if (event.keyCode<48|| event.keyCode>57)  event.returnValue=false;"  
+								onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)'
 								style='IME-MODE:disabled; text-align: center;'  
               					size="2" 
               					name="phone3" 

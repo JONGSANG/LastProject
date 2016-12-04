@@ -6,12 +6,11 @@
 <html>
 <head>
 <title>Insert title here</title>
-<script src="/resources/js/jquery-1.3.2.min.js"></script>
 <script src="/resources/js/table_error.js" type="text/javascript"></script>
 <style type="text/css">
 .clickable {cursor: pointer;}
 .hover {text-decoration: underline;}
-th{ background:#000049; color: white;}
+th{ background: #1b608a; color: white; text-shadow: 1px 1px black;}
 .odd{ background: #F6FFCC;}
 .even{ background: #CCCCFF;}
 </style>
@@ -76,25 +75,28 @@ th{ background:#000049; color: white;}
 		</ul>
 	</div>
 	<div heigt="200">
-		<table class="able table-bordered table-hober dataTable">
+		 <table id="example1" class="table table-bordered table-striped">
+		 <thead>
 			<tr>
 				<th colspan="6">연체 정보</th>
 			</tr>
+			</thead>
+			<tbody>
 			<tr>
-				<td class="even">연체 책 권수 : </td>
-				<td class="odd">${cntLateBook} 권</td>
-				<td class="even">연체 사용자 수 : </td>
-				<td class="odd">${cntLateUser} 명</td>
-				<td class="even">미회수 연체료 : </td>
-				<td class="odd">${lateInfo.nsubTotal} 원</td>
+				<td>연체 책 권수 : </td>
+				<td>${cntLateBook} 권</td>
+				<td>연체 사용자 수 : </td>
+				<td>${cntLateUser} 명</td>
+				<td>미회수 연체료 : </td>
+				<td>${lateInfo.nsubTotal} 원</td>
 			</tr>
 			<tr>
-				<td class="even">최장기 연체자 ID : </td>
-				<td class="odd">${lateUserInfo.topLateUserID} 님</td>
-				<td class="even">최장기 연체자 이름 : </td>
-				<td class="odd">${lateUserInfo.topLateUserName} 님</td>
-				<td class="even">최장기 연체 일수 : </td>
-				<td class="odd">${lateUserInfo.topLateUserDay} 일</td>
+				<td>최장기 연체자 ID : </td>
+				<td>${lateUserInfo.topLateUserID} 님</td>
+				<td>최장기 연체자 이름 : </td>
+				<td>${lateUserInfo.topLateUserName} 님</td>
+				<td>최장기 연체 일수 : </td>
+				<td>${lateUserInfo.topLateUserDay} 일</td>
 			</tr>
 			<tr>
 				
@@ -103,7 +105,7 @@ th{ background:#000049; color: white;}
 				<th >연체료 수입 총액 : </th>
 				<th colspan="2">${lateInfo.subTotal} 원</th>
 			</tr>
-			
+			</tbody>
 		</table>
 	</div>
 	

@@ -10,7 +10,7 @@
 <style type="text/css">
 .clickable {cursor: pointer;}
 .hover {text-decoration: underline;}
-th{ background:#000049; color: white;}
+th{ background: #1b608a; color: white; text-shadow: 1px 1px black;}
 .odd{ background: #F6FFCC;}
 .even{ background: #CCCCFF;}
 </style>
