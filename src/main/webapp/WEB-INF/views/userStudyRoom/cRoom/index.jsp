@@ -15,12 +15,12 @@
 }
 </style>
 </head>
-<body>
+<body style="  margin: 0 auto; max-width: 2000px; width: 1000px">
 
 <h1>노트북 열람실</h1>
 
 
-<table width="910px" border="1" class="room" >
+<table width="910px" border="1" class="room croomback" >
 <!-- 1 행 -->
 	<tr>
 	<!-- 1 열 -->
@@ -882,6 +882,102 @@
 			</td>
 	</tr>
 <!-- 7 행 -->
+	<tr>
+	<!-- 1 열 -->
+			<td width="50px" height="50px" id="empty">
+			</td>
+	<!-- 2 열 -->
+			<td width="50px" height="50px" id="empty">
+			</td>
+	<!-- 3 열 -->
+			<td width="50px" height="50px" id="empty">
+			</td>
+	<!-- 4 열 -->
+			<td width="50px" height="50px" id="empty">
+			</td>
+	<!-- 5 열 -->
+			<td width="50px" height="50px" id="empty">
+			</td>
+	<!-- 6 열 -->
+			<td width="50px" height="50px" id="empty">
+			</td>
+	<!-- 7 열 -->
+			<td width="50px" height="50px" id="empty">
+			</td>
+	<!-- 8 열 -->
+			<td width="50px" height="50px" id="empty">
+			</td>
+	<!-- 9 열 -->
+			<td width="50px" height="50px" id="empty">
+			</td>
+	<!-- 10 열 -->
+			<td width="50px" height="50px" id="empty">
+			</td>
+	<!-- 11 열 -->
+			<td width="50px" height="50px" id="empty">
+			</td>
+	<!-- 12 열 -->
+			<td width="50px" height="50px" id="empty">
+			</td>
+	<!-- 13 열 -->
+			<td width="50px" height="50px" id="empty">
+			</td>
+	<!-- 14 열 -->
+			<td width="50px" height="50px" id="empty">
+			</td>
+	<!-- 15 열 -->
+			<td width="50px" height="50px" id="empty">
+			</td>
+	</tr>
+<!-- 8 행 -->
+	<tr>
+	<!-- 1 열 -->
+			<td width="50px" height="50px" id="empty">
+			</td>
+	<!-- 2 열 -->
+			<td width="50px" height="50px" id="empty">
+			</td>
+	<!-- 3 열 -->
+			<td width="50px" height="50px" id="empty">
+			</td>
+	<!-- 4 열 -->
+			<td width="50px" height="50px" id="empty">
+			</td>
+	<!-- 5 열 -->
+			<td width="50px" height="50px" id="empty">
+			</td>
+	<!-- 6 열 -->
+			<td width="50px" height="50px" id="empty">
+			</td>
+	<!-- 7 열 -->
+			<td width="50px" height="50px" id="empty">
+			</td>
+	<!-- 8 열 -->
+			<td width="50px" height="50px" id="empty">
+			</td>
+	<!-- 9 열 -->
+			<td width="50px" height="50px" id="empty">
+			</td>
+	<!-- 10 열 -->
+			<td width="50px" height="50px" id="empty">
+			</td>
+	<!-- 11 열 -->
+			<td width="50px" height="50px" id="empty">
+			</td>
+	<!-- 12 열 -->
+			<td width="50px" height="50px" id="empty">
+			</td>
+	<!-- 13 열 -->
+			<td width="50px" height="50px" id="empty">
+			</td>
+	<!-- 14 열 -->
+			<td width="50px" height="50px" id="empty">
+			</td>
+	<!-- 15 열 -->
+			<td width="50px" height="50px" id="empty">
+			</td>
+	</tr>
+<!-- 9 행 -->
 	<tr>
 	<!-- 1 열 -->
 			<td width="50px" height="50px" id="empty">

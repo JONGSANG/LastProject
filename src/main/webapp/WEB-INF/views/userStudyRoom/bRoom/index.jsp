@@ -15,12 +15,12 @@
 }
 </style>
 </head>
-<body>
+<body style="  margin: 0 auto; max-width: 2000px; width: 1000px">
 
 <h1>제 2 열람실</h1>
 
 
-<table width="910px" border="1" class="room" >
+<table width="910px" border="1" class="room broomback" >
 <!-- 1 행 -->
 	<tr>
 	<!-- 1 열 -->

@@ -33,17 +33,16 @@
 		<!-- 바로가기 서비스 -->
 		<div id="gobtn">
 			<img src="/resources/images/everymenu.PNG" / width="120"><br>
-			<a href="#"><img alt="" src="/resources/images/btnstudy.PNG"
-				width="80px"></a> <a href="/userLibrary/service/after/list"><img
-				alt="" src="/resources/images/btnafter.PNG" width="80px"></a> <a
-				href="/userLibrary/service/culture/list"><img alt=""
-				src="/resources/images/btnculture.PNG" width="80px"></a><br>
-			<a href="/userLibrary/using/time"><img alt=""
-				src="/resources/images/btntime.PNG" width="80px"></a> <a
-				href="/userLibrary/libInfo/map"><img alt=""
-				src="/resources/images/btnway.PNG" width="80px"></a> <a
-				href="/userLibrary/service/min_board/listAll"><img alt=""
-				src="/resources/images/btnmin.PNG" width="80px"></a>
+			<a href="/userStudyRoom/aRoom/index">
+			<img alt="" src="/resources/images/btnstudy.PNG" width="80px"></a> 
+			<a href="/userLibrary/service/after/list"><img alt="" src="/resources/images/btnafter.PNG" width="80px"></a> 
+			<a href="/userLibrary/service/culture/list">
+			<img alt="" src="/resources/images/btnculture.PNG" width="80px"></a><br>
+			<a href="/userLibrary/using/time"><img alt="" src="/resources/images/btntime.PNG" width="80px"></a> 
+			<a href="/userLibrary/libInfo/map">
+			<img alt="" src="/resources/images/btnway.PNG" width="80px"></a> 
+			<a href="/userLibrary/service/min_board/listAll">
+			<img alt="" src="/resources/images/btnmin.PNG" width="80px"></a>
 		</div>
 	</div>
 	<!-- 좌측 div 공간 end -->
