@@ -36,6 +36,10 @@
 		<beans:constructor-arg value = "C:/Last_Project/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/library/resources/book_img" />
 	</beans:bean>
  	
+ 	<beans:bean id = "barcodeImgPath" class = "java.lang.String">
+		<beans:constructor-arg value = "C:/Last_Project/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/library/resources/barcode_img" />
+	</beans:bean>
+	
  	<beans:bean id="TilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
  		<beans:property name="definitions">
  		<beans:list>

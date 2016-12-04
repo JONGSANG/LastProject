@@ -46,6 +46,13 @@
 		<tr>
 			<th colspan="3" height="300" align="left">${read.bIntro}</th>
 		</tr>
+		<tr>
+			<th colspan="3">바코드</th>
+		</tr>
+		<tr>
+			<th colspan="3"><img src="/resources/barcode_img/${read.bNo}.png" width="100"></th>
+		</tr>
+		
 	</table>
 
 

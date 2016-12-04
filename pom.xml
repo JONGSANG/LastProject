@@ -223,6 +223,13 @@
 		    <version>4.1.7.RELEASE</version>
 		</dependency>
 		
+		<!-- java barcodebarbecue -->
+		<dependency>
+		    <groupId>net.sourceforge.barbecue</groupId>
+		    <artifactId>barbecue</artifactId>
+		    <version>1.5-beta1</version>
+		</dependency>
+		
 		<!-- Test -->
 		<dependency>
 			<groupId>junit</groupId>

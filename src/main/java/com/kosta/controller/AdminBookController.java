@@ -1,8 +1,6 @@
 package com.kosta.controller;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.UUID;
 
 import javax.annotation.Resource;
 
@@ -25,6 +23,10 @@ import com.kosta.vo.CodeMaker;
 import com.kosta.vo.PageMaker_rep;
 import com.kosta.vo.Rent_BookVO;
 
+import net.sourceforge.barbecue.Barcode;
+import net.sourceforge.barbecue.BarcodeFactory;
+import net.sourceforge.barbecue.BarcodeImageHandler;
+
 @Controller
 public class AdminBookController {
 
@@ -36,11 +38,14 @@ public class AdminBookController {
 	private SearchService searchService;
 	@Resource(name = "bookImgPath")
 	private String bookImgPath;
+	@Resource(name = "barcodeImgPath")
+	private String barcodeImgPath;
 
 	
 	@RequestMapping(value = "adminLibrary/adminBook/rentBook/rent", method = RequestMethod.GET)
 	public String rentGet() {
 		logger.info("RentBook page");
+		
 		return "adminLibrary/adminBook/rentBook/rent";
 	}
 
@@ -252,17 +257,26 @@ public class AdminBookController {
 		// 저장될 파일 명을 bno.jpg로 바꿔줌
 		String filename = vo.getbNo()+".jpg";
 		uploadFile(filename, f.getBytes());
+		// 바코드 생성, 저장
+		barcode(vo.getbNo());
 		
 		service.insertBook(vo);
 		rttr.addFlashAttribute("msg", "insertS");
-		return "redirect:/adminLibrary/adminBook/reg_new/index";
+		return "adminLibrary/adminBook/reg_new/readInfo&bNo="+vo.getbNo();
 	}
 	
 	// 이미지 업로드용	
 	private void uploadFile(String filename, byte[] fileData) throws Exception {
-		
 		File target = new File(bookImgPath, filename);
 		FileCopyUtils.copy(fileData, target);
 	}
 
+	// 바코드 생성기
+	private void barcode(String bno) throws Exception{
+		String filename=bno+".png";
+		Barcode barcode=BarcodeFactory.createCode128(bno);
+		barcode.setLabel(bno);
+		File target = new File(barcodeImgPath, filename);
+		BarcodeImageHandler.savePNG(barcode, target);
+	}
 }
