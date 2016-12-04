@@ -11,7 +11,14 @@ public class MyInfoVO {
 	private int brent;
 	private boolean check_submit;
 	private boolean check_late;
+	private int delay;
 	
+	public int getDelay() {
+		return delay;
+	}
+	public void setDelay(int delay) {
+		this.delay = delay;
+	}
 	public boolean isCheck_submit() {
 		return check_submit;
 	}

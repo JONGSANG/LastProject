@@ -14,6 +14,9 @@
 	border: none;
 }
 </style>
+<script>
+setTimeout("history.go(0)", 60000);
+</script>
 </head>
 <body style="  margin: 0 auto; max-width: 2000px; width: 1000px">
 

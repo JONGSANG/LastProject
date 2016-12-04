@@ -18,6 +18,9 @@
 opener.location.reload();
 window.close();
 </script>
+<script>
+setTimeout("history.go(0)", 60000);
+</script>
 </head>
 <body>
 <h1>제 1 열람실</h1>

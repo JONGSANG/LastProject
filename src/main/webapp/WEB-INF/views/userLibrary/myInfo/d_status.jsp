@@ -61,10 +61,20 @@
 		<td>${rent.btitle}</td>
 		<td>${rent.rent_date}</td>
 		<td>${rent.submit_date}</td>
-		<td><c:out value="${rent.late}" ></c:out></td>
-		<c:if test="${rent.brent==-1}"><td style="color: red;">대출중 </c:if>
-		<c:if test="${rent.brent!=-1}"><td></td></c:if>
+		<c:if test="${rent.late==0}">
+		<td>연체없음</td>
+		</c:if>
+		<c:if test="${rent.late!=0}">
+		<td>${rent.late}일</td>
+		</c:if>
+		<c:if test="${rent.late==0}"><td>대출중</td> </c:if>
+		<c:if test="${rent.late>0}"><td style="color: red;">연체중</td></c:if>
+		<c:if test="${rent.delay==0&&rent.late==0}">
 		<td><a href="">반납연기</a>
+		</c:if>
+		<c:if test="${rent.delay==1||rent.late>0}">
+		<td style="color: red;">연기불가</td>
+		</c:if>
 	</tr>
 	</c:forEach>
 </table>

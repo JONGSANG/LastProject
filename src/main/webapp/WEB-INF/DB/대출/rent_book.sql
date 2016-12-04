@@ -144,10 +144,12 @@ ID varchar(50),
 RENT_DATE DATE,
 SUBMIT_DATE DATE,
 check_submit boolean default false,
-check_late boolean default false
+check_late boolean default false,
+delay tinyint DEFAULT 0
+
 );
 
-
+--delay 0은 반납연기가능 1은 연기불가
 alter table rent_book add check_late boolean default false
 
 SELECT ID FROM RENT_BOOK WHERE BNO='01010011' AND CHECK_SUBMIT IS FALSE
