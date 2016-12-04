@@ -8,12 +8,76 @@
   <!-- 데이트픽커 -->
 <script src="/resources/js/bootstrap-datepicker.js"></script>
 <link rel="stylesheet" href="/resources/css/adminLibrary/datepicker3.css">
+<script>
+$(document).ready(function(){
+	/* 메세지로만 암호일치여부확인 */
+	$('#pwd').keyup(function(){
+		$('#check').text('');
+	});
+	$('#repwd').keyup(function(){
+		if($('#pwd').val()==$('#repwd').val()){
+			$('#check').text('');
+		    $('#check').html("암호가 동일합니다.");
+		} else {
+		    $('#check').text('');
+		    $('#check').html("암호가 다릅니다. 다시 입력해주세요.");
+		}
+	});
+	
+	var idcheck;
+	$('#result').click(function(){
+		var nullCheck=$('#id').val();
+		if(nullCheck.length!='0'){
+		$.ajax({
+			url:"/userLibrary/member/check",
+			type:"post",
+			data:{checkid:$("#id").val()},
+			dataType:"json",
+			success : function(data){
+				idcheck=data;
+				if(data=='0'){
+					alert("중복된 아이디가 없습니다")
+				} else {
+					alert("중복된 아이디입니다. 다시 입력 해주세요");
+				}
+			}
+			});
+		} else {
+			alert("아이디를 입력하세요");
+			return false;
+		}
+		});
+	
+	/* 가입하기 클릭시 */
+	var form = $("form[role='form']");
+	$('#submit').click(function(){
+		if(idcheck==null) {
+			alert("아이디 중복확인이 필요합니다")
+			return false;
+		} else if(idcheck=='1'){
+		 	alert("중복된 아이디입니다. 다시 입력 해주세요")
+		 	idcheck=null;
+		 	return false;
+		} else if($('#pwd').val()!=$('#repwd').val()){
+			alert("입력하신 두개의 암호가 다릅니다. 다시 입력해주세요")
+		    $('#pwd').focus();
+		    $('#pwd').val('');
+		    $('#repwd').val('');
+		    return false;
+		} else if(idcheck==0&&$('#pwd').val()==$('#repwd').val()){
+			form.submit();
+		}
+		
+		})
+
+});
+</script>
 </head>
 <body>
-<form method="post">
+<form role="form" method="post">
 		<label for="id">ID</label>
 		<input type="text" id="id" name="id" placeholder="최대 12자 영문/숫자" maxlength="12" autofocus required>
-		<input type="button" id="result" value="ID중복확인"><br>
+		<div id="result">ID중복확인</div><br>
 		<label for="pwd">비밀번호</label>
 		<input type="password" id="pwd" name="pwd" placeholder="최대 12자 영문/숫자" maxlength="12" required><br>
 		<label for="repwd">비밀번호 확인</label>
