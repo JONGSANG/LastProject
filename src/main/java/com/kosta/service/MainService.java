@@ -6,6 +6,7 @@ import com.kosta.vo.F_BoardVO;
 import com.kosta.vo.M_BoardVO;
 import com.kosta.vo.MemberVO;
 import com.kosta.vo.NoticeVO;
+import com.kosta.vo.SchadulVO;
 
 public interface MainService {
 	public MemberVO getName() throws Exception;
@@ -24,5 +25,7 @@ public interface MainService {
 	
 	// 연체된 사항을 rent_book 테이블에서 업데이트
 	public void updateRent() throws Exception;
-
+	
+	//스케줄
+	public List<SchadulVO> scheduleList() throws Exception;
 }

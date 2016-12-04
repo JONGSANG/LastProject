@@ -44,5 +44,9 @@ select name from USER_INFO where ID=#{id}
 		update late set money = datediff( curdate(),start_date)*100 where end_date is null
 	</update>
 	
+	<!-- 스케줄 -->
+	<select id="scheduleList" resultType="SchadulVO">
+		select * from schadul
+	</select>
 
 </mapper>

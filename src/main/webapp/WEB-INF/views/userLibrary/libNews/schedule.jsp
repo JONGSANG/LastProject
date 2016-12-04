@@ -38,19 +38,20 @@
 	
 	<table style="width: 775px; margin-top: 10px">
 	<tr>
-	<td colspan="3" style="font-size: 30px">이번달 도서관 일정</td>
 	<td style="text-align : right;"><img src="/resources/images/schedulecolor.png"></td>
 	</tr>
 	<tr><td> &nbsp;</td></tr>
-	<c:forEach items="${list }" var="list">
+	</table>
+	
+	
+	<%-- 	<c:forEach items="${list }" var="list">
 	<tr height="20px">
 	<td style="font-weight: 900; font-size: 20px; color: black;" width="10px" >-</td>
 	<td style="text-align: right; font-size: 20px; width: 50px; color: gray;">&nbsp;${list.day }일</td>
 	<td style="padding-left: 10px; font-size: 19px; font-weight: 600; color:rgba(77,72,225,0.7);">${list.title }</td>
 	<td width="1px"></td>
 	</tr>
-	</c:forEach>
-	</table>
+	</c:forEach> --%>
 	
 	<!-- 현재 년도 ${nowyear } 현재 달 ${nowmonth +1 } -->
 <%-- 	

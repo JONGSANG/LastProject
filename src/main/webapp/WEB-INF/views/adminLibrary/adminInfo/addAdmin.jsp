@@ -4,6 +4,10 @@
 <html>
 <head>
 <title>Insert title here</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- 데이트픽커 -->
+<script src="/resources/js/bootstrap-datepicker.js"></script>
+<link rel="stylesheet" href="/resources/css/adminLibrary/datepicker3.css">
 </head>
 <body>
 <form method="post">
@@ -55,5 +59,72 @@
 		<button type="submit" id="submit" value="관리자 추가">관리자 추가</button>
 		<input type="reset" value="다시쓰기">
 	</form>
+	<body class="hold-transition register-page">
+<div class="register-box">
+  <div class="register-logo">
+    <a href="/adminLibrary"><b>Kosta</b> Library</a>
+  </div>
+
+  <div class="register-box-body">
+    <p class="login-box-msg">관리자 계정 추가</p>
+
+    <form action="../../index.html" method="post">
+      <div class="form-group has-feedback">
+        <input type="text" id="id" name="id" class="form-control" style="padding-right: 0" placeholder="아이디를 입력해 주세요. (최대 12자 영문/숫자)" autofocus required>
+        <button type="button" id="result" class="btn btn-block btn-success" value="ID중복확인">ID중복확인</button>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="password" style="padding-right: 0" id="pwd" name="pwd" class="form-control" placeholder="비밀번호를 입력해주세요.(최대 12자 영문/숫자)" required>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="password" style="padding-right: 0" id="repwd" name="repwd" class="form-control" placeholder="비밀번호 확인" required>
+      </div>
+       
+       <div class="form-group has-feedback">
+        <div class="input-group date">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                  <input type="text" id="birth" name="birth" class="form-control pull-right" id="datepicker" placeholder="생년월일을 입력해주세요." required>
+                </div>
+      </div>
+        <div class="form-group has-feedback">
+        <input type="text" class="form-control" style="padding-right: 0" id="name" name="name" placeholder="이름을 입력해 주세요." required>
+      </div>
+      
+        <div class="form-group has-feedback">
+        남성 <input type="radio" name="gender" value="1" checked="checked">
+		여성 <input type="radio" name="gender" value="2" >
+      </div>
+      
+      <div class="row">
+        <div class="col-xs-8">
+          <div class="checkbox icheck">
+            <label>
+              <input type="checkbox"> I agree to the <a href="#">terms</a>
+            </label>
+          </div>
+        </div>
+        <!-- /.col -->
+        <div class="col-xs-4">
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
+        </div>
+        <!-- /.col -->
+      </div>
+    </form>
+
+  </div>
+  <!-- /.form-box -->
+</div>
+<!-- /.register-box -->
+
+<!-- iCheck -->
+<script src="../../plugins/iCheck/icheck.min.js"></script>
+<script type="text/javascript"> //Date picker
+$('#datepicker').datepicker({
+    autoclose: true
+  });</script>
+
+</body>
 </body>
 </html>

@@ -17,6 +17,10 @@
   <link rel="stylesheet" href="/resources/css/adminLibrary/fullcalendar.css">
   <link rel="stylesheet" href="/resources/css/adminLibrary/fullcalendar.print.css" media="print">
   
+  <!-- 데이터픽 css -->
+  
+  
+  
   <!-- js 부분@@@@ -->
   
   <script src="/resources/js/jquery-2.2.3.min.js"></script> 
@@ -32,6 +36,7 @@
 <!-- 테이블부분 -->
 <script src="/resources/js/dataTables.bootstrap.js"></script>
 <script src="/resources/js/jquery.dataTables.js"></script>
+
   
   <script type="text/javascript">
   $(function () {

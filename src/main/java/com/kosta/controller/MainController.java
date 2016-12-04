@@ -35,6 +35,9 @@ public class MainController {
 		// 탭메뉴 민원게시판
 		model.addAttribute("m_board", mainService.m_boardList());
 
+		//스케줄 정보
+		model.addAttribute("list", mainService.scheduleList());
+		
 		// 연체료 정보 삽입
 		mainService.insertLate();
 		// 연체료 계산

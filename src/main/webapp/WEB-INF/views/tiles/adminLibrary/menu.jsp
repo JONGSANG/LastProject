@@ -6,7 +6,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="/resources/images/HomeIcon1.png" class="img-circle" alt="User Image">
+          <a href="/"><img width="45px" src="/resources/images/HomeIcon1.png" class="img-circle" alt="User Image"></a>
         </div>
         <div class="pull-left info">
           <p>관리자</p>

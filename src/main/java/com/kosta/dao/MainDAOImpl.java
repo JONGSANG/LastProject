@@ -10,6 +10,7 @@ import com.kosta.vo.F_BoardVO;
 import com.kosta.vo.M_BoardVO;
 import com.kosta.vo.MemberVO;
 import com.kosta.vo.NoticeVO;
+import com.kosta.vo.SchadulVO;
 
 @Repository
 public class MainDAOImpl implements MainDAO{
@@ -52,6 +53,11 @@ public class MainDAOImpl implements MainDAO{
 	@Override
 	public void updateRent() throws Exception {
 		sqlSession.update("MainMapper.updateRent");
+	}
+
+	@Override
+	public List<SchadulVO> scheduleList() throws Exception {
+		return sqlSession.selectList("MainMapper.scheduleList");
 	}
 	
 }

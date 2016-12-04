@@ -6,7 +6,6 @@
 <html>
 <head>
 <title>Insert title here</title>
-<script src="/resources/js/jquery-1.3.2.min.js"></script>
 <script src="/resources/js/table_error.js" type="text/javascript"></script>
 <style type="text/css">
 .clickable {cursor: pointer;}
@@ -23,7 +22,7 @@ th{ background:#000049; color: white;}
 	<a href="lateTotalUser"><h3>전체 연체 통계 관리</h3></a>
 	
 <br>
-<table class="sortable paginated table table-bordered table-hober dataTable">
+<table class="table table-bordered table-striped dataTable no-footer">
     <thead>
       <tr>
         <th class="sorting">ID</th>

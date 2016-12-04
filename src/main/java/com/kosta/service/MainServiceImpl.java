@@ -13,6 +13,7 @@ import com.kosta.vo.F_BoardVO;
 import com.kosta.vo.M_BoardVO;
 import com.kosta.vo.MemberVO;
 import com.kosta.vo.NoticeVO;
+import com.kosta.vo.SchadulVO;
 
 @Service
 public class MainServiceImpl implements MainService {
@@ -56,6 +57,11 @@ public class MainServiceImpl implements MainService {
 	@Override
 	public void updateRent() throws Exception {
 		maindao.updateRent();
+	}
+
+	@Override
+	public List<SchadulVO> scheduleList() throws Exception {
+		return maindao.scheduleList();
 	}
 
 }
