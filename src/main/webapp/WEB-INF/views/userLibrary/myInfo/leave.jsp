@@ -4,6 +4,13 @@
 <html>
 <head>
 <title>회원 탈퇴</title>
+<script>
+var leaveFail='${leaveFail}';
+
+if(leaveFail=='leaveFail'){
+	alert("비밀번호가 맞지 않습니다. 다시 입력해 주세요");
+}
+</script>
 </head>
 <body>
 		<section>
@@ -18,7 +25,7 @@
 		</div>
 	</section>
 	<div id="insidebody">
-	<form action="/userLibrary/myInfo/modifyCheck" method="post">
+	<form action="/userLibrary/myInfo/leave" method="post">
 	<table>
 	<tr>
 	<td style="padding-top: 10px"><img src="/resources/images/word/modifycheck.png"></td>

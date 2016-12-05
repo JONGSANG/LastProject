@@ -5,6 +5,14 @@
 <html>
 <head>
 <title>개인정보</title>
+<script>
+var modiSucc='${modiSucc}';
+
+if(modiSucc=='modiSucc'){
+	alert("회원정보 수정 완료");
+}
+
+</script>
 </head>
 <body>
 

@@ -1,7 +1,5 @@
 package com.kosta.controller;
 
-import java.lang.ProcessBuilder.Redirect;
-
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -45,7 +43,6 @@ public class MyInfoController {
 		
 		boolean result=myInfoService.passwordCheck(rawPassword);
 		if(result==false){
-			//메세지 안넘어감, ajax로 변경 필요
 			model.addAttribute("nopass", "nopass");
 			return "userLibrary/myInfo/modifyCheck";
 		}
@@ -66,7 +63,7 @@ public class MyInfoController {
 		logger.info("회원정보 수정 페이지");
 		
 		myInfoService.update(vo);
-		rttr.addAttribute("modify", "modify");
+		rttr.addAttribute("modiSucc", "modiSucc");
 		
 		return "redirect:/userLibrary/myInfo/myInfo";
 	}
@@ -78,15 +75,14 @@ public class MyInfoController {
 	}
 	
 	@RequestMapping(value="userLibrary/myInfo/leave", method=RequestMethod.POST)
-	public String leavePOST(@RequestParam("password") String rawPassword, HttpSession session, RedirectAttributes rttr) throws Exception{
+	public String leavePOST(@RequestParam("password") String rawPassword, HttpSession session, RedirectAttributes rttr, Model model) throws Exception{
 		logger.info("회원탈퇴 페이지");
 		
 		boolean result=myInfoService.passwordCheck(rawPassword);
 		
 		if(result==false){
-			//메세지 안넘어감, ajax로 변경 필요
-			rttr.addAttribute("fail", "fail");
-			return "redirect:/userLibrary/myInfo/leave";
+			model.addAttribute("leaveFail", "leaveFail");
+			return "userLibrary/myInfo/leave";
 		}
 		
 		myInfoService.delete();
@@ -156,20 +152,17 @@ public class MyInfoController {
 		logger.info("도서대출연장 페이지");
 		
 		String reserve=myInfoService.reserveCheck(bno);
-		System.out.println("reserve 찍어봄:"+reserve);
 		if(reserve.equals("1")){
 			rttr.addFlashAttribute("reserv", "reserv");
 			return "redirect:/userLibrary/myInfo/d_status";
 		}
 		String delayCheck=myInfoService.delayCheck();
-		System.out.println("delayCHeck찍어봄:"+delayCheck);
 		if(delayCheck.equals("1")){
 			rttr.addFlashAttribute("ingdelay", "ingdelay");
 			return "redirect:/userLibrary/myInfo/d_status";
 		}
 		
 		rttr.addFlashAttribute("delay", myInfoService.delay(bno));
-		System.out.println("날자출력 한번 해보자"+myInfoService.delay(bno));
 		rttr.addFlashAttribute("delaySuccess", "delaySuccess");
 		
 		return "redirect:/userLibrary/myInfo/d_status";
