@@ -36,5 +36,5 @@ public interface AdminUserService {
 	// 연체 유저 몇명인지 
 	public String cntLateUser(); 
 
-
+	public void lateMatil() throws Exception;
 }

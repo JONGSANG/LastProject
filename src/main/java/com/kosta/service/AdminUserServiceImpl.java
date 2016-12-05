@@ -130,4 +130,14 @@ public class AdminUserServiceImpl implements AdminUserService {
 		return adminUserdao.cntLateUser();
 	}
 
+	@Override
+	public void lateMatil() throws Exception {
+		List<String> lateUser=adminUserdao.lateUser();
+		String bTitle;
+		
+		for(int i=0; i<lateUser.size(); i++){
+			bTitle=adminUserdao.lateBook(lateUser.get(i));
+		}
+	}
+
 }
