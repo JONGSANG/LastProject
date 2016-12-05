@@ -72,9 +72,19 @@ UPDATE AFTER_LIST SET STATE=#{state}
 WHERE ID=#{id} AND ANUM=#{anum}
 </update>
 
+<update id="afterChange1">
+UPDATE AFTER SET TOCNT=TOCNT+1
+WHERE NUM=#{anum}
+</update>
+
 <update id="cultureChange">
 UPDATE CULTURE_LIST SET STATE=#{state}
 WHERE ID=#{id} AND ANUM=#{anum} 
+</update>
+
+<update id="cultureChange1">
+UPDATE CULTURE SET TOCNT=TOCNT+1
+WHERE NUM=#{anum}
 </update>
 
 <select id="schadule_list" resultType="SchadulVO">

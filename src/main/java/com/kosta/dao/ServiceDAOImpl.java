@@ -161,11 +161,10 @@ public class ServiceDAOImpl implements ServiceDAO {
 	// 방과후 이벤트 신청 메소드
 	// after_list 테이블에 먼저 신청자 리스트에 추가하고, after테이블에서
 	// 해당글에 대한 현제 카운터를 +1
+	// 카운터를 왜늘려 ㅡㅡ 아빡쳐
 	@Override
-	@Transactional
 	public void after_join(L_AfterVO vo) throws Exception {
 		sqlSession.insert("com.kosta.mappers.ServiceMapper.after_join", vo);
-		sqlSession.update("com.kosta.mappers.ServiceMapper.after_joinup", vo);
 	}
 	
 	// 방과후 이벤트 신청 취소 메소드
@@ -243,11 +242,10 @@ public class ServiceDAOImpl implements ServiceDAO {
 	// 문화행사 이벤트 신청 메소드
 	// culture_list 테이블에 먼저 신청자 리스트에 추가하고, culture테이블에서
 	// 해당글에 대한 현제 카운터를 +1
+	// 카운터를 왜늘려 ㅡㅡ 아빡쳐
 	@Override
-	@Transactional
 	public void culture_join(L_CultureVO vo) throws Exception {
 		sqlSession.insert("com.kosta.mappers.ServiceMapper.culture_join", vo);
-		sqlSession.update("com.kosta.mappers.ServiceMapper.culture_joinup", vo);
 	}
 	
 	// 문화행사 이벤트 신청 취소 메소드
