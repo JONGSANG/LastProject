@@ -24,7 +24,8 @@ public class MainController {
 		logger.info("도서관 메인 페이지");
 
 		// 로그인 후 세션
-		model.addAttribute("vo", mainService.getName());
+		model.addAttribute("vo", mainService.getName()); 
+		model.addAttribute("vo2", mainService.getNamead());
 
 		// 탭메뉴 공지사항
 		model.addAttribute("notice", mainService.noticeList());

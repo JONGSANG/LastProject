@@ -32,7 +32,11 @@
 		<th width="120px">작성 일자</th>
 		<th width="80px">조회수</th>
 	</tr>
-	
+	<c:if test="${empty list }">
+		<tr>
+			<td colspan = "7">작성된 글이 없습니다.</td>
+		</tr>
+	</c:if>
 	<c:forEach items="${list}" var="list" varStatus="var">
 	<tr>
 		<td>${list.num}</td>
@@ -51,7 +55,7 @@
 <a href='/userLibrary/service/min_board/register' style="float: right;">
 <button type="submit" class="btn btn-primary">글쓰기</button></a>
 </security:authorize>
-
+</div>
     
 		<div class="paging">
 		<ul class="pagination">
@@ -77,6 +81,6 @@
 		</ul>
 	</div>
 </div>
-</div>
+
 </body>
 </html>

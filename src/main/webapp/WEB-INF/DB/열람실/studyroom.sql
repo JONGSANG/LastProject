@@ -1,10 +1,14 @@
+select * from STUDYROOM;
+
+drop table STUDYROOM;
+
 CREATE TABLE STUDYROOM(
 	NUM VARCHAR(10) PRIMARY KEY,
 	STATE TINYINT NOT NULL,
 	START_TIME TIME,
 	END_TIME TIME,
 	ID VARCHAR(20)
-)
+);
 
 ---------------------------------------------------------------------
 --CREATE TABLE STUDYROOM(

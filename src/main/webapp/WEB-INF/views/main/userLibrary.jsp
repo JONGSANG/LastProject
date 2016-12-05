@@ -15,11 +15,11 @@
 		<div id="wrap">
 			<img src="/resources/images/popup.png" / width="120">
 			<div id="main_bn">
-				<li class="li-img"><a href="/"><img
+				<li class="li-img"><a href="/userLibrary/libNews/notice/read?num=3"><img
 						src="/resources/images/banner1.png" alt="" /></a></li>
-				<li class="li-img"><a href="/"><img
+				<li class="li-img"><a href="/userLibrary/libNews/notice/read?num=4"><img
 						src="/resources/images/banner2.png" alt="" /></a></li>
-				<li class="li-img"><a href="/"><img
+				<li class="li-img"><a href="/userLibrary/libNews/notice/read?num=2"><img
 						src="/resources/images/banner3.png" alt="" /></a></li>
 				<div id="main_bn_btn">
 					<li><a href="#"><img src="/resources/images/blt.png"></a></li>
@@ -169,7 +169,10 @@
 				<table>
 					<tr>
 						<td width="150px" valign="middle" align="center"><font
-							color="blue">${vo.name}</font>님<br>로그인되었습니다.</td>
+							color="blue">
+							<c:if test="${empty vo2.name }">${vo.name}</font>님<br>로그인되었습니다.</td></c:if>
+							<c:if test="${empty vo.name }">${vo2.name}</font>님<br>로그인되었습니다.</td></c:if>
+							
 						<td valign="middle"><a href="/userLibrary/myInfo/r_status"><img
 								alt="" src="/resources/images/logreser.png" width="100px"
 								height="33px"></a><br> <a

@@ -40,7 +40,7 @@
 	<tr>
 <%-- 		<td>${var.index+1}</td> --%>
 		<td>${list.num}</td>
-		<td style="width: 340px" id="overf"><a href='read?num=${list.num}'>${list.title} 
+		<td style="width: 340px" id="overf"><a href='read?num=${list.num}'>${list.title}
       	<c:if test="${list.re_cnt != 0}">[ ${list.re_cnt} ]</c:if></a></td>
 		<td>${list.id}</td>
 		<td><fmt:formatDate value="${list.write_date}" pattern="yyyy-MM-dd"/></td>
@@ -48,14 +48,17 @@
 	</tr>
 	</c:forEach>
 </table>
-	
-    <div class="text-center">
+
+
+	<div class="text-center">
     <security:authorize access="hasRole('ROLE_USER')">
 	<a href='/userLibrary/libNews/f_board/register' style="float: right;">
 	<button type="submit">글쓰기</button>
 	</a>
 	</security:authorize>
-	
+	 </div>
+   
+	 
 	<div class="paging">
 		<ul class="pagination">
 
@@ -77,7 +80,7 @@
 		</ul>
 		</div>
 	</div>
-    </div>
+   
     
 </body>
 </html>

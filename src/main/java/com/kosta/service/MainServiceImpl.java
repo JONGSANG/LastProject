@@ -28,6 +28,13 @@ public class MainServiceImpl implements MainService {
 		
 		return maindao.getName(auth.getName());
 	}
+	@Override
+	public MemberVO getNamead() throws Exception{
+		
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		
+		return maindao.getNamead(auth.getName());
+	}
 
 	@Override
 	public List<NoticeVO> noticeList() throws Exception {

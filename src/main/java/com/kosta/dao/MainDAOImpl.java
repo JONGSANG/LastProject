@@ -59,5 +59,11 @@ public class MainDAOImpl implements MainDAO{
 	public List<SchadulVO> scheduleList() throws Exception {
 		return sqlSession.selectList("MainMapper.scheduleList");
 	}
+
+	@Override
+	public MemberVO getNamead(String id) throws Exception {
+		
+		return sqlSession.selectOne("MainMapper.getNamead", id);
+	}
 	
 }

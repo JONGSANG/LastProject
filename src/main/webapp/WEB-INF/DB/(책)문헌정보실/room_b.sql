@@ -1,6 +1,5 @@
 select * from room_b;
 drop table room_b;
-
 select * from late 
 SELECT COUNT(BNO) FROM room_b WHERE BNO='d' and BRENT=1
 

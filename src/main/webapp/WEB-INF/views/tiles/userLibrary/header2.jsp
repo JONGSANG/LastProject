@@ -88,11 +88,14 @@
             </nav>
       </div>
         <header>
-              <security:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_MASTER' )">
-         <h1><a href="/adminLibrary"><img src="/resources/images/adminHomeIcon.png" alt="HomeIcon" width="100px"></a></h1>
-        </security:authorize>
-        <security:authorize access="hasAnyRole('anonymousUser', 'ROLE_USER', 'ROLE_SEMIUSER')">
+        <security:authorize access="hasAnyRole( 'ROLE_USER', 'ROLE_SEMIUSER')">
          <h1><a href="/"><img src="/resources/images/HomeIcon.png" alt="HomeIcon" width="100px"></a></h1>
+        </security:authorize>
+        <security:authorize access="isAnonymous()">
+        <h1><a href="/"><img src="/resources/images/HomeIcon.png" alt="HomeIcon" width="100px"></a></h1>
+        </security:authorize>
+          <security:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_MASTER' )">
+         <h1><a href="/adminLibrary"><img src="/resources/images/adminHomeIcon.png" alt="HomeIcon" width="100px"></a></h1>
         </security:authorize>
         </header>
        

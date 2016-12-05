@@ -12,6 +12,8 @@ public interface MainDAO {
 
 	public MemberVO getName(String id) throws Exception;
 	
+	public MemberVO getNamead(String id) throws Exception;
+	
 	public List<NoticeVO> noticeList() throws Exception;
 	
 	public List<F_BoardVO> f_boardList() throws Exception;

@@ -9,6 +9,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 select name from USER_INFO where ID=#{id}
 </select>
 
+<select id="getNamead" resultType="MemberVO">
+select name from admin_info where ID=#{id}
+</select>
+
 <!-- 메인 공지사항 리스트 띠우기 -->
 	<select id="n_listAll" resultType="NoticeVO">
 		select * from n_board order by num desc

@@ -11,6 +11,8 @@ import com.kosta.vo.SchadulVO;
 public interface MainService {
 	public MemberVO getName() throws Exception;
 	
+	public MemberVO getNamead() throws Exception;
+	
 	public List<NoticeVO> noticeList() throws Exception;
 	
 	public List<F_BoardVO> f_boardList() throws Exception;

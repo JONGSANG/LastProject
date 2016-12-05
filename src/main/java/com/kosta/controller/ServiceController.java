@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.kosta.service.SearchService;
 import com.kosta.service.ServiceService;
 import com.kosta.vo.AfterVO;
 import com.kosta.vo.CultureVO;
@@ -42,6 +43,10 @@ public class ServiceController {
 
 	@Autowired
 	private ServiceService service;
+	
+	@Autowired
+	private SearchService searchService;
+
 	
 
 	/*본 게시물 작성페이지 띄우기*/
@@ -752,7 +757,14 @@ public class ServiceController {
 		logger.info("도서배달서비스 목록 페이지");
 		
 		model.addAttribute("delivery", service.deliveryList(vo));
-		
+		// AuthenticationManager에 인증을 요청할 때 필요한 정보를 담는 목적
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		//장애여부를 확인함 (도서 대출 배달서비스 시 필요)
+		if(auth.getName().equals("anonymousUser")){
+			model.addAttribute("checkUser", "1");
+		} else {
+			model.addAttribute("checkUser", searchService.checkUser(auth.getName()));
+		}
 		return "userLibrary/service/delivery";
 	}
 	
