@@ -1,5 +1,6 @@
 package com.kosta.service;
 
+import java.util.Date;
 import java.util.List;
 
 import com.kosta.vo.HopeVO;
@@ -33,4 +34,10 @@ public interface MyInfoService {
 	public List<MyInfoVO> afterApply() throws Exception;
 
 	public List<M_BoardVO> minwonList() throws Exception;
+
+	public Date delay(String bno) throws Exception;
+
+	public String delayCheck() throws Exception;
+
+	public String reserveCheck(String bno) throws Exception;
 }

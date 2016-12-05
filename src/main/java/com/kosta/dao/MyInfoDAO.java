@@ -1,5 +1,6 @@
 package com.kosta.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import com.kosta.vo.HopeVO;
@@ -32,4 +33,10 @@ public interface MyInfoDAO {
 	public List<MyInfoVO> afterApply(String id) throws Exception;
 
 	public List<M_BoardVO> minwonList(String id) throws Exception;
+
+	public Date delay(String id) throws Exception;
+
+	public String delayCheck(String id) throws Exception;
+
+	public String reserveCheck(String bno) throws Exception;
 }
