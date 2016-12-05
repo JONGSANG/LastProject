@@ -129,7 +129,12 @@ public class SearchController {
 		System.out.println(auth.getName());
 		System.out.println(auth.getName());
 		//장애여부를 확인함 (도서 대출 배달서비스 시 필요)
-		model.addAttribute("checkUser", service.checkUser(auth.getName()));
+		if(auth.getName().equals("anonymousUser")){
+			model.addAttribute("checkUser", "1");
+		} else {
+			model.addAttribute("checkUser", service.checkUser(auth.getName()));
+		}
+		
 		// 책정보들을 read로 지정하여 값을 넘겨줌
 		model.addAttribute("read",service.readInfo(bNo));
 		// 주소창에 readInfo가 띄어지면 해당되는 책정보가 뜬다.

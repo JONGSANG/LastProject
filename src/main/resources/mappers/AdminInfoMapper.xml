@@ -118,6 +118,10 @@ INSERT INTO ADMIN_INFO(ID, NAME, BIRTH, GENDER, PHONE, EMAIL, ADDRESS, J_PART, J
 INSERT INTO ROLE(ID, ROLE) VALUES(#{id}, 'ROLE_ADMIN')
 </insert>
 
+<insert id="role1">
+INSERT INTO ROLE(ID, ROLE) VALUES(#{id}, 'ROLE_USER')
+</insert>
+
 <select id="passwordCheck" resultType="String">
 SELECT PWD FROM MEMBER WHERE ID=#{id}
 </select>
@@ -162,7 +166,7 @@ SELECT M.ID, A.NAME, A.J_PART, A.J_LEVEL, A.PHONE
 FROM MEMBER M
 INNER JOIN ADMIN_INFO A ON M.ID=A.ID
 INNER JOIN ROLE R ON M.ID=R.ID
-WHERE M.ID=#{id}
+WHERE M.ID=#{id} AND R.ROLE='ROLE_ADMIN'
 </select>
 
 <update id="adminPart">
