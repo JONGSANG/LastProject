@@ -67,7 +67,7 @@
 		<td>${reserve.reserve_end}</td>
 		</c:if>
 		
-		<td><a href="cancleR?bno=${reserve.bno}">취소</a></td>
+		<td><a href="cancelR?bno=${reserve.bno}">취소</a></td>
 	</tr>
 	</c:forEach>
 </table>

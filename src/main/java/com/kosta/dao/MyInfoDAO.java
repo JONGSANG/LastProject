@@ -39,4 +39,7 @@ public interface MyInfoDAO {
 	public String delayCheck(String id) throws Exception;
 
 	public String reserveCheck(String bno) throws Exception;
+	
+	public void cancelR(String bno) throws Exception;
+
 }

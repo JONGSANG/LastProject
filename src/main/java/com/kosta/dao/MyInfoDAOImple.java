@@ -102,4 +102,9 @@ public class MyInfoDAOImple implements MyInfoDAO {
 		return sqlSession.selectOne("MyInfoMapper.reserveCheck", bno);
 	}
 
+	@Override
+	public void cancelR(String bno) throws Exception {
+		sqlSession.delete("MyInfoMapper.cancelR",bno);
+	}
+
 }

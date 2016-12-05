@@ -120,5 +120,10 @@ public class MyInfoServiceImpl implements MyInfoService {
 	public String reserveCheck(String bno) throws Exception {
 		return myInfodao.reserveCheck(bno);
 	}
+
+	@Override
+	public void cancelR(String bno) throws Exception {
+		myInfodao.cancelR(bno);
+	}
 	
 }

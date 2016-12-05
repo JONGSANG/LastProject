@@ -4,6 +4,9 @@ SELECT check_late FROM rent_book WHERE check_submit = false and bno='012'
 
 SELECT MONEY FROM LATE WHERE end_date is null and bno='01010011'
 
+
+delete from late
+
 SELECT * FROM LATE l
 INNER JOIN BOOK b on b.bno = l.bno
 INNER JOIN USER_INFO u on u.id = l.id

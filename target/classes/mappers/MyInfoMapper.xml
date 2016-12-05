@@ -110,6 +110,10 @@ FROM RESERVE_BOOK
 WHERE BNO=#{bno}
 </select>
 
+<delete id="cancelR">
+delete from reserve_book where bno=#{bno}
+</delete>
+
 <select id="delayCheck" resultType="String">
 SELECT COUNT(ID) 
 FROM LATE 
