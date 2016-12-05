@@ -337,5 +337,11 @@ public class ServiceServiceImpl implements ServiceService {
 		return dao.deliveryList(vo);
 	}
 
+	@Override
+	public int rentCount() throws Exception {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		return dao.rentCount(auth.getName());
+	}
+
 	
 }

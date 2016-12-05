@@ -154,4 +154,6 @@ public interface ServiceService {
 
 	public List<DeliveryVO> deliveryList(DeliveryVO vo) throws Exception;
 
+	public int rentCount() throws Exception;
+
 }

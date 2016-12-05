@@ -153,4 +153,6 @@ public interface ServiceDAO {
 		public void deliveryApply(DeliveryVO vo) throws Exception;
 
 		public List<DeliveryVO> deliveryList(DeliveryVO vo) throws Exception;
+
+		public int rentCount(String id) throws Exception;
 }
