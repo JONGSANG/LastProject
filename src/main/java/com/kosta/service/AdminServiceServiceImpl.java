@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.kosta.dao.AdminServiceDAO;
 import com.kosta.vo.AfterVO;
 import com.kosta.vo.CultureVO;
+import com.kosta.vo.DeliveryVO;
 import com.kosta.vo.L_AfterVO;
 import com.kosta.vo.L_CultureVO;
 import com.kosta.vo.PageInfo;
@@ -92,6 +93,26 @@ public class AdminServiceServiceImpl implements AdminServiceService {
 	@Override
 	public void schedule_delete(SchadulVO vo) throws Exception {
 		adminServicedao.schedule_delete(vo);
+	}
+
+	@Override
+	public List<DeliveryVO> deliveryList() throws Exception {
+		return adminServicedao.deliveryList();
+	}
+
+	@Override
+	public List<DeliveryVO> deliverySuccesss(PageInfo page) throws Exception {
+		return adminServicedao.deliverySuccesss(page);
+	}
+
+	@Override
+	public void code(DeliveryVO vo) throws Exception {
+		adminServicedao.code(vo);
+	}
+
+	@Override
+	public int deliveryCount(PageInfo page) throws Exception {
+		return adminServicedao.deliveryCount(page);
 	}
 	
 }

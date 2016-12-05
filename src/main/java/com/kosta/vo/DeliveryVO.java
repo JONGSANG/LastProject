@@ -13,12 +13,12 @@ public class DeliveryVO {
 	private String address;
 	private String bTitle;
 	private String phone;
-	private int rent_num;
+	private String rent_num; 
 	
-	public int getRent_num() {
+	public String getRent_num() {
 		return rent_num;
 	}
-	public void setRent_num(int rent_num) {
+	public void setRent_num(String rent_num) {
 		this.rent_num = rent_num;
 	}
 	public Date getRent_date() {

@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.kosta.vo.AfterVO;
 import com.kosta.vo.CultureVO;
+import com.kosta.vo.DeliveryVO;
 import com.kosta.vo.L_AfterVO;
 import com.kosta.vo.L_CultureVO;
 import com.kosta.vo.PageInfo;
@@ -42,4 +43,12 @@ public interface AdminServiceDAO {
 	public void schadule_insert(SchadulVO vo) throws Exception;
 	
 	public void schedule_delete(SchadulVO vo) throws Exception;
+
+	public List<DeliveryVO> deliveryList() throws Exception;
+
+	public List<DeliveryVO> deliverySuccesss(PageInfo page) throws Exception;
+
+	public void code(DeliveryVO vo) throws Exception;
+
+	public int deliveryCount(PageInfo page) throws Exception;
 }

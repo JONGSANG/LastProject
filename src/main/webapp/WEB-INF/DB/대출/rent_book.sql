@@ -1,11 +1,20 @@
 select * from RENT_BOOK;
 drop table RENT_BOOK;
 
+delete from reserve_book where reserve_end is not null and reserve_end>=curdate()
+
+
 SELECT COUNT(BNO) 
 FROM RESERVE_BOOK 
 WHERE BNO='01020011'
 
 select* from reserve_book
+
+select reserve_date, reserve_end, a.bno, b.btitle
+from reserve_book a
+inner join book b on a.bno=b.bno
+where id='spurs892'
+
 
 select reserve_date, reserve_end, a.bno, b.btitle
 from reserve_book a
@@ -28,7 +37,7 @@ select exists(select bno from reserve_book where bno='01010012')
 delete from delivery where bno='01010sdfdsf1'
 
 
-update rent_book set submit_date = '2016-11-23' where bno = '01020012' and id = 'spurs89'
+update rent_book set submit_date = '2016-11-23' where bno = '01020032' and id = 'test3'
 update rent_book set submit_date = '2016-11-19' where bno = '01010013' and id = 'spurs891'
 SELECT count(distinct l.id) cntLateUser
 FROM LATE l

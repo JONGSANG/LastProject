@@ -90,4 +90,30 @@ WHERE ID=#{id} AND ANUM=#{anum}
 	delete from schadul where year=#{year} AND month=#{month} AND day=#{day}
 </delete>
 
+<select id="deliveryList" resultType="DeliveryVO">
+SELECT D.ID, B.BTITLE, D.REQUEST_DATE, D.BNO
+FROM DELIVERY D
+INNER JOIN BOOK B ON B.BNO=D.BNO
+WHERE D.STATE=0
+</select>
+
+<select id="deliverySuccesss" resultType="DeliveryVO">
+SELECT D.ID, B.BTITLE, D.BNO, R.SUBMIT_DATE, D.RENT_NUM
+FROM DELIVERY D
+INNER JOIN BOOK B ON B.BNO=D.BNO
+INNER JOIN RENT_BOOK R ON R.BNO=D.BNO
+WHERE D.STATE=1
+LIMIT #{pageStart}, #{perPageNum}
+</select>
+
+<select id="deliveryCount" resultType="int">
+SELECT COUNT(BNO) FROM DELIVERY WHERE STATE=1
+</select>
+
+<update id="deliveryUpdate">
+UPDATE DELIVERY
+SET STATE=1, RENT_NUM=#{rent_num}
+WHERE BNO=#{bNo}
+</update>
+
 </mapper>
