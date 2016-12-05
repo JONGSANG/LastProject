@@ -124,10 +124,6 @@ public class SearchController {
 		 
 		// AuthenticationManager에 인증을 요청할 때 필요한 정보를 담는 목적
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		System.out.println(auth.getName());
-		System.out.println(auth.getName());
-		System.out.println(auth.getName());
-		System.out.println(auth.getName());
 		//장애여부를 확인함 (도서 대출 배달서비스 시 필요)
 		if(auth.getName().equals("anonymousUser")){
 			model.addAttribute("checkUser", "1");

@@ -23,6 +23,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.kosta.service.ServiceService;
 import com.kosta.vo.AfterVO;
 import com.kosta.vo.CultureVO;
+import com.kosta.vo.DeliveryVO;
 import com.kosta.vo.L_AfterVO;
 import com.kosta.vo.L_CultureVO;
 import com.kosta.vo.M_BoardVO;
@@ -724,13 +725,35 @@ public class ServiceController {
 	}
 	
 	@RequestMapping(value="userLibrary/service/deliveryApply", method=RequestMethod.GET)
-	public String deliveryApplyGET(@RequestParam("bNo") String bno, Model model) throws Exception {
+	public String deliveryApplyGET(DeliveryVO vo, Model model) throws Exception {
 		
-		logger.info("도서배달서비스");
+		logger.info("도서배달서비스 신청 페이지");
 		
-		model.addAttribute("delivery", service.delivery(bno));
+		model.addAttribute("delivery", service.delivery(vo));
 		
 		return "userLibrary/service/deliveryApply";
+	}
+	
+	@RequestMapping(value="userLibrary/service/deliveryApplys", method=RequestMethod.GET)
+	public String deliveryApplysGET(DeliveryVO vo, RedirectAttributes rttr) throws Exception {
+		
+		logger.info("도서배달서비스 신청(실행) 페이지");
+		
+		service.deliveryApply(vo);
+		
+		rttr.addFlashAttribute("dilApply", "dilApply");
+		
+		return "redirect:/userLibrary/service/delivery";
+	}
+	
+	@RequestMapping(value="userLibrary/service/delivery", method=RequestMethod.GET)
+	public String deliveryGET(DeliveryVO vo, Model model) throws Exception {
+		
+		logger.info("도서배달서비스 목록 페이지");
+		
+		model.addAttribute("delivery", service.deliveryList(vo));
+		
+		return "userLibrary/service/delivery";
 	}
 	
 }

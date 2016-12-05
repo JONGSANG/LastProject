@@ -148,6 +148,10 @@ public interface ServiceService {
 	public void openboard_modify(O_BoardVO vo) throws Exception;
 	
 
-	public DeliveryVO delivery(String bno) throws Exception;
+	public DeliveryVO delivery(DeliveryVO vo) throws Exception;
+
+	public void deliveryApply(DeliveryVO vo) throws Exception;
+
+	public List<DeliveryVO> deliveryList(DeliveryVO vo) throws Exception;
 
 }

@@ -314,8 +314,27 @@ public class ServiceServiceImpl implements ServiceService {
 	}
 
 	@Override
-	public DeliveryVO delivery(String bno) throws Exception {
-		return dao.delivery(bno);
+	public DeliveryVO delivery(DeliveryVO vo) throws Exception {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		vo.setId(auth.getName());
+		DeliveryVO temp=dao.delivery(vo);
+		temp.setbNo(vo.getbNo());
+		temp.setbTitle(vo.getbTitle());
+		return temp;
+	}
+
+	@Override
+	public void deliveryApply(DeliveryVO vo) throws Exception {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		vo.setId(auth.getName());
+		dao.deliveryApply(vo);
+	}
+
+	@Override
+	public List<DeliveryVO> deliveryList(DeliveryVO vo) throws Exception {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		vo.setId(auth.getName());
+		return dao.deliveryList(vo);
 	}
 
 	

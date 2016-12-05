@@ -293,10 +293,21 @@ public class ServiceDAOImpl implements ServiceDAO {
 		sqlSession.selectOne("com.kosta.mappers.ServiceMapper.openboard_modify",vo);
 	}
 
+	@Override
+	public DeliveryVO delivery(DeliveryVO vo) throws Exception {
+		return sqlSession.selectOne("com.kosta.mappers.ServiceMapper.delivery", vo);
+	}
 
 	@Override
-	public DeliveryVO delivery(String bno) throws Exception {
-		return sqlSession.selectOne("com.kosta.mappers.ServiceMapper.delivery", bno);
+	public void deliveryApply(DeliveryVO vo) throws Exception {
+		sqlSession.insert("com.kosta.mappers.ServiceMapper.deliveryApply1", vo);
+		sqlSession.insert("com.kosta.mappers.ServiceMapper.deliveryApply2", vo);
+		sqlSession.update("com.kosta.mappers.ServiceMapper.deliveryApply3", vo);
+	}
+
+	@Override
+	public List<DeliveryVO> deliveryList(DeliveryVO vo) throws Exception {
+		return sqlSession.selectList("com.kosta.mappers.ServiceMapper.deliveryList", vo);
 	}
 	
 }

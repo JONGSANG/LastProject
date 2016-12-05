@@ -224,7 +224,29 @@ limit #{pageStart}, #{perPageNum}
 </update>
 
 <select id="delivery" resultType="DeliveryVO">
-SELECT 
+SELECT PHONE, ADDRESS
+FROM USER_INFO
+WHERE ID=#{id}
+</select>
+
+<insert id="deliveryApply1">
+INSERT INTO DELIVERY(ID, BNO, REQUEST_DATE) VALUES(#{id}, #{bNo}, CURDATE())
+</insert>
+
+<insert id="deliveryApply2">
+INSERT INTO RENT_BOOK(ID, BNO, RENT_DATE, SUBMIT_DATE) VALUE(#{id}, #{bNo}, CURDATE(), ADDDATE(CURDATE(), INTERVAL 30 DAY))
+</insert>
+
+<update id="deliveryApply3">
+UPDATE ROOM_B SET BRENT=-1 WHERE BNO=#{bNo}
+</update>
+
+<select id="deliveryList" resultType="DeliveryVO">
+SELECT B.BTITLE, R.RENT_DATE, R.SUBMIT_DATE, D.REQUEST_DATE, D.STATE, D.RENT_NUM
+FROM BOOK B
+INNER JOIN RENT_BOOK R ON B.BNO=R.BNO
+INNER JOIN DELIVERY D ON B.BNO=D.BNO
+WHERE D.ID=#{id}
 </select>
 
 </mapper>
