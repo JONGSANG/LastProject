@@ -73,11 +73,13 @@ public class AdminServiceDAOImpl implements AdminServiceDAO {
 	@Override
 	public void afterChange(L_AfterVO vo) throws Exception {
 		sqlSession.update("AdminServiceMapper.afterChange", vo);
+		sqlSession.update("AdminServiceMapper.afterChange1", vo);
 	}
 
 	@Override
 	public void cultureChange(L_CultureVO vo) throws Exception {
 		sqlSession.update("AdminServiceMapper.cultureChange", vo);
+		sqlSession.update("AdminServiceMapper.cultureChange1", vo);
 	}
 
 	@Override

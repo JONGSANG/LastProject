@@ -124,9 +124,6 @@ limit #{pageStart}, #{perPageNum}
 	insert into after_list (id, anum, after_date) values (#{id}, #{anum}, now())
 </insert>
 
-<update id="after_joinup">
-	update after set tocnt = tocnt+1 where num=#{anum}
-</update>
 
 <select id="after_sessionid" resultType="int">
 	select count(id) from after_list where anum = #{num} and id = #{id}
@@ -179,9 +176,6 @@ limit #{pageStart}, #{perPageNum}
 	insert into culture_list (id, anum, culture_date) values (#{id}, #{anum}, now())
 </insert>
 
-<update id="culture_joinup">
-	update culture set tocnt = tocnt+1 where num=#{anum}
-</update>
 
 <select id="culture_sessionid" resultType="int">
 	select count(id) from culture_list where anum = #{num} and id = #{id}
