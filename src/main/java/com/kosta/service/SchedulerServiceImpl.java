@@ -21,5 +21,11 @@ public class SchedulerServiceImpl implements SchedulerService {
 		//1000=1초
 		schedulerdao.roomTimeOut();
 	}
+
+	@Override
+	 @Scheduled(cron="0 0 * * * *")// : 매일 매시 정각
+	public void reserveDel() throws Exception {
+		schedulerdao.reserveDel();
+	}
 	
 }

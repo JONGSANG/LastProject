@@ -9,6 +9,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 UPDATE STUDYROOM SET STATE=0, START_TIME=NULL, END_TIME=NULL, ID=NULL WHERE (TIMEDIFF(END_TIME, CURTIME()) <![CDATA[<]]> 0)
 </update>
 
+<delete id="reserveDel">
+<![CDATA[
+delete from reserve_book where reserve_end<=curdate()
+]]>
+</delete>
 </mapper>
 
 
