@@ -23,6 +23,11 @@
 .viewtable #thstart {border-left: #EAEAEA 1px solid;}
 .viewtable #thend {border-right: #EAEAEA 1px solid;}
 
+.roomdelete {margin-left: 50px}
+.roomdelete th{background-color: #e5f2fd; font-size: 20px; border-radius: 5px 5px 0 0; padding-top: 5px}
+.roomdelete #de1{background-color: #e4eafe; font-size: 16px; font-weight: bolder;}
+.roomdelete #de2{background-color: #ececec; font-size: 14px; }
+
 .roombtn{
  width:170px; cursor:pointer; border-radius:10px;
  font-size:16px; padding: 8px 8px 8px 8px; text-decoration:none; display:inline-block;text-shadow: 0px 0px 0 rgba(255,255,255,0.3);font-weight:bold; color: #253559;

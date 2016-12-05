@@ -5,10 +5,11 @@
 <html>
 <head>
 <title>Kosta StudyRoom</title>
+<link rel="stylesheet" type="text/css" media="screen" href="/resources/css/userLibrary/room.css">
+
 </head>
 <body>
 
 			<tiles:insertAttribute name="body" />
-		
 </body>
 </html>
