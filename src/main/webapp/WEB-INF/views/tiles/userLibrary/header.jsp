@@ -94,6 +94,10 @@
         <security:authorize access="hasAnyRole('anonymousUser', 'ROLE_USER', 'ROLE_SEMIUSER')">
          <h1><a href="/"><img src="/resources/images/HomeIcon.png" alt="HomeIcon" width="100px"></a></h1>
         </security:authorize>
+        <security:authorize access="isAnonymous()">
+        <h1><a href="/"><img src="/resources/images/HomeIcon.png" alt="HomeIcon" width="100px"></a></h1>
+        </security:authorize>
+        
         
 <!--             <h1><a href="/"><img src="/resources/images/HomeIcon.png" alt="HomeIcon" width="100px"></a></h1> -->
         </header>

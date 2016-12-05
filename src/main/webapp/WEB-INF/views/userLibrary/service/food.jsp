@@ -14,6 +14,7 @@
 			<div id="link35">
 				<a href="/">home ></a><a href="#">서비스 >&nbsp;</a>
 			</div>
+			<b>구내 식단표</b>
 		</div>
 	</section>
 <div id="insidebody">
