@@ -22,17 +22,17 @@ public class SchedulerDAOImpl implements SchedulerDAO {
 	
 	@Override
 	public void updateLate() throws Exception {
-		sqlSession.update("MainMapper.updateLate");
+		sqlSession.update("SchedulerMapper.updateLate");
 	}
 
 	@Override
 	public void insertLate() throws Exception {
-		sqlSession.insert("MainMapper.insertLate");
+		sqlSession.insert("SchedulerMapper.insertLate");
 	}
 
 	@Override
 	public void updateRent() throws Exception {
-		sqlSession.update("MainMapper.updateRent");
+		sqlSession.update("SchedulerMapper.updateRent");
 	}
 
 }

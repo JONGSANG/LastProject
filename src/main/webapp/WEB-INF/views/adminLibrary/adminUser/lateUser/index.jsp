@@ -8,83 +8,107 @@
 <title>Insert title here</title>
 <script src="/resources/js/table_error.js" type="text/javascript"></script>
 <style type="text/css">
-.clickable {cursor: pointer;}
-.hover {text-decoration: underline;}
-th{ background: #1b608a; color: white; text-shadow: 1px 1px black;}
-.odd{ background: #F6FFCC;}
-.even{ background: #CCCCFF;}
+.clickable {
+	cursor: pointer;
+}
+
+.hover {
+	text-decoration: underline;
+}
+
+th {
+	background: #1b608a;
+	color: white;
+	text-shadow: 1px 1px black;
+}
+
+.odd {
+	background: #F6FFCC;
+}
+
+.even {
+	background: #CCCCFF;
+}
 </style>
 </head>
 <body>
-  	 <div class="box box-info">
-            <div class="box-header with-border">
-              <h3 class="box-title">연체 관리</h3>
-            </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-              <div class="box-body">
-				<table class="table table-bordered table-striped dataTable no-footer">
-				<button onclick="location.href='lateUserMail'" class="btn btn-info pull-right">연체사용자에게 단체 메일 보내기</button>
-             	<button onclick="location.href='lateTotalUser'" class="btn btn-info pull-left">전체 연체 통계 관리</button>
-				    <thead>
-				      <tr>
-				        <th class="sorting">ID</th>
-				        <th class="sorting">이름</th>
-				        <th class="sorting">책 번호</th>
-				        <th class="sorting">책 제목</th>
-				        <th class="sorting">저자</th>
-				        <th class="sort-date">출판사</th>
-				        <th class="sorting">연체 시작일</th>
-				        <th class="sorting">연체 일</th>
-				        <th class="sorting">연체료</th>
-				      </tr>
-				    </thead>
-				    <tbody>
-				    <c:forEach items="${lateUser}" var="lateUser">
-				      <tr>
-				       <td>${lateUser.id }</td>
-				       <td>${lateUser.name }</td>
-				       <td>${lateUser.bno }</td>
-				       <td>${lateUser.btitle }</td>
-				       <td>${lateUser.bwriter }</td>
-				       <td>${lateUser.bcompany }</td>
-				       <td><fmt:formatDate value="${lateUser.start_date }" pattern="yy-MM-dd"/> </td>       
-				       <td><b style="color: red;"><fmt:formatNumber value="${lateUser.money/100}" pattern="0"/> 일</b></td>
-				       <td><b style="color: red;">${lateUser.money } 원</b></td>
-				      </tr>
-				     </c:forEach>
-				    </tbody>
-				  </table>
+	<div class="box box-info">
+		<div class="box-header with-border">
+			<h3 class="box-title">연체 관리</h3>
+		</div>
+		<!-- /.box-header -->
+		<!-- form start -->
+		<div class="box-body">
+			<div style="height: 250px">
+				<table
+					class="table table-bordered table-striped dataTable no-footer">
+					<button onclick="location.href='lateUserMail'"
+						class="btn btn-info pull-right">연체사용자에게 단체 메일 보내기</button>
+					<button onclick="location.href='lateTotalUser'"
+						class="btn btn-info pull-left">전체 연체 통계 관리</button>
+					<thead>
+						<tr>
+							<th class="sorting">ID</th>
+							<th class="sorting">이름</th>
+							<th class="sorting">책 번호</th>
+							<th class="sorting">책 제목</th>
+							<th class="sorting">저자</th>
+							<th class="sort-date">출판사</th>
+							<th class="sorting">연체 시작일</th>
+							<th class="sorting">연체 일</th>
+							<th class="sorting">연체료</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${lateUser}" var="lateUser">
+							<tr>
+								<td>${lateUser.id }</td>
+								<td>${lateUser.name }</td>
+								<td>${lateUser.bno }</td>
+								<td>${lateUser.btitle }</td>
+								<td>${lateUser.bwriter }</td>
+								<td>${lateUser.bcompany }</td>
+								<td><fmt:formatDate value="${lateUser.start_date }"
+										pattern="yy-MM-dd" /></td>
+								<td><b style="color: red;"><fmt:formatNumber
+											value="${lateUser.money/100}" pattern="0" /> 일</b></td>
+								<td><b style="color: red;">${lateUser.money } 원</b></td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
 
-              </div>
-              <!-- /.box-body -->
-              <!-- /.box-footer -->
-            
-          
-      <div class="text-center">
-		<ul class="pagination">
-			<c:if test="${pageMaker.prev}">
-				<li><a
-					href="index${pageMaker.makeQuery(pageMaker.startPage - 1) }">&laquo;</a></li>
-			</c:if>
+			</div>
+			<!-- /.box-body -->
+			<!-- /.box-footer -->
 
-			<c:forEach begin="${pageMaker.startPage }"
-				end="${pageMaker.endPage }" var="idx">
-				<li <c:out value="${pageMaker.pageInfo.page == idx?'class =active':''}"/>>
-					<a href="index${pageMaker.makeQuery(idx)}">${idx}</a>
-				</li>
-			</c:forEach>
+		</div>
 
-			<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
-				<li><a
-					href="index${pageMaker.makeQuery(pageMaker.endPage +1) }">&raquo;</a></li>
-			</c:if>
+		<div class="text-center">
+			<ul class="pagination">
+				<c:if test="${pageMaker.prev}">
+					<li><a
+						href="index${pageMaker.makeQuery(pageMaker.startPage - 1) }">&laquo;</a></li>
+				</c:if>
 
-		</ul>
+				<c:forEach begin="${pageMaker.startPage }"
+					end="${pageMaker.endPage }" var="idx">
+					<li
+						<c:out value="${pageMaker.pageInfo.page == idx?'class =active':''}"/>>
+						<a href="index${pageMaker.makeQuery(idx)}">${idx}</a>
+					</li>
+				</c:forEach>
+
+				<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+					<li><a
+						href="index${pageMaker.makeQuery(pageMaker.endPage +1) }">&raquo;</a></li>
+				</c:if>
+
+			</ul>
+		</div>
+
 	</div>
-	
-</div>
-          <!-- /.box -->
-	
+	<!-- /.box -->
+
 </body>
 </html>
