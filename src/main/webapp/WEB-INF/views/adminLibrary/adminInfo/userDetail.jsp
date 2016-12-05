@@ -14,7 +14,7 @@ th{text-align: center;}
 <body>
 	 <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">관리자 비밀번호 수정</h3>
+              <h3 class="box-title">회원 정보 수정</h3>
             </div>
               <div class="box-body">
                 <div class="form-group">

@@ -76,12 +76,6 @@ public class AdminBookController {
 				}
 			}
 		} else {
-			System.out.println(vo.getId());
-			System.out.println(vo.getId());
-			System.out.println(vo.getId());
-			System.out.println(vo.getBno());
-			System.out.println(vo.getBno());
-			System.out.println(vo.getBno());
 			model.addAttribute("userInfo", service.userInfo(vo));
 			model.addAttribute("rent", service.currentRent(vo));
 			model.addAttribute("rcnt", service.rentCnt(vo));

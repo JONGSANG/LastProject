@@ -5,5 +5,4 @@ public interface SchedulerService {
 	
 	//예약 된거 날짜계산후 삭제
 	public void reserveDel() throws Exception;
-	
 }
