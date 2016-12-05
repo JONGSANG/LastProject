@@ -118,19 +118,11 @@
 			</td>
 		</tr>
 	</table>
-<<<<<<< HEAD
 	</c:if>	
-<c:if test="${checkUser==1}">
-	<table>
-		<tr>
-			<td width="765px" style="padding-top: 5px; border: none;">
-=======
-	</c:if>
 	<c:if test="${checkUser==1}">
 	<table>
 		<tr>
 			<td colspan="3" style="padding-top: 5px; border: none;">
->>>>>>> 0c073b98695069491bc47f371202bd8ea9bbb664
 			<div class="fright">
 			<button onclick="javascript:history.back()" >돌아가기</button>
 			</div>

@@ -146,7 +146,6 @@ BNO varchar(20) ,
 REQUEST_DATE DATETIME,
 STATE tinyint default 0,
 RENT_NUM varchar(20)
-
 );
 
 ----------문화행사-----------

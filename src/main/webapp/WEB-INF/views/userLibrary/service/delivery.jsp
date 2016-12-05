@@ -73,13 +73,14 @@ if(maxBook=='maxBook'){
 			<td>승인완료</td>
 		</c:if>
 		<c:if test="${delivery.rent_num!=null}">
-		<td><a href="http://service.epost.go.kr/trace.RetrieveEmsTrace.postal?ems_gubun=E&POST_CODE=${delivery.rent_num}" onClick="window.open(this.href, 'findID', 'width=714, height=553, left=500, top=150'); return false;">${delivery.rent_num}</a></td>
-		</c:if>
-		<c:if test="${delivery.rent_num==0}">
-		<td>배송 대기중</td>
-		</c:if>
+      <td><a href="http://service.epost.go.kr/trace.RetrieveEmsTrace.postal?ems_gubun=E&POST_CODE=${delivery.rent_num}" onClick="window.open(this.href, 'findID', 'width=714, height=553, left=500, top=150'); return false;">${delivery.rent_num}</a></td>
+      </c:if>
+      <c:if test="${delivery.rent_num==null}">
+      <td>배송 대기중</td>
+      </c:if>
 	</tr>
 	</c:forEach>
+	
 </table>
 </c:if>
 </div>
