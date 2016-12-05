@@ -5,6 +5,9 @@ SELECT COUNT(BNO)
 FROM RESERVE_BOOK 
 WHERE BNO='01020011'
 
+delete from delivery where bno='01010sdfdsf1'
+
+
 update rent_book set submit_date = '2016-11-23' where bno = '01020012' and id = 'spurs89'
 update rent_book set submit_date = '2016-11-19' where bno = '01010013' and id = 'spurs891'
 SELECT count(distinct l.id) cntLateUser

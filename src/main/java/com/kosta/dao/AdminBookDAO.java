@@ -30,8 +30,15 @@ public interface AdminBookDAO {
 	
 	// 연체자인지 판별
 	public int checkLateUser(Rent_BookVO vo);
-
+	
+	// 다른사람이 예약중인 도서인지 판별
+	public int selectReserve(Rent_BookVO vo);
+	
 	//반납
+	//도서배달이 되어있으면 지워버림.
+	public void deleteDel(Rent_BookVO vo);
+	//대출 예약이 되어 있으면 그책의 예약 기간을 넣어줌
+	public void updateReserve(Rent_BookVO vo);
 	
 	// 책번호가 맞는 것인지 확인하는 서비스
 	public int selectBook2(Rent_BookVO vo);

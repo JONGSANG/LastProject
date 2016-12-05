@@ -144,4 +144,19 @@ public class AdminBookDAOImpl implements AdminBookDAO {
 		sqlSession.insert(namespace+"insertRoom_b", vo);
 	}
 
+	@Override
+	public int selectReserve(Rent_BookVO vo) {
+		return sqlSession.selectOne(namespace+"selectReserve",vo);
+	}
+
+	@Override
+	public void updateReserve(Rent_BookVO vo) {
+		sqlSession.update(namespace+"updateReserve", vo);
+	}
+
+	@Override
+	public void deleteDel(Rent_BookVO vo) {
+		sqlSession.delete(namespace+"deleteDel", vo);
+	}
+
 }

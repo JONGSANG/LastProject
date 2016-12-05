@@ -170,8 +170,8 @@ where a.bNo = #{bNo}
 
 <!-- 예약하기 -->
 <insert id="reserve">
-insert into reserve_book
-value(#{bno},#{id},curdate(),#{submit_date})
+insert into reserve_book(BNO,id,RESERVE_DATE)
+value(#{bno},#{id},curdate())
 </insert>
 
 

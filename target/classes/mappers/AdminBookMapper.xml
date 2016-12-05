@@ -33,6 +33,10 @@ SELECT check_late FROM rent_book WHERE check_submit = false and bno=#{bno}
 SELECT MONEY FROM LATE WHERE end_date is null and bno=#{bno}
 </select>
 
+<select id="selectReserve" resultType="int">
+SELECT COUNT(id) from reserve_book where id=#{id} and bno=#{bno}
+</select>
+
 <select id="userInfo" resultType="User_InfoVO">
 SELECT * FROM USER_INFO WHERE ID=#{id}
 </select>
@@ -82,7 +86,13 @@ UPDATE ROOM_B SET BRENT=-1 , BRENT_CNT=BRENT_CNT+1
 WHERE BNO=#{bno}
 </update>
 
+<update id="updateReserve">
+update reserve_book set reserve_end=date_add(curdate(), interval +7 day ) where bno = #{bno}
+</update>
 
+<delete id="deleteDel">
+delete from delivery where bno=#{bno}
+</delete>
 
 <!-- 신규 도서 등록 SQL -->
 <insert id="insertBook">
