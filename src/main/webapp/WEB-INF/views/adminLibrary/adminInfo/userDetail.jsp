@@ -92,13 +92,13 @@ th{text-align: center;}
 		<td>${rent.btitle}</td>
 		<td>${rent.rent_date}</td>
 		<td>${rent.submit_date}</td>
-		<c:if test="${rent.late==0}">
+		<c:if test="${rent.late<=0}">
 		<td>연체없음</td>
 		</c:if>
-		<c:if test="${rent.late!=0}">
+		<c:if test="${rent.late>0}">
 		<td>${rent.late}일</td>
 		</c:if>
-		<c:if test="${rent.late==0}"><td>대출중</td> </c:if>
+		<c:if test="${rent.late<=0}"><td>대출중</td> </c:if>
 		<c:if test="${rent.late>0}"><td style="color: red;">연체중</td></c:if>
 	</tr>
 	</c:forEach>
