@@ -5,6 +5,20 @@ SELECT COUNT(BNO)
 FROM RESERVE_BOOK 
 WHERE BNO='01020011'
 
+select* from reserve_book
+
+select reserve_date, reserve_end, a.bno, b.btitle
+from reserve_book a
+inner join book b on a.bno=b.bno and a.id='spurs892'
+inner join rent_book c on a.bno=c.bno and check_submit = false
+
+
+select b.btitle ,r.reserve_date, r.reserve_end, rb.submit_date
+from reserve_book r
+inner join book b on r.bno=b.bno
+inner join rent_book rb on r.bno=rb.bno and check_submit=false
+where r.id = 'spurs892'
+
 
 delete from reserve_book where reserve_end=curdate()
 
@@ -163,7 +177,8 @@ delay tinyint DEFAULT 0
 );
 
 --delay 0은 반납연기가능 1은 연기불가
-alter table rent_book add check_late boolean default false
+alter table rent_book add delay tinyint DEFAULT 0
+
 
 SELECT ID FROM RENT_BOOK WHERE BNO='01010011' AND CHECK_SUBMIT IS FALSE
 

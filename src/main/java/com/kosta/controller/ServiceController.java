@@ -743,6 +743,12 @@ public class ServiceController {
 	public String deliveryApplysGET(DeliveryVO vo, RedirectAttributes rttr) throws Exception {
 		
 		logger.info("도서배달서비스 신청(실행) 페이지");
+		int bookCheck=service.rentCount();
+		System.out.println("책갯수 한번 세봄"+bookCheck);
+		if(bookCheck>=5){
+			rttr.addFlashAttribute("maxBook", "maxBook");
+			return "redirect:/userLibrary/service/delivery";
+		}
 		
 		service.deliveryApply(vo);
 		

@@ -17,7 +17,7 @@
 		<tiles:insertAttribute name="header" />
 		<tiles:insertAttribute name="menu" />
 		
-		<div class="content-wrapper"  style="min-height: 901px; padding: 10px;">
+		<div class="content-wrapper"  style="min-height: 901px; padding: 10px; padding-left: 30px">
 		<tiles:insertAttribute name="body" />
 		</div>
 		

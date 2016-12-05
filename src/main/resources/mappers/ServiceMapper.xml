@@ -249,4 +249,9 @@ INNER JOIN DELIVERY D ON B.BNO=D.BNO
 WHERE D.ID=#{id}
 </select>
 
+<select id="rentCount" resultType="int">
+SELECT COUNT(BNO)
+FROM RENT_BOOK WHERE ID=#{id} AND CHECK_SUBMIT=FALSE
+</select>
+
 </mapper>

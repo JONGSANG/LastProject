@@ -53,12 +53,10 @@ WHERE R.ID=#{id} AND CHECK_SUBMIT=FALSE
 </select>
 
 <select id="reserveBook" resultType="MyInfoVO">
-SELECT RE.RESERVE_DATE, RE.RESERVE_END, RB.SUBMIT_DATE, B.BTITLE, RM.BRENT
-FROM RESERVE_BOOK RE
-INNER JOIN BOOK B ON RE.BNO=B.BNO 
-INNER JOIN RENT_BOOK RB ON RE.BNO=RB.BNO 
-INNER JOIN ROOM_B RM ON RE.BNO=RM.BNO
-WHERE RE.ID=#{id}
+select reserve_date, reserve_end, a.bno, b.btitle
+from reserve_book a
+inner join book b on a.bno=b.bno
+where id=#{id}
 </select>
 
 <select id="rent" resultType="Rent_BookVO">

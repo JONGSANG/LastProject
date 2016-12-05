@@ -42,11 +42,9 @@
 	
 	<table class="listtable">
 	<tr>
-		<th width="200px">책제목</th>
-		<th width="130px">예약일</th>
-		<th width="130px">반남예정일</th>
-		<th width="130px">예약만료일</th>
-		<th width="90px">상태</th>
+		<th width="360px">책제목</th>
+		<th width="160px">예약일</th>
+		<th width="160px">예약만료일</th>
 		<th width="90px">취소</th>
 	</tr>
 	
@@ -60,10 +58,14 @@
 	<tr>
 		<td>${reserve.btitle}</td>
 		<td>${reserve.reserve_date}</td>
-		<td>${reserve.submit_date}</td>
-		<td>구현예정</td>
-		<c:if test="${reserve.brent==1}"> <td style="color: red;">대출중</td> </c:if>
-		<td><a href="">취소</a></td>
+		<c:if test="${reserve.reserve_end==NULL}">
+		<td>반납 미완료</td>
+		</c:if>
+		<c:if test="${reserve.reserve_end!=NULL}">
+		<td>${reserve.reserve_end}</td>
+		</c:if>
+		
+		<td><a href="cancleR?bno=">취소</a></td>
 	</tr>
 	</c:forEach>
 </table>

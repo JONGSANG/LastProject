@@ -15,7 +15,6 @@ import com.kosta.vo.L_CultureVO;
 import com.kosta.vo.M_BoardVO;
 import com.kosta.vo.M_Board_ReVO;
 import com.kosta.vo.O_BoardVO;
-import com.kosta.vo.SchadulVO;
 
 @Repository
 public class ServiceDAOImpl implements ServiceDAO {
@@ -308,6 +307,11 @@ public class ServiceDAOImpl implements ServiceDAO {
 	@Override
 	public List<DeliveryVO> deliveryList(DeliveryVO vo) throws Exception {
 		return sqlSession.selectList("com.kosta.mappers.ServiceMapper.deliveryList", vo);
+	}
+
+	@Override
+	public int rentCount(String id) throws Exception {
+		return sqlSession.selectOne("com.kosta.mappers.ServiceMapper.rentCount", id);
 	}
 	
 }

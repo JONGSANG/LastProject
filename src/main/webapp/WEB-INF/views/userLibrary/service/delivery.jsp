@@ -14,6 +14,11 @@ var dilApply='${dilApply}';
 if(dilApply=='dilApply'){
 	alert("도서배달 신청완료");
 }
+var maxBook='${maxBook}';
+
+if(maxBook=='maxBook'){
+	alert("1인당 최대 5권까지 대출 가능합니다");
+}
 </script>
 </head>
 <body>

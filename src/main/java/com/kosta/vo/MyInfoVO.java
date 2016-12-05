@@ -8,11 +8,18 @@ public class MyInfoVO {
 	private String rent_date;
 	private String submit_date;
 	private String reserve_date;
+	private String reserve_end;
 	private int brent;
 	private boolean check_submit;
 	private boolean check_late;
 	private int delay;
 	
+	public String getReserve_end() {
+		return reserve_end;
+	}
+	public void setReserve_end(String reserve_end) {
+		this.reserve_end = reserve_end;
+	}
 	public int getDelay() {
 		return delay;
 	}
