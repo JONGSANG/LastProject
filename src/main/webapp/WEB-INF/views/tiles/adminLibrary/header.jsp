@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <header class="main-header">
     <!-- Logo -->
@@ -35,12 +37,13 @@
                 </p>
               </li>
               <!-- Menu Body -->
+              <c:url value="/j_spring_security_logout" var="logout"></c:url>
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div>
+                  <a href="/adminLibrary/adminInfo/adminCheck" class="btn btn-default btn-flat">비밀번호 수정</a>
+                </div> 
                 <div class="pull-right">
-                  <a href="/" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="${logout}" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
