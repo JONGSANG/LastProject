@@ -35,7 +35,7 @@ select name from admin_info where ID=#{id}
 		INSERT INTO late(id, bno, start_date)
 		SELECT id, bno, SUBMIT_DATE 
 		FROM RENT_BOOK a
-		where datediff(curdate(),SUBMIT_DATE) > 0
+		where datediff(curdate(),SUBMIT_DATE) > 0 and check_submit = false
 		and NOT EXISTS (SELECT bno, start_date FROM late b where a.bno=b.bno and a.submit_date=b.start_date)
 	]]>
 	</insert>
