@@ -18,16 +18,6 @@ public interface MainService {
 	public List<F_BoardVO> f_boardList() throws Exception;
 	
 	public List<M_BoardVO> m_boardList() throws Exception;
-	
-	// 연체료 삽입 메소드
-	public void insertLate() throws Exception;
-	
-	// 연체료 업데이트 메소드
-	public void updateLate() throws Exception;
-	
-	// 연체된 사항을 rent_book 테이블에서 업데이트
-	public void updateRent() throws Exception;
-	
 	//스케줄
 	public List<SchadulVO> scheduleList() throws Exception;
 }

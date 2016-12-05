@@ -19,4 +19,20 @@ public class SchedulerDAOImpl implements SchedulerDAO {
 	public void reserveDel() throws Exception {
 		sqlSession.delete("SchedulerMapper.reserveDel");
 	}
+	
+	@Override
+	public void updateLate() throws Exception {
+		sqlSession.update("MainMapper.updateLate");
+	}
+
+	@Override
+	public void insertLate() throws Exception {
+		sqlSession.insert("MainMapper.insertLate");
+	}
+
+	@Override
+	public void updateRent() throws Exception {
+		sqlSession.update("MainMapper.updateRent");
+	}
+
 }

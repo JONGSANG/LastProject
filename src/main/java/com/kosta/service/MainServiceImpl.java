@@ -52,21 +52,6 @@ public class MainServiceImpl implements MainService {
 	}
 
 	@Override
-	public void updateLate() throws Exception {
-		maindao.updateLate();
-	}
-
-	@Override
-	public void insertLate() throws Exception {
-		maindao.insertLate();
-	}
-
-	@Override
-	public void updateRent() throws Exception {
-		maindao.updateRent();
-	}
-
-	@Override
 	public List<SchadulVO> scheduleList() throws Exception {
 		return maindao.scheduleList();
 	}

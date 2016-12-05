@@ -40,20 +40,6 @@ public class MainDAOImpl implements MainDAO{
 		return sqlSession.selectList("MainMapper.m_listAll");
 	}
 
-	@Override
-	public void updateLate() throws Exception {
-		sqlSession.update("MainMapper.updateLate");
-	}
-
-	@Override
-	public void insertLate() throws Exception {
-		sqlSession.insert("MainMapper.insertLate");
-	}
-
-	@Override
-	public void updateRent() throws Exception {
-		sqlSession.update("MainMapper.updateRent");
-	}
 
 	@Override
 	public List<SchadulVO> scheduleList() throws Exception {
