@@ -72,8 +72,8 @@
 					color="red">${afterVO.start_date }&nbsp;~&nbsp;${afterVO.end_date }</font></td>
 				<th width="70px">신청인원</th>
 				<td width="100px" id="listTitle" align="center"><font
-					color="blue">${afterVO.max_cnt }</font>&nbsp;/&nbsp;<font
-					color="red">${after_tocnt}</font></td>
+					color="blue">${after_tocnt}</font>&nbsp;/&nbsp;<font
+					color="red">${afterVO.max_cnt}</font></td>
 			</tr>
 			<tr>
 				<th>제목</th>

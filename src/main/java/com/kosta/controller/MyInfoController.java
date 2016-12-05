@@ -38,14 +38,14 @@ public class MyInfoController {
 	}
 	
 	@RequestMapping(value="userLibrary/myInfo/modifyCheck", method=RequestMethod.POST)
-	public String modifyCheckPOST(@RequestParam("password") String rawPassword, RedirectAttributes rttr) throws Exception{
+	public String modifyCheckPOST(@RequestParam("password") String rawPassword, Model model) throws Exception{
 		logger.info("비밀번호수정 확인 페이지");
 		
 		boolean result=myInfoService.passwordCheck(rawPassword);
 		if(result==false){
 			//메세지 안넘어감, ajax로 변경 필요
-			rttr.addAttribute("fail", "fail");
-			return "redirect:/userLibrary/myInfo/modifyCheck";
+			model.addAttribute("nopass", "nopass");
+			return "userLibrary/myInfo/modifyCheck";
 		}
 		return "redirect:/userLibrary/myInfo/modify";
 	}

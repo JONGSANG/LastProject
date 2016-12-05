@@ -4,10 +4,10 @@
 <html>
 <head>
 <script>
-	var fail='${fail}';
+	var nopass='${nopass}';
 	
-    if(false=='false'){
-    	alert("비밀번호가 맞지 않습니다");
+    if(nopass=='nopass'){
+    	alert("비밀번호가 맞지 않습니다. 다시 입력해 주세요");
     }
 	</script>
 <title>개인정보 수정</title>

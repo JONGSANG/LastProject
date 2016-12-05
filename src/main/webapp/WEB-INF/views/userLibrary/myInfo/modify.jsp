@@ -32,6 +32,7 @@ $(document).ready(function(){
 		    $('#pwd').focus();
 		    $('#pwd').val('');
 		    $('#pwd').val('');
+		    return false;
 		}
 	})
 	

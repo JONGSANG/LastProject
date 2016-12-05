@@ -68,8 +68,8 @@ function doImgPop(img){
 					color="red">${cultureVO.start_date }&nbsp;~&nbsp;${cultureVO.end_date }</font></td>
 				<th width="70px">신청인원</th>
 				<td width="100px" id="listTitle" align="center"><font
-					color="blue">${cultureVO.max_cnt }</font>&nbsp;/&nbsp;<font
-					color="red">${culture_tocnt}</font></td>
+					color="blue">${culture_tocnt}</font>&nbsp;/&nbsp;<font
+					color="red">${cultureVO.max_cnt}</font></td>
 			</tr>
 			<tr>
 				<th>제목</th>

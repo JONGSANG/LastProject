@@ -27,7 +27,8 @@ $(document).ready(function(){
 	
 	var idcheck;
 	$('#result').click(function(){
-		
+		var nullCheck=$('#id').val();
+		if(nullCheck.length!='0'){
 		$.ajax({
 			url:"/userLibrary/member/check",
 			type:"post",
@@ -42,6 +43,10 @@ $(document).ready(function(){
 				}
 			}
 			});
+		} else {
+			alert("아이디를 입력하세요");
+			return false;
+		}
 		});
 	
 	/* 가입하기 클릭시 */
@@ -58,7 +63,7 @@ $(document).ready(function(){
 			alert("입력하신 두개의 암호가 다릅니다. 다시 입력해주세요")
 		    $('#pwd').focus();
 		    $('#pwd').val('');
-		    $('#pwd').val('');
+		    $('#repwd').val('');
 		    return false;
 		} else if(idcheck==0&&$('#pwd').val()==$('#repwd').val()){
 			form.submit();

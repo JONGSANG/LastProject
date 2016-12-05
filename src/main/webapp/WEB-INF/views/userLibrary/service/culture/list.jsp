@@ -26,8 +26,8 @@
 		<th width="60px">번호</th>
 		<th width="70px">카테고리</th>
 		<th width="280px">제목</th>
-		<th width="90px">최대인원수</th>
 		<th width="90px">현재인원수</th>
+		<th width="90px">최대인원수</th>
 		<th width="100px">작성 일자</th>
 		<th width="80px">조회수</th>
 	</tr>
@@ -43,8 +43,8 @@
 		<td>${list.num }</td>
 		<td>${list.cselect}</td>
 		<td style="padding-top: 5px"><a href='read?num=${list.num}'>${list.title}</td>
-		<td>${list.max_cnt }</td>
 		<td>${list.tocnt}</td>
+		<td>${list.max_cnt}</td>
 		<td><fmt:formatDate value="${list.write_date}" pattern="yyyy-MM-dd"/></td>
 		<td>${list.viewcnt}</td>
 	</tr>

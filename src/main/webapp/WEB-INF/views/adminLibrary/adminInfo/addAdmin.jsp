@@ -9,8 +9,6 @@
 <script src="/resources/js/bootstrap-datepicker.js"></script>
 <link rel="stylesheet" href="/resources/css/adminLibrary/datepicker3.css">
 <script>
-/* 날짜 */
-
 
 $(document).ready(function(){
 	/* 메세지로만 암호일치여부확인 */
