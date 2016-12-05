@@ -132,8 +132,8 @@ public class AdminUserServiceImpl implements AdminUserService {
 
 	@Override
 	public void lateMatil() throws Exception {
-		List<String> lateUser=adminUserdao.lateUser();
-		String bTitle;
+		List<String> lateUser=adminUserdao.lateUser1();
+		List<String> bTitle;
 		
 		for(int i=0; i<lateUser.size(); i++){
 			bTitle=adminUserdao.lateBook(lateUser.get(i));

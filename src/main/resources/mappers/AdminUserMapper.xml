@@ -107,7 +107,7 @@ WHERE l.end_date is null
 ]]>
 </select>
 
-<select id="lateUser" resultType="String">
+<select id="lateUser1" resultType="String">
 SELECT DISTINCT ID FROM LATE
 </select>
 

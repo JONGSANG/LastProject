@@ -65,4 +65,16 @@ public class AdminUserDAOImpl implements AdminUserDAO {
 	public String cntLateUser() {
 		return sqlSession.selectOne("AdminUserMapper.cntLateUser");
 	}
+
+	@Override
+	public List<String> lateBook(String id) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<String> lateUser1() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

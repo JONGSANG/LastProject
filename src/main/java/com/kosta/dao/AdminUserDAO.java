@@ -33,5 +33,9 @@ public interface AdminUserDAO {
 	public LateInfoVO lateUserInfo();
 
 	// 연체 유저 몇명인지 
-	public String cntLateUser(); 
+	public String cntLateUser();
+
+	public List<String> lateBook(String id) throws Exception;
+
+	public List<String> lateUser1() throws Exception; 
 }
