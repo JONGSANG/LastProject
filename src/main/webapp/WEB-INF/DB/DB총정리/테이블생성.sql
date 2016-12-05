@@ -206,6 +206,7 @@ constraint fk_minwon_rep foreign key(mnum) REFERENCES minwon(num)  on delete cas
 );
 
 --------------방과후 -----------------
+
 CREATE TABLE after(
 NUM INTEGER auto_increment, 
 ID varchar(50),

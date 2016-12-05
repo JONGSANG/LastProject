@@ -131,9 +131,9 @@
 	</table>
 	</c:if>
 	<c:if test="${checkUser==1}">
-	<table>
+	<table style="width: 765px; margin-top: 5px">
 		<tr>
-			<td colspan="3" style="padding-top: 5px; border: none;">
+			<td style="padding-top: 5px; border: none;">
 			<div class="fright">
 			<button onclick="javascript:history.back()" >돌아가기</button>
 			</div>

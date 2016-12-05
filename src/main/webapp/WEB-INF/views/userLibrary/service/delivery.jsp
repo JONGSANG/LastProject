@@ -27,23 +27,14 @@ if(maxBook=='maxBook'){
 			<font style="font-size: 40px">도서배달서비스</font>
 		</div>
 		<div id="link">
-			<div id="link37">
+			<div id="link38">
 				<a href="/">home ></a><a href="#">서비스 >&nbsp;</a>
 			</div>
 			<b>도서배달서비스</b>
 		</div>
 	</section>
 <div id="insidebody">
-<p>도서배달서비스(택배비 무료)
-<p>KOSTA도서관에서는 책을 읽고 싶어도 도서관을 쉽게 찾지 못하는 장애인들을 위해 무료 도서배달서비스 제도를 시행하여 
-<p>독서인구 저변 확대에 기여하고 문화수혜 불평등을 해소하고자 하오니 많은 이용바랍니다
-
-<p>도서대출 및 반납
-<p>대출신청 : 도서검색 -> 상세보기 -> 도서배달서비스(장애인만 이용가능)
-<p>대출권수 : 월1회 1인 5권 이내 대출기간 : 30일 
-<p>대출 및 반납요금 : 무료 
-<p>자료반납 : 택배사에 방문수거요청 후 KOSTA도서관에 연락
-<p>반납주소 : 경기도 성남시 분당구 삼평동 대왕판교로 670길(구 682번지) 유스페이스2 B동
+<img alt="" src="/resources/images/library_delever.png">
 
 <c:if test="${checkUser==-1 }">
 <table class="listtable" style="margin-right: 10px">

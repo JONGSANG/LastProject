@@ -36,6 +36,7 @@
 		<tr>
 			<td colspan = "7">작성된 글이 없습니다.</td>
 		</tr>
+		</table>
 	</c:if>
 	<c:forEach items="${list}" var="list" varStatus="var">
 	<tr>
@@ -80,7 +81,8 @@
 
 		</ul>
 	</div>
-</div>
+	</div>
+
 
 </body>
 </html>

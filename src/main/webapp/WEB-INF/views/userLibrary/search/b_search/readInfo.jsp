@@ -108,21 +108,22 @@
 			</td>
 		<tr>			
 			<td id="vtd1">반납 예정일</td>
-			<td id="vtd2" colspan="2">[ ${read.submit_date} ] 입니다.<button onclick="location.href='/userLibrary/service/reserve?bno=${read.bNo}&submit_date=${read.submit_date}'">대출 예약하기</button></td>
+			<td id="vtd2" colspan="2">[ ${read.submit_date} ] 입니다.</td>
 		</tr>
-		</c:if>
-		</c:if>
-		</tr>
+		
+		</tr> 
 	</table>
+	<div style="padding: 10px 0 0 10px">
+	<button style="position: absolute; float: right; " onclick="location.href='/userLibrary/service/reserve?bno=${read.bNo}&submit_date=${read.submit_date}'">대출 예약하기</button>
+	</div>
+	</c:if>
+		</c:if>
 	<c:if test="${checkUser==-1&&read.bRent==1}">
 	<table>
 		<tr>
-			<td colspan="3" style="padding-top: 5px; border: none;">
+			<td  style="width:770px; padding-top: 10px; border: none;">
 			<div class="fright">
 			<button onclick="location.href='/userLibrary/service/deliveryApply?bNo=${read.bNo}&bTitle=${read.bTitle}'">도서배달서비스</button>
-			</div>
-			<td colspan="3" style="padding-top: 5px; border: none;">
-			<div class="fright">
 			<button onclick="javascript:history.back()" >돌아가기</button>
 			</div>
 			</td>
@@ -132,7 +133,7 @@
 	<c:if test="${checkUser==1}">
 	<table>
 		<tr>
-			<td width="765px" style="padding-top: 5px; border: none;">
+			<td width="765px" style="border: none; padding-top: 10px">
 			<div class="fright">
 			<button onclick="javascript:history.back()" >돌아가기</button>
 			</div>
