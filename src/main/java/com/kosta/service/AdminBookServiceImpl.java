@@ -124,7 +124,21 @@ public class AdminBookServiceImpl implements AdminBookService {
 	@Override
 	public void insertBook(BookVO vo) {
 		adminBookDAO.insertBook(vo);
-		
+	}
+
+	@Override
+	public int selectReserve(Rent_BookVO vo) {
+		return adminBookDAO.selectReserve(vo);
+	}
+
+	@Override
+	public void updateReserve(Rent_BookVO vo) {
+		adminBookDAO.updateReserve(vo);
+	}
+
+	@Override
+	public void deleteDel(Rent_BookVO vo) {
+		adminBookDAO.deleteDel(vo);
 	}
 
 }

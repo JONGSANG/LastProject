@@ -76,13 +76,22 @@ public class AdminBookController {
 				}
 			}
 		} else {
+			System.out.println(vo.getId());
+			System.out.println(vo.getId());
+			System.out.println(vo.getId());
+			System.out.println(vo.getBno());
+			System.out.println(vo.getBno());
+			System.out.println(vo.getBno());
 			model.addAttribute("userInfo", service.userInfo(vo));
 			model.addAttribute("rent", service.currentRent(vo));
 			model.addAttribute("rcnt", service.rentCnt(vo));
 			if (service.selectBook(vo) == 0) { // 입력한 책번호가 없거나 잘못 입력을 눌렀을때 0
 				model.addAttribute("msg", "NOBOOK");
 				return "adminLibrary/adminBook/rentBook/rent";
-			} else {
+			}else if(service.selectReserve(vo) == 0){ //예약중인도서인데 다른놈이 가져 왔을때 0
+				model.addAttribute("msg", "RESERVE");
+				return "adminLibrary/adminBook/rentBook/rent";
+			}else {
 				service.rentBook(vo);
 				model.addAttribute("userInfo", service.userInfo(vo));
 				model.addAttribute("rent", service.currentRent(vo));
@@ -120,19 +129,17 @@ public class AdminBookController {
 			if (service.checkLateBook(vo)) {
 				model.addAttribute("money", service.selectMoney(vo));
 				model.addAttribute("msg", "LATEBOOK");
-				service.submitLateBook(vo);
-				model.addAttribute("userInfo", service.userInfo(vo));
-				model.addAttribute("rent", service.currentRent(vo));
-				model.addAttribute("rcnt", service.rentCnt(vo));
-				return "adminLibrary/adminBook/rentBook/submit";
+				
 			} else {
 				model.addAttribute("msg", "SUBMIT");
-				service.submitBook(vo);
-				model.addAttribute("userInfo", service.userInfo(vo));
-				model.addAttribute("rent", service.currentRent(vo));
-				model.addAttribute("rcnt", service.rentCnt(vo));
-				return "adminLibrary/adminBook/rentBook/submit";
 			}
+			service.submitBook(vo);
+			service.updateReserve(vo);// 책번호기준 
+			service.deleteDel(vo); // 책번호기준 도서배달에 있으면 삭제
+			model.addAttribute("userInfo", service.userInfo(vo));
+			model.addAttribute("rent", service.currentRent(vo));
+			model.addAttribute("rcnt", service.rentCnt(vo));
+			return "adminLibrary/adminBook/rentBook/submit";
 		}
 	}
 

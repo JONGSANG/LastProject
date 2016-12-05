@@ -89,6 +89,8 @@
 		alert("[책번호]를 잘못입력 하셨습니다.");
 	}else if (result == 'LATE') {
 		alert("[연체]이용자로 대출이 불가능합니다.");
+	}else if (result =='RESERVE'){
+		alert("다른 고객이 [예약중]인 도서입니다.")
 	}
 
 	var rcnt = '${rcnt}';
