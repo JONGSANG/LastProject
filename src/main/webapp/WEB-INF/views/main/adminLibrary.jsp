@@ -13,6 +13,8 @@
 </script>
 </head> 
 <body>
-	adminLibrary영역
+	<div class="text-left">
+		<img src="/resources/images/adminTel.png"  width="600" >
+	</div>
 </body>
 </html>
