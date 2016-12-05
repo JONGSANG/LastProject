@@ -23,26 +23,26 @@ public class SchedulerServiceImpl implements SchedulerService {
 	}
 
 	@Override
-	@Scheduled(cron="* /1 * * * *")// : 매일 매시 정각
+	@Scheduled(fixedDelay=60000)
 	public void reserveDel() throws Exception {
 		schedulerdao.reserveDel();
 	}
 	
 
 	@Override
-	@Scheduled(cron="* /1 * * * *")// : 매일 매시 정각
+	@Scheduled(fixedDelay=60000)
 	public void updateLate() throws Exception {
 		schedulerdao.updateLate();
 	}
 
 	@Override
-	@Scheduled(cron="* /1 * * * *")// : 매일 매시 정각
+	@Scheduled(fixedDelay=60000)
 	public void insertLate() throws Exception {
 		schedulerdao.insertLate();
 	}
 
 	@Override
-	@Scheduled(cron="* /1 * * * *")// : 매일 매시 정각
+	@Scheduled(fixedDelay=60000)
 	public void updateRent() throws Exception {
 		schedulerdao.updateRent();
 	}
