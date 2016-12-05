@@ -5,6 +5,12 @@ SELECT COUNT(BNO)
 FROM RESERVE_BOOK 
 WHERE BNO='01020011'
 
+
+delete from reserve_book where reserve_end=curdate()
+
+select exists(select bno from reserve_book where bno='01010012')
+
+
 delete from delivery where bno='01010sdfdsf1'
 
 
