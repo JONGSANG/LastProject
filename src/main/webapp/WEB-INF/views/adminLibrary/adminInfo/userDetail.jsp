@@ -74,28 +74,6 @@ th{text-align: center;}
               </div>            
           </div>
 
-	 <!-- <div class="box box-info">
-            <div class="box-header with-border">
-              <h3 class="box-title">관리자 비밀번호 수정</h3>
-            </div>
-              <div class="box-body">
-                <div class="form-group">
-                <div class="col-sm-12">
-                
-                </div>
-                </div>
-              </div>
-              /.box-body
-              <div class="box-footer">
-                <button class="btn btn-default" onclick="javascript:history.back()">취소하기</button>
-                <button type="submit" class="btn btn-info pull-right">강제회원탈퇴</button>
-                </form>
-              </div>
-              /.box-footer
-            
-          </div> -->
-
-	
 	<table class="table table-bordered table-striped dataTable no-footer">
 		<tr>
 			<th>책 제목</th>

@@ -42,9 +42,10 @@
 	
 	<table class="listtable">
 	<tr>
-		<th width="360px">책제목</th>
-		<th width="160px">예약일</th>
-		<th width="160px">예약만료일</th>
+		<th width="100px">책번호</th>
+		<th width="320px">책제목</th>
+		<th width="130px">예약일</th>
+		<th width="130px">예약만료일</th>
 		<th width="90px">취소</th>
 	</tr>
 	
@@ -56,6 +57,7 @@
 	
 	<c:forEach items="${reserve}" var="reserve">
 	<tr>
+		<td>${reserve.bno}</td>
 		<td>${reserve.btitle}</td>
 		<td>${reserve.reserve_date}</td>
 		<c:if test="${reserve.reserve_end==NULL}">
@@ -65,7 +67,7 @@
 		<td>${reserve.reserve_end}</td>
 		</c:if>
 		
-		<td><a href="cancleR?bno=">취소</a></td>
+		<td><a href="cancleR?bno=${reserve.bno}">취소</a></td>
 	</tr>
 	</c:forEach>
 </table>

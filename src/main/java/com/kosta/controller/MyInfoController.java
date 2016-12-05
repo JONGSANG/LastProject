@@ -174,4 +174,6 @@ public class MyInfoController {
 		
 		return "redirect:/userLibrary/myInfo/d_status";
 	}
+//	@RequestMapping(value="userLibrary/myInfo/cancleR?bno=01010011" method=RequestMethod.GET)
+	
 }
