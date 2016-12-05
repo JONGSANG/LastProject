@@ -1,5 +1,6 @@
 package com.kosta.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -82,6 +83,23 @@ public class MyInfoDAOImple implements MyInfoDAO {
 	@Override
 	public List<M_BoardVO> minwonList(String id) throws Exception {
 		return sqlSession.selectList("MyInfoMapper.minwonList", id);
+	}
+
+	@Override
+	@Transactional
+	public Date delay(String id) throws Exception {
+		sqlSession.update("MyInfoMapper.delay", id);
+		return sqlSession.selectOne("MyInfoMapper.delayResult", id);
+	}
+
+	@Override
+	public String delayCheck(String id) throws Exception {
+		return sqlSession.selectOne("MyInfoMapper.delayCheck", id);
+	}
+
+	@Override
+	public String reserveCheck(String bno) throws Exception {
+		return sqlSession.selectOne("MyInfoMapper.reserveCheck", bno);
 	}
 
 }

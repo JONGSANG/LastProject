@@ -6,11 +6,15 @@
 <html>
 <head>
 <title>Insert title here</title>
+<style type="text/css">
+th {text-align: center;}
+td{text-align: center;}
+</style>
 </head>
 <body>
 	 <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">관리자 비밀번호 수정</h3>
+              <h3 class="box-title">회원 상세보기</h3>
             </div>
               <div class="box-body">
                 <div class="form-group">

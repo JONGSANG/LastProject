@@ -5,6 +5,11 @@
 <html>
 <head>
 <title>Insert title here</title>
+<style type="text/css">
+select {height: 30px; width: 200px}
+th {text-align: center; vertical-align: middle;}
+td{text-align: center; vertical-align: middle;}
+</style>
 </head>
 <body>
  <div class="box box-info">
@@ -13,8 +18,7 @@
             </div>
               <div class="box-body">
                 <div class="form-group">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-11">
+                <div class="col-sm-12">
                 <table class="table table-bordered table-striped dataTable no-footer">
 		<tr>
 			<th width="100px" style="text-align: center;">아이디</th>
@@ -24,9 +28,9 @@
 			<th width="250px" style="text-align: center;" colspan="2">직급</th>
 		</tr>
 		<tr>
-			<td id="vtd1" style="text-align: center;">${admin.id}</td>
-			<td id="vtd1" style="text-align: center;">${admin.name}</td>
-			<td id="vtd1" style="text-align: center;">${admin.phone}</td>
+			<td id="vtd1" style="text-align: center; padding-top: 15px">${admin.id}</td>
+			<td id="vtd1" style="text-align: center; padding-top: 15px">${admin.name}</td>
+			<td id="vtd1" style="text-align: center; padding-top: 15px">${admin.phone}</td>
 			<td id="vtd1" style="text-align: center;"><form action="/adminLibrary/adminInfo/adminPart" method="post">
 				<input type="hidden" name="id" value="${admin.id}">
 				<select name="j_part">
@@ -102,8 +106,8 @@
                 </div>
               </div>
               <div class="box-footer">
-              <div class="col-sm-11"></div>
-              <div class="col-sm-1">
+              <div class="col-sm-10"></div>
+              <div class="col-sm-2">
               
               <form action="/adminLibrary/adminInfo/adminDelete" method="post">
                 <input type="hidden" name="id" value="${admin.id}">

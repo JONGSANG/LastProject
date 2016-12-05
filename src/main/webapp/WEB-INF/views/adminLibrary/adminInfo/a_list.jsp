@@ -13,6 +13,10 @@
     }
 </script>
 <title>Insert title here</title>
+<style type="text/css">
+th {text-align: center;}
+td{text-align: center;}
+</style>
 </head>
 <body>
  <div class="box">

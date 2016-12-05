@@ -46,10 +46,10 @@ DELETE FROM ROLE WHERE ID=#{id}
 </delete>
 
 <select id="currentRent" resultType="MyInfoVO">
-SELECT R.RENT_DATE, R.SUBMIT_DATE, R.CHECK_SUBMIT, R.CHECK_LATE, B.BTITLE, DATEDIFF(CURDATE(),R.SUBMIT_DATE)>0 AS late, R.DELAY
+SELECT R.BNO, R.RENT_DATE, R.SUBMIT_DATE, R.CHECK_SUBMIT, R.CHECK_LATE, B.BTITLE, DATEDIFF(CURDATE(),R.SUBMIT_DATE)>0 AS late, R.DELAY
 FROM RENT_BOOK R
 INNER JOIN BOOK B ON R.BNO=B.BNO
-WHERE R.ID=#{id}
+WHERE R.ID=#{id} AND CHECK_SUBMIT=FALSE
 </select>
 
 <select id="reserveBook" resultType="MyInfoVO">
@@ -91,6 +91,30 @@ WHERE L.ID=#{id}
 <select id="minwonList" resultType="M_BoardVO">
 SELECT A.NUM, MSELECT, TITLE, MIN_DATE, (SELECT COUNT(NUM) FROM MINWON_REP WHERE A.NUM=NUM) as re_cnt
 FROM MINWON A
+WHERE ID=#{id}
+</select>
+
+<update id="delay">
+UPDATE RENT_BOOK 
+SET SUBMIT_DATE=ADDDATE(SUBMIT_DATE, INTERVAL 7 DAY), DELAY=1
+WHERE BNO=#{bno} AND CHECK_SUBMIT=FALSE
+</update>
+
+<select id="delayResult" resultType="Date">
+SELECT SUBMIT_DATE 
+FROM RENT_BOOK 
+WHERE BNO=#{bno} AND CHECK_SUBMIT=FALSE
+</select>
+
+<select id="reserveCheck" resultType="String">
+SELECT COUNT(BNO) 
+FROM RESERVE_BOOK 
+WHERE BNO=#{bno}
+</select>
+
+<select id="delayCheck" resultType="String">
+SELECT COUNT(ID) 
+FROM LATE 
 WHERE ID=#{id}
 </select>
 

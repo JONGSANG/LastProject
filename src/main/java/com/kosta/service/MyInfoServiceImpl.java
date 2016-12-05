@@ -1,5 +1,6 @@
 package com.kosta.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -102,6 +103,22 @@ public class MyInfoServiceImpl implements MyInfoService {
 	public List<M_BoardVO> minwonList() throws Exception {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		return myInfodao.minwonList(auth.getName());
+	}
+
+	@Override
+	public Date delay(String bno) throws Exception {
+		return myInfodao.delay(bno);
+	}
+
+	@Override
+	public String delayCheck() throws Exception {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		return myInfodao.delayCheck(auth.getName());
+	}
+
+	@Override
+	public String reserveCheck(String bno) throws Exception {
+		return myInfodao.reserveCheck(bno);
 	}
 	
 }

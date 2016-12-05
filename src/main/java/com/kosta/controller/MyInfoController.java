@@ -1,5 +1,7 @@
 package com.kosta.controller;
 
+import java.lang.ProcessBuilder.Redirect;
+
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -147,5 +149,29 @@ public class MyInfoController {
 		model.addAttribute("minResult", myInfoService.minwonList());
 		
 		return "userLibrary/myInfo/m_history";
+	}
+	
+	@RequestMapping(value="userLibrary/myInfo/delay", method=RequestMethod.GET)
+	public String delayGET(@RequestParam("bno") String bno ,Model model, RedirectAttributes rttr) throws Exception {
+		logger.info("도서대출연장 페이지");
+		
+		String reserve=myInfoService.reserveCheck(bno);
+		System.out.println("reserve 찍어봄:"+reserve);
+		if(reserve.equals("1")){
+			rttr.addFlashAttribute("reserv", "reserv");
+			return "redirect:/userLibrary/myInfo/d_status";
+		}
+		String delayCheck=myInfoService.delayCheck();
+		System.out.println("delayCHeck찍어봄:"+delayCheck);
+		if(delayCheck.equals("1")){
+			rttr.addFlashAttribute("ingdelay", "ingdelay");
+			return "redirect:/userLibrary/myInfo/d_status";
+		}
+		
+		rttr.addFlashAttribute("delay", myInfoService.delay(bno));
+		System.out.println("날자출력 한번 해보자"+myInfoService.delay(bno));
+		rttr.addFlashAttribute("delaySuccess", "delaySuccess");
+		
+		return "redirect:/userLibrary/myInfo/d_status";
 	}
 }

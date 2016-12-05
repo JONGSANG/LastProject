@@ -6,6 +6,22 @@
 <html>
 <head>
 <title>대출 현황</title>
+<script>
+	var delay='${delay}';
+	var reserv='${reserv}';
+	var ingdelay='${ingdelay}';
+	var delaySuccess='${delaySuccess}';
+	
+    if(reserv=='reserv'){
+    	alert("예약자가 대기중인 도서는 연장이 불가능합니다")
+    }
+    if(ingdelay=='ingdelay'){
+    	alert("연체중인 도서가 있으므로 연장이 불가능합니다")
+    }
+    if(delaySuccess=='delaySuccess'){
+    	alert(delay+" 까지 연기완료");
+    }
+</script>
 </head>
 <body>
 	<section>
@@ -70,7 +86,7 @@
 		<c:if test="${rent.late==0}"><td>대출중</td> </c:if>
 		<c:if test="${rent.late>0}"><td style="color: red;">연체중</td></c:if>
 		<c:if test="${rent.delay==0&&rent.late==0}">
-		<td><a href="">반납연기</a>
+		<td><a href="/userLibrary/myInfo/delay?bno=${rent.bno}">반납연기</a>
 		</c:if>
 		<c:if test="${rent.delay==1||rent.late>0}">
 		<td style="color: red;">연기불가</td>

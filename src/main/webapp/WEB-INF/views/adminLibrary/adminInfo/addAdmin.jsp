@@ -174,8 +174,8 @@ $(document).ready(function(){
 			<option value="018">018</option>
 			<option value="019">019</option>
 		</select>
-        <input type="number" style="width: 115px" name="phone2" pattern=".{3,4}" placeholder="3~4자리 숫자" maxlength="4" required>
-        <input type="number" style="width: 115px" name="phone3" pattern=".{4,4}" placeholder="4자리 숫자" maxlength="4" required>
+        <input type="number" style="width: 115px; padding-left: 10px" name="phone2" pattern=".{3,4}" placeholder="3~4자리 숫자" maxlength="4" required>
+        <input type="number" style="width: 115px; padding-left: 10px" name="phone3" pattern=".{4,4}" placeholder="4자리 숫자" maxlength="4" required>
       </div>
       
       <div class="form-group has-feedback">
