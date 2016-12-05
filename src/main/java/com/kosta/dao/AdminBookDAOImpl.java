@@ -159,4 +159,14 @@ public class AdminBookDAOImpl implements AdminBookDAO {
 		sqlSession.delete(namespace+"deleteDel", vo);
 	}
 
+	@Override
+	public void deleteRes(Rent_BookVO vo) {
+		sqlSession.delete(namespace+"deleteRes", vo);
+	}
+
+	@Override
+	public int checkReserve(Rent_BookVO vo) {
+		return sqlSession.selectOne(namespace+"checkReserve",vo);
+	}
+
 }

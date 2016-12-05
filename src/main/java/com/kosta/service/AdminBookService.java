@@ -8,10 +8,13 @@ import com.kosta.vo.User_InfoVO;
 
 public interface AdminBookService {
 	//대출
-	
+	//도서 예약이 되어있으면 지워버림.
+	public void deleteRes(Rent_BookVO vo);
 	// 회원이 등록되어있는지 확인하는 서비스
+	public int checkReserve(Rent_BookVO vo);
+	// 예약된 책인지 확인하는 서비스
 	public int selectMember(Rent_BookVO vo);
-	
+		
 	// 책번호가 맞는 것인지 확인하는 서비스
 	public int selectBook(Rent_BookVO vo);
 

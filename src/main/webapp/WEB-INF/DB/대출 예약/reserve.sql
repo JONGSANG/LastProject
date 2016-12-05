@@ -6,11 +6,14 @@ inner join room_b b on a.bno = b.bno
 left join rent_book c on a.bno=c.bno and check_submit=false
 left join reserve_book d on a.bno=d.bno
 
+select exists(select bno from reserve_book where id='sdlfkj' and bno='sdf' )
+
 update reserve_book set reserve_end = date_add(curdate(), interval +7 day ) where bno ='01010013'
 
 select date_add(curdate(), interval +7 day )
 SELECT COUNT(id) from reserve_book where id='spurs894' and bno='05010013'
 
+select exists(select bno from reserve_book where id='#{id}' and bno='#{bno}')
 
 CREATE TABLE RESERVE_BOOK (
 BNO varchar(20) ,

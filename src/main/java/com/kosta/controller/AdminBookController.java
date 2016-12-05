@@ -88,9 +88,22 @@ public class AdminBookController {
 			if (service.selectBook(vo) == 0) { // 입력한 책번호가 없거나 잘못 입력을 눌렀을때 0
 				model.addAttribute("msg", "NOBOOK");
 				return "adminLibrary/adminBook/rentBook/rent";
-			}else if(service.selectReserve(vo) == 0){ //예약중인도서인데 다른놈이 가져 왔을때 0
+			}
+			
+			System.out.println(service.selectReserve(vo));
+			
+			if(service.selectReserve(vo) != 0){ //예약 테이블에 있는지 판단 0이면 없다
+				if(service.checkReserve(vo)!=0){ //내가 예약한 것이 있다.
+					service.rentBook(vo);
+					service.deleteRes(vo); // 책번호기준 도서예약 있으면 삭제
+					model.addAttribute("userInfo", service.userInfo(vo));
+					model.addAttribute("rent", service.currentRent(vo));
+					model.addAttribute("rcnt", service.rentCnt(vo));
+					return "adminLibrary/adminBook/rentBook/rent";
+				}else{
 				model.addAttribute("msg", "RESERVE");
 				return "adminLibrary/adminBook/rentBook/rent";
+				}
 			}else {
 				service.rentBook(vo);
 				model.addAttribute("userInfo", service.userInfo(vo));

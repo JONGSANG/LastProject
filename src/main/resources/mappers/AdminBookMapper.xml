@@ -34,7 +34,11 @@ SELECT MONEY FROM LATE WHERE end_date is null and bno=#{bno}
 </select>
 
 <select id="selectReserve" resultType="int">
-SELECT COUNT(id) from reserve_book where id=#{id} and bno=#{bno}
+select exists(select bno from reserve_book where bno=#{bno})
+</select>
+
+<select id="checkReserve" resultType="int">
+select count(id) from reserve_book where id=#{id} and bno=#{bno}
 </select>
 
 <select id="userInfo" resultType="User_InfoVO">
@@ -92,6 +96,9 @@ update reserve_book set reserve_end=date_add(curdate(), interval +7 day ) where 
 
 <delete id="deleteDel">
 delete from delivery where bno=#{bno}
+</delete>
+<delete id="deleteRes">
+delete from reserve_book where bno=#{bno} and id = #{id}
 </delete>
 
 <!-- 신규 도서 등록 SQL -->

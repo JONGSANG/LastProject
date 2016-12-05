@@ -141,4 +141,14 @@ public class AdminBookServiceImpl implements AdminBookService {
 		adminBookDAO.deleteDel(vo);
 	}
 
+	@Override
+	public void deleteRes(Rent_BookVO vo) {
+		adminBookDAO.deleteRes(vo);
+	}
+
+	@Override
+	public int checkReserve(Rent_BookVO vo) {
+		return adminBookDAO.checkReserve(vo);
+	}
+
 }
