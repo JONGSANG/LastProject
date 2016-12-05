@@ -16,6 +16,8 @@ inner join book b on a.bno=b.bno
 where id='spurs892'
 
 
+update rent_book set submit_date='2016-12-01' where id='spurs894' and bno='03010281'
+
 select reserve_date, reserve_end, a.bno, b.btitle
 from reserve_book a
 inner join book b on a.bno=b.bno and a.id='spurs892'

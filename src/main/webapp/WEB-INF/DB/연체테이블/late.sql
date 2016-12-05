@@ -14,6 +14,9 @@ delete from late
 		where datediff(curdate(),SUBMIT_DATE) > 0 and check_submit = false
 		and NOT EXISTS (SELECT bno, start_date FROM late b where a.bno=b.bno and a.submit_date=b.start_date)
 
+		update rent_book set check_late = true where datediff(curdate(), submit_date)>0
+
+				update late set money = datediff( curdate(),start_date)*100 where end_date is null
 
 
 SELECT * FROM LATE l

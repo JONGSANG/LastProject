@@ -39,12 +39,6 @@ public class MainController {
 		//스케줄 정보
 		model.addAttribute("list", mainService.scheduleList());
 		
-		// 연체료 정보 삽입
-		mainService.insertLate();
-		// 연체료 계산
-		mainService.updateLate();
-		// 연체료 대출테이블에 업데이트
-		mainService.updateRent();
 		return "userLibrary";
 	}
 
@@ -52,12 +46,6 @@ public class MainController {
 	public String adminMain(Model model) throws Exception {
 		logger.info("관리자 메인 페이지");
 
-		// 연체료 정보 삽입
-		mainService.insertLate();
-		// 연체료 계산
-		mainService.updateLate();
-		// 연체료 대출테이블에 업데이트
-		mainService.updateRent();
 		return "adminLibrary";
 	}
 	
