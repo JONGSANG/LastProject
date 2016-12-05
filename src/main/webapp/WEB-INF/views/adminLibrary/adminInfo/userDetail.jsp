@@ -82,20 +82,26 @@ th{text-align: center;}
 			<th>연체일수</th>
 			<th>상태</th>
 		</tr>
-		<c:forEach items="${rent}" var="rent" >
-		<tr>
-			<td>${rent.btitle}</td>
-			<td>${rent.rent_date}</td>
-			<td>${rent.submit_date}</td>
-			<td><c:out value="${rent.late}" ></c:out></td>
-			<c:if test="${rent.check_submit==false}">
-				<c:if test="${rent.check_late==true}">
-				<td>연체중</td>
-				</c:if>
-				<td>대출중</td>
-			</c:if>
-		</tr> 
-		</c:forEach>
+		<c:if test="${empty rent}">
+	<tr>
+	<td colspan="6">내역이 존재하지 않습니다.</td>
+	</tr>
+	</c:if>
+	<c:forEach items="${rent}" var="rent">
+	<tr>
+		<td>${rent.btitle}</td>
+		<td>${rent.rent_date}</td>
+		<td>${rent.submit_date}</td>
+		<c:if test="${rent.late==0}">
+		<td>연체없음</td>
+		</c:if>
+		<c:if test="${rent.late!=0}">
+		<td>${rent.late}일</td>
+		</c:if>
+		<c:if test="${rent.late==0}"><td>대출중</td> </c:if>
+		<c:if test="${rent.late>0}"><td style="color: red;">연체중</td></c:if>
+	</tr>
+	</c:forEach>
 	</table>
 </body>
 </html>
