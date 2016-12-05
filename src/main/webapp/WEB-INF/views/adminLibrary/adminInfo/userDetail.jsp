@@ -7,14 +7,14 @@
 <head>
 <title>Insert title here</title>
 <style type="text/css">
-th {text-align: center;}
-td{text-align: center;}
+tr{text-align: center;}
+th{text-align: center;}
 </style>
 </head>
 <body>
 	 <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">회원 상세보기</h3>
+              <h3 class="box-title">관리자 비밀번호 수정</h3>
             </div>
               <div class="box-body">
                 <div class="form-group">
@@ -66,7 +66,7 @@ td{text-align: center;}
 		</tr>
 		<tr>
 			<td colspan="5">${user.address}</td>
-			<td colspan="3"><img img src="/resources/barcode_img/${user.id}.png" width="200"><button type="button" class="btn btn-info  pull-right" onclick="location.href='create?id=${user.id}'">바코드 생성</button></td>
+			<td colspan="3" align="center"><img img src="/resources/barcode_img/${user.id}.png" width="300"></td>
 		</tr>
 	</table>
                 </div>

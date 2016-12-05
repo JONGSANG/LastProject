@@ -6,6 +6,11 @@
 <html>
 <head>
 <title>도서검색</title>
+<style type="text/css">
+tr{text-align: center;}
+th{text-align: center;}
+</style>
+
 </head>
 <body>
             <div class="box-header">
@@ -56,13 +61,10 @@
 			<textarea id="regiwrite" style="padding: 10px 0 0 10px; resize: none;" name="content" rows="10" cols="104" readonly="readonly;" disabled="disabled">${read.bIntro}</textarea>
 			</td>
 		</tr>
-
 		<tr>
-			<th colspan="3">바코드</th>
+			<th colspan="1">바코드</th>
+			<td colspan="2" id="vtd2"><img src="/resources/barcode_img/${read.bNo}.png" width="300"></th>
 		</tr>
-		<tr>
-			<th colspan="3"><img src="/resources/barcode_img/${read.bNo}.png" width="200"></th>
-		</tr>
-
+		
 </body>
 </html>

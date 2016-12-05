@@ -134,7 +134,8 @@ public class AdminInfoController {
 		model.addAttribute("user", adminInfoService.detailUser(id));
 		//대여정보 출력
 		model.addAttribute("rent", adminInfoService.detailRent(id));
-		
+		//바코드 생성
+		barcode(id);
 		return "adminLibrary/adminInfo/userDetail";
 	}
 	
@@ -201,13 +202,7 @@ public class AdminInfoController {
 		
 		return "redirect:/adminLibrary/adminInfo/a_list";
 	}
-	
-	@RequestMapping(value="adminLibrary/adminInfo/create", method=RequestMethod.GET)
-	public String createGET(@RequestParam("id") String id) throws Exception{
-		barcode(id);
-		return "redirect:/adminLibrary/adminInfo/userDetail?id="+id;
-	}
-	
+		
 	// 바코드 생성기
 	private void barcode(String id) throws Exception{
 		String filename=id+".png";

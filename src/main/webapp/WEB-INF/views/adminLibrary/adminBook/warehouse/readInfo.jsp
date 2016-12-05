@@ -6,6 +6,11 @@
 <html>
 <head>
 <title>도서검색</title>
+<style type="text/css">
+tr{text-align: center;}
+th{text-align: center;}
+</style>
+
 </head>
 <body>
  <div class="box-header">
@@ -58,10 +63,8 @@
 			</td>
 		</tr>
 		<tr>
-			<th colspan="3">바코드</th>
-		</tr>
-		<tr>
-			<th colspan="3"><img src="/resources/barcode_img/${read.bNo}.png" width="200"></th>
+			<th colspan="1">바코드</th>
+			<td colspan="2" id="vtd2"><img src="/resources/barcode_img/${read.bNo}.png" width="300"></th>
 		</tr>
 		
 	</table>
