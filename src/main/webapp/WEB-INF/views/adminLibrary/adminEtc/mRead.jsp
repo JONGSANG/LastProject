@@ -19,7 +19,14 @@ if(repDel=='repDel'){
 </script>
 </head>
 <body>
-	<table>
+<div class="box box-info" style="width: 820px;">
+
+		<div class="box-header with-border">
+			<h3 class="box-title">민원 내용 상세보기</h3>
+            </div>
+		<div class="box-body">
+
+		<table width=1000; border="1"class="table table-bordered table-hober dataTable" >
 		<tr>
 			<th>글번호</th>
 			<td>${detail.num}</td>
@@ -34,26 +41,26 @@ if(repDel=='repDel'){
 		</tr>
 		<tr>
 			<th>제목</th>
-			<td>${detai.title}</td>
+			<td colspan="10">${detai.title}</td>
 		</tr>
 		<tr>
 			<td colspan="10"><textarea rows="20" cols="105" readonly="readonly">${detail.content}</textarea></td>
 		</tr>
 		<tr>
-			<td><a href='/adminLibrary/adminEtc/mList'><button type="submit">목록보기</button></a></td>
+			<td colspan="10"><a href='/adminLibrary/adminEtc/mList'><button type="submit" class="btn btn-info ">목록보기</button></a></td>
 		</tr>
 		</table>
 		<form method="post">
 			<input type="hidden" name="num" value="${detail.num}">
-			<table>
+		<table width=1000; border="1"class="table table-bordered table-hober dataTable" >
 			<tr>
 			<td colspan="2">댓글</td>
 			</tr>
 			<tr>
-			<td><textarea name="content" rows="5" cols="102" placeholder="내용을 입력해 주세요." ></textarea></td>
+			<td><textarea style="resize: none;" name="content" rows="5" cols="105" placeholder="내용을 입력해 주세요." ></textarea></td>
 			</tr>
 			<tr>
-				<td><button type="submit">댓글 작성</button></td>
+				<td><button type="submit" class="btn btn-info ">댓글 작성</button></td>
 			</tr>
 			</table>
 		</form>
@@ -63,12 +70,12 @@ if(repDel=='repDel'){
 				<td>${replyDetail.id}</td><td>&nbsp;|&nbsp;<fmt:formatDate value="${replyDetail.min_date}" pattern="yyyy-MM-dd" /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><textarea rows="4" cols="105" readonly="readonly">${replyDetail.content}</textarea></td>
+				<td colspan="2"><textarea  style="resize: none;" rows="4" cols="105" readonly="readonly">${replyDetail.content}</textarea></td>
 			</tr>
 			<tr>
 				<td colspan="2">
 				<c:if test="${replyDetail.id==id}">
-				<button type="button" onclick="location.href='/adminLibrary/adminEtc/mDelete?num=${replyDetail.num}'">삭제</button>
+				<button type="button" onclick="location.href='/adminLibrary/adminEtc/mDelete?num=${replyDetail.num}'" class="btn btn-info">삭제</button>
 				</c:if>
 				</td>
 			</tr>

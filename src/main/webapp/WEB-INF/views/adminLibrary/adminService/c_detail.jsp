@@ -15,7 +15,17 @@ if(maxcount=='full'){
 </script>
 </head>
 <body>
-	<table>
+	<div class="box box-info">
+		<div class="box-header with-border">
+			<h3 class="box-title">문화행사 신청자 목록</h3>
+		</div>
+		<!-- /.box-header -->
+		<!-- form start -->
+
+		<div class="box-body">
+
+			<table width="600" border="1"
+				class="table table-bordered table-hober dataTable">
 		<tr>
 			<th>제목</th>
 			<th>${detail.title}</th>
@@ -32,7 +42,8 @@ if(maxcount=='full'){
 		</tr>
 	</table>
 	
-	<table>
+			<table width="600" border="1"
+				class="table table-bordered table-hober dataTable">
 		<tr>
 			<td>아이디</td>
 			<td>신청일</td>
@@ -73,6 +84,10 @@ if(maxcount=='full'){
 		</tr>
 		</c:forEach>
 	</table>
+				</div>
+			<div class="text-center">
+				<ul class="pagination">
+
 	
 	<c:if test="${pageMaker.prev}">
 		<li><a
@@ -91,5 +106,10 @@ if(maxcount=='full'){
 		<li><a
 			href="c_detail${pageMaker.cultureDetail(pageMaker.endPage +1) }">&raquo;</a></li>
 	</c:if>
+	</ul>
+				</div>
+			
+			</div>
+	
 </body>
 </html>

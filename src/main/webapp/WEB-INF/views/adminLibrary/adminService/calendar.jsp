@@ -5,6 +5,11 @@
 <head>
 <title>도서관 일정</title>
 </head>
+	<div class="box box-info">
+		<div class="box-header with-border">
+		</div>
+		<!-- /.box-header -->
+
 <body class="hold-transition skin-blue sidebar-mini">
 	<section class="content-header">
 		<h1>도서관 일정관리</h1>
