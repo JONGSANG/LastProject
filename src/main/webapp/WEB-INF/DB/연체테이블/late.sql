@@ -7,6 +7,7 @@ SELECT MONEY FROM LATE WHERE end_date is null and bno='01010011'
 select * from rent_book
 delete from late
 
+		update late set money = datediff( curdate(),start_date)*100 where end_date is null
 
 		INSERT INTO late(id, bno, start_date)
 		SELECT id, bno, SUBMIT_DATE 
@@ -18,6 +19,7 @@ delete from late
 
 				update late set money = datediff( curdate(),start_date)*100 where end_date is null
 
+		update rent_book set check_late = true where datediff(curdate(), submit_date)>0
 
 SELECT * FROM LATE l
 INNER JOIN BOOK b on b.bno = l.bno

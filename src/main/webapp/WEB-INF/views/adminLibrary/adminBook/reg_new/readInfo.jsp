@@ -13,11 +13,14 @@ th{text-align: center;}
 
 </head>
 <body>
- <div class="box-header">
-<h3>등록 완료</h3>
-            </div>
+<div class="box box-info" style="width: 820px;">
 
-<table class="viewtable" style="width: 750px">
+		<div class="box-header with-border">
+			<h3 class="box-title">도서 등록 완료</h3>
+            </div>
+		<div class="box-body">
+
+<table class="viewtable" style="width: 780px;">
 	<tr>
 		<th style="text-align: center;">사진</th>
 		<th style="text-align: center;" colspan="2">도서 정보</th>
@@ -58,7 +61,7 @@ th{text-align: center;}
 			<th style="text-align: center;" colspan="3">책 소개</th>
 		</tr>
 		<tr>
-			<td colspan="3" height="300" align="left">
+			<td colspan="3" style=" height: 200px;" align="left">
 			<textarea id="regiwrite" style="padding: 10px 0 0 10px; resize: none;" name="content" rows="10" cols="104" readonly="readonly;" disabled="disabled">${read.bIntro}</textarea>
 			</td>
 		</tr>
@@ -68,6 +71,14 @@ th{text-align: center;}
 		</tr>
 		
 	</table>
+		</div>
+		<!-- /.box-body -->
+		<div class="box-footer">
+		</div>
+		<!-- /.box-footer -->
+
+	</div>
+	<!-- /.box -->
 
 
 </body>

@@ -39,7 +39,15 @@ function updateList(str){
 </script>
 </head>
 <body>
-<h3> 도서 구분 </h3>
+	<div class="box box-info">
+		<div class="box-header with-border">
+			<h3 class="box-title">문헌정보실 도서 목록</h3>
+		</div>
+		<!-- /.box-header -->
+		<!-- form start -->
+		<div class="box-body">
+			<h5>* 대 분류를 먼저 선택하여 주십시오</h5>
+			<h5>* 소 분류를 선택한 후 검색버튼을 눌러 주십시오</h5>
 <form method="get" name=myForm>
 	<table width="600" border="1" class="table table-bordered table-hober dataTable">
 		<tr>
@@ -58,7 +66,7 @@ function updateList(str){
 					<option>---------</option>
 				</select>
 				<input type="text" name="keyword">
-				<input type="submit" value="검색">
+				<button type="submit" class="btn btn-info pull-right">도서 검색</button>
 			</th>
 		</tr>
 	</table>

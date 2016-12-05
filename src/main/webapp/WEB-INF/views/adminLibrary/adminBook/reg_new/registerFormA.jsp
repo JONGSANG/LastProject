@@ -6,6 +6,10 @@
 <html>
 <head>
 <title>도서 등록</title>
+<style type="text/css">
+tr{text-align: center;}
+th{text-align: center;}
+</style>
 <script type="text/javascript">
         $(function() {
             $("#file").on('change', function(){
@@ -25,9 +29,16 @@
     </script>
 </head>
 <body>
-<h3>도서 등록</h3>
-<form action="registBook" method="post"  enctype="multipart/form-data">
-	<table width="600" border="1" >
+
+	<div class="box box-info" style="width: 740px;">
+		<div class="box-header with-border">
+			<h3 class="box-title">신규 도서 등록</h3>
+		</div>
+		<!-- /.box-header -->
+		<!-- form start -->
+		<div class="box-body">
+		<form action="registBook" method="post"  enctype="multipart/form-data">
+<table class="viewtable" style="width: 700px;">
 		<tr>
 			<th width="150" rowspan="6">
 				<img id="img_preview" width="150">
@@ -66,21 +77,31 @@
 			<th colspan="3">책 소개</th>
 		</tr>
 		<tr>
-			<th colspan="3" height="300" align="left">
-				<textarea style="resize: none;" name="bIntro" rows="16" cols="72" 
+			<th colspan="3"style=" height: 200px;" align="left">
+				<textarea style="resize: none;" name="bIntro" rows="16" cols="82" 
 				placeholder=" 
 					* 간단한 책소개를 입력하세요.
 					" ></textarea>
 			</th>
 		</tr>
 		<tr>
-			<td colspan="3">
-				<input type="submit" value="등록">
-				<input type="reset" value="취소">
+			<td colspan="3" >
+				<button type="submit" class="btn btn-info pull-right" >등록</button>
+				<button onclick="location.href='index'"
+				class="btn btn-info pull-right">취소</button>
 			</td>
 		</tr>
 	</table>
 </form>
+		</div>
+		<!-- /.box-body -->
+		<div class="box-footer">
+		</div>
+		<!-- /.box-footer -->
+
+	</div>
+	<!-- /.box -->
+
 
 </body>
 </html>
