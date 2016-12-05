@@ -142,6 +142,7 @@ public class AdminBookController {
 	@RequestMapping(value = "adminLibrary/adminBook/**/readInfo", method = RequestMethod.GET)
 	public void readInfo(Model model, @RequestParam("bNo") String bNo) throws Exception {
 		logger.info("search result!  page !");
+		barcode(bNo);
 		model.addAttribute("read",searchService.readInfo(bNo));
 	}
 
@@ -269,6 +270,13 @@ public class AdminBookController {
 	private void uploadFile(String filename, byte[] fileData) throws Exception {
 		File target = new File(bookImgPath, filename);
 		FileCopyUtils.copy(fileData, target);
+	}
+
+	
+	@RequestMapping(value="adminLibrary/adminBook/**/create", method=RequestMethod.GET)
+	public String createGET(@RequestParam("id") String id) throws Exception{
+		barcode(id);
+		return "redirect:/adminLibrary/adminInfo/**/userDetail?id="+id;
 	}
 
 	// 바코드 생성기

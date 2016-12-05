@@ -57,5 +57,12 @@
 			</td>
 		</tr>
 
+		<tr>
+			<th colspan="3">바코드</th>
+		</tr>
+		<tr>
+			<th colspan="3"><img src="/resources/barcode_img/${read.bNo}.png" width="200"></th>
+		</tr>
+
 </body>
 </html>
