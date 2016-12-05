@@ -82,7 +82,7 @@
           <ul class="treeview-menu">
             <li><a href="/adminLibrary/adminService/a_list"><i class="fa fa-circle-o"></i> 방과후 학교</a></li>
             <li><a href="/adminLibrary/adminService/c_list"><i class="fa fa-circle-o"></i> 문화 행사</a></li>
-            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 도서 배달 서비스</a></li>
+            <li><a href="/adminLibrary/adminService/delivery"><i class="fa fa-circle-o"></i> 도서 배달 서비스</a></li>
           </ul>
         </li>
         <li class="treeview">

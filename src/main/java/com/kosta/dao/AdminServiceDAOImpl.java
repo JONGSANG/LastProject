@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.kosta.vo.AfterVO;
 import com.kosta.vo.CultureVO;
+import com.kosta.vo.DeliveryVO;
 import com.kosta.vo.L_AfterVO;
 import com.kosta.vo.L_CultureVO;
 import com.kosta.vo.PageInfo;
@@ -92,6 +93,26 @@ public class AdminServiceDAOImpl implements AdminServiceDAO {
 	@Override
 	public void schedule_delete(SchadulVO vo) throws Exception {
 		sqlSession.delete("AdminServiceMapper.schedule_delete", vo);
+	}
+
+	@Override
+	public List<DeliveryVO> deliveryList() throws Exception {
+		return sqlSession.selectList("AdminServiceMapper.deliveryList");
+	}
+
+	@Override
+	public List<DeliveryVO> deliverySuccesss(PageInfo page) throws Exception {
+		return sqlSession.selectList("AdminServiceMapper.deliverySuccesss", page);
+	}
+
+	@Override
+	public void code(DeliveryVO vo) throws Exception {
+		sqlSession.update("AdminServiceMapper.deliveryUpdate", vo);
+	}
+
+	@Override
+	public int deliveryCount(PageInfo page) throws Exception {
+		return sqlSession.selectOne("AdminServiceMapper.deliveryCount", page);
 	}
 	
 }

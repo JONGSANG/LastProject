@@ -15,6 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.kosta.service.AdminServiceService;
 import com.kosta.vo.AfterVO;
 import com.kosta.vo.CultureVO;
+import com.kosta.vo.DeliveryVO;
 import com.kosta.vo.L_AfterVO;
 import com.kosta.vo.L_CultureVO;
 import com.kosta.vo.PageInfo;
@@ -170,5 +171,28 @@ public class AdminServiceController {
 		
 		return "redirect:/adminLibrary/adminService/calendar";
 		
+	}
+	
+	@RequestMapping(value="adminLibrary/adminService/delivery", method=RequestMethod.GET)
+	public String deliveryGET(Model model, PageInfo page) throws Exception {
+		
+		logger.info("관리자 도서배달서비스");
+		
+		model.addAttribute("delivery", adminServiceService.deliveryList());
+		model.addAttribute("deliverySuccesss", adminServiceService.deliverySuccesss(page));
+		PageMaker pageMaker=new PageMaker();
+		pageMaker.setPageInfo(page);
+	    pageMaker.setTotalCount(adminServiceService.deliveryCount(page));
+	    model.addAttribute("pageMaker", pageMaker);
+		
+		return "adminLibrary/adminService/delivery";
+	}
+	
+	@RequestMapping(value="adminLibrary/adminService/code", method=RequestMethod.GET)
+	public String codeGET(DeliveryVO vo, Model model) throws Exception {
+		
+		adminServiceService.code(vo);
+		
+		return "redirect:/adminLibrary/adminService/delivery";
 	}
 }
