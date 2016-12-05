@@ -1,5 +1,9 @@
 package com.kosta.controller;
 
+import java.io.File;
+
+import javax.annotation.Resource;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +19,10 @@ import com.kosta.vo.MemberVO;
 import com.kosta.vo.PageMaker;
 import com.kosta.vo.SearchType;
 
+import net.sourceforge.barbecue.Barcode;
+import net.sourceforge.barbecue.BarcodeFactory;
+import net.sourceforge.barbecue.BarcodeImageHandler;
+
 @Controller
 public class AdminInfoController {
 	
@@ -22,6 +30,9 @@ public class AdminInfoController {
 	
 	@Autowired
 	private AdminInfoService adminInfoService;
+	@Resource(name = "barcodeImgPath")
+	private String barcodeImgPath;
+
 	
 	@RequestMapping(value="adminLibrary/adminInfo/m_list", method=RequestMethod.GET)
 	public String userListGET(Model model, SearchType search) throws Exception {
@@ -190,4 +201,20 @@ public class AdminInfoController {
 		
 		return "redirect:/adminLibrary/adminInfo/a_list";
 	}
+	
+	@RequestMapping(value="adminLibrary/adminInfo/create", method=RequestMethod.GET)
+	public String createGET(@RequestParam("id") String id) throws Exception{
+		barcode(id);
+		return "redirect:/adminLibrary/adminInfo/userDetail?id="+id;
+	}
+	
+	// 바코드 생성기
+	private void barcode(String id) throws Exception{
+		String filename=id+".png";
+		Barcode barcode=BarcodeFactory.createCode128(id);
+		barcode.setLabel(id);
+		File target = new File(barcodeImgPath, filename);
+		BarcodeImageHandler.savePNG(barcode, target);
+	}
+
 }

@@ -22,7 +22,6 @@
 			<th>생년월일</th>
 			<th>이메일</th>
 			<th>휴대전화번호</th>
-			<th>주소</th>
 			<th colspan="2">회원등급</th>
 			<th>강제탈퇴</th>
 		</tr>
@@ -32,7 +31,6 @@
 			<td>${user.birth}</td>
 			<td>${user.email}</td>
 			<td>${user.phone}</td>
-			<td>${user.address}</td>
 			<td>
 			<form action="/adminLibrary/adminInfo/roleChange" method="post">
 			<input type="hidden" name="id" value="${user.id}">
@@ -51,25 +49,25 @@
 				</c:if>
 				</select>
 				</td><td>
-			<input type="submit" value="회원등급변경">
+			<input type="submit"  class="btn btn-info" value="회원등급변경">
 			</form></td>
 			<td><form action="/adminLibrary/adminInfo/userDelete" method="post">
 				<input type="hidden" name="id" value="${user.id}">
-				<input type="submit" value="강제회원탈퇴">
+                <button type="submit" class="btn btn-info">강제회원탈퇴</button>
 			</form></td>
+		</tr>
+		<tr>
+			<th colspan="5">주소</th>
+			<th colspan="3">바코드(회원증)</th>			
+		</tr>
+		<tr>
+			<td colspan="5">${user.address}</td>
+			<td colspan="3"><img img src="/resources/barcode_img/${user.id}.png" width="200"><button type="button" class="btn btn-info  pull-right" onclick="location.href='create?id=${user.id}'">바코드 생성</button></td>
 		</tr>
 	</table>
                 </div>
                 </div>
-              </div>
-              <!-- /.box-body -->
-              <div class="box-footer">
-<!--                 <button class="btn btn-default" onclick="javascript:history.back()">취소하기</button> -->
-                <button type="submit" class="btn btn-info pull-right">강제회원탈퇴</button>
-                </form>
-              </div>
-              <!-- /.box-footer -->
-            
+              </div>            
           </div>
 
 	 <!-- <div class="box box-info">

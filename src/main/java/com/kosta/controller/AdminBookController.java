@@ -262,7 +262,7 @@ public class AdminBookController {
 		
 		service.insertBook(vo);
 		rttr.addFlashAttribute("msg", "insertS");
-		return "adminLibrary/adminBook/reg_new/readInfo&bNo="+vo.getbNo();
+		return "redirect:/adminLibrary/adminBook/reg_new/readInfo?bNo="+vo.getbNo();
 	}
 	
 	// 이미지 업로드용	

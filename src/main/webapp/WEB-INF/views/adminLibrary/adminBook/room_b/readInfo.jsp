@@ -56,6 +56,13 @@
 			<textarea id="regiwrite" style="padding: 10px 0 0 10px; resize: none;" name="content" rows="10" cols="104" readonly="readonly;" disabled="disabled">${read.bIntro}</textarea>
 			</td>
 		</tr>
+		<tr>
+			<th colspan="3">바코드</th>
+		</tr>
+		<tr>
+			<th colspan="3"><img src="/resources/barcode_img/${read.bNo}.png" width="200"></th>
+		</tr>
+	</table>
 
 
 </body>
