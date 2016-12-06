@@ -74,7 +74,7 @@ public class AdminBookController {
 					model.addAttribute("rcnt", service.rentCnt(vo));
 					return "adminLibrary/adminBook/rentBook/rent";
 				}
-			}
+			} 
 		} else {
 			model.addAttribute("userInfo", service.userInfo(vo));
 			model.addAttribute("rent", service.currentRent(vo));
