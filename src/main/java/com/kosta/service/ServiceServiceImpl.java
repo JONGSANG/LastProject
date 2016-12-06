@@ -114,8 +114,8 @@ public class ServiceServiceImpl implements ServiceService {
 	
 	// 방과후 게시판 리스트 폼 메소드
 	@Override
-	public List<AfterVO> after_list() throws Exception {
-		return dao.after_list();
+	public List<AfterVO> after_list(AfterVO vo) throws Exception {
+		return dao.after_list(vo);
 	}
 	
 	// 방과후 게시판 상세글 메소드
@@ -200,8 +200,8 @@ public class ServiceServiceImpl implements ServiceService {
 	
 	// 문화행사 게시판 리스트 폼 메소드
 	@Override
-	public List<CultureVO> culture_list() throws Exception {
-		return dao.culture_list();
+	public List<CultureVO> culture_list(CultureVO vo) throws Exception {
+		return dao.culture_list(vo);
 	}
 	
 	// 문화행사 게시판 상세글 메소드
@@ -286,8 +286,8 @@ public class ServiceServiceImpl implements ServiceService {
 	
 	// 공개자료실 게시판 리스트 폼 메소드
 	@Override
-	public List<O_BoardVO> openboard_list() throws Exception {
-		return dao.openboard_list();
+	public List<O_BoardVO> openboard_list(O_BoardVO vo) throws Exception {
+		return dao.openboard_list(vo);
 	}
 	
 	// 공개자료실 게시판 상세글 메소드
@@ -341,6 +341,21 @@ public class ServiceServiceImpl implements ServiceService {
 	public int rentCount() throws Exception {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		return dao.rentCount(auth.getName());
+	}
+
+	@Override
+	public int countAfter_list(AfterVO vo) throws Exception {
+		return dao.countAfter_list(vo);
+	}
+
+	@Override
+	public int countCulture_list(CultureVO vo) throws Exception {
+		return dao.countCulture_list(vo);
+	}
+
+	@Override
+	public int countOpenboard_list(O_BoardVO vo) throws Exception {
+		return dao.countOpenboard_list(vo);
 	}
 
 	

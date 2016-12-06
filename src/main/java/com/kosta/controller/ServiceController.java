@@ -30,6 +30,7 @@ import com.kosta.vo.L_CultureVO;
 import com.kosta.vo.M_BoardVO;
 import com.kosta.vo.M_Board_ReVO;
 import com.kosta.vo.O_BoardVO;
+import com.kosta.vo.PageInfo;
 import com.kosta.vo.PageMaker;
 import com.kosta.vo.PageMaker_rep;
 
@@ -304,7 +305,17 @@ public class ServiceController {
 		logger.info("이벤트 글게시판 페이지"); 
 		
 		// after 테이블에 모든정보를 담고 list라고 선언
-		model.addAttribute("list", service.after_list());
+		model.addAttribute("list", service.after_list(vo));
+		
+		
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setPageInfo(vo);
+		
+		pageMaker.setTotalCount(service.countAfter_list(vo));
+		model.addAttribute("pageMaker", pageMaker);
+
+
 		
 		return "userLibrary/service/after/list";
 	}
@@ -466,11 +477,18 @@ public class ServiceController {
 	
 	// 문화행사 게시판 리스트 폼 메소드
 	@RequestMapping(value = "userLibrary/service/culture/list", method = RequestMethod.GET)
-	public String culture_ListAll(Model model) throws Exception {
+	public String culture_ListAll(Model model, CultureVO vo) throws Exception {
 		logger.info("이벤트 글게시판 페이지");
 		
 		// after 테이블에 모든정보를 담고 list라고 선언
-		model.addAttribute("list", service.culture_list());
+		model.addAttribute("list", service.culture_list(vo));
+		
+		// 페이징 처리
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setPageInfo(vo);
+		pageMaker.setTotalCount(service.countCulture_list(vo));
+		model.addAttribute("pageMaker", pageMaker);
+
 		
 		return "userLibrary/service/culture/list";
 	}
@@ -640,12 +658,19 @@ public class ServiceController {
 	
 	// 공개자료실 리스트 메소드
 	@RequestMapping(value = "userLibrary/service/openboard/list", method = RequestMethod.GET)
-	public String openboard_list(Model model) throws Exception {
+	public String openboard_list(Model model, O_BoardVO vo, PageInfo page) throws Exception {
 		logger.info("공개자료실 게시판 리스트 폼 페이지");
 		
 		// db에 담긴 전체 리스트를 list 란 이름으로 지정
-		model.addAttribute("list",service.openboard_list());
+		model.addAttribute("list",service.openboard_list(vo));
 		
+		// 페이징 처리
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setPageInfo(vo);
+		pageMaker.setTotalCount(service.countOpenboard_list(vo));
+		model.addAttribute("pageMaker", pageMaker);
+
+
 		return "userLibrary/service/openboard/list";
 	}
 	

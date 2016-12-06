@@ -10,7 +10,6 @@ import com.kosta.vo.L_CultureVO;
 import com.kosta.vo.M_BoardVO;
 import com.kosta.vo.M_Board_ReVO;
 import com.kosta.vo.O_BoardVO;
-import com.kosta.vo.SchadulVO;
 
 public interface ServiceService {
 	
@@ -59,7 +58,10 @@ public interface ServiceService {
 	public void after_write(AfterVO vo) throws Exception;
 	
 	// 방과후 게시판 리스트 폼 메소드
-	public List<AfterVO> after_list() throws Exception;
+	public List<AfterVO> after_list(AfterVO vo) throws Exception;
+	
+	//페이징
+	public int countAfter_list(AfterVO vo) throws Exception;
 	
 	// 방과후 게시판 상세글 메소드
 	public AfterVO after_read(AfterVO vo) throws Exception;
@@ -96,7 +98,10 @@ public interface ServiceService {
 	public void culture_write(CultureVO vo) throws Exception;
 	
 	// 문화행사 게시판 리스트 폼 메소드
-	public List<CultureVO> culture_list() throws Exception;
+	public List<CultureVO> culture_list(CultureVO vo) throws Exception;
+	
+	// 페이징
+	public int countCulture_list(CultureVO vo) throws Exception;
 	
 	// 문화행사 게시판 상세글 메소드
 	public CultureVO culture_read(CultureVO vo) throws Exception;
@@ -133,8 +138,10 @@ public interface ServiceService {
 	public void openboard_join(O_BoardVO vo) throws Exception;
 	
 	// 공개자료실 게시판 리스트 폼 메소드
-	public List<O_BoardVO> openboard_list() throws Exception;
+	public List<O_BoardVO> openboard_list(O_BoardVO vo) throws Exception;
 	
+	// 페이징
+	public int countOpenboard_list(O_BoardVO vo) throws Exception; 
 	// 공개자료실 게시판 상세글 메소드
 	public O_BoardVO openboard_read(O_BoardVO vo) throws Exception;
 	
