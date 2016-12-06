@@ -43,7 +43,6 @@ public class AdminInfoDAOImpl implements AdminInfoDAO {
 		sqlSession.insert("AdminInfoMapper.member", vo);
 		sqlSession.insert("AdminInfoMapper.admin_info", vo);
 		sqlSession.insert("AdminInfoMapper.role", vo);
-		sqlSession.insert("AdminInfoMapper.role1", vo);
 	}
 
 	@Override

@@ -118,9 +118,6 @@ INSERT INTO ADMIN_INFO(ID, NAME, BIRTH, GENDER, PHONE, EMAIL, ADDRESS, J_PART, J
 INSERT INTO ROLE(ID, ROLE) VALUES(#{id}, 'ROLE_ADMIN')
 </insert>
 
-<insert id="role1">
-INSERT INTO ROLE(ID, ROLE) VALUES(#{id}, 'ROLE_USER')
-</insert>
 
 <select id="passwordCheck" resultType="String">
 SELECT PWD FROM MEMBER WHERE ID=#{id}

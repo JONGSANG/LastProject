@@ -11,6 +11,12 @@
 		<security:form-login login-page="/userLibrary/member/login"/>
 		<security:logout logout-success-url="/"/>
 		<!-- <security:intercept-url pattern="/userLibrary/myInfo/myInfo" access="hasRole('ROLE_SEMIUSER')" /> -->
+		<security:intercept-url pattern="/userLibrary/myInfo/**" access="isAuthenticated()" />
+		<security:intercept-url pattern="/adminLibrary/**" access="hasAnyRole('ROLE_ADMIN, ROLE_MASTER')" />
+		
+		<security:intercept-url pattern="/adminLibrary/adminInfo/a_list" access="hasRole('ROLE_MASTER')" />
+		<security:intercept-url pattern="/adminLibrary/adminInfo/addAdmin" access="hasRole('ROLE_MASTER')" />
+		<security:intercept-url pattern="/adminLibrary/adminUser/adminMail" access="hasRole('ROLE_MASTER')" />
 	</security:http>
 	
 	
