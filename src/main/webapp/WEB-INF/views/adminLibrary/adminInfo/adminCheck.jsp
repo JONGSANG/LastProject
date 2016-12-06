@@ -25,6 +25,7 @@
                 <div class="col-sm-2"></div>
                  <div class="col-sm-10">
                     	초기 아이디를 발급받은 관리자는 반드시 비밀번호를 변경해주세요.<br>
+                    	변경하기전 비밀번호를 한번더 입력하여 변경해주세요.
                   </div>
                 </div>
                 <div class="form-group">

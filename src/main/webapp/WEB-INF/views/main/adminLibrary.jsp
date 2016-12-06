@@ -14,7 +14,8 @@
 </head> 
 <body>
 	<div class="text-left">
-		<img src="/resources/images/adminTel.png"  width="600" >
+		<img src="/resources/images/adminTel.png"  width="600px" >
+		<img src="/resources/images/bookbum.png" width="300px">
 	</div>
 </body>
 </html>
