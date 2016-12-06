@@ -64,7 +64,12 @@ SELECT id, bno, SUBMIT_DATE
 		and not EXISTS (SELECT bno, start_date FROM late b where a.bno=b.bno and a.submit_date=b.start_date)
 
 insert into late values('choirj91','1','2016/11/15','2016/11/20',0);
-insert into late values('y1','2','2016/11/14','2016/11/20',0);
-insert into late values('y2','3','2016/11/12','2016/11/20',0);
+insert into late values('email5001','01010011','2016/11/14','2016/11/20',0);
+insert into late values('email5001','01010012','2016/11/12','2016/11/20',0);
+
+insert into late values('email5002','01010013','2016/11/14','2016/11/20',0);
+insert into late values('email5002','01010022','2016/11/12','2016/11/20',0);
 
 delete from late where id = 'spurs891'
+
+SELECT DISTINCT ID FROM LATE

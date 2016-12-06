@@ -5,6 +5,14 @@ public class LateMailVO {
 	private String name;
 	private String btitle;
 	private String email;
+	private String bNo;
+	
+	public String getbNo() {
+		return bNo;
+	}
+	public void setbNo(String bNo) {
+		this.bNo = bNo;
+	}
 	public String getId() {
 		return id;
 	}
