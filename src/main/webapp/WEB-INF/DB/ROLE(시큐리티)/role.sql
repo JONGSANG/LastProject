@@ -18,7 +18,8 @@ constraint fk_ROLE foreign key(ID) references member(ID)
 -- test DATA
 -------------------------------------------------------------
 
-insert into ROLE values('kosta', 'ROLE_ADMIN');
+
+insert into ROLE values('choirj91', 'ROLE_MASTER');
 insert into ROLE values('kosta', 'ROLE_USER');
 insert into ROLE values('kosta1', 'ROLE_SEMIUSER');
 insert into ROLE values('kosta2', 'ROLE_USER');

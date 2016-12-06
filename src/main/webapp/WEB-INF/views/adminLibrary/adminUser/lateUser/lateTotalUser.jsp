@@ -41,7 +41,7 @@ th {
 		<div class="box-body">
 			<button onclick="location.href='index'"
 				class="btn btn-info pull-left">연체 관리</button>
-			<div style="height: 250px">
+			<div >
 				<table
 					class="sortable paginated table table-bordered table-hober dataTable">
 					<thead>
@@ -75,7 +75,7 @@ th {
 						</c:forEach>
 					</tbody>
 				</table>
-			</div>
+			
 			<div class="text-center">
 				<ul class="pagination">
 
@@ -98,9 +98,7 @@ th {
 					</c:if>
 
 				</ul>
-			</div>
 
-		</div>
 		<!-- /.box-body -->
 		<div class="box-footer">
 			<div heigt="200">
@@ -143,7 +141,8 @@ th {
 
 	</div>
 	<!-- /.box -->
-
+</div>
+</div>
 
 </body>
 </html>

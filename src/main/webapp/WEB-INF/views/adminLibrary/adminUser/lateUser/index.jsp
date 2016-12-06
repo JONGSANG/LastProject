@@ -39,7 +39,7 @@ th {
 		<!-- /.box-header -->
 		<!-- form start -->
 		<div class="box-body">
-			<div style="height: 250px">
+			<div>
 				<table
 					class="table table-bordered table-striped dataTable no-footer">
 					<button onclick="location.href='lateUserMail'"
@@ -78,11 +78,11 @@ th {
 					</tbody>
 				</table>
 
-			</div>
 			<!-- /.box-body -->
 			<!-- /.box-footer -->
 
-		</div>
+
+
 
 		<div class="text-center">
 			<ul class="pagination">
@@ -109,6 +109,7 @@ th {
 
 	</div>
 	<!-- /.box -->
-
+	</div>
+	</div>
 </body>
 </html>
