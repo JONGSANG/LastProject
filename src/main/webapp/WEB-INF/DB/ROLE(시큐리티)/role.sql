@@ -17,7 +17,7 @@ constraint fk_ROLE foreign key(ID) references member(ID)
 -------------------------------------------------------------
 -- test DATA
 -------------------------------------------------------------
-
+delete from role where id = 'choirj91'
 
 insert into ROLE values('choirj91', 'ROLE_MASTER');
 insert into ROLE values('kosta', 'ROLE_USER');

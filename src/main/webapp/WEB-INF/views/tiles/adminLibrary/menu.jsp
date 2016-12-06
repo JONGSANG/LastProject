@@ -27,8 +27,8 @@
             <li><a href="/adminLibrary/adminInfo/m_list"><i class="fa fa-circle-o"></i> 회원정보관리</a></li>
             <li><a href="/adminLibrary/adminInfo/adminCheck"><i class="fa fa-circle-o"></i> 관리자비밀번호수정</a></li>
             <security:authorize access="hasRole('ROLE_MASTER')">
-            <li><a href="/adminLibrary/adminInfo/a_list"><i class="fa fa-circle-o"></i> 관리자정보관리</a></li>
-            <li><a href="/adminLibrary/adminInfo/addAdmin"><i class="fa fa-circle-o"></i> 관리자계정추가</a></li>
+            <li><a style="color: red" href="/adminLibrary/adminInfo/a_list"><i class="fa fa-circle-o"></i> 관리자정보관리</a></li>
+            <li><a style="color: red" href="/adminLibrary/adminInfo/addAdmin"><i class="fa fa-circle-o"></i> 관리자계정추가</a></li>
             </security:authorize>
           </ul>
         </li>
@@ -44,7 +44,7 @@
             <li><a href="/adminLibrary/adminUser/lateUser/index"><i class="fa fa-circle-o"></i> 연체 관리</a></li>
             <li><a href="/adminLibrary/adminUser/memberMail"><i class="fa fa-circle-o"></i> 사용자 단체 메일발송</a></li>
             <security:authorize access="hasRole('ROLE_MASTER')">
-            <li><a href="/adminLibrary/adminUser/adminMail"><i class="fa fa-circle-o"></i> 관리자 단체 메일발송</a></li>
+            <li><a style="color: red" href="/adminLibrary/adminUser/adminMail"><i class="fa fa-circle-o"></i> 관리자 단체 메일발송</a></li>
             </security:authorize>
           </ul>
         </li>

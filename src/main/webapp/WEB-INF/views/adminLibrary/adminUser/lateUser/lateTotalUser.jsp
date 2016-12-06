@@ -46,15 +46,15 @@ th {
 					class="sortable paginated table table-bordered table-hober dataTable">
 					<thead>
 						<tr>
-							<th class="sorting">ID</th>
-							<th class="sorting">이름</th>
-							<th class="sorting">책 번호</th>
+							<th width="70px" class="sorting">ID</th>
+							<th width="70px" class="sorting">이름</th>
+							<th width="70px" class="sorting">책 번호</th>
 							<th class="sorting">책 제목</th>
 							<th class="sorting">저자</th>
-							<th class="sort-date">출판사</th>
-							<th class="sorting">연체 시작일</th>
-							<th class="sorting">반납일</th>
-							<th class="sorting">연체료</th>
+							<th width="70px" class="sort-date">출판사</th>
+							<th width="80px" class="sorting">연체 시작일</th>
+							<th width="60px" class="sorting">반납일</th>
+							<th width="60px" class="sorting">연체료</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -125,13 +125,13 @@ th {
 							<td>최장기 연체 일수 :</td>
 							<td>${lateUserInfo.topLateUserDay}일</td>
 						</tr>
-						<tr>
+						<%-- <tr>
 
 							<th>이번달 연체료 수입 :</th>
 							<th colspan="2">${lateInfo.subMtotal}원</th>
 							<th>연체료 수입 총액 :</th>
 							<th colspan="2">${lateInfo.subTotal}원</th>
-						</tr>
+						</tr> --%>
 					</tbody>
 				</table>
 			</div>
