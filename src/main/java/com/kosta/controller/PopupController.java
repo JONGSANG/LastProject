@@ -27,7 +27,7 @@ private static final Logger logger = LoggerFactory.getLogger(MemberController.cl
 	}
 	
 	@RequestMapping(value="userLibrary/popup/findID", method=RequestMethod.POST)
-	public String findIDPOST(MemberVO vo, RedirectAttributes rttr) throws Exception {
+	public String findIDPOST(MemberVO vo, RedirectAttributes rttr, Model model) throws Exception {
 		logger.info("아이디 찾기 페이지");
 		
 		//먼저 DB에서 개인정보와 일치하는 값이 있는지 확인후, 결과값(메일 발송에 필요한 ID, EMAIL, NAME)을 다시 vo에 저장함 
@@ -35,9 +35,8 @@ private static final Logger logger = LoggerFactory.getLogger(MemberController.cl
 		
 		//만약 일치하는 값이 없다면 vo에 저장되는 값은 null이기 때문에 if문이 실행됨
 		if(vo==null){
-			//ajax 수정필요, 일치하는 회원정보가 없으면
-			rttr.addAttribute("faller", "faller");
-			return "redirect:/userLibrary/popup/findID";
+			model.addAttribute("faller", "faller");
+			return "userLibrary/popup/findID";
 		}
 		
 		//DB에서 개인정보와 일치하는 값이 있다면, vo에는 ID, EMAIL, NAME값이 저장되어 있으므로 vo를 매개변수로 이메일 발송
@@ -54,7 +53,7 @@ private static final Logger logger = LoggerFactory.getLogger(MemberController.cl
 	}
 	
 	@RequestMapping(value="userLibrary/popup/findPassword", method=RequestMethod.POST)
-	public String findPasswordPOST(MemberVO vo, RedirectAttributes rttr) throws Exception {
+	public String findPasswordPOST(MemberVO vo, RedirectAttributes rttr, Model model) throws Exception {
 		logger.info("비밀번호 찾기 페이지");
 		
 		//먼저 DB에서 개인정보와 일치하는 값이 있는지 확인후, 결과값(메일 발송에 필요한 ID, EMAIL, NAME)을 다시 vo에 저장함
@@ -64,8 +63,8 @@ private static final Logger logger = LoggerFactory.getLogger(MemberController.cl
 		//만약 일치하는 값이 없다면 vo에 저장되는 값은 null이기 때문에 if문이 실행됨
 		if(vo==null){
 			//ajax 수정필요, 일치하는 회원정보가 없으면
-			rttr.addAttribute("faller", "faller");
-			return "redirect:/userLibrary/popup/findPassword";
+			model.addAttribute("faller", "faller");
+			return "userLibrary/popup/findPassword";
 		}
 		
 		//DB에서 개인정보와 일치하는 값이 있다면, vo에는 ID, EMAIL, NAME값이 저장되어 있으므로
