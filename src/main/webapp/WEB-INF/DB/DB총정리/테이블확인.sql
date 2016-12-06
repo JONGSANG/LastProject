@@ -23,3 +23,4 @@ select * from admin_info;		-------관리자정보-------
 select * from user_info;		-------사용자정보-------
 select * from HOPE_BOOK;		-------희망도서게시판----
 select * from hope_book_rep;	-------희망도서리플-----
+

@@ -116,6 +116,9 @@
 	<div style="padding: 10px 0 0 10px">
 	<button style="position: absolute; float: right; " onclick="location.href='/userLibrary/service/reserve?bno=${read.bNo}&submit_date=${read.submit_date}'">대출 예약하기</button>
 	</div>
+	
+	
+	
 	</c:if>
 		</c:if>
 	<c:if test="${checkUser==-1&&read.bRent==1}">

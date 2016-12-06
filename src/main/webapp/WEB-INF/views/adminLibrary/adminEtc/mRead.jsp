@@ -41,7 +41,7 @@ if(repDel=='repDel'){
 		</tr>
 		<tr>
 			<th>제목</th>
-			<td colspan="10">${detai.title}</td>
+			<td colspan="10">${detail.title}</td>
 		</tr>
 		<tr>
 			<td colspan="10"><textarea rows="20" cols="105" readonly="readonly">${detail.content}</textarea></td>

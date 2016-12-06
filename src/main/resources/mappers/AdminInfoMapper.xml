@@ -5,6 +5,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="AdminInfoMapper">
 
+<select id="userInfo1" resultType="MemberVO">
+select * from user_info
+</select>
+
 <select id="userInfo" resultType="MemberVO">
 SELECT M.ID, U.NAME, U.BIRTH, U.PHONE, U.JOINDATE, R.ROLE
 FROM MEMBER M
@@ -28,7 +32,7 @@ INNER JOIN ROLE R ON M.ID=R.ID
 	</if>
 </if>
 ORDER BY JOINDATE DESC
-LIMIT #{pageStart}, #{perPageNum}
+<!-- LIMIT #{pageStart}, #{perPageNum} -->
 </select>
 
 <select id="listCount" resultType="int">

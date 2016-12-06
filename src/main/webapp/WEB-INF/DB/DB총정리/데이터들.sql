@@ -339,3 +339,29 @@ INSERT INTO STUDYROOM(NUM, STATE) VALUES('c42', 0);
 INSERT INTO STUDYROOM(NUM, STATE) VALUES('c43', 0);
 INSERT INTO STUDYROOM(NUM, STATE) VALUES('c44', 0);
 
+
+------------------발표자료 준비-----------------------
+
+
+update rent_BOOk set rent_date='2016-11-15', submit_date='2016-11-29' where bno='01030131';
+update rent_BOOk set rent_date='2016-11-16', submit_date='2016-11-30' where bno='01030141';
+update rent_BOOk set rent_date='2016-11-17', submit_date='2016-11-28' where bno='01030151';
+update rent_BOOk set rent_date='2016-11-18', submit_date='2016-12-01' where bno='01030111';
+
+update rent_BOOk set rent_date='2016-11-30', submit_date='2016-12-01' where bno='01030121';
+update rent_BOOk set rent_date='2016-11-30', submit_date='2016-12-02' where bno='01030222';
+update rent_BOOk set rent_date='2016-11-30', submit_date='2016-12-03' where bno='01030223';
+update rent_BOOk set rent_date='2016-11-30', submit_date='2016-12-01' where bno='01030363';
+
+
+update rent_BOOk set rent_date='2016-11-30', submit_date='2016-12-01' where bno='01030382';
+update rent_BOOk set rent_date='2016-11-30', submit_date='2016-12-02' where bno='01030392';
+update rent_BOOk set rent_date='2016-11-30', submit_date='2016-12-03' where bno='04020123';
+update rent_BOOk set rent_date='2016-11-30', submit_date='2016-12-01' where bno='05010062';
+
+update rent_BOOk set rent_date='2016-11-05', submit_date='2016-11-29' where bno='04010191';
+update rent_BOOk set rent_date='2016-11-06', submit_date='2016-11-20' where bno='04010153';
+update rent_BOOk set rent_date='2016-11-07', submit_date='2016-11-18' where bno='04010052';
+update rent_BOOk set rent_date='2016-11-08', submit_date='2016-11-10' where bno='03010173';
+
+update rent_BOOk set rent_date='2016-10-08', submit_date='2016-10-29' where bno='99011511';

@@ -4,7 +4,7 @@ import java.util.Date;
 
 import org.springframework.web.multipart.MultipartFile;
 
-public class O_BoardVO {
+public class O_BoardVO extends PageInfo{
 	
 	private int num, viewcnt;
 	private String id, title, content, orgname, newname;
