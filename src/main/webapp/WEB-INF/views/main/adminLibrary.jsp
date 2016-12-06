@@ -6,9 +6,13 @@
 <title>Insert title here</title>
 <script>
 	var success='${success}';
+	var mailGo='${mailGo}';
 	
     if(success=='success'){
     	alert("비밀번호 수정 완료");
+    }
+    if(mailGo=='mailGo'){
+    	alert("메일발송 완료")
     }
 </script>
 </head> 

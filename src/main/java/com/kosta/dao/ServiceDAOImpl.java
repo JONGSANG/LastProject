@@ -103,8 +103,8 @@ public class ServiceDAOImpl implements ServiceDAO {
 	
 	// 방과후 게시판 리스트 폼 메소드
 	@Override
-	public List<AfterVO> after_list() throws Exception {
-		return sqlSession.selectList("com.kosta.mappers.ServiceMapper.after_list");
+	public List<AfterVO> after_list(AfterVO vo) throws Exception {
+		return sqlSession.selectList("com.kosta.mappers.ServiceMapper.after_list", vo);
 	}
 	
 	// 방과후 게시판 상세글 메소드
@@ -183,9 +183,11 @@ public class ServiceDAOImpl implements ServiceDAO {
 	
 	// 문화행사 게시판 리스트 폼 메소드
 	@Override
-	public List<CultureVO> culture_list() throws Exception {
-		return sqlSession.selectList("com.kosta.mappers.ServiceMapper.culture_list");
+	public List<CultureVO> culture_list(CultureVO vo) throws Exception{
+		return sqlSession.selectList("com.kosta.mappers.ServiceMapper.culture_list", vo);
 	}
+	
+
 	
 	// 문화행사 게시판 상세글 메소드
 	@Override
@@ -263,8 +265,8 @@ public class ServiceDAOImpl implements ServiceDAO {
 	
 	// 공개자료실 게시판 리스트 폼 메소드
 	@Override
-	public List<O_BoardVO> openboard_list() throws Exception {
-		return sqlSession.selectList("com.kosta.mappers.ServiceMapper.openboard_list");
+	public List<O_BoardVO> openboard_list(O_BoardVO vo) throws Exception {
+		return sqlSession.selectList("com.kosta.mappers.ServiceMapper.openboard_list", vo);
 	}
 	
 	// 공개자료실 게시판 상세글 메소드
@@ -311,5 +313,21 @@ public class ServiceDAOImpl implements ServiceDAO {
 	public int rentCount(String id) throws Exception {
 		return sqlSession.selectOne("com.kosta.mappers.ServiceMapper.rentCount", id);
 	}
+
+	@Override
+	public int countAfter_list(AfterVO vo) throws Exception {
+		return sqlSession.selectOne("com.kosta.mappers.ServiceMapper.countAfter_list", vo);
+	}
+
+	@Override
+	public int countCulture_list(CultureVO vo) throws Exception {
+		return sqlSession.selectOne("com.kosta.mappers.ServiceMapper.countCulture_list",vo);
+	}
+
+	@Override
+	public int countOpenboard_list(O_BoardVO vo) throws Exception {
+		return sqlSession.selectOne("com.kosta.mappers.ServiceMapper.countOpenboard_list", vo);
+	}
+
 	
 }
