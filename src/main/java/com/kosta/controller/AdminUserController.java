@@ -92,21 +92,12 @@ public class AdminUserController {
 
 		// 연체자에게 단체메일 발송 페이지 불러오기
 		@RequestMapping(value="adminLibrary/adminUser/lateUser/lateUserMail", method=RequestMethod.GET)
-		public String lateUserMailGET(MailVO vo, RedirectAttributes rttr) throws Exception {
-			logger.info("단체메일발송(연체자) 처리 페이지");
-
-			return "adminLibrary/adminUser/lateUser/lateUserMail";
-		}
-			
-
-		// 연체자에게 단체메일 발송
-		@RequestMapping(value="adminLibrary/adminUser/lateUser/lateUserMail", method=RequestMethod.POST)
-		public String lateUserMailPOST(MailVO vo, RedirectAttributes rttr) throws Exception {
-			
+		public String lateUserMailGET(RedirectAttributes rttr) throws Exception {
 			logger.info("단체메일발송(연체자) 처리 페이지");
 			
-			adminUserService.lateUserMail(vo);
-			
+			adminUserService.lateMatil();
+			rttr.addFlashAttribute("mailGo", "mailGo");
+
 			return "redirect:/adminLibrary";
 		}
 

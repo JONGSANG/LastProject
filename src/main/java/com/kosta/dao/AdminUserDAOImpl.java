@@ -68,13 +68,21 @@ public class AdminUserDAOImpl implements AdminUserDAO {
 
 	@Override
 	public List<String> lateBook(String id) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectList("AdminUserMapper.lateBook", id);
 	}
 
 	@Override
 	public List<String> lateUser1() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectList("AdminUserMapper.lateUser1");
+	}
+
+	@Override
+	public String getEmail(String id) throws Exception {
+		return sqlSession.selectOne("AdminUserMapper.getEmail", id);
+	}
+
+	@Override
+	public String getName(String id) throws Exception {
+		return sqlSession.selectOne("AdminUserMapper.getName", id);
 	}
 }

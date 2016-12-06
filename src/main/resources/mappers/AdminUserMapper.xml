@@ -111,4 +111,21 @@ WHERE l.end_date is null
 SELECT DISTINCT ID FROM LATE
 </select>
 
+<select id="lateBook" resultType="String">
+SELECT B.BTITLE
+FROM LATE L
+INNER JOIN BOOk B ON L.BNO=B.BNO
+WHERE L.ID=#{id}
+</select>
+
+<select id="getEmail" resultType="String">
+SELECT EMAIL
+FROM USER_INFO
+WHERE ID=#{id}
+</select>
+
+<select id="getName" resultType="String">
+SELECT NAME FROM USER_INFO WHERE ID=#{id}
+</select>
+
 </mapper>

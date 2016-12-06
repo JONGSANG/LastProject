@@ -37,5 +37,9 @@ public interface AdminUserDAO {
 
 	public List<String> lateBook(String id) throws Exception;
 
-	public List<String> lateUser1() throws Exception; 
+	public List<String> lateUser1() throws Exception;
+
+	public String getEmail(String id) throws Exception;
+
+	public String getName(String id) throws Exception; 
 }

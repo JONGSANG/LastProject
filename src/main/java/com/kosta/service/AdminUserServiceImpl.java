@@ -133,10 +133,36 @@ public class AdminUserServiceImpl implements AdminUserService {
 	@Override
 	public void lateMatil() throws Exception {
 		List<String> lateUser=adminUserdao.lateUser1();
-		List<String> bTitle;
+		String eMail, name;
+		String bookTitle="";
 		
 		for(int i=0; i<lateUser.size(); i++){
-			bTitle=adminUserdao.lateBook(lateUser.get(i));
+			System.out.println("연체유저 아이디 찍어봄");
+			List<String> bTitle=adminUserdao.lateBook(lateUser.get(i));
+			System.out.println("연체유저 책정보 찍어봄(list라 아마 안될거임"+bTitle);
+			eMail=adminUserdao.getEmail(lateUser.get(i));
+			System.out.println("연체유저 아이디에 해당하는 이메일"+eMail);
+			name=adminUserdao.getName(lateUser.get(i));
+			System.out.println("연체유저 아이디에 해당하는 이름"+name);
+			
+			for(int j=0; j<bTitle.size(); j++){
+				bookTitle+=bTitle.get(j)+"\n";
+			}
+			
+			MimeMessage message = mailSender.createMimeMessage();
+			MimeMessageHelper messageHelper = new MimeMessageHelper(message, true, "UTF-8");
+			
+			//받는사람
+			messageHelper.setTo(eMail);
+			//메일제목, 생략도 가능하긴 함
+			messageHelper.setSubject(name+"님 KOSTA도서관에 연체중인 도서가 있습니다");
+			//본문
+			messageHelper.setText(name+"님 안녕하세요? KOSTA도서관입니다\n현재 "+name+"님께서는\n"+bookTitle+"의 책을 연체중이십니다\n"
+					+ "장기 연체시 각종 불이익이 있을 수 있습니다\n빠른 시일내에 도서반납을 부탁드립니다");
+			
+			//위의 설정값을 이용하여 메일발송
+			mailSender.send(message);
+			bookTitle="";
 		}
 	}
 
