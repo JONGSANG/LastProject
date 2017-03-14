@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="SchedulerMapper">
+
+<update id="roomTimeOut">
+UPDATE STUDYROOM SET STATE=0, START_TIME=NULL, END_TIME=NULL, ID=NULL WHERE (TIMEDIFF(END_TIME, CURTIME()) <![CDATA[<]]> 0)
+</update>
+
+<delete id="reserveDel">
+<![CDATA[
+delete from reserve_book where reserve_end is not null and reserve_end>=curdate()
+]]>
+</delete>
+
+	
+<!-- 연체테이블에 연체자 삽입 메소드 -->
+	<insert id="insertLate">
+ 	<![CDATA[
+		INSERT INTO late(id, bno, start_date)
+		SELECT id, bno, SUBMIT_DATE 
+		FROM RENT_BOOK a
+		where datediff(curdate(),SUBMIT_DATE) > 0 and check_submit = false
+		and NOT EXISTS (SELECT bno, start_date FROM late b where a.bno=b.bno and a.submit_date=b.start_date)
+	]]>
+	</insert>
+<!-- 대출테이블에 연체된 책 연체됫다고 표시하기.. -->
+	<update id="updateRent">
+		update rent_book set check_late = true where datediff(curdate(), submit_date)>0
+	</update>
+<!-- 연체료 계산해주는 메소드 -->
+	<update id="updateLate">	
+		update late set money = datediff( curdate(),start_date)*100 where end_date is null
+	</update>
+	
+
+
+</mapper>
+
+

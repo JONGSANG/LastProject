@@ -39,7 +39,6 @@ public class AdminEtcController {
 			
 			//두개의 테이블이 각각의 페이징처리가 따로 이루어져야한다
 			//리플이 달리지 않은 게시글(대기중인 민원)
-			model.addAttribute("noReply", adminEtcService.noReply(page));
 			//리플이 달린 게시글(처리완료 민원)
 			model.addAttribute("reply", adminEtcService.reply(page));
 			//한페이지에서 두개의 테이블을 페이징 처리하기 위해 클래스를 따로 생성

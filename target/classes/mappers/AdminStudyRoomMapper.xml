@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="AdminStudyRoomMapper">
+
+<select id="aRoomList"  resultType="StudyRoomVO">
+SELECT *
+FROM STUDYROOM
+WHERE NUM LIKE 'a%'
+</select>
+
+<select id="bRoomList"  resultType="StudyRoomVO">
+SELECT *
+FROM STUDYROOM
+WHERE NUM LIKE 'b%'
+</select>
+
+<select id="cRoomList"  resultType="StudyRoomVO">
+SELECT *
+FROM STUDYROOM
+WHERE NUM LIKE 'c%'
+</select>
+
+<update id="insert">
+UPDATE STUDYROOM 
+SET STATE=(SELECT GENDER FROM USER_INFO WHERE ID=#{id}), START_TIME=CURTIME(), END_TIME=ADDTIME(CURTIME(), '4:00'), ID=#{id}
+WHERE NUM=#{num}
+</update>
+
+<select id="idCheck" resultType="boolean">
+SELECT EXISTS (SELECT ID FROM MEMBER WHERE ID=#{id})
+</select>
+
+<select id="seatCheck" resultType="String">
+SELECT NUM
+FROM STUDYROOM
+WHERE ID=#{id}
+</select>
+
+<select id="detail" resultType="StudyRoomVO">
+SELECT A.NUM, A.ID, B.NAME, A.START_TIME, A.END_TIME
+FROM STUDYROOM A
+INNER JOIN USER_INFO B ON A.ID=B.ID
+WHERE A.NUM=#{num}
+</select>
+
+<update id="delete">
+UPDATE STUDYROOM
+SET STATE=0, START_TIME=NULL, END_TIME=NULL, ID=NULL
+WHERE NUM=#{num}
+</update>
+
+<select id="chart" resultType="ChartVO">
+SELECT
+(SELECT COUNT(NUM) FROM STUDYROOM WHERE NUM LIKE 'a%') AS atotal,
+(SELECT COUNT(NUM) FROM STUDYROOM WHERE NUM LIKE 'a%' AND STATE>0) AS ausing,
+(SELECT atotal-ausing) AS aempty,
+(SELECT COUNT(NUM) FROM STUDYROOM WHERE NUM LIKE 'b%') AS btotal,
+(SELECT COUNT(NUM) FROM STUDYROOM WHERE NUM LIKE 'b%' AND STATE>0) AS busing,
+(SELECT btotal-busing) AS bempty,
+(SELECT COUNT(NUM) FROM STUDYROOM WHERE NUM LIKE 'c%') AS ctotal,
+(SELECT COUNT(NUM) FROM STUDYROOM WHERE NUM LIKE 'c%' AND STATE>0) AS cusing,
+(SELECT ctotal-cusing) AS cempty
+</select>
+
+</mapper>
+
+

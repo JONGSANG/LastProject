@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="AdminUserMapper">
+
+<select id="allMember" resultType="String">
+SELECT EMAIL
+FROM USER_INFO
+</select>
+
+<select id="allAdmin" resultType="String">
+SELECT EMAIL
+FROM ADMIN_INFO
+</select>
+
+<select id="selectLateUserList" resultType="LateVO">
+SELECT l.id, l.bno, b.btitle, l.start_date, l.end_date, u.name, b.bcompany, l.money, b.bwriter
+FROM LATE l
+INNER JOIN BOOK b on b.bno = l.bno
+INNER JOIN USER_INFO u on u.id = l.id
+order by l.bno desc
+LIMIT #{pageStart}, #{perPageNum}
+</select>
+
+
+<select id="countLateUserList" resultType="int">
+SELECT count(*)
+FROM LATE l
+INNER JOIN BOOK b on b.bno = l.bno
+INNER JOIN USER_INFO u on u.id = l.id
+</select>
+
+
+<select id="selectLateCurUserList" resultType="LateVO">
+SELECT l.id, l.bno, b.btitle, l.start_date, l.end_date, u.name, b.bcompany, l.money, b.bwriter
+FROM LATE l
+INNER JOIN BOOK b on b.bno = l.bno
+INNER JOIN USER_INFO u on u.id = l.id
+WHERE l.end_date is null
+order by l.bno desc
+LIMIT #{pageStart}, #{perPageNum}
+</select>
+
+
+<select id="countLateCurUserList" resultType="int">
+SELECT count(*)
+FROM LATE l
+INNER JOIN BOOK b on b.bno = l.bno
+INNER JOIN USER_INFO u on u.id = l.id
+WHERE l.end_date is null
+</select>
+
+
+<select id="lateUser" resultType="String">
+SELECT u.EMAIL
+FROM LATE l
+INNER JOIN BOOK b on b.bno = l.bno
+INNER JOIN USER_INFO u on u.id = l.id
+WHERE l.end_date is null
+</select>
+
+<select id="lateUserInfo" resultType="LateInfoVO">
+<![CDATA[
+SELECT  FORMAT((l.money)/100,0) topLateUserDay, l.id topLateUserID, u.name topLateUserName, count(*) cntLateUser
+FROM LATE l
+INNER JOIN BOOK b on b.bno = l.bno
+INNER JOIN USER_INFO u on u.id = l.id
+WHERE l.end_date is null
+and l.money=(select max(l.money) FROM LATE l
+INNER JOIN BOOK b on b.bno = l.bno
+INNER JOIN USER_INFO u on u.id = l.id
+WHERE l.end_date is null)
+]]>
+</select>
+
+<select id="cntLateUser" resultType="String">
+SELECT count(distinct l.id) cntLateUser
+FROM LATE l
+INNER JOIN BOOK b on b.bno = l.bno
+INNER JOIN USER_INFO u on u.id = l.id
+WHERE l.end_date is null
+</select>
+
+<select id="lateInfo" resultType="LateInfoVO">
+<![CDATA[
+select 
+(SELECT sum(l.money)
+FROM LATE l
+INNER JOIN BOOK b on b.bno = l.bno
+INNER JOIN USER_INFO u on u.id = l.id
+WHERE Month(l.end_date) = Month(now()) 
+) as subMtotal,
+(SELECT sum(l.money)
+FROM LATE l
+INNER JOIN BOOK b on b.bno = l.bno
+INNER JOIN USER_INFO u on u.id = l.id
+WHERE l.end_date is not null
+) as subTotal,
+(SELECT sum(l.money)
+FROM LATE l
+INNER JOIN BOOK b on b.bno = l.bno
+INNER JOIN USER_INFO u on u.id = l.id
+WHERE l.end_date is null
+) as nsubTotal
+]]>
+</select>
+
+<select id="lateUser1" resultType="String">
+SELECT DISTINCT ID FROM LATE
+</select>
+
+<select id="lateBook" resultType="String">
+SELECT B.BTITLE
+FROM LATE L
+INNER JOIN BOOk B ON L.BNO=B.BNO
+WHERE L.ID=#{id}
+</select>
+
+<select id="getEmail" resultType="String">
+SELECT EMAIL
+FROM USER_INFO
+WHERE ID=#{id}
+</select>
+
+<select id="getName" resultType="String">
+SELECT NAME FROM USER_INFO WHERE ID=#{id}
+</select>
+
+</mapper>

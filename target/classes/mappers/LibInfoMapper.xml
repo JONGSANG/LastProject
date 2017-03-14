@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kosta.mappers.LibInfoMapper">
+
+<select id="b_status" resultType="B_statusVO">
+select 
+(select count(bno) from book where bno like '0101%') si,
+(select count(bno)from book where bno like '%0102%') san,
+(select count(bno)from book where bno like '%0103%') so,
+(select count(bno)from book where bno like '%0301%') pro,
+(select count(bno)from book where bno like '%0401%') jung,
+(select count(bno)from book where bno like '%0402%') sang,
+(select count(bno)from book where bno like '%0501%') gun,
+(select count(bno)from book where bno like '%0701%') inm,
+(select count(bno)from book where bno like '%99%') wol,
+(select count(distinct bcompany)from book where bno like '%99%') wol_cnt,
+(select count(bno)from book) allb
+</select>
+</mapper>

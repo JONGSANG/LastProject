@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="AdminEtcMapper">
+
+<select id="noReply" resultType="M_BoardVO">
+SELECT A.NUM, MSELECT, TITLE, ID, MIN_DATE, (SELECT COUNT(NUM) FROM MINWON_REP WHERE A.NUM=MNUM) AS re_cnt 
+FROM MINWON A
+WHERE A.NUM NOT IN (SELECT MNUM FROM MINWON_REP)
+ORDER BY NUM DESC
+
+</select>
+<!-- LIMIT #{pageStart}, #{perPageNum} -->
+
+
+<select id="noReplyCount" resultType="int">
+SELECT (SELECT COUNT(NUM) FROM MINWON)-(SELECT COUNT(DISTINCT MNUM) FROM MINWON_REP)
+</select>
+
+<select id="reply" resultType="M_BoardVO">
+SELECT A.NUM, MSELECT, TITLE, ID, MIN_DATE, (SELECT COUNT(NUM) FROM MINWON_REP WHERE A.NUM=MNUM) AS re_cnt 
+FROM MINWON A
+WHERE A.NUM IN (SELECT MNUM FROM MINWON_REP)
+ORDER BY NUM DESC
+
+</select>
+<!-- LIMIT #{pageStart1}, #{perPageNum1} -->
+
+
+<select id="replyCount" resultType="int">
+SELECT COUNT(DISTINCT MNUM) FROM MINWON_REP
+</select>
+
+<select id="detail" resultType="M_BoardVO">
+SELECT NUM, MSELECT, ID, VIEWCNT, MIN_DATE, TITLE, CONTENT
+FROM MINWON
+WHERE NUM=#{num}
+</select>
+
+<select id="replyDetail" resultType="M_Board_ReVO">
+SELECT ID, MIN_DATE, CONTENT
+FROM MINWON_REP
+WHERE MNUM=#{num}
+</select>
+
+<insert id="replyInsert">
+INSERT INTO MINWON_REP(ID, CONTENT, MIN_DATE, MNUM) VALUES(#{id}, #{content}, now(), #{num})
+</insert>
+
+<delete id="replyDelete">
+DELETE FROM MINWON_REP WHERE NUM=#{num}
+</delete>
+
+</mapper>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="AdminInfoMapper">
+
+<select id="userInfo1" resultType="MemberVO">
+select * from user_info
+</select>
+
+<select id="userInfo" resultType="MemberVO">
+SELECT M.ID, U.NAME, U.BIRTH, U.PHONE, U.JOINDATE, R.ROLE
+FROM MEMBER M
+INNER JOIN USER_INFO U ON M.ID=U.ID
+INNER JOIN ROLE R ON M.ID=R.ID
+<if test="searchType!=null">
+	<if test="searchType=='아이디'">
+	WHERE M.ID LIKE CONCAT('%',#{keyword},'%')
+	</if>
+	<if test="searchType=='이름'">
+	WHERE U.NAME LIKE CONCAT('%',#{keyword},'%')
+	</if>
+	<if test="searchType=='이메일'">
+	WHERE U.EMAIL LIKE CONCAT('%',#{keyword},'%')
+	</if>
+	<if test="searchType=='휴대폰번호'">
+	WHERE U.PHONE LIKE CONCAT('%',#{keyword},'%')
+	</if>
+	<if test="searchType=='회원등급'">
+	WHERE R.ROLE LIKE CONCAT('%',#{keyword},'%')
+	</if>
+</if>
+ORDER BY JOINDATE DESC
+<!-- LIMIT #{pageStart}, #{perPageNum} -->
+</select>
+
+<select id="listCount" resultType="int">
+SELECT COUNT(M.ID)
+FROM MEMBER M
+INNER JOIN USER_INFO U ON M.ID=U.ID
+INNER JOIN ROLE R ON M.ID=R.ID
+<if test="searchType!=null">
+	<if test="searchType=='아이디'">
+	WHERE M.ID LIKE CONCAT('%',#{keyword},'%')
+	</if>
+	<if test="searchType=='이름'">
+	WHERE U.NAME LIKE CONCAT('%',#{keyword},'%')
+	</if>
+	<if test="searchType=='이메일'">
+	WHERE U.EMAIL LIKE CONCAT('%',#{keyword},'%')
+	</if>
+	<if test="searchType=='휴대폰번호'">
+	WHERE U.PHONE LIKE CONCAT('%',#{keyword},'%')
+	</if>
+	<if test="searchType=='회원등급'">
+	WHERE R.ROLE LIKE CONCAT('%',#{keyword},'%')
+	</if>
+</if>
+</select>
+
+<select id="adminInfo" resultType="MemberVO">
+SELECT M.ID, A.NAME, A.J_PART, A.J_LEVEL, A.PHONE
+FROM MEMBER M
+INNER JOIN ADMIN_INFO A ON M.ID=A.ID
+INNER JOIN ROLE R ON M.ID=R.ID
+WHERE R.ROLE='ROLE_ADMIN'
+<if test="searchType!=null">
+	<if test="searchType=='아이디'">
+	AND M.ID LIKE CONCAT('%',#{keyword},'%')
+	</if>
+	<if test="searchType=='이름'">
+	AND A.NAME LIKE CONCAT('%',#{keyword},'%')
+	</if>
+	<if test="searchType=='부서'">
+	AND A.J_PART LIKE CONCAT('%',#{keyword},'%')
+	</if>
+	<if test="searchType=='직급'">
+	AND A.J_LEVEL LIKE CONCAT('%',#{keyword},'%')
+	</if>
+	<if test="searchType=='전화번호'">
+	AND A.PHONE LIKE CONCAT('%',#{keyword},'%')
+	</if>
+</if>
+</select>
+
+<select id="adminCount" resultType="int">
+SELECT COUNT(M.ID)
+FROM MEMBER M
+INNER JOIN ADMIN_INFO A ON M.ID=A.ID
+INNER JOIN ROLE R ON M.ID=R.ID
+WHERE R.ROLE='ROLE_ADMIN'
+<if test="searchType!=null">
+	<if test="searchType=='아이디'">
+	AND M.ID LIKE CONCAT('%',#{keyword},'%')
+	</if>
+	<if test="searchType=='이름'">
+	AND A.NAME LIKE CONCAT('%',#{keyword},'%')
+	</if>
+	<if test="searchType=='부서'">
+	AND A.J_PART LIKE CONCAT('%',#{keyword},'%')
+	</if>
+	<if test="searchType=='직급'">
+	AND A.J_LEVEL LIKE CONCAT('%',#{keyword},'%')
+	</if>
+	<if test="searchType=='전화번호'">
+	AND A.PHONE LIKE CONCAT('%',#{keyword},'%')
+	</if>
+</if>
+</select>
+
+
+<insert id="member">
+INSERT INTO MEMBER(ID, PWD) VALUES(#{id}, #{pwd})
+</insert>
+
+<insert id="admin_info">
+INSERT INTO ADMIN_INFO(ID, NAME, BIRTH, GENDER, PHONE, EMAIL, ADDRESS, J_PART, J_LEVEL, JOINDATE) VALUES(#{id}, #{name}, #{birth}, #{gender}, CONCAT(#{phone1},'-',#{phone2},'-',#{phone3}), #{email}, #{address}, #{j_part}, #{j_level}, NOW())
+</insert>
+
+<insert id="role">
+INSERT INTO ROLE(ID, ROLE) VALUES(#{id}, 'ROLE_ADMIN')
+</insert>
+
+
+<select id="passwordCheck" resultType="String">
+SELECT PWD FROM MEMBER WHERE ID=#{id}
+</select>
+
+<update id="passwordModify">
+UPDATE MEMBER SET PWD=#{pwd} WHERE ID=#{id}
+</update>
+
+<select id="detailUser" resultType="MemberVO">
+SELECT M.ID, U.NAME, U.BIRTH, U.EMAIL, U.PHONE, U.JOB, U.ADDRESS, R.ROLE
+FROM MEMBER M
+INNER JOIN USER_INFO U ON M.ID=U.ID
+INNER JOIN ROLE R ON M.ID=R.ID
+WHERE M.ID=#{id}
+</select>
+
+<select id="detailRent" resultType="AdminInfoVO">
+SELECT R.RENT_DATE, R.SUBMIT_DATE, R.CHECK_SUBMIT, R.CHECK_LATE, B.BTITLE, DATEDIFF(CURDATE(),R.SUBMIT_DATE) AS late
+FROM RENT_BOOK R
+INNER JOIN BOOK B ON R.BNO=B.BNO
+WHERE R.ID=#{id} AND CHECK_SUBMIT=FALSE
+</select>
+
+<update id="roleChange">
+UPDATE ROLE SET ROLE=#{role} WHERE ID=#{id}
+</update>
+
+<delete id="deleteMember">
+DELETE FROM MEMBER WHERE ID=#{id}
+</delete>
+
+<delete id="deleteUser_info">
+DELETE FROM USER_INFO WHERE ID=#{id}
+</delete>
+
+<delete id="deleteRole">
+DELETE FROM ROLE WHERE ID=#{id}
+</delete>
+
+<select id="detailAdmin" resultType="MemberVO">
+SELECT M.ID, A.NAME, A.J_PART, A.J_LEVEL, A.PHONE
+FROM MEMBER M
+INNER JOIN ADMIN_INFO A ON M.ID=A.ID
+INNER JOIN ROLE R ON M.ID=R.ID
+WHERE M.ID=#{id} AND R.ROLE='ROLE_ADMIN'
+</select>
+
+<update id="adminPart">
+UPDATE ADMIN_INFO SET J_PART=#{j_part} WHERE ID=#{id}
+</update>
+
+<update id="adminLevel">
+UPDATE ADMIN_INFO SET J_LEVEL=#{j_level} WHERE ID=#{id}
+</update>
+
+<delete id="deleteAdmin_info">
+DELETE FROM ADMIN_INFO WHERE ID=#{id}
+</delete>
+
+</mapper>

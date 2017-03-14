@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="AdminServiceMapper">
+
+<select id="afterList" resultType="AfterVO">
+SELECT A.NUM, ASELECT, TITLE, MAX_CNT, (SELECT COUNT(ANUM) FROM AFTER_LIST WHERE STATE=1 AND ANUM=A.NUM) AS TOCNT 
+FROM AFTER A
+ORDER BY WRITE_DATE DESC
+LIMIT #{pageStart}, #{perPageNum}
+</select>
+
+<select id="afterCount" resultType="int">
+SELECT COUNT(NUM)
+FROM AFTER
+</select>
+
+<select id="cultureList" resultType="CultureVO">
+SELECT A.NUM, CSELECT, TITLE, MAX_CNT, (SELECT COUNT(ANUM) FROM CULTURE_LIST WHERE STATE=1 AND ANUM=A.NUM) AS TOCNT 
+FROM CULTURE A
+ORDER BY WRITE_DATE DESC
+LIMIT #{pageStart}, #{perPageNum}
+</select>
+
+<select id="cultureCount" resultType="int">
+SELECT COUNT(NUM)
+FROM CULTURE
+</select>
+
+<select id="afterDetail" resultType="AfterVO">
+SELECT TITLE, START_DATE, END_DATE, MAX_CNT, (SELECT COUNT(ANUM) FROM AFTER_LIST WHERE STATE=1 AND ANUM=A.NUM) AS TOCNT
+FROM AFTER A
+WHERE NUM=#{num}
+</select>
+
+<select id="afterID" resultType="L_AfterVO">
+SELECT ID, STATE, AFTER_DATE, ANUM
+FROM AFTER_LIST
+WHERE ANUM=#{num}
+LIMIT #{pageStart}, #{perPageNum}
+</select>
+
+<select id="afterDetailCount" resultType="int">
+SELECT COUNT(ID)
+FROM AFTER_LIST
+WHERE ANUM=#{num}
+</select>
+
+<select id="cultureDetail" resultType="CultureVO">
+SELECT TITLE, START_DATE, END_DATE, MAX_CNT, (SELECT COUNT(ANUM) FROM CULTURE_LIST WHERE STATE=1 AND ANUM=A.NUM) AS TOCNT
+FROM CULTURE A
+WHERE NUM=#{num}
+</select>
+
+<select id="cultureID" resultType="L_CultureVO">
+SELECT ID, STATE, CULTURE_DATE, ANUM
+FROM CULTURE_LIST
+WHERE ANUM=#{num}
+LIMIT #{pageStart}, #{perPageNum}
+</select>
+
+<select id="cultureDetailCount" resultType="int">
+SELECT COUNT(ID)
+FROM CULTURE_LIST
+WHERE ANUM=#{num}
+</select>
+
+<update id="afterChange">
+UPDATE AFTER_LIST SET STATE=#{state}
+WHERE ID=#{id} AND ANUM=#{anum}
+</update>
+
+<update id="afterChange1">
+UPDATE AFTER SET TOCNT=TOCNT+1
+WHERE NUM=#{anum}
+</update>
+
+<update id="cultureChange">
+UPDATE CULTURE_LIST SET STATE=#{state}
+WHERE ID=#{id} AND ANUM=#{anum} 
+</update>
+
+<update id="cultureChange1">
+UPDATE CULTURE SET TOCNT=TOCNT+1
+WHERE NUM=#{anum}
+</update>
+
+<select id="schadule_list" resultType="SchadulVO">
+	select * from schadul
+</select>
+
+
+<insert id="schadule_insert">
+	insert into schadul(year, month, day, state, title) values( #{year}, #{month}, #{day}, #{state}, #{title})
+</insert>
+
+<delete id="schedule_delete">
+	delete from schadul where year=#{year} AND month=#{month} AND day=#{day}
+</delete>
+
+<select id="deliveryList" resultType="DeliveryVO">
+SELECT D.ID, B.BTITLE, D.REQUEST_DATE, D.BNO
+FROM DELIVERY D
+INNER JOIN BOOK B ON B.BNO=D.BNO
+WHERE D.STATE=0
+</select>
+
+<select id="deliverySuccesss" resultType="DeliveryVO">
+SELECT D.ID, B.BTITLE, D.BNO, R.SUBMIT_DATE, D.RENT_NUM
+FROM DELIVERY D
+INNER JOIN BOOK B ON B.BNO=D.BNO
+INNER JOIN RENT_BOOK R ON R.BNO=D.BNO
+WHERE D.STATE=1
+LIMIT #{pageStart}, #{perPageNum}
+</select>
+
+<select id="deliveryCount" resultType="int">
+SELECT COUNT(BNO) FROM DELIVERY WHERE STATE=1
+</select>
+
+<update id="deliveryUpdate">
+UPDATE DELIVERY
+SET STATE=1, RENT_NUM=#{rent_num}
+WHERE BNO=#{bNo}
+</update>
+
+</mapper>
